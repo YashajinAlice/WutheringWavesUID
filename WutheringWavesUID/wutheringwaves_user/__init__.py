@@ -9,7 +9,7 @@ from gsuid_core.models import Event
 from gsuid_core.sv import SV
 
 from ..utils.button import WavesButton
-from ..utils.database.models import WavesBind, WavesUser, UserAvatar
+from ..utils.database.models import WavesBind, WavesUser, WavesUserAvatar
 from ..utils.message import send_diff_msg
 from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
 from ..wutheringwaves_user.login_succ import login_success_msg
@@ -144,8 +144,8 @@ async def auto_delete_all_invalid_cookie():
 async def send_waves_bind_uid_msg(bot: Bot, ev: Event):
     uid = ev.text.strip().replace("uid", "").replace("UID", "")
     qid = ev.user_id
-    if ev.bot_id == "discord":
-        await sync_discord_user_avatar(ev)
+    if ev.bot_id == "discord" or ev.bot_id == "qqgroup":
+        await sync_non_onebot_user_avatar(ev)
 
     at_sender = True if ev.group_id else False
 
@@ -233,23 +233,26 @@ async def send_waves_bind_uid_msg(bot: Bot, ev: Event):
         )
 
 
-async def sync_discord_user_avatar(ev: Event) -> str:
+async def sync_non_onebot_user_avatar(ev: Event):
     """从事件中提取头像 avatar_hash 并自动更新数据库中的 hash 映射"""
     avatar_hash = "error"
-    avatar_url = ev.sender.get("avatar")
-    if not avatar_url:
-        logger.error("Discord 事件中缺少 avatar 字段")
-        return
-
-    parts = avatar_url.split("/")
-    try:
+    if ev.bot_id == "discord":
+        avatar_url = ev.sender.get("avatar")
+        if not avatar_url:
+            logger.error("Discord 事件中缺少 avatar 字段")
+            return
+        parts = avatar_url.split("/")
         index = parts.index(str(ev.user_id))
         avatar_hash = parts[index + 1]
-    except (ValueError, IndexError):
-        logger.error(f"无法从 avatar_url 中提取 user_id 和 avatar_hash: {avatar_url}")
+    elif ev.bot_id == "qqgroup":
+        avatar_hash = ev.bot_self_id
 
-    await UserAvatar.upsert_avatar(
-        user_id=ev.user_id, 
-        bot_id=ev.bot_id, 
-        avatar_hash=avatar_hash
-    )
+    data = await WavesUserAvatar.select_data(ev.user_id, ev.bot_id)
+    old_avatar_hash = data.avatar_hash if data else ""
+
+    if avatar_hash != old_avatar_hash:
+        await WavesUserAvatar.insert_data(
+            user_id=ev.user_id, 
+            bot_id=ev.bot_id, 
+            avatar_hash=avatar_hash
+        )

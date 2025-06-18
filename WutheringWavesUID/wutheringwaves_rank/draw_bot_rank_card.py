@@ -44,6 +44,7 @@ from ..utils.image import (
     get_attribute_effect,
     get_qq_avatar,
     get_discord_avatar,
+    get_qqgroup_avatar,
     get_role_pile_old,
     get_square_avatar,
     get_square_weapon,
@@ -622,6 +623,16 @@ async def get_avatar(
                     pic_cache.set(qid, pic)
             else:
                 pic = await get_discord_avatar(qid, size=100)
+                pic_cache.set(qid, pic)
+                
+        elif ev.bot_id == "qqgroup":
+            if WutheringWavesConfig.get_config("QQPicCache").data:
+                pic = pic_cache.get(qid)
+                if not pic:
+                    pic = await get_qqgroup_avatar(qid, size=100)
+                    pic_cache.set(qid, pic)
+            else:
+                pic = await get_qqgroup_avatar(qid, size=100)
                 pic_cache.set(qid, pic)
 
         # 统一处理 crop 和遮罩（onebot/discord 共用逻辑）

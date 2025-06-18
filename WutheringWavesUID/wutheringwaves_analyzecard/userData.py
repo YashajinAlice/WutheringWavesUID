@@ -60,6 +60,8 @@ async def save_card_dict_to_json(bot: Bot, ev: Event, result_dict: Dict):
     from ..wutheringwaves_charinfo.draw_char_card import generate_online_role_detail
     # char_id = "1506" # 菲比..utils\map\detail_json\char\1506.json
     result = await generate_online_role_detail(char_id)
+    if not result: 
+        return await bot.send("[鸣潮]暂未支持的角色，请等待后续更新", at_sender)
     waves_data = []
     data = {}
 
@@ -106,7 +108,7 @@ async def save_card_dict_to_json(bot: Bot, ev: Event, result_dict: Dict):
         echo["phantomProp"]["name"] = f"识别默认{cost}c"
         if cost == 4:
             cost4_counter += 1  # 只有实际生成cost4时递增
-            echo["phantomProp"]["name"] = phantom_id_to_phantom_name(echo_id)
+            echo["phantomProp"]["name"] = phantom_id_to_phantom_name(str(echo_id))
 
         echo["phantomProp"]["phantomId"] = echo_id
         echo["phantomProp"]["cost"] = cost

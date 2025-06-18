@@ -9,10 +9,12 @@ from gsuid_core.utils.database.base_models import (
     Bind,
     Push,
     User,
+    BaseModel,
     with_session,
 )
 from gsuid_core.utils.database.startup import exec_list
 from gsuid_core.webconsole.mount_app import GsAdminModel, PageSchema, site
+from gsuid_core.logger import logger
 
 exec_list.extend(
     [
@@ -29,45 +31,9 @@ T_WavesBind = TypeVar("T_WavesBind", bound="WavesBind")
 T_WavesUser = TypeVar("T_WavesUser", bound="WavesUser")
 T_WavesUserAvatar = TypeVar("T_WavesUserAvatar", bound="WavesUserAvatar")
 
-class WavesUserAvatar(User, table=True):
+class WavesUserAvatar(BaseModel, table=True):
     __table_args__: Dict[str, Any] = {"extend_existing": True}
-    bot_id: str = Field(default="", title="平台ID")
-    user_id: Optional[str] = Field(default="", title="用户ID")
     avatar_hash: str = Field(default="", title="头像哈希")
-
-    @classmethod
-    @with_session
-    async def upsert_avatar(cls: Type[T_WavesUserAvatar], session: AsyncSession, user_id: str, bot_id: str, avatar_hash: str):
-        sql = select(cls).where(cls.bot_id == bot_id, cls.user_id == user_id)
-        result = await session.execute(sql)
-        obj = result.scalars().all()
-
-        if obj:
-            if obj.avatar_hash != avatar_hash:
-                obj.avatar_hash = avatar_hash
-                session.add(obj)
-                sql = (
-                    update(cls)
-                    .where(col(cls.bot_id) == bot_id)
-                    .where(col(cls.user_id) == user_id)
-                    .values(avatar_hash=avatar_hash)
-                )
-                await session.execute(sql)
-        else:
-            session.add(cls(bot_id=bot_id, user_id=user_id, avatar_hash=avatar_hash))
-
-        await session.commit()
-        
-            
-
-    @classmethod
-    @with_session
-    async def get_avatar_hash(cls: Type[T_WavesUserAvatar], session: AsyncSession, user_id: str, bot_id: str) -> Optional[str]:
-        sql = select(cls.avatar_hash).where(cls.bot_id == bot_id, cls.user_id == user_id)
-        result = await session.execute(sql)
-        row = result.scalars().all()
-        return row
-
 
 class WavesBind(Bind, table=True):
     __table_args__: Dict[str, Any] = {"extend_existing": True}
