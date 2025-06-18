@@ -642,9 +642,9 @@ async def get_avatar(
         mask_pic_temp = avatar_mask_temp.resize((120, 120))
         img.paste(pic_temp, (0, -5), mask_pic_temp)
     
-    except Exception as e:
+    except Exception:
         # 打印异常，进行降级处理
-        logger.warning(f"头像获取失败，使用默认头像: {e}")
+        logger.warning("头像获取失败，使用默认头像")
         pic = await get_square_avatar(char_id)
 
         pic_temp = Image.new("RGBA", pic.size)
