@@ -3,7 +3,6 @@ import random
 from io import BytesIO
 from pathlib import Path
 from typing import Literal, Optional, Tuple, Union
-from xxlimited import Str
 
 from PIL import (
     Image,
@@ -254,7 +253,7 @@ async def get_discord_avatar(
     size: int = 640,
 ) -> Image.Image:
     if qid:
-        data = await WavesUserAvatar.select_data(Str(qid), "discord")
+        data = await WavesUserAvatar.select_data(str(qid), "discord")
         avatar_hash = data.avatar_hash if data else ""
         avatar_url = f"https://cdn.discordapp.com/avatars/{qid}/{avatar_hash}"
     elif avatar_url is None:
@@ -271,7 +270,7 @@ async def get_qqgroup_avatar(
     size: int = 640,
 ) -> Image.Image:
     if qid:
-        data = await WavesUserAvatar.select_data(Str(qid), "qqgroup")
+        data = await WavesUserAvatar.select_data(str(qid), "qqgroup")
         appid = data.avatar_hash if data else ""
         avatar_url = f"http://q.qlogo.cn/qqapp/{appid}/{qid}/{size}"
     elif avatar_url is None:
