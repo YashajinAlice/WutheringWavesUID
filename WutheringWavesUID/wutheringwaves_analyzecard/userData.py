@@ -18,6 +18,7 @@ from ..utils.name_convert import (
 
 from ..wutheringwaves_config import PREFIX
 from .Phantom_check import PhantomValidator
+from .changeEcho import get_local_all_role_detail
 from .char_fetterDetail import get_fetterDetail_from_char, echo_data_to_cost
 from .user_info_utils import save_user_info, get_region_by_uid
 
@@ -183,8 +184,11 @@ async def save_card_dict_to_json(bot: Bot, ev: Event, result_dict: Dict):
     if not is_valid:
         await bot.send("[鸣潮]dc卡片识别数据异常！\n或请使用更高分辨率卡片重新识别！", at_sender)
         return
+    
+    # 对比更新
+    update_data = await compare_update_card_info(uid, corrected_data)
 
-    waves_data.append(corrected_data)
+    waves_data.append(update_data)
     await save_card_info(uid, waves_data)
     await bot.send(f"[鸣潮]dc卡片数据提取成功！识别套装使用默认配置(影响伤害计算不影响声骸评分)\n可使用：\n【{PREFIX}{char_name_print}面板】查看您的角色面板\n【{PREFIX}改{char_name_print}套装**(套装名)】修改声骸套装\n【{PREFIX}改{char_name_print}声骸】修改当前套装的首位声骸\n", at_sender)
     logger.info(f" [鸣潮][dc卡片识别] 数据识别完毕，用户{uid}的{char_name_print}面板数据已保存到本地！")
@@ -207,6 +211,34 @@ async def check_phantom_data(data) -> tuple[bool, dict]:
     except Exception as e:
         logger.warning(f" [鸣潮][dc卡片识别] 角色声骸数据异常：{e}")
         return False, data
+
+async def compare_update_card_info(uid, waves_data):
+    """避免覆盖更新角色数据(角色等级、武器等级、武器谐振*、技能等级*)到本地"""
+    _, all_data = await get_local_all_role_detail(uid)
+    existing_data = all_data.get(waves_data["role"]["roleId"], {})
+    if not existing_data:
+        return waves_data
+    
+    if waves_data["role"]["level"] < existing_data["role"]["level"]:
+        logger.warning(f" [鸣潮][dc卡片识别] 角色等级低于本地数据，纠正：{waves_data['role']['level']}->{existing_data['role']['level']}")
+        waves_data["role"]["level"] = existing_data["role"]["level"]
+        waves_data["level"] = existing_data["level"]
+    
+    if waves_data["weaponData"]["weapon"]["weaponId"] == existing_data["weaponData"]["weapon"]["weaponId"]:
+        if waves_data["weaponData"]["level"] < existing_data["weaponData"]["level"]:
+            logger.warning(f" [鸣潮][dc卡片识别] 武器等级低于本地数据，纠正：{waves_data['weaponData']['level']}->{existing_data['weaponData']['level']}")
+            waves_data["weaponData"]["level"] = existing_data["weaponData"]["level"]
+            waves_data["weaponData"]["breach"] = get_breach(existing_data["weaponData"]["level"])
+        if waves_data["weaponData"]["resonLevel"] < existing_data["weaponData"]["resonLevel"]:
+            logger.warning(f" [鸣潮][dc卡片识别] 武器谐振低于本地数据，纠正：{waves_data['weaponData']['resonLevel']}->{existing_data['weaponData']['resonLevel']}")
+            waves_data["weaponData"]["resonLevel"] = existing_data["weaponData"]["resonLevel"]
+    
+    for i in range(0, 6):
+        if waves_data["skillList"][i]["level"] < existing_data["skillList"][i]["level"]:
+            logger.warning(f" [鸣潮][dc卡片识别] 存在技能等级低于本地数据，纠正：{waves_data['skillList'][i]['level']}->{existing_data['skillList'][i]['level']}")
+            waves_data["skillList"][i]["level"] = existing_data["skillList"][i]["level"]
+    
+    return waves_data
 
 
 def get_breach(level: int):

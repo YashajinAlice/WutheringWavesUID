@@ -559,7 +559,7 @@ async def ocr_results_to_dict(chain_num, ocr_results):
                 line_num = re.sub(r'[^0-9\s]', '', line_num)
                 level_match = patterns["level"].search(line_num)
                 if level_match and not final_result["角色信息"].get("等级"):
-                    final_result["角色信息"]["等级"] = int(level_match.group(1))
+                    final_result["角色信息"]["等级"] = min(int(level_match.group(1)), 90) # 最大等级为90
                 
                 # UID提取
                 uid_match = patterns["uid_info"].search(line_clean)
