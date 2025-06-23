@@ -174,4 +174,21 @@ CONFIG_DEFAULT: Dict[str, GSC] = {
             "get_role_detail_info",
         ],
     ),
+    "RefreshCardConcurrency": GsIntConfig(
+        "刷新角色面板并发数",
+        "刷新角色面板并发数",
+        10,
+        50,
+    ),
+    "CaptchaProvider": GsStrConfig(
+        "验证码提供方（重启生效）",
+        "验证码提供方（重启生效）",
+        "",
+        options=["ttorc"],
+    ),
+    "CaptchaAppKey": GsStrConfig(
+        "验证码提供方appkey",
+        "验证码提供方appkey",
+        "",
+    ),
 }
