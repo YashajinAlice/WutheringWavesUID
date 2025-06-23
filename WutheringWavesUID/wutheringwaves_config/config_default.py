@@ -88,12 +88,6 @@ CONFIG_DEFAULT: Dict[str, GSC] = {
         "所有查询使用自己的ck",
         False,
     ),
-    "CardUseOptions2": GsStrConfig(
-        "排行面板数据启用规则（重启生效）",
-        "排行面板数据启用规则",
-        "不使用缓存",
-        options=["不使用缓存", "内存缓存"],
-    ),
     "QQPicCache": GsBoolConfig(
         "排行榜qq头像缓存开关",
         "排行榜qq头像缓存开关",
@@ -132,6 +126,11 @@ CONFIG_DEFAULT: Dict[str, GSC] = {
         "bot排行查询开关",
         "相关排行：伤害排行，评分排行，角色持有率排行，共鸣链持有率排行",
         False,
+    ),
+    "RoleListQuery": GsBoolConfig(
+        "是否可以使用uid直接查询练度",
+        "是否可以使用uid直接查询练度",
+        True,
     ),
     "MaxBindNum": GsIntConfig(
         "绑定特征码限制数量（未登录）", "绑定特征码限制数量（未登录）", 2, 100
