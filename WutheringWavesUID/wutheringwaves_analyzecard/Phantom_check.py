@@ -202,13 +202,13 @@ class PhantomValidator:
         cost = phantom.get("cost", 0)
         logger.debug(f"[鸣潮][声骸检查]声骸cost: {cost}")
         if cost not in self.cost_indices:
-            return False, "cost异常"
+            return False, f"cost异常-{cost}"
 
         # 主词条校验
         for main_prop in phantom.get("mainProps", []):
             is_valid, corrected = self.validate_main_prop(main_prop, cost)
             if not is_valid:
-                return False, corrected
+                return False, f"cost{cost} 主词条-{corrected}"
             if corrected:
                 main_prop["attributeValue"] = corrected
 
@@ -216,7 +216,7 @@ class PhantomValidator:
         for sub_prop in phantom.get("subProps", []):
             is_valid, corrected = self.validate_sub_prop(sub_prop)
             if not is_valid:
-                return False, corrected
+                return False, f"cost{cost} 副词条-{corrected}"
             if corrected:
                 sub_prop["attributeValue"] = corrected
         return True, None
@@ -245,12 +245,12 @@ class PhantomValidator:
         # 获取合法值列表
         allowed_values = self.main_value_map.get(name, [])
         if not allowed_values or cost_idx >= len(allowed_values):
-            return False, _value
+            return False, f"{_name}:{_value}"
 
         # 检查该cost是否允许此属性
         allowed_value = allowed_values[cost_idx]
         if allowed_value.replace("%", "") == "0":
-            return False, _value  # 该cost不允许此属性
+            return False, f"{_name}:{_value}"  # 该cost不允许此属性
 
         # 智能缩放检测
         scaled_value = self._detect_scale_error(value, [allowed_value])
@@ -268,7 +268,7 @@ class PhantomValidator:
         # 获取可能的数值类型
         allowed_values = self.sub_value_map.get(name, [])
         if not allowed_values:
-            return False, _value
+            return False, f"{_name}:{_value}"
 
         # 智能缩放检测
         scaled_value = self._detect_scale_error(value, allowed_values)
