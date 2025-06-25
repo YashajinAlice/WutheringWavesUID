@@ -67,7 +67,7 @@ async def get_code_list():
 
 async def get_oversea_code_list():
     try:
-        o_url = "https://cdn.jsdelivr.net/gh/MoonShadow1976/WutheringWaves_OverSea_StaticAssets@main/js/oversea_codes.js"
+        o_url = "https://cdn.jsdelivr.net/gh/MoonShadow1976/WutheringWaves_OverSea_StaticAssets@latest/js/oversea_codes.js"
         async with httpx.AsyncClient(timeout=None) as client:
             res = await client.get(o_url, timeout=10)
             json_data = res.text.split("=", 1)[1].strip().rstrip(";")
