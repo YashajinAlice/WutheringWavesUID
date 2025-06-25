@@ -19,11 +19,21 @@ url = "https://newsimg.5054399.com/comm/mlcxqcommon/static/wap/js/data_102.js?{}
 
 @sv_waves_code.on_fullmatch((f"code", f"兑换码"))
 async def get_sign_func(bot: Bot, ev: Event):
-    code_list = await get_code_list()
+    # 分别获取结果
+    list1 = await get_code_list()  # 可能返回列表或None
+    list2 = await get_oversea_code_list()  # 可能返回列表或None
+
+    # 安全合并
+    code_list = []
+    if list1 is not None:
+        code_list.extend(list1)
+    if list2 is not None:
+        code_list.extend(list2)
     if not code_list:
         return await bot.send("[获取兑换码失败] 请稍后再试")
 
     msgs = []
+    msgs.append("前瞻兑换码互通，国际服可用兑换码已标注")
     for code in code_list:
         is_fail = code.get("is_fail", "0")
         if is_fail == "1":
@@ -53,6 +63,19 @@ async def get_code_list():
 
     except Exception as e:
         logger.exception("[获取兑换码失败] ", e)
+        return
+
+async def get_oversea_code_list():
+    try:
+        o_url = "https://cdn.jsdelivr.net/gh/MoonShadow1976/WutheringWaves_OverSea_StaticAssets@main/js/oversea_codes.js"
+        async with httpx.AsyncClient(timeout=None) as client:
+            res = await client.get(o_url, timeout=10)
+            json_data = res.text.split("=", 1)[1].strip().rstrip(";")
+            logger.debug(f"[获取兑换码-国际服] url:{o_url}, codeList:{json_data}")
+            return json.loads(json_data)
+
+    except Exception as e:
+        logger.exception("[获取国际服兑换码失败] ", e)
         return
 
 
