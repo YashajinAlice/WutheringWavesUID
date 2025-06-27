@@ -1,5 +1,6 @@
 from ..wutheringwaves_config import PREFIX
 
+WAVES_CODE_098 = -98
 WAVES_CODE_099 = -99
 WAVES_CODE_100 = -100
 WAVES_CODE_101 = -101
@@ -12,6 +13,7 @@ WAVES_CODE_998 = -998
 WAVES_CODE_999 = -999
 
 ERROR_CODE = {
+    WAVES_CODE_098: "很抱歉，暂不支持国际服用户使用",
     WAVES_CODE_099: f"暂无数据！国际服用户请使用[{PREFIX}分析]上传角色数据",
     WAVES_CODE_100: "库街区未查询到您的游戏角色，请检查是否对外访问\n",
     WAVES_CODE_101: "请检查token有效性\n",

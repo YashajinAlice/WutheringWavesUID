@@ -18,7 +18,7 @@ from ..utils.api.model import (
 from ..utils.calc import WuWaCalc
 from ..utils.calculate import calc_phantom_score, get_calc_map, get_valid_color
 from ..utils.char_info_utils import get_all_role_detail_info
-from ..utils.error_reply import WAVES_CODE_102
+from ..utils.error_reply import ERROR_CODE, WAVES_CODE_102, WAVES_CODE_099
 from ..utils.fonts.waves_fonts import (
     waves_font_24,
     waves_font_25,
@@ -65,6 +65,8 @@ async def get_draw_list(ev: Event, uid: str, user_id: str) -> Union[str, bytes]:
         await get_all_role_detail_info(uid)
     )
     if not all_role_detail:
+        if waves_api.is_net(uid):
+            return ERROR_CODE[WAVES_CODE_099]
         return f"[鸣潮] 未找到角色信息, 请先使用[{PREFIX}刷新面板]进行刷新!"
 
     waves_echo_rank = []

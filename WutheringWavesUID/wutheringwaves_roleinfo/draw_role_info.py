@@ -54,6 +54,10 @@ async def draw_role_img(uid: str, ck: str, ev: Event):
     if waves_api.is_net(uid):
         from ..wutheringwaves_analyzecard.changeEcho import get_local_all_role_info
         succ, role_info = await get_local_all_role_info(uid)
+        if not succ:
+            from ..utils.error_reply import WAVES_CODE_099
+            from ..utils.hint import error_reply
+            return error_reply(WAVES_CODE_099)
     else:
         succ, role_info = await waves_api.get_role_info(uid, ck)
     if not succ:

@@ -437,7 +437,7 @@ async def get_role_need(
         else:
             return (
                 None,
-                f"[鸣潮] 特征码[{waves_id}] \n无法获取【{char_name}】角色信息，请在库街区展示此角色！\n",
+                f"[鸣潮] 特征码[{waves_id}] \n无法获取【{char_name}】角色信息！\n",
             )
     else:
         avatar = await draw_pic_with_ring(ev, is_force_avatar, force_resource_id)
@@ -463,7 +463,7 @@ async def get_role_need(
             elif is_online_user and not change_list_regex:
                 return (
                     None,
-                    f"[鸣潮] 未找到【{char_name}】角色信息, 请先使用[{PREFIX}刷新面板]进行刷新!\n",
+                    f"[鸣潮] 未找到【{char_name}】角色信息\n国服用户请先使用[{PREFIX}刷新面板]进行刷新!\n国际服用户请先使用[{PREFIX}分析]上传角色信息!\n",
                 )
             else:
                 # 未上线的角色，构造一个数据
@@ -471,7 +471,7 @@ async def get_role_need(
                 if not gen_role_detail:
                     return (
                         None,
-                        f"[鸣潮] 未找到【{char_name}】角色信息, 国服用户请使用[{PREFIX}刷新面板]进行刷新!，国际服用户请使用[{PREFIX}分析]上传数据\n",
+                        f"[鸣潮] 未找到【{char_name}】角色信息\n国服用户请使用[{PREFIX}刷新面板]进行刷新!\n国际服用户请使用[{PREFIX}分析]上传数据\n",
                     )
                 role_detail = gen_role_detail
 
