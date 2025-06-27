@@ -33,6 +33,9 @@ CONFIG_DEFAULT: Dict[str, GSC] = {
     "StaminaPushInterval": GsIntConfig(
         "体力推送间隔（分钟）", "体力推送间隔（分钟）", 30, 60
     ),
+    "StaminaRemindInterval": GsIntConfig(
+        "体力提醒间隔（分钟）", "当前提醒时间将延长所填时间", 60, 600
+    ),
     "WavesRankUseTokenGroup": GsListStrConfig(
         "有token才能进排行，群管理可设置",
         "有token才能进排行，群管理可设置",

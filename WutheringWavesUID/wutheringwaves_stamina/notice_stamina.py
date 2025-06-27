@@ -36,6 +36,7 @@ async def all_check(
 ):
     # 检查条件
     mode = "resin"
+    status = "push_time"
 
     bot_id = user.bot_id
     uid = user.uid
@@ -43,7 +44,7 @@ async def all_check(
 
     # 当前时间
     time_now = int(time.time())
-    dt = datetime.strptime(push_data["push_time_value"], "%Y-%m-%d %H:%M:%S")
+    dt = datetime.strptime(push_data[f"{status}_value"], "%Y-%m-%d %H:%M:%S")
     timestamp = int(dt.timestamp())
 
     _check = await check(
@@ -52,11 +53,17 @@ async def all_check(
     )
 
     if push_data[f"{mode}_is_push"] == "on":
-        if not WutheringWavesConfig.get_config("CrazyNotice").data:
-            if not _check:
+        if WutheringWavesConfig.get_config("CrazyNotice").data:
+            await WavesPush.update_data_by_uid(
+                uid=uid, bot_id=bot_id, **{f"{mode}_is_push": "off"}
+            )
+            if _check:
+                extended_time = WutheringWavesConfig.get_config("StaminaRemindInterval").data # 分钟
+                time_push = datetime.fromtimestamp(timestamp + int(extended_time) * 60)
                 await WavesPush.update_data_by_uid(
-                    uid=uid, bot_id=bot_id, **{f"{mode}_is_push": "off"}
+                    uid=uid, bot_id=bot_id, **{f"{status}_value": str(time_push)}
                 )
+                logger.info(f"催命模式设置成功!\n当前用户{uid} 体力提醒下一次推送时间:{time_push}\n")
             return
 
     # 准备推送

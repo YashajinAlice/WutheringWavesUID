@@ -94,7 +94,7 @@ async def set_push_time(bot_id: str, uid: str, value: int):
     logger.info("[设置推送时间]func: {}, value: {}".format(status, time_push))
     try:
         await WavesPush.update_data_by_uid(
-            uid=uid, bot_id=bot_id, **{f"{status}_value": time_push}
+            uid=uid, bot_id=bot_id, **{f"{status}_value": str(time_push)}
         )
         await WavesPush.update_data_by_uid(
             uid=uid, bot_id=bot_id, **{f"{mode}_is_push": "off"}
