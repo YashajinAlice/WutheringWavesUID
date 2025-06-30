@@ -85,6 +85,8 @@ async def set_push_time(bot_id: str, uid: str, value: int):
     if not data: 
         return False
     push_data = data.__dict__
+    if push_data[f"{mode}_push"] == "off":
+        return False
     resin_push = push_data[f"{mode}_value"]
 
     # 根据体力阈值计算推送时间
