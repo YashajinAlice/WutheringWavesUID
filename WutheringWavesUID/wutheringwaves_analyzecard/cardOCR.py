@@ -269,6 +269,7 @@ async def upload_discord_bot_card(ev: Event):
                     retcode = resp.status
 
             if retcode == 200:
+                image = Image.open(BytesIO(image_data))
                 success = True
                 logger.success('[鸣潮]图片获取完成！')
             else:
@@ -279,7 +280,6 @@ async def upload_discord_bot_card(ev: Event):
             logger.warning("[鸣潮]图片获取失败！")
 
     if success:
-        image = Image.open(BytesIO(image_data))
         return True, image
     else:
         return False, None
