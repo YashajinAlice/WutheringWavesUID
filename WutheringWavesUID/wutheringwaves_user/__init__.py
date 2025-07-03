@@ -1,18 +1,18 @@
 from typing import Any, Dict, List
 
-from gsuid_core.aps import scheduler
-from gsuid_core.bot import Bot
-from gsuid_core.config import core_config
-from gsuid_core.gss import gss
-from gsuid_core.logger import logger
-from gsuid_core.models import Event
 from gsuid_core.sv import SV
+from gsuid_core.bot import Bot
+from gsuid_core.gss import gss
+from gsuid_core.models import Event
+from gsuid_core.aps import scheduler
+from gsuid_core.logger import logger
+from gsuid_core.config import core_config
 
 from ..utils.button import WavesButton
-from ..utils.database.models import WavesBind, WavesUser, WavesUserAvatar
-from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
+from .deal import add_cookie, get_cookie, delete_cookie
 from ..wutheringwaves_user.login_succ import login_success_msg
-from .deal import add_cookie, delete_cookie, get_cookie
+from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
+from ..utils.database.models import WavesBind, WavesUser, WavesUserAvatar
 
 waves_bind_uid = SV("鸣潮绑定特征码", priority=10)
 waves_add_ck = SV("鸣潮添加token", priority=5)
@@ -154,12 +154,11 @@ async def send_waves_bind_uid_msg(bot: Bot, ev: Event):
                 f"该命令需要带上正确的uid!\n{PREFIX}绑定uid\n", at_sender
             )
         uid_list = await WavesBind.get_uid_list_by_game(qid, ev.bot_id)
-        cookie_uid_list = await WavesUser.select_user_cookie_uids(qid)
-        if uid_list and cookie_uid_list:
-            difference_uid_list = set(uid_list).difference(set(cookie_uid_list))
-            max_bind_num: int = WutheringWavesConfig.get_config("MaxBindNum").data
-            if len(difference_uid_list) >= max_bind_num:
-                return await bot.send("[鸣潮] 绑定特征码达到上限\n", at_sender)
+        max_bind_num: int = WutheringWavesConfig.get_config("MaxBindNum").data
+
+        # 檢查是否已達到綁定上限
+        if uid_list and len(uid_list) >= max_bind_num:
+            return await bot.send("[鸣潮] 绑定特征码达到上限\n", at_sender)
 
         code = await WavesBind.insert_waves_uid(
             qid, ev.bot_id, uid, ev.group_id, lenth_limit=9
@@ -251,10 +250,10 @@ async def sync_non_onebot_user_avatar(ev: Event):
 
     if avatar_hash != old_avatar_hash:
         await WavesUserAvatar.insert_data(
-            user_id=ev.user_id, 
-            bot_id=ev.bot_id, 
-            avatar_hash=avatar_hash
+            user_id=ev.user_id, bot_id=ev.bot_id, avatar_hash=avatar_hash
         )
+
+
 async def send_diff_msg(bot: Bot, code: Any, data: Dict, at_sender=False):
     for retcode in data:
         if code == retcode:
