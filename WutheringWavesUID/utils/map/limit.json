@@ -1,9 +1,9 @@
 {
-    "sonataLib":[
+    "sonataLib": [
         {
             "libId": 1,
             "fetterDetailName": "此间永驻之光",
-            "equipPhantomList":[
+            "equipPhantomList": [
                 {
                     "phantomId": 6000092,
                     "cost": 4
@@ -29,7 +29,7 @@
         {
             "libId": 2,
             "fetterDetailName": "熔山裂谷",
-            "equipPhantomList":[
+            "equipPhantomList": [
                 {
                     "phantomId": 6000091,
                     "cost": 4
@@ -55,7 +55,7 @@
         {
             "libId": 3,
             "fetterDetailName": "沉日劫明",
-            "equipPhantomList":[
+            "equipPhantomList": [
                 {
                     "phantomId": 6000090,
                     "cost": 4
@@ -83,7 +83,7 @@
         {
             "libId": 4,
             "fetterDetailName": "无惧浪涛之勇",
-            "equipPhantomList":[
+            "equipPhantomList": [
                 {
                     "phantomId": 6000084,
                     "cost": 4
@@ -111,7 +111,7 @@
         {
             "libId": 5,
             "fetterDetailName": "浮星祛暗",
-            "equipPhantomList":[
+            "equipPhantomList": [
                 {
                     "phantomId": 6000059,
                     "mainPropName": "暴击伤害",
@@ -139,7 +139,7 @@
         {
             "libId": 6,
             "fetterDetailName": "沉日劫明",
-            "equipPhantomList":[
+            "equipPhantomList": [
                 {
                     "phantomId": 6000090,
                     "mainPropName": "暴击伤害",
@@ -168,7 +168,7 @@
         {
             "libId": 7,
             "fetterDetailName": "凌冽决断之心",
-            "equipPhantomList":[
+            "equipPhantomList": [
                 {
                     "phantomId": 6000083,
                     "cost": 4
@@ -196,7 +196,7 @@
         {
             "libId": 8,
             "fetterDetailName": "啸谷长风",
-            "equipPhantomList":[
+            "equipPhantomList": [
                 {
                     "phantomId": 6000086,
                     "cost": 4
@@ -224,7 +224,7 @@
         {
             "libId": 9,
             "fetterDetailName": "熔山裂谷",
-            "equipPhantomList":[
+            "equipPhantomList": [
                 {
                     "phantomId": 390080007,
                     "cost": 4
@@ -250,7 +250,7 @@
         {
             "libId": 10,
             "fetterDetailName": "凝夜白霜",
-            "equipPhantomList":[
+            "equipPhantomList": [
                 {
                     "phantomId": 6000044,
                     "cost": 4
@@ -356,7 +356,7 @@
         {
             "libId": 14,
             "fetterDetailName": "此间永驻之光",
-            "equipPhantomList":[
+            "equipPhantomList": [
                 {
                     "phantomId": 6000104,
                     "cost": 3
@@ -382,7 +382,7 @@
         {
             "libId": 15,
             "fetterDetailName": "高天共奏之曲",
-            "equipPhantomList":[
+            "equipPhantomList": [
                 {
                     "phantomId": 6000085,
                     "cost": 4
@@ -408,7 +408,7 @@
         {
             "libId": 16,
             "fetterDetailName": "浮星祛暗",
-            "equipPhantomList":[
+            "equipPhantomList": [
                 {
                     "phantomId": 6000045,
                     "mainPropName": "暴击伤害",
@@ -435,7 +435,7 @@
         {
             "libId": 17,
             "fetterDetailName": "隐世回光",
-            "equipPhantomList":[
+            "equipPhantomList": [
                 {
                     "phantomId": 6000060,
                     "cost": 4
@@ -494,6 +494,7 @@
                 },
                 {
                     "phantomId": 6000112,
+                    "mainPropName": "攻击%",
                     "cost": 3
                 },
                 {
@@ -511,7 +512,7 @@
             ]
         }
     ],
-    "charList":[
+    "charList": [
         {
             "calcFile": "calc-新光套.json",
             "charId": 1506,
@@ -681,4 +682,4 @@
             "sonataLibId": 19
         }
     ]
- }
+}
