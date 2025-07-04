@@ -158,7 +158,7 @@ async def send_waves_bind_uid_msg(bot: Bot, ev: Event):
 
         # 檢查是否已達到綁定上限
         if uid_list and len(uid_list) >= max_bind_num:
-            return await bot.send("[鸣潮] 绑定特征码达到上限\n", at_sender)
+            return await bot.send("[鳴潮] 綁定UID已達到上限！\n", at_sender)
 
         code = await WavesBind.insert_waves_uid(
             qid, ev.bot_id, uid, ev.group_id, lenth_limit=9
@@ -169,10 +169,10 @@ async def send_waves_bind_uid_msg(bot: Bot, ev: Event):
             bot,
             code,
             {
-                0: f"[鸣潮] 特征码[{uid}]绑定成功！\n\n当前仅支持查询部分信息，完整功能请\n国服用户使用【{PREFIX}登录】，使用【{PREFIX}刷新面板】更新角色面板\n国际服用户请使用【{PREFIX}分析】上传角色面板\n使用【{PREFIX}查看】查看已绑定的特征码\n更新角色面板后可以使用【{PREFIX}暗主排行】查询暗主排行\n",
-                -1: f"[鸣潮] 特征码[{uid}]的位数不正确！\n",
-                -2: f"[鸣潮] 特征码[{uid}]已经绑定过了！\n",
-                -3: "[鸣潮] 你输入了错误的格式!\n",
+                0: f"[鸣潮] [{uid}]綁定成功！\n\n目前國際服暫時不支援庫街區，因此僅可以使用部分功能\n國際服用户請使用【{PREFIX}分析】上傳角色面板\n目前UID僅可以綁定 1 個\n",
+                -1: f"[鸣潮] {uid}的位數不正確！\n",
+                -2: f"[鸣潮] {uid}已經綁定過了！\n",
+                -3: "[鸣潮] 您輸入了錯誤的格式\n",
             },
             at_sender=at_sender,
         )
