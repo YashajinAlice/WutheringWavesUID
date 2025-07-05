@@ -255,6 +255,8 @@ class PhantomValidator:
         # 智能缩放检测
         scaled_value = self._detect_scale_error(value, [allowed_value])
         logger.debug(f"[鸣潮][声骸检查]主词条：{_value} -> {scaled_value}  {name}")
+        if not scaled_value:
+            return False, f"{_name}:{_value}无法缩放"
         return True, scaled_value  # 强制修正为合法值
 
     def validate_sub_prop(self, prop):
@@ -272,6 +274,8 @@ class PhantomValidator:
 
         # 智能缩放检测
         scaled_value = self._detect_scale_error(value, allowed_values)
+        if not scaled_value:
+            return False, f"{_name}:{_value}无法缩放"
         if scaled_value != value:
             logger.warning(f"[鸣潮][声骸检查]副词条缩放：{value} -> {scaled_value}  {name}")
 
@@ -281,20 +285,29 @@ class PhantomValidator:
         return True, closest
 
     def _detect_scale_error(self, value, allowed_values):
-        """检测10倍缩放错误（如86%→8.6%）"""
-        if "%" in value:
-            num_str = value.replace("%", "")
-            try:
-                num = float(num_str)
-                max_allowed = max(float(v.replace("%", "")) for v in allowed_values)
-                while num > max_allowed:  # 缩放阈值 0倍
-                    scaled = num / 10.0   # 正常情况下scaled不被定义，走except
-                    num = scaled
-                return f"{scaled:.2f}%"
-            except Exception:
-                logger.debug(f"[鸣潮][声骸检查]无法缩放值: {value}与阈值: {allowed_values}")
-                pass
-        return value
+        """检测10倍缩放错误（如86%→8.6%）（如.22800→2280）"""
+        def scaled(num_str):
+            num = float(num_str)
+            max_allowed = max(float(v.replace("%", "")) for v in allowed_values)
+            if num < 1: # 处理可能出现的“.2280”
+                while num < max_allowed:  # 缩放阈值 10倍
+                    num = float(f"{num * 10:.8f}")  # 避免扩大出现的浮点误差
+                logger.warning(f"[鸣潮][声骸检查] {num_str} 扩大为 {num}")
+            while num > max_allowed:  # 缩放阈值 10倍
+                num = float(f"{num / 10:.8f}")
+            return num
+        
+        try:
+            if "%" in value:
+                num_str = value.replace("%", "")
+                num = scaled(num_str)
+                return f"{num:.2f}%"
+            else:
+                num = scaled(value)
+                return f"{int(num)}"  # 非%值都是整数
+        except Exception:
+            logger.warning(f"[鸣潮][声骸检查]无法缩放值: {value}与阈值: {allowed_values}")
+            return None
 
     def _find_closest_sub_value(self, value, allowed_values):
         """寻找最近的合法副词条值"""
