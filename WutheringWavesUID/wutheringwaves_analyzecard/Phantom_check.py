@@ -1,7 +1,7 @@
-from gsuid_core.logger import logger
-from pathlib import Path
 import asyncio
+from pathlib import Path
 
+from gsuid_core.logger import logger
 
 # change from utils.map.calc_score_script.py
 # 声骸副词条
@@ -155,7 +155,7 @@ phantom_main_value_map = {i["name"]: i["values"] for i in phantom_main_value}
 
 
 async def exist_attribute_prop(name: str = "") -> bool:
-    TEXT_PATH = Path(__file__).parent.parent / "utils" / "texture2d" / "attribute_prop" 
+    TEXT_PATH = Path(__file__).parent.parent / "utils" / "texture2d" / "attribute_prop"
     file_path = Path(TEXT_PATH) / f"attr_prop_{name}.png"
     try:
         return await asyncio.to_thread(file_path.exists)
@@ -163,14 +163,16 @@ async def exist_attribute_prop(name: str = "") -> bool:
         logger.error(f"[鸣潮][dc卡片识别]文件检查异常: {name}: {e}")
         return False
 
-def get_props(phantom):
-        props = []
-        if phantom.get("mainProps"):
-            props.extend(phantom.get("mainProps"))
-        if phantom.get("subProps"):
-            props.extend(phantom.get("subProps"))
 
-        return props
+def get_props(phantom):
+    props = []
+    if phantom.get("mainProps"):
+        props.extend(phantom.get("mainProps"))
+    if phantom.get("subProps"):
+        props.extend(phantom.get("subProps"))
+
+    return props
+
 
 class PhantomValidator:
     def __init__(self, equipPhantomList):
@@ -183,18 +185,20 @@ class PhantomValidator:
         """验证整个声骸列表"""
         for phantom in self.equipPhantomList:
             if phantom and phantom.get("phantomProp"):
-                    props = get_props(phantom)
-                    for _prop in props:
-                        name_b = await exist_attribute_prop(_prop.get("attributeName"))
-                        if not name_b:
-                            logger.warning(f"[鸣潮][声骸检验]词条文本检查异常: {_prop.get('attributeName')}")
-                            return False, None
+                props = get_props(phantom)
+                for _prop in props:
+                    name_b = await exist_attribute_prop(_prop.get("attributeName"))
+                    if not name_b:
+                        logger.warning(
+                            f"[鸣潮][声骸检验]词条文本检查异常: {_prop.get('attributeName')}"
+                        )
+                        return False, None
 
             value_b, text = self._validate_phantom(phantom)
             if not value_b:
                 logger.warning(f"[鸣潮][声骸检验]词条数值检查异常：{text}")
                 return False, None
-                
+
         return True, self.equipPhantomList
 
     def _validate_phantom(self, phantom):
@@ -255,6 +259,8 @@ class PhantomValidator:
         # 智能缩放检测
         scaled_value = self._detect_scale_error(value, [allowed_value])
         logger.debug(f"[鸣潮][声骸检查]主词条：{_value} -> {scaled_value}  {name}")
+        if not scaled_value:
+            return False, f"{_name}:{_value}无法缩放"
         return True, scaled_value  # 强制修正为合法值
 
     def validate_sub_prop(self, prop):
@@ -272,8 +278,12 @@ class PhantomValidator:
 
         # 智能缩放检测
         scaled_value = self._detect_scale_error(value, allowed_values)
+        if not scaled_value:
+            return False, f"{_name}:{_value}无法缩放"
         if scaled_value != value:
-            logger.warning(f"[鸣潮][声骸检查]副词条缩放：{value} -> {scaled_value}  {name}")
+            logger.warning(
+                f"[鸣潮][声骸检查]副词条缩放：{value} -> {scaled_value}  {name}"
+            )
 
         # 寻找最近合法值
         closest = self._find_closest_sub_value(scaled_value, allowed_values)
@@ -281,20 +291,32 @@ class PhantomValidator:
         return True, closest
 
     def _detect_scale_error(self, value, allowed_values):
-        """检测10倍缩放错误（如86%→8.6%）"""
-        if "%" in value:
-            num_str = value.replace("%", "")
-            try:
-                num = float(num_str)
-                max_allowed = max(float(v.replace("%", "")) for v in allowed_values)
-                while num > max_allowed:  # 缩放阈值 0倍
-                    scaled = num / 10.0   # 正常情况下scaled不被定义，走except
-                    num = scaled
-                return f"{scaled:.2f}%"
-            except Exception:
-                logger.debug(f"[鸣潮][声骸检查]无法缩放值: {value}与阈值: {allowed_values}")
-                pass
-        return value
+        """检测10倍缩放错误（如86%→8.6%）（如.22800→2280）"""
+
+        def scaled(num_str):
+            num = float(num_str)
+            max_allowed = max(float(v.replace("%", "")) for v in allowed_values)
+            if num < 1:  # 处理可能出现的“.2280”
+                while num < max_allowed:  # 缩放阈值 10倍
+                    num = float(f"{num * 10:.8f}")  # 避免扩大出现的浮点误差
+                logger.warning(f"[鸣潮][声骸检查] {num_str} 扩大为 {num}")
+            while num > max_allowed:  # 缩放阈值 10倍
+                num = float(f"{num / 10:.8f}")
+            return num
+
+        try:
+            if "%" in value:
+                num_str = value.replace("%", "")
+                num = scaled(num_str)
+                return f"{num:.1f}%"
+            else:
+                num = scaled(value)
+                return f"{int(num)}"  # 非%值都是整数
+        except Exception:
+            logger.warning(
+                f"[鸣潮][声骸检查]无法缩放值: {value}与阈值: {allowed_values}"
+            )
+            return None
 
     def _find_closest_sub_value(self, value, allowed_values):
         """寻找最近的合法副词条值"""
@@ -311,5 +333,7 @@ class PhantomValidator:
                 if to_float(v) == closest:
                     return v
         except Exception as e:
-            logger.debug(f"[鸣潮][声骸检查]无法寻找阈值: {allowed_values}中的值: {value}，错误信息: {e}")
+            logger.debug(
+                f"[鸣潮][声骸检查]无法寻找阈值: {allowed_values}中的值: {value}，错误信息: {e}"
+            )
             return allowed_values[0]  # 兜底返回第一个值
