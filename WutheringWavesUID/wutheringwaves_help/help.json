@@ -1,25 +1,25 @@
 {
-  "绑定账号": {
-    "desc": "在执行查询之前请绑定账号",
+  "綁定賬號": {
+    "desc": "在使用分析作業前，請先綁定UID",
     "data": [
       {
-        "name": "绑定特征码",
+        "name": "綁定UID",
         "desc": "绑定特征码",
-        "eg": "绑定123456",
+        "eg": "綁定123456",
         "need_ck": false,
         "need_sk": false,
         "need_admin": false
       },
       {
-        "name": "切换特征码",
+        "name": "切換UID（暫時不開放）",
         "desc": "切换绑定的账户",
-        "eg": "切换123456",
+        "eg": "切換123456",
         "need_ck": true,
         "need_sk": false,
         "need_admin": false
       },
       {
-        "name": "删除特征码",
+        "name": "删除UID",
         "desc": "删除特征码",
         "eg": "删除123456",
         "need_ck": false,
@@ -27,7 +27,7 @@
         "need_admin": false
       },
       {
-        "name": "查看特征码列表",
+        "name": "查看您的UID",
         "desc": "查看特征码列表",
         "eg": "查看",
         "need_ck": false,
@@ -35,7 +35,7 @@
         "need_admin": false
       },
       {
-        "name": "删除全部特征码",
+        "name": "删除全部UID",
         "desc": "查看绑定的UID列表",
         "eg": "删除全部特征码",
         "need_ck": false,
@@ -45,7 +45,7 @@
     ]
   },
   "库街区登录": {
-    "desc": "在执行查询之前请库街区登录，暂不支持国际服(括号内容为可选参数)",
+    "desc": "國際服用戶暫時無法使用此系統",
     "data": [
       {
         "name": "推荐->登录页登录",
@@ -122,10 +122,10 @@
     ]
   },
   "信息查询": {
-    "desc": "在执行查询之前请绑定账号(括号内容为可选参数)",
+    "desc": "在使用分析作業前，請先綁定UID",
     "data": [
       {
-        "name": "国际服dc卡片分析",
+        "name": "Discord分析",
         "desc": "分析获取dc卡片角色数据",
         "eg": "分析",
         "need_ck": false,
@@ -133,15 +133,15 @@
         "need_admin": false
       },
       {
-        "name": "练度统计",
+        "name": "練度統計",
         "desc": "查询练度统计一览",
-        "eg": "练度统计",
+        "eg": "練度統計",
         "need_ck": true,
         "need_sk": false,
         "need_admin": false
       },
       {
-        "name": "基本信息卡片",
+        "name": "基本信息",
         "desc": "查询基本信息",
         "eg": "卡片",
         "need_ck": true,
@@ -149,15 +149,15 @@
         "need_admin": false
       },
       {
-        "name": "查询声骸列表",
+        "name": "查詢聲駭",
         "desc": "查询声骸列表",
-        "eg": "声骸列表",
+        "eg": "聲駭列表",
         "need_ck": true,
         "need_sk": false,
         "need_admin": false
       },
       {
-        "name": "查询角色面板",
+        "name": "查詢面板",
         "desc": "查询角色面板",
         "eg": "椿面板",
         "need_ck": true,
@@ -165,23 +165,23 @@
         "need_admin": false
       },
       {
-        "name": "查询角色伤害",
+        "name": "查詢角色傷害（2、3）",
         "desc": "查询角色伤害",
-        "eg": "椿伤害3",
+        "eg": "椿傷害3",
         "need_ck": true,
         "need_sk": false,
         "need_admin": false
       },
       {
-        "name": "查询角色权重",
+        "name": "查詢角色權重",
         "desc": "查询角色权重",
-        "eg": "椿权重",
+        "eg": "椿權重",
         "need_ck": true,
         "need_sk": false,
         "need_admin": false
       },
       {
-        "name": "窥视(:",
+        "name": "偷窺XD",
         "desc": "窥视面板",
         "eg": "uid椿面板",
         "need_ck": true,
@@ -189,7 +189,7 @@
         "need_admin": false
       },
       {
-        "name": "面板PK",
+        "name": "面板PK（尚未修復）",
         "desc": "面板PK",
         "eg": "(uid)椿面板pk(@群友)",
         "need_ck": true,
@@ -197,23 +197,23 @@
         "need_admin": false
       },
       {
-        "name": "日历",
+        "name": "日曆",
         "desc": "日历",
-        "eg": "日历",
+        "eg": "日曆",
         "need_ck": false,
         "need_sk": false,
         "need_admin": false
       },
       {
-        "name": "面板替换帮助",
+        "name": "面板替換幫助",
         "desc": "面板替换帮助",
-        "eg": "替换帮助",
+        "eg": "替換幫助",
         "need_ck": false,
         "need_sk": false,
         "need_admin": false
       },
       {
-        "name": "兑换码",
+        "name": "兌換碼",
         "desc": "兑换码",
         "eg": "兑换码",
         "need_ck": false,
@@ -221,17 +221,17 @@
         "need_admin": false
       },
       {
-        "name": "卡池倒计时",
+        "name": "卡池倒計時",
         "desc": "卡池倒计时",
-        "eg": "未复刻角色/武器(5/4)",
+        "eg": "未復刻角色/武器(5/4)",
         "need_ck": false,
         "need_sk": false,
         "need_admin": false
       },
       {
-        "name": "角色共鸣链持有率",
+        "name": "角色共鳴鏈持有率",
         "desc": "角色共鸣链持有率",
-        "eg": "(群/bot)链率(up/all)",
+        "eg": "(群/bot)鏈率(up/all)",
         "need_ck": false,
         "need_sk": false,
         "need_admin": false
