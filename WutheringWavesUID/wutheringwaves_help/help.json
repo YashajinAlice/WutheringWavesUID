@@ -44,7 +44,7 @@
       }
     ]
   },
-  "库街区登录": {
+  "库街区服务": {
     "desc": "在执行查询之前请库街区登录，暂不支持国际服(括号内容为可选参数)",
     "data": [
       {
@@ -115,6 +115,14 @@
         "name": "星声统计",
         "desc": "星声",
         "eg": "星声(5月/2.3版本)",
+        "need_ck": true,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "荣耀之丘",
+        "desc": "荣耀之丘",
+        "eg": "荣耀之丘",
         "need_ck": true,
         "need_sk": false,
         "need_admin": false
