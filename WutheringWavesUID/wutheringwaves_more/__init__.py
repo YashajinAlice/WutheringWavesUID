@@ -12,7 +12,7 @@ sv_waves_poker = SV("waves查询牌局")
 
 
 @sv_waves_poker.on_command(
-    ("poker", "牌局", "扑克", "激斗", "打牌"),
+    ("poker", "牌局", "扑克", "激斗", "打牌", "荣耀之丘"),
     block=True,
 )
 async def send_poker(bot: Bot, ev: Event):
