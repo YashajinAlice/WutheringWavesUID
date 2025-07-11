@@ -118,6 +118,14 @@
         "need_ck": true,
         "need_sk": false,
         "need_admin": false
+      },
+      {
+        "name": "荣耀之丘",
+        "desc": "荣耀之丘",
+        "eg": "荣耀之丘",
+        "need_ck": true,
+        "need_sk": false,
+        "need_admin": false
       }
     ]
   },

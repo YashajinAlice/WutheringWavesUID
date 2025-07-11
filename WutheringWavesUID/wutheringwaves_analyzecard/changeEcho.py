@@ -109,7 +109,10 @@ async def get_local_all_role_detail(uid: str) -> tuple[bool, dict]:
 
     return True, role_data
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 177631ffca533fe59438fb6c5e2422cc3d969141
 async def get_char_name_from_local(char_name: str, role_data: dict):
     for char_id, role_info in role_data.items():
         roleName = role_info.get("role").get("roleName")
@@ -119,10 +122,14 @@ async def get_char_name_from_local(char_name: str, role_data: dict):
     # 未找到匹配角色
     return None, None
 
+<<<<<<< HEAD
 
 async def change_sonata_and_first_echo(
     bot: Bot, char_id: int, sonata_a: str, phantom_a: bool, role_data: dict
 ):
+=======
+async def change_sonata_and_first_echo(bot: Bot, char_id: int, sonata_a: str, phantom_a: bool, role_data: dict):
+>>>>>>> 177631ffca533fe59438fb6c5e2422cc3d969141
     # 检查角色是否存在
     if char_id not in role_data:
         return False, None
@@ -171,12 +178,16 @@ async def change_sonata_and_first_echo(
         )
 
         resp = await bot.receive_resp(TEXT_GET_RESP)
+<<<<<<< HEAD
         if (
             resp is not None
             and resp.content[0].data is not None
             and resp.content[0].type == "text"
             and resp.content[0].data.isdigit()
         ):
+=======
+        if resp is not None and resp.content[0].data is not None and resp.content[0].type == "text" and resp.content[0].data.isdigit():
+>>>>>>> 177631ffca533fe59438fb6c5e2422cc3d969141
             choice = int(resp.content[0].data) - 1
             if 0 <= choice < len(flat_choices):
                 selected = flat_choices[choice]

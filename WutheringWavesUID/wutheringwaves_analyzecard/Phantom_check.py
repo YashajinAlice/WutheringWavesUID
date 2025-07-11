@@ -292,18 +292,29 @@ class PhantomValidator:
 
     def _detect_scale_error(self, value, allowed_values):
         """检测10倍缩放错误（如86%→8.6%）（如.22800→2280）"""
+<<<<<<< HEAD
 
         def scaled(num_str):
             num = float(num_str)
             max_allowed = max(float(v.replace("%", "")) for v in allowed_values)
             if num < 1:  # 处理可能出现的“.2280”
+=======
+        def scaled(num_str):
+            num = float(num_str)
+            max_allowed = max(float(v.replace("%", "")) for v in allowed_values)
+            if num < 1: # 处理可能出现的“.2280”
+>>>>>>> 177631ffca533fe59438fb6c5e2422cc3d969141
                 while num < max_allowed:  # 缩放阈值 10倍
                     num = float(f"{num * 10:.8f}")  # 避免扩大出现的浮点误差
                 logger.warning(f"[鸣潮][声骸检查] {num_str} 扩大为 {num}")
             while num > max_allowed:  # 缩放阈值 10倍
                 num = float(f"{num / 10:.8f}")
             return num
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 177631ffca533fe59438fb6c5e2422cc3d969141
         try:
             if "%" in value:
                 num_str = value.replace("%", "")
@@ -313,9 +324,13 @@ class PhantomValidator:
                 num = scaled(value)
                 return f"{int(num)}"  # 非%值都是整数
         except Exception:
+<<<<<<< HEAD
             logger.warning(
                 f"[鸣潮][声骸检查]无法缩放值: {value}与阈值: {allowed_values}"
             )
+=======
+            logger.warning(f"[鸣潮][声骸检查]无法缩放值: {value}与阈值: {allowed_values}")
+>>>>>>> 177631ffca533fe59438fb6c5e2422cc3d969141
             return None
 
     def _find_closest_sub_value(self, value, allowed_values):
