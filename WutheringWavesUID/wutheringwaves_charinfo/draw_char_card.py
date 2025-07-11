@@ -440,7 +440,7 @@ async def get_role_need(
                 f"[鸣潮] 特征码[{waves_id}] \n无法获取【{char_name}】角色信息！\n",
             )
     else:
-        avatar = await draw_pic_with_ring(ev, is_force_avatar, force_resource_id)
+        avatar = await draw_pic_with_ring(ev, is_force_avatar, force_resource_id) if not waves_id else await draw_char_with_ring(char_id)
         all_role_detail: Optional[Dict[str, RoleDetailData]] = (
             await get_all_roleid_detail_info(uid)
         )

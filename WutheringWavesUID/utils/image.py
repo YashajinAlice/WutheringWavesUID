@@ -314,6 +314,18 @@ async def get_event_avatar(
         except Exception:
             img = None
 
+    if img is None and ev.bot_id == "discord" and not ev.sender:
+        try:
+            img = await get_discord_avatar(ev.user_id, size=size)
+        except Exception:
+            img = None
+    
+    if img is None and ev.bot_id == "qqgroup" and not ev.sender:
+        try:
+            img = await get_qqgroup_avatar(ev.user_id, size=size)
+        except Exception:
+            img = None
+
     if img is None and avatar_path:
         pic_path_list = list(avatar_path.iterdir())
         if pic_path_list:
