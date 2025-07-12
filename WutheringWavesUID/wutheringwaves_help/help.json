@@ -205,14 +205,6 @@
         "need_admin": false
       },
       {
-        "name": "日历",
-        "desc": "日历",
-        "eg": "日历",
-        "need_ck": false,
-        "need_sk": false,
-        "need_admin": false
-      },
-      {
         "name": "面板替换帮助",
         "desc": "面板替换帮助",
         "eg": "替换帮助",
