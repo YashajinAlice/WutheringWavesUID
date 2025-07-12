@@ -296,7 +296,16 @@ async def get_event_avatar(
         from ..utils.at_help import is_valid_at
 
         is_valid_at_param = is_valid_at(ev)
+    
+    # 获取对应bot_id的头像获取函数
+    avatar_getters = {
+        "onebot": get_qq_avatar,
+        "discord": get_discord_avatar,
+        "qqgroup": get_qqgroup_avatar
+    }
+    get_bot_avatar = avatar_getters.get(ev.bot_id)
 
+<<<<<<< HEAD
     # 获取对应bot_id的头像获取函数
     avatar_getters = {
         "onebot": get_qq_avatar,
@@ -305,6 +314,8 @@ async def get_event_avatar(
     }
     get_bot_avatar = avatar_getters.get(ev.bot_id)
 
+=======
+>>>>>>> cede80ea84ec08359396d06f8f902fa4a184d2e8
     # 尝试获取@用户的头像
     if get_bot_avatar and ev.at and is_valid_at_param:
         try:
