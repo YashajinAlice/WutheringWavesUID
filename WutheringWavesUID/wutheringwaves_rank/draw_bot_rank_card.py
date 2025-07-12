@@ -1,27 +1,35 @@
-import asyncio
 import time
+import asyncio
 from pathlib import Path
-from typing import List, Optional, Union
-
-from PIL import Image, ImageDraw
-from pydantic import BaseModel
+from typing import List, Union, Optional
 
 from gsuid_core.bot import Bot
-from gsuid_core.logger import logger
+from pydantic import BaseModel
+from PIL import Image, ImageDraw
 from gsuid_core.models import Event
+from gsuid_core.logger import logger
 from gsuid_core.utils.image.convert import convert_img
 from gsuid_core.utils.image.image_tools import crop_center_img
 
-from ..utils.api.model import RoleDetailData, WeaponData
-from ..utils.cache import TimedCache
 from ..utils.calc import WuWaCalc
+from ..utils.util import hide_uid
+from ..utils.cache import TimedCache
+from ..utils.waves_card_cache import get_card
+from ..utils.damage.abstract import DamageRankRegister
+from ..utils.api.model import WeaponData, RoleDetailData
+from ..utils.database.models import WavesBind, WavesUser
+from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
+from ..utils.resource.constant import SPECIAL_CHAR, SPECIAL_CHAR_NAME
+from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
 from ..utils.calculate import (
-    calc_phantom_score,
     get_calc_map,
+    calc_phantom_score,
     get_total_score_bg,
 )
-from ..utils.damage.abstract import DamageRankRegister
-from ..utils.database.models import WavesBind, WavesUser
+from ..wutheringwaves_analyzecard.user_info_utils import (
+    get_region_for_rank,
+    get_user_detail_info,
+)
 from ..utils.fonts.waves_fonts import (
     waves_font_14,
     waves_font_16,
@@ -34,28 +42,20 @@ from ..utils.fonts.waves_fonts import (
     waves_font_44,
 )
 from ..utils.image import (
-    CHAIN_COLOR,
-    GREY,
     RED,
+    GREY,
+    CHAIN_COLOR,
     SPECIAL_GOLD,
+    AVATAR_GETTERS,
     WEAPON_RESONLEVEL_COLOR,
     add_footer,
+    get_waves_bg,
     get_attribute,
-    get_attribute_effect,
-    get_qq_avatar,
-    get_discord_avatar,
-    get_qqgroup_avatar,
     get_role_pile_old,
     get_square_avatar,
     get_square_weapon,
-    get_waves_bg,
+    get_attribute_effect,
 )
-from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
-from ..utils.resource.constant import SPECIAL_CHAR, SPECIAL_CHAR_NAME
-from ..utils.util import hide_uid
-from ..utils.waves_card_cache import get_card
-from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
-from ..wutheringwaves_analyzecard.user_info_utils import get_region_for_rank, get_user_detail_info
 
 rank_length = 20  # 排行长度
 TEXT_PATH = Path(__file__).parent / "texture2d"
@@ -88,7 +88,6 @@ class RankInfo(BaseModel):
     expected_damage: str  # 期望伤害
     expected_damage_int: int  # 期望伤害
     sonata_name: str  # 合鸣效果
-
 
 
 async def get_one_rank_info(user_id, uid, role_detail, rankDetail):
@@ -171,7 +170,7 @@ async def find_role_detail(
     role_details = await get_card(uid)
     if role_details is None:
         return None
-        
+
     # 将char_id转换为字符串列表进行匹配
     if isinstance(char_id, (int, str)):
         char_id_list = [str(char_id)]
@@ -216,12 +215,17 @@ async def get_rank_info_for_user(
 
         rankInfo = None
         try:
-            rankInfo = await get_one_rank_info(user.user_id, uid, role_detail, rankDetail)
+            rankInfo = await get_one_rank_info(
+                user.user_id, uid, role_detail, rankDetail
+            )
         except Exception as e:
             logger.warning(f"获取用户{user.user_id} id{uid} 的排行数据,错误: {e}")
             from ..utils.util import send_master_info
-            await send_master_info(f"获取用户{user.user_id} id{uid} 的排行数据,错误: {e}")
-            
+
+            await send_master_info(
+                f"获取用户{user.user_id} id{uid} 的排行数据,错误: {e}"
+            )
+
         if not rankInfo:
             continue
         rankInfoList.append(rankInfo)
@@ -418,7 +422,9 @@ async def draw_bot_rank_img(
         region_draw.rounded_rectangle(
             [0, 0, 200, 30], radius=6, fill=rank.server_color + (int(0.9 * 255),)
         )
-        region_draw.text((100, 15), f"Server: {rank.server}", "white", waves_font_18, "mm")
+        region_draw.text(
+            (100, 15), f"Server: {rank.server}", "white", waves_font_18, "mm"
+        )
         bar_bg.alpha_composite(region_block, (350, 65))
 
         # 等级
@@ -533,7 +539,7 @@ async def draw_bot_rank_img(
             draw_rank_id(rank_id, size=(75, 50), draw=(37, 24), dest=(25, 30))
         else:
             draw_rank_id(rank_id or 0, size=(50, 50), draw=(24, 24), dest=(40, 30))
-        
+
         # 名字
         bar_star_draw.text((210, 75), f"{rank.kuro_name}", "white", waves_font_20, "lm")
 
@@ -575,7 +581,7 @@ async def draw_bot_rank_img(
 
     title_name = f"{char_name}{rank_type}bot排行"
     title_draw.text((540, 265), f"{title_name}", "black", waves_font_30, "lm")
-    
+
     # 时间
     time_str = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     title_draw.text((470, 205), f"{time_str}", GREY, waves_font_20, "lm")
@@ -594,7 +600,7 @@ async def draw_bot_rank_img(
     # 人物bg
     pile = await get_role_pile_old(char_id)
     img_temp.alpha_composite(pile, (600, -120))
-    
+
     img_temp2 = Image.new("RGBA", char_mask2.size)
     img_temp2.paste(img_temp, (0, 0), char_mask2.copy())
 
@@ -612,14 +618,8 @@ async def get_avatar(
     char_id: Union[int, str],
 ) -> Image.Image:
     try:
-        # 获取对应bot_id的头像获取函数
-        avatar_getters = {
-            "onebot": get_qq_avatar,
-            "discord": get_discord_avatar,
-            "qqgroup": get_qqgroup_avatar
-        }
-        get_bot_avatar = avatar_getters.get(ev.bot_id)
-        
+        get_bot_avatar = AVATAR_GETTERS.get(ev.bot_id)
+
         if WutheringWavesConfig.get_config("QQPicCache").data:
             pic = pic_cache.get(qid)
             if not pic:
@@ -635,7 +635,7 @@ async def get_avatar(
         avatar_mask_temp = avatar_mask.copy()
         mask_pic_temp = avatar_mask_temp.resize((120, 120))
         img.paste(pic_temp, (0, -5), mask_pic_temp)
-    
+
     except Exception:
         # 打印异常，进行降级处理
         logger.warning("头像获取失败，使用默认头像")
@@ -654,6 +654,7 @@ async def get_avatar(
         img.paste(pic_temp, (0, 0), mask_pic_temp)
 
     return img
+
 
 def get_weapon_icon_bg(star: int = 3) -> Image.Image:
     if star < 3:

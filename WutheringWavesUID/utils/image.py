@@ -284,6 +284,14 @@ async def get_qqgroup_avatar(
     return char_pic
 
 
+# 获取对应bot_id的头像获取函数
+AVATAR_GETTERS = {
+    "onebot": get_qq_avatar,
+    "discord": get_discord_avatar,
+    "qqgroup": get_qqgroup_avatar,
+}
+
+
 async def get_event_avatar(
     ev: Event,
     avatar_path: Optional[Path] = None,
@@ -297,13 +305,7 @@ async def get_event_avatar(
 
         is_valid_at_param = is_valid_at(ev)
 
-    # 获取对应bot_id的头像获取函数
-    avatar_getters = {
-        "onebot": get_qq_avatar,
-        "discord": get_discord_avatar,
-        "qqgroup": get_qqgroup_avatar,
-    }
-    get_bot_avatar = avatar_getters.get(ev.bot_id)
+    get_bot_avatar = AVATAR_GETTERS.get(ev.bot_id)
 
     # 尝试获取@用户的头像
     if get_bot_avatar and ev.at and is_valid_at_param:
@@ -312,7 +314,9 @@ async def get_event_avatar(
         except Exception:
             img = None
 
-    if img is None and "avatar" in ev.sender and ev.sender["avatar"]:
+    if (
+        img is None and "avatar" in ev.sender and ev.sender["avatar"]
+    ):  # qqgroup不返回avatar...
         avatar_url: str = ev.sender["avatar"]
         if avatar_url.startswith(("http", "https")):
             try:
@@ -322,7 +326,7 @@ async def get_event_avatar(
                 img = None
 
     # 尝试获取使用者头像
-    if img is None and get_bot_avatar and not ev.sender:
+    if img is None and get_bot_avatar:
         try:
             img = await get_bot_avatar(ev.user_id, size=size)
         except Exception:

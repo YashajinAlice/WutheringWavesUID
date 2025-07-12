@@ -8,7 +8,7 @@ from gsuid_core.models import Event
 from gsuid_core.logger import logger
 from PIL import Image, ImageDraw, ImageEnhance
 from gsuid_core.utils.image.convert import convert_img
-from gsuid_core.utils.image.image_tools import crop_center_img
+from gsuid_core.utils.image.image_tools import get_qq_avatar, crop_center_img
 
 from ..utils import hint
 from ..utils.calc import WuWaCalc
@@ -79,6 +79,7 @@ from ..utils.image import (
     GREY,
     SPECIAL_GOLD,
     WAVES_MOONLIT,
+    AVATAR_GETTERS,
     WAVES_FREEZING,
     WAVES_SHUXING_MAP,
     WEAPON_RESONLEVEL_COLOR,
@@ -86,7 +87,6 @@ from ..utils.image import (
     change_color,
     get_waves_bg,
     get_attribute,
-    get_qq_avatar,
     get_role_pile,
     get_small_logo,
     get_weapon_type,
@@ -94,8 +94,6 @@ from ..utils.image import (
     get_square_avatar,
     get_square_weapon,
     get_attribute_prop,
-    get_discord_avatar,
-    get_qqgroup_avatar,
     get_attribute_effect,
     draw_text_with_shadow,
     get_custom_gaussian_blur,
@@ -1426,12 +1424,7 @@ async def draw_pic_with_ring(ev: Event, is_force_avatar=False, force_resource_id
     elif not is_force_avatar:
         pic = await get_event_avatar(ev)
     else:
-        avatar_getters = {
-            "onebot": get_qq_avatar,
-            "discord": get_discord_avatar,
-            "qqgroup": get_qqgroup_avatar,
-        }
-        get_bot_avatar = avatar_getters.get(ev.bot_id, get_qq_avatar)
+        get_bot_avatar = AVATAR_GETTERS.get(ev.bot_id, get_qq_avatar)
         pic = await get_bot_avatar(ev.user_id)
 
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")

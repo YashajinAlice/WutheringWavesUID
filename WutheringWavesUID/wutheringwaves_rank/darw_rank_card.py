@@ -1,27 +1,32 @@
-import asyncio
 import time
+import asyncio
 from pathlib import Path
-from typing import List, Optional, Union
-
-from PIL import Image, ImageDraw
-from pydantic import BaseModel
+from typing import List, Union, Optional
 
 from gsuid_core.bot import Bot
-from gsuid_core.logger import logger
+from pydantic import BaseModel
+from PIL import Image, ImageDraw
 from gsuid_core.models import Event
+from gsuid_core.logger import logger
 from gsuid_core.utils.image.convert import convert_img
 from gsuid_core.utils.image.image_tools import crop_center_img
 
-from ..utils.api.model import RoleDetailData, WeaponData
-from ..utils.cache import TimedCache
 from ..utils.calc import WuWaCalc
+from ..utils.util import hide_uid
+from ..utils.cache import TimedCache
+from ..utils.waves_card_cache import get_card
+from ..utils.damage.abstract import DamageRankRegister
+from ..utils.api.model import WeaponData, RoleDetailData
+from ..utils.database.models import WavesBind, WavesUser
+from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
+from ..utils.resource.constant import SPECIAL_CHAR, SPECIAL_CHAR_NAME
+from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
+from ..wutheringwaves_analyzecard.user_info_utils import get_region_for_rank
 from ..utils.calculate import (
-    calc_phantom_score,
     get_calc_map,
+    calc_phantom_score,
     get_total_score_bg,
 )
-from ..utils.damage.abstract import DamageRankRegister
-from ..utils.database.models import WavesBind, WavesUser
 from ..utils.fonts.waves_fonts import (
     waves_font_14,
     waves_font_16,
@@ -34,28 +39,20 @@ from ..utils.fonts.waves_fonts import (
     waves_font_44,
 )
 from ..utils.image import (
-    CHAIN_COLOR,
-    GREY,
     RED,
+    GREY,
+    CHAIN_COLOR,
     SPECIAL_GOLD,
+    AVATAR_GETTERS,
     WEAPON_RESONLEVEL_COLOR,
     add_footer,
+    get_waves_bg,
     get_attribute,
-    get_attribute_effect,
-    get_qq_avatar,
-    get_discord_avatar,
-    get_qqgroup_avatar,
     get_role_pile_old,
     get_square_avatar,
     get_square_weapon,
-    get_waves_bg,
+    get_attribute_effect,
 )
-from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
-from ..utils.resource.constant import SPECIAL_CHAR, SPECIAL_CHAR_NAME
-from ..utils.util import hide_uid
-from ..utils.waves_card_cache import get_card
-from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
-from ..wutheringwaves_analyzecard.user_info_utils import get_region_for_rank
 
 rank_length = 20  # 排行长度
 TEXT_PATH = Path(__file__).parent / "texture2d"
@@ -133,7 +130,7 @@ async def get_one_rank_info(user_id, uid, role_detail, rankDetail):
         for ph in ph_detail:
             if ph.get("ph_num") == 5:
                 sonata_name = ph.get("ph_name", "")
-                
+
     # 区服
     region_text, region_color = get_region_for_rank(uid)
 
@@ -601,14 +598,8 @@ async def get_avatar(
     char_id: Union[int, str],
 ) -> Image.Image:
     try:
-        # 获取对应bot_id的头像获取函数
-        avatar_getters = {
-            "onebot": get_qq_avatar,
-            "discord": get_discord_avatar,
-            "qqgroup": get_qqgroup_avatar
-        }
-        get_bot_avatar = avatar_getters.get(ev.bot_id)
-        
+        get_bot_avatar = AVATAR_GETTERS.get(ev.bot_id)
+
         if WutheringWavesConfig.get_config("QQPicCache").data:
             pic = pic_cache.get(qid)
             if not pic:
@@ -624,7 +615,7 @@ async def get_avatar(
         avatar_mask_temp = avatar_mask.copy()
         mask_pic_temp = avatar_mask_temp.resize((120, 120))
         img.paste(pic_temp, (0, -5), mask_pic_temp)
-    
+
     except Exception:
         # 打印异常，进行降级处理
         logger.warning("头像获取失败，使用默认头像")
