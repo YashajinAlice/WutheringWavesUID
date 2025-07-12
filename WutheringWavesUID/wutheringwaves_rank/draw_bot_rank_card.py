@@ -612,35 +612,22 @@ async def get_avatar(
     char_id: Union[int, str],
 ) -> Image.Image:
     try:
-        if ev.bot_id == "onebot":
-            if WutheringWavesConfig.get_config("QQPicCache").data:
-                pic = pic_cache.get(qid)
-                if not pic:
-                    pic = await get_qq_avatar(qid, size=100)
-                    pic_cache.set(qid, pic)
-            else:
-                pic = await get_qq_avatar(qid, size=100)
+        # 获取对应bot_id的头像获取函数
+        avatar_getters = {
+            "onebot": get_qq_avatar,
+            "discord": get_discord_avatar,
+            "qqgroup": get_qqgroup_avatar
+        }
+        get_bot_avatar = avatar_getters.get(ev.bot_id)
+        
+        if WutheringWavesConfig.get_config("QQPicCache").data:
+            pic = pic_cache.get(qid)
+            if not pic:
+                pic = await get_bot_avatar(qid, size=100)
                 pic_cache.set(qid, pic)
-
-        elif ev.bot_id == "discord":
-            if WutheringWavesConfig.get_config("QQPicCache").data:
-                pic = pic_cache.get(qid)
-                if not pic:
-                    pic = await get_discord_avatar(qid, size=100)
-                    pic_cache.set(qid, pic)
-            else:
-                pic = await get_discord_avatar(qid, size=100)
-                pic_cache.set(qid, pic)
-                
-        elif ev.bot_id == "qqgroup":
-            if WutheringWavesConfig.get_config("QQPicCache").data:
-                pic = pic_cache.get(qid)
-                if not pic:
-                    pic = await get_qqgroup_avatar(qid, size=100)
-                    pic_cache.set(qid, pic)
-            else:
-                pic = await get_qqgroup_avatar(qid, size=100)
-                pic_cache.set(qid, pic)
+        else:
+            pic = await get_bot_avatar(qid, size=100)
+            pic_cache.set(qid, pic)
 
         # 统一处理 crop 和遮罩（onebot/discord 共用逻辑）
         pic_temp = crop_center_img(pic, 120, 120)
