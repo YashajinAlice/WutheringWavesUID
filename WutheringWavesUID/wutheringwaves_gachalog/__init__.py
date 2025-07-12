@@ -1,17 +1,17 @@
 import re
 from typing import Any, List
 
+from gsuid_core.sv import SV
 from gsuid_core.bot import Bot
 from gsuid_core.models import Event
 from gsuid_core.segment import MessageSegment
-from gsuid_core.sv import SV
 
 from ..utils.button import WavesButton
-from ..utils.database.models import WavesBind
-from ..utils.error_reply import ERROR_CODE, WAVES_CODE_103
 from ..wutheringwaves_config import PREFIX
+from ..utils.database.models import WavesBind
 from .draw_gachalogs import draw_card, draw_card_help
-from .get_gachalogs import export_gachalogs, import_gachalogs, save_gachalogs
+from ..utils.error_reply import ERROR_CODE, WAVES_CODE_103
+from .get_gachalogs import save_gachalogs, export_gachalogs, import_gachalogs
 
 sv_gacha_log = SV("waves抽卡记录")
 sv_gacha_help_log = SV("waves抽卡记录帮助")
@@ -22,7 +22,7 @@ sv_export_json_gacha_log = SV("waves导出抽卡记录")
 ERROR_MSG_NOTIFY = f"请给出正确的抽卡记录链接, 请重新发送【{PREFIX}导入抽卡链接 链接】"
 
 
-@sv_get_gachalog_by_link.on_command(("导入抽卡链接", "导入抽卡记录"))
+@sv_get_gachalog_by_link.on_command(("导入抽卡链接", "导入抽卡记录", "导入抽卡连接"))
 async def get_gacha_log_by_link(bot: Bot, ev: Event):
 
     # 没有uid 就别导了吧
