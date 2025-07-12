@@ -42,9 +42,7 @@ from ..utils.image import (
     add_footer,
     get_attribute,
     get_attribute_effect,
-    get_qq_avatar,
-    get_discord_avatar,
-    get_qqgroup_avatar,
+    AVATAR_GETTERS,
     get_role_pile_old,
     get_square_avatar,
     get_square_weapon,
@@ -601,13 +599,7 @@ async def get_avatar(
     char_id: Union[int, str],
 ) -> Image.Image:
     try:
-        # 获取对应bot_id的头像获取函数
-        avatar_getters = {
-            "onebot": get_qq_avatar,
-            "discord": get_discord_avatar,
-            "qqgroup": get_qqgroup_avatar
-        }
-        get_bot_avatar = avatar_getters.get(ev.bot_id)
+        get_bot_avatar = AVATAR_GETTERS.get(ev.bot_id)
         
         if WutheringWavesConfig.get_config("QQPicCache").data:
             pic = pic_cache.get(qid)

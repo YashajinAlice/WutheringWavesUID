@@ -8,9 +8,9 @@ from PIL import Image, ImageDraw, ImageEnhance
 
 from gsuid_core.logger import logger
 from gsuid_core.models import Event
+from ..utils.image import AVATAR_GETTERS
 from gsuid_core.utils.image.convert import convert_img
-from gsuid_core.utils.image.image_tools import crop_center_img
-from ..utils.image import get_qq_avatar, get_discord_avatar, get_qqgroup_avatar
+from gsuid_core.utils.image.image_tools import crop_center_img, get_qq_avatar
 
 from ..utils import hint
 from ..utils.api.model import (
@@ -1421,12 +1421,7 @@ async def draw_pic_with_ring(ev: Event, is_force_avatar=False, force_resource_id
     elif not is_force_avatar:
         pic = await get_event_avatar(ev)
     else:
-        avatar_getters = {
-            "onebot": get_qq_avatar,
-            "discord": get_discord_avatar,
-            "qqgroup": get_qqgroup_avatar
-        }
-        get_bot_avatar = avatar_getters.get(ev.bot_id, get_qq_avatar)
+        get_bot_avatar = AVATAR_GETTERS.get(ev.bot_id, get_qq_avatar)
         pic = await get_bot_avatar(ev.user_id)
 
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
