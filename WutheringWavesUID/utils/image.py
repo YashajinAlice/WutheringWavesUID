@@ -332,8 +332,8 @@ async def get_event_avatar(
             except Exception:
                 img = None
 
-    # 尝试获取发送者自身头像
-    if img is None and get_bot_avatar and ev.user_id:
+    # 尝试获取使用者头像
+    if img is None and get_bot_avatar and not ev.sender:
         try:
             img = await get_bot_avatar(ev.user_id, size=size)
         except Exception:
