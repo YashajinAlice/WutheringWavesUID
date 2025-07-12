@@ -2,8 +2,6 @@
 from typing import Literal
 
 from ...api.model import RoleDetailData
-<<<<<<< HEAD
-=======
 from ...ascension.char import WavesCharResult, get_char_detail2
 from ...damage.damage import DamageAttribute, calc_percent_expression
 from ...damage.utils import (
@@ -16,21 +14,8 @@ from ...damage.utils import (
     liberation_damage,
     skill_damage_calc,
 )
->>>>>>> 177631ffca533fe59438fb6c5e2422cc3d969141
 from .buff import changli_buff, shouanren_buff
 from .damage import echo_damage, phase_damage, weapon_damage
-from ...ascension.char import WavesCharResult, get_char_detail2
-from ...damage.damage import DamageAttribute, calc_percent_expression
-from ...damage.utils import (
-    SkillType,
-    SkillTreeMap,
-    cast_hit,
-    cast_skill,
-    cast_attack,
-    cast_liberation,
-    liberation_damage,
-    skill_damage_calc,
-)
 
 
 def get_molten_num(

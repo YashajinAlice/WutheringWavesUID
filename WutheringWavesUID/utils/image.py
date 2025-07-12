@@ -2,30 +2,29 @@ import os
 import random
 from io import BytesIO
 from pathlib import Path
-from typing import Literal, Optional, Tuple, Union
+from typing import Tuple, Union, Literal, Optional
 
+from gsuid_core.models import Event
+from gsuid_core.logger import logger
+from gsuid_core.utils.image.utils import sget
+from gsuid_core.utils.image.image_tools import crop_center_img
 from PIL import (
     Image,
-    ImageDraw,
-    ImageEnhance,
-    ImageFilter,
-    ImageFont,
     ImageOps,
+    ImageDraw,
+    ImageFont,
+    ImageFilter,
+    ImageEnhance,
 )
 
 from ..utils.database.models import WavesUserAvatar
-from gsuid_core.logger import logger
-from gsuid_core.models import Event
-from gsuid_core.utils.image.image_tools import crop_center_img
-from gsuid_core.utils.image.utils import sget
-
 from ..utils.resource.RESOURCE_PATH import (
     AVATAR_PATH,
+    WEAPON_PATH,
+    SHARE_BG_PATH,
+    ROLE_PILE_PATH,
     CUSTOM_CARD_PATH,
     CUSTOM_MR_CARD_PATH,
-    ROLE_PILE_PATH,
-    SHARE_BG_PATH,
-    WEAPON_PATH,
 )
 
 ICON = Path(__file__).parent.parent.parent / "ICON.png"
@@ -247,6 +246,7 @@ async def get_qq_avatar(
     char_pic = Image.open(BytesIO((await sget(avatar_url)).content)).convert("RGBA")
     return char_pic
 
+
 async def get_discord_avatar(
     qid: Optional[Union[int, str]] = None,
     avatar_url: Optional[str] = None,
@@ -259,7 +259,11 @@ async def get_discord_avatar(
     elif avatar_url is None:
         avatar_url = "https://cdn.discordapp.com/embed/avatars/0.png"
 
-    avatar_url = avatar_url + f".png?size={size}" if not avatar_url.endswith(".png") else avatar_url
+    avatar_url = (
+        avatar_url + f".png?size={size}"
+        if not avatar_url.endswith(".png")
+        else avatar_url
+    )
     char_pic = Image.open(BytesIO((await sget(avatar_url)).content)).convert("RGBA")
     return char_pic
 
@@ -293,9 +297,18 @@ async def get_event_avatar(
 
         is_valid_at_param = is_valid_at(ev)
 
-    if ev.bot_id == "onebot" and ev.at and is_valid_at_param:
+    # 获取对应bot_id的头像获取函数
+    avatar_getters = {
+        "onebot": get_qq_avatar,
+        "discord": get_discord_avatar,
+        "qqgroup": get_qqgroup_avatar,
+    }
+    get_bot_avatar = avatar_getters.get(ev.bot_id)
+
+    # 尝试获取@用户的头像
+    if get_bot_avatar and ev.at and is_valid_at_param:
         try:
-            img = await get_qq_avatar(ev.at, size=size)
+            img = await get_bot_avatar(ev.at, size=size)
         except Exception:
             img = None
 
@@ -308,21 +321,10 @@ async def get_event_avatar(
             except Exception:
                 img = None
 
-    if img is None and ev.bot_id == "onebot" and not ev.sender:
+    # 尝试获取发送者自身头像
+    if img is None and get_bot_avatar and ev.user_id:
         try:
-            img = await get_qq_avatar(ev.user_id, size=size)
-        except Exception:
-            img = None
-
-    if img is None and ev.bot_id == "discord" and not ev.sender:
-        try:
-            img = await get_discord_avatar(ev.user_id, size=size)
-        except Exception:
-            img = None
-    
-    if img is None and ev.bot_id == "qqgroup" and not ev.sender:
-        try:
-            img = await get_qqgroup_avatar(ev.user_id, size=size)
+            img = await get_bot_avatar(ev.user_id, size=size)
         except Exception:
             img = None
 
