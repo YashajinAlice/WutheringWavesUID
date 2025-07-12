@@ -292,10 +292,19 @@ async def get_event_avatar(
         from ..utils.at_help import is_valid_at
 
         is_valid_at_param = is_valid_at(ev)
+    
+    # 获取对应bot_id的头像获取函数
+    avatar_getters = {
+        "onebot": get_qq_avatar,
+        "discord": get_discord_avatar,
+        "qqgroup": get_qqgroup_avatar
+    }
+    get_bot_avatar = avatar_getters.get(ev.bot_id)
 
-    if ev.bot_id == "onebot" and ev.at and is_valid_at_param:
+    # 尝试获取@用户的头像
+    if get_bot_avatar and ev.at and is_valid_at_param:
         try:
-            img = await get_qq_avatar(ev.at, size=size)
+            img = await get_bot_avatar(ev.at, size=size)
         except Exception:
             img = None
 
@@ -308,21 +317,10 @@ async def get_event_avatar(
             except Exception:
                 img = None
 
-    if img is None and ev.bot_id == "onebot" and not ev.sender:
+    # 尝试获取发送者自身头像
+    if img is None and get_bot_avatar and ev.user_id:
         try:
-            img = await get_qq_avatar(ev.user_id, size=size)
-        except Exception:
-            img = None
-
-    if img is None and ev.bot_id == "discord" and not ev.sender:
-        try:
-            img = await get_discord_avatar(ev.user_id, size=size)
-        except Exception:
-            img = None
-    
-    if img is None and ev.bot_id == "qqgroup" and not ev.sender:
-        try:
-            img = await get_qqgroup_avatar(ev.user_id, size=size)
+            img = await get_bot_avatar(ev.user_id, size=size)
         except Exception:
             img = None
 
