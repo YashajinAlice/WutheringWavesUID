@@ -1,9 +1,9 @@
-import asyncio
 from io import BytesIO
 from typing import Union
 
 import httpx
 from PIL import Image
+from gsuid_core.logger import logger
 from gsuid_core.utils.image.convert import convert_img
 
 # 创建全局异步客户端（保持连接复用）
@@ -16,7 +16,7 @@ async def fetch_image(url: str) -> Union[bytes, None]:
         resp.raise_for_status()
         return resp.content
     except (httpx.HTTPError, OSError) as e:
-        print(f"获取图片失败: {type(e).__name__} - {e}")
+        logger.error(f"获取图片失败: {type(e).__name__} - {e}")
         return None
 
 async def draw_offical_calendar_img() -> Union[bytes, str]:
@@ -31,15 +31,13 @@ async def draw_offical_calendar_img() -> Union[bytes, str]:
         "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_OverSea_StaticAssets/main/images/calendar.jpg"
     ]
     
-    for i, url in enumerate(mirrors):
+    for url in mirrors:
         if image_data := await fetch_image(url):
             try:
                 img = Image.open(BytesIO(image_data))
                 return await convert_img(img)
             except Exception as e:
-                print(f"图片处理失败: {e}")
-                if i == len(mirrors) - 1:
-                    return "日历图片生成失败，请稍后再试"
-        await asyncio.sleep(0.5)  # 失败时短暂等待
+                logger.error(f"图片处理失败: {e}")
+
     
     return "所有镜像源均不可用，请检查网络"
