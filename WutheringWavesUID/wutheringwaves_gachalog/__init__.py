@@ -22,7 +22,9 @@ sv_export_json_gacha_log = SV("waves导出抽卡记录")
 ERROR_MSG_NOTIFY = f"请给出正确的抽卡记录链接, 请重新发送【{PREFIX}导入抽卡链接 链接】"
 
 
-@sv_get_gachalog_by_link.on_command(("导入抽卡链接", "导入抽卡记录", "导入抽卡连接"))
+@sv_get_gachalog_by_link.on_command(
+    ("导入抽卡链接", "导入抽卡记录", "导入抽卡连接", "导入抽卡纪录")
+)
 async def get_gacha_log_by_link(bot: Bot, ev: Event):
 
     # 没有uid 就别导了吧
@@ -73,7 +75,7 @@ async def get_gacha_log_by_link(bot: Bot, ev: Event):
         await bot.send(im)
 
 
-@sv_gacha_log.on_fullmatch("抽卡记录")
+@sv_gacha_log.on_fullmatch(("抽卡记录", "抽卡纪录"))
 async def send_gacha_log_card_info(bot: Bot, ev: Event):
     await bot.logger.info("[鸣潮]开始执行 抽卡记录")
     uid = await WavesBind.get_uid_by_game(ev.user_id, ev.bot_id)
