@@ -205,6 +205,14 @@
         "need_admin": false
       },
       {
+        "name": "日历",
+        "desc": "日历",
+        "eg": "日历",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
         "name": "面板替换帮助",
         "desc": "面板替换帮助",
         "eg": "替换帮助",
@@ -231,7 +239,7 @@
       {
         "name": "角色共鸣链持有率",
         "desc": "角色共鸣链持有率",
-        "eg": "bot链率(up/all)",
+        "eg": "(群/bot)链率(up/all)",
         "need_ck": false,
         "need_sk": false,
         "need_admin": false
@@ -239,7 +247,7 @@
       {
         "name": "角色持有率",
         "desc": "角色持有率",
-        "eg": "bot持有率(up/all)",
+        "eg": "(群/bot)持有率(up/all)",
         "need_ck": false,
         "need_sk": false,
         "need_admin": false
@@ -295,9 +303,25 @@
     "desc": "排行查询(括号内容为可选参数)",
     "data": [
       {
+        "name": "群伤害排行",
+        "desc": "群伤害排行",
+        "eg": "长离排行",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "群评分排行",
+        "desc": "群评分排行",
+        "eg": "长离评分排行",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
         "name": "全服伤害排行",
         "desc": "全服伤害排行",
-        "eg": "长离总排行",
+        "eg": "长离总排行1",
         "need_ck": false,
         "need_sk": false,
         "need_admin": false
