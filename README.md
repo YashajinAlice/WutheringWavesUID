@@ -39,18 +39,6 @@
 - Lark Group: [wuwa](https://applink.larksuite.com/client/chat/chatter/add_by_link?link_token=00bld93f-427b-45c8-b104-c6be61ougc7m) --`对wwuid的支持并不完整，可以的话请加QQ群使用`
 - Discord Group: [共鸣基地](https://discord.gg/bp9ygDCBS7) --`解释权归`[YashajinAlice](https://github.com/YashajinAlice)`所有`
 
-## 丨功能
-
-<details><summary>帮助 - 命令: ww帮助</summary><p>
-<a><img src="https://s21.ax1x.com/2025/06/05/pVPIIJA.jpg"></a>
-</p></details>
-<details><summary>面板图 - 命令: ww椿面板</summary><p>
-<a><img src="https://s2.loli.net/2024/12/22/DreE28uzNCByTtW.jpg"></a>
-</p></details>
-<details><summary>库街区ck获取方法</summary><p>
-https://github.com/tyql688/WutheringWavesUID/wiki
-</details>
-
 ## 丨其他
 
 + 本项目仅供学习使用，请勿用于商业用途
