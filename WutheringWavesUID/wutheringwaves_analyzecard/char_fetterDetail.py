@@ -1,3 +1,4 @@
+from typing import Any
 import json
 import re
 from pathlib import Path
@@ -11,13 +12,17 @@ FETTERDETAIL_PATH = PLUGIN_PATH / "utils/map/detail_json/sonata"
 
 
 
-async def get_fetterDetail_from_char(char_id) -> dict:
+async def get_fetterDetail_from_char(char_id) -> list[dict[Any, Any]]:
     
     sonata = DETAIL[char_id]['fetterDetail']
-    if sonata == "":
-        return {}
 
-    return await get_fetterDetail_from_sonata(sonata)
+    if isinstance(sonata, dict):
+        sonata_list = []
+        for key, num in sonata.items():
+            sonata_list.extend([await get_fetterDetail_from_sonata(key)] * num)
+        return sonata_list
+
+    return [await get_fetterDetail_from_sonata(sonata)] * 5
 
 async def get_fetterDetail_from_sonata(sonata) -> dict:
     
@@ -49,13 +54,39 @@ async def get_fetterDetail_from_sonata(sonata) -> dict:
     }
     return echo
 
-async def get_first_echo_id_list(sonata_name):
+async def get_first_echo_id_list(sonata_info):
+
+    cost_4_list = []
+    cost_3_list = []
+    cost_1_list = []
+    
+    # 用于跟踪已添加的ID（避免重复）
+    seen_ids = set()
+
+    def add_unique(target, items):
+        """将未出现过的ID添加到目标列表"""
+        for item in items:
+            if item not in seen_ids:
+                seen_ids.add(item)
+                target.append(item)
+
+    if isinstance(sonata_info, dict):  # 处理多套装的情况
+        for sonata_name in sonata_info.keys():
+            add_unique(cost_4_list, SONATA_COST_4_ID.get(sonata_name, []))
+            add_unique(cost_3_list, SONATA_COST_3_ID.get(sonata_name, []))
+            add_unique(cost_1_list, SONATA_COST_1_ID.get(sonata_name, []))
+    else:
+        add_unique(cost_4_list, SONATA_COST_4_ID.get(sonata_info, []))
+        add_unique(cost_3_list, SONATA_COST_3_ID.get(sonata_info, []))
+        add_unique(cost_1_list, SONATA_COST_1_ID.get(sonata_info, []))
+    
     phantom_id_list = [
-        {"cost": 4, "list": SONATA_COST_4_ID.get(sonata_name, [])},
-        {"cost": 3, "list": SONATA_COST_3_ID.get(sonata_name, [])},
-        {"cost": 1, "list": SONATA_COST_1_ID.get(sonata_name, [])},
+        {"cost": 4, "list": cost_4_list},
+        {"cost": 3, "list": cost_3_list},
+        {"cost": 1, "list": cost_1_list}
     ]
-    logger.debug(f"[鸣潮]获取到{sonata_name}的声骸id列表：{phantom_id_list}")
+
+    logger.debug(f"[鸣潮]获取到套装：{sonata_info}的声骸id列表：{phantom_id_list}")
     return phantom_id_list
 
 async def echo_data_to_cost(char_id, mainProps_first, cost4_counter=0) -> tuple[int, int]:

@@ -93,9 +93,9 @@ async def save_card_dict_to_json(bot: Bot, ev: Event, result_dict: Dict):
     echo_num = len(result_dict["装备数据"])
     ECHO = await get_fetterDetail_from_char(char_id)
 
-    for echo_value in result_dict["装备数据"]:
+    for i, echo_value in enumerate(result_dict["装备数据"]):
         # 创建 ECHO 的独立副本
-        echo = copy.deepcopy(ECHO)
+        echo = copy.deepcopy(ECHO[i])
 
         echo["fetterDetail"]["num"] = echo_num
         # 更新 echo 的 mainProps 和 subProps, 防止空表
@@ -190,7 +190,7 @@ async def save_card_dict_to_json(bot: Bot, ev: Event, result_dict: Dict):
 
     waves_data.append(update_data)
     await save_card_info(uid, waves_data)
-    await bot.send(f"[鸣潮]dc卡片数据提取成功！识别套装使用默认配置(影响伤害计算不影响声骸评分)\n可使用：\n【{PREFIX}{char_name_print}面板】查看您的角色面板\n【{PREFIX}改{char_name_print}套装**(套装名)】修改声骸套装\n【{PREFIX}改{char_name_print}声骸】修改当前套装的首位声骸\n", at_sender)
+    await bot.send(f"[鸣潮]dc卡片数据提取成功！识别套装使用默认配置(影响伤害计算不影响声骸评分)\n可使用：\n【{PREFIX}{char_name_print}面板】查看您的角色面板\n【{PREFIX}改{char_name_print}套装**(套装名)(套装一3套装二2)】修改声骸套装\n【{PREFIX}改{char_name_print}声骸】修改当前套装的首位声骸\n", at_sender)
     logger.info(f" [鸣潮][dc卡片识别] 数据识别完毕，用户{uid}的{char_name_print}面板数据已保存到本地！")
     return
 

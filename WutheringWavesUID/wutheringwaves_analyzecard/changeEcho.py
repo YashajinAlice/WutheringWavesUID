@@ -19,6 +19,7 @@ from .char_fetterDetail import get_fetterDetail_from_sonata, get_first_echo_id_l
 
 import aiofiles
 import json
+import copy
 import re
 
 async def change_echo(bot: Bot, ev: Event):
@@ -41,7 +42,7 @@ async def change_echo(bot: Bot, ev: Event):
     sonata = ev.regex_dict.get("sonata")
     phantom = bool(ev.regex_dict.get("echo"))  # 改为布尔值判断
     if not sonata and not phantom:
-        return await bot.send(f"[鸣潮] 请正确使用命令：{PREFIX}改{char}套装**(套装名) 或 {PREFIX}改{char}声骸", at_sender)
+        return await bot.send(f"[鸣潮] 请正确使用命令：\n{PREFIX}改{char}套装**(套装名 --5件套)(套装一2套装二3 --2+3套装,按顺序修改) --套装名可用前两字缩写 \n{PREFIX}改{char}声骸 --修改当前套装下的首位声骸", at_sender)
 
     char_name = alias_to_char_name(char)
     if char == "漂泊者":
@@ -58,8 +59,8 @@ async def change_echo(bot: Bot, ev: Event):
     char_name_print = re.sub(r'[^\u4e00-\u9fa5A-Za-z0-9\s]', '', roleName) # 删除"漂泊者·衍射"的符号
 
     bool_change, waves_data = await change_sonata_and_first_echo(bot, char_id, sonata, phantom, old_data)
-    if not bool_change:
-        return await bot.send(f"[鸣潮] 修改角色{char_name_print}数据失败，请检查命令参数的正确性", at_sender)
+    if not bool_change or isinstance(waves_data, str):
+        return await bot.send(f"[鸣潮] 修改角色{char_name_print}数据失败，{waves_data}", at_sender)
 
     # 覆盖更新
     await save_card_info(uid, waves_data)
@@ -96,47 +97,60 @@ async def get_char_name_from_local(char_name: str, role_data: dict):
 async def change_sonata_and_first_echo(bot: Bot, char_id: int, sonata_a: str, phantom_a: bool, role_data: dict):
     # 检查角色是否存在
     if char_id not in role_data:
-        return False, None
-    char_data = role_data[char_id]
+        return False, "角色不存在！"
+    char_data = copy.deepcopy(role_data[char_id])
 
     # 初始化
     waves_data = []
 
     if sonata_a:
         phantom_a = True # 启用首位声骸替换
-        sonata = alias_to_sonata_name(sonata_a)
-        logger.info(f"[鸣潮] 修改套装为:{sonata}")
-        if not sonata:
-            return False, None
+        sonata_parts = re.findall(r'([^\d]+)(\d*)', sonata_a)
+        ECHO = []
+        
+        for sonata_part, num in sonata_parts:
+            # 如果没有数字，默认重复1次
+            num = int(num) if num else 5
+            sonata = alias_to_sonata_name(sonata_part)
+            if sonata:
+                ECHO.extend([await get_fetterDetail_from_sonata(sonata)] * num)
 
-        ECHO = await get_fetterDetail_from_sonata(sonata)
+        if not ECHO:
+            return False, "请输入正确的套装名(可用前两字缩写)"
+        if len(ECHO) != len(char_data["phantomData"]["equipPhantomList"]):
+            return False, f"套装数 {len(ECHO)}与角色声骸数 {len(char_data['phantomData']['equipPhantomList'])}不一致"
+        logger.info(f"[鸣潮] 修改套装为:{sonata_parts}")
+
 
         echo_num = len(char_data["phantomData"]["equipPhantomList"])
-        for echo in char_data["phantomData"]["equipPhantomList"]:
-            echo["fetterDetail"] = ECHO["fetterDetail"]
-            echo["phantomProp"]["name"] = ECHO["phantomProp"]["name"]
+        for i, echo in enumerate(char_data["phantomData"]["equipPhantomList"]):
+            echo["fetterDetail"] = ECHO[i]["fetterDetail"]
+            echo["phantomProp"]["name"] = ECHO[i]["phantomProp"]["name"]
             echo["fetterDetail"]["num"] = echo_num
         
     if phantom_a:
         sonata = None
-        for echo in char_data["phantomData"]["equipPhantomList"]:
-            if not sonata:
-                sonata = echo["fetterDetail"]["name"]
-        phantom_id_list_groups = await get_first_echo_id_list(sonata)
-        
-        # 构建可选项（标注 cost 层级）
+        # 构建可选项（标注cost层级 与 对应套装名称）
+        phantom_id_list_groups = []
         options = []
         flat_choices = []  # 用于存储扁平化的选项信息（cost + id）
-        for group in phantom_id_list_groups:
-            cost = group["cost"]
-            for phantom_id in group["list"]:
-                options.append(
-                    f"{len(options)+1}: [{cost}cost] {phantom_id_to_phantom_name(phantom_id)}"
-                )
-                flat_choices.append({"cost": cost, "id": phantom_id})
+
+        for echo in char_data["phantomData"]["equipPhantomList"]:
+            if not sonata or echo["fetterDetail"]["name"] != sonata:
+                sonata = echo["fetterDetail"]["name"]
+                phantom_id_list = await get_first_echo_id_list(sonata)
+        
+                phantom_id_list_groups.extend(phantom_id_list)
+                for group in phantom_id_list:
+                    cost = group["cost"]
+                    for phantom_id in group["list"]:
+                        options.append(
+                            f"{len(options)+1}: [套装:{sonata[:2]} {cost}c] {phantom_id_to_phantom_name(phantom_id)}"
+                        )
+                        flat_choices.append({"cost": cost, "id": phantom_id})
 
         TEXT_GET_RESP = (
-            "[鸣潮] 请选择首位声骸替换为(仅提供有buff加成的)：\n"
+            "[鸣潮] 请于30秒内选择首位声骸替换为(仅提供有首位buff加成的)：\n"
             + "\n".join(options)
             + "\n请输入序号（1-{}）选择".format(len(options))
         )
@@ -171,9 +185,9 @@ async def change_sonata_and_first_echo(bot: Bot, char_id: int, sonata_a: str, ph
 
                 logger.info(f"[鸣潮] 修改cost声骸id为:{selected_id}")
             else:
-                return False, None
+                return False, "请检查命令的正确性"
         else:
-            return False, None
+            return False, "请检查命令的正确性"
     
     # 更新数据
     role_data[char_id] = char_data

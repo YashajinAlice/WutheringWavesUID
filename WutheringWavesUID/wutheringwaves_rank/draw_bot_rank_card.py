@@ -51,6 +51,11 @@ from ..utils.image import (
     add_footer,
     get_waves_bg,
     get_attribute,
+<<<<<<< HEAD
+=======
+    get_attribute_effect,
+    AVATAR_GETTERS,
+>>>>>>> d84fa5849027d9883e0e3175a10ba75fa1665dc0
     get_role_pile_old,
     get_square_avatar,
     get_square_weapon,
@@ -619,7 +624,11 @@ async def get_avatar(
 ) -> Image.Image:
     try:
         get_bot_avatar = AVATAR_GETTERS.get(ev.bot_id)
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> d84fa5849027d9883e0e3175a10ba75fa1665dc0
         if WutheringWavesConfig.get_config("QQPicCache").data:
             pic = pic_cache.get(qid)
             if not pic:

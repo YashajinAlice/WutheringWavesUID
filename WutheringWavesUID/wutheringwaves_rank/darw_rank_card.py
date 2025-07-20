@@ -48,6 +48,11 @@ from ..utils.image import (
     add_footer,
     get_waves_bg,
     get_attribute,
+<<<<<<< HEAD
+=======
+    get_attribute_effect,
+    AVATAR_GETTERS,
+>>>>>>> d84fa5849027d9883e0e3175a10ba75fa1665dc0
     get_role_pile_old,
     get_square_avatar,
     get_square_weapon,
@@ -203,7 +208,14 @@ async def get_rank_info_for_user(
         if not role_detail.phantomData or not role_detail.phantomData.equipPhantomList:
             continue
 
-        rankInfo = await get_one_rank_info(user.user_id, uid, role_detail, rankDetail)
+        rankInfo = None
+        try:
+            rankInfo = await get_one_rank_info(user.user_id, uid, role_detail, rankDetail)
+        except Exception as e:
+            logger.warning(f"获取用户{user.user_id} id{uid} 的排行数据,错误: {e}")
+            from ..utils.util import send_master_info
+            await send_master_info(f"获取用户{user.user_id} id{uid} 的排行数据,错误: {e}")
+
         if not rankInfo:
             continue
         rankInfoList.append(rankInfo)
@@ -599,7 +611,11 @@ async def get_avatar(
 ) -> Image.Image:
     try:
         get_bot_avatar = AVATAR_GETTERS.get(ev.bot_id)
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> d84fa5849027d9883e0e3175a10ba75fa1665dc0
         if WutheringWavesConfig.get_config("QQPicCache").data:
             pic = pic_cache.get(qid)
             if not pic:

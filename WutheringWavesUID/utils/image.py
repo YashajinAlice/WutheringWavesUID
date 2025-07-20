@@ -283,6 +283,12 @@ async def get_qqgroup_avatar(
     char_pic = Image.open(BytesIO((await sget(avatar_url)).content)).convert("RGBA")
     return char_pic
 
+# 获取对应bot_id的头像获取函数
+AVATAR_GETTERS = {
+    "onebot": get_qq_avatar,
+    "discord": get_discord_avatar,
+    "qqgroup": get_qqgroup_avatar
+}
 
 # 获取对应bot_id的头像获取函数
 AVATAR_GETTERS = {
@@ -304,7 +310,11 @@ async def get_event_avatar(
         from ..utils.at_help import is_valid_at
 
         is_valid_at_param = is_valid_at(ev)
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> d84fa5849027d9883e0e3175a10ba75fa1665dc0
     get_bot_avatar = AVATAR_GETTERS.get(ev.bot_id)
 
     # 尝试获取@用户的头像
@@ -314,9 +324,13 @@ async def get_event_avatar(
         except Exception:
             img = None
 
+<<<<<<< HEAD
     if (
         img is None and "avatar" in ev.sender and ev.sender["avatar"]
     ):  # qqgroup不返回avatar...
+=======
+    if img is None and "avatar" in ev.sender and ev.sender["avatar"]: # qqgroup不返回avatar...
+>>>>>>> d84fa5849027d9883e0e3175a10ba75fa1665dc0
         avatar_url: str = ev.sender["avatar"]
         if avatar_url.startswith(("http", "https")):
             try:
