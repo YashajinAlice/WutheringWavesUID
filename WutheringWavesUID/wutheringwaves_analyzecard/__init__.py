@@ -55,13 +55,13 @@ async def analyze_card(bot: Bot, ev: Event):
     await async_ocr(bot, ev)
 
 @waves_change_sonata_and_first_echo.on_regex(
-    r"^改(?P<char>[\u4e00-\u9fa5]+?)(套装(?P<sonata>[\u4e00-\u9fa5]+?)?)?(?P<echo>声骸.*)?$",
+    r"^改(?P<char>[\u4e00-\u9fa5]+?)(套装(?P<sonata>[0-9\u4e00-\u9fa5]+?)?)?(?P<echo>声骸.*)?$",
     block=False,
 )
 async def change_sonata_and_first_echo(bot: Bot, ev: Event):
     """处理国际服本地识别结果的声骸相关"""
     match = re.search(
-        r"^.*改(?P<char>[\u4e00-\u9fa5]+?)(套装(?P<sonata>[\u4e00-\u9fa5]+?)?)?(?P<echo>声骸.*)?$",
+        r"^.*改(?P<char>[\u4e00-\u9fa5]+?)(套装(?P<sonata>[0-9\u4e00-\u9fa5]+?)?)?(?P<echo>声骸.*)?$",
         ev.raw_text,
     )
 
@@ -88,7 +88,7 @@ async def change_weapon_reson_level(bot: Bot, ev: Event):
     char = ev.regex_dict.get("char")
     reson_level = int(ev.regex_dict.get("reson_level"))
 
-    if waves_id and len(waves_id) != 9:
+    if not waves_id or len(waves_id) != 9:
         return await bot.send("[鸣潮] 输入用户uid有误! 参考命令：ww改123456789长离武器3")
     if char is  None:
         return await bot.send("[鸣潮] 未输入的角色名称有误! 参考命令：ww改uid(所有/长离)武器3")
