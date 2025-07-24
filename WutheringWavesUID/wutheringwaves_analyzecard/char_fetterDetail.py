@@ -35,12 +35,12 @@ async def get_fetterDetail_from_sonata(sonata) -> dict:
         "level": 25,
         "quality": 5,
         "fetterDetail": {
-            "firstDescription": data["set"]["2"]["desc"],
+            "firstDescription": data["set"]["2"]["desc"] if data["set"]["2"]["desc"] else data["set"]["3"]["desc"],
             "groupId": 0,
             "iconUrl": "",
             "name": data["name"],
             "num": 5,
-            "secondDescription": data["set"]["5"]["desc"]
+            "secondDescription": data["set"]["5"]["desc"] if data["set"]["5"]["desc"] else data["set"]["3"]["desc"]
         },
         "phantomProp": {
             "cost": 1,
