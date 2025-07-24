@@ -35,20 +35,13 @@ async def get_fetterDetail_from_sonata(sonata) -> dict:
         "level": 25,
         "quality": 5,
         "fetterDetail": {
-            "firstDescription": (
-                data["set"].get("2", {}).get("desc")  # 尝试获取2的desc
-                or data["set"].get("3", {}).get("desc")  # 若不存在则尝试3
-                or ""  # 最终回退到空字符串
-            ),
+            "firstDescription": (data["set"].get("2", {}).get("desc") or ""),
             "groupId": 0,
             "iconUrl": "",
             "name": data["name"],
             "num": 5,
-            "secondDescription": (
-                data["set"].get("5", {}).get("desc")  # 尝试获取5的desc
-                or data["set"].get("3", {}).get("desc")  # 若不存在则尝试3
-                or ""  # 最终回退到空字符串
-            ),
+            "secondDescription": (data["set"].get("5", {}).get("desc") or ""),
+            "tripleDescription": (data["set"].get("3", {}).get("desc") or ""),
         },
         "phantomProp": {
             "cost": 1,
