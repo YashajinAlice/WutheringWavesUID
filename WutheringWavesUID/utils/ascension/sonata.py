@@ -1,9 +1,8 @@
-from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Dict, List, Optional, Union
 
 from msgspec import json as msgjson
-from pydantic import Field
+from pydantic import BaseModel, Field
 
 from gsuid_core.logger import logger
 
@@ -27,10 +26,23 @@ def read_sonata_json_files(directory):
 read_sonata_json_files(MAP_PATH)
 
 
-@dataclass
-class WavesSonataResult:
+class SonataSet(BaseModel):
+    desc: str = Field(default="")
+    effect: str = Field(default="")
+    param: List[str] = Field(default_factory=list)
+
+
+class WavesSonataResult(BaseModel):
     name: str = Field(default="")
-    set: Dict[str, Any] = Field(default_factory=dict)
+    set: Dict[str, SonataSet] = Field(default_factory=dict)
+
+    def piece(self, piece_count: Union[str, int]) -> Optional[SonataSet]:
+        """获取件套效果"""
+        return self.set.get(str(piece_count), None)
+
+    def full_piece_effect(self) -> int:
+        """获取套装最大件数"""
+        return max(int(key) for key in self.set.keys())
 
 
 def get_sonata_detail(sonata_name: Optional[str]) -> WavesSonataResult:
