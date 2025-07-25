@@ -1,7 +1,6 @@
 from typing import List, Union
 
 from ...api.model import RoleDetailData, WeaponData
-from ...ascension.sonata import get_sonata_detail
 from ...damage.abstract import WavesEchoRegister, WavesWeaponRegister
 from ...damage.damage import DamageAttribute, check_char_id
 from ...damage.utils import (
@@ -11,6 +10,7 @@ from ...damage.utils import (
     CHAR_ATTR_SIERRA,
     CHAR_ATTR_SINKING,
     CHAR_ATTR_VOID,
+    SONATA_ANCIENT,
     SONATA_CELESTIAL,
     SONATA_CLAWPRINT,
     SONATA_EMPYREAN,
@@ -34,6 +34,7 @@ from ...damage.utils import (
     cast_liberation,
     cast_skill,
     liberation_damage,
+    phantom_damage,
     skill_damage,
 )
 
@@ -68,6 +69,10 @@ def check_if_ph_5(ph_name: str, ph_num: int, check_name: str):
     return ph_name == check_name and ph_num == 5
 
 
+def check_if_ph_3(ph_name: str, ph_num: int, check_name: str):
+    return ph_name == check_name and ph_num == 3
+
+
 def phase_damage(
     attr: DamageAttribute,
     role: RoleDetailData,
@@ -90,7 +95,7 @@ def phase_damage(
             if cast_hit in damage_func or cast_attack in damage_func:
                 # 声骸五件套
                 title = f"{phase_name}-{ph_detail.ph_name}"
-                msg = f"{get_sonata_detail(ph_detail.ph_name).set['5']['desc']}"
+                msg = "使用普攻或重击时，冷凝伤害提升10%，该效果可叠加三层，持续15秒"
                 attr.add_dmg_bonus(0.3, title, msg)
 
         # 熔山裂谷
@@ -99,7 +104,7 @@ def phase_damage(
                 return
             if cast_skill in damage_func:
                 title = f"{phase_name}-{ph_detail.ph_name}"
-                msg = f"{get_sonata_detail(ph_detail.ph_name).set['5']['desc']}"
+                msg = "使用共鸣技能时，热熔伤害提升30%，持续15秒"
                 attr.add_dmg_bonus(0.3, title, msg)
 
         # 彻空冥雷
@@ -121,7 +126,7 @@ def phase_damage(
                 return
             # 声骸五件套
             title = f"{phase_name}-{ph_detail.ph_name}"
-            msg = f"{get_sonata_detail(ph_detail.ph_name).set['5']['desc']}"
+            msg = "使用变奏技能登场时，气动伤害提升30%，持续15秒"
             attr.add_atk_percent(0.3, title, msg)
 
         # 浮星祛暗
@@ -131,7 +136,7 @@ def phase_damage(
             if attr.char_attr != CHAR_ATTR_CELESTIAL:
                 return
             title = f"{phase_name}-{ph_detail.ph_name}"
-            msg = f"{get_sonata_detail(ph_detail.ph_name).set['5']['desc']}"
+            msg = "使用变奏技能登场时，衍射伤害提升30%，持续15秒"
             attr.add_dmg_bonus(0.3, title, msg)
 
         # 沉日劫明
@@ -140,7 +145,7 @@ def phase_damage(
                 return
             if cast_hit in damage_func or cast_attack in damage_func:
                 title = f"{phase_name}-{ph_detail.ph_name}"
-                msg = f"{get_sonata_detail(ph_detail.ph_name).set['5']['desc']}"
+                msg = "使用普攻或重击时，湮灭伤害提升7.5%，该效果可叠加四层，持续15秒"
                 attr.add_dmg_bonus(0.3, title, msg)
 
         # 隐世回光
@@ -150,7 +155,7 @@ def phase_damage(
             if attr.char_template != "temp_atk":
                 return
             title = f"{phase_name}-{ph_detail.ph_name}"
-            msg = f"{get_sonata_detail(ph_detail.ph_name).set['5']['desc']}"
+            msg = "自身为友方提供治疗时，全队共鸣者攻击提升15%，持续30秒"
             attr.add_atk_percent(0.15, title, msg)
 
         # 轻云出月
@@ -260,3 +265,20 @@ def phase_damage(
                 title = f"{phase_name}-{ph_detail.ph_name}"
                 msg = "自身共鸣解放伤害提升20%"
                 attr.add_dmg_bonus(0.2, title, msg)
+        # 失序彼岸之梦
+        elif check_if_ph_3(ph_detail.ph_name, ph_detail.ph_num, SONATA_ANCIENT):
+            # 角色共鸣能量为0时，自身暴击率提升20%，声骸技能伤害加成提升35%
+            title = f"{phase_name}-{ph_detail.ph_name}"
+            if attr.char_template == "temp_atk":
+                msg = "角色共鸣能量为0时，自身暴击率提升20%"
+                if attr.ph_result:
+                    attr.add_effect(title, msg)
+                else:
+                    attr.add_crit_rate(0.2, title, msg)
+
+            if attr.char_damage == phantom_damage:
+                msg = "角色共鸣能量为0时，声骸技能伤害加成提升35%"
+                if attr.ph_result:
+                    attr.add_effect(title, msg)
+                else:
+                    attr.add_dmg_bonus(0.35, title, msg)
