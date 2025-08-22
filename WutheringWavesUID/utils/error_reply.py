@@ -18,7 +18,7 @@ ERROR_CODE = {
     WAVES_CODE_100: "库街区未查询到您的游戏角色，请检查是否对外访问\n",
     WAVES_CODE_101: "请检查token有效性\n",
     WAVES_CODE_102: f"您还未绑定鸣潮token或者您的鸣潮token已失效！\n请使用【{PREFIX}登录】完成绑定！\n",
-    WAVES_CODE_103: f"您还未绑定鸣潮特征码, 请使用【{PREFIX}绑定uid】完成绑定！\n",
+    WAVES_CODE_103: f"您还未绑定鸣潮特征码, 请使用【{PREFIX}绑定uid】完成绑定！\n https://cdn.discordapp.com/attachments/1369181260878184532/1408446738666229860/te1.png?ex=68a9c5be&is=68a8743e&hm=308de1a8d439864b599e2b2e029cae657e7304f8d9d569f5534fdaa73afc0d1d&\n",
     WAVES_CODE_106: "您未打开库街区我得资料的对外展示\n",
     WAVES_CODE_107: "您未打开库街区共鸣者列表的对外展示\n",
     WAVES_CODE_990: f"请稍后再试，或者使用【{PREFIX}登录】完成绑定！\n",

@@ -151,7 +151,8 @@ async def send_waves_bind_uid_msg(bot: Bot, ev: Event):
     if "绑定" in ev.command:
         if not uid:
             return await bot.send(
-                f"该命令需要带上正确的uid!\n{PREFIX}绑定uid\n", at_sender
+                f"该命令需要带上正确的uid!\n{PREFIX}绑定uid\n https://cdn.discordapp.com/attachments/1369181260878184532/1408446738666229860/te1.png?ex=68a9c5be&is=68a8743e&hm=308de1a8d439864b599e2b2e029cae657e7304f8d9d569f5534fdaa73afc0d1d&\n",
+                at_sender,
             )
         uid_list = await WavesBind.get_uid_list_by_game(qid, ev.bot_id)
         max_bind_num: int = WutheringWavesConfig.get_config("MaxBindNum").data

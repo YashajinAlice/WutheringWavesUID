@@ -1,29 +1,31 @@
 import re
 import copy
+import asyncio
 from pathlib import Path
-from typing import Dict, Optional
+from typing import Dict, List, Optional
 
 import httpx
 from gsuid_core.models import Event
 from gsuid_core.logger import logger
+from PIL import Image, ImageDraw, ImageEnhance
 from gsuid_core.utils.image.convert import convert_img
-from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 from gsuid_core.utils.image.image_tools import get_qq_avatar, crop_center_img
 
 from ..utils import hint
 from ..utils.calc import WuWaCalc
 from ..utils.waves_api import waves_api
 from ..wutheringwaves_config import PREFIX
+from ..utils.waves_card_cache import get_card
 from ..utils.error_reply import WAVES_CODE_102
 from .role_info_change import change_role_detail
 from ..utils.ascension.char import get_char_model
 from ..utils.api.model_other import EnemyDetailData
 from ..utils.ascension.template import get_template_data
-from ..utils.damage.abstract import DamageDetailRegister
+from ..utils.database.models import WavesBind, WavesUser
 from ..utils.char_info_utils import get_all_roleid_detail_info
 from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
 from ..utils.api.wwapi import ONE_RANK_URL, OneRankRequest, OneRankResponse
-from ..wutheringwaves_analyzecard.user_info_utils import get_user_detail_info
+from ..utils.damage.abstract import DamageRankRegister, DamageDetailRegister
 from ..wutheringwaves_config.wutheringwaves_config import (
     ShowConfig,
     WutheringWavesConfig,
@@ -38,6 +40,10 @@ from ..utils.api.model import (
     OnlineRoleList,
     RoleDetailData,
     AccountBaseInfo,
+)
+from ..wutheringwaves_analyzecard.user_info_utils import (
+    get_region_for_rank,
+    get_user_detail_info,
 )
 from ..utils.ascension.weapon import (
     WavesWeaponResult,
@@ -165,60 +171,184 @@ weight_list = [
 damage_bar1 = Image.open(TEXT_PATH / "damage_bar1.png")
 damage_bar2 = Image.open(TEXT_PATH / "damage_bar2.png")
 
-ENGLISH_TEXT_MAP = {
-    "角色名": "Character",
-    "无法找到": "not found",
-    "可能暂未适配": "may not be supported yet",
-    "请先检查输入是否正确": "please check if the input is correct",
-    "未找到该伤害类型": "damage type not found",
-    "暂不支持伤害计算": "damage calculation not supported yet",
-    "鸣潮": "Wuthering Waves",
-    "等级": "Level",
-    "命座": "Resonance Chain",
-    "武器": "Weapon",
-    "声骸": "Echo",
-    "属性": "Attribute",
-    "生命值": "HP",
-    "攻击力": "ATK",
-    "防御力": "DEF",
-    "暴击率": "Crit Rate",
-    "暴击伤害": "Crit DMG",
-    "共鸣效率": "Energy Regen",
-    "治疗加成": "Healing Bonus",
-    "特征码": "Player ID",
-    "账号等级": "Account Level",
-    "世界等级": "World Level",
-    "漂泊者": "Rover",
-    "伤害计算": "Damage Calculation",
-    "声骸评分": "Echo Score",
-    "总评分": "Total Score",
-    "主属性": "Main Stat",
-    "副属性": "Sub Stats",
-    "套装效果": "Set Effect",
-    "共鸣链": "Resonance Chain",
-    "天赋等级": "Skill Level",
-    "武器等级": "Weapon Level",
-    "武器精炼": "Weapon Refinement",
-    "参数错误": "Parameter Error",
-    "必须是字符串": "must be a string",
-}
+
+# 本地排行数据结构
+class LocalRankInfo:
+    def __init__(self, uid: str, score: float, expected_damage_int: int):
+        self.uid = uid
+        self.score = score
+        self.expected_damage_int = expected_damage_int
 
 
-def get_english_text(chinese_text: str, enable_18in: bool = False) -> str:
-    """Convert Chinese text to English, with optional 18+ content mode"""
-    if not isinstance(chinese_text, str):
-        chinese_text = str(chinese_text)
+async def get_local_rank_info(
+    char_id: str, current_uid: str, ev: Event
+) -> Optional[Dict]:
+    """获取本地排行信息"""
+    try:
+        # 获取所有用户数据
+        users = await WavesBind.get_all_data()
+        if not users:
+            return None
 
-    english_text = ENGLISH_TEXT_MAP.get(chinese_text, chinese_text)
+        # 检查是否需要登录验证
+        tokenLimitFlag, wavesTokenUsersMap = await get_waves_token_condition(ev)
 
-    if enable_18in:
-        # Add mature content indicators when enabled
-        if "not found" in english_text:
-            english_text += " [MATURE]"
-        elif "error" in english_text.lower():
-            english_text += " [18+]"
+        # 获取伤害计算函数
+        rankDetail = DamageRankRegister.find_class(char_id)
 
-    return english_text
+        # 处理特殊角色ID
+        if char_id in SPECIAL_CHAR:
+            find_char_id = SPECIAL_CHAR[char_id]
+        else:
+            find_char_id = char_id
+
+        # Determine the list of target role IDs based on find_char_id's type
+        target_role_ids = []
+        if isinstance(find_char_id, str):
+            target_role_ids = [str(find_char_id)]
+        else:  # Assume it's a list/tuple if not a string
+            target_role_ids = [str(cid) for cid in find_char_id]
+
+        rank_info_list = []
+
+        # 获取所有用户的角色数据
+        for user in users:
+            if not user.uid:
+                continue
+
+            for uid in user.uid.split("_"):
+                # 检查登录验证
+                if tokenLimitFlag and (user.user_id, uid) not in wavesTokenUsersMap:
+                    continue
+
+                # 获取角色数据
+                role_details = await get_card(uid)
+                if not role_details:
+                    continue
+
+                # Corrected generator expression for filtering
+                role_detail = next(
+                    (
+                        role
+                        for role in role_details
+                        if str(role.role.roleId) in target_role_ids
+                    ),
+                    None,
+                )
+
+                if (
+                    not role_detail
+                    or not role_detail.phantomData
+                    or not role_detail.phantomData.equipPhantomList
+                ):
+                    continue
+
+                try:
+                    # 计算评分
+                    calc = WuWaCalc(role_detail)
+                    calc.phantom_pre = calc.prepare_phantom()
+                    calc.phantom_card = calc.enhance_summation_phantom_value(
+                        calc.phantom_pre
+                    )
+                    calc.calc_temp = get_calc_map(
+                        calc.phantom_card,
+                        role_detail.role.roleName,
+                        role_detail.role.roleId,
+                    )
+
+                    phantom_score = 0
+                    for _phantom in role_detail.phantomData.equipPhantomList:
+                        if _phantom and _phantom.phantomProp:
+                            props = _phantom.get_props()
+                            _score, _bg = calc_phantom_score(
+                                role_detail.role.roleName,
+                                props,
+                                _phantom.cost,
+                                calc.calc_temp,
+                            )
+                            phantom_score += _score
+
+                    # 计算期望伤害
+                    expected_damage_int = 0
+                    if rankDetail:
+                        calc.role_card = calc.enhance_summation_card_value(
+                            calc.phantom_card
+                        )
+                        calc.damageAttribute = calc.card_sort_map_to_attribute(
+                            calc.role_card
+                        )
+                        damageAttributeTemp = copy.deepcopy(calc.damageAttribute)
+                        crit_damage, expected_damage = rankDetail["func"](
+                            damageAttributeTemp, role_detail
+                        )
+                        if expected_damage:
+                            expected_damage_int = int(expected_damage.replace(",", ""))
+
+                    rank_info_list.append(
+                        LocalRankInfo(uid, phantom_score, expected_damage_int)
+                    )
+
+                except Exception as e:
+                    logger.warning(f"计算用户{user.user_id} uid{uid}排行数据失败: {e}")
+                    continue
+
+        if not rank_info_list:
+            return None
+
+        # 按评分排序
+        score_rank_list = sorted(
+            rank_info_list, key=lambda x: (x.score, x.expected_damage_int), reverse=True
+        )
+        # 按伤害排序
+        damage_rank_list = sorted(
+            rank_info_list, key=lambda x: (x.expected_damage_int, x.score), reverse=True
+        )
+
+        # 找到当前用户的排名
+        score_rank = None
+        damage_rank = None
+
+        for i, info in enumerate(score_rank_list, 1):
+            if info.uid == current_uid:
+                score_rank = i
+                break
+
+        for i, info in enumerate(damage_rank_list, 1):
+            if info.uid == current_uid:
+                damage_rank = i
+                break
+
+        return {
+            "score_rank": score_rank,
+            "damage_rank": damage_rank,
+            "total_users": len(rank_info_list),
+        }
+
+    except Exception as e:
+        logger.exception(f"获取本地排行失败: {e}")
+        return None
+
+
+async def get_waves_token_condition(ev):
+    """检查登录验证条件"""
+    wavesTokenUsersMap = {}
+    flag = False
+
+    # 群组自定义的
+    WavesRankUseTokenGroup = WutheringWavesConfig.get_config(
+        "WavesRankUseTokenGroup"
+    ).data
+    # 全局主人定义的
+    RankUseToken = WutheringWavesConfig.get_config("RankUseToken").data
+
+    if (
+        WavesRankUseTokenGroup and ev.group_id in WavesRankUseTokenGroup
+    ) or RankUseToken:
+        wavesTokenUsers = await WavesUser.get_waves_all_user()
+        wavesTokenUsersMap = {(w.user_id, w.uid): w.cookie for w in wavesTokenUsers}
+        flag = True
+
+    return flag, wavesTokenUsersMap
 
 
 async def get_one_rank(item: OneRankRequest) -> Optional[OneRankResponse]:
@@ -492,7 +622,7 @@ async def get_role_need(
         else:
             return (
                 None,
-                f"[鸣潮] 特征码[{waves_id}] \n无法获取【{char_name}】角色信息！\n",
+                f"[鸣潮] 特征码[{waves_id}] \n无法获取【{char_name}】角色信息，请在库街区展示此角色！\n",
             )
     else:
         avatar = (
@@ -537,17 +667,13 @@ async def get_role_need(
     return avatar, role_detail
 
 
-async def draw_fixed_img(
-    img, avatar, account_info, role_detail, enable_18in: bool = False
-):
+async def draw_fixed_img(img, avatar, account_info, role_detail):
     # 头像部分
     avatar_ring = Image.open(TEXT_PATH / "avatar_ring.png")
 
-    if img is not None and avatar is not None:
-        img.paste(avatar, (45, 20), avatar)
-    if img is not None and avatar_ring is not None:
-        avatar_ring = avatar_ring.resize((180, 180))
-        img.paste(avatar_ring, (55, 30), avatar_ring)
+    img.paste(avatar, (45, 20), avatar)
+    avatar_ring = avatar_ring.resize((180, 180))
+    img.paste(avatar_ring, (55, 30), avatar_ring)
 
     base_info_bg = Image.open(TEXT_PATH / "base_info_bg.png")
     base_info_draw = ImageDraw.Draw(base_info_bg)
@@ -555,44 +681,26 @@ async def draw_fixed_img(
         (275, 120), f"{account_info.name[:7]}", "white", waves_font_30, "lm"
     )
     base_info_draw.text(
-        (226, 173),
-        f"{get_english_text('特征码', enable_18in)}:  {account_info.id}",
-        GOLD,
-        waves_font_25,
-        "lm",
+        (226, 173), f"特征码:  {account_info.id}", GOLD, waves_font_25, "lm"
     )
-    if img is not None and base_info_bg is not None:
-        img.paste(base_info_bg, (35, -30), base_info_bg)
+    img.paste(base_info_bg, (35, -30), base_info_bg)
 
     if account_info.is_full:
         title_bar = Image.open(TEXT_PATH / "title_bar.png")
         title_bar_draw = ImageDraw.Draw(title_bar)
-        title_bar_draw.text(
-            (510, 125),
-            get_english_text("账号等级", enable_18in),
-            GREY,
-            waves_font_26,
-            "mm",
-        )
+        title_bar_draw.text((510, 125), "账号等级", GREY, waves_font_26, "mm")
         title_bar_draw.text(
             (510, 78), f"Lv.{account_info.level}", "white", waves_font_42, "mm"
         )
 
-        title_bar_draw.text(
-            (660, 125),
-            get_english_text("世界等级", enable_18in),
-            GREY,
-            waves_font_26,
-            "mm",
-        )
+        title_bar_draw.text((660, 125), "世界等级", GREY, waves_font_26, "mm")
         title_bar_draw.text(
             (660, 78), f"Lv.{account_info.worldLevel}", "white", waves_font_42, "mm"
         )
 
         logo_img = get_small_logo(2)
         title_bar.alpha_composite(logo_img, dest=(780, 65))
-        if img is not None and title_bar is not None:
-            img.paste(title_bar, (200, 15), title_bar)
+        img.paste(title_bar, (200, 15), title_bar)
 
     # 左侧pile部分
     is_custom, role_pile = await get_role_pile(role_detail.role.roleId, True)
@@ -609,18 +717,15 @@ async def draw_fixed_img(
     char_fg_image = ImageDraw.Draw(char_fg)
     roleName = role_detail.role.roleName
     if "漂泊者" in roleName:
-        roleName = get_english_text("漂泊者", enable_18in)
+        roleName = "漂泊者"
 
     draw_text_with_shadow(
-        char_fg_image, f"{roleName}", 296, 867, waves_font_50, anchor="rm"
-    )
-    draw_text_with_shadow(
         char_fg_image,
-        f"Lv.{role_detail.role.level}",
-        300,
-        875,
-        waves_font_30,
-        anchor="lm",
+        f"{roleName} Lv.{role_detail.role.level}",
+        285,
+        867,
+        waves_font_50,
+        anchor="mm",
     )
 
     role_pile_image = Image.new("RGBA", (560, 1000))
@@ -631,10 +736,8 @@ async def draw_fixed_img(
         ((560 - role_pile.size[0]) // 2, (1000 - role_pile.size[1]) // 2),
         role_pile,
     )
-    if img is not None and role_pile_image is not None and char_mask is not None:
-        img.paste(role_pile_image, (25, 170), char_mask)
-    if img is not None and char_fg is not None:
-        img.paste(char_fg, (25, 170), char_fg)
+    img.paste(role_pile_image, (25, 170), char_mask)
+    img.paste(char_fg, (25, 170), char_fg)
 
 
 def resize_and_center_image(
@@ -693,14 +796,14 @@ async def draw_char_detail_img(
     is_force_avatar=False,
     change_list_regex=None,
     is_limit_query=False,
-    enable_18in: bool = False,
 ):
     char, damageId = parse_text_and_number(char)
 
     char_id = char_name_to_char_id(char)
     if not char_id:
-        error_msg = f"[{get_english_text('鸣潮', enable_18in)}] {get_english_text('角色名', enable_18in)}【{char}】{get_english_text('无法找到', enable_18in)}, {get_english_text('可能暂未适配', enable_18in)}, {get_english_text('请先检查输入是否正确', enable_18in)}！\n"
-        return error_msg
+        return (
+            f"[鸣潮] 角色名【{char}】无法找到, 可能暂未适配, 请先检查输入是否正确！\n"
+        )
 
     char_name = alias_to_char_name(char)
 
@@ -720,12 +823,10 @@ async def draw_char_detail_img(
                 damage_calc = dd
                 break
         else:
-            error_msg = f"[{get_english_text('鸣潮', enable_18in)}] {get_english_text('角色名', enable_18in)}【{char_name}】{get_english_text('未找到该伤害类型', enable_18in)}[{damageId}], {get_english_text('请先检查输入是否正确', enable_18in)}！\n"
-            return error_msg
+            return f"[鸣潮] 角色【{char_name}】未找到该伤害类型[{damageId}], 请先检查输入是否正确！\n"
     else:
         if damageId and not damageDetail:
-            error_msg = f"[{get_english_text('鸣潮', enable_18in)}] {get_english_text('角色名', enable_18in)}【{char_name}】{get_english_text('暂不支持伤害计算', enable_18in)}！\n"
-            return error_msg
+            return f"[鸣潮] 角色【{char_name}】暂不支持伤害计算！\n"
 
     is_online_user = False
     ck = ""
@@ -776,6 +877,7 @@ async def draw_char_detail_img(
 
     change_command = ""
     oneRank: Optional[OneRankResponse] = None
+    local_rank_info: Optional[Dict] = None
     enemy_detail: Optional[EnemyDetailData] = EnemyDetailData()
     if change_list_regex:
         temp = copy.deepcopy(role_detail)
@@ -787,13 +889,20 @@ async def draw_char_detail_img(
             logger.exception("角色数据转换错误", e)
             role_detail = temp
     else:
-        if not is_limit_query and not waves_api.is_net(uid):
-            # 非极限与国际服用户查询时，获取评分排名
-            oneRank = await get_one_rank(
-                OneRankRequest(char_id=int(char_id), waves_id=uid)
-            )
-            if oneRank and len(oneRank.data) > 0:
-                dd_len += 60 * 2
+        if not is_limit_query:
+            # 优先尝试获取官方排行（国服）
+            if not waves_api.is_net(uid):
+                oneRank = await get_one_rank(
+                    OneRankRequest(char_id=int(char_id), waves_id=uid)
+                )
+                if oneRank and len(oneRank.data) > 0:
+                    dd_len += 60 * 2
+
+            # 如果没有官方排行，获取本地排行（适用于国际服和国服）
+            if not oneRank:
+                local_rank_info = await get_local_rank_info(char_id, uid, ev)
+                if local_rank_info:
+                    dd_len += 60 * 2
 
     # 声骸
     calc, phantom_temp = await ph_card_draw(
@@ -877,18 +986,13 @@ async def draw_char_detail_img(
     img = await get_card_bg(
         1200, 1250 + echo_list + ph_sum_value + jineng_len + dd_len, "bg3"
     )
-
-    if img is None:
-        img = Image.new("RGBA", (650, 3000), (255, 255, 255, 255))
-
     # 固定位置
-    img = await draw_fixed_img(img, avatar, account_info, role_detail, enable_18in)
+    await draw_fixed_img(img, avatar, account_info, role_detail)
 
     # 声骸
-    if phantom_temp is not None and img is not None:
-        img.paste(phantom_temp, (0, 1320 + jineng_len), phantom_temp)
+    img.paste(phantom_temp, (0, 1320 + jineng_len), phantom_temp)
 
-    if img is not None and damage_calc_img is not None:
+    if damage_calc_img:
         img.alpha_composite(
             damage_calc_img, (0, img.size[1] - 10 - damage_calc_img.size[1])
         )
@@ -935,6 +1039,8 @@ async def draw_char_detail_img(
     for i in range(0, weapon_breach):  # type: ignore
         promote_icon = Image.open(TEXT_PATH / "promote_icon.png")
         weapon_bg_temp.alpha_composite(promote_icon, dest=(200 + 40 * i, 100))
+
+    weapon_bg_temp.alpha_composite(weapon_icon_bg, dest=(45, 0))
 
     weapon_detail: WavesWeaponResult = get_weapon_detail(
         weaponData.weapon.weaponId,
@@ -986,12 +1092,9 @@ async def draw_char_detail_img(
 
         if not _mz.unlocked:
             mz_bg_temp = ImageEnhance.Brightness(mz_bg_temp).enhance(0.3)
+        mz_temp.alpha_composite(mz_bg_temp, dest=(i * 190, 0))
 
-        if mz_temp is not None and mz_bg_temp is not None:
-            mz_temp.paste(mz_bg_temp, (i * 200, 0), mz_bg_temp)
-
-    if img is not None and mz_temp is not None:
-        img.paste(mz_temp, (0, 1080 + jineng_len), mz_temp)
+    img.paste(mz_temp, (0, 1080 + jineng_len), mz_temp)
 
     if (
         isDraw
@@ -1012,10 +1115,7 @@ async def draw_char_detail_img(
         damage_title_bg_draw.text(
             (1000, 50), "期望伤害", SPECIAL_GOLD, waves_font_24, "mm"
         )
-        if img is not None and damage_title_bg is not None:
-            img.alpha_composite(
-                damage_title_bg, dest=(0, 2600 + ph_sum_value + jineng_len)
-            )
+        img.alpha_composite(damage_title_bg, dest=(0, 2600 + ph_sum_value + jineng_len))
         for dindex, damage_temp in enumerate(damageDetail):
             damage_title = damage_temp["title"]
             damageAttributeTemp = copy.deepcopy(calc.damageAttribute)
@@ -1042,16 +1142,16 @@ async def draw_char_detail_img(
                 damage_bar_draw.text(
                     (850, 50), f"{expected_damage}", "white", waves_font_24, "mm"
                 )
-            if img is not None and damage_bar is not None:
-                img.alpha_composite(
-                    damage_bar,
-                    dest=(0, 2600 + ph_sum_value + jineng_len + (dindex + 1) * 60),
-                )
+            img.alpha_composite(
+                damage_bar,
+                dest=(0, 2600 + ph_sum_value + jineng_len + (dindex + 1) * 60),
+            )
 
+        # 显示排行信息
         if oneRank and len(oneRank.data) > 0:
+            # 官方排行（国服）
             dindex += 1
             damage_bar = damage_bar2.copy() if dindex % 2 == 0 else damage_bar1.copy()
-            damage_bar_draw = ImageDraw.Draw(damage_bar)
             damage_bar_draw = ImageDraw.Draw(damage_bar)
             damage_bar_draw.text(
                 (400, 50),
@@ -1067,15 +1167,13 @@ async def draw_char_detail_img(
                 waves_font_24,
                 "mm",
             )
-            if img is not None and damage_bar is not None:
-                img.alpha_composite(
-                    damage_bar,
-                    dest=(0, 2600 + ph_sum_value + jineng_len + (dindex + 1) * 60),
-                )
+            img.alpha_composite(
+                damage_bar,
+                dest=(0, 2600 + ph_sum_value + jineng_len + (dindex + 1) * 60),
+            )
 
             dindex += 1
             damage_bar = damage_bar2.copy() if dindex % 2 == 0 else damage_bar1.copy()
-            damage_bar_draw = ImageDraw.Draw(damage_bar)
             damage_bar_draw = ImageDraw.Draw(damage_bar)
             damage_bar_draw.text(
                 (400, 50),
@@ -1091,11 +1189,65 @@ async def draw_char_detail_img(
                 waves_font_24,
                 "mm",
             )
-            if img is not None and damage_bar is not None:
-                img.alpha_composite(
-                    damage_bar,
-                    dest=(0, 2600 + ph_sum_value + jineng_len + (dindex + 1) * 60),
-                )
+            img.alpha_composite(
+                damage_bar,
+                dest=(0, 2600 + ph_sum_value + jineng_len + (dindex + 1) * 60),
+            )
+        elif local_rank_info:
+            # 本地排行（国际服和国服备用）
+            dindex += 1
+            damage_bar = damage_bar2.copy() if dindex % 2 == 0 else damage_bar1.copy()
+            damage_bar_draw = ImageDraw.Draw(damage_bar)
+            damage_bar_draw.text(
+                (400, 50),
+                "评分排名(本地)",
+                "white",
+                waves_font_24,
+                "rm",
+            )
+            score_rank_text = (
+                f"{local_rank_info['score_rank']}"
+                if local_rank_info["score_rank"]
+                else "未上榜"
+            )
+            damage_bar_draw.text(
+                (850, 50),
+                score_rank_text,
+                SPECIAL_GOLD,
+                waves_font_24,
+                "mm",
+            )
+            img.alpha_composite(
+                damage_bar,
+                dest=(0, 2600 + ph_sum_value + jineng_len + (dindex + 1) * 60),
+            )
+
+            dindex += 1
+            damage_bar = damage_bar2.copy() if dindex % 2 == 0 else damage_bar1.copy()
+            damage_bar_draw = ImageDraw.Draw(damage_bar)
+            damage_bar_draw.text(
+                (400, 50),
+                "伤害排名(本地)",
+                "white",
+                waves_font_24,
+                "rm",
+            )
+            damage_rank_text = (
+                f"{local_rank_info['damage_rank']}"
+                if local_rank_info["damage_rank"]
+                else "未上榜"
+            )
+            damage_bar_draw.text(
+                (850, 50),
+                damage_rank_text,
+                SPECIAL_GOLD,
+                waves_font_24,
+                "mm",
+            )
+            img.alpha_composite(
+                damage_bar,
+                dest=(0, 2600 + ph_sum_value + jineng_len + (dindex + 1) * 60),
+            )
 
     banner1 = Image.open(TEXT_PATH / "banner4.png")
     right_image_temp.alpha_composite(banner1, dest=(0, 0))
@@ -1124,8 +1276,8 @@ async def draw_char_detail_img(
             (530, 58 + index * 55), f"{value}", name_color, waves_font_24, "rm"
         )
 
-    if img is not None and right_image_temp is not None:
-        img.paste(right_image_temp, (570, 200), right_image_temp)
+    right_image_temp.alpha_composite(sh_bg, dest=(0, 80))
+    img.paste(right_image_temp, (570, 200), right_image_temp)
 
     # 技能
     skill_bar = Image.open(TEXT_PATH / "skill_bar.png")
@@ -1158,62 +1310,24 @@ async def draw_char_detail_img(
         _y = -20
         skill_bar.alpha_composite(skill_bg_temp, dest=(_x, _y))
         temp_i += 1
-    if img is not None and skill_bar is not None:
-        img.alpha_composite(skill_bar, dest=(0, 1150))
+    img.alpha_composite(skill_bar, dest=(0, 1150))
 
-    if img is not None:
-        img = add_footer(img)
-    if need_convert_img and img is not None:
+    img = add_footer(img)
+    if need_convert_img:
         img = await convert_img(img)
-
-    if img is None:
-        img = Image.new("RGBA", (650, 3000), (255, 255, 255, 255))
-        draw = ImageDraw.Draw(img)
-        try:
-            font = ImageFont.truetype("arial.ttf", 24)
-        except:
-            font = ImageFont.load_default()
-        draw.text(
-            (50, 50),
-            get_english_text("圖像生成失敗", enable_18in),
-            fill=(255, 0, 0),
-            font=font,
-        )
-
     return img
 
 
-async def draw_char_detail_img_18in(
-    user_id: str, char: str, damageId: str = "1", enable_18in: bool = True
-):
-    """18+ version of draw_char_detail_img with English output"""
-    return await draw_char_detail_img(user_id, char, damageId, enable_18in)
-
-
-async def draw_char_score_img_18in(user_id: str, char: str, enable_18in: bool = True):
-    """18+ version of draw_char_score_img with English output"""
-    return await draw_char_score_img(user_id, char, enable_18in)
-
-
-async def ph_card_draw_18in(user_id: str, char: str, enable_18in: bool = True):
-    """18+ version of ph_card_draw with English output"""
-    return await ph_card_draw(user_id, char, enable_18in)
-
-
 async def draw_char_score_img(
-    ev: Event,
-    uid: str,
-    char: str,
-    user_id: str,
-    waves_id: Optional[str] = None,
-    enable_18in: bool = False,
+    ev: Event, uid: str, char: str, user_id: str, waves_id: Optional[str] = None
 ):
     char, damageId = parse_text_and_number(char)
 
     char_id = char_name_to_char_id(char)
     if not char_id:
-        error_msg = f"[{get_english_text('鸣潮', enable_18in)}] {get_english_text('角色名', enable_18in)}【{char}】{get_english_text('无法找到', enable_18in)}, {get_english_text('可能暂未适配', enable_18in)}, {get_english_text('请先检查输入是否正确', enable_18in)}！\n"
-        return error_msg
+        return (
+            f"[鸣潮] 角色名【{char}】无法找到, 可能暂未适配, 请先检查输入是否正确！\n"
+        )
     char_name = alias_to_char_name(char)
 
     _, ck = await waves_api.get_ck_result(uid, user_id, ev.bot_id)
@@ -1234,7 +1348,7 @@ async def draw_char_score_img(
     # 创建背景
     img = await get_card_bg(1200, 3380, "bg3")
     # 固定位置
-    img = await draw_fixed_img(img, avatar, account_info, role_detail, enable_18in)
+    await draw_fixed_img(img, avatar, account_info, role_detail)
 
     # 声骸属性
     char_id = role_detail.role.roleId
@@ -1306,13 +1420,13 @@ async def draw_char_score_img(
                 sh_temp.alpha_composite(ph_level_img, (128, 58))
 
                 # 声骸分数背景
-                ph_score_img = Image.new("RGBA", (92, 30), (255, 255, 255, 0))
+                ph_score_img = Image.new("RGBA", (100, 30), (255, 255, 255, 0))
                 ph_score_img_draw = ImageDraw.Draw(ph_score_img)
                 ph_score_img_draw.rounded_rectangle(
-                    [0, 0, 92, 30], radius=8, fill=(186, 55, 42, int(0.8 * 255))
+                    [0, 0, 100, 30], radius=8, fill=(186, 55, 42, int(0.8 * 255))
                 )
                 ph_score_img_draw.text(
-                    (5, 13), f"{_score}分", "white", waves_font_24, "lm"
+                    (50, 13), f"{_score}分", "white", waves_font_24, "mm"
                 )
                 sh_temp.alpha_composite(ph_score_img, (228, 58))
 
@@ -1488,13 +1602,6 @@ async def draw_char_score_img(
     return img
 
 
-async def draw_char_score_img_18in(
-    ev: Event, uid: str, char: str, user_id: str, waves_id: Optional[str] = None
-):
-    """18+ version of draw_char_score_img with mature content support"""
-    return await draw_char_score_img(ev, uid, char, user_id, waves_id, enable_18in=True)
-
-
 async def draw_weight(image, role_name, weight_list_temp, calc_temp):
     draw = ImageDraw.Draw(image)
     draw.rectangle([10, 10, 1490, 870], fill=(0, 0, 0, int(0.7 * 255)))
@@ -1628,7 +1735,7 @@ async def generate_online_role_detail(char_id: str):
     for i in char_template_data["skillList"]:
         temp_skill = i["skill"]
         skill_type = temp_skill["type"]
-        skill_detail = char_model.skillTree[int(skill_map[skill_type])]["skill"]
+        skill_detail = char_model.skillTree[skill_map[skill_type]]["skill"]
 
         temp_skill["name"] = skill_detail.name
         temp_skill["description"] = skill_detail.desc.format(*skill_detail.param)
@@ -1680,34 +1787,5 @@ async def get_card_bg(
 
     img = await get_custom_gaussian_blur(img)
     return img
-
-
-async def ph_card_draw_18in(
-    ev: Event,
-    uid: str,
-    char: str,
-    user_id: str,
-    waves_id: Optional[str] = None,
-    enable_18in: bool = False,
-):
-    if not isinstance(char, str):
-        error_text = (
-            get_english_text("角色参数错误", enable_18in)
-            if enable_18in
-            else "Character parameter error"
-        )
-        return await create_error_image(error_text)
-
-    # 調用原始的ph_card_draw函數
-    return await ph_card_draw(None, None, True, "", None)
-
-
-async def create_error_image(error_text: str):
-    img = Image.new("RGBA", (800, 400), (255, 255, 255, 255))
-    draw = ImageDraw.Draw(img)
-    try:
-        font = ImageFont.truetype("arial.ttf", 24)
-    except:
-        font = ImageFont.load_default()
-    draw.text((400, 200), error_text, fill=(255, 0, 0), font=font, anchor="mm")
+    img = await get_custom_gaussian_blur(img)
     return img
