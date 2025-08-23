@@ -1,31 +1,32 @@
 import json
 import time
-import aiofiles
 
+import aiofiles
 from gsuid_core.logger import logger
 
 from ..utils.api.model import AccountBaseInfo
 from ..utils.resource.RESOURCE_PATH import PLAYER_PATH
 
-
 # creatTime 是为了满足.is_full的逻辑
 # 1 5 6 7 8 9
 # 国美欧亚港澳台SEA东南亚
 
+
 def get_region_by_uid(uid: str) -> str:
     if not uid:
         return "未知"
-    
+
     first_char = uid[0]
     region_map = {
-        '1': '国',
-        '5': '美',
-        '6': '欧',
-        '7': '亚',
-        '8': '港澳台',
-        '9': '东南亚'
+        "1": "国",
+        "5": "美",
+        "6": "欧",
+        "7": "亚",
+        "8": "港澳台",
+        "9": "东南亚",
     }
     return region_map.get(first_char, "未知")
+
 
 def get_region_for_rank(uid: str) -> tuple[str, tuple[int, int, int]]:
     """
@@ -33,17 +34,18 @@ def get_region_for_rank(uid: str) -> tuple[str, tuple[int, int, int]]:
     """
     if not uid:
         return ("未知", (128, 128, 128))  # 灰色
-    
+
     first_char = uid[0]
     region_map = {
-        '1': ("国服", (203, 95, 95)),    # 红色系
-        '5': ("美服", (95, 120, 203)),   # 蓝色系
-        '6': ("欧服", (114, 180, 114)),  # 绿色系
-        '7': ("亚服", (203, 157, 114)),  # 橙色系
-        '8': ("港澳台", (167, 95, 203)), # 紫色系
-        '9': ("SEA", (114, 180, 203)),   # 青色系
+        "1": ("国服", (203, 95, 95)),  # 红色系
+        "5": ("美服", (95, 120, 203)),  # 蓝色系
+        "6": ("欧服", (114, 180, 114)),  # 绿色系
+        "7": ("亚服", (203, 157, 114)),  # 橙色系
+        "8": ("港澳台", (167, 95, 203)),  # 紫色系
+        "9": ("SEA", (114, 180, 203)),  # 青色系
     }
     return region_map.get(first_char, ("未知", (128, 128, 128)))
+
 
 async def get_user_detail_info(
     uid: str,
