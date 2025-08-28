@@ -1,23 +1,22 @@
-import asyncio
 import json
-from typing import Dict, List, Optional, Union
+import asyncio
+from typing import Dict, List, Union, Optional
 
 import aiofiles
-
-from gsuid_core.logger import logger
 from gsuid_core.models import Event
+from gsuid_core.logger import logger
 
-from ..utils.api.model import AccountBaseInfo, RoleList
-from ..utils.error_reply import WAVES_CODE_101, WAVES_CODE_102
-from ..utils.expression_ctx import WavesCharRank, get_waves_char_rank
 from ..utils.hint import error_reply
-from ..utils.queues.const import QUEUE_SCORE_RANK
-from ..utils.queues.queues import put_item
-from ..utils.resource.RESOURCE_PATH import PLAYER_PATH
 from ..utils.util import get_version
 from ..utils.waves_api import waves_api
-from ..wutheringwaves_config import WutheringWavesConfig
+from ..utils.queues.queues import put_item
+from ..utils.queues.const import QUEUE_SCORE_RANK
 from .resource.constant import SPECIAL_CHAR_INT_ALL
+from ..utils.resource.RESOURCE_PATH import PLAYER_PATH
+from ..utils.api.model import RoleList, AccountBaseInfo
+from ..wutheringwaves_config import WutheringWavesConfig
+from ..utils.error_reply import WAVES_CODE_101, WAVES_CODE_102
+from ..utils.expression_ctx import WavesCharRank, get_waves_char_rank
 
 
 def is_use_global_semaphore() -> bool:
@@ -156,8 +155,7 @@ async def save_card_info(
 
     save_data = list(old_data.values())
 
-    if not waves_api.is_net(uid):
-        await send_card(uid, user_id, save_data, is_self_ck, token, role_info, waves_data)
+    await send_card(uid, user_id, save_data, is_self_ck, token, role_info, waves_data)
 
     try:
         async with aiofiles.open(path, "w", encoding="utf-8") as file:
@@ -263,6 +261,21 @@ async def refresh_char(
                     i["unlocked"] = False
         except Exception as e:
             logger.exception(f"{uid} 共鸣链修正失败", e)
+
+        # 修正合鸣效果
+        try:
+            if (
+                role_detail_info["phantomData"]
+                and role_detail_info["phantomData"]["equipPhantomList"]
+            ):
+                for i in role_detail_info["phantomData"]["equipPhantomList"]:
+                    if not isinstance(i, dict):
+                        continue
+                    sonata_name = i.get("fetterDetail", {}).get("name", "")
+                    if sonata_name == "雷曜日冕之冠":
+                        i["fetterDetail"]["name"] = "荣斗铸锋之冠"  # type: ignore
+        except Exception as e:
+            logger.exception(f"{uid} 合鸣效果修正失败", e)
 
         waves_datas.append(role_detail_info)
 
