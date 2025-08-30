@@ -122,19 +122,24 @@ async def save_card_dict_to_json(bot: Bot, ev: Event, result_dict: Dict):
         cost_sum += cost
 
         # 设置声骸名称
+        phantom_name = phantom_id_to_phantom_name(str(echo_id))
+        if phantom_name is None:
+            phantom_name = f"未知声骸{echo_id}"
+            logger.warning(f"[鸣潮] 声骸ID {echo_id} 未找到对应名称，使用默认名称")
+
         if cost == 4:
             cost4_counter += 1  # 只有实际生成cost4时递增
-            echo["phantomProp"]["name"] = phantom_id_to_phantom_name(str(echo_id))
+            echo["phantomProp"]["name"] = phantom_name
             logger.info(
                 f"[鸣潮] 4cost声骸: {echo['phantomProp']['name']} (ID: {echo_id})"
             )
         elif cost == 3:
-            echo["phantomProp"]["name"] = phantom_id_to_phantom_name(str(echo_id))
+            echo["phantomProp"]["name"] = phantom_name
             logger.info(
                 f"[鸣潮] 3cost声骸: {echo['phantomProp']['name']} (ID: {echo_id}) - 随机指派"
             )
         elif cost == 1:
-            echo["phantomProp"]["name"] = phantom_id_to_phantom_name(str(echo_id))
+            echo["phantomProp"]["name"] = phantom_name
             logger.info(
                 f"[鸣潮] 1cost声骸: {echo['phantomProp']['name']} (ID: {echo_id}) - 随机指派"
             )

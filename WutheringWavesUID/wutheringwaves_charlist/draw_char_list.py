@@ -2,16 +2,36 @@ from pathlib import Path
 from typing import Union
 
 from PIL import Image, ImageDraw
-
 from gsuid_core.models import Event
 from gsuid_core.utils.image.convert import convert_img
 from gsuid_core.utils.image.image_tools import crop_center_img
 
-from ..utils.api.model import AccountBaseInfo, RoleDetailData, WeaponData
+from ..utils.hint import error_reply
+from ..utils.waves_api import waves_api
 from ..utils.ascension.weapon import get_breach
+from ..utils.resource.constant import NORMAL_LIST
+from ..utils.refresh_char_detail import refresh_char
+from ..utils.resource.download_file import get_skill_img
+from ..wutheringwaves_config import WutheringWavesConfig
+from ..utils.error_reply import WAVES_CODE_099, WAVES_CODE_102
 from ..utils.char_info_utils import get_all_roleid_detail_info_int
-from ..utils.error_reply import WAVES_CODE_102, WAVES_CODE_099
 from ..utils.expression_ctx import WavesCharRank, get_waves_char_rank
+from ..utils.api.model import WeaponData, RoleDetailData, AccountBaseInfo
+from ..wutheringwaves_analyzecard.user_info_utils import get_user_detail_info
+from ..utils.image import (
+    GOLD,
+    GREY,
+    CHAIN_COLOR,
+    SPECIAL_GOLD,
+    CHAIN_COLOR_LIST,
+    WEAPON_RESONLEVEL_COLOR,
+    add_footer,
+    get_waves_bg,
+    get_attribute,
+    get_event_avatar,
+    get_square_avatar,
+    get_square_weapon,
+)
 from ..utils.fonts.waves_fonts import (
     waves_font_16,
     waves_font_18,
@@ -26,27 +46,6 @@ from ..utils.fonts.waves_fonts import (
     waves_font_40,
     waves_font_42,
 )
-from ..utils.hint import error_reply
-from ..utils.image import (
-    CHAIN_COLOR,
-    CHAIN_COLOR_LIST,
-    GOLD,
-    GREY,
-    SPECIAL_GOLD,
-    WEAPON_RESONLEVEL_COLOR,
-    add_footer,
-    get_attribute,
-    get_event_avatar,
-    get_square_avatar,
-    get_square_weapon,
-    get_waves_bg,
-)
-from ..utils.refresh_char_detail import refresh_char
-from ..utils.resource.constant import NORMAL_LIST
-from ..utils.resource.download_file import get_skill_img
-from ..utils.waves_api import waves_api
-from ..wutheringwaves_analyzecard.user_info_utils import get_user_detail_info
-from ..wutheringwaves_config import WutheringWavesConfig
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 
@@ -91,7 +90,7 @@ async def draw_char_list_img(
     user_waves_id: str = "",
 ) -> Union[str, bytes]:
     _, ck = await waves_api.get_ck_result(user_waves_id, user_id, ev.bot_id)
-    account_info= await get_user_detail_info(uid)
+    account_info = await get_user_detail_info(uid)
 
     all_role_detail = await get_all_roleid_detail_info(
         ev,
@@ -258,12 +257,17 @@ async def draw_char_list_img(
             waves_font_40,
             "lm",
         )
-        weapon_bg_temp_draw.text(
-            (203, 75), f"Lv.{weaponData.level}/90", "white", waves_font_30, "lm"
-        )
+        # 計算等級文字的位置和寬度
+        level_text = f"Lv.{weaponData.level}/90"
+        level_bbox = weapon_bg_temp_draw.textbbox((0, 0), level_text, waves_font_30)
+        level_width = level_bbox[2] - level_bbox[0]
 
-        _x = 220 + 43 * len(weaponData.weapon.weaponName)
-        _y = 37
+        # 繪製等級文字
+        weapon_bg_temp_draw.text((203, 75), level_text, "white", waves_font_30, "lm")
+
+        # 精煉等級放在等級文字右側
+        _x = 203 + level_width + 20  # 等級文字右側20像素
+        _y = 75  # 與等級文字同一行
 
         wrc_fill = WEAPON_RESONLEVEL_COLOR[weaponData.resonLevel] + (int(0.8 * 255),)  # type: ignore
         weapon_bg_temp_draw.rounded_rectangle(

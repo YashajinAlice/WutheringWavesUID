@@ -1,25 +1,24 @@
-import asyncio
-import base64
 import copy
 import json
-from datetime import datetime
+import base64
+import asyncio
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple, Union
+from datetime import datetime
+from typing import Dict, List, Tuple, Union, Optional
 
-import aiofiles
 import msgspec
-
-from gsuid_core.logger import logger
+import aiofiles
 from gsuid_core.models import Event
+from gsuid_core.logger import logger
 
-from ..utils.api.model import GachaLog
-from ..utils.database.models import WavesUser
-from ..utils.resource.RESOURCE_PATH import PLAYER_PATH
-from ..utils.waves_api import waves_api
-from ..version import WutheringWavesUID_version
-from ..wutheringwaves_config import PREFIX
 from .model import WWUIDGacha
+from ..utils.api.model import GachaLog
+from ..utils.waves_api import waves_api
+from ..wutheringwaves_config import PREFIX
+from ..utils.database.models import WavesUser
+from ..version import WutheringWavesUID_version
 from .model_for_waves_plugin import WavesPluginGacha
+from ..utils.resource.RESOURCE_PATH import PLAYER_PATH
 
 gacha_type_meta_data = {
     "角色精准调谐": "1",
@@ -120,10 +119,13 @@ async def get_new_gachalog(
             # 抽卡记录获取失败
             if res.code == -1:  # type: ignore
                 return ERROR_MSG_INVALID_LINK, None, None  # type: ignore
-            else:
-                continue
 
-        gacha_log = [GachaLog.model_validate(log) for log in res.data]  # type: ignore
+        if res.data and isinstance(res.data, list):
+            temp = res.data
+        else:
+            temp = []
+
+        gacha_log = [GachaLog.model_validate(log) for log in temp]  # type: ignore
         for log in gacha_log:
             if log.cardPoolType != card_pool_type:
                 log.cardPoolType = card_pool_type

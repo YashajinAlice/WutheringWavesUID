@@ -1020,12 +1020,19 @@ async def draw_char_detail_img(
     weapon_bg_temp_draw.text(
         (200, 30), f"{weaponData.weapon.weaponName}", SPECIAL_GOLD, waves_font_40, "lm"
     )
+    # 計算等級文字的位置和寬度
+    level_text = f"Lv.{weaponData.level}/90"
+    level_bbox = weapon_bg_temp_draw.textbbox((0, 0), level_text, waves_font_30)
+    level_width = level_bbox[2] - level_bbox[0]
+    
+    # 繪製等級文字
     weapon_bg_temp_draw.text(
-        (203, 75), f"Lv.{weaponData.level}/90", "white", waves_font_30, "lm"
+        (203, 75), level_text, "white", waves_font_30, "lm"
     )
 
-    _x = 220 + 43 * len(weaponData.weapon.weaponName)
-    _y = 37
+    # 精煉等級放在等級文字右側
+    _x = 203 + level_width + 20  # 等級文字右側20像素
+    _y = 75  # 與等級文字同一行
     wrc_fill = WEAPON_RESONLEVEL_COLOR[weaponData.resonLevel] + (int(0.8 * 255),)  # type: ignore
     weapon_bg_temp_draw.rounded_rectangle(
         [_x - 15, _y - 15, _x + 50, _y + 15], radius=7, fill=wrc_fill

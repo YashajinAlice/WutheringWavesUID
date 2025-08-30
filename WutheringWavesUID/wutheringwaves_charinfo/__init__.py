@@ -67,6 +67,80 @@ async def send_card_info(bot: Bot, ev: Event):
         return await bot.send_option(msg, buttons)
 
 
+# 國際服分析記錄命令
+waves_analysis_record = SV("waves分析記錄", priority=3)
+
+@waves_analysis_record.on_fullmatch(
+    (
+        "分析記錄",
+        "分析记录",
+        "記錄分析",
+        "记录分析",
+        "國際服面板",
+        "国际服面板",
+        "國際服分析",
+        "国际服分析",
+    ),
+    block=True,
+)
+async def send_analysis_record_info(bot: Bot, ev: Event):
+    user_id = ruser_id(ev)
+
+    uid = await WavesBind.get_uid_by_game(user_id, ev.bot_id)
+    if not uid:
+        return await bot.send(error_reply(WAVES_CODE_103))
+    if not waves_api.is_net(uid):
+        return await bot.send("此功能僅適用於國際服用戶")
+
+    from .draw_refresh_char_card import draw_analysis_record_img
+
+    buttons = []
+    msg = await draw_analysis_record_img(bot, ev, user_id, uid, buttons)
+    if isinstance(msg, str) or isinstance(msg, bytes):
+        return await bot.send_option(msg, buttons)
+
+
+# 支持UID前綴的國際服分析記錄命令
+waves_analysis_record_with_uid = SV("waves分析記錄帶UID", priority=3)
+
+@waves_analysis_record_with_uid.on_regex(
+    r"^(\d{9})(分析記錄|分析记录|記錄分析|记录分析|國際服面板|国际服面板|國際服分析|国际服分析)$",
+    block=True,
+)
+async def send_analysis_record_info_with_uid(bot: Bot, ev: Event):
+    match = re.search(
+        r"^(\d{9})(分析記錄|分析记录|記錄分析|记录分析|國際服面板|国际服面板|國際服分析|国际服分析)$",
+        ev.raw_text,
+    )
+    if not match:
+        return
+    
+    target_uid = match.group(1)
+    user_id = ruser_id(ev)
+    
+    # 檢查目標UID是否為國際服
+    if not waves_api.is_net(target_uid):
+        return await bot.send("此功能僅適用於國際服用戶")
+    
+    # 檢查是否有權限查詢該UID（可以查詢自己的，或者如果是管理員可以查詢其他人的）
+    current_uid = await WavesBind.get_uid_by_game(user_id, ev.bot_id)
+    
+    # 如果查詢的不是自己的UID，檢查是否有管理員權限
+    if target_uid != current_uid:
+        # 這裡可以添加管理員權限檢查，暫時允許所有用戶查詢
+        # 如果需要限制，可以取消下面的註釋並實現權限檢查
+        # if not is_admin(ev):
+        #     return await bot.send("您沒有權限查詢其他用戶的分析記錄")
+        pass
+
+    from .draw_refresh_char_card import draw_analysis_record_img
+
+    buttons = []
+    msg = await draw_analysis_record_img(bot, ev, user_id, target_uid, buttons)
+    if isinstance(msg, str) or isinstance(msg, bytes):
+        return await bot.send_option(msg, buttons)
+
+
 @waves_new_get_one_char_info.on_regex(
     r"^(刷新|更新)[\u4e00-\u9fa5]+(面板|面包)$",
     block=True,

@@ -141,6 +141,22 @@
         "need_admin": false
       },
       {
+        "name": "国际服分析记录",
+        "desc": "查看国际服分析记录面板",
+        "eg": "分析记录",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "国际服分析记录(指定UID)",
+        "desc": "查看指定UID的国际服分析记录面板",
+        "eg": "123456789分析记录",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
         "name": "练度统计",
         "desc": "查询练度统计一览",
         "eg": "练度统计",
