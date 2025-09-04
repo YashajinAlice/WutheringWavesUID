@@ -276,6 +276,16 @@ async def get_image(ev: Event):
             and content.data.startswith("http")
         ):
             res.append(content.data)
+        # 處理 Discord 機器人的圖片數據結構
+        elif (
+            content.type == "image"
+            and content.data
+            and isinstance(content.data, dict)
+            and "url" in content.data
+            and isinstance(content.data["url"], str)
+            and content.data["url"].startswith("http")
+        ):
+            res.append(content.data["url"])
 
     if not res and ev.image:
         res.append(ev.image)
