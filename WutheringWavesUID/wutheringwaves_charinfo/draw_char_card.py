@@ -5,9 +5,11 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 import httpx
+from PIL import Image, ImageDraw, ImageEnhance
+
 from gsuid_core.models import Event
 from gsuid_core.logger import logger
-from PIL import Image, ImageDraw, ImageEnhance
+from gsuid_core.config import core_config
 from gsuid_core.utils.image.convert import convert_img
 from gsuid_core.utils.image.image_tools import get_qq_avatar, crop_center_img
 
@@ -617,7 +619,7 @@ async def get_role_need(
 
             role_detail = RoleDetailData.model_validate(role_detail_info)
 
-            avatar = await draw_char_with_ring(char_id)
+            avatar = await draw_char_with_ring(char_id, ev.user_id)
             break
         else:
             return (
@@ -628,7 +630,7 @@ async def get_role_need(
         avatar = (
             await draw_pic_with_ring(ev, is_force_avatar, force_resource_id)
             if not waves_id
-            else await draw_char_with_ring(char_id)
+            else await draw_char_with_ring(char_id, ev.user_id)
         )
         all_role_detail: Optional[Dict[str, RoleDetailData]] = (
             await get_all_roleid_detail_info(uid)
@@ -667,9 +669,19 @@ async def get_role_need(
     return avatar, role_detail
 
 
-async def draw_fixed_img(img, avatar, account_info, role_detail):
+async def draw_fixed_img(img, avatar, account_info, role_detail, user_id=None):
     # 头像部分
-    avatar_ring = Image.open(TEXT_PATH / "avatar_ring.png")
+    # 檢查是否為特殊用戶，選擇對應的頭像環
+    is_special_user = False
+    if user_id is not None:
+        special_users = core_config.get_config("specialusers")
+        is_special_user = str(user_id) in special_users
+
+    # 根據用戶類型選擇不同的頭像環
+    if is_special_user:
+        avatar_ring = Image.open(TEXT_PATH / "Adobe Express - file.png")
+    else:
+        avatar_ring = Image.open(TEXT_PATH / "avatar_ring.png")
 
     img.paste(avatar, (45, 20), avatar)
     avatar_ring = avatar_ring.resize((180, 180))
@@ -987,7 +999,7 @@ async def draw_char_detail_img(
         1200, 1250 + echo_list + ph_sum_value + jineng_len + dd_len, "bg3"
     )
     # 固定位置
-    await draw_fixed_img(img, avatar, account_info, role_detail)
+    await draw_fixed_img(img, avatar, account_info, role_detail, ev.user_id)
 
     # 声骸
     img.paste(phantom_temp, (0, 1320 + jineng_len), phantom_temp)
@@ -1024,11 +1036,9 @@ async def draw_char_detail_img(
     level_text = f"Lv.{weaponData.level}/90"
     level_bbox = weapon_bg_temp_draw.textbbox((0, 0), level_text, waves_font_30)
     level_width = level_bbox[2] - level_bbox[0]
-    
+
     # 繪製等級文字
-    weapon_bg_temp_draw.text(
-        (203, 75), level_text, "white", waves_font_30, "lm"
-    )
+    weapon_bg_temp_draw.text((203, 75), level_text, "white", waves_font_30, "lm")
 
     # 精煉等級放在等級文字右側
     _x = 203 + level_width + 20  # 等級文字右側20像素
@@ -1355,7 +1365,7 @@ async def draw_char_score_img(
     # 创建背景
     img = await get_card_bg(1200, 3380, "bg3")
     # 固定位置
-    await draw_fixed_img(img, avatar, account_info, role_detail)
+    await draw_fixed_img(img, avatar, account_info, role_detail, ev.user_id)
 
     # 声骸属性
     char_id = role_detail.role.roleId
@@ -1679,7 +1689,9 @@ async def draw_pic_with_ring(ev: Event, is_force_avatar=False, force_resource_id
         get_bot_avatar = AVATAR_GETTERS.get(ev.bot_id, get_qq_avatar)
         pic = await get_bot_avatar(ev.user_id)
 
+    # 頭像遮罩處理（始終使用默認遮罩）
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
+
     img = Image.new("RGBA", (180, 180))
     mask = mask_pic.resize((160, 160))
     resize_pic = crop_center_img(pic, 160, 160)
@@ -1688,10 +1700,12 @@ async def draw_pic_with_ring(ev: Event, is_force_avatar=False, force_resource_id
     return img
 
 
-async def draw_char_with_ring(char_id):
+async def draw_char_with_ring(char_id, user_id=None):
     pic = await get_square_avatar(char_id)
 
+    # 頭像遮罩處理（始終使用默認遮罩）
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
+
     img = Image.new("RGBA", (180, 180))
     mask = mask_pic.resize((160, 160))
     resize_pic = crop_center_img(pic, 160, 160)
