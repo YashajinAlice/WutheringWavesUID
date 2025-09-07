@@ -41,6 +41,7 @@ DETAIL = {
     "1207": {"name": "露帕", "fetterDetail": "奔狼燎原之焰"},
     "1608": {"name": "弗洛洛", "fetterDetail": {"失序彼岸之梦": 3, "幽夜隐匿之帷": 2}},
     "1306": {"name": "奥古斯塔", "fetterDetail": "荣斗铸锋之冠"},
+    "1410": {"name": "尤诺", "fetterDetail": "荣斗铸锋之冠"},
 }
 
 # resource/intensity_echo_detail.json
