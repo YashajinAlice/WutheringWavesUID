@@ -3,20 +3,20 @@ from typing import Any, Dict, List, Optional
 
 from gsuid_core.logger import logger
 
-from ..utils.api.model import EquipPhantomData, RoleDetailData
+from ..utils.waves_api import waves_api
+from ..utils.waves_card_cache import get_card
 from ..utils.api.model_other import EnemyDetailData
+from ..utils.api.model import RoleDetailData, EquipPhantomData
+from ..utils.resource.constant import SPECIAL_CHAR, SONATA_FIRST_ID
 from ..utils.ascension.sonata import WavesSonataResult, get_sonata_detail
 from ..utils.ascension.weapon import WavesWeaponResult, get_weapon_detail
 from ..utils.name_convert import (
+    easy_id_to_name,
     alias_to_sonata_name,
     alias_to_weapon_name,
     char_name_to_char_id,
-    easy_id_to_name,
     weapon_name_to_weapon_id,
 )
-from ..utils.resource.constant import SONATA_FIRST_ID, SPECIAL_CHAR
-from ..utils.waves_api import waves_api
-from ..utils.waves_card_cache import get_card
 
 phantom_main_value = [
     {"name": "攻击", "values": ["18%", "30%", "33%"]},
