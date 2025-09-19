@@ -1,0 +1,36 @@
+{
+    "id": 44010025,
+    "name": "木紋殘片",
+    "bg": "瑝瓏地區的古代建築多使用木質結構，但木材並無法滿足現代建築的強度需求。自許久以前起，瑝瓏便開始開發使用各式各樣的建材來模擬木紋，使得建築既不失古韻又堅固耐用。\n在瑝瓏各地都能收集到木紋殘片，它們形狀、材質各異，或許曾來自民居的房梁、屋簷，或許來自商鋪、軍營、學府……要弄清這其中的故事絕非易事，而先行公約則樂此不疲。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_currency_4_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_currency_4_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_currency_4_UI.png"
+    },
+    "showType": [
+        {
+            "id": 15,
+            "name": "特殊代幣"
+        }
+    ],
+    "mainType": {
+        "id": 7,
+        "name": "特殊",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag07.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Tongyong_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 401000,
+            "description": "索拉里斯探索獲得"
+        }
+    ]
+}

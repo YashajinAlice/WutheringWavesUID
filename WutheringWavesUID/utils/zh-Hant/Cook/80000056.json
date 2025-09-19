@@ -1,0 +1,63 @@
+{
+    "id": 80000056,
+    "name": "黎喬利鹽焗魚",
+    "description": "提高隊伍中所有共鳴者35%防禦，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+    "items": [
+        {
+            "id": 80050008,
+            "name": "鹽",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A13_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A13_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A13_UI.png"
+            },
+            "count": 3
+        },
+        {
+            "id": 42400120,
+            "name": "魚肉",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_yurou_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_yurou_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_yurou_UI.png"
+            },
+            "count": 3
+        },
+        {
+            "id": 42601010,
+            "name": "桂葉",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_048_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_048_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_048_UI.png"
+            },
+            "count": 3
+        }
+    ],
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_073_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_073_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_073_UI.png"
+    },
+    "resonator": []
+}

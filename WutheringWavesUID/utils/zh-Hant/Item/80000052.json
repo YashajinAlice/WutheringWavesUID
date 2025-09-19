@@ -1,0 +1,36 @@
+{
+    "id": 80000052,
+    "name": "劇團烈度",
+    "bg": "劇團成員自行釀造的酒。酒名代表著所有權、力量和榮耀，海員們為這種酒究竟該叫什麼爭論不休。在打了幾十個賭，押上大半的私釀後，醉倒的愚人們終於達成了共識，此後這種酒被稱為「劇團烈度」。",
+    "rarity": {
+        "id": 2,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_059_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_059_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_059_UI.png"
+    },
+    "showType": [
+        {
+            "id": 23,
+            "name": "菜肴"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 404000,
+            "description": "烹飪獲得"
+        }
+    ]
+}

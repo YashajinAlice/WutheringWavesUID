@@ -1,0 +1,36 @@
+{
+    "id": 42601210,
+    "name": "鹽海珀",
+    "bg": "於七丘海岸帶或海浸谷底分布生長的鹽礦石，為立方晶系晶體，通透性較高，礦面上生有獨特的漩渦狀紋路。\n七丘人會將這些礦石研磨成嗅鹽，也會用它們打磨成珠寶。",
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_yanhaipo_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_yanhaipo_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_yanhaipo_UI.png"
+    },
+    "showType": [
+        {
+            "id": 26,
+            "name": "食材"
+        }
+    ],
+    "mainType": {
+        "id": 5,
+        "name": "素材",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag08.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jiguan_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 402001,
+            "description": "野外採集獲得"
+        }
+    ]
+}

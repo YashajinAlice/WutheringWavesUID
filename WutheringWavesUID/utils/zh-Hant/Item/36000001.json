@@ -1,0 +1,40 @@
+{
+    "id": 36000001,
+    "name": "初級密音筒",
+    "bg": "收錄簡化頻率集的筒形存儲器，需要將加密轉輪旋至正確的位置才能啟動。共鳴者可以透過終端接口從中提取數據，用於調優已吸收聲骸的各項性能。",
+    "rarity": {
+        "id": 2,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_10_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_10_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_10_UI.png"
+    },
+    "showType": [
+        {
+            "id": 22,
+            "name": "聲骸養成材料"
+        }
+    ],
+    "mainType": {
+        "id": 4,
+        "name": "資源",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag04.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jchumokuai_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 401000,
+            "description": "索拉里斯探索獲得"
+        },
+        {
+            "id": 202000,
+            "description": "無音清剿獲得"
+        }
+    ]
+}

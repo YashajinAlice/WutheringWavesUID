@@ -1,0 +1,36 @@
+{
+    "id": 71500035,
+    "name": "那前赴後繼的風帆",
+    "bg": "時間太過緊急，他只來得及護住一樣東西便墜入了大海。肺部的空氣逐漸排空，但他卻笑得越來越得意。「我一定是世上最傑出的商人吧，只用區區自己的生命，就買到了家族的未來。」",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconMowing/T_IconMowing_21.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconMowing160/T_IconMowing160_21.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconMowing80/T_IconMowing80_21.png"
+    },
+    "showType": [
+        {
+            "id": 50,
+            "name": "信物"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 857001,
+            "description": "冥歌海墟玩法中獲得"
+        }
+    ]
+}

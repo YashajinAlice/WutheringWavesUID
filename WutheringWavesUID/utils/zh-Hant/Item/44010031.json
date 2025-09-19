@@ -1,0 +1,36 @@
+{
+    "id": 44010031,
+    "name": "「莫內」",
+    "bg": "拉古那不再流通的舊幣「莫內」，由埃弗拉德銀行發行。\n現今，「莫內」的紀念價值已遠大於使用價值，埃弗拉德銀行正著手回收。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_currency_7_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_currency_7_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_currency_7_UI.png"
+    },
+    "showType": [
+        {
+            "id": 15,
+            "name": "特殊代幣"
+        }
+    ],
+    "mainType": {
+        "id": 7,
+        "name": "特殊",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag07.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Tongyong_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 401001,
+            "description": "拉古那探索獲得"
+        }
+    ]
+}

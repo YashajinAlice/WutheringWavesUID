@@ -1,0 +1,44 @@
+{
+    "id": 80000008,
+    "name": "清芬茶",
+    "bg": "清芬草在物資匱乏的時期被瑝瓏民間作為抵抗風寒的重要藥材。合成類藥物恢復生產後，使用清芬草泡水增強抵抗力的習慣得以保留，並逐漸發展形成了現今的清芬茶。",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_009_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_009_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_009_UI.png"
+    },
+    "showType": [
+        {
+            "id": 23,
+            "name": "菜肴"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {
+        "id": 80000008,
+        "type": {
+            "id": 2,
+            "description": "ItemHandBookType_2_Descrtption",
+            "icon": "/d/GameData/UIResources/UiArchive/Atlas/SP_ArchivePengren.png"
+        },
+        "title": "菜餚"
+    },
+    "itemAccess": [
+        {
+            "id": 404000,
+            "description": "烹飪獲得"
+        }
+    ]
+}

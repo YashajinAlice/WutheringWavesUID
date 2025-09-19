@@ -1,0 +1,40 @@
+{
+    "id": 39,
+    "name": "《黎那汐塔漁藝指南》",
+    "bg": "由黎那汐塔捕魚業權威編纂的全方面漁業指南，但對捕魚的最終結果並不負責。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_Act_Navigation05_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_Act_Navigation05_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_Act_Navigation05_UI.png"
+    },
+    "showType": [
+        {
+            "id": 15,
+            "name": "特殊代幣"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 900002,
+            "description": "碼頭商店購買"
+        },
+        {
+            "id": 900004,
+            "description": "完成劇情獲取"
+        }
+    ]
+}

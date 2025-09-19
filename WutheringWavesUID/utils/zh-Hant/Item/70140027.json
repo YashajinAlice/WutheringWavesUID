@@ -1,0 +1,31 @@
+{
+    "id": 70140027,
+    "name": "珂萊塔的「寶石」",
+    "bg": "家族成員慣於使用暗語或是以手勢、動作傳遞資訊。或許，她是在向你傳達……若是她已將武器與子彈置於你的手中，那麼在之後的行動裡，必不會加害於你。\n相信她，配合她的表演吧。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_102_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconTask160/T_IconTask160_Task_102_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconTask80/T_IconTask80_Task_102_UI.png"
+    },
+    "showType": [
+        {
+            "id": 21,
+            "name": "任務道具"
+        }
+    ],
+    "mainType": {
+        "id": 6,
+        "name": "任務",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag03.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Renwu_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

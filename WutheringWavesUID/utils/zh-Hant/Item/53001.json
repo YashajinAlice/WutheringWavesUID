@@ -1,0 +1,31 @@
+{
+    "id": 53001,
+    "name": "桃夭灼灼",
+    "bg": "花前月下，清歌曼舞。為典儀，更為——\n紀念你們最初的相會、同途的相知，以及共濟風雪的相伴。\n「春回歲往誰與共，桃夭灼灼牽絲動。」",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_24_a_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_24_a_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_24_a_UI.png"
+    },
+    "showType": [
+        {
+            "id": 16,
+            "name": "物資箱"
+        }
+    ],
+    "mainType": {
+        "id": 7,
+        "name": "特殊",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag07.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Tongyong_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

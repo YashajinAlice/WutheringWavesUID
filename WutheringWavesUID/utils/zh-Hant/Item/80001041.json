@@ -1,0 +1,36 @@
+{
+    "id": 80001041,
+    "name": "一小塊披薩",
+    "bg": "從一張無比巨大的披薩上切下的其中一塊，起司滿溢，餡多料足，每個孩子都能在上面找到愛吃的一部分，是每隔一個月才能一起享用的美味。\n阿嬤們曾說，信仰來源於愛，愛產生分享，而分享又將愛回報。",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_070_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_070_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_070_UI.png"
+    },
+    "showType": [
+        {
+            "id": 23,
+            "name": "菜肴"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 404000,
+            "description": "烹飪獲得"
+        }
+    ]
+}

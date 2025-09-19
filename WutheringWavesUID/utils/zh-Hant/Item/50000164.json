@@ -1,0 +1,31 @@
+{
+    "id": 50000164,
+    "name": "寰宇開拓武器箱",
+    "bg": "先行公約為自身探險者挑選的強力武器已置入其中。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconGiftPack/T_IconGiftPack_003_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconGiftPack/T_IconGiftPack_003_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconGiftPack/T_IconGiftPack_003_UI.png"
+    },
+    "showType": [
+        {
+            "id": 16,
+            "name": "物資箱"
+        }
+    ],
+    "mainType": {
+        "id": 7,
+        "name": "特殊",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag07.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Tongyong_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

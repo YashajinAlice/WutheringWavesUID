@@ -1,0 +1,36 @@
+{
+    "id": 80001047,
+    "name": "流浪騎士之作",
+    "bg": "卡提希婭親自烹飪的青枝月桂沙拉，加入了更多青枝果，每一口都格外脆甜。\n現在，作為一位流浪騎士，她有很多東西想要學，有很多風景想要去看。\n——那就從做一份獨屬於流浪騎士的沙拉開始吧。這回，青枝果要多加多加、多多加！",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_077_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_077_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_077_UI.png"
+    },
+    "showType": [
+        {
+            "id": 23,
+            "name": "菜肴"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 404000,
+            "description": "烹飪獲得"
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "id": 71500022,
+    "name": "那侵髓蝕骨的血盟",
+    "bg": "「他感到身體越來越沉重，黑暗將他束縛，緩慢地拖入海底。寂靜中，只剩下戒指的低語，你逃不了的，沒人逃得了……」",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconMowing/T_IconMowing_20.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconMowing160/T_IconMowing160_20.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconMowing80/T_IconMowing80_20.png"
+    },
+    "showType": [
+        {
+            "id": 50,
+            "name": "信物"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 857001,
+            "description": "冥歌海墟玩法中獲得"
+        }
+    ]
+}

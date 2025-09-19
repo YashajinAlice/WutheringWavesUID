@@ -1,0 +1,30 @@
+{
+    "id": 80064002,
+    "name": "聲骸數據",
+    "tips": "達成相應成就獲得。",
+    "showInBag": false,
+    "description": {
+        "bg": "見證漂泊者旅途的印章，可展示給其他旅者。\n在漂泊者資料中可更換羈旅印章。",
+        "type": "羈旅印章",
+        "attributes": "",
+        "obtainedShow": ""
+    },
+    "rarity": {
+        "id": 5,
+        "name": "五星",
+        "consumeText": "不限",
+        "color": "#CFB17F",
+        "stars": "五星"
+    },
+    "items": [
+        701000
+    ],
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCard/T_IconCard256_21.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCard160/T_IconCard160_21.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCard80/T_IconCard80_21.png",
+        "longCardPath": "/d/GameData/UIResources/Common/Image/CardLong/T_CardLong21.png",
+        "cardPath": "/d/GameData/UIResources/Common/Image/Card/T_Card21.png",
+        "functionViewCardPath": "/d/GameData/UIResources/Common/Image/CardPolygon/T_CardPolygon_21.png"
+    }
+}

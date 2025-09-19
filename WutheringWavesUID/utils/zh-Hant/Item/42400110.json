@@ -1,0 +1,44 @@
+{
+    "id": 42400110,
+    "name": "金環蜓",
+    "bg": "金環蜓是濕地與水域的掠食者，其食譜涵蓋了飛蟲與小型魚蝦，以迅猛的飛獵速度著稱。",
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_jinhuanting_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_jinhuanting_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_jinhuanting_UI.png"
+    },
+    "showType": [
+        {
+            "id": 44,
+            "name": "藥材"
+        }
+    ],
+    "mainType": {
+        "id": 5,
+        "name": "素材",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag08.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jiguan_UI.png"
+        }
+    },
+    "handBook": {
+        "id": 42400110,
+        "type": {
+            "id": 1,
+            "description": "ItemHandBookType_1_Descrtption",
+            "icon": "/d/GameData/UIResources/UiArchive/Atlas/SP_ArchiveWuchan.png"
+        },
+        "title": "材料"
+    },
+    "itemAccess": [
+        {
+            "id": 402001,
+            "description": "野外採集獲得"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "id": 10802,
+    "name": "借位信標",
+    "bg": "臨時性信標借助放置點周圍的信標數據進行地點標記，具有與信標相同的功能，並且可動性更強，是野外工作人員的常用物品。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_04_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_04_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_04_UI.png"
+    },
+    "showType": [
+        {
+            "id": 39,
+            "name": "探索工具"
+        }
+    ],
+    "mainType": {
+        "id": 7,
+        "name": "特殊",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag07.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Tongyong_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

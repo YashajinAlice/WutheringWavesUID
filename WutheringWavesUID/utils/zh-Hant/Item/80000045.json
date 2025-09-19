@@ -1,0 +1,36 @@
+{
+    "id": 80000045,
+    "name": "拉古那濃縮咖啡",
+    "bg": "拉古那傳統咖啡，口感濃郁。面不改色地喝下一杯拉古那咖啡，是成年人才有的成就。\n「這已經是你今天喝的第三杯咖啡了吧！」\n「但我剛接到今天的第三個需求啊！」",
+    "rarity": {
+        "id": 2,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_060_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_060_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_060_UI.png"
+    },
+    "showType": [
+        {
+            "id": 23,
+            "name": "菜肴"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 404000,
+            "description": "烹飪獲得"
+        }
+    ]
+}

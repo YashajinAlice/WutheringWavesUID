@@ -1,0 +1,2176 @@
+{
+    "43": {
+        "id": 43,
+        "name": "殘響之塔",
+        "cost": 1,
+        "season": 4,
+        "difficulty": {
+            "id": 3,
+            "reward": [
+                {
+                    "item1": 3,
+                    "item2": 3519
+                },
+                {
+                    "item1": 6,
+                    "item2": 3520
+                },
+                {
+                    "item1": 9,
+                    "item2": 3521
+                },
+                {
+                    "item1": 12,
+                    "item2": 3522
+                },
+                {
+                    "item1": 15,
+                    "item2": 3523
+                },
+                {
+                    "item1": 18,
+                    "item2": 3524
+                },
+                {
+                    "item1": 21,
+                    "item2": 3525
+                },
+                {
+                    "item1": 24,
+                    "item2": 3526
+                },
+                {
+                    "item1": 27,
+                    "item2": 3527
+                },
+                {
+                    "item1": 30,
+                    "item2": 3528
+                }
+            ]
+        },
+        "areaNum": 1,
+        "floor": 1,
+        "element": [
+            {
+                "id": 3,
+                "name": "導電",
+                "description": "存在異常，如有疑問請聯絡官方客服",
+                "color": "#B46BFFFF",
+                "icon": {
+                    "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+                    "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+                    "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+                    "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder.png",
+                    "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+                    "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder1.png",
+                    "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder2.png",
+                    "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder3.png"
+                }
+            }
+        ],
+        "monster": [
+            {
+                "id": 310000070,
+                "name": "審判戰士",
+                "level": 70,
+                "rarity": {
+                    "id": 1,
+                    "name": "",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_055_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000052,
+                    "3": 60000053,
+                    "4": 60000054,
+                    "5": 60000055
+                }
+            },
+            {
+                "id": 310000030,
+                "name": "驚蟄獵手",
+                "level": 70,
+                "rarity": {
+                    "id": 1,
+                    "name": "",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_035_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000032,
+                    "3": 60000033,
+                    "4": 60000034,
+                    "5": 60000035
+                }
+            },
+            {
+                "id": 310000040,
+                "name": "破霜獵手",
+                "level": 70,
+                "rarity": {
+                    "id": 1,
+                    "name": "",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_105_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000102,
+                    "3": 60000103,
+                    "4": 60000104,
+                    "5": 60000105
+                }
+            },
+            {
+                "id": 310000050,
+                "name": "巡徊獵手",
+                "level": 70,
+                "rarity": {
+                    "id": 1,
+                    "name": "",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_235_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000232,
+                    "3": 60000233,
+                    "4": 60000234,
+                    "5": 60000235
+                }
+            }
+        ],
+        "buff": [
+            {
+                "id": 92007100,
+                "name": "",
+                "desc": "角色<color=Thunder>導電傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredmine_UI.png"
+            },
+            {
+                "id": 552,
+                "name": "",
+                "desc": "角色處於後台時，傷害提升100%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            }
+        ],
+        "roleBuff": [
+            {
+                "id": 552,
+                "name": "",
+                "desc": "角色處於後台時，傷害提升100%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            },
+            {
+                "id": 92007100,
+                "name": "",
+                "desc": "角色<color=Thunder>導電傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredmine_UI.png"
+            }
+        ],
+        "monsterBuff": [],
+        "starTime": {
+            "1": 0,
+            "2": 90,
+            "3": 150
+        },
+        "icon": {
+            "bgPath": null,
+            "itemBgPath": "/d/GameData/UIResources/UiDailyTower/Image/T_DailyTowerL1.png"
+        }
+    },
+    "44": {
+        "id": 44,
+        "name": "殘響之塔",
+        "cost": 2,
+        "season": 4,
+        "difficulty": {
+            "id": 3,
+            "reward": [
+                {
+                    "item1": 3,
+                    "item2": 3519
+                },
+                {
+                    "item1": 6,
+                    "item2": 3520
+                },
+                {
+                    "item1": 9,
+                    "item2": 3521
+                },
+                {
+                    "item1": 12,
+                    "item2": 3522
+                },
+                {
+                    "item1": 15,
+                    "item2": 3523
+                },
+                {
+                    "item1": 18,
+                    "item2": 3524
+                },
+                {
+                    "item1": 21,
+                    "item2": 3525
+                },
+                {
+                    "item1": 24,
+                    "item2": 3526
+                },
+                {
+                    "item1": 27,
+                    "item2": 3527
+                },
+                {
+                    "item1": 30,
+                    "item2": 3528
+                }
+            ]
+        },
+        "areaNum": 1,
+        "floor": 2,
+        "element": [
+            {
+                "id": 3,
+                "name": "導電",
+                "description": "存在異常，如有疑問請聯絡官方客服",
+                "color": "#B46BFFFF",
+                "icon": {
+                    "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+                    "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+                    "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+                    "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder.png",
+                    "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+                    "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder1.png",
+                    "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder2.png",
+                    "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder3.png"
+                }
+            }
+        ],
+        "monster": [
+            {
+                "id": 320000080,
+                "name": "綠熔蜥",
+                "level": 75,
+                "rarity": {
+                    "id": 2,
+                    "name": "",
+                    "color": "#C759C1FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_295_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000292,
+                    "3": 60000293,
+                    "4": 60000294,
+                    "5": 60000295
+                }
+            },
+            {
+                "id": 310000220,
+                "name": "刺玫菇（稚形）",
+                "level": 75,
+                "rarity": {
+                    "id": 1,
+                    "name": "",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_305_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000302,
+                    "3": 60000303,
+                    "4": 60000304,
+                    "5": 60000305
+                }
+            },
+            {
+                "id": 310000280,
+                "name": "火鬃狼",
+                "level": 75,
+                "rarity": {
+                    "id": 1,
+                    "name": "",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_980_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000362,
+                    "3": 60000363,
+                    "4": 60000364,
+                    "5": 60000365
+                }
+            }
+        ],
+        "buff": [
+            {
+                "id": 92007100,
+                "name": "",
+                "desc": "角色<color=Thunder>導電傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredmine_UI.png"
+            },
+            {
+                "id": 552,
+                "name": "",
+                "desc": "角色處於後台時，傷害提升100%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            }
+        ],
+        "roleBuff": [
+            {
+                "id": 552,
+                "name": "",
+                "desc": "角色處於後台時，傷害提升100%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            },
+            {
+                "id": 92007100,
+                "name": "",
+                "desc": "角色<color=Thunder>導電傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredmine_UI.png"
+            }
+        ],
+        "monsterBuff": [],
+        "starTime": {
+            "1": 0,
+            "2": 90,
+            "3": 150
+        },
+        "icon": {
+            "bgPath": null,
+            "itemBgPath": "/d/GameData/UIResources/UiDailyTower/Image/T_DailyTowerL2.png"
+        }
+    },
+    "45": {
+        "id": 45,
+        "name": "殘響之塔",
+        "cost": 3,
+        "season": 4,
+        "difficulty": {
+            "id": 3,
+            "reward": [
+                {
+                    "item1": 3,
+                    "item2": 3519
+                },
+                {
+                    "item1": 6,
+                    "item2": 3520
+                },
+                {
+                    "item1": 9,
+                    "item2": 3521
+                },
+                {
+                    "item1": 12,
+                    "item2": 3522
+                },
+                {
+                    "item1": 15,
+                    "item2": 3523
+                },
+                {
+                    "item1": 18,
+                    "item2": 3524
+                },
+                {
+                    "item1": 21,
+                    "item2": 3525
+                },
+                {
+                    "item1": 24,
+                    "item2": 3526
+                },
+                {
+                    "item1": 27,
+                    "item2": 3527
+                },
+                {
+                    "item1": 30,
+                    "item2": 3528
+                }
+            ]
+        },
+        "areaNum": 1,
+        "floor": 3,
+        "element": [
+            {
+                "id": 3,
+                "name": "導電",
+                "description": "存在異常，如有疑問請聯絡官方客服",
+                "color": "#B46BFFFF",
+                "icon": {
+                    "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+                    "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+                    "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+                    "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder.png",
+                    "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+                    "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder1.png",
+                    "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder2.png",
+                    "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder3.png"
+                }
+            }
+        ],
+        "monster": [
+            {
+                "id": 320000060,
+                "name": "磐石守衛",
+                "level": 80,
+                "rarity": {
+                    "id": 2,
+                    "name": "",
+                    "color": "#C759C1FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_245_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000242,
+                    "3": 60000243,
+                    "4": 60000244,
+                    "5": 60000245
+                }
+            },
+            {
+                "id": 320000070,
+                "name": "冥淵守衛",
+                "level": 80,
+                "rarity": {
+                    "id": 2,
+                    "name": "",
+                    "color": "#C759C1FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_215_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000212,
+                    "3": 60000213,
+                    "4": 60000214,
+                    "5": 60000215
+                }
+            },
+            {
+                "id": 310000030,
+                "name": "驚蟄獵手",
+                "level": 80,
+                "rarity": {
+                    "id": 1,
+                    "name": "",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_035_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000032,
+                    "3": 60000033,
+                    "4": 60000034,
+                    "5": 60000035
+                }
+            },
+            {
+                "id": 310000040,
+                "name": "破霜獵手",
+                "level": 80,
+                "rarity": {
+                    "id": 1,
+                    "name": "",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_105_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000102,
+                    "3": 60000103,
+                    "4": 60000104,
+                    "5": 60000105
+                }
+            },
+            {
+                "id": 310000050,
+                "name": "巡徊獵手",
+                "level": 80,
+                "rarity": {
+                    "id": 1,
+                    "name": "",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_235_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000232,
+                    "3": 60000233,
+                    "4": 60000234,
+                    "5": 60000235
+                }
+            }
+        ],
+        "buff": [
+            {
+                "id": 92007100,
+                "name": "",
+                "desc": "角色<color=Thunder>導電傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredmine_UI.png"
+            },
+            {
+                "id": 552,
+                "name": "",
+                "desc": "角色處於後台時，傷害提升100%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            }
+        ],
+        "roleBuff": [
+            {
+                "id": 552,
+                "name": "",
+                "desc": "角色處於後台時，傷害提升100%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            },
+            {
+                "id": 92007100,
+                "name": "",
+                "desc": "角色<color=Thunder>導電傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredmine_UI.png"
+            }
+        ],
+        "monsterBuff": [],
+        "starTime": {
+            "1": 0,
+            "2": 120,
+            "3": 180
+        },
+        "icon": {
+            "bgPath": null,
+            "itemBgPath": "/d/GameData/UIResources/UiDailyTower/Image/T_DailyTowerL3.png"
+        }
+    },
+    "46": {
+        "id": 46,
+        "name": "殘響之塔",
+        "cost": 4,
+        "season": 4,
+        "difficulty": {
+            "id": 3,
+            "reward": [
+                {
+                    "item1": 3,
+                    "item2": 3519
+                },
+                {
+                    "item1": 6,
+                    "item2": 3520
+                },
+                {
+                    "item1": 9,
+                    "item2": 3521
+                },
+                {
+                    "item1": 12,
+                    "item2": 3522
+                },
+                {
+                    "item1": 15,
+                    "item2": 3523
+                },
+                {
+                    "item1": 18,
+                    "item2": 3524
+                },
+                {
+                    "item1": 21,
+                    "item2": 3525
+                },
+                {
+                    "item1": 24,
+                    "item2": 3526
+                },
+                {
+                    "item1": 27,
+                    "item2": 3527
+                },
+                {
+                    "item1": 30,
+                    "item2": 3528
+                }
+            ]
+        },
+        "areaNum": 1,
+        "floor": 4,
+        "element": [
+            {
+                "id": 3,
+                "name": "導電",
+                "description": "存在異常，如有疑問請聯絡官方客服",
+                "color": "#B46BFFFF",
+                "icon": {
+                    "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+                    "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+                    "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+                    "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder.png",
+                    "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+                    "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder1.png",
+                    "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder2.png",
+                    "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder3.png"
+                }
+            }
+        ],
+        "monster": [
+            {
+                "id": 330000060,
+                "name": "哀聲鷙",
+                "level": 90,
+                "rarity": {
+                    "id": 3,
+                    "name": "",
+                    "color": "#DEA544FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_997_UI.png",
+                    "bigIcon": "/d/GameData/UIResources/Common/Image/ImgBoss/T_Boss_02.png",
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000452,
+                    "3": 60000453,
+                    "4": 60000454,
+                    "5": 60000455
+                }
+            },
+            {
+                "id": 320000150,
+                "name": "流放者工匠",
+                "level": 90,
+                "rarity": {
+                    "id": 2,
+                    "name": "",
+                    "color": "#C759C1FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_978_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {}
+            },
+            {
+                "id": 310000245,
+                "name": "流放者",
+                "level": 90,
+                "rarity": {
+                    "id": 1,
+                    "name": "",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_976_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": null
+            }
+        ],
+        "buff": [
+            {
+                "id": 92007100,
+                "name": "",
+                "desc": "角色<color=Thunder>導電傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredmine_UI.png"
+            },
+            {
+                "id": 552,
+                "name": "",
+                "desc": "角色處於後台時，傷害提升100%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            }
+        ],
+        "roleBuff": [
+            {
+                "id": 552,
+                "name": "",
+                "desc": "角色處於後台時，傷害提升100%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            },
+            {
+                "id": 92007100,
+                "name": "",
+                "desc": "角色<color=Thunder>導電傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredmine_UI.png"
+            }
+        ],
+        "monsterBuff": [],
+        "starTime": {
+            "1": 0,
+            "2": 120,
+            "3": 180
+        },
+        "icon": {
+            "bgPath": null,
+            "itemBgPath": "/d/GameData/UIResources/UiDailyTower/Image/T_DailyTowerL4.png"
+        }
+    },
+    "47": {
+        "id": 47,
+        "name": "深境之塔",
+        "cost": 5,
+        "season": 4,
+        "difficulty": {
+            "id": 3,
+            "reward": [
+                {
+                    "item1": 3,
+                    "item2": 3519
+                },
+                {
+                    "item1": 6,
+                    "item2": 3520
+                },
+                {
+                    "item1": 9,
+                    "item2": 3521
+                },
+                {
+                    "item1": 12,
+                    "item2": 3522
+                },
+                {
+                    "item1": 15,
+                    "item2": 3523
+                },
+                {
+                    "item1": 18,
+                    "item2": 3524
+                },
+                {
+                    "item1": 21,
+                    "item2": 3525
+                },
+                {
+                    "item1": 24,
+                    "item2": 3526
+                },
+                {
+                    "item1": 27,
+                    "item2": 3527
+                },
+                {
+                    "item1": 30,
+                    "item2": 3528
+                }
+            ]
+        },
+        "areaNum": 2,
+        "floor": 1,
+        "element": [],
+        "monster": [
+            {
+                "id": 340000080,
+                "name": "雲閃之鱗",
+                "level": 100,
+                "rarity": {
+                    "id": 3,
+                    "name": "",
+                    "color": "#DEA544FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_226_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {}
+            }
+        ],
+        "buff": [
+            {
+                "id": 92007106,
+                "name": "",
+                "desc": "角色全屬性傷害加成提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            },
+            {
+                "id": 92008022,
+                "name": "",
+                "desc": "角色施放共鳴技能時，共鳴解放傷害加成提升60%，持續15秒； 角色釋放共鳴解放時，共鳴技能傷害加成提升60%，持續15秒",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            }
+        ],
+        "roleBuff": [
+            {
+                "id": 92008022,
+                "name": "",
+                "desc": "角色施放共鳴技能時，共鳴解放傷害加成提升60%，持續15秒； 角色釋放共鳴解放時，共鳴技能傷害加成提升60%，持續15秒",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            },
+            {
+                "id": 92007100,
+                "name": "",
+                "desc": "角色<color=Thunder>導電傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredmine_UI.png"
+            },
+            {
+                "id": 92007101,
+                "name": "",
+                "desc": "角色<color=Wind>氣動傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredwind_UI.png"
+            },
+            {
+                "id": 92007102,
+                "name": "",
+                "desc": "角色<color=Fire>熱熔傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredhot_UI.png"
+            },
+            {
+                "id": 92007103,
+                "name": "",
+                "desc": "角色<color=Ice>冷凝傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredice_UI.png"
+            },
+            {
+                "id": 92007104,
+                "name": "",
+                "desc": "角色<color=Light>衍射傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredlight_UI.png"
+            },
+            {
+                "id": 92007105,
+                "name": "",
+                "desc": "角色<color=Dark>湮滅傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyreddark_UI.png"
+            }
+        ],
+        "monsterBuff": [],
+        "starTime": {
+            "1": 90,
+            "2": 150,
+            "3": 180
+        },
+        "icon": {
+            "bgPath": null,
+            "itemBgPath": "/d/GameData/UIResources/UiDailyTower/Image/T_DailyTowerL3.png"
+        }
+    },
+    "48": {
+        "id": 48,
+        "name": "深境之塔",
+        "cost": 5,
+        "season": 4,
+        "difficulty": {
+            "id": 3,
+            "reward": [
+                {
+                    "item1": 3,
+                    "item2": 3519
+                },
+                {
+                    "item1": 6,
+                    "item2": 3520
+                },
+                {
+                    "item1": 9,
+                    "item2": 3521
+                },
+                {
+                    "item1": 12,
+                    "item2": 3522
+                },
+                {
+                    "item1": 15,
+                    "item2": 3523
+                },
+                {
+                    "item1": 18,
+                    "item2": 3524
+                },
+                {
+                    "item1": 21,
+                    "item2": 3525
+                },
+                {
+                    "item1": 24,
+                    "item2": 3526
+                },
+                {
+                    "item1": 27,
+                    "item2": 3527
+                },
+                {
+                    "item1": 30,
+                    "item2": 3528
+                }
+            ]
+        },
+        "areaNum": 2,
+        "floor": 2,
+        "element": [],
+        "monster": [
+            {
+                "id": 330000050,
+                "name": "飛廉之猩",
+                "level": 100,
+                "rarity": {
+                    "id": 3,
+                    "name": "",
+                    "color": "#DEA544FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_996_UI.png",
+                    "bigIcon": "/d/GameData/UIResources/Common/Image/ImgBoss/T_Boss_01.png",
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000432,
+                    "3": 60000433,
+                    "4": 60000434,
+                    "5": 60000435
+                }
+            },
+            {
+                "id": 310000010,
+                "name": "先鋒幼岩",
+                "level": 100,
+                "rarity": {
+                    "id": 1,
+                    "name": "",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_015_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000012,
+                    "3": 60000013,
+                    "4": 60000014,
+                    "5": 60000015
+                }
+            },
+            {
+                "id": 310000020,
+                "name": "裂變幼岩",
+                "level": 100,
+                "rarity": {
+                    "id": 1,
+                    "name": "",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_025_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000022,
+                    "3": 60000023,
+                    "4": 60000024,
+                    "5": 60000025
+                }
+            },
+            {
+                "id": 320000010,
+                "name": "堅岩鬥士",
+                "level": 100,
+                "rarity": {
+                    "id": 2,
+                    "name": "",
+                    "color": "#C759C1FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_185_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000182,
+                    "3": 60000183,
+                    "4": 60000184,
+                    "5": 60000185
+                }
+            }
+        ],
+        "buff": [
+            {
+                "id": 92007106,
+                "name": "",
+                "desc": "角色全屬性傷害加成提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            },
+            {
+                "id": 92008022,
+                "name": "",
+                "desc": "角色施放共鳴技能時，共鳴解放傷害加成提升60%，持續15秒； 角色釋放共鳴解放時，共鳴技能傷害加成提升60%，持續15秒",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            }
+        ],
+        "roleBuff": [
+            {
+                "id": 92008022,
+                "name": "",
+                "desc": "角色施放共鳴技能時，共鳴解放傷害加成提升60%，持續15秒； 角色釋放共鳴解放時，共鳴技能傷害加成提升60%，持續15秒",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            },
+            {
+                "id": 92007100,
+                "name": "",
+                "desc": "角色<color=Thunder>導電傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredmine_UI.png"
+            },
+            {
+                "id": 92007101,
+                "name": "",
+                "desc": "角色<color=Wind>氣動傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredwind_UI.png"
+            },
+            {
+                "id": 92007102,
+                "name": "",
+                "desc": "角色<color=Fire>熱熔傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredhot_UI.png"
+            },
+            {
+                "id": 92007103,
+                "name": "",
+                "desc": "角色<color=Ice>冷凝傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredice_UI.png"
+            },
+            {
+                "id": 92007104,
+                "name": "",
+                "desc": "角色<color=Light>衍射傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredlight_UI.png"
+            },
+            {
+                "id": 92007105,
+                "name": "",
+                "desc": "角色<color=Dark>湮滅傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyreddark_UI.png"
+            }
+        ],
+        "monsterBuff": [],
+        "starTime": {
+            "1": 90,
+            "2": 150,
+            "3": 180
+        },
+        "icon": {
+            "bgPath": null,
+            "itemBgPath": "/d/GameData/UIResources/UiDailyTower/Image/T_DailyTowerL4.png"
+        }
+    },
+    "49": {
+        "id": 49,
+        "name": "回音之塔",
+        "cost": 1,
+        "season": 4,
+        "difficulty": {
+            "id": 3,
+            "reward": [
+                {
+                    "item1": 3,
+                    "item2": 3519
+                },
+                {
+                    "item1": 6,
+                    "item2": 3520
+                },
+                {
+                    "item1": 9,
+                    "item2": 3521
+                },
+                {
+                    "item1": 12,
+                    "item2": 3522
+                },
+                {
+                    "item1": 15,
+                    "item2": 3523
+                },
+                {
+                    "item1": 18,
+                    "item2": 3524
+                },
+                {
+                    "item1": 21,
+                    "item2": 3525
+                },
+                {
+                    "item1": 24,
+                    "item2": 3526
+                },
+                {
+                    "item1": 27,
+                    "item2": 3527
+                },
+                {
+                    "item1": 30,
+                    "item2": 3528
+                }
+            ]
+        },
+        "areaNum": 3,
+        "floor": 1,
+        "element": [
+            {
+                "id": 5,
+                "name": "衍射",
+                "description": "存在異常，如有疑問請聯絡官方客服",
+                "color": "#F8E56CFF",
+                "icon": {
+                    "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                    "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                    "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                    "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight.png",
+                    "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                    "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight1.png",
+                    "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight2.png",
+                    "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight3.png"
+                }
+            }
+        ],
+        "monster": [
+            {
+                "id": 310000060,
+                "name": "鳴泣戰士",
+                "level": 70,
+                "rarity": {
+                    "id": 1,
+                    "name": "",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_045_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000042,
+                    "3": 60000043,
+                    "4": 60000044,
+                    "5": 60000045
+                }
+            },
+            {
+                "id": 310000070,
+                "name": "審判戰士",
+                "level": 70,
+                "rarity": {
+                    "id": 1,
+                    "name": "",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_055_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000052,
+                    "3": 60000053,
+                    "4": 60000054,
+                    "5": 60000055
+                }
+            },
+            {
+                "id": 310000050,
+                "name": "巡徊獵手",
+                "level": 70,
+                "rarity": {
+                    "id": 1,
+                    "name": "",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_235_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000232,
+                    "3": 60000233,
+                    "4": 60000234,
+                    "5": 60000235
+                }
+            }
+        ],
+        "buff": [
+            {
+                "id": 92007104,
+                "name": "",
+                "desc": "角色<color=Light>衍射傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredlight_UI.png"
+            },
+            {
+                "id": 92008023,
+                "name": "",
+                "desc": "角色共鳴技能傷害加成提升20%。 施放共鳴技能命中目標時，目標每秒受到額外<color=Wind>氣動</color>屬性傷害，持續18秒。",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            }
+        ],
+        "roleBuff": [
+            {
+                "id": 92007104,
+                "name": "",
+                "desc": "角色<color=Light>衍射傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredlight_UI.png"
+            },
+            {
+                "id": 92008023,
+                "name": "",
+                "desc": "角色共鳴技能傷害加成提升20%。 施放共鳴技能命中目標時，目標每秒受到額外<color=Wind>氣動</color>屬性傷害，持續18秒。",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            }
+        ],
+        "monsterBuff": [],
+        "starTime": {
+            "1": 0,
+            "2": 90,
+            "3": 150
+        },
+        "icon": {
+            "bgPath": null,
+            "itemBgPath": "/d/GameData/UIResources/UiDailyTower/Image/T_DailyTowerL1.png"
+        }
+    },
+    "50": {
+        "id": 50,
+        "name": "回音之塔",
+        "cost": 2,
+        "season": 4,
+        "difficulty": {
+            "id": 3,
+            "reward": [
+                {
+                    "item1": 3,
+                    "item2": 3519
+                },
+                {
+                    "item1": 6,
+                    "item2": 3520
+                },
+                {
+                    "item1": 9,
+                    "item2": 3521
+                },
+                {
+                    "item1": 12,
+                    "item2": 3522
+                },
+                {
+                    "item1": 15,
+                    "item2": 3523
+                },
+                {
+                    "item1": 18,
+                    "item2": 3524
+                },
+                {
+                    "item1": 21,
+                    "item2": 3525
+                },
+                {
+                    "item1": 24,
+                    "item2": 3526
+                },
+                {
+                    "item1": 27,
+                    "item2": 3527
+                },
+                {
+                    "item1": 30,
+                    "item2": 3528
+                }
+            ]
+        },
+        "areaNum": 3,
+        "floor": 2,
+        "element": [
+            {
+                "id": 5,
+                "name": "衍射",
+                "description": "存在異常，如有疑問請聯絡官方客服",
+                "color": "#F8E56CFF",
+                "icon": {
+                    "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                    "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                    "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                    "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight.png",
+                    "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                    "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight1.png",
+                    "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight2.png",
+                    "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight3.png"
+                }
+            }
+        ],
+        "monster": [
+            {
+                "id": 320000100,
+                "name": "暗鬃狼",
+                "level": 75,
+                "rarity": {
+                    "id": 2,
+                    "name": "",
+                    "color": "#C759C1FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_984_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000352,
+                    "3": 60000353,
+                    "4": 60000354,
+                    "5": 60000355
+                }
+            },
+            {
+                "id": 310000280,
+                "name": "火鬃狼",
+                "level": 75,
+                "rarity": {
+                    "id": 1,
+                    "name": "",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_980_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {
+                    "2": 60000362,
+                    "3": 60000363,
+                    "4": 60000364,
+                    "5": 60000365
+                }
+            }
+        ],
+        "buff": [
+            {
+                "id": 92007104,
+                "name": "",
+                "desc": "角色<color=Light>衍射傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredlight_UI.png"
+            },
+            {
+                "id": 92008023,
+                "name": "",
+                "desc": "角色共鳴技能傷害加成提升20%。 施放共鳴技能命中目標時，目標每秒受到額外<color=Wind>氣動</color>屬性傷害，持續18秒。",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            }
+        ],
+        "roleBuff": [
+            {
+                "id": 92007104,
+                "name": "",
+                "desc": "角色<color=Light>衍射傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredlight_UI.png"
+            },
+            {
+                "id": 92008023,
+                "name": "",
+                "desc": "角色共鳴技能傷害加成提升20%。 施放共鳴技能命中目標時，目標每秒受到額外<color=Wind>氣動</color>屬性傷害，持續18秒。",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            }
+        ],
+        "monsterBuff": [],
+        "starTime": {
+            "1": 0,
+            "2": 90,
+            "3": 150
+        },
+        "icon": {
+            "bgPath": null,
+            "itemBgPath": "/d/GameData/UIResources/UiDailyTower/Image/T_DailyTowerL2.png"
+        }
+    },
+    "51": {
+        "id": 51,
+        "name": "回音之塔",
+        "cost": 3,
+        "season": 4,
+        "difficulty": {
+            "id": 3,
+            "reward": [
+                {
+                    "item1": 3,
+                    "item2": 3519
+                },
+                {
+                    "item1": 6,
+                    "item2": 3520
+                },
+                {
+                    "item1": 9,
+                    "item2": 3521
+                },
+                {
+                    "item1": 12,
+                    "item2": 3522
+                },
+                {
+                    "item1": 15,
+                    "item2": 3523
+                },
+                {
+                    "item1": 18,
+                    "item2": 3524
+                },
+                {
+                    "item1": 21,
+                    "item2": 3525
+                },
+                {
+                    "item1": 24,
+                    "item2": 3526
+                },
+                {
+                    "item1": 27,
+                    "item2": 3527
+                },
+                {
+                    "item1": 30,
+                    "item2": 3528
+                }
+            ]
+        },
+        "areaNum": 3,
+        "floor": 3,
+        "element": [
+            {
+                "id": 5,
+                "name": "衍射",
+                "description": "存在異常，如有疑問請聯絡官方客服",
+                "color": "#F8E56CFF",
+                "icon": {
+                    "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                    "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                    "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                    "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight.png",
+                    "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                    "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight1.png",
+                    "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight2.png",
+                    "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight3.png"
+                }
+            }
+        ],
+        "monster": [
+            {
+                "id": 320000140,
+                "name": "流放者首領",
+                "level": 80,
+                "rarity": {
+                    "id": 2,
+                    "name": "",
+                    "color": "#C759C1FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_979_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {}
+            },
+            {
+                "id": 320000150,
+                "name": "流放者工匠",
+                "level": 80,
+                "rarity": {
+                    "id": 2,
+                    "name": "",
+                    "color": "#C759C1FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_978_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {}
+            },
+            {
+                "id": 310000245,
+                "name": "流放者",
+                "level": 80,
+                "rarity": {
+                    "id": 1,
+                    "name": "",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_976_UI.png",
+                    "bigIcon": null,
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": null
+            }
+        ],
+        "buff": [
+            {
+                "id": 92007104,
+                "name": "",
+                "desc": "角色<color=Light>衍射傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredlight_UI.png"
+            },
+            {
+                "id": 92008023,
+                "name": "",
+                "desc": "角色共鳴技能傷害加成提升20%。 施放共鳴技能命中目標時，目標每秒受到額外<color=Wind>氣動</color>屬性傷害，持續18秒。",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            }
+        ],
+        "roleBuff": [
+            {
+                "id": 92007104,
+                "name": "",
+                "desc": "角色<color=Light>衍射傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredlight_UI.png"
+            },
+            {
+                "id": 92008023,
+                "name": "",
+                "desc": "角色共鳴技能傷害加成提升20%。 施放共鳴技能命中目標時，目標每秒受到額外<color=Wind>氣動</color>屬性傷害，持續18秒。",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            }
+        ],
+        "monsterBuff": [],
+        "starTime": {
+            "1": 0,
+            "2": 120,
+            "3": 180
+        },
+        "icon": {
+            "bgPath": null,
+            "itemBgPath": "/d/GameData/UIResources/UiDailyTower/Image/T_DailyTowerL3.png"
+        }
+    },
+    "52": {
+        "id": 52,
+        "name": "回音之塔",
+        "cost": 4,
+        "season": 4,
+        "difficulty": {
+            "id": 3,
+            "reward": [
+                {
+                    "item1": 3,
+                    "item2": 3519
+                },
+                {
+                    "item1": 6,
+                    "item2": 3520
+                },
+                {
+                    "item1": 9,
+                    "item2": 3521
+                },
+                {
+                    "item1": 12,
+                    "item2": 3522
+                },
+                {
+                    "item1": 15,
+                    "item2": 3523
+                },
+                {
+                    "item1": 18,
+                    "item2": 3524
+                },
+                {
+                    "item1": 21,
+                    "item2": 3525
+                },
+                {
+                    "item1": 24,
+                    "item2": 3526
+                },
+                {
+                    "item1": 27,
+                    "item2": 3527
+                },
+                {
+                    "item1": 30,
+                    "item2": 3528
+                }
+            ]
+        },
+        "areaNum": 3,
+        "floor": 4,
+        "element": [
+            {
+                "id": 5,
+                "name": "衍射",
+                "description": "存在異常，如有疑問請聯絡官方客服",
+                "color": "#F8E56CFF",
+                "icon": {
+                    "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                    "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                    "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                    "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight.png",
+                    "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                    "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight1.png",
+                    "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight2.png",
+                    "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight3.png"
+                }
+            }
+        ],
+        "monster": [
+            {
+                "id": 330000030,
+                "name": "無常凶鷺",
+                "level": 90,
+                "rarity": {
+                    "id": 3,
+                    "name": "",
+                    "color": "#DEA544FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_995_UI.png",
+                    "bigIcon": "/d/GameData/UIResources/Common/Image/ImgBoss/T_Boss_04.png",
+                    "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+                },
+                "element": {
+                    "id": 0,
+                    "name": "物理",
+                    "description": "存在異常，如有疑問請聯絡官方客服",
+                    "color": "#7892A1FF",
+                    "icon": {
+                        "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+                        "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+                        "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+                        "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+                        "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+                    }
+                },
+                "echoId": {}
+            }
+        ],
+        "buff": [
+            {
+                "id": 92007104,
+                "name": "",
+                "desc": "角色<color=Light>衍射傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredlight_UI.png"
+            },
+            {
+                "id": 92008023,
+                "name": "",
+                "desc": "角色共鳴技能傷害加成提升20%。 施放共鳴技能命中目標時，目標每秒受到額外<color=Wind>氣動</color>屬性傷害，持續18秒。",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            }
+        ],
+        "roleBuff": [
+            {
+                "id": 92007104,
+                "name": "",
+                "desc": "角色<color=Light>衍射傷害加成</color>提升30%",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredlight_UI.png"
+            },
+            {
+                "id": 92008023,
+                "name": "",
+                "desc": "角色共鳴技能傷害加成提升20%。 施放共鳴技能命中目標時，目標每秒受到額外<color=Wind>氣動</color>屬性傷害，持續18秒。",
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+            }
+        ],
+        "monsterBuff": [],
+        "starTime": {
+            "1": 0,
+            "2": 120,
+            "3": 180
+        },
+        "icon": {
+            "bgPath": null,
+            "itemBgPath": "/d/GameData/UIResources/UiDailyTower/Image/T_DailyTowerL4.png"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "id": 80060000,
+    "name": "漂泊之印",
+    "tips": "預設獲得",
+    "showInBag": false,
+    "description": {
+        "bg": "",
+        "type": "羈旅印章",
+        "attributes": "回望來路，這裡是你的起點。",
+        "obtainedShow": ""
+    },
+    "rarity": {
+        "id": 5,
+        "name": "五星",
+        "consumeText": "不限",
+        "color": "#CFB17F",
+        "stars": "五星"
+    },
+    "items": [],
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_qpmy_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_qpmy_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_qpmy_UI.png",
+        "longCardPath": "/d/GameData/UIResources/Common/Image/CardLong/T_CardLong1.png",
+        "cardPath": "/d/GameData/UIResources/Common/Image/Card/T_Card1.png",
+        "functionViewCardPath": "/d/GameData/UIResources/Common/Image/CardPolygon/T_CardPolygon_1.png"
+    }
+}

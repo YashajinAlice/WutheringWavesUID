@@ -1,0 +1,30 @@
+{
+    "id": 80069001,
+    "name": "今州飄渺錄",
+    "tips": "先約電臺寰宇特約專屬獎勵。",
+    "showInBag": false,
+    "description": {
+        "bg": "見證漂泊者旅途的印章，可展示給其他旅者。\n在漂泊者資料中可更換羈旅印章。",
+        "type": "羈旅印章",
+        "attributes": "幽谷深睡足，今州日遲遲。",
+        "obtainedShow": ""
+    },
+    "rarity": {
+        "id": 5,
+        "name": "五星",
+        "consumeText": "不限",
+        "color": "#CFB17F",
+        "stars": "五星"
+    },
+    "items": [
+        504000
+    ],
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCard/T_IconCard256_18.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCard160/T_IconCard160_18.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCard80/T_IconCard80_18.png",
+        "longCardPath": "/d/GameData/UIResources/Common/Image/CardLong/T_CardLong18.png",
+        "cardPath": "/d/GameData/UIResources/Common/Image/Card/T_Card18.png",
+        "functionViewCardPath": "/d/GameData/UIResources/Common/Image/CardPolygon/T_CardPolygon_18.png"
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "id": 42500090,
+    "name": "龍螢石",
+    "bg": "形似歲主鱗片的礦石，可用於修繕武器。",
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_032_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_032_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_032_UI.png"
+    },
+    "showType": [
+        {
+            "id": 46,
+            "name": "印造材料"
+        }
+    ],
+    "mainType": {
+        "id": 5,
+        "name": "素材",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag08.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jiguan_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 403023,
+            "description": "推薦：乘霄山採集"
+        }
+    ]
+}

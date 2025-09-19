@@ -1,0 +1,44 @@
+{
+    "id": 42500040,
+    "name": "植珀",
+    "bg": "無音區中死亡的植物融入地表、石塊或石壁中所形成的礦物。由於取出的礦物外觀上依舊保持了類似木本植物的原生結構而被稱為「植珀」，但實際上和琥珀並沒有任何關係。",
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_19A_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_19A_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_19A_UI.png"
+    },
+    "showType": [
+        {
+            "id": 46,
+            "name": "印造材料"
+        }
+    ],
+    "mainType": {
+        "id": 5,
+        "name": "素材",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag08.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jiguan_UI.png"
+        }
+    },
+    "handBook": {
+        "id": 42500040,
+        "type": {
+            "id": 1,
+            "description": "ItemHandBookType_1_Descrtption",
+            "icon": "/d/GameData/UIResources/UiArchive/Atlas/SP_ArchiveWuchan.png"
+        },
+        "title": "材料"
+    },
+    "itemAccess": [
+        {
+            "id": 402001,
+            "description": "野外採集獲得"
+        }
+    ]
+}

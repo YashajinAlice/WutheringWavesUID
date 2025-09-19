@@ -1,0 +1,56 @@
+{
+    "id": 43010002,
+    "name": "中級共鳴促劑",
+    "bg": "能進一步提升頻率感知的促劑，在調配過程中改良了原有的成分配比，更適合基礎較為鞏固的共鳴者。這種促劑幾乎實現了性能與成本的完美平衡，除了它一直被使用者詬病的寡淡口感之外毫無缺點。",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconRup/T_IconRup_exp_2_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconRup160/T_IconRup160_exp_2_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconRup80/T_IconRup80_exp_2_UI.png"
+    },
+    "showType": [
+        {
+            "id": 11,
+            "name": "共鳴者經驗材料"
+        }
+    ],
+    "mainType": {
+        "id": 4,
+        "name": "資源",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag04.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jchumokuai_UI.png"
+        }
+    },
+    "handBook": {
+        "id": 43010002,
+        "type": {
+            "id": 4,
+            "description": "ItemHandBookType_4_Descrtption",
+            "icon": "/d/GameData/UIResources/UiArchive/Atlas/SP_ArchiveCailiao.png"
+        },
+        "title": "共鳴者經驗材料"
+    },
+    "itemAccess": [
+        {
+            "id": 100000,
+            "description": "任務獲得"
+        },
+        {
+            "id": 401000,
+            "description": "索拉里斯探索獲得"
+        },
+        {
+            "id": 303006,
+            "description": "模擬訓練場"
+        },
+        {
+            "id": 303013,
+            "description": "角鬥士的肖像"
+        }
+    ]
+}

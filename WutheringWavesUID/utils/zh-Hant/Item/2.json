@@ -1,0 +1,48 @@
+{
+    "id": 2,
+    "name": "貝幣",
+    "bg": "在亙古以前，瑝瓏的祖先便開始使用海貝作為貨幣。隨時間推移，它的製造的工藝幾經更迭，但貝型的外觀卻始終如一。\n「它如一位見證者，替人們銘記著這段交易的誕生史。」",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_hsb_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_hsb_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_hsb_UI.png"
+    },
+    "showType": [
+        {
+            "id": 2,
+            "name": "通用貨幣"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 303013,
+            "description": "角鬥士的肖像"
+        },
+        {
+            "id": 303006,
+            "description": "模擬訓練場"
+        },
+        {
+            "id": 100000,
+            "description": "任務獲得"
+        },
+        {
+            "id": 401000,
+            "description": "索拉里斯探索獲得"
+        }
+    ]
+}

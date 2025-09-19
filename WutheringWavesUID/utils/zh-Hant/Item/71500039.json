@@ -1,0 +1,36 @@
+{
+    "id": 71500039,
+    "name": "那無光深淵的低吟",
+    "bg": "「那無法言喻的聲音從船艙之外傳來，厚重的木板和幾萬尺的水深根本無法阻礙它傳到每個船員腦中。我們盡力抵抗了。「\n」但沒用。「",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconMowing/T_IconMowing_29.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconMowing160/T_IconMowing160_29.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconMowing80/T_IconMowing80_29.png"
+    },
+    "showType": [
+        {
+            "id": 50,
+            "name": "信物"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 857001,
+            "description": "冥歌海墟玩法中獲得"
+        }
+    ]
+}

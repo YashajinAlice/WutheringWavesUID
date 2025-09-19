@@ -1,0 +1,31 @@
+{
+    "id": 70050040,
+    "name": "暴行騎士劍",
+    "bg": "很多時候，對一方的憐憫就是對另一方的暴行。",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_113_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_113_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_113_UI.png"
+    },
+    "showType": [
+        {
+            "id": 21,
+            "name": "任務道具"
+        }
+    ],
+    "mainType": {
+        "id": 6,
+        "name": "任務",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag03.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Renwu_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

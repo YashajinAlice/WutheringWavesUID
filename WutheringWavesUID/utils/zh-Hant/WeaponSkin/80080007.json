@@ -1,0 +1,23 @@
+{
+    "id": 80080007,
+    "name": "投影·桃夭灼灼",
+    "type": {
+        "id": 1,
+        "name": "長刃",
+        "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+    },
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "resonatorSkin": true,
+    "typeDescription": "武器投影",
+    "description": "可以更改武器外觀的投影道具。",
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010017_UI.png",
+        "card": "/d/GameData/UIResources/Common/Image/Skin/T_WeaponSkin21010017.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010017_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010017_UI.png"
+    }
+}

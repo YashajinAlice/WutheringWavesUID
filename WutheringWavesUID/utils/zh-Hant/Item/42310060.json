@@ -1,0 +1,56 @@
+{
+    "id": 42310060,
+    "name": "清芬草",
+    "bg": "煢煢孑立的高大草本植物，似乎面對怎樣的風刀霜劍都能淡然處之，是今州人心目中的冷美人。\n也是出於這種原因，時常有人將其與華胥的某位研究員進行比較，儘管當事人和當事花都不予置評。",
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_07A_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_07A_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_07A_UI.png"
+    },
+    "showType": [
+        {
+            "id": 26,
+            "name": "食材"
+        },
+        {
+            "id": 44,
+            "name": "藥材"
+        }
+    ],
+    "mainType": {
+        "id": 5,
+        "name": "素材",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag08.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jiguan_UI.png"
+        }
+    },
+    "handBook": {
+        "id": 42310060,
+        "type": {
+            "id": 1,
+            "description": "ItemHandBookType_1_Descrtption",
+            "icon": "/d/GameData/UIResources/UiArchive/Atlas/SP_ArchiveWuchan.png"
+        },
+        "title": "食材"
+    },
+    "itemAccess": [
+        {
+            "id": 402001,
+            "description": "野外採集獲得"
+        },
+        {
+            "id": 503005,
+            "description": "拾方藥房購買"
+        },
+        {
+            "id": 840001,
+            "description": "富集區採集獲得"
+        }
+    ]
+}

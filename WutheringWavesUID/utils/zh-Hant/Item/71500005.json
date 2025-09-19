@@ -1,0 +1,36 @@
+{
+    "id": 71500005,
+    "name": "衍射-鏽蝕古幣",
+    "bg": "來自沉船上的商旅、朝聖者甚至是海盜的遺物，斑駁鏽蝕的古幣成為他們最後的見證者。",
+    "rarity": {
+        "id": 2,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconMowing/T_IconMowing_02.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconMowing160/T_IconMowing160_02.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconMowing80/T_IconMowing80_02.png"
+    },
+    "showType": [
+        {
+            "id": 50,
+            "name": "信物"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 857004,
+            "description": "道引任務「靈魂歸還汪洋」中獲得"
+        }
+    ]
+}

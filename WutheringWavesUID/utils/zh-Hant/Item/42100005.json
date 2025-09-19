@@ -1,0 +1,36 @@
+{
+    "id": 42100005,
+    "name": "衍射防護噴霧",
+    "bg": "使用先進工藝裝填的加壓罐裝噴霧，能够在使用者體表形成特殊的保護層，提高對指定類型傷害的抵抗能力。",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_YJ_002_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_YJ_002_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_YJ_002_UI.png"
+    },
+    "showType": [
+        {
+            "id": 20,
+            "name": "藥品"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 854004,
+            "description": "合成-藥劑製作"
+        }
+    ]
+}

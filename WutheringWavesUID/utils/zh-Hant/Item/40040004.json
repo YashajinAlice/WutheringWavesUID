@@ -1,0 +1,31 @@
+{
+    "id": 40040004,
+    "name": "聲匣·拉古那",
+    "bg": "聲之領域崩解、坍縮後的產物，遍布在世界的各個角落，記錄著未失實的過去。\n失樂園的布偶們似乎對這種聲匣很感興趣，或許可以換得一些好東西。",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconMst/T_IconMst_008_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconMst160/T_IconMst160_008_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconMst80/T_IconMst80_008_UI.png"
+    },
+    "showType": [
+        {
+            "id": 9,
+            "name": "材料"
+        }
+    ],
+    "mainType": {
+        "id": 5,
+        "name": "素材",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag08.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jiguan_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

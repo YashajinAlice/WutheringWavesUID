@@ -1,0 +1,31 @@
+{
+    "id": 13,
+    "name": "勘察點數",
+    "bg": "",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_currency_6_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_currency_6_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80T_IconA80_currency_6_UI.png"
+    },
+    "showType": [
+        {
+            "id": 40,
+            "name": "活躍度"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

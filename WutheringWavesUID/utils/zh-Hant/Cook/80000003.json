@@ -1,0 +1,63 @@
+{
+    "id": 80000003,
+    "name": "紅油手撕雞",
+    "description": "減少隊伍中所有共鳴者15%疾跑、游泳耐力消耗，持續時間15分鐘，在多人遊戲中僅對自己的角色生效。",
+    "items": [
+        {
+            "id": 80050001,
+            "name": "食用油",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A06_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A06_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A06_UI.png"
+            },
+            "count": 1
+        },
+        {
+            "id": 42400010,
+            "name": "禽肉",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_29A_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_29A_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_29A_UI.png"
+            },
+            "count": 1
+        },
+        {
+            "id": 80050002,
+            "name": "辣椒",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A07_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A07_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A07_UI.png"
+            },
+            "count": 1
+        }
+    ],
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_004_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_004_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_004_UI.png"
+    },
+    "resonator": []
+}

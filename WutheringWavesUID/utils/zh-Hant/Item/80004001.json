@@ -1,0 +1,31 @@
+{
+    "id": 80004001,
+    "name": "生日大蛋糕！（2025）",
+    "bg": "匿名贈送的生日蛋糕，飽含祝福與情誼。誘人的巧克力加上繽紛果醬，搭配一隻栩栩如生的棉花糖阿布，美好得讓人不忍下嘴！",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_152_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconTask160/T_IconTask160_Task_152_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconTask80/T_IconTask80_Task_152_UI.png"
+    },
+    "showType": [
+        {
+            "id": 21,
+            "name": "任務道具"
+        }
+    ],
+    "mainType": {
+        "id": 7,
+        "name": "特殊",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag07.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Tongyong_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

@@ -1,0 +1,44 @@
+{
+    "id": 71510201,
+    "name": "神秘經文的斷章·第一章",
+    "bg": "「馬蹄攪動大海，魚尾卻翻騰水沫。」",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_Act_Navigation06_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_Act_Navigation06_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_Act_Navigation06_UI.png"
+    },
+    "showType": [
+        {
+            "id": 48,
+            "name": "活動道具"
+        }
+    ],
+    "mainType": {
+        "id": 6,
+        "name": "任務",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag03.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Renwu_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 900004,
+            "description": "完成劇情獲取"
+        },
+        {
+            "id": 900016,
+            "description": "舵盤村碼頭商店購買"
+        },
+        {
+            "id": 900018,
+            "description": "萊耶斯遺跡群碼頭商店購買"
+        }
+    ]
+}

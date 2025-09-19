@@ -1,0 +1,35 @@
+{
+    "id": 81001301,
+    "resonatorId": 1301,
+    "headId": 82001301,
+    "weaponSkinId": 0,
+    "name": "卡卡羅",
+    "rarity": {
+        "id": 3,
+        "name": "三星",
+        "consumeText": "三星及以下道具",
+        "color": "#00B4FF",
+        "stars": "三星"
+    },
+    "nameDescription": "卡卡羅-初始服飾",
+    "typeDescription": "",
+    "attributesDescription": "",
+    "description": "為方便在瑝瓏境內行動，卡卡羅所訂製的瑝瓏風格的作戰服。應其要求，沒有添加繁雜的飾物，以輕便耐用，易於隱匿的功能性為主。",
+    "icon": {
+        "icon": null,
+        "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+        "iconS ": null,
+        "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_18_UI.png",
+        "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_18_UI.png",
+        "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_18.png",
+        "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_18_UI.png",
+        "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_18_UI.png",
+        "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinKakaluo.png",
+        "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kakaluo_UI.png"
+    },
+    "color": {
+        "weapon": null,
+        "color1": null,
+        "color2": null
+    }
+}

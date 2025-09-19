@@ -1,0 +1,31 @@
+{
+    "id": 70050050,
+    "name": "安夢漣漪",
+    "bg": "",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_097_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconTask160/T_IconTask160_Task_097_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconTask80/T_IconTask80_Task_097_UI.png"
+    },
+    "showType": [
+        {
+            "id": 21,
+            "name": "任務道具"
+        }
+    ],
+    "mainType": {
+        "id": 7,
+        "name": "特殊",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag07.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Tongyong_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

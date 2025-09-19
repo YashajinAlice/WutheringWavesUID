@@ -1,0 +1,31 @@
+{
+    "id": 72010036,
+    "name": "榮光點數",
+    "bg": "榮耀之丘所使用的特製聲骸無法利用密音筒加以強化，也無法透過數據塢進行處理——作為代替，玩家們使用這些被稱為「榮光點數」的頻率數據來進行聲骸的解鎖或外觀升級。",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_72010036_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_72010036_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_72010036_UI.png"
+    },
+    "showType": [
+        {
+            "id": 15,
+            "name": "特殊代幣"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

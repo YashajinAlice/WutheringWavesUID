@@ -1,0 +1,78 @@
+{
+    "id": 80000030,
+    "name": "釀肉豆腐",
+    "description": "大世界中怪物素材掉落加成50%，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+    "items": [
+        {
+            "id": 80020001,
+            "name": "清湯",
+            "rarity": {
+                "id": 3,
+                "name": "SSR",
+                "color": "#DEA544FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A02_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A02_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A02_UI.png"
+            },
+            "count": 1
+        },
+        {
+            "id": 80020004,
+            "name": "豆腐",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A04_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A04_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A04_UI.png"
+            },
+            "count": 2
+        },
+        {
+            "id": 42400030,
+            "name": "獸肉",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+            },
+            "count": 4
+        },
+        {
+            "id": 80021006,
+            "name": "特級香油",
+            "rarity": {
+                "id": 4,
+                "name": "SR",
+                "color": "#C759C1FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_YJ_037_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_YJ_037_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_YJ_037_UI.png"
+            },
+            "count": 1
+        }
+    ],
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_031_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_031_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_031_UI.png"
+    },
+    "resonator": []
+}

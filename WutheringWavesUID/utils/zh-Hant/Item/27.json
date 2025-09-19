@@ -1,0 +1,40 @@
+{
+    "id": 27,
+    "name": "黎喬利漁業幣",
+    "bg": "黎喬利群島仍然歸屬於黎那汐塔，也流通貝幣，但漁民和水手們自有一套通行於海上的交易方法。",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_Act_Navigation02_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_Act_Navigation02_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_Act_Navigation02_UI.png"
+    },
+    "showType": [
+        {
+            "id": 15,
+            "name": "特殊代幣"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 900003,
+            "description": "完成委託獲取"
+        },
+        {
+            "id": 900006,
+            "description": "碼頭商店出售獲得"
+        }
+    ]
+}

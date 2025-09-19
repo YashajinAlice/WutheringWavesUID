@@ -1,0 +1,36 @@
+{
+    "id": 71500016,
+    "name": "赦免者—船長印章",
+    "bg": "巡遊在大海上的赦免院船隻，總能及時趕到衝突處給予「調停」。也許他「赦免」了有罪者，但很明顯有些人不會放過他。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconMowing/T_IconMowing_16.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconMowing160/T_IconMowing160_16.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconMowing80/T_IconMowing80_16.png"
+    },
+    "showType": [
+        {
+            "id": 50,
+            "name": "信物"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 857001,
+            "description": "冥歌海墟玩法中獲得"
+        }
+    ]
+}

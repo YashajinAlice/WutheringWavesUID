@@ -1,0 +1,31 @@
+{
+    "id": 70050059,
+    "name": "奇怪的書",
+    "bg": "「幽靈之海」中浮現的奇怪書籍，似乎是開啟某個書櫃暗門的鑰匙。\n書本無法打開，裡面的內容無法查閱……這可能是件好事。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconTask160/T_IconTask160_Task_002_1_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconTask160/T_IconTask160_Task_002_1_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconTask160/T_IconTask160_Task_002_1_UI.png"
+    },
+    "showType": [
+        {
+            "id": 21,
+            "name": "任務道具"
+        }
+    ],
+    "mainType": {
+        "id": 6,
+        "name": "任務",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag03.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Renwu_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

@@ -1,0 +1,35 @@
+{
+    "id": 81001606,
+    "resonatorId": 1606,
+    "headId": 82001606,
+    "weaponSkinId": 0,
+    "name": "洛可可",
+    "rarity": {
+        "id": 3,
+        "name": "三星",
+        "consumeText": "三星及以下道具",
+        "color": "#00B4FF",
+        "stars": "三星"
+    },
+    "nameDescription": "洛可可-初始服飾",
+    "typeDescription": "",
+    "attributesDescription": "",
+    "description": "造型獨特的即興喜劇演出服，由洛可可日常撿拾的物品搭配佩洛日積月累的收藏精心縫製而成。",
+    "icon": {
+        "icon": null,
+        "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+        "iconS ": null,
+        "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_33_UI.png",
+        "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_33_UI.png",
+        "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_33_UI.png",
+        "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_33_UI.png",
+        "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_33_UI.png",
+        "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinLuokeke.png",
+        "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_luokeke_UI.png"
+    },
+    "color": {
+        "weapon": null,
+        "color1": null,
+        "color2": null
+    }
+}

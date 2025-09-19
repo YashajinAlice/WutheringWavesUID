@@ -1,0 +1,40 @@
+{
+    "id": 42310240,
+    "name": "偽貝母",
+    "bg": "半透明的貝類，被稱作「海中捕蠅草」，其身軀由緻密的膠質構成，依靠蘊含光素的擬餌珍珠引誘、捕食海洋中的趨光生物。",
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_085_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconTask160/T_IconTask160_Task_085_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconTask80/T_IconTask80_Task_085_UI.png"
+    },
+    "showType": [
+        {
+            "id": 26,
+            "name": "食材"
+        },
+        {
+            "id": 44,
+            "name": "藥材"
+        }
+    ],
+    "mainType": {
+        "id": 5,
+        "name": "素材",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag08.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jiguan_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 403011,
+            "description": "推薦：黑海岸採集"
+        }
+    ]
+}

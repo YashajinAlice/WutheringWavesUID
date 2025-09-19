@@ -1,0 +1,44 @@
+{
+    "id": 80000005,
+    "name": "戍邊糧",
+    "bg": "今州鎮戍軍常備的乾糧，便捷、方便、熱量充足。每份都附有關於守護和思念的留言。長夜雖漫漫無邊，但今州始終就在身後。",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_006_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_006_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_006_UI.png"
+    },
+    "showType": [
+        {
+            "id": 23,
+            "name": "菜肴"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {
+        "id": 80000005,
+        "type": {
+            "id": 2,
+            "description": "ItemHandBookType_2_Descrtption",
+            "icon": "/d/GameData/UIResources/UiArchive/Atlas/SP_ArchivePengren.png"
+        },
+        "title": "菜餚"
+    },
+    "itemAccess": [
+        {
+            "id": 404000,
+            "description": "烹飪獲得"
+        }
+    ]
+}

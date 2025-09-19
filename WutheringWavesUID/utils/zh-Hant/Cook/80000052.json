@@ -1,0 +1,65 @@
+{
+    "id": 80000052,
+    "name": "劇團烈度",
+    "description": "提高隊伍中所有共鳴者25%重擊傷害加成，持續時間15分鐘，在多人遊戲中僅對自己的角色生效。",
+    "items": [
+        {
+            "id": 42310090,
+            "name": "水燈花",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_01A_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_01A_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_01A_UI.png"
+            },
+            "count": 2
+        },
+        {
+            "id": 80050003,
+            "name": "糖",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A08_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A08_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A08_UI.png"
+            },
+            "count": 1
+        }
+    ],
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_059_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_059_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_059_UI.png"
+    },
+    "resonator": [
+        {
+            "id": 1206,
+            "name": "布蘭特",
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_44_UI.png",
+                "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_44_UI.png",
+                "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Bulante_UI.png"
+            },
+            "rarity": {
+                "id": 5,
+                "name": "五星",
+                "consumeText": "不限",
+                "color": "#CFB17F",
+                "stars": "五星"
+            }
+        }
+    ]
+}

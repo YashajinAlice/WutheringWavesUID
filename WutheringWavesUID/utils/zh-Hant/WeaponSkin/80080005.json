@@ -1,0 +1,23 @@
+{
+    "id": 80080005,
+    "name": "投影·心象臂鎧",
+    "type": {
+        "id": 4,
+        "name": "臂鎧",
+        "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+    },
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "resonatorSkin": false,
+    "typeDescription": "武器投影",
+    "description": "可以更改武器外觀的投影道具。",
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21040017_UI.png",
+        "card": null,
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21040017_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040017_UI.png"
+    }
+}

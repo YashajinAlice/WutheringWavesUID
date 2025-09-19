@@ -1,0 +1,31 @@
+{
+    "id": 5,
+    "name": "結晶波片",
+    "bg": "反映共鳴者當前狀態的數據值。共鳴者進行活動時會令結晶波片降低，降低至一定程度後將出現無法進行特殊行動的情況。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_yml_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_yml_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_yml_UI.png"
+    },
+    "showType": [
+        {
+            "id": 10,
+            "name": "消耗品"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

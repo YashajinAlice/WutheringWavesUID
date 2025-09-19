@@ -1,0 +1,40 @@
+{
+    "id": 42601110,
+    "name": "青枝果",
+    "bg": "傳說，拉古那的首道神諭被祂篆刻於樹身，而第一株青枝自刻印中長成——\n青枝結成的漿果垂掛枝頭，象徵「神智的結果」。人們相信吞下果實，就能得到祂的開化與啟蒙。",
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_038_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_038_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_038_UI.png"
+    },
+    "showType": [
+        {
+            "id": 26,
+            "name": "食材"
+        }
+    ],
+    "mainType": {
+        "id": 5,
+        "name": "素材",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag08.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jiguan_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 403028,
+            "description": "推薦：槲生半島採集"
+        },
+        {
+            "id": 503016,
+            "description": "貢多拉水市購買"
+        }
+    ]
+}

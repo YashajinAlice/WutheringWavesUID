@@ -1,0 +1,36 @@
+{
+    "id": 80001007,
+    "name": "凍葡果茶",
+    "bg": "將切碎的果肉鎮入冰水中，佐以新鮮的花蜜。冰塊碰撞間，發出清亮美妙的聲音。\n椿按照自己的心意調配的果茶，其中奶味已經被稀釋得極淡，果肉則以葡萄為主，又加入了些許油柑汁調和。\n清爽甜蜜的果飲在舌尖淌過，淡淡的苦味褪去後，留有一絲奇妙的回甘。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_052_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_052_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_052_UI.png"
+    },
+    "showType": [
+        {
+            "id": 23,
+            "name": "菜肴"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 404000,
+            "description": "烹飪獲得"
+        }
+    ]
+}

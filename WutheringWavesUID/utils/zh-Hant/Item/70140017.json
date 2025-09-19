@@ -1,0 +1,31 @@
+{
+    "id": 70140017,
+    "name": "「赫格利」",
+    "bg": "異權劍——「赫格利」\n無人知曉來歷的長劍，根據卡提希婭的記憶，似乎是解開顛倒塔封印的關鍵道具。\n長劍上散發著如深海般幽邃的氣息。",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_139_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconTask160/T_IconTask160_Task_139_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconTask80/T_IconTask80_Task_139_UI.png"
+    },
+    "showType": [
+        {
+            "id": 21,
+            "name": "任務道具"
+        }
+    ],
+    "mainType": {
+        "id": 6,
+        "name": "任務",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag03.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Renwu_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

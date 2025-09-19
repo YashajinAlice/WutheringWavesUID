@@ -1,0 +1,35 @@
+{
+    "id": 81001202,
+    "resonatorId": 1202,
+    "headId": 82001202,
+    "weaponSkinId": 0,
+    "name": "熾霞",
+    "rarity": {
+        "id": 3,
+        "name": "三星",
+        "consumeText": "三星及以下道具",
+        "color": "#00B4FF",
+        "stars": "三星"
+    },
+    "nameDescription": "熾霞-初始服飾",
+    "typeDescription": "",
+    "attributesDescription": "",
+    "description": "今州飛羽俠總是穿著最最輕便的服裝，以隨時回應大街小巷此起彼伏的「熾霞」呼喚。",
+    "icon": {
+        "icon": null,
+        "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+        "iconS ": null,
+        "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_2_UI.png",
+        "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_2_UI.png",
+        "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_2.png",
+        "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_2_UI.png",
+        "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_2_UI.png",
+        "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinZhixia.png",
+        "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_maxiaofang_UI.png"
+    },
+    "color": {
+        "weapon": null,
+        "color1": null,
+        "color2": null
+    }
+}

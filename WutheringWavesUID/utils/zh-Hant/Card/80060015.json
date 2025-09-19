@@ -1,0 +1,30 @@
+{
+    "id": 80060015,
+    "name": "盛怒",
+    "tips": "敬請期待",
+    "showInBag": false,
+    "description": {
+        "bg": "",
+        "type": "羈旅印章",
+        "attributes": "紅龍從不掩飾自己的憤怒。",
+        "obtainedShow": ""
+    },
+    "rarity": {
+        "id": 5,
+        "name": "五星",
+        "consumeText": "不限",
+        "color": "#CFB17F",
+        "stars": "五星"
+    },
+    "items": [
+        702000
+    ],
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_qpmy_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_qpmy_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_qpmy_UI.png",
+        "longCardPath": "/d/GameData/UIResources/Common/Image/CardLong/T_CardLong17.png",
+        "cardPath": "/d/GameData/UIResources/Common/Image/Card/T_Card17.png",
+        "functionViewCardPath": "/d/GameData/UIResources/Common/Image/CardPolygon/T_CardPolygon_17.png"
+    }
+}

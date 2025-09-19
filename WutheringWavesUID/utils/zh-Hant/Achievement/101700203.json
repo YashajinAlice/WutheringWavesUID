@@ -1,0 +1,33 @@
+{
+    "id": 101700203,
+    "name": "",
+    "description": "啟用鳴鐘之龜聲骸的第四個額外能力",
+    "hidden": false,
+    "level": 6,
+    "group": {
+        "id": 7002,
+        "name": "",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Atlas/TabIcon/SP_IconRogueSpeComplete.png",
+            "iconSmall": null,
+            "backgroundIcon": "/d/GameData/UIResources/UiAchievement/Image/T_AchievementBg3.png"
+        },
+        "category": {
+            "id": 7,
+            "name": "他域交集",
+            "type": 2,
+            "spritePath": "/d/GameData/UIResources/Common/Atlas/TabIcon/SP_IconAchievement3.png",
+            "texturePath": "/d/GameData/UIResources/UiAchievement/Image/T_AchievementHezuo_UI.png"
+        }
+    },
+    "nextLevel": null,
+    "reward": {
+        "id": 3,
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_zcpq_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_zcpq_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_zcpq_UI.png"
+        },
+        "value": 5
+    }
+}

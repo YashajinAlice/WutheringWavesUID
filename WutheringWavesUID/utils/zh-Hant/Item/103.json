@@ -1,0 +1,31 @@
+{
+    "id": 103,
+    "name": "影響力",
+    "bg": "漂泊者與各個勢力之間長久互信的象徵，與各個組織形成穩定的友好關係或許能獲取更有力的支持。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_sw_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_sw_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_sw_UI.png"
+    },
+    "showType": [
+        {
+            "id": 28,
+            "name": "影響力"
+        }
+    ],
+    "mainType": {
+        "id": 4,
+        "name": "資源",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag04.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jchumokuai_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

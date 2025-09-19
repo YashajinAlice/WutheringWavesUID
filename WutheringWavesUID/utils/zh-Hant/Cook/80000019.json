@@ -1,0 +1,63 @@
+{
+    "id": 80000019,
+    "name": "清芬魚湯",
+    "description": "恢復40點耐力。",
+    "items": [
+        {
+            "id": 42400120,
+            "name": "魚肉",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_yurou_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_yurou_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_yurou_UI.png"
+            },
+            "count": 1
+        },
+        {
+            "id": 42310060,
+            "name": "清芬草",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_07A_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_07A_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_07A_UI.png"
+            },
+            "count": 1
+        },
+        {
+            "id": 42310050,
+            "name": "香蘇",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_01B_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_01B_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_01B_UI.png"
+            },
+            "count": 1
+        }
+    ],
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_020_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_020_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_020_UI.png"
+    },
+    "resonator": []
+}

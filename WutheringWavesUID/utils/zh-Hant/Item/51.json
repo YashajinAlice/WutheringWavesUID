@@ -1,0 +1,31 @@
+{
+    "id": 51,
+    "name": "慶典熱度",
+    "bg": "慶典當然是越熱鬧越好！叫上更多的朋友，體驗更多的樂趣，讓氣氛也再熱烈一些！",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_Act_PlayerCelebration01_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_Act_PlayerCelebration01_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_Act_PlayerCelebration01_UI.png"
+    },
+    "showType": [
+        {
+            "id": 48,
+            "name": "活動道具"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

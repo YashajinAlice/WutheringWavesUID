@@ -1,0 +1,44 @@
+{
+    "id": 80000028,
+    "name": "油辣豆腐",
+    "bg": "蓋有滿滿一層紅油的水豆腐，色澤赤紅、鮮香可口。油辣豆腐流傳甚廣，連新聯邦的貴族們都對其讚不絕口。",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_029_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_029_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_029_UI.png"
+    },
+    "showType": [
+        {
+            "id": 23,
+            "name": "菜肴"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {
+        "id": 80000028,
+        "type": {
+            "id": 2,
+            "description": "ItemHandBookType_2_Descrtption",
+            "icon": "/d/GameData/UIResources/UiArchive/Atlas/SP_ArchivePengren.png"
+        },
+        "title": "菜餚"
+    },
+    "itemAccess": [
+        {
+            "id": 404000,
+            "description": "烹飪獲得"
+        }
+    ]
+}

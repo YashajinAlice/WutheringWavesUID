@@ -1,0 +1,36 @@
+{
+    "id": 71500028,
+    "name": "那亙古不息的凝視",
+    "bg": "「他彎下腰，從血泊中撿起那個從沉船中撈起的盒子，它被鮮血玷汙的表面散發出妖異而眩惑的光澤。那光澤促使他轉身離開船員們因自相殘殺所留下的悲慘景象，頭也不回地消失在島嶼深處。」",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconMowing/T_IconMowing_24.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconMowing160/T_IconMowing160_24.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconMowing80/T_IconMowing80_24.png"
+    },
+    "showType": [
+        {
+            "id": 50,
+            "name": "信物"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 857001,
+            "description": "冥歌海墟玩法中獲得"
+        }
+    ]
+}

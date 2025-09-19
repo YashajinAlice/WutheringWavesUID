@@ -1,0 +1,36 @@
+{
+    "id": 42200007,
+    "name": "衍射雙聯合劑配方",
+    "bg": "一張精緻小巧的配比數據卡，其中的數據被合成臺讀取後即可獲得合成對應產品的許可權。",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_YJ_039_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_YJ_039_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_YJ_039_UI.png"
+    },
+    "showType": [
+        {
+            "id": 35,
+            "name": "合成配方-制藥"
+        }
+    ],
+    "mainType": {
+        "id": 5,
+        "name": "素材",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag08.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jiguan_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 854004,
+            "description": "合成-藥劑製作"
+        }
+    ]
+}

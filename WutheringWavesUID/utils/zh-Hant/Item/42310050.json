@@ -1,0 +1,56 @@
+{
+    "id": 42310050,
+    "name": "香蘇",
+    "bg": "香蘇的外表本不起眼，因其濃郁而獨特的芬芳而得名。\n烹飪時加入香蘇不僅能去除腥味，還可以凸顯出食材的鮮美。",
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_01B_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_01B_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_01B_UI.png"
+    },
+    "showType": [
+        {
+            "id": 26,
+            "name": "食材"
+        },
+        {
+            "id": 44,
+            "name": "藥材"
+        }
+    ],
+    "mainType": {
+        "id": 5,
+        "name": "素材",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag08.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jiguan_UI.png"
+        }
+    },
+    "handBook": {
+        "id": 42310050,
+        "type": {
+            "id": 1,
+            "description": "ItemHandBookType_1_Descrtption",
+            "icon": "/d/GameData/UIResources/UiArchive/Atlas/SP_ArchiveWuchan.png"
+        },
+        "title": "食材"
+    },
+    "itemAccess": [
+        {
+            "id": 402001,
+            "description": "野外採集獲得"
+        },
+        {
+            "id": 503005,
+            "description": "拾方藥房購買"
+        },
+        {
+            "id": 840001,
+            "description": "富集區採集獲得"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "id": 42,
+    "name": "星圖晶塊",
+    "bg": "泰緹斯系統忠實地記錄了模擬情景中的每一次行動。這些數據將化為實體，成為星圖演算的燃料——即使並非現實，所有的成功與失敗也將通往未來。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_Act_BabelTower_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_Act_BabelTower_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_Act_BabelTower_UI.png"
+    },
+    "showType": [
+        {
+            "id": 15,
+            "name": "特殊代幣"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

@@ -1,0 +1,31 @@
+{
+    "id": 70060002,
+    "name": "破舊的簡筆畫",
+    "bg": "「我藏了寶藏，在畫畫的地方！」",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_024_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_024_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_024_UI.png"
+    },
+    "showType": [
+        {
+            "id": 21,
+            "name": "任務道具"
+        }
+    ],
+    "mainType": {
+        "id": 6,
+        "name": "任務",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag03.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Renwu_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

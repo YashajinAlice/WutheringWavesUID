@@ -33,7 +33,7 @@ class GachaSimulator:
                 "basic": 0.006,  # 0.6%
                 "increase": 0.06,  # 6%
                 "other": 0.5,  # 50%歪
-                "up_pool": [{"name": "长离", "id": 1410}, {"name": "今汐", "id": 1409}],
+                "up_pool": [{"name": "尤諾", "id": 1410}, {"name": "今汐", "id": 1409}],
                 "other_pool": [
                     {"name": "渊武", "id": 1608},
                     {"name": "弗洛洛", "id": 1607},

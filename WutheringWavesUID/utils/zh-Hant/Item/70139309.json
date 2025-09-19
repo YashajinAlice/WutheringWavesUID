@@ -1,0 +1,31 @@
+{
+    "id": 70139309,
+    "name": "小型裝置",
+    "bg": "一個做工精巧的小型裝置，盤面篆刻了古樸的文字，裡層文字代表了瑝瓏天之四靈，似乎暗含了方位訊息。\n「東蒼龍、西白虎、南朱雀、北玄武」。\n外層文字為十二地支，似乎暗含了時間訊息。\n「子、丑、寅、卯、辰、巳、午、未、申、酉、戌、亥」。",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_035_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_035_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_035_UI.png"
+    },
+    "showType": [
+        {
+            "id": 21,
+            "name": "任務道具"
+        }
+    ],
+    "mainType": {
+        "id": 6,
+        "name": "任務",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag03.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Renwu_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

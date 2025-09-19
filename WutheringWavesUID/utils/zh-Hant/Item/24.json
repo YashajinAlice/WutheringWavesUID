@@ -1,0 +1,31 @@
+{
+    "id": 24,
+    "name": "星屑",
+    "bg": "「群星」的碎屑，早已消逝的閃爍弧光。 \n長久的推演和觀測中，即便是最微細的碎屑，也寫滿了索拉里斯的歷史。 \n「自很久前起，她便獨自一人，照顧著歷代的星辰。」",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_086_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconTask160/T_IconTask160_Task_086_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconTask80/T_IconTask80_Task_086_UI.png"
+    },
+    "showType": [
+        {
+            "id": 48,
+            "name": "活動道具"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

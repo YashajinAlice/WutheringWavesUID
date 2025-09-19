@@ -1,0 +1,31 @@
+{
+    "id": 1,
+    "name": "聯覺經驗",
+    "bg": "豐富的經驗有助於適應這個世界的生存法則。",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_AccountExp_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_AccountExp_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_AccountExp_UI.png"
+    },
+    "showType": [
+        {
+            "id": 1,
+            "name": "經驗"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

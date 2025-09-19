@@ -1,0 +1,95 @@
+{
+    "id": 80000007,
+    "name": "鹹奶茶",
+    "description": "在野外擊敗敵人時獲得的貝幣增加25%，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+    "items": [
+        {
+            "id": 80050004,
+            "name": "茶葉",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A09_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A09_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A09_UI.png"
+            },
+            "count": 3
+        },
+        {
+            "id": 80050005,
+            "name": "牛奶",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A10_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A10_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A10_UI.png"
+            },
+            "count": 3
+        },
+        {
+            "id": 80050008,
+            "name": "鹽",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A13_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A13_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A13_UI.png"
+            },
+            "count": 3
+        },
+        {
+            "id": 80021006,
+            "name": "特級香油",
+            "rarity": {
+                "id": 4,
+                "name": "SR",
+                "color": "#C759C1FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_YJ_037_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_YJ_037_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_YJ_037_UI.png"
+            },
+            "count": 1
+        }
+    ],
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_008_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_008_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_008_UI.png"
+    },
+    "resonator": [
+        {
+            "id": 1603,
+            "name": "椿",
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_29_UI.png",
+                "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_29_UI.png",
+                "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_chun_UI.png"
+            },
+            "rarity": {
+                "id": 5,
+                "name": "五星",
+                "consumeText": "不限",
+                "color": "#CFB17F",
+                "stars": "五星"
+            }
+        }
+    ]
+}

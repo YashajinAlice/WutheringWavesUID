@@ -1,0 +1,31 @@
+{
+    "id": 55,
+    "name": "榮光勳章",
+    "bg": "角鬥賽勳章彰顯著七丘人的榮耀，也逐漸成為了七丘代表性的物品之一，以它為原型製作出的旅行紀念徽章讓各國旅者有機會親手掌握這份炙熱，即便身處異地，依舊能感受到那片土地上戰鬥的呼嘯。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_Morale_01_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_Morale_01_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_Morale_01_UI.png"
+    },
+    "showType": [
+        {
+            "id": 48,
+            "name": "活動道具"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

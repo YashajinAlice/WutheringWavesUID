@@ -1,0 +1,1817 @@
+{
+    "id": 21020012,
+    "name": "原初迅刀·鳴雨",
+    "type": {
+        "id": 2,
+        "name": "迅刀",
+        "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+    },
+    "rarity": {
+        "id": 2,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "description": "專為新手共鳴者特製的迅刀，低調樸實的外表下，蘊含著不容小覷的戰鬥力。",
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020012_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020012_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020012_UI.png"
+    },
+    "effect": "攻擊提升{0}。",
+    "effectName": "啟程",
+    "params": {
+        "0": [
+            "5%",
+            "6.25%",
+            "7.5%",
+            "8.75%",
+            "10%"
+        ]
+    },
+    "stats": {
+        "first": {
+            "attribute": "Atk",
+            "name": "攻擊",
+            "value": 22,
+            "isRatio": false,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+        },
+        "second": {
+            "attribute": "Atk",
+            "name": "攻擊",
+            "value": 0.032999999821186066,
+            "isRatio": true,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+        }
+    },
+    "statsLevel": {
+        "0": {
+            "1": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 22.0,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.032999999821186066,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "2": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 23.852400000000003,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.032999999821186066,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "3": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 25.707,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.032999999821186066,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "4": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 27.5616,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.032999999821186066,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "5": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 29.413999999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.03941519978642463,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "6": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 31.2686,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.03941519978642463,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "7": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 33.123200000000004,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.03941519978642463,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "8": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 34.9756,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.03941519978642463,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "9": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 36.8302,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.03941519978642463,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "10": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 38.684799999999996,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.04583039975166321,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "11": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 40.5372,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.04583039975166321,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "12": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 42.3918,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.04583039975166321,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "13": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 44.2464,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.04583039975166321,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "14": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 46.101,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.04583039975166321,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "15": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 47.9534,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.052248899716883894,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "16": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 49.80799999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.052248899716883894,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "17": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 51.6626,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.052248899716883894,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "18": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 53.515,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.052248899716883894,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "19": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 55.3696,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.052248899716883894,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "20": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 57.2242,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.058664099682122474,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ]
+        },
+        "1": {
+            "20": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 71.8894,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.058664099682122474,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "21": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 73.744,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.058664099682122474,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "22": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 75.5986,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.058664099682122474,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "23": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 77.45100000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.058664099682122474,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "24": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 79.3056,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.058664099682122474,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "25": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 81.1602,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.06508259964734316,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "26": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 83.01480000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.06508259964734316,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "27": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 84.8672,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.06508259964734316,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "28": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 86.7218,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.06508259964734316,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "29": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 88.5764,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.06508259964734316,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "30": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 90.42880000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.07149779961258172,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "31": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 92.2834,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.07149779961258172,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "32": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 94.138,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.07149779961258172,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "33": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 95.9904,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.07149779961258172,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "34": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 97.845,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.07149779961258172,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "35": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 99.69959999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.07791629957780243,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "36": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 101.55420000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.07791629957780243,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "37": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 103.40660000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.07791629957780243,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "38": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 105.2612,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.07791629957780243,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "39": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 107.11580000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.07791629957780243,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "40": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 108.9682,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.08433149954304099,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ]
+        },
+        "2": {
+            "40": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 123.6356,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.08433149954304099,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "41": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 125.49020000000002,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.08433149954304099,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "42": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 127.34259999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.08433149954304099,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "43": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 129.1972,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.08433149954304099,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "44": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 131.05180000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.08433149954304099,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "45": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 132.9042,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.09074999950826168,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "46": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 134.7588,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.09074999950826168,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "47": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 136.61339999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.09074999950826168,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "48": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 138.468,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.09074999950826168,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "49": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 140.3204,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.09074999950826168,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "50": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 142.175,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.09716519947350025,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ]
+        },
+        "3": {
+            "50": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 156.8424,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.09716519947350025,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "51": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 158.6948,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.09716519947350025,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "52": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 160.5494,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.09716519947350025,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "53": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 162.404,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.09716519947350025,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "54": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 164.25639999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.09716519947350025,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "55": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 166.11100000000002,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.10358039943873881,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "56": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 167.9656,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.10358039943873881,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "57": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 169.8202,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.10358039943873881,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "58": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 171.6726,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.10358039943873881,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "59": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 173.5272,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.10358039943873881,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "60": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 175.3818,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.10999889940395952,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ]
+        },
+        "4": {
+            "60": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 190.04700000000003,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.10999889940395952,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "61": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 191.90159999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.10999889940395952,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "62": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 193.7562,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.10999889940395952,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "63": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 195.6086,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.10999889940395952,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "64": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 197.4632,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.10999889940395952,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "65": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 199.3178,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.11641409936919808,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "66": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 201.1702,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.11641409936919808,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "67": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 203.02480000000003,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.11641409936919808,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "68": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 204.87939999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.11641409936919808,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "69": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 206.734,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.11641409936919808,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "70": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 208.5864,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.12283259933441877,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ]
+        },
+        "5": {
+            "70": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 223.2538,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.12283259933441877,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "71": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 225.10840000000002,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.12283259933441877,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "72": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 226.9608,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.12283259933441877,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "73": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 228.8154,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.12283259933441877,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "74": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 230.67,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.12283259933441877,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "75": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 232.5224,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.12924779929965735,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "76": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 234.37699999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.12924779929965735,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "77": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 236.23160000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.12924779929965735,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "78": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 238.08399999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.12924779929965735,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "79": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 239.9386,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.12924779929965735,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "80": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 241.7932,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.13566629926487805,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ]
+        },
+        "6": {
+            "80": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 256.4606,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.13566629926487805,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "81": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 258.313,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.13566629926487805,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "82": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 260.1676,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.13566629926487805,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "83": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 262.0222,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.13566629926487805,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "84": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 263.87460000000004,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.13566629926487805,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "85": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 265.7292,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.14208149923011662,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "86": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 267.5838,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.14208149923011662,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "87": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 269.4362,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.14208149923011662,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "88": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 271.2908,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.14208149923011662,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "89": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 273.1454,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.14208149923011662,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ],
+            "90": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 275.0,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 10007,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 0.1484999991953373,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                }
+            ]
+        }
+    },
+    "ascensions": {
+        "0": {
+            "2": 4000,
+            "41100021": 3
+        },
+        "1": {
+            "2": 8000,
+            "41100022": 3,
+            "43020011": 3
+        },
+        "2": {
+            "2": 16000,
+            "41100023": 2,
+            "43020012": 4
+        },
+        "3": {
+            "2": 24000,
+            "41100023": 3,
+            "43020013": 3
+        },
+        "4": {
+            "2": 32000,
+            "41100024": 2,
+            "43020014": 4
+        }
+    }
+}

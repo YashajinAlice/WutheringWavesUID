@@ -1,0 +1,33 @@
+{
+    "id": 500103,
+    "name": "奇妙的化學反應",
+    "description": "在「多人遊戲」下完成10次「領域」相關的挑戰。",
+    "hidden": false,
+    "level": 1,
+    "group": {
+        "id": 5001,
+        "name": "別域的友誼",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconAchv256/T_IconAchv256_013.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconAchv/T_IconAchv_013.png",
+            "backgroundIcon": "/d/GameData/UIResources/UiAchievement/Image/T_AchievementBg7.png"
+        },
+        "category": {
+            "id": 4,
+            "name": "諸音聲軌",
+            "type": 1,
+            "spritePath": "/d/GameData/UIResources/Common/Atlas/TabIcon/SP_IconAchievement4.png",
+            "texturePath": "/d/GameData/UIResources/UiAchievement/Image/T_AchievementChengzhamg_UI.png"
+        }
+    },
+    "nextLevel": 500104,
+    "reward": {
+        "id": 3,
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_zcpq_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_zcpq_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_zcpq_UI.png"
+        },
+        "value": 5
+    }
+}

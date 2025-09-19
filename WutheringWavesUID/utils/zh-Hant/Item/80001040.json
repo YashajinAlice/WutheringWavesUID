@@ -1,0 +1,36 @@
+{
+    "id": 80001040,
+    "name": "霜花小餅",
+    "bg": "釉瑚存放在匣中冰鼎的零嘴，無論何時拿出都帶著絲絲凉意。\n追尋古物在索拉里斯各地旅行時，時常會有找不到食宿的時刻，小餅就成了她果腹的絕頂美味。\n因為釉瑚喜愛往冰鼎中同時鎮些水果，餅皮帶著濕潤的氣息，隱隱有股果香，四時不同。",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_050_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_050_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_050_UI.png"
+    },
+    "showType": [
+        {
+            "id": 23,
+            "name": "菜肴"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 404000,
+            "description": "烹飪獲得"
+        }
+    ]
+}

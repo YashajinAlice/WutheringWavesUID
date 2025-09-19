@@ -1,0 +1,31 @@
+{
+    "id": 46,
+    "name": "黑金通籌",
+    "bg": "一枚來自「黑街」的鑄籌，而關於鑄造它的原料，有人說來自於敗者的匕首，也有人說來自被人用蠻力翹下的瓶蓋……無論如何，「黑街」裡的秘市商人認可它的價值。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_AnniversaryStore_01_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_AnniversaryStore_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_AnniversaryStore_UI.png"
+    },
+    "showType": [
+        {
+            "id": 15,
+            "name": "特殊代幣"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

@@ -1,0 +1,36 @@
+{
+    "id": 80001002,
+    "name": "冰鎮香蘇",
+    "bg": "冰鎮激發了香蘇的草本芳香，清涼微澀，很得白芷偏愛。\n研究不易，若是陷入卡頓不得要領，白芷往往會拿出提前冰好的香蘇，小憩片刻。涼意從舌尖蔓延到後腦，思緒也漸漸沉靜……用完一碟的時間，剛好夠白芷理清思路。",
+    "rarity": {
+        "id": 2,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_SP_01_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_SP_01_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_SP_01_UI.png"
+    },
+    "showType": [
+        {
+            "id": 23,
+            "name": "菜肴"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 404000,
+            "description": "烹飪獲得"
+        }
+    ]
+}

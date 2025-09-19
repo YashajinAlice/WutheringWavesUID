@@ -1,0 +1,31 @@
+{
+    "id": 53002,
+    "name": "叱妖誥",
+    "bg": "鶴髮赤目，雪衣玄裳，面魌而執寒刃，持念咒誥，喑嗚叱吒，驚驅疫厲，諸惡皆除。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_7_a_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_7_a_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_7_a_UI.png"
+    },
+    "showType": [
+        {
+            "id": 16,
+            "name": "物資箱"
+        }
+    ],
+    "mainType": {
+        "id": 7,
+        "name": "特殊",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag07.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Tongyong_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

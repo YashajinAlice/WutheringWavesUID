@@ -1,0 +1,36 @@
+{
+    "id": 71020008,
+    "name": "時間注腳·九十三",
+    "bg": "名為時間注腳的記錄，其中記載著某位自稱度量者的人所經歷的故事。",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Level_003_1_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconTask160/T_IconTask160_Level_003_1_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconTask80/T_IconTask80_Level_003_1_UI.png"
+    },
+    "showType": [
+        {
+            "id": 29,
+            "name": "回音殘片"
+        }
+    ],
+    "mainType": {
+        "id": 4,
+        "name": "資源",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag04.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jchumokuai_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 401000,
+            "description": "索拉里斯探索獲得"
+        }
+    ]
+}

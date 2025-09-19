@@ -1,0 +1,36 @@
+{
+    "id": 80001011,
+    "name": "越州辣肉粉",
+    "bg": "柔滑細長的圓粉，在濃郁的辣湯中浸足了味道。蔥花點綴著厚實的肉片，一口下去，冬日也能讓人大汗淋漓。\n在越州那個與世隔絕的淳樸村落中，辣肉粉是燈燈對於家鄉味道最深厚的記憶。\n即便如今在嗚嗚物流工作的旅途中遠離家鄉，吃遍了各色美味，但燈燈仍舊覺得家裡灶台上那熱騰騰的一碗，就是幸福的代名詞。",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_053_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_053_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_053_UI.png"
+    },
+    "showType": [
+        {
+            "id": 23,
+            "name": "菜肴"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 404000,
+            "description": "烹飪獲得"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "id": 80069010,
+    "name": "命運角鬥",
+    "tips": "先約電臺寰宇特約專屬獎勵。",
+    "showInBag": false,
+    "description": {
+        "bg": "見證漂泊者旅途的印章，可展示給其他旅者。\n在漂泊者資料中可更換羈旅印章。",
+        "type": "羈旅印章",
+        "attributes": "就由自己贏回命運。",
+        "obtainedShow": ""
+    },
+    "rarity": {
+        "id": 5,
+        "name": "五星",
+        "consumeText": "不限",
+        "color": "#CFB17F",
+        "stars": "五星"
+    },
+    "items": [
+        504000
+    ],
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCard/T_IconCard256_46.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCard160/T_IconCard160_46.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCard80/T_IconCard80_46.png",
+        "longCardPath": "/d/GameData/UIResources/Common/Image/CardLong/T_CardLong46.png",
+        "cardPath": "/d/GameData/UIResources/Common/Image/Card/T_Card46.png",
+        "functionViewCardPath": "/d/GameData/UIResources/Common/Image/CardPolygon/T_CardPolygon_46.png"
+    }
+}

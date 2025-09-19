@@ -1,0 +1,31 @@
+{
+    "id": 80200002,
+    "name": "1週年紀念幣",
+    "bg": "《第二索拉》為紀念內測一週年所發行的活動貨幣，原本背面應該印有先行公約的標誌，但不知為何被替換成了布大王的頭像。布大王似乎對它們很感興趣。",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_Act_Xia06_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_Act_Xia06_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_Act_Xia06_UI.png"
+    },
+    "showType": [
+        {
+            "id": 10,
+            "name": "消耗品"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

@@ -1,0 +1,113 @@
+{
+    "id": 60001215,
+    "name": "偽作的神王",
+    "monsterId": 6000121,
+    "element": [
+        5
+    ],
+    "skill": {
+        "id": 280031,
+        "skillGroupId": 200001,
+        "skillCd": 8,
+        "descriptionEx": "使用聲骸技能，幻形為偽作的神王，發動旋轉突進對敵人造成四段{0}的導電傷害。\n在首位裝配該聲骸技能時，自身導電傷害加成提升{1}，重擊傷害加成提升{2}；使用變奏技能登場時可召喚偽作的神王，對敵人造成{3}的導電傷害。\n初始擁有{4}次可使用次數，每{5}秒可使用次數增加1次，可使用次數上限{6}次。\n技能冷卻：{7}秒",
+        "simplyDescription": "幻形為偽作的神王，對周圍敵人造成導電傷害。\n在首位裝配時，提高自身導電和重擊傷害；使用變奏技能登場時可召喚偽作的神王，對敵人造成導電傷害。",
+        "ifCounterSkill": false,
+        "levelDescriptionEx": [
+            "30.75%",
+            "12.00%",
+            "12.00%",
+            "225.00%",
+            "2",
+            "8",
+            "2",
+            "8"
+        ],
+        "levelDescriptionStrArray": [
+            {
+                "arrayString": [
+                    "30.75%",
+                    "12.00%",
+                    "12.00%",
+                    "225.00%",
+                    "2",
+                    "8",
+                    "2",
+                    "8"
+                ]
+            },
+            {
+                "arrayString": [
+                    "36.90%",
+                    "12.00%",
+                    "12.00%",
+                    "270.00%",
+                    "2",
+                    "8",
+                    "2",
+                    "8"
+                ]
+            },
+            {
+                "arrayString": [
+                    "43.05%",
+                    "12.00%",
+                    "12.00%",
+                    "315.00%",
+                    "2",
+                    "8",
+                    "2",
+                    "8"
+                ]
+            },
+            {
+                "arrayString": [
+                    "49.20%",
+                    "12.00%",
+                    "12.00%",
+                    "360.00%",
+                    "2",
+                    "8",
+                    "2",
+                    "8"
+                ]
+            },
+            {
+                "arrayString": [
+                    "55.35%",
+                    "12.00%",
+                    "12.00%",
+                    "405.00%",
+                    "2",
+                    "8",
+                    "2",
+                    "8"
+                ]
+            }
+        ],
+        "icon": {
+            "battleIcon": "/d/GameData/UIResources/Common/Image/MstSkill/T_MstSkil_34017_UI.png",
+            "specialIcon": "/d/GameData/UIResources/Common/Image/MstSkill/T_MstSkil_34017_UI.png"
+        }
+    },
+    "cost": {
+        "id": 2,
+        "cost": 4,
+        "description": "怒濤級"
+    },
+    "rarity": {
+        "id": 5,
+        "icon": "/d/GameData/UIResources/UiRole/Atlas/RoleVision/SP_VisionlQualityE.png"
+    },
+    "type": "聲骸",
+    "attributes": "裝備後可以獲得屬性、主動技能和特定效果加成。",
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_34017_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconMonsterGoods160/T_IconMonsterGoods160_34017_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconMonsterGoods80/T_IconMonsterGoods80_34017_UI.png"
+    },
+    "obtainedDescription": "解鎖聲骸。",
+    "phantomType": 1,
+    "fetter": [
+        20
+    ]
+}

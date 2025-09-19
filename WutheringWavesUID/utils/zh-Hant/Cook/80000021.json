@@ -1,0 +1,95 @@
+{
+    "id": 80000021,
+    "name": "星星酥",
+    "description": "提高隊伍中所有共鳴者35%防禦力，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+    "items": [
+        {
+            "id": 42400030,
+            "name": "獸肉",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+            },
+            "count": 3
+        },
+        {
+            "id": 80050001,
+            "name": "食用油",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A06_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A06_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A06_UI.png"
+            },
+            "count": 3
+        },
+        {
+            "id": 80050002,
+            "name": "辣椒",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A07_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A07_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A07_UI.png"
+            },
+            "count": 1
+        },
+        {
+            "id": 80050008,
+            "name": "鹽",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A13_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A13_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A13_UI.png"
+            },
+            "count": 2
+        }
+    ],
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_022_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_022_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_022_UI.png"
+    },
+    "resonator": [
+        {
+            "id": 1203,
+            "name": "安可",
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_8_UI.png",
+                "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_8_UI.png",
+                "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_anke_UI.png"
+            },
+            "rarity": {
+                "id": 5,
+                "name": "五星",
+                "consumeText": "不限",
+                "color": "#CFB17F",
+                "stars": "五星"
+            }
+        }
+    ]
+}

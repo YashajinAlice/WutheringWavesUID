@@ -1,0 +1,36 @@
+{
+    "id": 80001034,
+    "name": "熾翎辣肉",
+    "bg": "長離喜愛的菜肴，比尋常做法加了更多辣椒。\n赤紅的色澤令辣度肉眼可見，灼辣與鮮香仿佛要化作實體從碗中振翅而出，配一碗米飯與一盅桂花釀，佐以瑝都明庭的長街盛景，酣暢淋漓，實乃人間絕妙。\n在明庭時，這道佳餚除了長離外鮮少有食客嘗試，而在虹鎮，這是家家戶戶都會的家常菜，親朋滿座一堂，觥籌交錯間，這道菜便也有了另一番溫暖滋味。",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_041_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_041_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_041_UI.png"
+    },
+    "showType": [
+        {
+            "id": 23,
+            "name": "菜肴"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 404000,
+            "description": "烹飪獲得"
+        }
+    ]
+}

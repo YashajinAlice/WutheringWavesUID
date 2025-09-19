@@ -1,0 +1,40 @@
+{
+    "id": 36000014,
+    "name": "特級調諧器",
+    "bg": "調整聲骸的頻率，去除其中的雜音，可以解放聲骸中潛在的力量。",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_txq_03_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_txq_03_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_txq_03_UI.png"
+    },
+    "showType": [
+        {
+            "id": 22,
+            "name": "聲骸養成材料"
+        }
+    ],
+    "mainType": {
+        "id": 4,
+        "name": "資源",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag04.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jchumokuai_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 401000,
+            "description": "索拉里斯探索獲得"
+        },
+        {
+            "id": 202000,
+            "description": "無音清剿獲得"
+        }
+    ]
+}

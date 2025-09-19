@@ -1,0 +1,33 @@
+{
+    "id": 101701508,
+    "name": "",
+    "description": "使用凌陽通關一次任意難度的「異夢聚合」",
+    "hidden": false,
+    "level": 3008,
+    "group": {
+        "id": 7011,
+        "name": "",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Atlas/TabIcon/SP_IconRogueChallenge.png",
+            "iconSmall": null,
+            "backgroundIcon": "/d/GameData/UIResources/UiAchievement/Image/T_AchievementBg3.png"
+        },
+        "category": {
+            "id": 10,
+            "name": "他域交集",
+            "type": 2,
+            "spritePath": "/d/GameData/UIResources/Common/Atlas/TabIcon/SP_IconAchievement3.png",
+            "texturePath": "/d/GameData/UIResources/UiAchievement/Image/T_AchievementHezuo_UI.png"
+        }
+    },
+    "nextLevel": null,
+    "reward": {
+        "id": 3,
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_zcpq_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_zcpq_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_zcpq_UI.png"
+        },
+        "value": 5
+    }
+}

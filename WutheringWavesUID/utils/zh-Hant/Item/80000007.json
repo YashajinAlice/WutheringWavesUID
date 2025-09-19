@@ -1,0 +1,44 @@
+{
+    "id": 80000007,
+    "name": "鹹奶茶",
+    "bg": "高糖高鹽的飲料，由瑝瓏礦工鍾愛的茶飲發展而來。寒冷的冬天裡要是能喝上一碗鹹奶茶，全身都會暖融融起來。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_008_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_008_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_008_UI.png"
+    },
+    "showType": [
+        {
+            "id": 23,
+            "name": "菜肴"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {
+        "id": 80000007,
+        "type": {
+            "id": 2,
+            "description": "ItemHandBookType_2_Descrtption",
+            "icon": "/d/GameData/UIResources/UiArchive/Atlas/SP_ArchivePengren.png"
+        },
+        "title": "菜餚"
+    },
+    "itemAccess": [
+        {
+            "id": 404000,
+            "description": "烹飪獲得"
+        }
+    ]
+}

@@ -1,0 +1,1298 @@
+[
+  {
+    "id": 19,
+    "name": "孤身孑然",
+    "description": "施放<color=Highlight>普攻第5段</color>後，散華自身暴擊提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_SanhuaM1_UI.png"
+  },
+  {
+    "id": 20,
+    "name": "淨雪明心",
+    "description": "重擊<color=Highlight>爆裂</color>消耗的耐力降低{0}點，施放共鳴技能<color=Highlight>朔雪永凍</color>時散華抗打斷能力提升，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_SanhuaM2_UI.png"
+  },
+  {
+    "id": 21,
+    "name": "目視異常",
+    "description": "散華攻擊生命低於{0}的目標時，造成的傷害提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_SanhuaM3_UI.png"
+  },
+  {
+    "id": 22,
+    "name": "劍修五蘊",
+    "description": "施放共鳴解放<color=Highlight>焦瞑凍土</color>時，回復{0}點共鳴能量。\n並且{1}秒內的下次重擊<color=Highlight>爆裂</color>傷害提升{2}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_SanhuaM4_UI.png"
+  },
+  {
+    "id": 23,
+    "name": "顛覆無常",
+    "description": "共鳴回路<color=Highlight>冰綻</color>的暴擊傷害提升{0}。\n即使沒有成功引爆，【<a href=850036>冰棘</a>】、【<a href=850035>冰稜</a>】、【<a href=850037>冰川</a>】也會在消失時直接爆炸。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_SanhuaM5_UI.png"
+  },
+  {
+    "id": 24,
+    "name": "曙色天光",
+    "description": "引爆【<a href=850035>冰稜</a>】或【<a href=850037>冰川</a>】後，隊伍中的角色攻擊提升{0}，持續{1}秒，可疊加{2}層。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_SanhuaM6_UI.png"
+  },
+  {
+    "id": 25,
+    "name": "極簡與繁複",
+    "description": "施放共鳴技能<color=Highlight>應急預案</color>時，每消耗{0}點【<a href=850033>念意</a>】，白芷額外回復{1}點共鳴能量。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_BailianM1_UI.png"
+  },
+  {
+    "id": 26,
+    "name": "沉默的冰原",
+    "description": "施放共鳴技能<color=Highlight>應急預案</color>時，若有{0}點【<a href=850033>念意</a>】，白芷的冷凝傷害加成提升{1}，治療效果加成提升{2}，持續{3}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_BailianM2_UI.png"
+  },
+  {
+    "id": 27,
+    "name": "真理的崇奉",
+    "description": "施放變奏技能<color=Highlight>覆雪流盈</color>時，白芷的生命上限提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_BailianM3_UI.png"
+  },
+  {
+    "id": 28,
+    "name": "被追溯的本源",
+    "description": "施放共鳴解放<color=Highlight>刹那合彌</color>時，共鳴解放<color=Highlight>頻隙迴響</color>獲得强化：\n·<color=Highlight>頻隙迴響</color>增加{0}段；\n·<color=Highlight>頻隙迴響</color>治療倍率提升{1}；\n·<color=Highlight>頻隙迴響</color>額外造成白芷{2}生命值上限的<color=Ice>冷凝傷害</color>。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_BailianM4_UI.png"
+  },
+  {
+    "id": 29,
+    "name": "被回應的祈願",
+    "description": "隊伍中的白芷存活時，若隊伍中的角色（不包含白芷）失去意識，立刻為該角色恢復意識並回復該角色生命上限{0}的生命值，該效果每{1}分鐘可觸發1次。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_BailianM5_UI.png"
+  },
+  {
+    "id": 30,
+    "name": "聞道者的覺悟",
+    "description": "角色拾取固有技能<color=Highlight><a href=850057>天籟</a></color>時，附近隊伍中所有角色的冷凝傷害加成提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_BailianM6_UI.png"
+  },
+  {
+    "id": 97,
+    "name": "醒獅開光，如意吉祥",
+    "description": "共鳴解放<color=Highlight>獅子奮迅</color>持續期間提升凌陽的抗打斷能力。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_LingyangM1_UI.png"
+  },
+  {
+    "id": 98,
+    "name": "威風凜凜，四方張狂",
+    "description": "施放變奏技能<color=Highlight>出洞·睡獅蟄醒</color>時，凌陽額外回復{0}點共鳴能量，每{1}秒可觸發1次。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_LingyangM2_UI.png"
+  },
+  {
+    "id": 99,
+    "name": "瞠目顧盼，其聲昂昂",
+    "description": "共鳴解放<color=Highlight>獅子奮迅</color>持續期間，凌陽的普攻傷害加成提升{0}，共鳴技能傷害加成提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_LingyangM3_UI.png"
+  },
+  {
+    "id": 100,
+    "name": "一跳三叫，眾仙折腰",
+    "description": "凌陽施放延奏技能<color=Highlight>留痕·踏雪點星</color>時，隊伍中的角色冷凝傷害加成提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_LingyangM4_UI.png"
+  },
+  {
+    "id": 101,
+    "name": "躡罡踏鬥，七星懸朗",
+    "description": "施放共鳴解放<color=Highlight>奮進·獅子奮迅，俱足萬行</color>時，將額外造成凌陽{0}攻擊的<color=Ice>冷凝傷害</color>。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_LingyangM5_UI.png"
+  },
+  {
+    "id": 102,
+    "name": "神功蓋世，百鬼震惶",
+    "description": "處於共鳴回路<color=Highlight><a href=850058>行獅</a></color>狀態時，凌陽每次施放共鳴技能<color=Highlight>飛身式·翻山越澗</color>後{0}秒內，下1次普攻的普攻傷害加成提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_LingyangM6_UI.png"
+  },
+  {
+    "id": 133,
+    "name": "骨法用筆",
+    "description": "折枝施放共鳴技能<color=Highlight>極意·神來之筆</color>時，回復{0}點共鳴能量，且自身暴擊提升{1}，持續{2}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ZhezhiM2_UI.png"
+  },
+  {
+    "id": 134,
+    "name": "氣韻生動",
+    "description": "共鳴解放<color=Highlight>虛實境趣</color>的<color=Highlight>墨鶴</color>的最大召喚數增加{0}隻。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ZhezhiM1_UI.png"
+  },
+  {
+    "id": 135,
+    "name": "應物象形",
+    "description": "折枝施放共鳴技能<color=Highlight>以形寫神</color>、共鳴技能<color=Highlight>神來之筆</color>或共鳴技能<color=Highlight>極意·神來之筆</color>時，攻擊提升{0}，可疊加{1}層，持續{2}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ZhezhiM3_UI.png"
+  },
+  {
+    "id": 136,
+    "name": "隨類賦彩",
+    "description": "折枝施放共鳴解放<color=Highlight>虛實境趣</color>時，隊伍中角色攻擊提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ZhezhiM4_UI.png"
+  },
+  {
+    "id": 137,
+    "name": "經營位置",
+    "description": "共鳴解放<color=Highlight>虛實境趣</color>持續期間，每召喚3隻<color=Highlight>墨鶴</color>，會額外召喚1隻<color=Highlight>墨鶴</color>進行協同攻擊，能造成等同於墨鶴{0}的傷害，此次傷害為普攻傷害，該傷害不會觸發召喚墨鶴的效果。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ZhezhiM5_UI.png"
+  },
+  {
+    "id": 138,
+    "name": "傳移摹寫",
+    "description": "施放共鳴技能<color=Highlight>神來之筆</color>或共鳴技能<color=Highlight>極意·神來之筆</color>時，會額外召喚一隻<color=Highlight>白鶴</color>，能造成等同於共鳴技能<color=Highlight>神來之筆</color>{0}的傷害，此次傷害為普攻傷害。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ZhezhiM6_UI.png"
+  },
+  {
+    "id": 139,
+    "name": "港邊小憩",
+    "description": "施放<color=Highlight><a href=850045>問禎</a></color>時，釉瑚有{0}機率免疫傷害和受擊，持續{1}秒，若切換至其他角色則該效果提前結束。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YouhuM1_UI.png"
+  },
+  {
+    "id": 140,
+    "name": "堂側酣睡",
+    "description": "<color=Highlight>對偶</color>、<color=Highlight>聯珠</color>、<color=Highlight>合說</color>對共鳴回路<color=Highlight>詩中物</color>的傷害提升效果額外生效一次。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YouhuM2_UI.png"
+  },
+  {
+    "id": 141,
+    "name": "火中噩魘",
+    "description": "釉瑚的攻擊提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YouhuM3_UI.png"
+  },
+  {
+    "id": 142,
+    "name": "雪夜迷寐",
+    "description": "每次施放共鳴技能<color=Highlight>匣中問禎</color>時，有{0}機率不進入冷卻狀態。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YouhuM4_UI.png"
+  },
+  {
+    "id": 143,
+    "name": "萬里淺眠",
+    "description": "施放變奏技能<color=Highlight>遂心匣</color>時，釉瑚的暴擊提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YouhuM5_UI.png"
+  },
+  {
+    "id": 144,
+    "name": "千秋一枕",
+    "description": "施放共鳴技能<color=Highlight>奇珍賞</color>時，獲得{0}層<color=Highlight>霽青</color>效果，最多可疊加{1}層，持續{2}秒，每層<color=Highlight>霽青</color>使釉瑚的暴擊傷害提升{3}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YouhuM6_UI.png"
+  },
+  {
+    "id": 157,
+    "name": "美或死，璀璨即凋零",
+    "description": "珂萊塔對擁有<color=Highlight><a href=850019>解離</a></color>效果的目標攻擊造成傷害時，該次傷害的暴擊提升{1}。對處於<color=Highlight><a href=850020>變彩</a></color>狀態下的目標施放共鳴技能<color=Highlight>示我璀璨</color>並命中時，額外回復{3}點【<a href=850018>靈萃</a>】。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KelaitaM1_UI.png"
+  },
+  {
+    "id": 158,
+    "name": "寂與亡，衰敗亦新生",
+    "description": "共鳴解放<color=Highlight>致死以終</color>的傷害倍率提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KelaitaM2_UI.png"
+  },
+  {
+    "id": 159,
+    "name": "切步、向前，此為優雅的進行式",
+    "description": "延奏技能<color=Highlight>碎璃鏡花</color>：施放延奏技能<color=Highlight>致辭</color>後，額外進行一次攻擊，造成珂萊塔{0}攻擊的冷凝傷害。\n共鳴技能<color=Highlight>暴力美學</color>、共鳴技能<color=Highlight>示我璀璨</color>的傷害倍率提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KelaitaM3_UI.png"
+  },
+  {
+    "id": 160,
+    "name": "以舊雨，為頌讚的苦酒",
+    "description": "珂萊塔施放重擊、重擊<color=Highlight>限制性策略</color>、重擊<color=Highlight>末路見行</color>時，隊伍中的角色共鳴技能傷害加成提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KelaitaM4_UI.png"
+  },
+  {
+    "id": 161,
+    "name": "敬昨夜、今日和彼時彼刻",
+    "description": "重擊<color=Highlight>末路見行</color>的傷害倍率提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KelaitaM5_UI.png"
+  },
+  {
+    "id": 162,
+    "name": "我依然故我，於終幕之上",
+    "description": "共鳴解放<color=Highlight>死兆</color>的射擊造成更高的傷害，並且生成的晶體數量翻倍，二者總計使共鳴解放<color=Highlight>死兆</color>傷害倍率提升{0}。\n共鳴解放<color=Highlight>死兆</color>的射擊命中目標時，對目標附加<color=Highlight>煥彩</color>效果：持續時間內無法進行任何動作，受到傷害或持續{2}秒時清除效果。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KelaitaM6_UI.png"
+  },
+  {
+    "id": 7,
+    "name": "劇院的英雄戲",
+    "description": "施放共鳴技能<color=Highlight>轟轟</color>時，必定暴擊。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_MaxiaofangM1_UI.png"
+  },
+  {
+    "id": 8,
+    "name": "躍動的火星",
+    "description": "施放共鳴解放<color=Highlight>熾烈焰火</color>期間，每擊敗{0}個目標，回復{1}點共鳴能量，每次最多可回復{2}點。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_MaxiaofangM2_UI.png"
+  },
+  {
+    "id": 9,
+    "name": "不滅的火把",
+    "description": "共鳴解放<color=Highlight>熾烈焰火</color>對生命值低於{0}的目標，傷害提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_MaxiaofangM3_UI.png"
+  },
+  {
+    "id": 10,
+    "name": "英雄的絕招",
+    "description": "施放共鳴解放<color=Highlight>熾烈焰火</color>時，熾霞獲得{0}發【<a href=850041>熱壓彈</a>】，並立即重置一次共鳴技能<color=Highlight>咻咻鬥意</color>的冷卻時間。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_MaxiaofangM4_UI.png"
+  },
+  {
+    "id": 11,
+    "name": "勝利的槍彈焰火",
+    "description": "固有技能<color=Highlight>加麻加辣</color>疊加至滿層時，攻擊額外提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_MaxiaofangM5_UI.png"
+  },
+  {
+    "id": 12,
+    "name": "劇終的回歸彩蛋",
+    "description": "觸發共鳴技能<color=Highlight>轟轟</color>後，隊伍中的角色普攻傷害加成提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_MaxiaofangM6_UI.png"
+  },
+  {
+    "id": 43,
+    "name": "羊咩的童話書",
+    "description": "<color=Highlight>普攻</color>命中目標時，熱熔傷害額外提升{0}，可疊加{1}層，持續{2}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_AnkeM1_UI.png"
+  },
+  {
+    "id": 44,
+    "name": "數羊安眠曲",
+    "description": "施放普攻<color=Highlight>咩咩</color>或共鳴技能<color=Highlight>熱情歡迎式</color>時，額外回復{0}點共鳴能量，每{1}秒可觸發1次。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_AnkeM2_UI.png"
+  },
+  {
+    "id": 45,
+    "name": "迷霧？黑海岸！",
+    "description": "重擊<color=Highlight>白咩·失控之炎</color>、重擊<color=Highlight>黑咩·暴走之炎</color>的傷害提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_AnkeM3_UI.png"
+  },
+  {
+    "id": 46,
+    "name": "冒險？好有趣！",
+    "description": "施放重擊<color=Highlight>黑咩·暴走之炎</color>時，隊伍中的角色熱熔傷害加成提升{0}，效果持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_AnkeM4_UI.png"
+  },
+  {
+    "id": 47,
+    "name": "聚光燈，勇士登場！",
+    "description": "共鳴技能的傷害提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_AnkeM5_UI.png"
+  },
+  {
+    "id": 48,
+    "name": "羊咩，拯救世界！",
+    "description": "共鳴解放<color=Highlight>黑咩大暴走</color>期間，每次造成傷害為自身疊加{0}層【迷失羔羊】，每層使攻擊提升{1}，效果持續{2}秒，最多可以疊加{3}層。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_AnkeM6_UI.png"
+  },
+  {
+    "id": 55,
+    "name": "孤獨的練習曲",
+    "description": "共鳴解放<color=Highlight><a href=850038>浮翼狂想</a></color>持續期間，隊伍中登場角色施放共鳴技能時，莫特斐會進行協同攻擊，打出{0}發共鳴解放<color=Highlight>加強音</color>，造成<color=Fire>熱熔傷害</color>。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_MotefeiM1_UI.png"
+  },
+  {
+    "id": 56,
+    "name": "虛偽的讚美詩",
+    "description": "使用聲骸技能後，額外回復{0}點共鳴能量，每{1}秒可觸發1次。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_MotefeiM2_UI.png"
+  },
+  {
+    "id": 57,
+    "name": "預熱的宣敘調",
+    "description": "共鳴解放<color=Highlight><a href=850038>浮翼狂想</a></color>持續期間，共鳴解放<color=Highlight>加強音</color>的暴擊傷害提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_MotefeiM3_UI.png"
+  },
+  {
+    "id": 58,
+    "name": "宣洩的華爾滋",
+    "description": "共鳴解放<color=Highlight><a href=850038>浮翼狂想</a></color>的持續時間延長{0}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_MotefeiM4_UI.png"
+  },
+  {
+    "id": 59,
+    "name": "葬送的四重奏",
+    "description": "共鳴技能<color=Highlight>激昂變奏</color>和共鳴技能<color=Highlight>怒火賦格</color>命中目標時，進行協同攻擊，打出{0}發共鳴解放<color=Highlight>加強音</color>，造成<color=Fire>熱熔傷害</color>，此次共鳴解放<color=Highlight>加強音</color>傷害降低{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_MotefeiM5_UI.png"
+  },
+  {
+    "id": 60,
+    "name": "盛怒的無言歌",
+    "description": "施放共鳴解放<color=Highlight>暴烈終曲</color>時，隊伍中的角色攻擊提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_MotefeiM6_UI.png"
+  },
+  {
+    "id": 121,
+    "name": "隱我所思",
+    "description": "施放共鳴技能<color=Highlight>赫羽三相</color>或重擊<color=Highlight>焚身以火</color>時，長離的抗打斷能力提升，且造成的傷害提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ChangliM1_UI.png"
+  },
+  {
+    "id": 122,
+    "name": "循我所望",
+    "description": "獲得【<a href=850004>離火</a>】時，長離的暴擊提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ChangliM2_UI.png"
+  },
+  {
+    "id": 123,
+    "name": "據我所聞",
+    "description": "共鳴解放<color=Highlight>離火照丹心</color>造成的傷害提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ChangliM3_UI.png"
+  },
+  {
+    "id": 124,
+    "name": "飾我所言",
+    "description": "施放變奏技能後，隊伍中的角色攻擊提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ChangliM4_UI.png"
+  },
+  {
+    "id": 125,
+    "name": "捨我所得",
+    "description": "重擊<color=Highlight>焚身以火</color>倍率提升{0}，造成的傷害提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ChangliM5_UI.png"
+  },
+  {
+    "id": 126,
+    "name": "成我所謀",
+    "description": "共鳴技能<color=Highlight>赫羽三相</color>、重擊<color=Highlight>焚身以火</color>和共鳴解放<color=Highlight>離火照丹心</color>攻擊造成傷害時額外忽視目標{0}防禦。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ChangliM6_UI.png"
+  },
+  {
+    "id": 175,
+    "name": "跟隨洋流和信風",
+    "description": "<color=Highlight>火焰歸亡曲</color>施放期間會短暫使周圍的目標停滯，若在此期間切換至其他角色則提前結束停滯效果。\n施放變奏技能<color=Highlight>為我！</color>後或每次<color=Highlight>空中攻擊空翻</color>時，布蘭特造成傷害提升{0}，持續{1}秒，可疊加{2}層。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_BulanteM1_UI.png"
+  },
+  {
+    "id": 176,
+    "name": "掠奪歡聲與笑顏",
+    "description": "施放<color=Highlight>空中攻擊</color>和<color=Highlight>火焰歸亡曲</color>時暴擊提升{0}。\n布蘭特延奏技能<color=Highlight>航向確定！</color>獲得額外效果，{2}秒內：\n下一位登場角色或附近隊伍中啟用布蘭特延奏技能的角色施放<color=Highlight>共鳴技能</color>命中目標時，布蘭特將攻擊目標，會產生一次爆炸，造成布蘭特攻擊{1}的熱熔傷害，此次傷害為普攻傷害。爆炸每秒可觸發{3}次，最多可觸發{4}次爆炸。\n·切換至其他角色會保留該額外效果。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_BulanteM2_UI.png"
+  },
+  {
+    "id": 177,
+    "name": "無懼驚濤駭浪",
+    "description": "<color=Highlight>火焰歸亡曲</color>傷害倍率提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_BulanteM3_UI.png"
+  },
+  {
+    "id": 178,
+    "name": "縱情放聲歌唱",
+    "description": "<color=Highlight>火焰歸亡曲</color>獲得的護盾量提升{0}，布蘭特施放<color=Highlight>火焰歸亡曲</color>時，會回復附近隊伍所有角色的生命值（每{1}的共鳴效率回復{2}點生命值）。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_BulanteM4_UI.png"
+  },
+  {
+    "id": 179,
+    "name": "演員說：生活皆舞台",
+    "description": "造成普攻傷害時，<color=Highlight>普攻傷害加成</color>提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_BulanteM5_UI.png"
+  },
+  {
+    "id": 180,
+    "name": "船長答：狂歡即世界！",
+    "description": "<color=Highlight>空中攻擊</color>的倍率提升{0}。\n施放<color=Highlight>火焰歸亡曲</color>後，會在原地產生一次再燃，造成等同於<color=Highlight>火焰歸亡曲</color>{1}的<color=Fire>熱熔傷害</color>，此次傷害為普攻傷害。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_BulanteM6_UI.png"
+  },
+  {
+    "id": 205,
+    "name": "看那無名之人",
+    "description": "施放共鳴解放<color=Highlight>榮光歡酣於火</color>時，露帕額外回復{0}點協奏能量，暴擊提升{1}，持續{2}秒。\n<color=Highlight>狼舞的決意·極</color>免疫打斷。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_LupaM1_UI.png"
+  },
+  {
+    "id": 206,
+    "name": "所處皆為獵場",
+    "description": "施放共鳴解放<color=Highlight>榮光歡酣於火</color>、<color=Highlight>重擊·狼咬</color>、<color=Highlight>重擊·銳爪</color>、<color=Highlight>空中攻擊·焰襲</color>時，隊伍中的角色熱熔傷害加成提升{0}，持續{1}秒，可疊加{2}層。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_LupaM2_UI.png"
+  },
+  {
+    "id": 207,
+    "name": "狼影隨焰咆哮",
+    "description": "變奏技能<color=Highlight>你無法逃離！</color>倍率提升{0}。\n共鳴解放<color=Highlight><a href=850178>榮光</a></color>效果替換為：\n施放共鳴解放<color=Highlight>榮光歡酣於火</color>時，額外獲得<color=Highlight><a href=850178>榮光</a></color>效果，{1}秒內：隊伍中的角色攻擊時無視{2}熱熔抗性。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_LupaM3_UI.png"
+  },
+  {
+    "id": 208,
+    "name": "旗幟於火飛揚",
+    "description": "<color=Highlight>狼舞的決意·極</color>倍率提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_LupaM4_UI.png"
+  },
+  {
+    "id": 209,
+    "name": "勝利讓掌聲喝彩",
+    "description": "施放變奏技能<color=Highlight>你在看哪裡？</color>或<color=Highlight>你無法逃離！</color>時，共鳴解放傷害加成提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_LupaM5_UI.png"
+  },
+  {
+    "id": 210,
+    "name": "致那最閃耀的焰星",
+    "description": "·共鳴回路<color=Highlight>狼舞的決意·極</color>、共鳴解放<color=Highlight>榮光歡酣於火</color>、變奏技能<color=Highlight>你無法逃離！</color>攻擊造成傷害時忽視目標{0}防禦。\n·施放共鳴技能<color=Highlight>兇噬</color>命中目標時，回復{1}點【<a href=850174>狼焰</a>】，每{2}秒可觸發一次。\n·共鳴回路<color=Highlight>狼舞的決意</color>替換為<color=Highlight>狼舞的決意·極</color>，施放<color=Highlight>狼舞的決意·極</color>不需要處於<color=Highlight><a href=850177>賽點沸騰</a></color>狀態。\n·施放變奏技能<color=Highlight>你無法逃離！</color>不再結束<color=Highlight><a href=850176>追獵</a></color>和<color=Highlight><a href=850178>榮光</a></color>效果。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_LupaM6_UI.png"
+  },
+  {
+    "id": 79,
+    "name": "隱秘談判",
+    "description": "共鳴技能<color=Highlight>滅殺指令</color>命中目標時，額外回復{0}點共鳴能量，每{1}秒可觸發1次。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KakaluoM1_UI.png"
+  },
+  {
+    "id": 80,
+    "name": "零和博弈",
+    "description": "施放變奏技能<color=Highlight>全境通緝</color>或變奏技能<color=Highlight>「必要的手段」</color>後，共鳴技能傷害加成提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KakaluoM2_UI.png"
+  },
+  {
+    "id": 81,
+    "name": "鐵腕外交",
+    "description": "共鳴解放<color=Highlight>殺戮武裝</color>狀態持續期間，卡卡羅的導電傷害加成提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KakaluoM3_UI.png"
+  },
+  {
+    "id": 82,
+    "name": "集群威脅",
+    "description": "施放延奏技能<color=Highlight>掠影奇襲</color>時，隊伍中的角色導電傷害加成提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KakaluoM4_UI.png"
+  },
+  {
+    "id": 83,
+    "name": "替代協議",
+    "description": "變奏技能<color=Highlight>全境通緝</color>及變奏技能<color=Highlight>「必要的手段」</color>的傷害提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KakaluoM5_UI.png"
+  },
+  {
+    "id": 84,
+    "name": "最後通牒",
+    "description": "施放重擊<color=Highlight>「死告」</color>時，卡卡羅將會召喚{0}個<color=Highlight>獵殺影</color>進行協同攻擊，每個<color=Highlight>獵殺影</color>可造成卡卡羅{1}攻擊的<color=Thunder>導電傷害</color>，此次傷害為共鳴解放傷害。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KakaluoM6_UI.png"
+  },
+  {
+    "id": 85,
+    "name": "矛盾的抉擇",
+    "description": "共鳴技能<color=Highlight>磁殛咆哮</color>和<color=Highlight>召雷磁爆</color>傷害提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YinlinM1_UI.png"
+  },
+  {
+    "id": 86,
+    "name": "牽絆的俘虜",
+    "description": "共鳴技能<color=Highlight>磁殛爆發</color>命中時額外恢復{1}點【<a href=850030>審判值</a>】和{2}點共鳴能量。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YinlinM2_UI.png"
+  },
+  {
+    "id": 87,
+    "name": "無情的斷罪",
+    "description": "共鳴回路<color=Highlight>審判之雷</color>傷害倍率提升55%。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YinlinM3_UI.png"
+  },
+  {
+    "id": 88,
+    "name": "前行的鼓舞",
+    "description": "共鳴回路<color=Highlight>審判之雷</color>命中時，隊伍中的角色攻擊提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YinlinM4_UI.png"
+  },
+  {
+    "id": 89,
+    "name": "決意的迴響",
+    "description": "共鳴解放<color=Highlight>破天雷滅擊</color>命中帶有共鳴回路<color=Highlight>縛罪標記</color>、<color=Highlight>懲罰印記</color>的目標時，傷害提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YinlinM5_UI.png"
+  },
+  {
+    "id": 90,
+    "name": "正義的踐行",
+    "description": "施放共鳴解放<color=Highlight>破天雷滅擊</color>後的30秒內，吟霖的<color=Highlight>普攻</color>命中目標時額外觸發<color=Highlight>疾霆昭彰</color>，造成吟霖攻擊力419.59%的<color=Thunder>導電傷害</color>，每段<color=Highlight>普攻</color>可觸發1次，最多觸發4次，此次傷害為共鳴技能傷害。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YinlinM6_UI.png"
+  },
+  {
+    "id": 91,
+    "name": "點一盞清茗",
+    "description": "淵武處在共鳴回路<color=Highlight>雷厲風行</color>狀態時，自身的普攻攻速提升{0}，重擊攻速提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YuanwuM1_UI.png"
+  },
+  {
+    "id": 92,
+    "name": "斂狂戾之心",
+    "description": "施放變奏技能<color=Highlight>轟雷</color>時，淵武額外回復{0}點共鳴能量。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YuanwuM2_UI.png"
+  },
+  {
+    "id": 93,
+    "name": "正周身之氣",
+    "description": "共鳴技能<color=Highlight>雷之楔</color>的協同攻擊命中目標時，基於淵武{0}防禦額外提升傷害。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YuanwuM3_UI.png"
+  },
+  {
+    "id": 94,
+    "name": "揮剛猛之拳",
+    "description": "施放共鳴解放<color=Highlight>寂土重明</color>時，隊伍中在場角色獲得淵武自身{0}防禦的護盾，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YuanwuM4_UI.png"
+  },
+  {
+    "id": 95,
+    "name": "顧一方天地",
+    "description": "共鳴技能<color=Highlight>雷之楔</color>在場時，淵武的共鳴解放傷害加成提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YuanwuM5_UI.png"
+  },
+  {
+    "id": 96,
+    "name": "保八方平安",
+    "description": "處在共鳴技能<color=Highlight>雷之楔</color>範圍內的附近隊伍中所有角色將持續獲得效果：防禦提升{0}，該效果持續時間{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YuanwuM6_UI.png"
+  },
+  {
+    "id": 115,
+    "name": "沉海洄天溯",
+    "description": "今汐施放普攻<color=Highlight>凌霄·普攻</color>、共鳴技能<color=Highlight>逐天取月</color>時，獲得一層<color=Highlight>驚蟄</color>效果，可疊加{0}層，持續{1}秒。施放共鳴技能<color=Highlight>驚龍破空</color>時，消耗<color=Highlight>驚蟄</color>效果的所有層數，每消耗一層，共鳴技能<color=Highlight>驚龍破空</color>造成的傷害提升{2}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JinxiM1_UI.png"
+  },
+  {
+    "id": 116,
+    "name": "絨雪凝屏息",
+    "description": "今汐處於非戰鬥狀態大於{0}秒時，回復{1}點【<a href=850002>韶光</a>】，每{2}秒只生效{3}次。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JinxiM2_UI.png"
+  },
+  {
+    "id": 117,
+    "name": "天定神子身",
+    "description": "今汐施放變奏技能<color=Highlight>蟠龍清輝</color>後，獲得一層<color=Highlight>謫仙</color>效果，每層使攻擊提升{0}，可疊加{1}層，效果持續{2}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JinxiM3_UI.png"
+  },
+  {
+    "id": 118,
+    "name": "自甘佑凡塵",
+    "description": "今汐施放共鳴解放<color=Highlight>移歲誅邪</color>或共鳴技能<color=Highlight>驚龍破空</color>時，附近隊伍中所有角色全屬性傷害加成提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JinxiM4_UI.png"
+  },
+  {
+    "id": 119,
+    "name": "流光化霜雪",
+    "description": "共鳴解放<color=Highlight>移歲誅邪</color>傷害倍率提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JinxiM5_UI.png"
+  },
+  {
+    "id": 120,
+    "name": "寒盡又逢春",
+    "description": "共鳴技能<color=Highlight>驚龍破空</color>傷害倍率提升{0}，消耗【<a href=850002>韶光</a>】時帶來的倍率增加效果額外提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JinxiM6_UI.png"
+  },
+  {
+    "id": 127,
+    "name": "卓異的門生",
+    "description": "施放共鳴技能<color=Highlight>萬方法則</color>時，額外生成{0}個衍構模體攻擊目標，傷害倍率為共鳴技能<color=Highlight>萬方法則</color>的{1}，此次傷害為共鳴解放傷害。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_XiangliyaoM1_UI.png"
+  },
+  {
+    "id": 128,
+    "name": "前人的行跡",
+    "description": "施放共鳴技能或共鳴解放<color=Highlight>思維矩陣</color>時，自身暴擊傷害提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_XiangliyaoM2_UI.png"
+  },
+  {
+    "id": 129,
+    "name": "邃古的遺墟",
+    "description": "施放共鳴解放<color=Highlight>思維矩陣</color>後，獲得效果：共鳴技能<color=Highlight>應刃</color>、共鳴技能<color=Highlight>基本推衍</color>、共鳴技能<color=Highlight>一相萬殊</color>或共鳴技能<color=Highlight>萬方法則</color>傷害提升{1}，持續{2}秒，該效果最多可觸發{0}次。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_XiangliyaoM3_UI.png"
+  },
+  {
+    "id": 130,
+    "name": "再塑的軀骸",
+    "description": "施放共鳴解放<color=Highlight>思維矩陣</color>時，隊伍中的角色共鳴解放傷害加成提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_XiangliyaoM4_UI.png"
+  },
+  {
+    "id": 131,
+    "name": "群星的止境",
+    "description": "延奏技能<color=Highlight>鏈式</color>傷害倍率增加{0}，共鳴解放<color=Highlight>思維矩陣</color>傷害倍率提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_XiangliyaoM5_UI.png"
+  },
+  {
+    "id": 132,
+    "name": "坊市的煙火",
+    "description": "強化施放共鳴解放<color=Highlight>思維矩陣</color>時獲得的幻方，使共鳴技能<color=Highlight>萬方法則</color>傷害倍率提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_XiangliyaoM6_UI.png"
+  },
+  {
+    "id": 1,
+    "name": "底色湛藍如洗",
+    "description": "施放變奏技能<color=Highlight>湛藍禮贊</color>後，秧秧的氣動傷害加成額外提升{0}，效果持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YangyangM1_UI.png"
+  },
+  {
+    "id": 2,
+    "name": "雀鳥銜枝而行",
+    "description": "<color=Highlight>重擊</color>命中目標時，秧秧額外回復{0}點共鳴能量，每{1}秒可觸發1次。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YangyangM2_UI.png"
+  },
+  {
+    "id": 3,
+    "name": "流息聲聲不絕",
+    "description": "共鳴技能傷害加成提升{0}，風場對周圍目標的牽引效果增強，牽引範圍增加{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YangyangM3_UI.png"
+  },
+  {
+    "id": 4,
+    "name": "若可側耳傾聽",
+    "description": "空中攻擊<color=Highlight>釋羽</color>造成的氣動傷害提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YangyangM4_UI.png"
+  },
+  {
+    "id": 5,
+    "name": "緒風於此響徹",
+    "description": "共鳴解放<color=Highlight>朔風旋湧</color>造成的傷害提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YangyangM5_UI.png"
+  },
+  {
+    "id": 6,
+    "name": "致美好以頌歌",
+    "description": "施放空中攻擊<color=Highlight>釋羽</color>後，隊伍中的角色的攻擊提升{0}，效果持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_YangyangM6_UI.png"
+  },
+  {
+    "id": 67,
+    "name": "惡作劇開場",
+    "description": "共鳴技能<color=Highlight>移位戲法</color>的冷卻時間減少{0}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_QiushuiM1_UI.png"
+  },
+  {
+    "id": 68,
+    "name": "織霧首秀",
+    "description": "【霧化分身】繼承的生命值提升{0}，秋水攻擊被分身嘲諷的目標時，攻擊提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_QiushuiM2_UI.png"
+  },
+  {
+    "id": 69,
+    "name": "霧化轉場",
+    "description": "秋水的<color=Highlight>普攻</color>或<color=Highlight>空中攻擊</color>穿過【<a href=850048>霧氣</a>】時，會額外生成2顆子彈，共造成<color=Highlight>普攻</color>或<color=Highlight>空中攻擊</color>的{0}傷害。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_QiushuiM3_UI.png"
+  },
+  {
+    "id": 70,
+    "name": "終幕的黑花",
+    "description": "共鳴技能<color=Highlight>霧化子彈</color>傷害提升{0}，共鳴回路<color=Highlight>迷霧潜行</color>狀態下秋水受到的傷害降低{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_QiushuiM4_UI.png"
+  },
+  {
+    "id": 71,
+    "name": "迷途者喝彩",
+    "description": "處於共鳴回路<color=Highlight>迷霧潜行</color>時，秋水的氣動傷害加成提升{0}，效果持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_QiushuiM5_UI.png"
+  },
+  {
+    "id": 72,
+    "name": "幕後賣家",
+    "description": "共鳴解放<color=Highlight>霧裡觀花</color>的效果會使暴擊額外提升{0}，秋水的重擊穿過【<a href=850049>虛實之門</a>】時，傷害額外提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_QiushuiM6_UI.png"
+  },
+  {
+    "id": 61,
+    "name": "濟世",
+    "description": "共鳴技能<color=Highlight>槍掃風定</color>可使用次數增加1次。\n施放共鳴技能<color=Highlight>槍掃風定</color>時，消耗的【<a href=850032>破陣值</a>】減少{1}點。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JiyanM1_UI.png"
+  },
+  {
+    "id": 62,
+    "name": "通變",
+    "description": "施放變奏技能<color=Highlight>攻其不備</color>後，忌炎積攢{0}點【<a href=850032>破陣值</a>】，忌炎的攻擊提升{1}，持續{2}秒，每{3}秒可觸發1次。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JiyanM2_UI.png"
+  },
+  {
+    "id": 63,
+    "name": "觀勢",
+    "description": "施放共鳴技能<color=Highlight>槍掃風定</color>、共鳴解放<color=Highlight>蒼躣八荒·謀定</color>、共鳴解放<color=Highlight>蒼躣八荒·後動</color>或變奏技能<color=Highlight>攻其不備</color>時，忌炎的暴擊提升{ 0}、暴擊傷害提升{1}，持續{2}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JiyanM3_UI.png"
+  },
+  {
+    "id": 64,
+    "name": "奇正",
+    "description": "施放共鳴解放<color=Highlight>蒼躣八荒·謀定</color>或共鳴解放<color=Highlight>蒼躣八荒·後動</color>時，隊伍中的角色重擊傷害加成提升{0}，效果持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JiyanM4_UI.png"
+  },
+  {
+    "id": 65,
+    "name": "明斷",
+    "description": "延奏技能<color=Highlight>克己</color>傷害倍率增加{0}。\n攻擊命中目標時，忌炎的攻擊提升{1}，效果持續{2}秒，可疊加{3}層； 施放變奏技能<color=Highlight>攻其不備</color>後疊加至滿層。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JiyanM5_UI.png"
+  },
+  {
+    "id": 66,
+    "name": "移山",
+    "description": "每次使用<color=Highlight>重擊</color>、變奏技能<color=Highlight>攻其不備</color>或共鳴技能<color=Highlight>槍掃風定</color>時，獲得{0}層【銳意之勢】，最多可疊加{1}層。\n施放共鳴解放<color=Highlight>蒼躣八荒·後動</color>會消耗所有【銳意之勢】，每層【銳意之勢】使共鳴解放<color=Highlight>蒼躣八荒·後動</color>的傷害倍率提升{2}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JiyanM6_UI.png"
+  },
+  {
+    "id": 109,
+    "name": "林間青枝",
+    "description": "施放變奏技能<color=Highlight>掌息之要</color>後，<color=Highlight>普攻</color>獲得的【<a href=850042>氣</a>】額外增加{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JianxinM1_UI.png"
+  },
+  {
+    "id": 110,
+    "name": "道者稚徒",
+    "description": "共鳴技能<color=Highlight>靜氣循行</color>的使用次數額外增加1次。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JianxinM2_UI.png"
+  },
+  {
+    "id": 111,
+    "name": "無心無為",
+    "description": "共鳴技能<color=Highlight>靜氣循行</color>進入<color=Highlight>架勢姿態</color>持續{0}秒後，可以直接打出共鳴技能<color=Highlight>行氣反擊</color>。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JianxinM3_UI.png"
+  },
+  {
+    "id": 112,
+    "name": "十問之思",
+    "description": "施放共鳴回路<color=Highlight>重擊·混元氣旋</color>時，鑒心共鳴解放<color=Highlight>滌淨力場</color>傷害提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JianxinM4_UI.png"
+  },
+  {
+    "id": 113,
+    "name": "經世自鑒",
+    "description": "共鳴解放<color=Highlight>滌淨力場</color>範圍增加{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JianxinM5_UI.png"
+  },
+  {
+    "id": 114,
+    "name": "向己而生",
+    "description": "共鳴回路<color=Highlight>重擊·混元氣旋</color>期間施展<color=Highlight>衝拳</color>，獲得强化共鳴技能<color=Highlight>特殊行氣反擊</color>，{0}秒內可施放{1}次。<color=Highlight>特殊行氣反擊</color>：造成鑒心{2}攻擊的<color=Wind>氣動傷害</color>，此次傷害為重擊傷害，同時獲得達到大周天·外階段的護盾（受固有技能<color=Highlight>覆映吾身</color>的加成影響）。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JianxinM6_UI.png"
+  },
+  {
+    "id": 187,
+    "name": "風止息於無明界",
+    "description": "施放空中攻擊<color=Highlight>抃風儛潤</color>時，獲得抗打斷提升效果，持續{0}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_FengzhuM1_UI.png"
+  },
+  {
+    "id": 188,
+    "name": "流光乍隱於長夜",
+    "description": "施放共鳴技能<color=Highlight>縹緲無相</color>時，隊伍中登場角色獲得持續回復生命效果，每{0}秒回復漂泊者{1}攻擊的生命值，持續{2}秒。期間登場角色生命值低於{3}時，立即回復登場角色已損失生命值{4}的生命值，該效果每{5}秒可觸發1次，且不受治療效果加成影響。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_FengzhuM2_UI.png"
+  },
+  {
+    "id": 189,
+    "name": "虛相陷落於掌中",
+    "description": "氣動傷害加成提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_FengzhuM3_UI.png"
+  },
+  {
+    "id": 190,
+    "name": "界限崩折於剎那",
+    "description": "施放空中攻擊<color=Highlight>抃風儛潤</color>時，共鳴技能傷害加成提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_FengzhuM4_UI.png"
+  },
+  {
+    "id": 191,
+    "name": "生滅交錯於來路",
+    "description": "共鳴解放<color=Highlight>萬象歸墟</color>傷害倍率提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_FengzhuM5_UI.png"
+  },
+  {
+    "id": 192,
+    "name": "萬象崩落於風間",
+    "description": "共鳴技能<color=Highlight>縹緲無相</color>傷害倍率提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_FengzhuM6_UI.png"
+  },
+  {
+    "id": 199,
+    "name": "故風的吟遊序曲",
+    "description": "施放共鳴技能<color=Highlight>諧律速奏</color>時，夏空獲得免疫打斷的效果，持續{0}秒；施放普攻時，夏空的攻擊提升{1}，持續{2}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_XiakongM1_UI.png"
+  },
+  {
+    "id": 200,
+    "name": "四季的連奏之音",
+    "description": "共鳴解放<color=Highlight>歌者的三重華彩</color>持續期間隊伍中的角色氣動傷害加成提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_XiakongM2_UI.png"
+  },
+  {
+    "id": 201,
+    "name": "星爍此時的即興演奏",
+    "description": "施放<color=Highlight>普攻第4段</color>時可額外獲得{0}格【<a href=850061>音律</a>】；共鳴技能<color=Highlight>諧律速奏</color>可使用次數增加1次。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_XiakongM3_UI.png"
+  },
+  {
+    "id": 202,
+    "name": "托卡塔與賦格",
+    "description": "夏空重擊<color=Highlight>四拍重奏</color>造成傷害時無視敵人{0}的防禦；\n夏空造成共鳴解放傷害時無視敵人{0}的防禦。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_XiakongM4_UI.png"
+  },
+  {
+    "id": 203,
+    "name": "獻予長夏的永恆敘詩",
+    "description": "夏空共鳴解放傷害加成提升{0}；\n夏空共鳴解放<color=Highlight>歌者的三重華彩</color>附近範圍內的角色受到的傷害降低{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_XiakongM5_UI.png"
+  },
+  {
+    "id": 204,
+    "name": "終曲未終",
+    "description": "夏空或<color=Highlight><a href=850059>合奏音影</a></color>在進入<color=Highlight><a href=850060>音律獨奏</a></color>狀態時可以對周圍目標造成{0}的<color=Wind>氣動傷害</color>，該傷害視為共鳴解放傷害。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_XiakongM6_UI.png"
+  },
+  {
+    "id": 211,
+    "name": "因命運戴上冠冕",
+    "description": "<color=Highlight>【芙露德莉斯】</color>的<color=Highlight>普攻·芙露德莉斯第5段</color>、<color=Highlight>空中攻擊·芙露德莉斯第2段</color>、<color=Highlight>強化重擊·芙露德莉斯</color>、<color=Highlight>共鳴技能·憑風斬浪破敵</color>命中目標時，記錄目標被附加的<color=Wind>【<a href=850009>風蝕效應</a>】</color>最高層數，並複製到所有命中的目標身上。\n<color=Highlight>【卡提希婭】</color>、<color=Highlight>【芙露德莉斯】</color>擊敗被附加<color=Wind>【<a href=850009>風蝕效應</a>】</color>狀態的目標後，獲得<color=Highlight>【集意】</color>狀態，持續{0}秒。\n<color=Highlight>【集意】</color>狀態下保留擊敗目標被附加<color=Wind>【<a href=850009>風蝕效應</a>】</color>的最高層數，下次攻擊時立即為命中目標附加該層數，最高可疊加至當前目標的<color=Wind>【<a href=850009>風蝕效應</a>】</color>層數上限，同時清除<color=Highlight>【集意】</color>狀態，清除<color=Highlight>【集意】</color>狀態後進入冷卻時間{1}秒。\n<color=Highlight>【芙露德莉斯】</color>每積攢<color=Highlight>【<a href=850179>決意</a>】</color>達到30、60、90、120時，暴擊傷害提升{2}，持續{3}秒，每次疊加時不刷新持續時間，施放<color=Highlight>共鳴解放·看潮怒風哮之刃</color>後會清除該暴擊傷害提升效果。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KatixiyaM1_UI.png"
+  },
+  {
+    "id": 212,
+    "name": "聽風潮斬斷利刃",
+    "description": "施放<color=Highlight>共鳴解放·芙露德莉斯</color>後，使自身一定範圍內的目標<color=Wind>【<a href=850009>風蝕效應</a>】</color>層數上限提升{0}層，下一次攻擊為命中的所有目標附加{1}層<color=Wind>【<a href=850009>風蝕效應</a>】</color>，並立刻結算1次目標身上的<color=Wind>【<a href=850009>風蝕效應</a>】</color>效果，此次結算不消耗<color=Wind>【<a href=850009>風蝕效應</a>】</color>層數。\n<color=Highlight>【卡提希婭】</color>普攻、變奏技能倍率提升{2}，下落攻擊倍率提升{3}。\n施放<color=Highlight>空中攻擊·卡提希婭</color>後，每回收1種【劍之影】使<color=Highlight>共鳴技能·卡提希婭</color>的冷卻時間減少3秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KatixiyaM2_UI.png"
+  },
+  {
+    "id": 213,
+    "name": "以自身束懸高塔",
+    "description": "<color=Highlight>【芙露德莉斯】</color>的<color=Highlight>空中攻擊·芙露德莉斯第1段</color>、<color=Highlight>強化重擊·芙露德莉斯</color>、<color=Highlight>普攻·芙露德莉斯第3段</color>會為命中目標附加{0}層<color=Wind>【<a href=850009>風蝕效應</a>】</color>，<color=Highlight>共鳴技能·此劍為潮浪之意</color>會為目標附加{1}層<color=Wind>【<a href=850009>風蝕效應</a>】</color>。\n<color=Highlight>共鳴解放·看潮怒風哮之刃</color>的傷害倍率提升{2}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KatixiyaM3_UI.png"
+  },
+  {
+    "id": 214,
+    "name": "為拯救捨棄其身",
+    "description": "隊伍中的角色為目標附加<color=Highlight>【<a href=850012>虛湮效應</a>】</color>、<color=Highlight>【<a href=850011>聚爆效應</a>】</color>、<color=Highlight>【<a href=850008>光噪效應</a>】</color>、<color=Highlight>【<a href=850013>電磁效應</a>】</color>、<color=Highlight>【<a href=850010>霜漸效應</a>】</color>、<color=Highlight>【<a href=850009>風蝕效應</a>】</color>時，使隊伍中所有角色全屬性傷害加成提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KatixiyaM5_UI.png"
+  },
+  {
+    "id": 215,
+    "name": "將烈風重塑希望",
+    "description": "<color=Highlight>【卡提希婭】</color>和<color=Highlight>【芙露德莉斯】</color>受到致命傷害時，此次傷害不會使角色自身倒下並回復生命上限{0}的生命值，接下來受到傷害降低{2}，持續{1}秒，該效果每10分鐘可觸發1次。\n施放<color=Highlight>共鳴解放·聽騎士從心祈願</color>消耗的自身生命值降至生命上限的{3}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KatixiyaM4_UI.png"
+  },
+  {
+    "id": 216,
+    "name": "盡一線掙扎自由",
+    "description": "施放<color=Highlight>共鳴解放·看潮怒風哮之刃</color>後，對命中的目標附加<color=Wind>【<a href=850009>風蝕效應</a>】</color>至層數上限。\n施放<color=Highlight>變奏技能·此劍，為潮水的過去</color>、<color=Highlight>變奏技能·此劍，為自由的未來</color>、<color=Highlight>共鳴解放·聽騎士從心祈願</color>、<color=Highlight>共鳴解放·看潮怒風哮之刃</color>後，使<color=Highlight>【芙露德莉斯】</color>獲得額外能力：{0}秒內，隊伍內任意角色對<color=Wind>【<a href=850009>風蝕效應</a>】</color>層數到達上限的目標再次附加<color=Wind>【<a href=850009>風蝕效應</a>】</color>時，立即結算一次<color=Wind>【<a href=850009>風蝕效應</a>】</color>。\n目標受到<color=Highlight>【芙露德莉斯】</color>的傷害提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KatixiyaM6_UI.png"
+  },
+  {
+    "id": 31,
+    "name": "始源紀行",
+    "description": "施放共鳴技能<color=Highlight>浮聲千斬</color>或共鳴技能<color=Highlight>浮聲千斬·旋音</color>後，自身暴擊提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_nannvzhuM1_UI.png"
+  },
+  {
+    "id": 32,
+    "name": "微物細語",
+    "description": "漂泊者的衍射傷害加成額外提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_nannvzhuM2_UI.png"
+  },
+  {
+    "id": 33,
+    "name": "塵聲百面",
+    "description": "漂泊者的共鳴效率額外提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_nannvzhuM3_UI.png"
+  },
+  {
+    "id": 34,
+    "name": "連音掃弦",
+    "description": "施放共鳴解放<color=Highlight>迴響奏鳴</color>時，為隊伍中的角色持續回復生命值，每秒回復量相當於自身攻擊的{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_nannvzhuM4_UI.png"
+  },
+  {
+    "id": 35,
+    "name": "回聲流轉",
+    "description": "共鳴解放傷害加成提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_nannvzhuM5_UI.png"
+  },
+  {
+    "id": 36,
+    "name": "長路歸鳴",
+    "description": "共鳴技能<color=Highlight>浮聲千斬</color>或共鳴技能<color=Highlight>浮聲千斬·旋音</color>命中目標時，目標衍射傷害抗性降低{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_nannvzhuM6_UI.png"
+  },
+  {
+    "id": 13,
+    "name": "萌芽的一瞬",
+    "description": "施放延奏技能<color=Highlight>盛放</color>時，隊伍中登場角色額外獲得持續回復生命效果，每{0}秒回復維里奈{1}攻擊的生命值，持續{2}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_weilinaiM1_UI.png"
+  },
+  {
+    "id": 14,
+    "name": "抽葉的思考",
+    "description": "施放共鳴技能<color=Highlight>擴繁試驗</color>時，額外獲得{0}點【<a href=850005>光合能量</a>】和{1}點協奏能量。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_weilinaiM2_UI.png"
+  },
+  {
+    "id": 15,
+    "name": "生長的選擇",
+    "description": "共鳴解放<color=Highlight>光合標記</color>的治療效果加成提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_weilinaiM3_UI.png"
+  },
+  {
+    "id": 16,
+    "name": "盛放的擁抱",
+    "description": "施放重擊<color=Highlight>星星花綻放</color>、空中攻擊<color=Highlight>星星花綻放</color>、共鳴解放<color=Highlight>草木生長</color>或延奏技能<color=Highlight>盛放</color>時，隊伍中的角色衍射傷害加成提升{0 }，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_weilinaiM4_UI.png"
+  },
+  {
+    "id": 17,
+    "name": "結果的奇跡",
+    "description": "治療生命值低於{0}的角色時，維里奈的治療效果加成提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_weilinaiM5_UI.png"
+  },
+  {
+    "id": 18,
+    "name": "豐收的喜悅",
+    "description": "重擊<color=Highlight>星星花綻放</color>及空中攻擊<color=Highlight>星星花綻放</color>的傷害提升{0}，命中目標時觸發{1}次協同攻擊，並為附近隊伍中所有角色回復生命值，此次協同攻擊傷害和回復生命值等同於共鳴解放<color=Highlight>光合標記</color>。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_weilinaiM6_UI.png"
+  },
+  {
+    "id": 151,
+    "name": "包裹正等待攬收",
+    "description": "施放<color=Highlight>強化·後撤</color>後{0}秒內，逐漸回復{1}點耐力。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_DengdengM1_UI.png"
+  },
+  {
+    "id": 152,
+    "name": "嗚嗚物流已收件",
+    "description": "<color=Highlight>強化·前撲</color>和<color=Highlight>強化·後撤</color>攻擊敵人時，無視對方{0}的防禦。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_DengdengM2_UI.png"
+  },
+  {
+    "id": 153,
+    "name": "特快專遞運輸中",
+    "description": "共鳴解放<color=Highlight>啾啾專送</color>造成的傷害提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_DengdengM3_UI.png"
+  },
+  {
+    "id": 154,
+    "name": "燈燈正為您派送",
+    "description": "燈燈普攻傷害加成提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_DengdengM4_UI.png"
+  },
+  {
+    "id": 155,
+    "name": "快件已順利簽收",
+    "description": "【光能】充滿時，<color=Highlight>強光穿射</color>造成的傷害倍率提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_DengdengM5_UI.png"
+  },
+  {
+    "id": 156,
+    "name": "給個五星好評喔",
+    "description": "施放共鳴解放<color=Highlight>啾啾專送</color>時，隊伍中的角色的攻擊提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_DengdengM6_UI.png"
+  },
+  {
+    "id": 145,
+    "name": "不語者假想",
+    "description": "共鳴解放<color=Highlight>終末回環</color>展開的<color=Highlight>星域</color>獲得加強：\n·治療和增益效果生效範圍增加{0}。\n·持續時間增加{1}秒。\n·施放變奏技能<color=Highlight>洞悉</color>後不再結束<color=Highlight>星域</color>。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ShouanrenM1_UI.png"
+  },
+  {
+    "id": 146,
+    "name": "夜幕的贈予與拒絕",
+    "description": "<color=Highlight><a href=850024>淺析星域</a></color>新增額外效果：附近隊伍中的角色攻擊提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ShouanrenM5_UI.png"
+  },
+  {
+    "id": 147,
+    "name": "無限正將我等待",
+    "description": "施放共鳴解放<color=Highlight>終末回環</color>時，守岸人額外回復{0}點協奏能量，每{1}秒可觸發1次。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ShouanrenM2_UI.png"
+  },
+  {
+    "id": 148,
+    "name": "萬物寂靜滿溢",
+    "description": "施放共鳴技能<color=Highlight>混沌理論</color>時，治療效果加成提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ShouanrenM3_UI.png"
+  },
+  {
+    "id": 149,
+    "name": "來自緘默的回聲",
+    "description": "<color=Highlight>普攻第三段</color>牽引範圍增加{0}，共鳴回路<color=Highlight>演繹</color>牽引範圍增加{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ShouanrenM4_UI.png"
+  },
+  {
+    "id": 150,
+    "name": "我所駛向的新世界",
+    "description": "變奏技能<color=Highlight>洞悉</color>傷害倍率提升{0}。施放變奏技能<color=Highlight>洞悉</color>時，守岸人的暴擊傷害提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ShouanrenM6_UI.png"
+  },
+  {
+    "id": 169,
+    "name": "暖燈與枕邊的祝願",
+    "description": "<color=Highlight>赦罪</color>狀態下共鳴解放<color=Highlight>啟明之誓願</color>傷害倍率提升效果從{0}變為{1}。\n<color=Highlight>告解</color>狀態下共鳴解放<color=Highlight>啟明之誓願</color>傷害倍率提升{2}，並且附加<color=Highlight>【<a href=850008>光噪效應</a>】</color>層數提升至目標可附加層數的上限。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_FeibiM1_UI.png"
+  },
+  {
+    "id": 170,
+    "name": "淚水中飄搖的孤船",
+    "description": "<color=Highlight>赦罪</color>狀態下，延奏技能對擁有<color=Highlight>【<a href=850008>光噪效應</a>】</color>的目標傷害加深{0}。\n<color=Highlight>告解</color>狀態下，<color=Highlight>默禱</color>的<color=Highlight>【<a href=850008>光噪效應</a>】</color>傷害加深效果額外提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_FeibiM2_UI.png"
+  },
+  {
+    "id": 171,
+    "name": "雛菊編織花環與夢",
+    "description": "<color=Highlight>赦罪</color>狀態下，重擊<color=Highlight>星輝</color>傷害倍率提升{0}。\n<color=Highlight>告解</color>狀態下，重擊<color=Highlight>星輝</color>傷害倍率提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_FeibiM3_UI.png"
+  },
+  {
+    "id": 172,
+    "name": "再次敲響振翅的鐘聲",
+    "description": "<color=Highlight>普攻</color>、普攻<color=Highlight>夏彌爾之星</color>、<color=Highlight>閃避反擊</color>、<color=Highlight>夏彌爾之星·閃避反擊</color>命中目標時，目標衍射傷害抗性降低{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_FeibiM4_UI.png"
+  },
+  {
+    "id": 173,
+    "name": "向遙遠光輝虔聲祈禱",
+    "description": "施放變奏技能<color=Highlight>金色恩典</color>時，菲比的衍射傷害加成提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_FeibiM5_UI.png"
+  },
+  {
+    "id": 174,
+    "name": "於靜寂窗邊啁啾歌唱",
+    "description": "【<a href=850007>鏡之環</a>】的停滯效果增加{0}秒。【<a href=850007>鏡之環</a>】持續期間，對每個進入【<a href=850007>鏡之環</a>】的目標施加停滯效果；同一個【<a href=850007>鏡之環</a>】最多可對12個目標施加停滯效果，且對每個目標只能施加一次。\n<color=Highlight>赦罪</color>狀態、<color=Highlight>告解</color>狀態下，菲比施放<color=Highlight>共鳴技能</color>召喚【<a href=850007>鏡之環</a>】時，攻擊提升{1}，持續{2}秒，同時向【<a href=850007>鏡之環</a>】位置附帶一次重擊<color=Highlight>星輝</color>。此次重擊<color=Highlight>星輝</color>不消耗【<a href=850014>福音</a>】，不視為施放<color=Highlight>重擊</color>。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_FeibiM6_UI.png"
+  },
+  {
+    "id": 193,
+    "name": "當清晨鬧鐘響起時",
+    "description": "施放<color=Highlight>集中壓制</color>或<color=Highlight>破襲反擊</color>時，衍射傷害加成提升{0}，持續{1}秒。\n<color=Highlight>重斬·終夜</color>免疫打斷。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ZanniM1_UI.png"
+  },
+  {
+    "id": 194,
+    "name": "冷麵包配飲料",
+    "description": "暴擊提升{0}。\n<color=Highlight>集中壓制</color>、<color=Highlight>破襲反擊</color>倍率提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ZanniM2_UI.png"
+  },
+  {
+    "id": 195,
+    "name": "日復一日的通勤",
+    "description": "處於<color=Highlight><a href=850064>灼焰形態</a></color>時每消耗{0}點【<a href=850065>焰光</a>】，本次共鳴解放<color=Highlight>終絕將至之刻</color>最後一段傷害倍率增加{1}，最多增加{2}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ZanniM3_UI.png"
+  },
+  {
+    "id": 196,
+    "name": "高效節能主義者",
+    "description": "施放變奏技能<color=Highlight>即刻執行</color>時，隊伍中的角色攻擊提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ZanniM4_UI.png"
+  },
+  {
+    "id": 197,
+    "name": "一切需求按時完成",
+    "description": "共鳴解放<color=Highlight>重燃</color>倍率提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ZanniM5_UI.png"
+  },
+  {
+    "id": 198,
+    "name": "當務之急？下班！",
+    "description": "<color=Highlight>重斬·破曉</color>、<color=Highlight>重斬·將明</color>、<color=Highlight>重斬·終夜</color>、<color=Highlight>重斬·閃裂</color>倍率提升{0}。<color=Highlight>重斬·終夜</color>命中時消耗的每點【<a href=850065>焰光</a>】額外增加倍率提升{0}。\n處於<color=Highlight><a href=850064>灼焰形態</a></color>時獲得以下效果：\n·【<a href=850065>焰光</a>】低於{1}點時立即回復{2}點，<color=Highlight><a href=850064>灼焰形態</a></color>期間可觸發1次。\n·進入<color=Highlight><a href=850064>灼焰形態</a></color> 後{3}秒內受到致死傷害時不會倒下，最少保留1點生命值。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ZanniM6_UI.png"
+  },
+  {
+    "id": 49,
+    "name": "懷悠然之心",
+    "description": "共鳴回路<color=Highlight>攻防轉換</color>獲得的護盾量提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_TaohuaM1_UI.png"
+  },
+  {
+    "id": 50,
+    "name": "假泯於眾人",
+    "description": "共鳴解放<color=Highlight>不動如山</color>的暴擊提升{0}，暴擊傷害提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_TaohuaM2_UI.png"
+  },
+  {
+    "id": 51,
+    "name": "觀萬物之細",
+    "description": "共鳴技能<color=Highlight><a href=850047>磐岩護壁</a></color>的持續時間延長至{0}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_TaohuaM3_UI.png"
+  },
+  {
+    "id": 52,
+    "name": "承負重之擔",
+    "description": "成功觸發<color=Highlight>重擊·後發制人</color>時，回復桃祈{0}生命值，同時防禦力提升{1}，持續{2}秒，每{3}秒可觸發1次。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_TaohuaM4_UI.png"
+  },
+  {
+    "id": 53,
+    "name": "解市井民憂",
+    "description": "共鳴回路<color=Highlight>攻防轉換</color>的傷害提升{0}，共鳴回路<color=Highlight>攻防轉換</color>命中目標時，回復{1}點共鳴能量。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_TaohuaM5_UI.png"
+  },
+  {
+    "id": 54,
+    "name": "護城邦安危",
+    "description": "共鳴技能<color=Highlight>磐岩護壁</color>獲得的護盾持續期間，桃祈普攻和重擊的傷害提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_TaohuaM6_UI.png"
+  },
+  {
+    "id": 37,
+    "name": "丹心本如鑒",
+    "description": "丹瑾攻擊攜帶共鳴技能<color=Highlight><a href=850040>朱蝕之刻</a></color>的目標時，自身的攻擊提升{0}，持續{1}秒，可疊加{2}層，每次受到傷害時減少{3}層。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_micaiM1_UI.png"
+  },
+  {
+    "id": 38,
+    "name": "明鏡卻蒙塵",
+    "description": "丹瑾攻擊攜帶共鳴技能<color=Highlight><a href=850040>朱蝕之刻</a></color>的目標時，造成的傷害額外提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_micaiM2_UI.png"
+  },
+  {
+    "id": 39,
+    "name": "刹那芳華不長久",
+    "description": "共鳴解放傷害加成提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_micaiM3_UI.png"
+  },
+  {
+    "id": 40,
+    "name": "孤豔難紅",
+    "description": "【彤華】積攢{0}點以上時，丹瑾的暴擊提升{1}。\n施放<color=Highlight>重擊·繚亂</color>消耗所有【彤華】後，此效果會被延續至<color=Highlight>重擊·紛落</color>結束。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_micaiM4_UI.png"
+  },
+  {
+    "id": 41,
+    "name": "劍掃春秋",
+    "description": "丹瑾的湮滅傷害加成提升{0}，生命低於{1}時湮滅傷害加成額外提升{2}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_micaiM5_UI.png"
+  },
+  {
+    "id": 42,
+    "name": "緋染碧玉豈堪留",
+    "description": "施放重擊<color=Highlight>繚亂</color>時，隊伍中的角色的攻擊提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_micaiM6_UI.png"
+  },
+  {
+    "id": 73,
+    "name": "在無人知曉的秘密小徑",
+    "description": "施放變奏技能<color=Highlight>八千春秋</color>時，暴擊傷害提升{0}，持續{1}秒，每{2}秒可觸發1次。\n共鳴回路<color=Highlight>一日花</color>免疫打斷。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ChunM1_UI.png"
+  },
+  {
+    "id": 74,
+    "name": "呼喚那沉默之花的芬芳",
+    "description": "共鳴回路<color=Highlight>一日花</color>傷害倍率提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ChunM2_UI.png"
+  },
+  {
+    "id": 75,
+    "name": "一根荊棘勝過千顆花種",
+    "description": "共鳴解放<color=Highlight>芳華綻燼</color>傷害倍率提升{0}；<color=Highlight><a href=850021>含苞狀態</a></color>期間，椿的攻擊提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ChunM3_UI.png"
+  },
+  {
+    "id": 76,
+    "name": "它的根莖持續到永恆中",
+    "description": "施放變奏技能<color=Highlight>八千春秋</color>後，隊伍中的角色普攻傷害加成提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ChunM4_UI.png"
+  },
+  {
+    "id": 77,
+    "name": "將那無限置於你的手掌",
+    "description": "變奏技能<color=Highlight>八千春秋</color>傷害倍率提升{0}。\n延奏技能<color=Highlight>纏繞</color>傷害倍率提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ChunM5_UI.png"
+  },
+  {
+    "id": 78,
+    "name": "為你的千千萬萬次盛放",
+    "description": "共鳴回路<color=Highlight>酣夢</color>的傷害倍率提升效果額外提升{0}；\n共鳴回路<color=Highlight>永生花</color>：施放共鳴回路<color=Highlight>一日花</color>後{1}秒內，協奏能量充滿時，若<color=Highlight>永生花</color>不處於冷卻狀態，共鳴技能替換為<color=Highlight>永生花</color>。\n施放<color=Highlight>永生花</color>時，消耗{2}點協奏值，回復{3}點【紅椿·蕊】，造成共鳴回路<color=Highlight>一日花</color>{4}的<color=Dark>湮滅傷害</color>，此次傷害為普攻傷害，每{5}秒可施放1次。\n施放<color=Highlight>永生花</color>後，進入<color=Highlight><a href=850021>含苞狀態</a></color>，清除所有紅椿·蕾，並將共鳴回路<color=Highlight>酣夢</color>的傷害倍率提升效果提升至{6}。\n共鳴回路<color=Highlight>永生花</color>免疫打斷。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ChunM6_UI.png"
+  },
+  {
+    "id": 103,
+    "name": "弦外知機",
+    "description": "共鳴技能傷害加成提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ZhujueDarkM1_UI.png"
+  },
+  {
+    "id": 104,
+    "name": "晦明如朔",
+    "description": "施放重擊<color=Highlight>滅音</color>進入<color=Highlight><a href=850034>暗湧</a></color>狀態時，重置共鳴技能的冷卻時間。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ZhujueDarkM2_UI.png"
+  },
+  {
+    "id": 105,
+    "name": "聲息湧動",
+    "description": "處於<color=Highlight><a href=850034>暗湧</a></color>狀態時，<color=Highlight>第5段普攻</color>命中敵人時，可回復已損失生命值{0}的生命值。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ZhujueDarkM3_UI.png"
+  },
+  {
+    "id": 106,
+    "name": "塵聲湮滅",
+    "description": "重擊<color=Highlight>滅音</color>、共鳴解放<color=Highlight>臨淵死寂</color>命中目標時，目標的湮滅抗性降低{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ZhujueDarkM4_UI.png"
+  },
+  {
+    "id": 107,
+    "name": "萬物寂聽",
+    "description": "處於<color=Highlight><a href=850034>暗湧</a></color>狀態時<color=Highlight>第5段普攻</color>可額外造成一次<color=Dark>湮滅傷害</color>，此次傷害為<color=Highlight>第5段普攻</color>傷害的{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ZhujueDarkM5_UI.png"
+  },
+  {
+    "id": 108,
+    "name": "暗湧潮升",
+    "description": "處於<color=Highlight><a href=850034>暗湧</a></color>狀態時，漂泊者的暴擊提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_ZhujueDarkM6_UI.png"
+  },
+  {
+    "id": 163,
+    "name": "沉悶的灰暗湧進船艙",
+    "description": "施放共鳴技能<color=Highlight>高難度設計</color>時，額外回復{0}點【<a href=850015>想像力</a>】與{1}點協奏能量。\n普攻<color=Highlight>幻想照進現實</color>免疫打斷。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_LuokekeM1_UI.png"
+  },
+  {
+    "id": 164,
+    "name": "海螢石閃爍著微弱光芒",
+    "description": "施放普攻<color=Highlight>幻想照進現實</color>時，隊伍中的角色湮滅傷害加成提升{0}，可疊加{1}層，持續{2}秒。滿層時，隊伍中的角色湮滅傷害加成額外提升{3}，持續{4}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_LuokekeM2_UI.png"
+  },
+  {
+    "id": 165,
+    "name": "用心觀察，以手丈量",
+    "description": "施放變奏技能<color=Highlight>佩洛，來幫忙</color>時，洛可可暴擊提升{0}，暴擊傷害提升{1}，持續{2}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_LuokekeM3_UI.png"
+  },
+  {
+    "id": 166,
+    "name": "千萬「奇藏」於箱中匯聚",
+    "description": "施放共鳴技能<color=Highlight>高難度設計</color>時，普攻<color=Highlight>幻想照進現實</color>傷害倍率提升{0}，持續{1}秒。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_LuokekeM4_UI.png"
+  },
+  {
+    "id": 167,
+    "name": "重建樂土，在舞台上",
+    "description": "共鳴解放<color=Highlight>即興喜劇，開場</color>傷害倍率提升{0}，<color=Highlight>重擊</color>傷害倍率提升{1}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_LuokekeM5_UI.png"
+  },
+  {
+    "id": 168,
+    "name": "飛吧，乘著金色的翅膀",
+    "description": "施放共鳴解放<color=Highlight>即興喜劇，開場</color>時，獲得如下效果，{0}秒內：\n·普攻<color=Highlight>幻想照進現實</color>攻擊目標時，無視對方{1}的防禦。\n·普攻<color=Highlight>幻想照進現實</color>第3段落地後，會將洛可可送上空中，進入<color=Highlight><a href=850016>飛躍幻想</a></color>狀態，此時短按<color=Highlight>普攻</color>，將會施放普攻<color=Highlight>構築現實</color>，普攻<color=Highlight>構築現實</color>免疫打斷，造成普攻<color=Highlight>幻想照進現實</color>第3段{2}的傷害，此次傷害為重擊傷害。\n·普攻<color=Highlight>構築現實</color>落地後，會將洛可可送上空中，進入<color=Highlight><a href=850016>飛躍幻想</a></color>狀態。普攻<color=Highlight>構築現實</color>需要在處於<color=Highlight><a href=850016>飛躍幻想</a></color>狀態時才可施放。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_LuokekeM6_UI.png"
+  },
+  {
+    "id": 181,
+    "name": "在無盡展開的波濤裡",
+    "description": "施放<color=Highlight>共鳴技能</color>時，回復{0}點【迷離】。共鳴技能<color=Highlight>翩躚</color>、共鳴技能<color=Highlight>斑駁幻夢</color>、共鳴回路<color=Highlight>感知汲取</color>的傷害倍率提升{1}。共鳴回路<color=Highlight>感知汲取</color>免疫打斷。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KanteleilaM1_UI.png"
+  },
+  {
+    "id": 182,
+    "name": "墜入迷離幻夢",
+    "description": "共鳴解放<color=Highlight>陷溺</color>可以使目標進入<color=Highlight><a href=850055>迷夢</a></color>，坎特蕾拉觸發<color=Highlight>驚醒</color>的傷害倍率提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KanteleilaM2_UI.png"
+  },
+  {
+    "id": 183,
+    "name": "凝視著深淵",
+    "description": "共鳴解放<color=Highlight>陷溺</color>的傷害倍率提升{0}。施放共鳴解放陷溺後，直接進入<color=Highlight><a href=850054>蜃境狀態</a></color>。若當前已處於<color=Highlight><a href=850054>蜃境狀態</a></color>，施放共鳴解放陷溺不會重複進入。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KanteleilaM3_UI.png"
+  },
+  {
+    "id": 184,
+    "name": "就像凝視自己的靈魂",
+    "description": "<color=Highlight><a href=850054>蜃境狀態</a></color>期間，治療效果加成提升{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KanteleilaM4_UI.png"
+  },
+  {
+    "id": 185,
+    "name": "投到倒影的懷裡",
+    "description": "共鳴解放<color=Highlight>瀰漫</color>的<color=Highlight>織夢水母</color>的最大召喚數增加{0}。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KanteleilaM5_UI.png"
+  },
+  {
+    "id": 186,
+    "name": "下墜、下墜……墜入更深的幻夢",
+    "description": "普攻<color=Highlight>蟄幻</color>的傷害倍率提升{0}。施放共鳴解放<color=Highlight>陷溺</color>時，坎特蕾拉的傷害無視目標{1}防禦，持續{2}秒。\n<color=Highlight><a href=850055>迷夢</a></color>的前1.2秒，目標受到傷害時，若此次傷害沒有附加<color=Highlight><a href=850055>迷夢</a></color>，則目標不會觸發<color=Highlight>驚醒</color>。",
+    "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_KanteleilaM6_UI.png"
+  }
+]

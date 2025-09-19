@@ -1,0 +1,44 @@
+{
+    "id": 42400070,
+    "name": "霄鳳蝶",
+    "bg": "一種大型鳳蝶，常在植被茂盛的林地或者其他環境中的植被密集區活動，成對飛行在高空，以花蜜為食，不易被捕獲。\n因為繁殖能力較高，且對生存環境的適應性較強，是最為常見的蝴蝶。",
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_025_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_025_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_025_UI.png"
+    },
+    "showType": [
+        {
+            "id": 44,
+            "name": "藥材"
+        }
+    ],
+    "mainType": {
+        "id": 5,
+        "name": "素材",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag08.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jiguan_UI.png"
+        }
+    },
+    "handBook": {
+        "id": 42400070,
+        "type": {
+            "id": 1,
+            "description": "ItemHandBookType_1_Descrtption",
+            "icon": "/d/GameData/UIResources/UiArchive/Atlas/SP_ArchiveWuchan.png"
+        },
+        "title": "材料"
+    },
+    "itemAccess": [
+        {
+            "id": 402001,
+            "description": "野外採集獲得"
+        }
+    ]
+}

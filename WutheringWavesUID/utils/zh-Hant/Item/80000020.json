@@ -1,0 +1,44 @@
+{
+    "id": 80000020,
+    "name": "清葛粥",
+    "bg": "加入了葛根粉的粥，有很強的飽腹感。早年今州大街小巷總有挑擔子的小販，他們敲出叮叮鐺的聲音，就知道是來賣清葛粥了。因此老人們也會用叮叮鐺來指代清葛粥。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_021_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_021_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_021_UI.png"
+    },
+    "showType": [
+        {
+            "id": 23,
+            "name": "菜肴"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {
+        "id": 80000020,
+        "type": {
+            "id": 2,
+            "description": "ItemHandBookType_2_Descrtption",
+            "icon": "/d/GameData/UIResources/UiArchive/Atlas/SP_ArchivePengren.png"
+        },
+        "title": "菜餚"
+    },
+    "itemAccess": [
+        {
+            "id": 404000,
+            "description": "烹飪獲得"
+        }
+    ]
+}

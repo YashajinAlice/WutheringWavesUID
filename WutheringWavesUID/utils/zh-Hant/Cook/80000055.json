@@ -1,0 +1,63 @@
+{
+    "id": 80000055,
+    "name": "酒燉章魚蛤",
+    "description": "提高隊伍中所有共鳴者30%生命上限，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+    "items": [
+        {
+            "id": 80050006,
+            "name": "米",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A11_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A11_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A11_UI.png"
+            },
+            "count": 3
+        },
+        {
+            "id": 42400120,
+            "name": "魚肉",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_yurou_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_yurou_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_yurou_UI.png"
+            },
+            "count": 3
+        },
+        {
+            "id": 42310240,
+            "name": "偽貝母",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_085_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconTask160/T_IconTask160_Task_085_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconTask80/T_IconTask80_Task_085_UI.png"
+            },
+            "count": 3
+        }
+    ],
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_072_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_072_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_072_UI.png"
+    },
+    "resonator": []
+}

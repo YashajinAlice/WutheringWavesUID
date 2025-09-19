@@ -1,0 +1,31 @@
+{
+    "id": 72010037,
+    "name": "激鬥餘響",
+    "bg": "利用終端內建的錄影功能，決鬥家能夠將自己的每一次決鬥都記錄下來，並隨時回看。對於那些希望精進自己決鬥技巧的決鬥家而言，自己的每一盤決鬥都有必要認真進行復盤。",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_72010037_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_72010037_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_72010037_UI.png"
+    },
+    "showType": [
+        {
+            "id": 15,
+            "name": "特殊代幣"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

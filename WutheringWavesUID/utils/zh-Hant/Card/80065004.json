@@ -1,0 +1,30 @@
+{
+    "id": 80065004,
+    "name": "千島記憶",
+    "tips": "參與活動「千島路書」獲得",
+    "showInBag": false,
+    "description": {
+        "bg": "見證漂泊者旅途的印章，可展示給其他旅者。\n在漂泊者資料中可更換羈旅印章。",
+        "type": "羈旅印章",
+        "attributes": "音樂，戲劇，還有千奇百怪的聲骸，它們都藏在黎那汐塔各個角落，等待著你去發掘。",
+        "obtainedShow": ""
+    },
+    "rarity": {
+        "id": 5,
+        "name": "五星",
+        "consumeText": "不限",
+        "color": "#CFB17F",
+        "stars": "五星"
+    },
+    "items": [
+        805000
+    ],
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCard/T_IconCard256_35.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCard160/T_IconCard160_35.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCard80/T_IconCard80_35.png",
+        "longCardPath": "/d/GameData/UIResources/Common/Image/CardLong/T_CardLong35.png",
+        "cardPath": "/d/GameData/UIResources/Common/Image/Card/T_Card35.png",
+        "functionViewCardPath": "/d/GameData/UIResources/Common/Image/CardPolygon/T_CardPolygon_35.png"
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "id": 80200003,
+    "name": "被遺忘的鑰匙",
+    "bg": "「……你們……你們還沒有準備好！」\n——布霸王",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_Act_Rogue01_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_Act_Rogue01_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_Act_Rogue01_UI.png"
+    },
+    "showType": [
+        {
+            "id": 10,
+            "name": "消耗品"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

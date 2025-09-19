@@ -1,0 +1,108 @@
+{
+    "id": 320000170,
+    "name": "躁亂戲猿",
+    "rarity": {
+        "id": 2,
+        "name": "",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_1005_UI.png",
+        "bigIcon": null,
+        "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+    },
+    "element": {
+        "id": 0,
+        "name": "物理",
+        "description": "存在異常，如有疑問請聯絡官方客服",
+        "color": "#7892A1FF",
+        "icon": {
+            "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+            "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+            "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+            "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+            "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+            "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+            "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+            "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+        }
+    },
+    "echoId": {},
+    "description": "穿梭在無光之森的嘯叫種殘象，通常群體聚集，據記錄其性情暴戾，有盜竊人類物品的行為傾向，危險度隸屬於巨浪級。",
+    "openDescription": "該敵人<color=Wind>氣動傷害</color><color=HighlightB>抗性提高</color>。\n出現於密林區域的擬態猿，似乎以盜竊人類的物品作為戰利品來彰顯地位。\n與其他擬態猿相比躁亂戲猿尤為狂躁異常，它的雙拳可以發動疾風驟雨般的猛攻。",
+    "perchDescription": [
+        "瑝瓏"
+    ],
+    "stats": {
+        "lifeMax": {
+            "key": "LifeMax",
+            "value": 368,
+            "name": "生命",
+            "percent": false,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+        },
+        "atk": {
+            "key": "Atk",
+            "value": 102,
+            "name": "攻擊",
+            "percent": false,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+        },
+        "def": {
+            "key": "Def",
+            "value": 800,
+            "name": "防禦",
+            "percent": false,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+        },
+        "damageResistanceElement1": {
+            "key": "DamageResistanceElement1",
+            "value": 10,
+            "name": "冷凝傷害抗性",
+            "percent": true,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyblueice_UI.png"
+        },
+        "damageResistanceElement2": {
+            "key": "DamageResistanceElement2",
+            "value": 10,
+            "name": "熱熔傷害抗性",
+            "percent": true,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertybluehot_UI.png"
+        },
+        "damageResistanceElement3": {
+            "key": "DamageResistanceElement3",
+            "value": 10,
+            "name": "導電傷害抗性",
+            "percent": true,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertybluemine_UI.png"
+        },
+        "damageResistanceElement4": {
+            "key": "DamageResistanceElement4",
+            "value": 40,
+            "name": "氣動傷害抗性",
+            "percent": true,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertybluewind_UI.png"
+        },
+        "damageResistanceElement5": {
+            "key": "DamageResistanceElement5",
+            "value": 10,
+            "name": "衍射傷害抗性",
+            "percent": true,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertybluelight_UI.png"
+        },
+        "damageResistanceElement6": {
+            "key": "DamageResistanceElement6",
+            "value": 10,
+            "name": "湮滅傷害抗性",
+            "percent": true,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertybluedark_UI.png"
+        },
+        "healChange": {
+            "key": "HealChange",
+            "value": 0,
+            "name": "治療效果加成",
+            "percent": true,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreencure_UI.png"
+        }
+    }
+}

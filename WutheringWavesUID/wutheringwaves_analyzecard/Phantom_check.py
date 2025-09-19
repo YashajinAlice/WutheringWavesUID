@@ -205,6 +205,9 @@ class PhantomValidator:
         """验证单个声骸"""
         cost = phantom.get("cost", 0)
         logger.debug(f"[鸣潮][声骸检查]声骸cost: {cost}")
+        logger.debug(f"[鸣潮][声骸检查]主词条: {phantom.get('mainProps', [])}")
+        logger.debug(f"[鸣潮][声骸检查]副词条: {phantom.get('subProps', [])}")
+
         if cost not in self.cost_indices:
             return False, f"cost异常-{cost}"
 

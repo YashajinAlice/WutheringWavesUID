@@ -1,0 +1,4417 @@
+{
+    "id": 1405,
+    "name": "鑒心",
+    "nickname": "存在異常，如有疑問請聯絡官方客服",
+    "rarity": {
+        "id": 5,
+        "name": "五星",
+        "consumeText": "不限",
+        "color": "#CFB17F",
+        "stars": "五星"
+    },
+    "weapon": {
+        "id": 4,
+        "name": "臂鎧",
+        "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+    },
+    "element": {
+        "id": 4,
+        "name": "氣動",
+        "description": "存在異常，如有疑問請聯絡官方客服",
+        "color": "#55FFB5FF",
+        "icon": {
+            "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+            "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+            "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+            "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind.png",
+            "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+            "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind1.png",
+            "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind2.png",
+            "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind3.png"
+        }
+    },
+    "skins": [
+        {
+            "id": 81001405,
+            "headId": 82001405,
+            "weaponSkinId": 0,
+            "name": "鑒心",
+            "rarity": {
+                "id": 3,
+                "name": "三星",
+                "consumeText": "三星及以下道具",
+                "color": "#00B4FF",
+                "stars": "三星"
+            },
+            "nameDescription": "鑒心-初始服飾",
+            "typeDescription": "",
+            "attributesDescription": "",
+            "description": "道館裡分發的練功服，鑒心穿著它總能記得師父的教導，一步一動神影無蹤，一呼一吸綿厚悠長。",
+            "icon": {
+                "icon": null,
+                "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+                "iconS ": null,
+                "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_23_UI.png",
+                "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_23_UI.png",
+                "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_23_UI.png",
+                "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_23_UI.png",
+                "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_23_UI.png",
+                "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJianxin.png",
+                "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiexin_UI.png"
+            },
+            "color": {
+                "weapon": null,
+                "color1": null,
+                "color2": null
+            }
+        }
+    ],
+    "tags": [
+        {
+            "id": 1,
+            "priority": 1,
+            "name": "生存治療",
+            "description": "可以提升隊伍的生存能力",
+            "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA1.png",
+            "color": "#77ffb7"
+        },
+        {
+            "id": 5,
+            "priority": 2,
+            "name": "重擊傷害",
+            "description": "重擊傷害較高",
+            "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB2.png",
+            "color": "#ffde73"
+        },
+        {
+            "id": 8,
+            "priority": 3,
+            "name": "牽引",
+            "description": "可以將一定範圍內的目標牽引至特定位置",
+            "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC1.png",
+            "color": "#77adff"
+        },
+        {
+            "id": 23,
+            "priority": 4,
+            "name": "共鳴解放傷害加深",
+            "description": "可以使隊伍中特定角色共鳴解放傷害加深",
+            "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD10.png",
+            "color": "#ff7777"
+        }
+    ],
+    "description": "一生只追求武術極致的道士，實力莫測、抱樸守一的<a href=850134>風儀拳</a>傳人。擁有將周圍環境氣韻化為內在，形成滌淨力場的能力。",
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_23_UI.png",
+        "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_23_UI.png",
+        "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiexin_UI.png",
+        "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_jianxin_UI.png"
+    },
+    "influenceIcon": {
+        "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+        "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+    },
+    "constant": {
+        "id": 10001405,
+        "value": 1,
+        "icon": "/d/GameData/UIResources/Common/Image/IconRup/T_IconRup_Part_1405_UI.png",
+        "name": "鑒心的回音頻段",
+        "description": "用於啟動鑒心的共鳴鏈。",
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        }
+    },
+    "info": {
+        "birthday": "4月6日",
+        "country": "瑝瓏",
+        "influence": "今州",
+        "sex": "女",
+        "talentCertification": "受試樣本拉貝爾波形時域表示恆定，波形與波動標準完全一致且沒有任何異常波動傾向，檢測結果判斷為正常階段。當前<a href=850073>超頻</a>臨界值高，穩定性高，超頻機率極低，無超頻風險。\n無過往超頻史。\n無需定期檢查與心理輔導。",
+        "talentDoc": "鑑定依據：【頻譜檢驗報告RA1541-G】\n共鳴史3年，無特殊事件觸發，自然覺醒異能。\n對象<a href=850072>聲痕</a>位於左肩，共鳴後體徵未發生明顯變化。\n對象可以將周圍環境化為己用，讓氣息在全身流動形成風拳與力場，此次鑑定中拳掌速度觀測為340m/s，力場具體數值尚無確定高值，異能力穩定上升趨勢明顯。\n共鳴頻率具有強共性，與超過10個共鳴頻譜檢測圖有5％左右相似性，暫未發現與該對象相似率超過20％的共鳴頻譜檢測圖，無具體、單一共鳴源。\n受試樣本<a href=850067>拉貝爾曲線</a>呈穩定上升態，最終趨向穩定波動，檢測結果判斷為<a href=850070>自然型共鳴者</a>。",
+        "talentName": "滌除玄鑒",
+        "cvName": {
+            "cn": "CV:昱頭",
+            "jp": "CV：安濟知佳",
+            "ko": "CV：Lee Eun Jo",
+            "en": "CV：Ioanna Kimbook"
+        }
+    },
+    "stories": {
+        "140501": {
+            "id": 140501,
+            "title": "林間澄淨",
+            "content": "山林之中的女孩以天為被、以地為床、青山為友、動物相伴，敏捷的身影在草叢中不停穿梭。\n準備上山的十陵聽到林子裡的聲音，疑惑地看去，竟在樹杈之間看到一個稚嫩懵懂的孩童。\n心清神淨，至靈至純，難得。\n看到那雙眼睛，十陵忍不住走近，女孩卻同時謹慎地後退，轉身往高處爬去。\n看著她瘦小的身軀和身上被刮得有些破爛的衣服，十陵從自己包袱裡拿出一張餅來。\n她的動作與習性像極了動物，似乎並沒有自己為人的意識。十陵又拿出一張餅放在了她護住的食物旁邊。\n要不要把她帶回道館，收為徒弟，好好養大？盤腿坐在旁邊看她吃餅的十陵思考起來。可是……館內如今經費緊張，多養一個孩子也很困難。\n「嘿，娃娃，看到這條古神道了嗎？這是師祖當年費勁千辛萬苦開山劈路走出來的唯一一條上山路。你要是能在太陽落山之前爬上山頂追上我，我就收你為徒怎麼樣？」\n坐在地上的女孩吃著手裡的餅，眨了眨眼，似乎根本沒聽懂他在說什麼。\n十陵定下決心，起身繼續上山。他三步一回頭，卻發現那個女孩仍然坐在原地，專注吃飯，根本沒動。\n看了幾次後，十陵放棄了，自顧自地上山走遠。\n即將登上山頂的十陵隱約聽到道館外門旁的說笑聲，走過去發現自家弟子正蹲在地上把水遞給女孩。\n「師父，您回來了，您看，這娃娃自己能爬上山來呢。」\n「她……什麼時候到的？」\n「不知道，弟子出來也有一會兒了，當時一出門就看到她了。」\n十陵走過去，朝女孩伸出了手。\n女孩一動不動，沒理解他在幹什麼。\n十陵抬起了她的手，讓她牢牢抓住了自己的手。\n他牽著娃娃，讓她站了起來，兩個人一同走進了道館的大門。"
+        },
+        "140502": {
+            "id": 140502,
+            "title": "癡拙之心",
+            "content": "一生只求一件事，一次只做一件事，是癡兒唯一的選擇，卻是世人往往無法達成的極致。\n「德清師父，我的動作可有錯漏？」\n「錯了三處，我再做一遍，好好記下。記得慢無妨，記對就好。」\n「鑒心，天色已晚，明日再練吧。」\n「練好這些就回去！師父你先走吧！」\n小小的身影孤身立於練武場上，在夜色之中一遍又一遍練習，由慢至快，直至融匯於身、一氣呵成。\n\n單純自我、不會恐懼，不會軟弱，一切選擇都似乎歸心於那人生中的一。\n「小師妹，這個人很強，咱們兩個可打不過，快走吧，那些物資就別要了。」\n站在原地的鑒心卻擺開了架勢，「我不走，我知道打不過，但是我想試試。」\n「試什麼啊？！」\n「試試看能不能不受傷拿回我們買的東西。」\n「哎！——唉……又犯癡……」"
+        },
+        "140503": {
+            "id": 140503,
+            "title": "濟世愛人",
+            "content": "上山砍竹的鑒心在青羊橋上偶遇了一位道士。\n她不認識這個人，也不知道他從何而來。\n容父看到鑒心後，卻停下了腳步。\n「好苗子，可惜，還不是人。」\n「我？什麼意思？我是人啊。」\n「愛人為人。你還不會。」容父看了看她的眼睛，「純淨至極，卻空空如也。」\n「我會愛人。尊師重道，敬父親長，我喜歡他們。」\n「我所說的愛人，為匡濟艱危世道，恤愛苦難民眾。」\n「十陵師父說過這話。可是，這有什麼用？」\n「上士得道於三軍，中士得道於都市，下士得道於山林。人不能單純地修煉方術，也不能僅僅遁隱山林，而是要在現實的社會生活中獲得精神解脫和肉體提升，所謂既立時濟世，又得超凡入聖。你這一問，求利心重，修煉不足。若非要有所求，或許會讓你對你所追求的道有所感悟，以此精進，也無不可。」\n「那這樣的愛人，我該如何學會？」\n「你未曾下山過，對不對？」\n「是。」\n「或許曾經時機未到，如今，也該去看看這個世界了吧。不渡世間，如何真正得道？」\n容父坐在鑒心身邊，兩人在橋上聊了許久何為真正的濟世愛人。\n\n「容父師父，好久不見！」\n「鑒心，既然山下有緣再次相遇，不如和為師同行，扶危濟困。」\n「好啊。」\n聽著人們由衷的感謝，握住她的一雙雙手陌生卻溫暖，真正感受到自己的所作所為讓世間產生了一點點改變，鑒心臉上的笑容多了起來，心中曾經的困惑逐漸消散。"
+        },
+        "140504": {
+            "id": 140504,
+            "title": "恪業養身",
+            "content": "「鑒心，這碗麵是為師請你的最後一頓，接下來的路，記得掙錢養活自己。」\n「可是容父師父，我不會看相卜卦。」\n「不一定吃本家飯嘛，去做什麼都好。什麼都能做好，也是你的本事。」\n自此之後，遊歷人間的鑒心在修行、助人之餘開始打工賺錢、自力更生。\n一路走來，她勤勤懇懇做好每一份看起來並不起眼的工作，雖然上手慢，但專注其中，也由此獲得了不少肯定。\n「鑒心，多虧了你在，這個月的客流量大漲。對了，那幾張食補方子能不能告訴我呀，我看大家挺喜歡的，留下來當個招牌也不錯嘛。這是你這個月的報酬，再接再厲！」\n「當然可以！我一會兒就把食譜寫下來。」\n「自從你來了，店裡也乾淨亮堂了不少，像你這麼勤快認真的員工真是不多見。」\n「只是借用了之前打工時學到的清潔方法，不如我把這些方法一起寫下來吧。」\n「對了，剛出門的那位顧客結帳時是用一張卡片付的錢，他說那是研究院新發明出來的東西，真神奇！」\n「卡片？什麼樣子的卡片？他是怎麼付的？」\n「一張銀色的卡片。他拿著卡片，在這裡貼了一下。」\n「鑒心，沒有可以付錢的卡片。那傢伙騙你的，他就是想要吃白食。」\n「什麼？那不是新發明啊……我去找他，把錢要回來。」\n「小心點！別把人打壞了！我得不償失啊！」\n「放心吧！」"
+        },
+        "140505": {
+            "id": 140505,
+            "title": "萬物合一",
+            "content": "追求武術極致的堅決信念推動著鑒心不斷成長，可是觸到了肉體與武術的極限再想突破往往很難找到辦法。悟道之事，無人能幫，她必須以自己的方式，通過自己的力量，找到屬於自己的答案。\n「氣隨心行，你想找到自己的道路，山下見聞不只是經歷，想想如何從中汲取真正的力量，結出心靈的果實。」\n在十陵的點撥下，她忘卻已有積澱，開始進行自我心靈的修煉。\n道法自然，萬物合一，她感悟自己對天地自然的熱愛之情，化對世間眾人的情感為自己的力量，將身心投入到一種近乎瘋狂的專注狀態，只用最基礎的招式接觸這個世界。萬物與我皆於拳掌之間，化而為一，揮出去的拳頭包含著慈悲仁愛，每招每式重複三千次。激蕩的心緒逐漸凝練、沉澱，形成了更強大、更穩定的心靈力量。\n不論春夏秋冬，她一直都站在同一個地方，每個基礎招式都投出三千下。靜坐草地之上修心養性時，她以大自然和其中規律來修行，氣息與自然相融，感受得到風的起落之力、草的生長之力。漸漸地，她的身體、精神和周圍環境達到了一種共生的狀態。\n心靜則其氣柔，氣柔則精固，精固則神旺。如今的鑒心，修行練武已不拘於何處，形成了不受外物干擾的強大內心。我在之處即是純粹至極的自我世界，也是萬物滋生的真實世間。迅疾的拳掌達到了肉眼看不清的速度，她以慈愛帶起自然之風，以柔為剛，表達著她給予世間萬物最真誠的愛與尊重。"
+        }
+    },
+    "voice": {
+        "140501": {
+            "id": 140501,
+            "sort": 1,
+            "title": "心聲·一",
+            "content": "你身手很好，如有機會，我們切磋一番如何？我喜歡挑戰，你這樣的強者，不比試比試我不甘心！"
+        },
+        "140502": {
+            "id": 140502,
+            "sort": 2,
+            "title": "心聲·二",
+            "content": "我其實很好奇為何你會懂得如此多的事情，我也山下遊歷過，但似乎還差得多。如果有不會的事情，我以後可以問你嗎？不過我理解起來會有點慢，希望你不會嫌我麻煩……"
+        },
+        "140503": {
+            "id": 140503,
+            "sort": 3,
+            "title": "心聲·三",
+            "content": "小道所在道館在山頂之上，僻靜清幽，尋常人上去還是要花些力氣的，不過如果是你，應該會很輕鬆。你好奇的話，我可以帶你上山去看看。我早就想請你去做客啦！"
+        },
+        "140504": {
+            "id": 140504,
+            "sort": 4,
+            "title": "心聲·四",
+            "content": "我自幼心鈍，鑽研拳法是唯一的人生之事，但是我很佩服聰穎正直、智勇兼備之人。你武功高強、心懷大道，除了師長之外，你是小道最敬佩的人了。"
+        },
+        "140505": {
+            "id": 140505,
+            "sort": 5,
+            "title": "心聲·五",
+            "content": "我喜歡融入自然，與天地合一，鳥鳴葉落、萬色霞光，芬芳清新的氣息伴著微風在身邊流動，生命之美無處不在，一切都恰到好處的舒適，和你相處，也是同樣的感受。"
+        },
+        "140506": {
+            "id": 140506,
+            "sort": 6,
+            "title": "鑒心的喜好",
+            "content": "修習拳術，走向極致是我一生所求。當然啦，無論是在溪流間、山尖上，鬧市中……世間方寸都是修習的好地方，我喜歡身處各地靜靜感受自然與萬物的氣息與能量，以此尋求新的突破。"
+        },
+        "140507": {
+            "id": 140507,
+            "sort": 7,
+            "title": "鑒心的煩惱",
+            "content": "值得尊敬的對手總是很難尋找，挑戰可以助我精進，不過，我倒是也沒那麼執著於此，離欲心靜，自然成長也好。"
+        },
+        "140508": {
+            "id": 140508,
+            "sort": 8,
+            "title": "喜歡的食物",
+            "content": "鍋盔，這是小時候在道館最常吃的食物了！師父們總是會把大部分烤餅分給年齡小的我們。十陵師父還說，我當時是被他包袱裡的鍋盔引上山的，我也不知道這句話是真是假，十陵師父有時候就是喜歡逗我們。"
+        },
+        "140509": {
+            "id": 140509,
+            "sort": 9,
+            "title": "討厭的食物",
+            "content": "我沒有什麼很討厭的食物，也無口腹之欲，人們將各種食材相互搭配，多為強體、療疾、保健，而不同材料豐富的口味與特點都是萬物自化的結果，各有所用，各有善向。"
+        },
+        "140510": {
+            "id": 140510,
+            "sort": 10,
+            "title": "抱負和理想",
+            "content": "內外合修，淨盡無餘，自得玄妙，造道之極。"
+        },
+        "140511": {
+            "id": 140511,
+            "sort": 11,
+            "title": "凝音·一",
+            "content": "雲紋離邪鏡是小時候十陵師父給我的，它的寓意很豐富，師父們想讓我修道持恒、律己修身、完善發展。我帶著它不僅僅是因為銘記教誨，更是覺得它是師父們對我呵護關懷的凝練之物。"
+        },
+        "140512": {
+            "id": 140512,
+            "sort": 12,
+            "title": "凝音·二",
+            "content": "十陵師父說我第一次上山的時候，比他更早走過古神道登上了山頂。他說我小時候像個小動物一樣，靈敏好動卻不通人事，我完全不記得這些事情，最早的記憶……似乎就是在道館裡練功修習了呢。"
+        },
+        "140513": {
+            "id": 140513,
+            "sort": 13,
+            "title": "關於熾霞",
+            "content": "熾霞喜歡來找我比武，她的槍法很厲害，每次對戰我都會有新的收獲。我喜歡她心裡想要鍛煉自己身手的執著，也喜歡她真誠單純的態度。以武會友，是一件樂事。"
+        },
+        "140514": {
+            "id": 140514,
+            "sort": 14,
+            "title": "關於淵武",
+            "content": "我在山下遊歷時曾經去淵武拳館踢館，打敗了那位大叔老闆，後來回到山上十陵師父才告訴我，拳館老闆淵武師叔祖上與我們有武學淵源。淵武師叔年輕時經歷坎坷豐富，但他本人好像不太喜歡提起過去的事情，還是不聊這個啦。"
+        },
+        "140515": {
+            "id": 140515,
+            "sort": 15,
+            "title": "生日祝福",
+            "content": "之前我只給同門和師父們祝壽過，每次我們都會做壽桃送給壽星。所以……看，這是我自己蒸的壽桃，送給你！生日快樂！祝你健康長壽，幸福吉祥!"
+        },
+        "140516": {
+            "id": 140516,
+            "sort": 16,
+            "title": "閑趣·一",
+            "content": "哦？"
+        },
+        "140517": {
+            "id": 140517,
+            "sort": 17,
+            "title": "閑趣·二",
+            "content": "自知者明……嗯？"
+        },
+        "140518": {
+            "id": 140518,
+            "sort": 18,
+            "title": "閑趣·三",
+            "content": "怎麼用來著……唔……啊！呼……"
+        },
+        "140519": {
+            "id": 140519,
+            "sort": 19,
+            "title": "自我介紹",
+            "content": "<a href=850134>風儀拳</a>傳人鑒心，多有叨擾。不知可否與你切磋武藝？"
+        },
+        "140520": {
+            "id": 140520,
+            "sort": 20,
+            "title": "初奏",
+            "content": "遣其欲而心自靜，澄其心而神自清。"
+        },
+        "140521": {
+            "id": 140521,
+            "sort": 21,
+            "title": "入隊·一",
+            "content": "強敵？小道靜候。"
+        },
+        "140522": {
+            "id": 140522,
+            "sort": 22,
+            "title": "入隊·二",
+            "content": "不吝賜教。"
+        },
+        "140523": {
+            "id": 140523,
+            "sort": 23,
+            "title": "入隊·三",
+            "content": "小道自會全力以赴！"
+        },
+        "140524": {
+            "id": 140524,
+            "sort": 24,
+            "title": "突破·一",
+            "content": "雖然方法不同，但是和師父所教的坐道修煉有相似的感受。具體該怎麼描述呢……讓我好好想想。"
+        },
+        "140525": {
+            "id": 140525,
+            "sort": 25,
+            "title": "突破·二",
+            "content": "我已融會貫通，這次異常順利，多謝！"
+        },
+        "140526": {
+            "id": 140526,
+            "sort": 26,
+            "title": "突破·三",
+            "content": "仿佛置身萬千山巔，雲天霧地之間，自我即是潺潺溪流，生靈湧動……是這種感覺！我終於想到怎麼說了。"
+        },
+        "140527": {
+            "id": 140527,
+            "sort": 27,
+            "title": "突破·四",
+            "content": "身心清明，煥然一新，就連對於周圍環境的感受都更細緻敏感了，氣場似乎……啊！對不起！對不起！你沒受傷吧？！果然這一次有些難控制，接下來我會慢慢靜心歸化。謝謝你助我離目標又近了一步！"
+        },
+        "140528": {
+            "id": 140528,
+            "sort": 28,
+            "title": "突破·五",
+            "content": "啊，竟然……謝謝你為我付出如此心血。除師父外，你是這世上最厚愛小道之人，此恩甚重，難報難量。小道心中想了很久的話，此時說出或許正好。除向武求極，小道如今已有了第二個人生所向：我願助你得償所願，不遺餘力，不死不終。"
+        },
+        "140529": {
+            "id": 140529,
+            "sort": 29,
+            "title": "共鳴技能·一",
+            "content": "風起。"
+        },
+        "140530": {
+            "id": 140530,
+            "sort": 30,
+            "title": "共鳴技能·二",
+            "content": "氣靜。"
+        },
+        "140531": {
+            "id": 140531,
+            "sort": 31,
+            "title": "共鳴技能·三",
+            "content": "道明。"
+        },
+        "140532": {
+            "id": 140532,
+            "sort": 32,
+            "title": "共鳴解放·一",
+            "content": "意炁長存！"
+        },
+        "140533": {
+            "id": 140533,
+            "sort": 33,
+            "title": "共鳴解放·二",
+            "content": "天地歸心！"
+        },
+        "140534": {
+            "id": 140534,
+            "sort": 34,
+            "title": "共鳴解放·三",
+            "content": "萬物合一！"
+        },
+        "140535": {
+            "id": 140535,
+            "sort": 35,
+            "title": "逆勢回擊",
+            "content": "萬變猶定！"
+        },
+        "140536": {
+            "id": 140536,
+            "sort": 36,
+            "title": "受擊·一",
+            "content": "（語氣詞）"
+        },
+        "140537": {
+            "id": 140537,
+            "sort": 37,
+            "title": "受擊·二",
+            "content": "慎行。"
+        },
+        "140538": {
+            "id": 140538,
+            "sort": 38,
+            "title": "受擊·三",
+            "content": "小心應變。"
+        },
+        "140539": {
+            "id": 140539,
+            "sort": 39,
+            "title": "重傷·一",
+            "content": "（語氣詞）"
+        },
+        "140540": {
+            "id": 140540,
+            "sort": 40,
+            "title": "重傷·二",
+            "content": "不小的挑戰。"
+        },
+        "140541": {
+            "id": 140541,
+            "sort": 41,
+            "title": "重傷·三",
+            "content": "好對手！"
+        },
+        "140542": {
+            "id": 140542,
+            "sort": 42,
+            "title": "力竭·一",
+            "content": "生命常新……"
+        },
+        "140543": {
+            "id": 140543,
+            "sort": 43,
+            "title": "力竭·二",
+            "content": "道無生死……"
+        },
+        "140544": {
+            "id": 140544,
+            "sort": 44,
+            "title": "力竭·三",
+            "content": "歸根複命……"
+        },
+        "140545": {
+            "id": 140545,
+            "sort": 45,
+            "title": "聲骸異能·召喚",
+            "content": "去。"
+        },
+        "140546": {
+            "id": 140546,
+            "sort": 46,
+            "title": "聲骸異能·變身",
+            "content": "這樣用嗎？"
+        },
+        "140547": {
+            "id": 140547,
+            "sort": 47,
+            "title": "變奏技能·一",
+            "content": "穢炁分散！"
+        },
+        "140548": {
+            "id": 140548,
+            "sort": 49,
+            "title": "進戰提醒",
+            "content": "有變，當心。"
+        },
+        "140549": {
+            "id": 140549,
+            "sort": 50,
+            "title": "滑翔",
+            "content": "這樣快多了！"
+        },
+        "140550": {
+            "id": 140550,
+            "sort": 51,
+            "title": "鉤索",
+            "content": "（語氣詞）"
+        },
+        "140551": {
+            "id": 140551,
+            "sort": 52,
+            "title": "感知",
+            "content": "那是……什麼東西？"
+        },
+        "140552": {
+            "id": 140552,
+            "sort": 53,
+            "title": "衝刺",
+            "content": "（語氣詞）"
+        },
+        "140553": {
+            "id": 140553,
+            "sort": 54,
+            "title": "疾跑",
+            "content": "（語氣詞）"
+        },
+        "140554": {
+            "id": 140554,
+            "sort": 55,
+            "title": "獲得補給·一",
+            "content": "知足知止，可以長久。"
+        },
+        "140555": {
+            "id": 140555,
+            "sort": 56,
+            "title": "獲得補給·二",
+            "content": "這次是什麼？"
+        },
+        "140556": {
+            "id": 140556,
+            "sort": 57,
+            "title": "獲得補給·三",
+            "content": "取之有道。"
+        },
+        "140557": {
+            "id": 140557,
+            "sort": 48,
+            "title": "變奏技能·二",
+            "content": "災咎豁除！"
+        }
+    },
+    "goods": {
+        "140501": {
+            "id": 140501,
+            "sort": 1,
+            "title": "雲紋離邪鏡",
+            "content": "鑒心幼時從師父手中獲得的殘缺古鏡。師父告訴她此鏡有三重含義。以鏡為鑒，時時牢記修行、練武皆是長遠之事。對鏡自省，以此領悟遊歷世間時自己的種種改變。鑒心重返道館之時，師父看到曾經不通人性的稚童蛻變為恤愛萬物之人，他親手補全殘鏡，鑒心這才明白鏡子的第三重含義，此鏡亦是自己的心境。",
+            "icon": "/d/GameData/UIResources/UiRole/Image/Treasure/T_Treasure52_UI.png"
+        },
+        "140502": {
+            "id": 140502,
+            "sort": 2,
+            "title": "優惠券夾",
+            "content": "鑒心第一次跟隨師父下山生活就學會了收集各式各樣的優惠券，這在她看來不僅僅是一種獨特的生存之道，更是人們熱情友好的象徵。\n「獨家秘制菜品……免費送！」鑒心不明白商家用字號大小來營造視覺焦點的深意，更沒有在意後面一連串令人咋舌的附加條件。",
+            "icon": "/d/GameData/UIResources/UiRole/Image/Treasure/T_Treasure53_UI.png"
+        },
+        "140503": {
+            "id": 140503,
+            "sort": 3,
+            "title": "雲茸草",
+            "content": "茁壯生長的植物仿佛還保留著被高岸之風吹拂而頷首時的姿態。只是看到，就能給人帶來清冽的感受，仿佛置身群山之巔。據說這種植物在世間幾乎絕跡，不知鑒心從哪座山上獲得了它。研究院發現此棵植株時，反復向鑒心確認她發現的地點，最終只能在她簡短的描述中查找蛛絲馬跡。",
+            "icon": "/d/GameData/UIResources/UiRole/Image/Treasure/T_Treasure54_UI.png"
+        }
+    },
+    "specialCook": {
+        "id": 80001023,
+        "receptId": 10023,
+        "name": "金銀蓮子羹",
+        "rarity": {
+            "id": 4,
+            "name": "四星",
+            "consumeText": "四星及以下道具",
+            "color": "#E400F0FF",
+            "stars": "四星"
+        },
+        "description": "提高隊伍中所有共鳴者33%生命上限，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_SP_15_UI.png"
+    },
+    "stats": {
+        "life": {
+            "key": "Life",
+            "name": "生命",
+            "isRatio": false,
+            "value": 1129,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+        },
+        "atk": {
+            "key": "Atk",
+            "name": "攻擊",
+            "isRatio": false,
+            "value": 27,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+        },
+        "def": {
+            "key": "Def",
+            "name": "防禦",
+            "isRatio": false,
+            "value": 92,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+        },
+        "damageChangeNormalSkill": {
+            "key": "DamageChangeNormalSkill",
+            "name": "共鳴技能傷害加成",
+            "isRatio": true,
+            "value": 0,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredspeed_UI.png"
+        },
+        "crit": {
+            "key": "Crit",
+            "name": "暴擊",
+            "isRatio": true,
+            "value": 5,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+        },
+        "critDamage": {
+            "key": "CritDamage",
+            "name": "暴擊傷害",
+            "isRatio": true,
+            "value": 150,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+        }
+    },
+    "statsLevel": {
+        "0": {
+            "1": {
+                "level": 1,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 1129,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 27,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 92,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "2": {
+                "level": 2,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 1224.0618,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 29.273400000000002,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 99.5716,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "3": {
+                "level": 3,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 1319.2365,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 31.549500000000002,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 107.1524,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "4": {
+                "level": 4,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 1414.4112,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 33.8256,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 114.7332,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "5": {
+                "level": 5,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 1509.473,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 36.099,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 122.314,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "6": {
+                "level": 6,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 1604.6477,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 38.375099999999996,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 129.8948,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "7": {
+                "level": 7,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 1699.8224,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 40.651199999999996,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 137.4756,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "8": {
+                "level": 8,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 1794.8842,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 42.92459999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 145.05639999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "9": {
+                "level": 9,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 1890.0589000000002,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 45.2007,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 152.63719999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "10": {
+                "level": 10,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 1985.2336000000003,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 47.4768,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 160.218,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "11": {
+                "level": 11,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 2080.2954000000004,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 49.7502,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 167.79879999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "12": {
+                "level": 12,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 2175.4701000000005,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 52.0263,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 175.37959999999995,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "13": {
+                "level": 13,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 2270.6448000000005,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 54.3024,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 182.96039999999996,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "14": {
+                "level": 14,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 2365.8195000000005,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 56.5785,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 190.54119999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "15": {
+                "level": 15,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 2460.8813000000005,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 58.8519,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 198.12199999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "16": {
+                "level": 16,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 2556.056,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 61.12799999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 205.70279999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "17": {
+                "level": 17,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 2651.2306999999996,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 63.404099999999985,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 213.28359999999995,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "18": {
+                "level": 18,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 2746.2924999999996,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 65.67749999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 220.86439999999993,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "19": {
+                "level": 19,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 2841.4671999999996,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 67.95359999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 228.44519999999994,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "20": {
+                "level": 20,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 2936.6418999999996,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 70.22969999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 236.02599999999995,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            }
+        },
+        "1": {
+            "20": {
+                "level": 20,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 3689.2332999999994,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 90.47969999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 295.65119999999996,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "21": {
+                "level": 21,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 3784.407999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 92.75309999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 303.2319999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "22": {
+                "level": 22,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 3879.582699999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 95.02919999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 310.81279999999987,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "23": {
+                "level": 23,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 3974.644499999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 97.30529999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 318.3935999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "24": {
+                "level": 24,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 4069.8191999999995,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 99.58139999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 325.97439999999983,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "25": {
+                "level": 25,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 4164.9938999999995,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 101.85479999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 333.55519999999984,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "26": {
+                "level": 26,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 4260.168599999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 104.13089999999995,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 341.13599999999985,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "27": {
+                "level": 27,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 4355.230399999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 106.40699999999995,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 348.7167999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "28": {
+                "level": 28,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 4450.405099999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 108.68039999999996,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 356.2975999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "29": {
+                "level": 29,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 4545.579799999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 110.95649999999996,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 363.8783999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "30": {
+                "level": 30,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 4640.641599999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 113.23259999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 371.4591999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "31": {
+                "level": 31,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 4735.816299999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 115.50599999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 379.03999999999974,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "32": {
+                "level": 32,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 4830.990999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 117.78209999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 386.62079999999975,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "33": {
+                "level": 33,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 4926.052799999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 120.05819999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 394.2015999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "34": {
+                "level": 34,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 5021.227499999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 122.33159999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 401.78239999999965,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "35": {
+                "level": 35,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 5116.402199999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 124.60769999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 409.36319999999967,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "36": {
+                "level": 36,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 5211.576899999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 126.88379999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 416.9439999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "37": {
+                "level": 37,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 5306.638699999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 129.15989999999996,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 424.52479999999963,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "38": {
+                "level": 38,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 5401.813399999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 131.43329999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 432.1055999999996,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "39": {
+                "level": 39,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 5496.988099999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 133.7094,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 439.6863999999996,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "40": {
+                "level": 40,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 5592.049899999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 135.98549999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 447.26719999999955,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            }
+        },
+        "2": {
+            "40": {
+                "level": 40,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 6344.754199999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 156.23549999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 506.8923999999995,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "41": {
+                "level": 41,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 6439.928899999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 158.50889999999995,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 514.4731999999995,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "42": {
+                "level": 42,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 6534.990699999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 160.78499999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 522.0539999999995,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "43": {
+                "level": 43,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 6630.165399999996,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 163.06109999999995,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 529.6347999999995,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "44": {
+                "level": 44,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 6725.340099999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 165.33449999999993,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 537.2155999999994,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "45": {
+                "level": 45,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 6820.401899999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 167.61059999999995,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 544.7963999999994,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "46": {
+                "level": 46,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 6915.576599999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 169.88669999999993,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 552.3771999999993,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "47": {
+                "level": 47,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 7010.751299999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 172.16279999999992,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 559.9579999999993,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "48": {
+                "level": 48,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 7105.925999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 174.43619999999993,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 567.5387999999992,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "49": {
+                "level": 49,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 7200.987799999996,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 176.71229999999994,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 575.1195999999992,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "50": {
+                "level": 50,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 7296.162499999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 178.98839999999993,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 582.7003999999991,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            }
+        },
+        "3": {
+            "50": {
+                "level": 50,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 8048.866799999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 199.23839999999993,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 642.3255999999991,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "51": {
+                "level": 51,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 8143.928599999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 201.5117999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 649.906399999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "52": {
+                "level": 52,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 8239.103299999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 203.7878999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 657.487199999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "53": {
+                "level": 53,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 8334.277999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 206.0639999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 665.067999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "54": {
+                "level": 54,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 8429.339799999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 208.3373999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 672.6487999999989,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "55": {
+                "level": 55,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 8524.514499999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 210.6134999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 680.229599999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "56": {
+                "level": 56,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 8619.689199999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 212.8895999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 687.8103999999989,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "57": {
+                "level": 57,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 8714.863899999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 215.16569999999987,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 695.3911999999989,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "58": {
+                "level": 58,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 8809.9257,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 217.43909999999988,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 702.9719999999988,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "59": {
+                "level": 59,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 8905.100400000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 219.71519999999987,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 710.5527999999988,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "60": {
+                "level": 60,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 9000.2751,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 221.99129999999988,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 718.1335999999988,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            }
+        },
+        "4": {
+            "60": {
+                "level": 60,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 9752.866500000002,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 242.24129999999988,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 777.7679999999986,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "61": {
+                "level": 61,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 9848.041200000003,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 244.51469999999986,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 785.3487999999985,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "62": {
+                "level": 62,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 9943.215900000005,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 246.79079999999988,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 792.9295999999986,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "63": {
+                "level": 63,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 10038.277700000006,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 249.06689999999986,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 800.5103999999985,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "64": {
+                "level": 64,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 10133.452400000006,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 251.34029999999987,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 808.0911999999986,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "65": {
+                "level": 65,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 10228.627100000005,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 253.61639999999986,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 815.6719999999987,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "66": {
+                "level": 66,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 10323.688900000006,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 255.89249999999984,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 823.2435999999987,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "67": {
+                "level": 67,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 10418.863600000006,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 258.16589999999985,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 830.8243999999986,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "68": {
+                "level": 68,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 10514.038300000006,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 260.44199999999984,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 838.4051999999986,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "69": {
+                "level": 69,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 10609.213000000007,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 262.7180999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 845.9859999999986,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "70": {
+                "level": 70,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 10704.274800000007,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 264.9941999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 853.5667999999987,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            }
+        },
+        "5": {
+            "70": {
+                "level": 70,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 11456.979100000008,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 278.49419999999975,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 913.2011999999985,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "71": {
+                "level": 71,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 11552.153800000007,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 280.76759999999973,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 920.7819999999986,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "72": {
+                "level": 72,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 11647.215600000007,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 283.0436999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 928.3627999999985,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "73": {
+                "level": 73,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 11742.390300000008,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 285.3197999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 935.9435999999985,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "74": {
+                "level": 74,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 11837.56500000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 287.5931999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 943.5243999999984,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "75": {
+                "level": 75,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 11932.62680000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 289.86929999999967,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 951.1051999999984,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "76": {
+                "level": 76,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 12027.801500000009,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 292.14539999999965,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 958.6859999999984,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "77": {
+                "level": 77,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 12122.97620000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 294.41879999999964,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 966.2667999999985,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "78": {
+                "level": 78,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 12218.03800000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 296.6948999999996,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 973.8475999999985,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "79": {
+                "level": 79,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 12313.21270000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 298.97099999999966,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 981.4283999999984,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "80": {
+                "level": 80,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 12408.387400000009,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 301.24709999999965,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 989.0091999999984,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            }
+        },
+        "6": {
+            "80": {
+                "level": 80,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 13161.091700000008,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 314.74709999999965,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 1048.6343999999983,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "81": {
+                "level": 81,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 13256.15350000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 317.0204999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 1056.2151999999983,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "82": {
+                "level": 82,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 13351.32820000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 319.2965999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 1063.7959999999982,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "83": {
+                "level": 83,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 13446.502900000012,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 321.5726999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 1071.3767999999982,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "84": {
+                "level": 84,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 13541.564700000012,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 323.8460999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 1078.9575999999984,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "85": {
+                "level": 85,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 13636.739400000011,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 326.1221999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 1086.5383999999983,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "86": {
+                "level": 86,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 13731.91410000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 328.39829999999967,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 1094.1191999999983,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "87": {
+                "level": 87,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 13826.975900000012,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 330.6716999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 1101.6999999999985,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "88": {
+                "level": 88,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 13922.150600000014,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 332.94779999999975,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 1109.2807999999984,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "89": {
+                "level": 89,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 14017.325300000015,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 335.2238999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 1116.8615999999984,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            },
+            "90": {
+                "level": 90,
+                "life": {
+                    "key": "LifeMax",
+                    "name": "生命",
+                    "value": 14112.500000000015,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+                },
+                "atk": {
+                    "key": "Atk",
+                    "name": "攻擊",
+                    "value": 337.4999999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                "def": {
+                    "key": "Def",
+                    "name": "防禦",
+                    "value": 1124.4423999999985,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+                }
+            }
+        }
+    },
+    "chains": {
+        "109": {
+            "id": 109,
+            "name": "林間青枝",
+            "description": "施放變奏技能<color=Highlight>掌息之要</color>後，<color=Highlight>普攻</color>獲得的【<a href=850042>氣</a>】額外增加{0}，持續{1}秒。",
+            "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JianxinM1_UI.png",
+            "param": [
+                "100%",
+                "10"
+            ]
+        },
+        "110": {
+            "id": 110,
+            "name": "道者稚徒",
+            "description": "共鳴技能<color=Highlight>靜氣循行</color>的使用次數額外增加1次。",
+            "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JianxinM2_UI.png",
+            "param": [
+                "1"
+            ]
+        },
+        "111": {
+            "id": 111,
+            "name": "無心無為",
+            "description": "共鳴技能<color=Highlight>靜氣循行</color>進入<color=Highlight>架勢姿態</color>持續{0}秒後，可以直接打出共鳴技能<color=Highlight>行氣反擊</color>。",
+            "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JianxinM3_UI.png",
+            "param": [
+                "2.5"
+            ]
+        },
+        "112": {
+            "id": 112,
+            "name": "十問之思",
+            "description": "施放共鳴回路<color=Highlight>重擊·混元氣旋</color>時，鑒心共鳴解放<color=Highlight>滌淨力場</color>傷害提升{0}，持續{1}秒。",
+            "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JianxinM4_UI.png",
+            "param": [
+                "80%",
+                "14"
+            ]
+        },
+        "113": {
+            "id": 113,
+            "name": "經世自鑒",
+            "description": "共鳴解放<color=Highlight>滌淨力場</color>範圍增加{0}。",
+            "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JianxinM5_UI.png",
+            "param": [
+                "33%"
+            ]
+        },
+        "114": {
+            "id": 114,
+            "name": "向己而生",
+            "description": "共鳴回路<color=Highlight>重擊·混元氣旋</color>期間施展<color=Highlight>衝拳</color>，獲得强化共鳴技能<color=Highlight>特殊行氣反擊</color>，{0}秒內可施放{1}次。<color=Highlight>特殊行氣反擊</color>：造成鑒心{2}攻擊的<color=Wind>氣動傷害</color>，此次傷害為重擊傷害，同時獲得達到大周天·外階段的護盾（受固有技能<color=Highlight>覆映吾身</color>的加成影響）。",
+            "icon": "/d/GameData/UIResources/Common/Image/IconDevice/T_IconDevice_JianxinM6_UI.png",
+            "param": [
+                "5",
+                "1",
+                "556.67%"
+            ]
+        }
+    },
+    "skillTrees": {
+        "297": {
+            "id": 297,
+            "consume": {
+                "2": 50000,
+                "41100013": 3,
+                "43020053": 3
+            },
+            "coordinate": 1,
+            "params": {
+                "name": "暴擊提升",
+                "description": "暴擊提升{0}",
+                "value": [
+                    {
+                        "id": 8,
+                        "value": 120,
+                        "isRatio": false
+                    }
+                ],
+                "valueText": [
+                    "1.20%"
+                ],
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png",
+                "maxLevel": 1
+            },
+            "type": 4,
+            "parentNodes": [
+                1
+            ],
+            "unLock": 500006,
+            "tree": true
+        },
+        "298": {
+            "id": 298,
+            "consume": {
+                "2": 50000,
+                "41100013": 3,
+                "43020053": 3
+            },
+            "coordinate": 1,
+            "params": {
+                "name": "攻擊提升",
+                "description": "攻擊提升{0}",
+                "value": [
+                    {
+                        "id": 10007,
+                        "value": 0.017999999225139618,
+                        "isRatio": true
+                    }
+                ],
+                "valueText": [
+                    "1.80%"
+                ],
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png",
+                "maxLevel": 1
+            },
+            "type": 4,
+            "parentNodes": [
+                2
+            ],
+            "unLock": 500005,
+            "tree": true
+        },
+        "299": {
+            "id": 299,
+            "consume": {
+                "2": 50000,
+                "41100013": 3,
+                "43020053": 3
+            },
+            "coordinate": 1,
+            "params": {
+                "name": "攻擊提升",
+                "description": "攻擊提升{0}",
+                "value": [
+                    {
+                        "id": 10007,
+                        "value": 0.017999999225139618,
+                        "isRatio": true
+                    }
+                ],
+                "valueText": [
+                    "1.80%"
+                ],
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png",
+                "maxLevel": 1
+            },
+            "type": 4,
+            "parentNodes": [
+                3
+            ],
+            "unLock": 500005,
+            "tree": true
+        },
+        "300": {
+            "id": 300,
+            "consume": {
+                "2": 50000,
+                "41100013": 3,
+                "43020053": 3
+            },
+            "coordinate": 1,
+            "params": {
+                "name": "暴擊提升",
+                "description": "暴擊提升{0}",
+                "value": [
+                    {
+                        "id": 8,
+                        "value": 120,
+                        "isRatio": false
+                    }
+                ],
+                "valueText": [
+                    "1.20%"
+                ],
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png",
+                "maxLevel": 1
+            },
+            "type": 4,
+            "parentNodes": [
+                6
+            ],
+            "unLock": 500006,
+            "tree": true
+        },
+        "301": {
+            "id": 301,
+            "consume": {
+                "2": 100000,
+                "41100014": 3,
+                "41400114": 1,
+                "43020054": 3
+            },
+            "coordinate": 2,
+            "params": {
+                "name": "暴擊提升",
+                "description": "暴擊提升{0}",
+                "value": [
+                    {
+                        "id": 8,
+                        "value": 280,
+                        "isRatio": false
+                    }
+                ],
+                "valueText": [
+                    "2.80%"
+                ],
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png",
+                "maxLevel": 1
+            },
+            "type": 4,
+            "parentNodes": [
+                9
+            ],
+            "unLock": 500008,
+            "tree": true
+        },
+        "302": {
+            "id": 302,
+            "consume": {
+                "2": 100000,
+                "41100014": 3,
+                "41400114": 1,
+                "43020054": 3
+            },
+            "coordinate": 2,
+            "params": {
+                "name": "攻擊提升",
+                "description": "攻擊提升{0}",
+                "value": [
+                    {
+                        "id": 10007,
+                        "value": 0.041999999433755875,
+                        "isRatio": true
+                    }
+                ],
+                "valueText": [
+                    "4.20%"
+                ],
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png",
+                "maxLevel": 1
+            },
+            "type": 4,
+            "parentNodes": [
+                10
+            ],
+            "unLock": 500007,
+            "tree": true
+        },
+        "303": {
+            "id": 303,
+            "consume": {
+                "2": 100000,
+                "41100014": 3,
+                "41400114": 1,
+                "43020054": 3
+            },
+            "coordinate": 2,
+            "params": {
+                "name": "攻擊提升",
+                "description": "攻擊提升{0}",
+                "value": [
+                    {
+                        "id": 10007,
+                        "value": 0.041999999433755875,
+                        "isRatio": true
+                    }
+                ],
+                "valueText": [
+                    "4.20%"
+                ],
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png",
+                "maxLevel": 1
+            },
+            "type": 4,
+            "parentNodes": [
+                11
+            ],
+            "unLock": 500007,
+            "tree": true
+        },
+        "304": {
+            "id": 304,
+            "consume": {
+                "2": 100000,
+                "41100014": 3,
+                "41400114": 1,
+                "43020054": 3
+            },
+            "coordinate": 2,
+            "params": {
+                "name": "暴擊提升",
+                "description": "暴擊提升{0}",
+                "value": [
+                    {
+                        "id": 8,
+                        "value": 280,
+                        "isRatio": false
+                    }
+                ],
+                "valueText": [
+                    "2.80%"
+                ],
+                "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png",
+                "maxLevel": 1
+            },
+            "type": 4,
+            "parentNodes": [
+                12
+            ],
+            "unLock": 500008,
+            "tree": true
+        }
+    },
+    "skill": {
+        "1001901": {
+            "id": 1001901,
+            "consume": {
+                "2": 3900,
+                "41100022": 3,
+                "43020032": 2
+            },
+            "params": {
+                "name": "風儀拳術",
+                "description": "<size=40><color=Title>普攻</color></size>\n進行最多4段的連續攻擊，造成<color=Wind>氣動傷害</color>。\n<size=10> </size>\n<size=40><color=Title>重擊</color></size>\n消耗耐力攻擊目標，造成<color=Wind>氣動傷害</color>。\n<size=10> </size>\n<size=40><color=Title>空中攻擊</color></size>\n消耗耐力，從空中快速下落使出腿技，造成<color=Wind>氣動傷害</color>。\n<size=10> </size>\n<size=40><color=Title>閃避反擊</color></size>\n成功<color=Highlight>閃避</color>後一定時間內短按<color=Highlight>普攻</color>，將會攻擊目標，造成<color=Wind>氣動傷害</color>。",
+                "level": {
+                    "1405001": {
+                        "id": 1405001,
+                        "name": "第一段傷害",
+                        "params": [
+                            "34.94%",
+                            "37.80%",
+                            "40.67%",
+                            "44.68%",
+                            "47.54%",
+                            "50.84%",
+                            "55.42%",
+                            "60.01%",
+                            "64.59%",
+                            "69.46%",
+                            "75.19%",
+                            "80.92%",
+                            "86.65%",
+                            "92.38%",
+                            "98.11%",
+                            "103.84%",
+                            "109.56%",
+                            "115.29%",
+                            "121.02%"
+                        ]
+                    },
+                    "1405002": {
+                        "id": 1405002,
+                        "name": "第二段傷害",
+                        "params": [
+                            "13.40%*2+40.19%",
+                            "14.50%*2+43.49%",
+                            "15.60%*2+46.78%",
+                            "17.14%*2+51.40%",
+                            "18.23%*2+54.69%",
+                            "19.50%*2+58.48%",
+                            "21.26%*2+63.76%",
+                            "23.01%*2+69.03%",
+                            "24.77%*2+74.30%",
+                            "26.64%*2+79.90%",
+                            "28.83%*2+86.49%",
+                            "31.03%*2+93.08%",
+                            "33.23%*2+99.68%",
+                            "35.43%*2+106.27%",
+                            "37.62%*2+112.86%",
+                            "39.82%*2+119.45%",
+                            "42.02%*2+126.04%",
+                            "44.21%*2+132.63%",
+                            "46.41%*2+139.22%",
+                            "48.61%*2+145.81%"
+                        ]
+                    },
+                    "1405003": {
+                        "id": 1405003,
+                        "name": "第三段傷害",
+                        "params": [
+                            "21.00%*4",
+                            "22.72%*4",
+                            "24.44%*4",
+                            "26.85%*4",
+                            "28.57%*4",
+                            "30.55%*4",
+                            "33.31%*4",
+                            "36.06%*4",
+                            "38.82%*4",
+                            "41.75%*4",
+                            "45.19%*4",
+                            "48.63%*4",
+                            "52.07%*4",
+                            "55.52%*4",
+                            "58.96%*4",
+                            "62.40%*4",
+                            "65.85%*4",
+                            "69.29%*4",
+                            "72.73%*4",
+                            "76.18%*4"
+                        ]
+                    },
+                    "1405004": {
+                        "id": 1405004,
+                        "name": "第四段傷害",
+                        "params": [
+                            "57.04%",
+                            "61.72%",
+                            "66.39%",
+                            "72.94%",
+                            "77.62%",
+                            "83.00%",
+                            "90.48%",
+                            "97.96%",
+                            "105.45%",
+                            "113.40%",
+                            "122.75%",
+                            "132.10%",
+                            "141.46%",
+                            "150.81%",
+                            "160.16%",
+                            "169.52%",
+                            "178.87%",
+                            "188.23%",
+                            "197.58%",
+                            "206.93%"
+                        ]
+                    },
+                    "1405005": {
+                        "id": 1405005,
+                        "name": "重擊傷害",
+                        "params": [
+                            "63.41%",
+                            "68.61%",
+                            "73.81%",
+                            "81.09%",
+                            "86.29%",
+                            "92.27%",
+                            "100.59%",
+                            "108.91%",
+                            "117.23%",
+                            "126.07%",
+                            "136.47%",
+                            "146.87%",
+                            "157.27%",
+                            "167.67%",
+                            "178.07%",
+                            "188.47%",
+                            "198.87%",
+                            "209.26%",
+                            "219.66%",
+                            "230.06%"
+                        ]
+                    },
+                    "1405006": {
+                        "id": 1405006,
+                        "name": "重擊耐力消耗",
+                        "params": [
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20"
+                        ]
+                    },
+                    "1405007": {
+                        "id": 1405007,
+                        "name": "空中攻擊傷害",
+                        "params": [
+                            "62.00%",
+                            "67.09%",
+                            "72.17%",
+                            "79.29%",
+                            "84.37%",
+                            "90.22%",
+                            "98.36%",
+                            "106.49%",
+                            "114.62%",
+                            "123.27%",
+                            "133.44%",
+                            "143.60%",
+                            "153.77%",
+                            "163.94%",
+                            "174.11%",
+                            "184.28%",
+                            "194.44%",
+                            "204.61%",
+                            "214.78%"
+                        ]
+                    },
+                    "1405008": {
+                        "id": 1405008,
+                        "name": "空中攻擊耐力消耗",
+                        "params": [
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30"
+                        ]
+                    },
+                    "1405009": {
+                        "id": 1405009,
+                        "name": "閃避反擊傷害",
+                        "params": [
+                            "20.54%*2+82.14%",
+                            "22.22%*2+88.87%",
+                            "23.91%*2+95.61%",
+                            "26.26%*2+105.04%",
+                            "27.95%*2+111.77%",
+                            "29.88%*2+119.52%",
+                            "32.58%*2+130.29%",
+                            "35.27%*2+141.07%",
+                            "37.96%*2+151.84%",
+                            "40.83%*2+163.29%",
+                            "44.19%*2+176.76%",
+                            "47.56%*2+190.23%",
+                            "50.93%*2+203.70%",
+                            "54.30%*2+217.17%",
+                            "57.66%*2+230.64%",
+                            "61.03%*2+244.11%",
+                            "64.40%*2+257.58%",
+                            "67.77%*2+271.05%",
+                            "71.13%*2+284.52%"
+                        ]
+                    }
+                },
+                "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png",
+                "maxLevel": 10
+            },
+            "type": 1,
+            "sort": 1,
+            "unLock": 0,
+            "tree": false
+        },
+        "1001902": {
+            "id": 1001902,
+            "consume": {
+                "2": 3900,
+                "41100022": 3,
+                "43020032": 2
+            },
+            "params": {
+                "name": "靜氣循行",
+                "description": "按住<color=Highlight>共鳴技能</color>，進入<color=Highlight>架勢姿態</color>。\n<size=10> </size>\n<size=40><color=Title>行氣反擊</color></size>\n在<color=Highlight>架勢姿態</color>中受到攻擊時，免疫此次傷害並施放<color=Highlight>行氣反擊</color>，造成<color=Wind>氣動傷害</color>。\n<size=10> </size>\n<size=40><color=Title>降氣反擊</color></size>\n在<color=Highlight>架勢姿態</color>中鬆開<color=Highlight>共鳴技能</color>，將會中斷<color=Highlight>架勢姿態</color>並施放<color=Highlight>降氣反擊</color>，造成<color=Wind>氣動傷害</color>。",
+                "level": {
+                    "1405010": {
+                        "id": 1405010,
+                        "name": "行氣反擊傷害",
+                        "params": [
+                            "168.30%",
+                            "182.11%",
+                            "195.91%",
+                            "215.23%",
+                            "229.03%",
+                            "244.90%",
+                            "266.98%",
+                            "289.06%",
+                            "311.14%",
+                            "334.60%",
+                            "362.20%",
+                            "389.80%",
+                            "417.41%",
+                            "445.01%",
+                            "472.61%",
+                            "500.21%",
+                            "527.81%",
+                            "555.41%",
+                            "583.01%"
+                        ]
+                    },
+                    "1405011": {
+                        "id": 1405011,
+                        "name": "降氣反擊傷害",
+                        "params": [
+                            "130.14%",
+                            "140.81%",
+                            "151.48%",
+                            "166.42%",
+                            "177.09%",
+                            "189.36%",
+                            "206.44%",
+                            "223.51%",
+                            "240.59%",
+                            "258.73%",
+                            "280.07%",
+                            "301.41%",
+                            "322.75%",
+                            "344.09%",
+                            "365.44%",
+                            "386.78%",
+                            "408.12%",
+                            "429.46%",
+                            "450.81%",
+                            "472.15%"
+                        ]
+                    },
+                    "1405012": {
+                        "id": 1405012,
+                        "name": "冷卻時間",
+                        "params": [
+                            "12",
+                            "12",
+                            "12",
+                            "12",
+                            "12",
+                            "12",
+                            "12",
+                            "12",
+                            "12",
+                            "12",
+                            "12",
+                            "12",
+                            "12",
+                            "12",
+                            "12",
+                            "12",
+                            "12",
+                            "12"
+                        ]
+                    },
+                    "1405013": {
+                        "id": 1405013,
+                        "name": "施放技能回復協奏能量",
+                        "params": [
+                            "8",
+                            "8",
+                            "8",
+                            "8",
+                            "8",
+                            "8",
+                            "8",
+                            "8",
+                            "8",
+                            "8",
+                            "8",
+                            "8",
+                            "8",
+                            "8",
+                            "8",
+                            "8",
+                            "8",
+                            "8"
+                        ]
+                    },
+                    "1405014": {
+                        "id": 1405014,
+                        "name": "行氣反擊回復協奏能量",
+                        "params": [
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14"
+                        ]
+                    },
+                    "1405015": {
+                        "id": 1405015,
+                        "name": "降氣反擊回復協奏能量",
+                        "params": [
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14",
+                            "14"
+                        ]
+                    }
+                },
+                "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconJianxin/SP_IconJianxinB1.png",
+                "maxLevel": 10
+            },
+            "type": 2,
+            "sort": 2,
+            "unLock": 0,
+            "tree": false
+        },
+        "1001903": {
+            "id": 1001903,
+            "consume": {
+                "2": 3900,
+                "41100022": 3,
+                "43020032": 2
+            },
+            "params": {
+                "name": "滌淨力場",
+                "description": "製造强力風場，持續將風場範圍內的目標牽引至風場中央並造成<color=Wind>氣動傷害</color>，風場消失時會炸裂，並對風場範圍內的所有目標再造成一次<color=Wind>氣動傷害</color>。",
+                "level": {
+                    "1405016": {
+                        "id": 1405016,
+                        "name": "共鳴解放持續傷害",
+                        "params": [
+                            "15.00%",
+                            "16.23%",
+                            "17.46%",
+                            "19.19%",
+                            "20.42%",
+                            "21.83%",
+                            "23.80%",
+                            "25.77%",
+                            "27.74%",
+                            "29.83%",
+                            "32.29%",
+                            "34.75%",
+                            "37.21%",
+                            "39.67%",
+                            "42.13%",
+                            "44.59%",
+                            "47.05%",
+                            "49.51%",
+                            "51.97%"
+                        ]
+                    },
+                    "1405017": {
+                        "id": 1405017,
+                        "name": "共鳴解放炸裂傷害",
+                        "params": [
+                            "320.00%",
+                            "346.24%",
+                            "372.48%",
+                            "409.22%",
+                            "435.46%",
+                            "465.64%",
+                            "507.62%",
+                            "549.60%",
+                            "591.59%",
+                            "636.20%",
+                            "688.68%",
+                            "741.16%",
+                            "793.64%",
+                            "846.12%",
+                            "898.60%",
+                            "951.08%",
+                            "1003.56%",
+                            "1056.04%",
+                            "1108.52%"
+                        ]
+                    },
+                    "1405018": {
+                        "id": 1405018,
+                        "name": "風場持續時間",
+                        "params": [
+                            "3.12",
+                            "3.12",
+                            "3.12",
+                            "3.12",
+                            "3.12",
+                            "3.12",
+                            "3.12",
+                            "3.12",
+                            "3.12",
+                            "3.12",
+                            "3.12",
+                            "3.12",
+                            "3.12",
+                            "3.12",
+                            "3.12",
+                            "3.12",
+                            "3.12",
+                            "3.12"
+                        ]
+                    },
+                    "1405019": {
+                        "id": 1405019,
+                        "name": "冷卻時間",
+                        "params": [
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20"
+                        ]
+                    },
+                    "1405020": {
+                        "id": 1405020,
+                        "name": "回復協奏能量",
+                        "params": [
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20",
+                            "20"
+                        ]
+                    },
+                    "1405021": {
+                        "id": 1405021,
+                        "name": "消耗共鳴能量",
+                        "params": [
+                            "150",
+                            "150",
+                            "150",
+                            "150",
+                            "150",
+                            "150",
+                            "150",
+                            "150",
+                            "150",
+                            "150",
+                            "150",
+                            "150",
+                            "150",
+                            "150",
+                            "150",
+                            "150",
+                            "150",
+                            "150"
+                        ]
+                    }
+                },
+                "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconJianxin/SP_IconJianxinC1.png",
+                "maxLevel": 10
+            },
+            "type": 3,
+            "sort": 3,
+            "unLock": 0,
+            "tree": false
+        },
+        "1001904": {
+            "id": 1001904,
+            "consume": {
+                "2": 3900,
+                "41100022": 3,
+                "43020032": 2
+            },
+            "params": {
+                "name": "形釋無極",
+                "description": "共鳴解放<color=Highlight>滌淨力場</color>傷害提升{0}。",
+                "level": {},
+                "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconJianxin/SP_IconJianxinD1.png",
+                "maxLevel": 1
+            },
+            "type": 4,
+            "sort": 4,
+            "unLock": 0,
+            "tree": false
+        },
+        "1001905": {
+            "id": 1001905,
+            "consume": {
+                "2": 3900,
+                "41100022": 3,
+                "43020032": 2
+            },
+            "params": {
+                "name": "覆映吾身",
+                "description": "重擊<color=Highlight>混元氣旋</color>獲得的護盾量提升{0}。",
+                "level": {},
+                "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconJianxin/SP_IconJianxinD2.png",
+                "maxLevel": 1
+            },
+            "type": 4,
+            "sort": 5,
+            "unLock": 0,
+            "tree": false
+        },
+        "1001906": {
+            "id": 1001906,
+            "consume": {
+                "2": 3900,
+                "41100022": 3,
+                "43020032": 2
+            },
+            "params": {
+                "name": "掌息之要",
+                "description": "牽引範圍內的目標，造成<color=Wind>氣動傷害</color>。",
+                "level": {
+                    "1405022": {
+                        "id": 1405022,
+                        "name": "技能傷害",
+                        "params": [
+                            "17.00%*3+34.00%",
+                            "18.40%*3+36.79%",
+                            "19.79%*3+39.58%",
+                            "21.74%*3+43.48%",
+                            "23.14%*3+46.27%",
+                            "24.74%*3+49.48%",
+                            "26.97%*3+53.94%",
+                            "29.20%*3+58.40%",
+                            "31.43%*3+62.86%",
+                            "33.80%*3+67.60%",
+                            "36.59%*3+73.18%",
+                            "39.38%*3+78.75%",
+                            "42.17%*3+84.33%",
+                            "44.95%*3+89.90%",
+                            "47.74%*3+95.48%",
+                            "50.53%*3+101.06%",
+                            "53.32%*3+106.63%",
+                            "56.11%*3+112.21%",
+                            "58.89%*3+117.78%"
+                        ]
+                    },
+                    "1405023": {
+                        "id": 1405023,
+                        "name": "回復協奏能量",
+                        "params": [
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10"
+                        ]
+                    }
+                },
+                "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconJianxin/SP_IconJianxinQTE.png",
+                "maxLevel": 10
+            },
+            "type": 5,
+            "sort": 6,
+            "unLock": 0,
+            "tree": false
+        },
+        "1001907": {
+            "id": 1001907,
+            "consume": {
+                "2": 3900,
+                "41100022": 3,
+                "43020032": 2
+            },
+            "params": {
+                "name": "混元氣旋",
+                "description": "<size=40><color=Title>重擊·混元氣旋</color></size>\n當【氣】達到上限時，按住<color=Highlight>普攻</color>，將會施放<color=Highlight>混元氣旋</color>，進入<color=Highlight>運氣狀態</color>。\n<size=10> </size>\n<size=40><color=Title>運氣狀態</color></size>\n鑒心的抗打斷能力提升，受到傷害降低{0}；\n持續消耗【氣】，並持續施放<color=Highlight>運氣</color>攻擊附近的目標，造成<color=Wind>氣動傷害</color>；\n隨著<color=Highlight>運氣狀態</color>時間推移，鑒心逐漸達到不同周天，達到不同周天時：\n·未達到小周天：獲得運氣1層的護盾。 中斷<color=Highlight>運氣狀態</color>時，施放<color=Highlight>衝拳</color>攻擊目標，造成<color=Wind>氣動傷害</color>；\n·小周天：獲得運氣2層的護盾，並<color=Highlight>震氣</color>攻擊目標，造成<color=Wind>氣動傷害</color>。 中斷<color=Highlight>運氣狀態</color>時，施放<color=Highlight>推手</color>攻擊目標，造成<color=Wind>氣動傷害</color>；\n·大周天·內：獲得運氣3層的護盾，並<color=Highlight>震氣</color>攻擊目標，造成<color=Wind>氣動傷害</color>。 中斷<color=Highlight>運氣狀態</color>時，施放<color=Highlight>推手</color>攻擊目標，造成<color=Wind>氣動傷害</color>；\n·大周天·外：獲得運氣4層的護盾，並<color=Highlight>震氣</color>攻擊目標，造成<color=Wind>氣動傷害</color>；\n·鬆開<color=Highlight>普攻</color>時，中斷<color=Highlight>運氣狀態</color>，並消耗所有【氣】；\n·消耗完所有【氣】時，結束<color=Highlight>運氣狀態</color>；\n<size=10></size>\n<color=Highlight>運氣狀態</color>結束時，根據周天階段再次獲得對應周天的護盾；\n<color=Highlight>重擊·混元氣旋</color>所獲得的護盾持續期間，每{1}秒回復一次隊伍中登場角色的生命值；\n<size=10></size>\n<size=40><color=Title>氣獲取規則</color></size>\n【氣】上限{2}點。\n常態攻擊<color=Highlight>風儀拳術</color>命中目標時，獲得【氣】。\n施放共鳴技能<color=Highlight>靜氣循行</color>時，獲得【氣】。\n共鳴技能<color=Highlight>行氣反擊</color>或共鳴技能<color=Highlight>降氣反擊</color>命中目標時，獲得【氣】。\n變奏技能<color=Highlight>掌息之要</color>命中目標時，獲得【氣】。",
+                "level": {
+                    "1405024": {
+                        "id": 1405024,
+                        "name": "衝拳傷害",
+                        "params": [
+                            "125.00%",
+                            "135.25%",
+                            "145.50%",
+                            "159.85%",
+                            "170.10%",
+                            "181.89%",
+                            "198.29%",
+                            "214.69%",
+                            "231.09%",
+                            "248.52%",
+                            "269.02%",
+                            "289.52%",
+                            "310.02%",
+                            "330.52%",
+                            "351.02%",
+                            "371.52%",
+                            "392.02%",
+                            "412.52%",
+                            "433.02%"
+                        ]
+                    },
+                    "1405025": {
+                        "id": 1405025,
+                        "name": "運氣持續傷害",
+                        "params": [
+                            "12.50%",
+                            "13.53%",
+                            "14.55%",
+                            "15.99%",
+                            "17.01%",
+                            "18.19%",
+                            "19.83%",
+                            "21.47%",
+                            "23.11%",
+                            "24.86%",
+                            "26.91%",
+                            "28.96%",
+                            "31.01%",
+                            "33.06%",
+                            "35.11%",
+                            "37.16%",
+                            "39.21%",
+                            "41.26%",
+                            "43.31%"
+                        ]
+                    },
+                    "1405026": {
+                        "id": 1405026,
+                        "name": "小周天震氣傷害",
+                        "params": [
+                            "70.00%",
+                            "75.74%",
+                            "81.48%",
+                            "89.52%",
+                            "95.26%",
+                            "101.86%",
+                            "111.05%",
+                            "120.23%",
+                            "129.41%",
+                            "139.17%",
+                            "150.65%",
+                            "162.13%",
+                            "173.61%",
+                            "185.09%",
+                            "196.57%",
+                            "208.05%",
+                            "219.53%",
+                            "231.01%",
+                            "242.49%"
+                        ]
+                    },
+                    "1405027": {
+                        "id": 1405027,
+                        "name": "大周天·內震氣傷害",
+                        "params": [
+                            "190.00%",
+                            "205.58%",
+                            "221.16%",
+                            "242.98%",
+                            "258.56%",
+                            "276.47%",
+                            "301.40%",
+                            "326.33%",
+                            "351.26%",
+                            "377.74%",
+                            "408.90%",
+                            "440.06%",
+                            "471.22%",
+                            "502.38%",
+                            "533.54%",
+                            "564.70%",
+                            "595.86%",
+                            "627.02%",
+                            "658.18%"
+                        ]
+                    },
+                    "1405028": {
+                        "id": 1405028,
+                        "name": "大周天·外震氣傷害",
+                        "params": [
+                            "260.00%",
+                            "281.32%",
+                            "302.64%",
+                            "332.49%",
+                            "353.81%",
+                            "378.33%",
+                            "412.44%",
+                            "446.55%",
+                            "480.67%",
+                            "516.91%",
+                            "559.55%",
+                            "602.19%",
+                            "644.83%",
+                            "687.47%",
+                            "730.11%",
+                            "772.75%",
+                            "815.39%",
+                            "858.03%",
+                            "900.67%"
+                        ]
+                    },
+                    "1405029": {
+                        "id": 1405029,
+                        "name": "推手傷害",
+                        "params": [
+                            "110.00%",
+                            "119.02%",
+                            "128.04%",
+                            "140.67%",
+                            "149.69%",
+                            "160.07%",
+                            "174.50%",
+                            "188.93%",
+                            "203.36%",
+                            "218.70%",
+                            "236.74%",
+                            "254.78%",
+                            "272.82%",
+                            "290.86%",
+                            "308.90%",
+                            "326.94%",
+                            "344.98%",
+                            "363.02%",
+                            "381.06%"
+                        ]
+                    },
+                    "1405030": {
+                        "id": 1405030,
+                        "name": "未達小周天最終盾量",
+                        "params": [
+                            "437+17.06%",
+                            "490+17.75%",
+                            "546+18.43%",
+                            "612+19.45%",
+                            "691+20.82%",
+                            "765+22.18%",
+                            "778+24.74%",
+                            "796+27.64%",
+                            "809+30.71%",
+                            "831+35.83%",
+                            "899+38.79%",
+                            "968+41.74%",
+                            "1036+44.70%",
+                            "1105+47.65%",
+                            "1174+50.61%",
+                            "1242+53.57%",
+                            "1311+56.52%",
+                            "1379+59.48%",
+                            "1448+62.43%",
+                            "1516+65.39%"
+                        ]
+                    },
+                    "1405031": {
+                        "id": 1405031,
+                        "name": "小周天最終盾量",
+                        "params": [
+                            "875+34.13%",
+                            "980+35.49%",
+                            "1093+36.86%",
+                            "1225+38.90%",
+                            "1382+41.63%",
+                            "1531+44.36%",
+                            "1557+49.48%",
+                            "1592+55.28%",
+                            "1618+61.43%",
+                            "1662+71.66%",
+                            "1799+77.57%",
+                            "1936+83.49%",
+                            "2073+89.40%",
+                            "2211+95.31%",
+                            "2348+101.22%",
+                            "2485+107.13%",
+                            "2622+113.04%",
+                            "2759+118.95%",
+                            "2896+124.87%",
+                            "3033+130.78%"
+                        ]
+                    },
+                    "1405032": {
+                        "id": 1405032,
+                        "name": "大周天·外最終盾量",
+                        "params": [
+                            "1750+68.25%",
+                            "1960+70.98%",
+                            "2187+73.71%",
+                            "2450+77.81%",
+                            "2765+83.27%",
+                            "3062+88.73%",
+                            "3115+98.96%",
+                            "3185+110.57%",
+                            "3237+122.85%",
+                            "3325+143.33%",
+                            "3599+155.15%",
+                            "3873+166.97%",
+                            "4147+178.79%",
+                            "4422+190.62%",
+                            "4696+202.44%",
+                            "4970+214.26%",
+                            "5244+226.09%",
+                            "5519+237.91%",
+                            "5793+249.73%",
+                            "6067+261.55%"
+                        ]
+                    },
+                    "1405033": {
+                        "id": 1405033,
+                        "name": "大周天·外最終盾量",
+                        "params": [
+                            "2915+113.70%",
+                            "3265+118.25%",
+                            "3644+122.80%",
+                            "4081+129.62%",
+                            "4606+138.72%",
+                            "5102+147.82%",
+                            "5189+164.87%",
+                            "5306+184.20%",
+                            "5393+204.67%",
+                            "5539+238.78%",
+                            "5996+258.48%",
+                            "6453+278.17%",
+                            "6910+297.87%",
+                            "7367+317.57%",
+                            "7824+337.27%",
+                            "8281+356.96%",
+                            "8738+376.66%",
+                            "9195+396.36%",
+                            "9652+416.05%",
+                            "10108+435.75%"
+                        ]
+                    },
+                    "1405034": {
+                        "id": 1405034,
+                        "name": "護盾回復生命值",
+                        "params": [
+                            "700+27.30%",
+                            "784+28.39%",
+                            "875+29.48%",
+                            "980+31.12%",
+                            "1106+33.31%",
+                            "1225+35.49%",
+                            "1246+39.59%",
+                            "1274+44.23%",
+                            "1295+49.14%",
+                            "1330+57.33%",
+                            "1439+62.06%",
+                            "1549+66.79%",
+                            "1659+71.52%",
+                            "1768+76.25%",
+                            "1878+80.98%",
+                            "1988+85.71%",
+                            "2097+90.43%",
+                            "2207+95.16%",
+                            "2317+99.89%",
+                            "2427+104.62%"
+                        ]
+                    },
+                    "1405035": {
+                        "id": 1405035,
+                        "name": "護盾持續時間",
+                        "params": [
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30",
+                            "30"
+                        ]
+                    },
+                    "1405036": {
+                        "id": 1405036,
+                        "name": "衝拳回復協奏能量",
+                        "params": [
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10",
+                            "10"
+                        ]
+                    },
+                    "1405037": {
+                        "id": 1405037,
+                        "name": "小周天回復協奏能量",
+                        "params": [
+                            "5",
+                            "5",
+                            "5",
+                            "5",
+                            "5",
+                            "5",
+                            "5",
+                            "5",
+                            "5",
+                            "5",
+                            "5",
+                            "5",
+                            "5",
+                            "5",
+                            "5",
+                            "5",
+                            "5",
+                            "5"
+                        ]
+                    },
+                    "1405038": {
+                        "id": 1405038,
+                        "name": "大周天·內回復協奏能量",
+                        "params": [
+                            "18",
+                            "18",
+                            "18",
+                            "18",
+                            "18",
+                            "18",
+                            "18",
+                            "18",
+                            "18",
+                            "18",
+                            "18",
+                            "18",
+                            "18",
+                            "18",
+                            "18",
+                            "18",
+                            "18",
+                            "18"
+                        ]
+                    },
+                    "1405039": {
+                        "id": 1405039,
+                        "name": "大周天·外回復協奏能量",
+                        "params": [
+                            "23",
+                            "23",
+                            "23",
+                            "23",
+                            "23",
+                            "23",
+                            "23",
+                            "23",
+                            "23",
+                            "23",
+                            "23",
+                            "23",
+                            "23",
+                            "23",
+                            "23",
+                            "23",
+                            "23",
+                            "23"
+                        ]
+                    },
+                    "1405040": {
+                        "id": 1405040,
+                        "name": "推手回復協奏能量",
+                        "params": [
+                            "7",
+                            "7",
+                            "7",
+                            "7",
+                            "7",
+                            "7",
+                            "7",
+                            "7",
+                            "7",
+                            "7",
+                            "7",
+                            "7",
+                            "7",
+                            "7",
+                            "7",
+                            "7",
+                            "7",
+                            "7"
+                        ]
+                    }
+                },
+                "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconJianxin/SP_IconJianxinY.png",
+                "maxLevel": 10
+            },
+            "type": 6,
+            "sort": 7,
+            "unLock": 0,
+            "tree": false
+        },
+        "1001909": {
+            "id": 1001909,
+            "consume": {
+                "2": 3900,
+                "41100022": 3,
+                "43020032": 2
+            },
+            "params": {
+                "name": "化境",
+                "description": "下一位登場角色共鳴解放傷害加深{0}，效果持續{1}秒，若切換至其他角色則該效果提前結束。",
+                "level": {},
+                "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconJianxin/SP_IconJianxinT.png",
+                "maxLevel": 1
+            },
+            "type": 11,
+            "sort": 6,
+            "unLock": 0,
+            "tree": false
+        }
+    },
+    "ascensions": {
+        "1": {
+            "2": 5000,
+            "41100011": 4
+        },
+        "2": {
+            "2": 10000,
+            "41100012": 4,
+            "41400054": 3,
+            "42300050": 4
+        },
+        "3": {
+            "2": 15000,
+            "41100012": 8,
+            "41400054": 6,
+            "42300050": 8
+        },
+        "4": {
+            "2": 20000,
+            "41100013": 4,
+            "41400054": 9,
+            "42300050": 12
+        },
+        "5": {
+            "2": 40000,
+            "41100013": 8,
+            "41400054": 12,
+            "42300050": 16
+        },
+        "6": {
+            "2": 80000,
+            "41100014": 4,
+            "41400054": 16,
+            "42300050": 20
+        }
+    }
+}

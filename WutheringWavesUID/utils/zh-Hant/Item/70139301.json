@@ -1,0 +1,31 @@
+{
+    "id": 70139301,
+    "name": "「左」殘缺的木牌",
+    "bg": "一大塊殘缺的木牌，牌面上篆刻了奇怪的木紋，無法辨認內容，似乎是某種古老儀式的祈願牌。",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_039_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_039_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_039_UI.png"
+    },
+    "showType": [
+        {
+            "id": 21,
+            "name": "任務道具"
+        }
+    ],
+    "mainType": {
+        "id": 6,
+        "name": "任務",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag03.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Renwu_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

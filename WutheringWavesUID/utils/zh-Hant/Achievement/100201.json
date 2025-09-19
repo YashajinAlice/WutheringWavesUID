@@ -1,0 +1,33 @@
+{
+    "id": 100201,
+    "name": "使命……使命從未改變",
+    "description": "完成「使命必達」。",
+    "hidden": false,
+    "level": 2,
+    "group": {
+        "id": 1002,
+        "name": "瑝瓏的足跡·一",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconAchv256/T_IconAchv256_005.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconAchv/T_IconAchv_005.png",
+            "backgroundIcon": "/d/GameData/UIResources/UiAchievement/Image/T_AchievementBg1.png"
+        },
+        "category": {
+            "id": 1,
+            "name": "索拉漫行",
+            "type": 1,
+            "spritePath": "/d/GameData/UIResources/Common/Atlas/TabIcon/SP_IconAchievement1.png",
+            "texturePath": "/d/GameData/UIResources/UiAchievement/Image/T_AchievementShijie_UI.png"
+        }
+    },
+    "nextLevel": null,
+    "reward": {
+        "id": 3,
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_zcpq_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_zcpq_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_zcpq_UI.png"
+        },
+        "value": 10
+    }
+}

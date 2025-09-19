@@ -1,0 +1,40 @@
+{
+    "id": 40,
+    "name": "神秘經文的斷章",
+    "bg": "在黎喬利群島海底發現的斷章，記錄著隱海修會正典中全無記載的經文。隻言片語的殘片，彷彿響應著大海的呼喚。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_Act_Navigation06_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_Act_Navigation06_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_Act_Navigation06_UI.png"
+    },
+    "showType": [
+        {
+            "id": 15,
+            "name": "特殊代幣"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 900002,
+            "description": "碼頭商店購買"
+        },
+        {
+            "id": 900004,
+            "description": "完成劇情獲取"
+        }
+    ]
+}

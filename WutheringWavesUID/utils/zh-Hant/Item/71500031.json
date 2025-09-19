@@ -1,0 +1,36 @@
+{
+    "id": 71500031,
+    "name": "那滌淨塵世的浪潮",
+    "bg": "某些教士認為，黑潮並不是災難，而是能夠篩選出義人，並清洗無信者的試煉。這些離經叛道的想法很快就湮沒在了歷史之中，但他們模仿黑潮之力所製造的禁忌武器，依然有一部分失落在海底深處。",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconMowing/T_IconMowing_28.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconMowing160/T_IconMowing160_28.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconMowing80/T_IconMowing80_28.png"
+    },
+    "showType": [
+        {
+            "id": 50,
+            "name": "信物"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 857001,
+            "description": "冥歌海墟玩法中獲得"
+        }
+    ]
+}

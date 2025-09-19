@@ -1,0 +1,44 @@
+{
+    "id": 80021001,
+    "name": "基液",
+    "bg": "廣泛應用於各種製劑中的基液。",
+    "rarity": {
+        "id": 2,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_YJ_032_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_YJ_032_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_YJ_032_UI.png"
+    },
+    "showType": [
+        {
+            "id": 25,
+            "name": "加工品"
+        }
+    ],
+    "mainType": {
+        "id": 5,
+        "name": "素材",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag08.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jiguan_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 503005,
+            "description": "拾方藥房購買"
+        },
+        {
+            "id": 854003,
+            "description": "合成-構造"
+        },
+        {
+            "id": 503014,
+            "description": "藥劑商店「迷迭香」購買"
+        }
+    ]
+}

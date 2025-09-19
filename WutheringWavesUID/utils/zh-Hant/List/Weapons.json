@@ -1,0 +1,1842 @@
+{
+    "21010015": {
+        "id": 21010015,
+        "name": "浩境粼光",
+        "type": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "凝視它——在凜冽的刃鋒之中，仿佛能看到微風驟起，那片無止盡的湖水泛起陣陣冰寒粼光。忘我地揮舞這把長刃，便能感覺到如水般清澈的刀身中積蓄的能量。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010015_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010015_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010015_UI.png"
+        }
+    },
+    "21020015": {
+        "id": 21020015,
+        "name": "千古洑流",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "傾聽它——在冷峭的刀刃之下，仿佛能聽見極寒冰流暗湧的聲音，思想漸漸如水般聚流成渦。跟隨此流向翻飛，手中的迅刀將吞噬一切落入其中的敵人。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020015_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020015_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020015_UI.png"
+        }
+    },
+    "21030015": {
+        "id": 21030015,
+        "name": "停駐之煙",
+        "type": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "抓住它——在淒清的槍身之中，仿佛能抓住那宛若靜止的萬里湖烟，瞬間凍結的冰礫停於指縫。 握住這佩槍的扳機，讓噴吐出的濃厚湖烟，蔓延在戰場的每一個角落。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21030015_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030015_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21030015_UI.png"
+        }
+    },
+    "21040015": {
+        "id": 21040015,
+        "name": "擎淵怒濤",
+        "type": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "感受它——在暴烈的臂鎧之上，仿佛能感受到來自湖底未知深潭的翻湧怒濤，不可名狀，不可消解。咆哮著戴上此臂鎧，向敵人宣洩無處可去的憤怒。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21040015_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21040015_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040015_UI.png"
+        }
+    },
+    "21050015": {
+        "id": 21050015,
+        "name": "漪瀾浮錄",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "觸碰它——在冰寒的矩陣之間，仿佛能觸碰到圍繞在天地之間的那片湖，它將指引你找到一切答案。 懷抱此音感儀，消滅所有阻擋在你與真理之間的敵人。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050015_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050015_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050015_UI.png"
+        }
+    },
+    "21010024": {
+        "id": 21010024,
+        "name": "異響空靈",
+        "type": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "以樂譜頻率為靈感創作的長刃。音階下行，手持此刃，將以異響之力引領戰局，佳作永不落幕。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010024_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010024_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010024_UI.png"
+        }
+    },
+    "21020024": {
+        "id": 21020024,
+        "name": "行進序曲",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "以樂譜頻率為靈感創作的迅刀。音階上行，手持此刃，以悅耳之鳴，譜寫華麗序曲。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020024_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020024_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020024_UI.png"
+        }
+    },
+    "21030024": {
+        "id": 21030024,
+        "name": "華彩樂段",
+        "type": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "以樂譜頻率為靈感創作的佩槍。音階上行，手持此槍，將以破空之勢貫穿雷霆，演繹絕妙樂章。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21030024_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030024_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21030024_UI.png"
+        }
+    },
+    "21040024": {
+        "id": 21040024,
+        "name": "呼嘯重音",
+        "type": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "以樂譜頻率為靈感創作的臂鎧。音階下行，臂有此鎧，以巨浪之音呼嘯狂怒，鍛造高昂交響。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21040024_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21040024_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040024_UI.png"
+        }
+    },
+    "21050024": {
+        "id": 21050024,
+        "name": "奇幻變奏",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "以樂譜頻率為靈感創作的音感儀。音階下行，手持此器，將以洞悉之態尋覓戰策，協奏就此變調。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050024_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050024_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050024_UI.png"
+        }
+    },
+    "21010013": {
+        "id": 21010013,
+        "name": "暗夜長刃·玄明",
+        "type": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "夜歸常用長刃，經過歷代軍士改進，如今是戰場上最常見的武器。「穿越長夜，勝利歸來」不僅是必勝的決心，更是守護的誓言。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010013_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010013_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010013_UI.png"
+        }
+    },
+    "21020013": {
+        "id": 21020013,
+        "name": "暗夜迅刀·黑閃",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "夜歸常用迅刀，經過歷代軍士改進，如今是戰場上最常見的武器。「穿越長夜，勝利歸來」不僅是必勝的決心，更是守護的誓言。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020013_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020013_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020013_UI.png"
+        }
+    },
+    "21030013": {
+        "id": 21030013,
+        "name": "暗夜佩槍·暗星",
+        "type": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "夜歸常用佩槍，經過歷代軍士改進，如今是戰場上最常見的武器。「穿越長夜，勝利歸來」不僅是必勝的決心，更是守護的誓言。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21030013_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030013_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21030013_UI.png"
+        }
+    },
+    "21040013": {
+        "id": 21040013,
+        "name": "暗夜臂鎧·夜芒",
+        "type": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "夜歸常用臂鎧，經過歷代軍士改進，如今是戰場上最常見的武器。「穿越長夜，勝利歸來」不僅是必勝的決心，更是守護的誓言。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21040013_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21040013_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040013_UI.png"
+        }
+    },
+    "21050013": {
+        "id": 21050013,
+        "name": "暗夜矩陣·暝光",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "夜歸常用音感儀，經歷代軍士改進，如今是戰場上最常見的武器。「穿越長夜，勝利歸來」不僅是必勝的決心，更是守護的誓言。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050013_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050013_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050013_UI.png"
+        }
+    },
+    "21010012": {
+        "id": 21010012,
+        "name": "原初長刃·樸石",
+        "type": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "rarity": {
+            "id": 2,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "專為新手共鳴者特製的長刃，低調樸實的外表下，蘊含著不容小覷的戰鬥力。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010012_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010012_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010012_UI.png"
+        }
+    },
+    "21020012": {
+        "id": 21020012,
+        "name": "原初迅刀·鳴雨",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 2,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "專為新手共鳴者特製的迅刀，低調樸實的外表下，蘊含著不容小覷的戰鬥力。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020012_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020012_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020012_UI.png"
+        }
+    },
+    "21030012": {
+        "id": 21030012,
+        "name": "原初佩槍·穿林",
+        "type": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "rarity": {
+            "id": 2,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "專為新手共鳴者特製的佩槍，低調樸實的外表下，蘊含著不容小覷的戰鬥力。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21030012_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030012_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21030012_UI.png"
+        }
+    },
+    "21040012": {
+        "id": 21040012,
+        "name": "原初臂鎧·磐岩",
+        "type": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "rarity": {
+            "id": 2,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "專為新手共鳴者特製的臂鎧，低調樸實的外表下，蘊含著不容小覷的戰鬥力。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21040012_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21040012_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040012_UI.png"
+        }
+    },
+    "21050012": {
+        "id": 21050012,
+        "name": "原初音感儀·聽浪",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 2,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "專為新手共鳴者特製的音感儀，低調樸實的外表下，蘊含著不容小覷的戰鬥力。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050012_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050012_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050012_UI.png"
+        }
+    },
+    "21010011": {
+        "id": 21010011,
+        "name": "教學長刃",
+        "type": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "description": "用於訓練與教學的長刃，只具備基礎的功能。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010011_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010011_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010011_UI.png"
+        }
+    },
+    "21020011": {
+        "id": 21020011,
+        "name": "教學迅刀",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "description": "用於訓練與教學的迅刀，只具備基礎的功能。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020011_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020011_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020011_UI.png"
+        }
+    },
+    "21030011": {
+        "id": 21030011,
+        "name": "教學佩槍",
+        "type": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "description": "用於訓練與教學的佩槍，只具備基礎的功能。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21030011_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030011_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21030011_UI.png"
+        }
+    },
+    "21040011": {
+        "id": 21040011,
+        "name": "教學臂鎧",
+        "type": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "description": "用於訓練與教學的臂鎧，只具備基礎的功能。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21040011_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21040011_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040011_UI.png"
+        }
+    },
+    "21050011": {
+        "id": 21050011,
+        "name": "教學音感儀",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "description": "用於訓練與教學的音感儀，只具備基礎的功能。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050011_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050011_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050011_UI.png"
+        }
+    },
+    "21010023": {
+        "id": 21010023,
+        "name": "源能長刃·測壹",
+        "type": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "為開發新型黑石武器，華胥研究院以技術驗證為目的打造的測試型長刃，除了不俗的武器性能，最大的特點是能通過攻擊提高共鳴者身體活性治癒傷口。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010023_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010023_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010023_UI.png"
+        }
+    },
+    "21020023": {
+        "id": 21020023,
+        "name": "源能迅刀·測貳",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "為開發新型黑石武器，華胥研究院以技術驗證為目的打造的測試型迅刀，除了不俗的武器性能，最大的特點是能通過攻擊提高共鳴者身體活性治癒傷口。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020023_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020023_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020023_UI.png"
+        }
+    },
+    "21050023": {
+        "id": 21050023,
+        "name": "源能音感儀·測五",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "為開發新型黑石武器，華胥研究院以技術驗證為目的打造的測試型音感儀，除了不俗的武器性能，最大的特點是能通過攻擊提高共鳴者身體活性治癒傷口。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050023_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050023_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050023_UI.png"
+        }
+    },
+    "21010034": {
+        "id": 21010034,
+        "name": "重破刃-41型",
+        "type": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "華胥研究院在此前源能武器的基礎上進行自主改進、研發的第一把極具實用性的高性能長刃，代表著研究院的理性與開放，堅不可摧。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010034_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010034_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010034_UI.png"
+        }
+    },
+    "21020034": {
+        "id": 21020034,
+        "name": "瞬斬刀-18型",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "華胥研究院在此前源能武器的基礎上進行自主改進、研發的第一把極具實用性的高性能迅刀，代表著研究院的過往與發展，歷久彌新。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020034_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020034_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020034_UI.png"
+        }
+    },
+    "21050034": {
+        "id": 21050034,
+        "name": "鳴動儀-25型",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "華胥研究院在此前源能武器的基礎上進行自主改進、研發的第一個極具實用性的高性能音感儀，代表著研究院的多元與創新，瞬息萬狀。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050034_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050034_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050034_UI.png"
+        }
+    },
+    "21010044": {
+        "id": 21010044,
+        "name": "永夜長明",
+        "type": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "為紀念夜歸戰士的常備不懈而打造的長刃。有詩贊曰：「漫漫長夜秋蕭瑟，點點星光負長纓。」",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010044_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010044_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010044_UI.png"
+        }
+    },
+    "21020044": {
+        "id": 21020044,
+        "name": "不歸孤軍",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "為紀念夜歸戰士的一往無前而打造的迅刀。有詩贊曰：「千音萬闕傳驚鼓，百兵一心出雲陵。」",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020044_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020044_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020044_UI.png"
+        }
+    },
+    "21030044": {
+        "id": 21030044,
+        "name": "無眠烈火",
+        "type": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "為紀念夜歸戰士的捨生忘死而打造的佩槍。有詩贊曰：「會燃殘軀成烈火，焚焰灼盡天下安。」",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21030044_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030044_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21030044_UI.png"
+        }
+    },
+    "21040044": {
+        "id": 21040044,
+        "name": "袍澤之固",
+        "type": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "為紀念夜歸戰士的同袍之義而打造的臂鎧。有詩贊曰「薄衣難抵霜晨月，鐵甲能斷星垂寒。」",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21040044_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21040044_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040044_UI.png"
+        }
+    },
+    "21050044": {
+        "id": 21050044,
+        "name": "今州守望",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "為紀念夜歸戰士對今州的守護而打造的音感儀。有詩贊曰：「湖城北望荒石嶺，氤氳暗雨遮朔關。」",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050044_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050044_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050044_UI.png"
+        }
+    },
+    "21010043": {
+        "id": 21010043,
+        "name": "遠行者長刃·闢路",
+        "type": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "先行公約為遠行者提供的長刃，色澤鮮明，不易丟失，質地堅硬，能長期應對多種極端環境，在探險家群體中極受歡迎。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010043_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010043_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010043_UI.png"
+        }
+    },
+    "21020043": {
+        "id": 21020043,
+        "name": "遠行者迅刀·旅跡",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "先行公約為遠行者提供的迅刀，色澤鮮明，不易丟失，質地堅硬，能長期應對多種極端環境，在探險家群體中極受歡迎。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020043_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020043_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020043_UI.png"
+        }
+    },
+    "21050043": {
+        "id": 21050043,
+        "name": "遠行者矩陣·探幽",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "先行公約為遠行者提供的音感儀，色澤鮮明，不易丟失，質地堅硬，能長期應對多種極端環境，在探險家群體中極受歡迎。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050043_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050043_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050043_UI.png"
+        }
+    },
+    "21010053": {
+        "id": 21010053,
+        "name": "戍關長刃·定軍",
+        "type": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "初代今州令尹為紀念守住邊關、幫助建城的神秘人，根據其指導打造出戍關係列。如今，它已成為新型武器研發繞不開的基石。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010053_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010053_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010053_UI.png"
+        }
+    },
+    "21020053": {
+        "id": 21020053,
+        "name": "戍關迅刀·鎮海",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "初代今州令尹為紀念守住邊關、幫助建城的神秘人，根據其指導打造出戍關係列。如今，它已成為新型武器研發繞不開的基石。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020053_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020053_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020053_UI.png"
+        }
+    },
+    "21030053": {
+        "id": 21030053,
+        "name": "戍關佩槍·平雲",
+        "type": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "初代今州令尹為紀念守住邊關、幫助建城的神秘人，根據其指導打造出戍關係列。如今，它已成為新型武器研發繞不開的基石。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21030053_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030053_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21030053_UI.png"
+        }
+    },
+    "21040053": {
+        "id": 21040053,
+        "name": "戍關臂鎧·拔山",
+        "type": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "初代今州令尹為紀念守住邊關、幫助建城的神秘人，根據其指導打造出戍關係列。如今，它已成為新型武器研發繞不開的基石。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21040053_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21040053_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040053_UI.png"
+        }
+    },
+    "21050053": {
+        "id": 21050053,
+        "name": "戍關音感儀·留光",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "初代今州令尹為紀念守住邊關、幫助建城的神秘人，根據其指導打造出戍關係列。如今，它已成為新型武器研發繞不開的基石。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050053_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050053_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050053_UI.png"
+        }
+    },
+    "21010064": {
+        "id": 21010064,
+        "name": "東落",
+        "type": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "因空中奇象而生的長刃。鍛造者將目睹異星的感受融於武器之中，使它看起來鏤空輕盈、卻能發揮出星隕時那般無敵重力。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010064_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010064_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010064_UI.png"
+        }
+    },
+    "21020064": {
+        "id": 21020064,
+        "name": "西升",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "因空中奇象而生的迅刀。鍛造者將目睹異星的感受融於武器之中，使它看起來輕快鋒利，卻能發揮出利破長空、削鐵如泥的能量。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020064_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020064_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020064_UI.png"
+        }
+    },
+    "21030064": {
+        "id": 21030064,
+        "name": "飛逝",
+        "type": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "因空中奇象而生的佩槍。鍛造者將目睹異星的感受融於武器之中，使它看起來鏤空輕盈、卻穩定性極強，出槍彈雨有雷霆威力。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21030064_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030064_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21030064_UI.png"
+        }
+    },
+    "21050064": {
+        "id": 21050064,
+        "name": "異度",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "因空中奇象而生的音感儀。鍛造者將目睹異星的感受融於武器之中，使它看起來纖巧輕盈、卻能沉穩恒定、應變有方。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050064_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050064_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050064_UI.png"
+        }
+    },
+    "21030023": {
+        "id": 21030023,
+        "name": "源能佩槍·測叁",
+        "type": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "為開發新型黑石武器，華胥研究院以技術驗證為目的打造的測試型配槍，除了不俗的武器性能，最大的特點是能通過攻擊提高共鳴者身體活性治癒傷口。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21030023_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030023_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21030023_UI.png"
+        }
+    },
+    "21040023": {
+        "id": 21040023,
+        "name": "源能臂鎧·測肆",
+        "type": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "為開發新型黑石武器，華胥研究院以技術驗證為目的打造的測試型臂鎧，除了不俗的武器性能，最大的特點是能通過攻擊提高共鳴者身體活性治癒傷口。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21040023_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21040023_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040023_UI.png"
+        }
+    },
+    "21030034": {
+        "id": 21030034,
+        "name": "穿擊槍-26型",
+        "type": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "華胥研究院在此前源能武器的基礎上進行自主改進、研發的第一把極具實用性的高性能佩槍，代表著研究院的精研與縝密，直指深邃。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21030034_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030034_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21030034_UI.png"
+        }
+    },
+    "21040034": {
+        "id": 21040034,
+        "name": "鋼影拳-21丁型",
+        "type": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "華胥研究院在此前源能武器的基礎上進行自主改進、研發的第一套極具實用性的高性能臂鎧，代表著研究院的關懷與溫情，穩固持久。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21040034_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21040034_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040034_UI.png"
+        }
+    },
+    "21010074": {
+        "id": 21010074,
+        "name": "紋秋",
+        "type": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "此長刃是瑝瓏一州令尹就任儀式上使用的典禮武器，黃金銀杏葉花紋代表了瑝瓏應如銀杏一般，雖孑遺世上，卻依舊繁榮長存。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010074_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010074_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010074_UI.png"
+        }
+    },
+    "21020074": {
+        "id": 21020074,
+        "name": "飛景",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "此迅刀是瑝瓏一州令尹就任儀式上使用的典禮武器，黃金銀杏葉花紋代表了瑝瓏應如銀杏一般，雖孑遺世上，卻依舊繁榮長存。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020074_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020074_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020074_UI.png"
+        }
+    },
+    "21030074": {
+        "id": 21030074,
+        "name": "奔雷",
+        "type": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "此佩槍是瑝瓏一州令尹就任儀式上使用的典禮武器，黃金銀杏葉花紋代表了瑝瓏應如銀杏一般，雖孑遺世上，卻依舊繁榮長存。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21030074_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030074_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21030074_UI.png"
+        }
+    },
+    "21040074": {
+        "id": 21040074,
+        "name": "金掌",
+        "type": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "此臂鎧是瑝瓏一州令尹就任儀式上使用的典禮武器，黃金銀杏葉花紋代表了瑝瓏應如銀杏一般，雖孑遺世上，卻依舊繁榮長存。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21040074_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21040074_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040074_UI.png"
+        }
+    },
+    "21050074": {
+        "id": 21050074,
+        "name": "清音",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "此音感儀是瑝瓏一州令尹就任儀式上使用的典禮武器，黃金銀杏葉花紋代表了瑝瓏應如銀杏一般，雖孑遺世上，卻依舊繁榮長存。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050074_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050074_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050074_UI.png"
+        }
+    },
+    "21010016": {
+        "id": 21010016,
+        "name": "蒼鱗千嶂",
+        "type": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "千年高山為脊，萬載江水為刃，天地自化，凝成此器。利刃出鞘，龍吟破空，頃刻間白波若山，海水震盪，聲侔鬼神，憚赫千里。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010016_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010016_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010016_UI.png"
+        }
+    },
+    "21050016": {
+        "id": 21050016,
+        "name": "掣傀之手",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "金掌張開，繩索引動，凌空天象凝集其中，所向之敵會被無形的氣勢所壓迫而無法動作，千束疾電造成的傷痕將永遠無法癒合。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050016_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050016_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050016_UI.png"
+        }
+    },
+    "21010084": {
+        "id": 21010084,
+        "name": "凋亡頻移",
+        "type": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "黑海岸為資深戰鬥人員研發的實驗型武器，以耀變體的命運為名的長刃。「耀變」是特殊類星體的名字，它們迸發的光輝僅僅投向此處——即使相隔百億光年，也能觀測到它們的痕跡。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010084_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010014_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010084_UI.png"
+        }
+    },
+    "21020084": {
+        "id": 21020084,
+        "name": "永續坍縮",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "黑海岸為資深戰鬥人員研發的實驗型武器，以耀變體的心臟為名的迅刀。「耀變」是特殊類星體的名字，它們迸發的光輝僅僅投向此處——即使相隔百億光年，也能觀測到它們的痕跡。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020084_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020014_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020084_UI.png"
+        }
+    },
+    "21030084": {
+        "id": 21030084,
+        "name": "悖論噴流",
+        "type": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "黑海岸為資深戰鬥人員研發的實驗型武器，以耀變體的偏執為名的佩槍。「耀變」是特殊類星體的名字，它們迸發的光輝僅僅投向此處——即使相隔百億光年，也能觀測到它們的痕跡。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21030084_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21030014_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21030084_UI.png"
+        }
+    },
+    "21050084": {
+        "id": 21050084,
+        "name": "核熔星盤",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "黑海岸為資深戰鬥人員研發的實驗型武器，以耀變體的罪業為名的音感儀。「耀變」是特殊類星體的名字，它們迸發的光輝僅僅投向此處——即使相隔百億光年，也能觀測到它們的痕跡。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050084_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050014_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050084_UI.png"
+        }
+    },
+    "21040064": {
+        "id": 21040064,
+        "name": "駭行",
+        "type": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "因空中奇象而生的臂鎧。鍛造者將目睹異星的感受融於武器之中，使它看起來鏤空輕盈、卻能在保護使用者的同時揮出萬鈞氣勢。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21040064_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21040064_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040064_UI.png"
+        }
+    },
+    "21030043": {
+        "id": 21030043,
+        "name": "遠行者佩槍·洞察",
+        "type": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "先行公約為遠行者提供的佩槍，色澤鮮明，不易丟失，質地堅硬，能長期應對多種極端環境，在探險家群體中極受歡迎。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21030043_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030043_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21030043_UI.png"
+        }
+    },
+    "21040043": {
+        "id": 21040043,
+        "name": "遠行者臂鎧·破障",
+        "type": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "先行公約為遠行者提供的臂鎧，色澤鮮明，不易丟失，質地堅硬，能長期應對多種極端環境，在探險家群體中極受歡迎。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21040043_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21040043_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040043_UI.png"
+        }
+    },
+    "21010026": {
+        "id": 21010026,
+        "name": "時和歲稔",
+        "type": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "劍刃揮斬之間，得以窺見日月流轉、物換星移。 劍中似有萬象，而萬象歸於其一。 溫潤的劍氣仿佛能化解這世上一切堅不可摧之物，不論是凝結千年的寒冰，還是停滯不前的時光。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010026_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010026_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010026_UI.png"
+        }
+    },
+    "21020016": {
+        "id": 21020016,
+        "name": "赫奕流明",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "據傳由靈鳥的心血與飛翎化火凝鑄。持縱橫玄素，引萬象流明，離火蔓延之處，鋒芒赫奕，諸惡形消神滅，不留塵埃。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020016_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020016_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020016_UI.png"
+        }
+    },
+    "21010063": {
+        "id": 21010063,
+        "name": "鈞天正音",
+        "type": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "rarity": {
+            "id": 3,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "據說是由角褪下的龍鱗打造而成的禮器，比起刀劍，更像是一把樂器。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010063_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010063_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010063_UI.png"
+        }
+    },
+    "21050026": {
+        "id": 21050026,
+        "name": "瓊枝冰綃",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "奇峰搜盡，遍覽山林，玉印見證了無數勝景離躍紙上的生機，攀援而出的花枝指向即將新生的又一處深遠畫境。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050026_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050026_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050026_UI.png"
+        }
+    },
+    "21040016": {
+        "id": 21040016,
+        "name": "諸方玄樞",
+        "type": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "以稷廷孤學為鍛製要理，雖是輕械相銜，卻密無罅縫，堅如金石。 鑄成之器，不為耀武、侵伐，但為破坼萬難、鉤深索隱。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21040016_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21040016_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040016_UI.png"
+        }
+    },
+    "21050036": {
+        "id": 21050036,
+        "name": "星序協響",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "載有能量的核心，擬造著群星演化的循環。無限以奇點為源，將牽引的星團拋散，但寂滅流轉，末隕盡頭處又總傳來不息的回聲——那是新星誕生時的問候。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050027_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050027_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050027_UI.png"
+        }
+    },
+    "21040084": {
+        "id": 21040084,
+        "name": "塵雲旋臂",
+        "type": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "黑海岸為資深戰鬥人員研發的實驗型武器，以耀變體的悲憫為名的臂鎧。「耀變」是特殊類星體的名字，它們迸發的光輝僅僅投向此處——即使相隔百億光年，也能觀測到它們的痕跡。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21040084_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040074_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040084_UI.png"
+        }
+    },
+    "21020017": {
+        "id": 21020017,
+        "name": "心之錨",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "曾被白色守門人用於穩定心之集域的錨定裝置。\n在白色守門人變化為白貓的形態後，這個裝置的外形也發生了一些變化……",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020019_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020019_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020019_UI.png"
+        }
+    },
+    "21050017": {
+        "id": 21050017,
+        "name": "淵海回聲",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "用於奴役宏偉造物的權柄，而看護它的人也曾手捧王冠，指點星河。\n在黎那汐塔洋溢著管風琴聲的漫長時光中，它早已遺失了原本的形貌。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050017_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050017_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050017_UI.png"
+        }
+    },
+    "21020026": {
+        "id": 21020026,
+        "name": "裁春",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "靜寂抽枝的椿花之種。她將如約綻放的無限世界盛在掌心，讓細小的赤色藤蔓與指尖纏繞相連。\n恰似沙礫廝磨心臟的隱約痛楚，即是彼此相遇的證明。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020017_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020017_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020017_UI.png"
+        }
+    },
+    "21010094": {
+        "id": 21010094,
+        "name": "容赦的沉思錄",
+        "type": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "武器的設計靈感取材自劇目——《容赦的沉思錄》。\n武夫揮擊長刃的間隙，思忖著沉重的寬恕之責——是終結他人罪惡的命運，抑或施予憐憫，將靈魂從深淵中解救？每一次揮劍的背後，皆隱藏著審判的痛苦，是憤怒與寬恕的搏鬥。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010094_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010094_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010094_UI.png"
+        }
+    },
+    "21020094": {
+        "id": 21020094,
+        "name": "風流的寓言詩",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "武器的設計靈感取材自劇目——《風流的寓言詩》。\n以浪客之風流，攜笑語之巧妙，攜此迅刀講述寓言之詩——言辭風趣，卻蘊藏著真理的暗喻。對明智之人而言，寓言的真諦顯而易見；對那些不解之人而言，這不過是一笑置之的玩笑罷了。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020094_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020094_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020094_UI.png"
+        }
+    },
+    "21030094": {
+        "id": 21030094,
+        "name": "敘別的羅曼史",
+        "type": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "武器的設計靈感取材自劇目——《敘別的羅曼史》。\n手中緊握的佩槍，是爭奪名利的承諾，是不得之愛的沉重，是未言的詞句、顫抖中的沉默，更是永遠無法實現的愛的陰影。終幕，它竟成了那最後的告別——扳機扣響，幕布落下時的轟然震動，徒留一片無法言說的哀傷，迴盪在未亡人的心頭。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21030094_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030094_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21030094_UI.png"
+        }
+    },
+    "21040094": {
+        "id": 21040094,
+        "name": "酩酊的英雄志",
+        "type": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "武器的設計靈感取材自劇目——《酩酊的英雄志》。\n那杯中之物，鼓舞靈魂，賜予勇氣，以臂鎧之膂力逆轉命運與戰局；或是那同樣的禍釀——醉意迷離之時，英雄失去警惕，敵人則趁虛而入。如此，勝利與毀滅常被書寫在那酒漬斑駁的傳奇篇章中。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21040094_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21040094_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040094_UI.png"
+        }
+    },
+    "21050094": {
+        "id": 21050094,
+        "name": "虛飾的華爾滋",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "武器的設計靈感取材自劇目——《虛飾的華爾滋》。\n華爾滋，形式而非實質之舞，恢弘的交響掩蓋了耳鬢的密謀和私語，飛旋的衣襬遮蔽了悄然交換的字據與書信——心照不宣，如同腳下的舞步般默契，一切悄然流轉，猶如音感儀的無聲協音。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050094_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050094_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050094_UI.png"
+        }
+    },
+    "21040026": {
+        "id": 21040026,
+        "name": "悲喜劇",
+        "type": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "人世間的哀樂變幻無端， 痛苦轉瞬就變成了狂歡。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21040018_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21040018_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040018_UI.png"
+        }
+    },
+    "21030016": {
+        "id": 21030016,
+        "name": "死與舞",
+        "type": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "溢彩的晶質，暗藏解構與重塑的詭計，它邀你同舞，共赴以生命為籌碼的宴請。切步、再切步……無禮的迫近喚起最原始的渴求，直至距離歸零，只餘戰慄顫音……用璀璨的殷紅來殉葬吧，請勿忘記，我們終有一死。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21030017_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030017_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21030017_UI.png"
+        }
+    },
+    "21020036": {
+        "id": 21020036,
+        "name": "不滅航路",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "狂風呼嘯，浪濤洶湧。大海將一切吞沒其中，唯有船燈大笑！\n前進吧，前進吧！一直航行到世界盡頭！",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020025_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020025_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020025_UI.png"
+        }
+    },
+    "21050046": {
+        "id": 21050046,
+        "name": "和光回唱",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "「歲主恩典，何等甘甜，家園今得尋見；銜枝踏浪，以愛相連，聖輝化作冠冕。」",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050029_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050029_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050029_UI.png"
+        }
+    },
+    "21050027": {
+        "id": 21050027,
+        "name": "大海的饋贈",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 4,
+            "name": "SR",
+            "color": "#C759C1FF"
+        },
+        "description": "大海是漁民的麥田，收穫和希望等同。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050036_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050036_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050036_UI.png"
+        }
+    },
+    "21050056": {
+        "id": 21050056,
+        "name": "海的呢喃",
+        "type": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "在海中，有人看到星星，有人撈到月亮，也有人聽到無數細語和呢喃。\n那些呢喃沁入她的毒裡，流淌過每一條蜿蜒的河流。\n最後，那些呢喃將她包裹，像水母的傘，像海。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050030_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050030_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050030_UI.png"
+        }
+    },
+    "21020046": {
+        "id": 21020046,
+        "name": "血誓盟約",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "此即為血盟之證——永不背叛，永不放棄，直至最後一滴血流盡。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020026_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020026_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020026_UI.png"
+        }
+    },
+    "21040036": {
+        "id": 21040036,
+        "name": "焰光裁定",
+        "type": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "它宣告報應終至，如鐘錶般精確、穩定且毫不留情——一切罪愆終將消弭於焰光，如同晨曦逐散夜幕。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21040019_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21040019_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21040019_UI.png"
+        }
+    },
+    "21030026": {
+        "id": 21030026,
+        "name": "林間的詠嘆調",
+        "type": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "萬物皆於詩行之中，萬物之聲皆於音律之中。\n林間的樂聲攀著無形天梯螺旋向上。月光為旋律沐浴銀輝，夜鶯為和聲伴唱。當最後一個音符墜入寂靜的大地上，完美的回聲在大地胸腔永恆迴響。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21030026_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030026_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21030026_UI.png"
+        }
+    },
+    "21020056": {
+        "id": 21020056,
+        "name": "不屈命定之冠",
+        "type": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "浪海欲讓騎士戴上命定的冠冕，而騎士只將冠冕收入劍中。\n那冠冕不會成為騎士的束縛，那浪海也無法停下騎士的腳步。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020056_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020056_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020056_UI.png"
+        }
+    },
+    "21010036": {
+        "id": 21010036,
+        "name": "焰痕",
+        "type": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "rarity": {
+            "id": 5,
+            "name": "SSR",
+            "color": "#DEA544FF"
+        },
+        "description": "幼狼奔於山野，將那些困住自己的陰影盡數拋下；\n孤狼行於賽場，把那些阻擋自己的難題一一斬斷。\n她奪得勝利；她摘得榮耀；她高舉自己的一切；她屬於賽場——更屬於自己！",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010036_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010036_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010036_UI.png"
+        }
+    }
+}

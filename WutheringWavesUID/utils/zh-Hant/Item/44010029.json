@@ -1,0 +1,36 @@
+{
+    "id": 44010029,
+    "name": "異相·無常凶鷺",
+    "bg": "",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_1014_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconMonsterGoods160/T_IconMonsterGoods160_1006_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconMonsterGoods80/T_IconMonsterGoods80_1006_UI_png.png"
+    },
+    "showType": [
+        {
+            "id": 47,
+            "name": "聲骸異相"
+        }
+    ],
+    "mainType": {
+        "id": 4,
+        "name": "資源",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag04.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jchumokuai_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 503007,
+            "description": "異想商店兌換"
+        }
+    ]
+}

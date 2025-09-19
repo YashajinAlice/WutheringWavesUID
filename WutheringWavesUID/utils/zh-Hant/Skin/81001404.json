@@ -1,0 +1,35 @@
+{
+    "id": 81001404,
+    "resonatorId": 1404,
+    "headId": 82001404,
+    "weaponSkinId": 0,
+    "name": "忌炎",
+    "rarity": {
+        "id": 3,
+        "name": "三星",
+        "consumeText": "三星及以下道具",
+        "color": "#00B4FF",
+        "stars": "三星"
+    },
+    "nameDescription": "忌炎-初始服飾",
+    "typeDescription": "",
+    "attributesDescription": "",
+    "description": "繼任夜歸將軍之時，由「角」授予的制服。以夜歸軍的制式軍裝為基準設計，象徵青龍的墨綠長衣披掛其上，於風起時化作夜歸的旗幟。質地強韌，歷久彌堅，一如今州的脊梁。",
+    "icon": {
+        "icon": null,
+        "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+        "iconS ": null,
+        "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_11_UI.png",
+        "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_11_UI.png",
+        "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_11.png",
+        "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_11_UI.png",
+        "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_11_UI.png",
+        "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+        "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiyan_UI.png"
+    },
+    "color": {
+        "weapon": null,
+        "color1": null,
+        "color2": null
+    }
+}

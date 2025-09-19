@@ -1,0 +1,36 @@
+{
+    "id": 10001607,
+    "name": "坎特蕾拉的回音頻段",
+    "bg": "共鳴者的能力由無數回音頻段構成，當回音頻段形成完整的共鳴連結後，可獲得全面的力量解放。",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconRup/T_IconRup_Part_1619_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconRup160/T_IconRup160_Part_1619_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconRup80/T_IconRup80_Part_1619_UI.png"
+    },
+    "showType": [
+        {
+            "id": 30,
+            "name": "回音頻段"
+        }
+    ],
+    "mainType": {
+        "id": 7,
+        "name": "特殊",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag07.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Tongyong_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 501000,
+            "description": "喚取獲得"
+        }
+    ]
+}

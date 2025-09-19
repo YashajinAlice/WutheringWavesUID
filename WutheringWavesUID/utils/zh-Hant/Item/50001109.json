@@ -1,0 +1,35 @@
+{
+    "id": 50001109,
+    "name": "未誕的聲骸",
+    "bg": "裂隙中有一枚聲痕正在擴張，傳出了心跳般的砰砰聲……",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_shzxlb_01_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_shzxlb_01_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_shzxlb_01_UI.png"
+    },
+    "showType": [
+        {
+            "id": 41,
+            "name": "隨機聲骸道具"
+        },
+        {
+            "id": 16,
+            "name": "物資箱"
+        }
+    ],
+    "mainType": {
+        "id": 7,
+        "name": "特殊",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag07.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Tongyong_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

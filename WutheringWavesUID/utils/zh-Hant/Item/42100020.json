@@ -1,0 +1,44 @@
+{
+    "id": 42100020,
+    "name": "活力飲料",
+    "bg": "蘊含豐富維生素的功能飲料，有助於提神醒腦。",
+    "rarity": {
+        "id": 2,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Com_002_1_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Com_002_1_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Com_002_1_UI.png"
+    },
+    "showType": [
+        {
+            "id": 20,
+            "name": "藥品"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {
+        "id": 42100020,
+        "type": {
+            "id": 3,
+            "description": "ItemHandBookType_3_Descrtption",
+            "icon": "/d/GameData/UIResources/UiArchive/Atlas/SP_ArchiveYaoji.png"
+        },
+        "title": "消耗品"
+    },
+    "itemAccess": [
+        {
+            "id": 854004,
+            "description": "合成-藥劑製作"
+        }
+    ]
+}

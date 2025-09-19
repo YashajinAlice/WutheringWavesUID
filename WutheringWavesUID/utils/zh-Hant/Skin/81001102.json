@@ -1,0 +1,35 @@
+{
+    "id": 81001102,
+    "resonatorId": 1102,
+    "headId": 82001102,
+    "weaponSkinId": 0,
+    "name": "散華",
+    "rarity": {
+        "id": 3,
+        "name": "三星",
+        "consumeText": "三星及以下道具",
+        "color": "#00B4FF",
+        "stars": "三星"
+    },
+    "nameDescription": "散華-初始服飾",
+    "typeDescription": "",
+    "attributesDescription": "",
+    "description": "邊庭秘衛所著行裝，輕便而內斂。玄衣颯颯行於無間，利刃揮斬，只為護佑世間景明。",
+    "icon": {
+        "icon": null,
+        "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+        "iconS ": null,
+        "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_7_UI.png",
+        "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_7_UI.png",
+        "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_7.png",
+        "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_7_UI.png",
+        "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_7_UI.png",
+        "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinSanhua.png",
+        "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_shanhua_UI.png"
+    },
+    "color": {
+        "weapon": null,
+        "color1": null,
+        "color2": null
+    }
+}

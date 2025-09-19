@@ -1,0 +1,40 @@
+{
+    "id": 80021007,
+    "name": "金裝特級香油",
+    "bg": "極其稀有的調料，打開瓶口後能聞到無與倫比的美妙香氣。\r\n據說，將其加入菜肴後不僅可以為菜品增香，根據菜肴的不同，還能提高食用者的某項感知能力。\r\n「這到底是什麼味道？太好聞了……」\r\n「我知道了……這是機油的味道！這是我聞過最好聞的機油！」\r\n「什麼？」",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_YJ_038_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_YJ_038_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_YJ_038_UI.png"
+    },
+    "showType": [
+        {
+            "id": 25,
+            "name": "加工品"
+        }
+    ],
+    "mainType": {
+        "id": 5,
+        "name": "素材",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag08.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jiguan_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 503004,
+            "description": "馬和雜貨購買"
+        },
+        {
+            "id": 216000,
+            "description": "活動獲得"
+        }
+    ]
+}

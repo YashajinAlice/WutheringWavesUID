@@ -1,0 +1,23 @@
+{
+    "id": 80080001,
+    "name": "投影·心之錨",
+    "type": {
+        "id": 2,
+        "name": "迅刀",
+        "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+    },
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "resonatorSkin": false,
+    "typeDescription": "武器投影",
+    "description": "可以更改武器外觀的投影道具。",
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21020019_UI.png",
+        "card": null,
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21020019_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21020019_UI.png"
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "id": 50000202,
+    "name": "詩與樂武器箱",
+    "bg": "莫塔里家族製造的制式武器，雖然看起來華麗得如同舞台上的道具，但實則威力不俗。\n據說，狂歡節上有許多家族成員裝備著這套武器，以備不時之需……",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconGiftPack/T_IconGiftPack_012_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconGiftPack/T_IconGiftPack_012_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconGiftPack/T_IconGiftPack_012_UI.png"
+    },
+    "showType": [
+        {
+            "id": 16,
+            "name": "物資箱"
+        }
+    ],
+    "mainType": {
+        "id": 7,
+        "name": "特殊",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag07.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Tongyong_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

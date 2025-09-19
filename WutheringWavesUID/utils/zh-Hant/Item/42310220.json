@@ -1,0 +1,40 @@
+{
+    "id": 42310220,
+    "name": "銀雪蓮",
+    "bg": "於冰雪中盛放的蓮花，與其他食材同煮，有溫身散寒之效。",
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_031_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_031_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_031_UI.png"
+    },
+    "showType": [
+        {
+            "id": 44,
+            "name": "藥材"
+        }
+    ],
+    "mainType": {
+        "id": 5,
+        "name": "素材",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag08.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jiguan_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 403023,
+            "description": "推薦：乘霄山採集"
+        },
+        {
+            "id": 503005,
+            "description": "拾方藥房購買"
+        }
+    ]
+}

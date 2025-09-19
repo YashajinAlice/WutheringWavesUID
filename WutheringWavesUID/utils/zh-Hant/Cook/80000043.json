@@ -1,0 +1,80 @@
+{
+    "id": 80000043,
+    "name": "三球冰淇淋",
+    "description": "減少隊伍中所有共鳴者15%翱翔耐力消耗，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+    "items": [
+        {
+            "id": 80050005,
+            "name": "牛奶",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A10_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A10_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A10_UI.png"
+            },
+            "count": 2
+        },
+        {
+            "id": 42600010,
+            "name": "鳥蛋",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_niaodan_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_niaodan_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_niaodan_UI.png"
+            },
+            "count": 2
+        },
+        {
+            "id": 80050003,
+            "name": "糖",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A08_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A08_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A08_UI.png"
+            },
+            "count": 2
+        }
+    ],
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_064_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_064_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_064_UI.png"
+    },
+    "resonator": [
+        {
+            "id": 1606,
+            "name": "洛可可",
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_33_UI.png",
+                "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_33_UI.png",
+                "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_luokeke_UI.png"
+            },
+            "rarity": {
+                "id": 5,
+                "name": "五星",
+                "consumeText": "不限",
+                "color": "#CFB17F",
+                "stars": "五星"
+            }
+        }
+    ]
+}

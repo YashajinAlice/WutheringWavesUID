@@ -4,6 +4,7 @@ from typing import List, Union
 
 from gsuid_core.bot import Bot
 from gsuid_core.models import Event
+from gsuid_core.logger import logger
 from gsuid_core.utils.image.convert import convert_img
 from PIL import Image, ImageDraw, ImageFilter, ImageEnhance
 from gsuid_core.utils.image.image_tools import crop_center_img
@@ -160,21 +161,68 @@ async def draw_refresh_char_detail_img(
     time_stamp = can_refresh_card(user_id, uid)
     if time_stamp > 0:
         return get_refresh_interval_notify(time_stamp)
-    self_ck, ck = await waves_api.get_ck_result(uid, user_id, ev.bot_id)
-    if not ck:
-        return error_reply(WAVES_CODE_102)
-    # 账户数据
-    account_info = await waves_api.get_base_info(uid, ck)
-    if not account_info.success:
-        return account_info.throw_msg()
-    account_info = AccountBaseInfo.model_validate(account_info.data)
+
+    # 檢查是否有增強PCAP數據（國際服支援）
+    has_enhanced_data = False
+    try:
+        from ..wutheringwaves_pcap_enhanced.enhanced_pcap_processor import (
+            get_enhanced_data,
+        )
+
+        enhanced_data = await get_enhanced_data(uid)
+        has_enhanced_data = enhanced_data is not None
+        logger.info(
+            f"[鸣潮] 增強PCAP數據檢查: {uid} - {'有數據' if has_enhanced_data else '無數據'}"
+        )
+    except Exception as e:
+        logger.warning(f"[鸣潮] 檢查增強PCAP數據失敗: {e}")
+
+    # 如果是國際服且有增強數據，跳過API檢查
+    is_international = waves_api.is_net(uid)
+    if is_international and has_enhanced_data:
+        logger.info(f"[鸣潮] 國際服用戶使用增強PCAP數據，跳過API檢查: {uid}")
+        # 創建一個完整的帳戶信息對象（用於顯示）
+        from ..utils.api.model import AccountBaseInfo
+
+        account_info = AccountBaseInfo(
+            name=f"國際服用戶_{uid[-4:]}",
+            id=int(uid),
+            creatTime=1,  # 設置為整數以滿足 is_full 邏輯
+            activeDays=1,
+            level=1,
+            worldLevel=1,
+            roleNum=0,
+            bigCount=0,
+            smallCount=0,
+            achievementCount=0,
+            achievementStar=0,
+            boxList=[],
+            treasureBoxList=[],
+            weeklyInstCount=0,
+            weeklyInstCountLimit=3,
+            storeEnergy=240,
+            storeEnergyLimit=240,
+        )
+        self_ck = True
+        ck = "enhanced_pcap_data"  # 標記使用增強數據
+    else:
+        # 標準API檢查流程
+        self_ck, ck = await waves_api.get_ck_result(uid, user_id, ev.bot_id)
+        if not ck:
+            return error_reply(WAVES_CODE_102)
+        # 账户数据
+        account_info = await waves_api.get_base_info(uid, ck)
+        if not account_info.success:
+            return account_info.throw_msg()
+        account_info = AccountBaseInfo.model_validate(account_info.data)
     # 更新group id
     await WavesBind.insert_waves_uid(
         user_id, ev.bot_id, uid, ev.group_id, lenth_limit=9
     )
 
     waves_map = {"refresh_update": {}, "refresh_unchanged": {}}
-    if ev.command == "面板":
+    if ev.command == "面板" or (is_international and has_enhanced_data):
+        # 對於面板命令或國際服增強數據，直接使用本地數據
         all_waves_datas = await get_all_role_detail_info_list(uid)
         if not all_waves_datas:
             return "暂无面板数据"
@@ -185,6 +233,7 @@ async def draw_refresh_char_detail_img(
             },
         }
     else:
+        # 標準刷新流程（需要API）
         waves_datas = await refresh_char(
             ev,
             uid,

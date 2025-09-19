@@ -1,0 +1,48 @@
+{
+    "id": 41400114,
+    "name": "不息壞滅",
+    "bg": "傷痕的手中帶有黑羊標記的卡牌，其上附著的烈焰仿佛永遠不會熄滅。而那股烈焰將與傷痕永不止息的破壞欲望一道永遠燃燒。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconMout/T_IconMout_L_014_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconMout160/T_IconMout160_L_014_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconMout80/T_IconMout80_L_014_UI.png"
+    },
+    "showType": [
+        {
+            "id": 8,
+            "name": "技能升級材料"
+        }
+    ],
+    "mainType": {
+        "id": 4,
+        "name": "資源",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag04.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jchumokuai_UI.png"
+        }
+    },
+    "handBook": {
+        "id": 41400114,
+        "type": {
+            "id": 4,
+            "description": "ItemHandBookType_4_Descrtption",
+            "icon": "/d/GameData/UIResources/UiArchive/Atlas/SP_ArchiveCailiao.png"
+        },
+        "title": "技能升級材料"
+    },
+    "itemAccess": [
+        {
+            "id": 213000,
+            "description": "傷痕挑戰獲得"
+        },
+        {
+            "id": 213001,
+            "description": "傷痕-提前開放"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "id": 70010017,
+    "name": "「新鮮的」星核",
+    "bg": "一色拜託漂泊者收集的禮物之一，用於討好研究者的專用禮物。",
+    "rarity": {
+        "id": 3,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconMout/T_IconMout_O_002_1_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconMout160/T_IconMout160_O_002_1_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconMout80/T_IconMout80_O_002_1_UI.png"
+    },
+    "showType": [
+        {
+            "id": 21,
+            "name": "任務道具"
+        }
+    ],
+    "mainType": {
+        "id": 6,
+        "name": "任務",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag03.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Renwu_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

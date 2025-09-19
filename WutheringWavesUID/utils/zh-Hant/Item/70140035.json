@@ -1,0 +1,31 @@
+{
+    "id": 70140035,
+    "name": "「穿行晝夜的自由之鴿」",
+    "bg": "珂萊塔小姐按照對你與阿布的印象，為你們訂製的狂歡節面具。\n面具採用了半遮面式設計，保有個性與神秘感的同時，又很好地考慮到了戰鬥時的需要，沒有過多繁雜的裝飾，不至於遮擋視野阻礙行動。\n可佩戴。",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_101_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconTask160/T_IconTask160_Task_101_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconTask80/T_IconTask80_Task_101_UI.png"
+    },
+    "showType": [
+        {
+            "id": 21,
+            "name": "任務道具"
+        }
+    ],
+    "mainType": {
+        "id": 6,
+        "name": "任務",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag03.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Renwu_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

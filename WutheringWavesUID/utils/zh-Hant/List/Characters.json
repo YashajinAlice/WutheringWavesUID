@@ -1,0 +1,3026 @@
+{
+    "1402": {
+        "id": 1402,
+        "name": "秧秧",
+        "nickname": "風聲羽息",
+        "tags": [
+            {
+                "id": 3,
+                "priority": 1,
+                "name": "快速協奏",
+                "description": "擁有較高的協奏效率",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA3.png",
+                "color": "#ff4040"
+            },
+            {
+                "id": 8,
+                "priority": 3,
+                "name": "牽引",
+                "description": "可以將一定範圍內的目標牽引至特定位置",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC1.png",
+                "color": "#77adff"
+            },
+            {
+                "id": 11,
+                "priority": 3,
+                "name": "共鳴解放充能",
+                "description": "可以為隊伍內特定角色回復共鳴能量",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC4.png",
+                "color": "#77adff"
+            }
+        ],
+        "rarity": {
+            "id": 4,
+            "name": "四星",
+            "consumeText": "四星及以下道具",
+            "color": "#E400F0FF",
+            "stars": "四星"
+        },
+        "weapon": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "element": {
+            "id": 4,
+            "name": "氣動",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#55FFB5FF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind3.png"
+            }
+        },
+        "skins": [
+            81001402
+        ],
+        "description": "<a href=850086>夜歸</a>下設臨時調查員，秧秧。\n雀鳥迎風而行、飛向遠方，受家境庇護順遂成長的少女，如今正試圖成為保護他人的力量。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_1_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_1_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yangyang_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_yanyan_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1202": {
+        "id": 1202,
+        "name": "熾霞",
+        "nickname": "熾焰躍火",
+        "tags": [
+            {
+                "id": 2,
+                "priority": 1,
+                "name": "主力輸出",
+                "description": "擁有較強的輸出能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA2.png",
+                "color": "#ff8441"
+            }
+        ],
+        "rarity": {
+            "id": 4,
+            "name": "四星",
+            "consumeText": "四星及以下道具",
+            "color": "#E400F0FF",
+            "stars": "四星"
+        },
+        "weapon": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "element": {
+            "id": 2,
+            "name": "熱熔",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#F0744EFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementFire1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementFire1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire3.png"
+            }
+        },
+        "skins": [
+            81001202
+        ],
+        "description": "<a href=850112>今巡尉</a>熾霞，她的熱情就像燃不盡的熾火，永遠活力滿滿地躍動在<a href=850091>今州</a>的大街小巷。\n她能將這份熱情化作源源不斷的子彈，從指尖傾瀉而出。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_2_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_2_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_maxiaofang_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_maxiaofang_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1503": {
+        "id": 1503,
+        "name": "維里奈",
+        "nickname": "自然聆律",
+        "tags": [
+            {
+                "id": 1,
+                "priority": 1,
+                "name": "生存治療",
+                "description": "可以提升隊伍的生存能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA1.png",
+                "color": "#77ffb7"
+            },
+            {
+                "id": 9,
+                "priority": 3,
+                "name": "協同攻擊",
+                "description": "擁有較強的協同攻擊能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC2.png",
+                "color": "#77adff"
+            },
+            {
+                "id": 13,
+                "priority": 4,
+                "name": "傷害加深",
+                "description": "可以使隊伍中特定角色傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC7.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "element": {
+            "id": 5,
+            "name": "衍射",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#F8E56CFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight3.png"
+            }
+        },
+        "skins": [
+            81001503
+        ],
+        "description": "具有豐富植物知識儲備的育種員維里奈，總是微笑，始終溫柔，用她的治癒之力呵護每一個朋友，希望所有的花朵都擁有生命的奇跡。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_3_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_3_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jueyuan_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_jueyuan_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1501": {
+        "id": 1501,
+        "name": "漂泊者·衍射",
+        "nickname": "聲之容器",
+        "tags": [
+            {
+                "id": 3,
+                "priority": 1,
+                "name": "快速協奏",
+                "description": "擁有較高的協奏效率",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA3.png",
+                "color": "#ff4040"
+            },
+            {
+                "id": 10,
+                "priority": 3,
+                "name": "凝滯",
+                "description": "可以降低一定範圍內目標的行動速度",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC3.png",
+                "color": "#77adff"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "element": {
+            "id": 5,
+            "name": "衍射",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#F8E56CFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight3.png"
+            }
+        },
+        "skins": [
+            81001501
+        ],
+        "description": "身世不明的共鳴者，擁有吸收一切聲音的力量。\n為了尋回記憶而踏上旅途。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_4_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_4_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_nanzhu_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_11_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_11_UI.png"
+        }
+    },
+    "1102": {
+        "id": 1102,
+        "name": "散華",
+        "nickname": "雪舞芳華",
+        "tags": [
+            {
+                "id": 3,
+                "priority": 1,
+                "name": "快速協奏",
+                "description": "擁有較高的協奏效率",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA3.png",
+                "color": "#ff4040"
+            },
+            {
+                "id": 20,
+                "priority": 4,
+                "name": "普攻傷害加深",
+                "description": "可以使隊伍中特定角色普攻傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD7.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 4,
+            "name": "四星",
+            "consumeText": "四星及以下道具",
+            "color": "#E400F0FF",
+            "stars": "四星"
+        },
+        "weapon": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "element": {
+            "id": 1,
+            "name": "冷凝",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#41AEFBFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementIce1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementIce1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce3.png"
+            }
+        },
+        "skins": [
+            81011102,
+            81001102
+        ],
+        "description": "隸屬於<a href=850091>今州</a>邊庭的<a href=850124>令尹近衛</a>，散華。曾是帶來災難、可洞穿世間萬物的修羅，如今將肆虐風雪化為守護的力量，成為了寡言的守護者。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_7_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_7_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_shanhua_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_sanhua_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1601": {
+        "id": 1601,
+        "name": "桃祈",
+        "nickname": "玄武之力",
+        "tags": [
+            {
+                "id": 1,
+                "priority": 1,
+                "name": "生存治療",
+                "description": "可以提升隊伍的生存能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA1.png",
+                "color": "#77ffb7"
+            },
+            {
+                "id": 7,
+                "priority": 2,
+                "name": "共鳴解放傷害",
+                "description": "共鳴解放傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB4.png",
+                "color": "#ffde73"
+            },
+            {
+                "id": 22,
+                "priority": 4,
+                "name": "共鳴技能傷害加深",
+                "description": "可以使隊伍中特定角色共鳴技能傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD9.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 4,
+            "name": "四星",
+            "consumeText": "四星及以下道具",
+            "color": "#E400F0FF",
+            "stars": "四星"
+        },
+        "weapon": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "element": {
+            "id": 6,
+            "name": "湮滅",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#E649A6FF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementDark1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementDark1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark3.png"
+            }
+        },
+        "skins": [
+            81001601
+        ],
+        "description": "<a href=850085>天工</a>邊防事務的負責人，平時慵懶的她，卻總能可靠地解決問題。\n守護他人的點點願望匯聚成堅固的屏障，屹立於<a href=850091>今州</a>城前。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_9_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_9_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_taohua_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_taohua_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1502": {
+        "id": 1502,
+        "name": "漂泊者·衍射",
+        "nickname": "聲之容器",
+        "tags": [
+            {
+                "id": 3,
+                "priority": 1,
+                "name": "快速協奏",
+                "description": "擁有較高的協奏效率",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA3.png",
+                "color": "#ff4040"
+            },
+            {
+                "id": 10,
+                "priority": 3,
+                "name": "凝滯",
+                "description": "可以降低一定範圍內目標的行動速度",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC3.png",
+                "color": "#77adff"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "element": {
+            "id": 5,
+            "name": "衍射",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#F8E56CFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight3.png"
+            }
+        },
+        "skins": [
+            81001502
+        ],
+        "description": "身世不明的共鳴者，擁有吸收一切聲音的力量。\n為了尋回記憶而踏上旅途。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_5_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_5_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujue_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_nanzhu_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_11_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_11_UI.png"
+        }
+    },
+    "1103": {
+        "id": 1103,
+        "name": "白芷",
+        "nickname": "憂曇伴生",
+        "tags": [
+            {
+                "id": 1,
+                "priority": 1,
+                "name": "生存治療",
+                "description": "可以提升隊伍的生存能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA1.png",
+                "color": "#77ffb7"
+            },
+            {
+                "id": 9,
+                "priority": 3,
+                "name": "協同攻擊",
+                "description": "擁有較強的協同攻擊能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC2.png",
+                "color": "#77adff"
+            },
+            {
+                "id": 13,
+                "priority": 4,
+                "name": "傷害加深",
+                "description": "可以使隊伍中特定角色傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC7.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 4,
+            "name": "四星",
+            "consumeText": "四星及以下道具",
+            "color": "#E400F0FF",
+            "stars": "四星"
+        },
+        "weapon": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "element": {
+            "id": 1,
+            "name": "冷凝",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#41AEFBFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementIce1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementIce1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce3.png"
+            }
+        },
+        "skins": [
+            81001103
+        ],
+        "description": "白芷，主攻<a href=850076>回音</a>聲態的華胥研究員。\n未能實現的願望以另一種形式伴她左右，賦予她療癒生命的能力，也成為她窮極一生研究的課題。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_6_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_6_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_bailian_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_bailian_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1203": {
+        "id": 1203,
+        "name": "安可",
+        "nickname": "數羊遊戲",
+        "tags": [
+            {
+                "id": 2,
+                "priority": 1,
+                "name": "主力輸出",
+                "description": "擁有較強的輸出能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA2.png",
+                "color": "#ff8441"
+            },
+            {
+                "id": 4,
+                "priority": 2,
+                "name": "普攻傷害",
+                "description": "普攻傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB1.png",
+                "color": "#ffde73"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "element": {
+            "id": 2,
+            "name": "熱熔",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#F0744EFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementFire1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementFire1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire3.png"
+            }
+        },
+        "skins": [
+            81001203
+        ],
+        "description": "與黑白羊咩玩偶為伴的小女孩，<a href=850109>黑海岸</a>客卿安可，渴望用糖果、童話和幻想創造有著幸福結局的故事。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_8_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_8_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_anke_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_anke_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_02_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague02.png"
+        }
+    },
+    "1602": {
+        "id": 1602,
+        "name": "丹瑾",
+        "nickname": "緋光劍影",
+        "tags": [
+            {
+                "id": 3,
+                "priority": 1,
+                "name": "快速協奏",
+                "description": "擁有較高的協奏效率",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA3.png",
+                "color": "#ff4040"
+            },
+            {
+                "id": 14,
+                "priority": 4,
+                "name": "湮滅傷害加深",
+                "description": "可以使隊伍中特定角色湮滅傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD4.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 4,
+            "name": "四星",
+            "consumeText": "四星及以下道具",
+            "color": "#E400F0FF",
+            "stars": "四星"
+        },
+        "weapon": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "element": {
+            "id": 6,
+            "name": "湮滅",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#E649A6FF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementDark1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementDark1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark3.png"
+            }
+        },
+        "skins": [
+            81001602
+        ],
+        "description": "游俠丹瑾，能將自身血液凝結成緋色的復仇之刃。\n執緋刃，明是非，滅賊寇，走天涯。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_10_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_10_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_micai_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_danjin_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1403": {
+        "id": 1403,
+        "name": "秋水",
+        "nickname": "隱霧迷蹤",
+        "tags": [
+            {
+                "id": 3,
+                "priority": 1,
+                "name": "快速協奏",
+                "description": "擁有較高的協奏效率",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA3.png",
+                "color": "#ff4040"
+            },
+            {
+                "id": 15,
+                "priority": 4,
+                "name": "氣動傷害加深",
+                "description": "可以使隊伍中特定角色氣動傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD1.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 4,
+            "name": "四星",
+            "consumeText": "四星及以下道具",
+            "color": "#E400F0FF",
+            "stars": "四星"
+        },
+        "weapon": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "element": {
+            "id": 4,
+            "name": "氣動",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#55FFB5FF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind3.png"
+            }
+        },
+        "skins": [
+            81001403
+        ],
+        "description": "秋水，如大霧一般令人捉摸不透。\n在霧的一面，他是笑臉相迎的情報商人，而另一面又與<a href=850109>黑海岸</a>有千絲萬縷的聯繫。\n據說只要開出好價錢，就能從他手上買到稱心如意的情報。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_12_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_12_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_qiushui_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_qiushui_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_02_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague02.png"
+        }
+    },
+    "1404": {
+        "id": 1404,
+        "name": "忌炎",
+        "nickname": "凌風逐野",
+        "tags": [
+            {
+                "id": 2,
+                "priority": 1,
+                "name": "主力輸出",
+                "description": "擁有較強的輸出能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA2.png",
+                "color": "#ff8441"
+            },
+            {
+                "id": 5,
+                "priority": 2,
+                "name": "重擊傷害",
+                "description": "重擊傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB2.png",
+                "color": "#ffde73"
+            },
+            {
+                "id": 8,
+                "priority": 3,
+                "name": "牽引",
+                "description": "可以將一定範圍內的目標牽引至特定位置",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC1.png",
+                "color": "#77adff"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "element": {
+            "id": 4,
+            "name": "氣動",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#55FFB5FF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind3.png"
+            }
+        },
+        "skins": [
+            81001404
+        ],
+        "description": "<a href=850093>瑝瓏</a><a href=850086>夜歸</a>軍的領軍者，心藏正義，雷厲風行，具有將風場化為青龍的異能力，一人之力可抵萬軍。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_11_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_11_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiyan_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_jiyan_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1204": {
+        "id": 1204,
+        "name": "莫特斐",
+        "nickname": "紅龍怒息",
+        "tags": [
+            {
+                "id": 3,
+                "priority": 1,
+                "name": "快速協奏",
+                "description": "擁有較高的協奏效率",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA3.png",
+                "color": "#ff4040"
+            },
+            {
+                "id": 7,
+                "priority": 2,
+                "name": "共鳴解放傷害",
+                "description": "共鳴解放傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB4.png",
+                "color": "#ffde73"
+            },
+            {
+                "id": 9,
+                "priority": 3,
+                "name": "協同攻擊",
+                "description": "擁有較強的協同攻擊能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC2.png",
+                "color": "#77adff"
+            },
+            {
+                "id": 21,
+                "priority": 4,
+                "name": "重擊傷害加深",
+                "description": "可以使隊伍中特定角色重擊傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD8.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 4,
+            "name": "四星",
+            "consumeText": "四星及以下道具",
+            "color": "#E400F0FF",
+            "stars": "四星"
+        },
+        "weapon": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "element": {
+            "id": 2,
+            "name": "熱熔",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#F0744EFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementFire1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementFire1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire3.png"
+            }
+        },
+        "skins": [
+            81001204
+        ],
+        "description": "<a href=850092>華胥研究院</a>安全科成員，黑石應用領域專家，擁有將積壓的情緒凝聚成火焰的能力。\n熾烈的紅龍將於燃盡一切的怒火中降臨。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_13_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_13_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_baer_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_baer_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1603": {
+        "id": 1603,
+        "name": "椿",
+        "nickname": "存在異常，如有疑問請聯絡官方客服",
+        "tags": [
+            {
+                "id": 2,
+                "priority": 1,
+                "name": "主力輸出",
+                "description": "擁有較強的輸出能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA2.png",
+                "color": "#ff8441"
+            },
+            {
+                "id": 3,
+                "priority": 1,
+                "name": "快速協奏",
+                "description": "擁有較高的協奏效率",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA3.png",
+                "color": "#ff4040"
+            },
+            {
+                "id": 4,
+                "priority": 2,
+                "name": "普攻傷害",
+                "description": "普攻傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB1.png",
+                "color": "#ffde73"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "element": {
+            "id": 6,
+            "name": "湮滅",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#E649A6FF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementDark1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementDark1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark3.png"
+            }
+        },
+        "skins": [
+            81001603
+        ],
+        "description": "<a href=850109>黑海岸</a>的執花，自由隨性、危險迷人的育種者。\n正在為黑海岸在<a href=850079>索拉里斯</a>各地旅行，尋找有潛力的人才。忠於自我，不遙望過去未來，只專注享受此時此刻的快樂。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_29_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_29_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_chun_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_chun_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_02_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague02.png"
+        }
+    },
+    "1301": {
+        "id": 1301,
+        "name": "卡卡羅",
+        "nickname": "存在異常，如有疑問請聯絡官方客服",
+        "tags": [
+            {
+                "id": 2,
+                "priority": 1,
+                "name": "主力輸出",
+                "description": "擁有較強的輸出能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA2.png",
+                "color": "#ff8441"
+            },
+            {
+                "id": 7,
+                "priority": 2,
+                "name": "共鳴解放傷害",
+                "description": "共鳴解放傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB4.png",
+                "color": "#ffde73"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "element": {
+            "id": 3,
+            "name": "導電",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#B46BFFFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder3.png"
+            }
+        },
+        "skins": [
+            81001301
+        ],
+        "description": "跨國獨立傭兵組織「幽靈獵犬」的團長，心狠手辣，睚眥必報。擁有召喚特殊<a href=850081>殘象</a>進行協同攻擊的手段。\n想要僱傭他，必須有付出相應代價的覺悟。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_18_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_18_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kakaluo_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_kakaluo_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_11_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_11_UI.png"
+        }
+    },
+    "1302": {
+        "id": 1302,
+        "name": "吟霖",
+        "nickname": "雷掌千機",
+        "tags": [
+            {
+                "id": 3,
+                "priority": 1,
+                "name": "快速協奏",
+                "description": "擁有較高的協奏效率",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA3.png",
+                "color": "#ff4040"
+            },
+            {
+                "id": 6,
+                "priority": 2,
+                "name": "共鳴技能傷害",
+                "description": "共鳴技能傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB3.png",
+                "color": "#ffde73"
+            },
+            {
+                "id": 9,
+                "priority": 3,
+                "name": "協同攻擊",
+                "description": "擁有較強的協同攻擊能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC2.png",
+                "color": "#77adff"
+            },
+            {
+                "id": 16,
+                "priority": 4,
+                "name": "導電傷害加深",
+                "description": "可以使隊伍中特定角色導電傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD2.png",
+                "color": "#ff7777"
+            },
+            {
+                "id": 23,
+                "priority": 4,
+                "name": "共鳴解放傷害加深",
+                "description": "可以使隊伍中特定角色共鳴解放傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD10.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "element": {
+            "id": 3,
+            "name": "導電",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#B46BFFFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder3.png"
+            }
+        },
+        "skins": [
+            81001302
+        ],
+        "description": "吟霖是天生的共鳴者，也曾是治安署的優秀<a href=850087>巡尉</a>。但現在卻因為一起案件被消去了夜歸身分，只能在暗處獨自調查著潛藏的罪惡。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_17_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_17_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yinlin_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_yinlin_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1104": {
+        "id": 1104,
+        "name": "凌陽",
+        "nickname": "存在異常，如有疑問請聯絡官方客服",
+        "tags": [
+            {
+                "id": 2,
+                "priority": 1,
+                "name": "主力輸出",
+                "description": "擁有較強的輸出能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA2.png",
+                "color": "#ff8441"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "element": {
+            "id": 1,
+            "name": "冷凝",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#41AEFBFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementIce1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementIce1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce3.png"
+            }
+        },
+        "skins": [
+            81001104
+        ],
+        "description": "<a href=850091>今州</a><a href=850130>瑞獅團</a>成員，善良靈性的異族來客。熱情開朗，勇敢正直，對人類抱有強烈的興趣。擁有極強的體能與力量，始終在以自己的方式詮釋著「<a href=850131>獅子舞</a>」的含義。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_14_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_14_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_lingyang_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_lingyang_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1303": {
+        "id": 1303,
+        "name": "淵武",
+        "nickname": "雷蹤樹影",
+        "tags": [
+            {
+                "id": 3,
+                "priority": 1,
+                "name": "快速協奏",
+                "description": "擁有較高的協奏效率",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA3.png",
+                "color": "#ff4040"
+            },
+            {
+                "id": 9,
+                "priority": 3,
+                "name": "協同攻擊",
+                "description": "擁有較強的協同攻擊能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC2.png",
+                "color": "#77adff"
+            },
+            {
+                "id": 30,
+                "priority": 3,
+                "name": "抗打斷",
+                "description": "可以提升隊伍內特定角色的抗打斷能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC6.png",
+                "color": "#77adff"
+            },
+            {
+                "id": 12,
+                "priority": 3,
+                "name": "共振摧毀",
+                "description": "可以更有效地削减目標的共振度",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC5.png",
+                "color": "#77adff"
+            }
+        ],
+        "rarity": {
+            "id": 4,
+            "name": "四星",
+            "consumeText": "四星及以下道具",
+            "color": "#E400F0FF",
+            "stars": "四星"
+        },
+        "weapon": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "element": {
+            "id": 3,
+            "name": "導電",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#B46BFFFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder3.png"
+            }
+        },
+        "skins": [
+            81001303
+        ],
+        "description": "拳館老闆淵武，精通<a href=850114>雷煌拳</a>和養生術，為人處世頗為溫和，有一種物質精神雙重富足的餘裕感，深受街坊鄰居歡迎。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_15_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_15_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yuanwu_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_yuanwu_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1604": {
+        "id": 1604,
+        "name": "漂泊者·湮滅",
+        "nickname": "存在異常，如有疑問請聯絡官方客服",
+        "tags": [
+            {
+                "id": 2,
+                "priority": 1,
+                "name": "主力輸出",
+                "description": "擁有較強的輸出能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA2.png",
+                "color": "#ff8441"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "element": {
+            "id": 6,
+            "name": "湮滅",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#E649A6FF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementDark1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementDark1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark3.png"
+            }
+        },
+        "skins": [
+            81001604
+        ],
+        "description": "身世不明的共鳴者，擁有吸收一切聲音的力量。\n為了尋回記憶而踏上旅途。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_5_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_5_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujue_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_nanzhu_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_11_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_11_UI.png"
+        }
+    },
+    "1605": {
+        "id": 1605,
+        "name": "漂泊者·湮滅",
+        "nickname": "存在異常，如有疑問請聯絡官方客服",
+        "tags": [
+            {
+                "id": 2,
+                "priority": 1,
+                "name": "主力輸出",
+                "description": "擁有較強的輸出能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA2.png",
+                "color": "#ff8441"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "element": {
+            "id": 6,
+            "name": "湮滅",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#E649A6FF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementDark1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementDark1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark3.png"
+            }
+        },
+        "skins": [
+            81001605
+        ],
+        "description": "身世不明的共鳴者，擁有吸收一切聲音的力量。\n為了尋回記憶而踏上旅途。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_4_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_4_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_nanzhu_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_11_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_11_UI.png"
+        }
+    },
+    "9990": {
+        "id": 9990,
+        "name": "處決用女主",
+        "nickname": "處決用女主",
+        "tags": [],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "element": {
+            "id": 5,
+            "name": "衍射",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#F8E56CFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight3.png"
+            }
+        },
+        "skins": [],
+        "description": "處決用女主",
+        "icon": {
+            "icon": null,
+            "iconRound": null,
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujue_UI.png",
+            "iconLuckdraw": null
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_11_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_11_UI.png"
+        }
+    },
+    "9991": {
+        "id": 9991,
+        "name": "處決用男主",
+        "nickname": "處決用男主",
+        "tags": [],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "element": {
+            "id": 5,
+            "name": "衍射",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#F8E56CFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight3.png"
+            }
+        },
+        "skins": [],
+        "description": "處決用男主",
+        "icon": {
+            "icon": null,
+            "iconRound": null,
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.png",
+            "iconLuckdraw": null
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_11_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_11_UI.png"
+        }
+    },
+    "1405": {
+        "id": 1405,
+        "name": "鑒心",
+        "nickname": "存在異常，如有疑問請聯絡官方客服",
+        "tags": [
+            {
+                "id": 1,
+                "priority": 1,
+                "name": "生存治療",
+                "description": "可以提升隊伍的生存能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA1.png",
+                "color": "#77ffb7"
+            },
+            {
+                "id": 5,
+                "priority": 2,
+                "name": "重擊傷害",
+                "description": "重擊傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB2.png",
+                "color": "#ffde73"
+            },
+            {
+                "id": 8,
+                "priority": 3,
+                "name": "牽引",
+                "description": "可以將一定範圍內的目標牽引至特定位置",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC1.png",
+                "color": "#77adff"
+            },
+            {
+                "id": 23,
+                "priority": 4,
+                "name": "共鳴解放傷害加深",
+                "description": "可以使隊伍中特定角色共鳴解放傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD10.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "element": {
+            "id": 4,
+            "name": "氣動",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#55FFB5FF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind3.png"
+            }
+        },
+        "skins": [
+            81001405
+        ],
+        "description": "一生只追求武術極致的道士，實力莫測、抱樸守一的<a href=850134>風儀拳</a>傳人。擁有將周圍環境氣韻化為內在，形成滌淨力場的能力。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_23_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_23_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiexin_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_jianxin_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1304": {
+        "id": 1304,
+        "name": "今汐",
+        "nickname": "存在異常，如有疑問請聯絡官方客服",
+        "tags": [
+            {
+                "id": 2,
+                "priority": 1,
+                "name": "主力輸出",
+                "description": "擁有較強的輸出能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA2.png",
+                "color": "#ff8441"
+            },
+            {
+                "id": 6,
+                "priority": 2,
+                "name": "共鳴技能傷害",
+                "description": "共鳴技能傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB3.png",
+                "color": "#ffde73"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "element": {
+            "id": 5,
+            "name": "衍射",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#F8E56CFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight3.png"
+            }
+        },
+        "skins": [
+            81011304,
+            81001304
+        ],
+        "description": "<a href=850118>今令尹</a>今汐，萬丈天光被她化作點點輝芒，溫柔地照亮人們的願望。\n命運向她指明神靈的方向，但她腳下的道路，仍然通向人類的未來。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_24_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_24_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jinxi_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_jinxi_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1305": {
+        "id": 1305,
+        "name": "相里要",
+        "nickname": "存在異常，如有疑問請聯絡官方客服",
+        "tags": [
+            {
+                "id": 2,
+                "priority": 1,
+                "name": "主力輸出",
+                "description": "擁有較強的輸出能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA2.png",
+                "color": "#ff8441"
+            },
+            {
+                "id": 7,
+                "priority": 2,
+                "name": "共鳴解放傷害",
+                "description": "共鳴解放傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB4.png",
+                "color": "#ffde73"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "element": {
+            "id": 3,
+            "name": "導電",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#B46BFFFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder3.png"
+            }
+        },
+        "skins": [
+            81001305
+        ],
+        "description": "<a href=850091>今州</a><a href=850092>華胥研究院</a>首席研究員，最年輕的全科學者。\n為人溫和明理，對機關術研究有獨特的見解與執著的追求。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_25_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_25_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xiangliyao_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_xiangliyao_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1205": {
+        "id": 1205,
+        "name": "長離",
+        "nickname": "存在異常，如有疑問請聯絡官方客服",
+        "tags": [
+            {
+                "id": 2,
+                "priority": 1,
+                "name": "主力輸出",
+                "description": "擁有較強的輸出能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA2.png",
+                "color": "#ff8441"
+            },
+            {
+                "id": 6,
+                "priority": 2,
+                "name": "共鳴技能傷害",
+                "description": "共鳴技能傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB3.png",
+                "color": "#ffde73"
+            },
+            {
+                "id": 17,
+                "priority": 4,
+                "name": "熱熔傷害加深",
+                "description": "可以使隊伍中特定角色熱熔傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD6.png",
+                "color": "#ff7777"
+            },
+            {
+                "id": 23,
+                "priority": 4,
+                "name": "共鳴解放傷害加深",
+                "description": "可以使隊伍中特定角色共鳴解放傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD10.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "element": {
+            "id": 2,
+            "name": "熱熔",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#F0744EFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementFire1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementFire1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire3.png"
+            }
+        },
+        "skins": [
+            81001205,
+            81011205
+        ],
+        "description": "<a href=850091>今州</a><a href=850084>令尹</a>參事，前明庭中政省長史。\n終生浴火，總有一日會將己身燃燒殆盡的策士。為達成心中夙願，她將自己置於棋盤之上，盡可能地算得更遠。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_26_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_26_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_changli_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_changli_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1105": {
+        "id": 1105,
+        "name": "折枝",
+        "nickname": "折枝",
+        "tags": [
+            {
+                "id": 3,
+                "priority": 1,
+                "name": "快速協奏",
+                "description": "擁有較高的協奏效率",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA3.png",
+                "color": "#ff4040"
+            },
+            {
+                "id": 4,
+                "priority": 2,
+                "name": "普攻傷害",
+                "description": "普攻傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB1.png",
+                "color": "#ffde73"
+            },
+            {
+                "id": 9,
+                "priority": 3,
+                "name": "協同攻擊",
+                "description": "擁有較強的協同攻擊能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC2.png",
+                "color": "#77adff"
+            },
+            {
+                "id": 11,
+                "priority": 3,
+                "name": "共鳴解放充能",
+                "description": "可以為隊伍內特定角色回復共鳴能量",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC4.png",
+                "color": "#77adff"
+            },
+            {
+                "id": 18,
+                "priority": 4,
+                "name": "冷凝傷害加深",
+                "description": "可以使隊伍中特定角色冷凝傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD3.png",
+                "color": "#ff7777"
+            },
+            {
+                "id": 22,
+                "priority": 4,
+                "name": "共鳴技能傷害加深",
+                "description": "可以使隊伍中特定角色共鳴技能傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD9.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "element": {
+            "id": 1,
+            "name": "冷凝",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#41AEFBFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementIce1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementIce1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce3.png"
+            }
+        },
+        "skins": [
+            81001105
+        ],
+        "description": "鬻畫維生的委託畫師，憂思敏感，不善言辭，所思所想皆寄寓於畫，筆下萬物可幻化而出，惟妙惟肖。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_27_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_27_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhezhi_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_zhezhi_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1504": {
+        "id": 1504,
+        "name": "燈燈",
+        "nickname": "燈燈",
+        "tags": [
+            {
+                "id": 2,
+                "priority": 1,
+                "name": "主力輸出",
+                "description": "擁有較強的輸出能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA2.png",
+                "color": "#ff8441"
+            },
+            {
+                "id": 4,
+                "priority": 2,
+                "name": "普攻傷害",
+                "description": "普攻傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB1.png",
+                "color": "#ffde73"
+            },
+            {
+                "id": 22,
+                "priority": 4,
+                "name": "共鳴技能傷害加深",
+                "description": "可以使隊伍中特定角色共鳴技能傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD9.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 4,
+            "name": "四星",
+            "consumeText": "四星及以下道具",
+            "color": "#E400F0FF",
+            "stars": "四星"
+        },
+        "weapon": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "element": {
+            "id": 3,
+            "name": "導電",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#B46BFFFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder3.png"
+            }
+        },
+        "skins": [
+            81001504
+        ],
+        "description": "<a href=850090>嗚嗚物流</a>的領航員，運輸隊的小組長。\n出身越州的山中村落，真誠熱情，如小太陽般照耀著他人的質樸少女。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_30_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_30_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_dengdeng_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_dengdeng_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1106": {
+        "id": 1106,
+        "name": "釉瑚",
+        "nickname": "釉瑚",
+        "tags": [
+            {
+                "id": 1,
+                "priority": 1,
+                "name": "生存治療",
+                "description": "可以提升隊伍的生存能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA1.png",
+                "color": "#77ffb7"
+            },
+            {
+                "id": 6,
+                "priority": 2,
+                "name": "共鳴技能傷害",
+                "description": "共鳴技能傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB3.png",
+                "color": "#ffde73"
+            },
+            {
+                "id": 12,
+                "priority": 3,
+                "name": "共振摧毀",
+                "description": "可以更有效地削减目標的共振度",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC5.png",
+                "color": "#77adff"
+            },
+            {
+                "id": 31,
+                "priority": 4,
+                "name": "協同攻擊傷害加深",
+                "description": "可以使隊伍中特定角色協同攻擊傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD11.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 4,
+            "name": "四星",
+            "consumeText": "四星及以下道具",
+            "color": "#E400F0FF",
+            "stars": "四星"
+        },
+        "weapon": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "element": {
+            "id": 1,
+            "name": "冷凝",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#41AEFBFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementIce1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementIce1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce3.png"
+            }
+        },
+        "skins": [
+            81001106
+        ],
+        "description": "伶牙俐齒、古靈精怪的鑑寶師。\n能隨口作出打油詩，把鑑寶結論說得妙趣橫生、頭頭是道。 為讓古物流向珍愛它們的人，正在街頭擺攤鑑寶。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_31_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_31_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_youhu_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_youhu_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_03_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague03.png"
+        }
+    },
+    "1505": {
+        "id": 1505,
+        "name": "守岸人",
+        "nickname": "守岸人",
+        "tags": [
+            {
+                "id": 1,
+                "priority": 1,
+                "name": "生存治療",
+                "description": "可以提升隊伍的生存能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA1.png",
+                "color": "#77ffb7"
+            },
+            {
+                "id": 8,
+                "priority": 3,
+                "name": "牽引",
+                "description": "可以將一定範圍內的目標牽引至特定位置",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC1.png",
+                "color": "#77adff"
+            },
+            {
+                "id": 13,
+                "priority": 4,
+                "name": "傷害加深",
+                "description": "可以使隊伍中特定角色傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC7.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "element": {
+            "id": 5,
+            "name": "衍射",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#F8E56CFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight3.png"
+            }
+        },
+        "skins": [
+            81001505
+        ],
+        "description": "守岸人，<a href=850109>黑海岸</a>的守護者，這種程度的說明對她便已足夠。\n至於渴望、羈絆、情感……除職責外她所擁有的一切，都豐滿於與你相遇之後。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_28_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_28_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_shouanren_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_shouanren_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_02_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague02.png"
+        }
+    },
+    "1606": {
+        "id": 1606,
+        "name": "洛可可",
+        "nickname": "洛可可",
+        "tags": [
+            {
+                "id": 3,
+                "priority": 1,
+                "name": "快速協奏",
+                "description": "擁有較高的協奏效率",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA3.png",
+                "color": "#ff4040"
+            },
+            {
+                "id": 5,
+                "priority": 2,
+                "name": "重擊傷害",
+                "description": "重擊傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB2.png",
+                "color": "#ffde73"
+            },
+            {
+                "id": 8,
+                "priority": 3,
+                "name": "牽引",
+                "description": "可以將一定範圍內的目標牽引至特定位置",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC1.png",
+                "color": "#77adff"
+            },
+            {
+                "id": 14,
+                "priority": 4,
+                "name": "湮滅傷害加深",
+                "description": "可以使隊伍中特定角色湮滅傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD4.png",
+                "color": "#ff7777"
+            },
+            {
+                "id": 20,
+                "priority": 4,
+                "name": "普攻傷害加深",
+                "description": "可以使隊伍中特定角色普攻傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD7.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "element": {
+            "id": 6,
+            "name": "湮滅",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#E649A6FF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementDark1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementDark1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark3.png"
+            }
+        },
+        "skins": [
+            81001606
+        ],
+        "description": "<a href=850108>愚人劇團</a>副手、萬能道具師兼即興喜劇演員洛可可將劇團打理得井井有條。\n她隨身攜帶的珍奇箱似乎裝有整個世界，又或者，是她用箱子構建了一個世界。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_33_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_33_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_luokeke_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_luokeke_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_13_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague13.png"
+        }
+    },
+    "1107": {
+        "id": 1107,
+        "name": "珂萊塔",
+        "nickname": "珂萊塔",
+        "tags": [
+            {
+                "id": 2,
+                "priority": 1,
+                "name": "主力輸出",
+                "description": "擁有較強的輸出能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA2.png",
+                "color": "#ff8441"
+            },
+            {
+                "id": 6,
+                "priority": 2,
+                "name": "共鳴技能傷害",
+                "description": "共鳴技能傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB3.png",
+                "color": "#ffde73"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "element": {
+            "id": 1,
+            "name": "冷凝",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#41AEFBFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementIce1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementIce1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce3.png"
+            }
+        },
+        "skins": [
+            81001107,
+            81011107
+        ],
+        "description": "<a href=850101>莫塔里</a>家族的二小姐，不被教條限制的藝術投資人。\n明面上，珂萊塔遊走在交際與交易中，暗地裡，她則為家族處理著不可明說的「麻煩」。\n一顆「寶石」的綻放，一場生命的凋零，她以自我為名，給予現實另一向度的重塑。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_32_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_32_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kelaita_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_kelaita_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_13_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague13.png"
+        }
+    },
+    "1206": {
+        "id": 1206,
+        "name": "布蘭特",
+        "nickname": "布蘭特",
+        "tags": [
+            {
+                "id": 1,
+                "priority": 1,
+                "name": "生存治療",
+                "description": "可以提升隊伍的生存能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA1.png",
+                "color": "#77ffb7"
+            },
+            {
+                "id": 4,
+                "priority": 2,
+                "name": "普攻傷害",
+                "description": "普攻傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB1.png",
+                "color": "#ffde73"
+            },
+            {
+                "id": 17,
+                "priority": 4,
+                "name": "熱熔傷害加深",
+                "description": "可以使隊伍中特定角色熱熔傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD6.png",
+                "color": "#ff7777"
+            },
+            {
+                "id": 22,
+                "priority": 4,
+                "name": "共鳴技能傷害加深",
+                "description": "可以使隊伍中特定角色共鳴技能傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD9.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "element": {
+            "id": 2,
+            "name": "熱熔",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#F0744EFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementFire1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementFire1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire3.png"
+            }
+        },
+        "skins": [
+            81001206
+        ],
+        "description": "<a href=850096>黎那汐塔</a><a href=850108>愚人劇團</a>的劇團長布蘭特，為人浪漫灑脫，多變生動。是劇團的主心骨和領袖。\n舞台之上，他為故事更換面具，為戲劇調整表情。但在舞台之下，他待人只憑一顆真心。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_44_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_44_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Bulante_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_bulante_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_13_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague13.png"
+        }
+    },
+    "1506": {
+        "id": 1506,
+        "name": "菲比",
+        "nickname": "菲比",
+        "tags": [
+            {
+                "id": 2,
+                "priority": 1,
+                "name": "主力輸出",
+                "description": "擁有較強的輸出能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA2.png",
+                "color": "#ff8441"
+            },
+            {
+                "id": 3,
+                "priority": 1,
+                "name": "快速協奏",
+                "description": "擁有較高的協奏效率",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA3.png",
+                "color": "#ff4040"
+            },
+            {
+                "id": 28,
+                "priority": 5,
+                "name": "光噪",
+                "description": "可以運用光噪效應",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelE4.png",
+                "color": "#dd77ff"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "element": {
+            "id": 5,
+            "name": "衍射",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#F8E56CFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight3.png"
+            }
+        },
+        "skins": [
+            81001506
+        ],
+        "description": "<a href=850099>隱海修會</a>的<a href=850100>教士</a>菲比，友善而虔誠的聖職者少女，以純粹之心修習，認真踐行著身為教士的一切職責。她的祈禱恰如她手中的光芒，柔和明亮，為人們帶來溫暖與安寧。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_45_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_45_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Feibi_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_feibi_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_13_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague13.png"
+        }
+    },
+    "1406": {
+        "id": 1406,
+        "name": "漂泊者·氣動",
+        "nickname": "漂泊者·氣動",
+        "tags": [
+            {
+                "id": 1,
+                "priority": 1,
+                "name": "生存治療",
+                "description": "可以提升隊伍的生存能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA1.png",
+                "color": "#77ffb7"
+            },
+            {
+                "id": 6,
+                "priority": 2,
+                "name": "共鳴技能傷害",
+                "description": "共鳴技能傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB3.png",
+                "color": "#ffde73"
+            },
+            {
+                "id": 24,
+                "priority": 5,
+                "name": "風蝕",
+                "description": "可以運用風蝕效應",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelE3.png",
+                "color": "#dd77ff"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "element": {
+            "id": 4,
+            "name": "氣動",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#55FFB5FF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind3.png"
+            }
+        },
+        "skins": [
+            81001406
+        ],
+        "description": "身世不明的共鳴者，擁有吸收一切聲音的力量。\n為了尋回記憶而踏上旅途。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_4_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_4_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_nanzhu_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_11_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_11_UI.png"
+        }
+    },
+    "1607": {
+        "id": 1607,
+        "name": "坎特蕾拉",
+        "nickname": "坎特蕾拉",
+        "tags": [
+            {
+                "id": 1,
+                "priority": 1,
+                "name": "生存治療",
+                "description": "可以提升隊伍的生存能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA1.png",
+                "color": "#77ffb7"
+            },
+            {
+                "id": 3,
+                "priority": 1,
+                "name": "快速協奏",
+                "description": "擁有較高的協奏效率",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA3.png",
+                "color": "#ff4040"
+            },
+            {
+                "id": 4,
+                "priority": 2,
+                "name": "普攻傷害",
+                "description": "普攻傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB1.png",
+                "color": "#ffde73"
+            },
+            {
+                "id": 9,
+                "priority": 3,
+                "name": "協同攻擊",
+                "description": "擁有較強的協同攻擊能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC2.png",
+                "color": "#77adff"
+            },
+            {
+                "id": 14,
+                "priority": 4,
+                "name": "湮滅傷害加深",
+                "description": "可以使隊伍中特定角色湮滅傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD4.png",
+                "color": "#ff7777"
+            },
+            {
+                "id": 22,
+                "priority": 4,
+                "name": "共鳴技能傷害加深",
+                "description": "可以使隊伍中特定角色共鳴技能傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD9.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 5,
+            "name": "音感儀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png"
+        },
+        "element": {
+            "id": 6,
+            "name": "湮滅",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#E649A6FF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementDark1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementDark1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark3.png"
+            }
+        },
+        "skins": [
+            81001607
+        ],
+        "description": "<a href=850094>翡薩烈</a>現任家主，「毒藥」坎特蕾拉。\n神秘、高貴、美艷、劇毒……她居於山巔的冠冕，而山崖間流淌著的，都是由她編織的幻夢。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_34_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_34_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kanteleila_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_kanteleila_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_13_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague13.png"
+        }
+    },
+    "1407": {
+        "id": 1407,
+        "name": "夏空",
+        "nickname": "夏空",
+        "tags": [
+            {
+                "id": 3,
+                "priority": 1,
+                "name": "快速協奏",
+                "description": "擁有較高的協奏效率",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA3.png",
+                "color": "#ff4040"
+            },
+            {
+                "id": 8,
+                "priority": 3,
+                "name": "牽引",
+                "description": "可以將一定範圍內的目標牽引至特定位置",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC1.png",
+                "color": "#77adff"
+            },
+            {
+                "id": 24,
+                "priority": 5,
+                "name": "風蝕",
+                "description": "可以運用風蝕效應",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelE3.png",
+                "color": "#dd77ff"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 3,
+            "name": "佩槍",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+        },
+        "element": {
+            "id": 4,
+            "name": "氣動",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#55FFB5FF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind3.png"
+            }
+        },
+        "skins": [
+            81001407
+        ],
+        "description": "<a href=850096>黎那汐塔</a>的吟遊詩人——夏空。她為神明而歌，也為平凡的人類而歌。\n她於旅途中記錄著故事，傳唱著故事，與故事的主人，故事的觀眾一同歡笑、感動、流淚。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_37_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_37_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xiakong_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_xiakong_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_13_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague13.png"
+        }
+    },
+    "1507": {
+        "id": 1507,
+        "name": "贊妮",
+        "nickname": "贊妮",
+        "tags": [
+            {
+                "id": 2,
+                "priority": 1,
+                "name": "主力輸出",
+                "description": "擁有較強的輸出能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA2.png",
+                "color": "#ff8441"
+            },
+            {
+                "id": 5,
+                "priority": 2,
+                "name": "重擊傷害",
+                "description": "重擊傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB2.png",
+                "color": "#ffde73"
+            },
+            {
+                "id": 19,
+                "priority": 4,
+                "name": "衍射傷害加深",
+                "description": "可以使隊伍中特定角色衍射傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD5.png",
+                "color": "#ff7777"
+            },
+            {
+                "id": 28,
+                "priority": 5,
+                "name": "光噪",
+                "description": "可以運用光噪效應",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelE4.png",
+                "color": "#dd77ff"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "element": {
+            "id": 5,
+            "name": "衍射",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#F8E56CFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight3.png"
+            }
+        },
+        "skins": [
+            81001507
+        ],
+        "description": "埃弗拉德金庫防衛科雇員，最佳員工稱號的常年保持者。\n她為自己的業餘時間做了無數種計劃和安排，但事到如今，還是先想辦法準時下班吧。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_38_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_38_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zanni_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_zanni_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_13_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague13.png"
+        }
+    },
+    "1408": {
+        "id": 1408,
+        "name": "漂泊者·氣動",
+        "nickname": "漂泊者·氣動",
+        "tags": [
+            {
+                "id": 1,
+                "priority": 1,
+                "name": "生存治療",
+                "description": "可以提升隊伍的生存能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA1.png",
+                "color": "#77ffb7"
+            },
+            {
+                "id": 6,
+                "priority": 2,
+                "name": "共鳴技能傷害",
+                "description": "共鳴技能傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB3.png",
+                "color": "#ffde73"
+            },
+            {
+                "id": 24,
+                "priority": 5,
+                "name": "風蝕",
+                "description": "可以運用風蝕效應",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelE3.png",
+                "color": "#dd77ff"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "element": {
+            "id": 4,
+            "name": "氣動",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#55FFB5FF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind3.png"
+            }
+        },
+        "skins": [
+            81001408
+        ],
+        "description": "身世不明的共鳴者，擁有吸收一切聲音的力量。\n為了尋回記憶而踏上旅途。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_5_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_5_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujue_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_nanzhu_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_11_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_11_UI.png"
+        }
+    },
+    "1207": {
+        "id": 1207,
+        "name": "露帕",
+        "nickname": "露帕",
+        "tags": [
+            {
+                "id": 3,
+                "priority": 1,
+                "name": "快速協奏",
+                "description": "擁有較高的協奏效率",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA3.png",
+                "color": "#ff4040"
+            },
+            {
+                "id": 7,
+                "priority": 2,
+                "name": "共鳴解放傷害",
+                "description": "共鳴解放傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB4.png",
+                "color": "#ffde73"
+            },
+            {
+                "id": 17,
+                "priority": 4,
+                "name": "熱熔傷害加深",
+                "description": "可以使隊伍中特定角色熱熔傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD6.png",
+                "color": "#ff7777"
+            },
+            {
+                "id": 20,
+                "priority": 4,
+                "name": "普攻傷害加深",
+                "description": "可以使隊伍中特定角色普攻傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelD7.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 1,
+            "name": "長刃",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+        },
+        "element": {
+            "id": 2,
+            "name": "熱熔",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#F0744EFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementFire1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementFire1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire3.png"
+            }
+        },
+        "skins": [
+            81001207
+        ],
+        "description": "七丘的角鬥士，萬眾矚目的明星選手。\n熱情率直，如孤狼般具有野性的少女。若是能夠一直享受競技純粹的快樂，露帕無畏在這賽場燃燒殆盡。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_46_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_46_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_lupa_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_Lupa_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_14_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague14.png"
+        }
+    },
+    "1409": {
+        "id": 1409,
+        "name": "卡提希婭",
+        "nickname": "卡提希婭",
+        "tags": [
+            {
+                "id": 2,
+                "priority": 1,
+                "name": "主力輸出",
+                "description": "擁有較強的輸出能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA2.png",
+                "color": "#ff8441"
+            },
+            {
+                "id": 24,
+                "priority": 5,
+                "name": "風蝕",
+                "description": "可以運用風蝕效應",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelE3.png",
+                "color": "#dd77ff"
+            },
+            {
+                "id": 13,
+                "priority": 4,
+                "name": "傷害加深",
+                "description": "可以使隊伍中特定角色傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC7.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 2,
+            "name": "迅刀",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png"
+        },
+        "element": {
+            "id": 4,
+            "name": "氣動",
+            "description": "存在異常，如有疑問請聯絡官方客服",
+            "color": "#55FFB5FF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind3.png"
+            }
+        },
+        "skins": [
+            81001409
+        ],
+        "description": "於<a href=850096>黎那汐塔</a>四處旅行的流浪騎士卡提希婭。她是曾經的聖女，是神之容器，是風潮之王。她曾被喚作芙露德莉斯，但現在，她只是一介自由自在的流浪騎士。",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_40_UI.png",
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_40_UI.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_katixiya_UI.png",
+            "iconLuckdraw": "/d/GameData/UIResources/Common/Image/Luckdraw/T_Luckdraw_katixiya_UI.png"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_13_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague13.png"
+        }
+    },
+    "1410": {
+        "id": 1410,
+        "name": "尤諾",
+        "nickname": "尤諾",
+        "tags": [
+            {
+                "id": 2,
+                "priority": 1,
+                "name": "主力輸出",
+                "description": "擁有較強的輸出能力",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA2.png",
+                "color": "#ff8441"
+            },
+            {
+                "id": 3,
+                "priority": 1,
+                "name": "快速協奏",
+                "description": "擁有較高的協奏效率",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelA3.png",
+                "color": "#ff4040"
+            },
+            {
+                "id": 7,
+                "priority": 2,
+                "name": "共鳴解放傷害",
+                "description": "共鳴解放傷害較高",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelB4.png",
+                "color": "#ffde73"
+            },
+            {
+                "id": 13,
+                "priority": 4,
+                "name": "傷害加深",
+                "description": "可以使隊伍中特定角色傷害加深",
+                "icon": "/d/GameData/UIResources/Common/Atlas/RoleLabel/SP_RoleLabelC7.png",
+                "color": "#ff7777"
+            }
+        ],
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "weapon": {
+            "id": 4,
+            "name": "臂鎧",
+            "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png"
+        },
+        "element": {
+            "id": 4,
+            "name": "氣動",
+            "description": "氣動屬性的攻擊可以造成氣動傷害",
+            "color": "#00D4FFFF",
+            "icon": {
+                "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementAero1_UI.png",
+                "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementAero1_UI.png",
+                "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementAero1.png",
+                "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementAero.png",
+                "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementAero1.png",
+                "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementAero1.png",
+                "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementAero2.png",
+                "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementAero3.png"
+            }
+        },
+        "skins": [
+            81001410
+        ],
+        "description": "月相流轉的守護者。在盈虧之間，見證著永恆的輪迴。\n她來，她見，她守護。\n她高擎月環，等待著下一個需要守護的人，抑或是無可抗拒的命運。",
+        "icon": {
+            "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_52_UI.T_IconRoleHead256_52_UI",
+            "iconRound": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_52_UI.T_IconRoleHeadCircle256_52_UI",
+            "banner": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_iuno_UI.T_IconRole_Pile_iuno_UI",
+            "iconLuckdraw": "/Game/Aki/UI/UIResources/Common/Image/Luckdraw/T_Luckdraw_iuno_UI.T_Luckdraw_iuno_UI"
+        },
+        "influenceIcon": {
+            "iconWhite": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_15_UI.png",
+            "iconGrey": "/d/GameData/UIResources/Common/Image/IconForceLogo/T_Logo_Vague15.png"
+        }
+    }
+}

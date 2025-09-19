@@ -1,0 +1,36 @@
+{
+    "id": 80001051,
+    "name": "燴麵麵包",
+    "bg": "遊歷四方的吟遊詩人，旅途中的食物講究一個美味與便捷的平衡。\n於是夏空她靈機一動，拿出隨身攜帶的麵包……\n當篝火升起，肉醬麵的香味順著麵包的縫隙飄到她的鼻前，她將最後的調味醬塗抹在麵包上面。\n但請注意，民間有一則不成文的規則——禁止對拉古那的肉醬燴麵進行胡亂搭配，改編食譜。她吃著手中熱騰騰的燴麵麵包，思考著「如果有一天我被流放的話，或許這也是罪名之一？」",
+    "rarity": {
+        "id": 2,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_075_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_075_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_075_UI.png"
+    },
+    "showType": [
+        {
+            "id": 23,
+            "name": "菜肴"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 404000,
+            "description": "烹飪獲得"
+        }
+    ]
+}

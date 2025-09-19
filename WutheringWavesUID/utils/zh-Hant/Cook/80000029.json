@@ -1,0 +1,95 @@
+{
+    "id": 80000029,
+    "name": "森棲鍋",
+    "description": "提高隊伍中所有共鳴者40%攻擊力，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+    "items": [
+        {
+            "id": 80020000,
+            "name": "火鍋底料",
+            "rarity": {
+                "id": 4,
+                "name": "SR",
+                "color": "#C759C1FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A01_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A01_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A01_UI.png"
+            },
+            "count": 1
+        },
+        {
+            "id": 80020001,
+            "name": "清湯",
+            "rarity": {
+                "id": 3,
+                "name": "SSR",
+                "color": "#DEA544FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A02_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A02_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A02_UI.png"
+            },
+            "count": 1
+        },
+        {
+            "id": 42400030,
+            "name": "獸肉",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+            },
+            "count": 1
+        },
+        {
+            "id": 42300080,
+            "name": "雲芝",
+            "rarity": {
+                "id": 1,
+                "name": "R",
+                "color": "#5A73C7FF"
+            },
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_30A_UI.png",
+                "iconMiddle": "/d/GameData/UIResources/Common/Image/IconRup160/T_IconRup160_SM_Gat_30A_UI.png",
+                "iconSmall": "/d/GameData/UIResources/Common/Image/IconRup80/T_IconRup80_SM_Gat_30A_UI.png"
+            },
+            "count": 1
+        }
+    ],
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_030_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_030_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_030_UI.png"
+    },
+    "resonator": [
+        {
+            "id": 1503,
+            "name": "維里奈",
+            "icon": {
+                "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_3_UI.png",
+                "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_3_UI.png",
+                "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jueyuan_UI.png"
+            },
+            "rarity": {
+                "id": 5,
+                "name": "五星",
+                "consumeText": "不限",
+                "color": "#CFB17F",
+                "stars": "五星"
+            }
+        }
+    ]
+}

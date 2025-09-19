@@ -1,0 +1,1836 @@
+{
+    "id": 21030016,
+    "name": "死與舞",
+    "type": {
+        "id": 3,
+        "name": "佩槍",
+        "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png"
+    },
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "description": "溢彩的晶質，暗藏解構與重塑的詭計，它邀你同舞，共赴以生命為籌碼的宴請。切步、再切步……無禮的迫近喚起最原始的渴求，直至距離歸零，只餘戰慄顫音……用璀璨的殷紅來殉葬吧，請勿忘記，我們終有一死。",
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21030017_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21030017_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21030017_UI.png"
+    },
+    "effect": "攻擊提升{0}。施放變奏技能或共鳴解放時，自身共鳴技能傷害加成提升{1}，持續{2}秒。",
+    "effectName": "緘默悼詞",
+    "params": {
+        "0": [
+            "12%",
+            "15%",
+            "18%",
+            "21%",
+            "24%"
+        ],
+        "1": [
+            "48%",
+            "60%",
+            "72%",
+            "84%",
+            "96%"
+        ],
+        "2": [
+            "5",
+            "5",
+            "5",
+            "5",
+            "5"
+        ]
+    },
+    "stats": {
+        "first": {
+            "attribute": "Atk",
+            "name": "攻擊",
+            "value": 40,
+            "isRatio": false,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+        },
+        "second": {
+            "attribute": "CritDamage",
+            "name": "暴擊傷害",
+            "value": 1600,
+            "isRatio": false,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+        }
+    },
+    "statsLevel": {
+        "0": {
+            "1": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 40.0,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 1600.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "2": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 43.368,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 1600.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "3": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 46.74,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 1600.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "4": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 50.111999999999995,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 1600.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "5": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 53.48,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 1911.04,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "6": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 56.852000000000004,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 1911.04,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "7": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 60.224000000000004,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 1911.04,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "8": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 63.592000000000006,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 1911.04,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "9": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 66.964,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 1911.04,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "10": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 70.336,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 2222.08,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "11": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 73.70400000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 2222.08,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "12": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 77.07600000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 2222.08,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "13": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 80.44800000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 2222.08,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "14": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 83.82,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 2222.08,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "15": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 87.188,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 2533.2799999999997,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "16": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 90.55999999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 2533.2799999999997,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "17": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 93.932,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 2533.2799999999997,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "18": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 97.30000000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 2533.2799999999997,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "19": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 100.672,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 2533.2799999999997,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "20": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 104.04400000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 2844.32,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ]
+        },
+        "1": {
+            "20": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 130.708,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 2844.32,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "21": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 134.07999999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 2844.32,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "22": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 137.452,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 2844.32,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "23": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 140.82,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 2844.32,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "24": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 144.192,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 2844.32,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "25": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 147.564,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 3155.52,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "26": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 150.936,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 3155.52,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "27": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 154.304,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 3155.52,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "28": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 157.676,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 3155.52,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "29": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 161.048,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 3155.52,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "30": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 164.416,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 3466.56,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "31": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 167.788,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 3466.56,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "32": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 171.16,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 3466.56,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "33": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 174.528,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 3466.56,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "34": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 177.89999999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 3466.56,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "35": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 181.272,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 3777.7599999999998,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "36": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 184.644,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 3777.7599999999998,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "37": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 188.012,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 3777.7599999999998,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "38": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 191.38400000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 3777.7599999999998,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "39": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 194.756,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 3777.7599999999998,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "40": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 198.124,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 4088.7999999999997,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ]
+        },
+        "2": {
+            "40": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 224.79199999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 4088.7999999999997,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "41": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 228.16400000000002,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 4088.7999999999997,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "42": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 231.53199999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 4088.7999999999997,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "43": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 234.904,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 4088.7999999999997,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "44": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 238.276,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 4088.7999999999997,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "45": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 241.644,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 4400.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "46": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 245.016,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 4400.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "47": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 248.38799999999998,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 4400.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "48": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 251.76,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 4400.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "49": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 255.128,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 4400.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "50": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 258.5,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 4711.04,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ]
+        },
+        "3": {
+            "50": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 285.168,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 4711.04,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "51": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 288.536,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 4711.04,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "52": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 291.908,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 4711.04,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "53": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 295.28,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 4711.04,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "54": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 298.64799999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 4711.04,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "55": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 302.02000000000004,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5022.08,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "56": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 305.392,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5022.08,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "57": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 308.764,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5022.08,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "58": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 312.132,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5022.08,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "59": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 315.504,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5022.08,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "60": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 318.876,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5333.28,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ]
+        },
+        "4": {
+            "60": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 345.54,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5333.28,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "61": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 348.912,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5333.28,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "62": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 352.284,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5333.28,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "63": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 355.652,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5333.28,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "64": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 359.024,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5333.28,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "65": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 362.396,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5644.32,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "66": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 365.764,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5644.32,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "67": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 369.136,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5644.32,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "68": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 372.508,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5644.32,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "69": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 375.88,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5644.32,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "70": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 379.248,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5955.5199999999995,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ]
+        },
+        "5": {
+            "70": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 405.916,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5955.5199999999995,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "71": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 409.288,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5955.5199999999995,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "72": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 412.656,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5955.5199999999995,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "73": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 416.028,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5955.5199999999995,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "74": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 419.4,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 5955.5199999999995,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "75": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 422.76800000000003,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 6266.5599999999995,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "76": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 426.14,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 6266.5599999999995,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "77": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 429.512,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 6266.5599999999995,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "78": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 432.88,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 6266.5599999999995,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "79": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 436.252,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 6266.5599999999995,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "80": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 439.624,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 6577.76,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ]
+        },
+        "6": {
+            "80": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 466.292,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 6577.76,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "81": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 469.66,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 6577.76,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "82": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 473.032,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 6577.76,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "83": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 476.404,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 6577.76,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "84": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 479.77200000000005,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 6577.76,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "85": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 483.144,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 6888.8,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "86": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 486.516,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 6888.8,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "87": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 489.884,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 6888.8,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "88": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 493.25600000000003,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 6888.8,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "89": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 496.628,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 6888.8,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ],
+            "90": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 500.0,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 9,
+                    "attribute": "CritDamage",
+                    "name": "暴擊傷害",
+                    "value": 7200.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredcrit_UI.png"
+                }
+            ]
+        }
+    },
+    "ascensions": {
+        "0": {
+            "2": 10000,
+            "41100031": 6
+        },
+        "1": {
+            "2": 20000,
+            "41100032": 6,
+            "43020021": 6
+        },
+        "2": {
+            "2": 40000,
+            "41100033": 4,
+            "43020022": 8
+        },
+        "3": {
+            "2": 60000,
+            "41100033": 6,
+            "43020023": 6
+        },
+        "4": {
+            "2": 80000,
+            "41100034": 4,
+            "43020024": 8
+        },
+        "5": {
+            "2": 120000,
+            "41100034": 8,
+            "43020024": 12
+        }
+    }
+}

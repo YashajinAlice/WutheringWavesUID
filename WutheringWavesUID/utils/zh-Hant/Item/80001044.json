@@ -1,0 +1,36 @@
+{
+    "id": 80001044,
+    "name": "什錦肉醬焗麵",
+    "bg": "贊妮在肉醬燴麵表面加入乳酪、香腸和香草等食材焗烤而成的麵食。味道香醇濃郁。\n據贊妮所言，她最開始只是在加熱因為忙於工作而冷掉的外送時偶然加入了手邊的即食材料，但味道意外地還不錯。之後經過不斷嘗試，才形成了現在的固定配方。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_076_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_076_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_076_UI.png"
+    },
+    "showType": [
+        {
+            "id": 23,
+            "name": "菜肴"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 404000,
+            "description": "烹飪獲得"
+        }
+    ]
+}

@@ -1,0 +1,1792 @@
+{
+    "id": 20000110,
+    "name": "測試1-短劍",
+    "type": {
+        "id": 1,
+        "name": "長刃",
+        "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+    },
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "description": "測試突破組的武器。",
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21050015_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21050015_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21050015_UI.png"
+    },
+    "effect": "攻擊提升{0}%。",
+    "effectName": "啟程",
+    "params": {
+        "0": [
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+        ]
+    },
+    "stats": {
+        "first": {
+            "attribute": "Atk",
+            "name": "攻擊",
+            "value": 56,
+            "isRatio": false,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+        },
+        "second": {
+            "attribute": "Crit",
+            "name": "暴擊",
+            "value": 540,
+            "isRatio": false,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+        }
+    },
+    "statsLevel": {
+        "0": {
+            "1": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 56.0,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 540.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "2": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 60.7152,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 540.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "3": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 65.436,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 540.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "4": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 70.15679999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 540.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "5": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 74.872,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 644.976,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "6": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 79.5928,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 644.976,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "7": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 84.31360000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 644.976,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "8": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 89.0288,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 644.976,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "9": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 93.7496,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 644.976,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "10": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 98.4704,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 749.952,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "11": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 103.1856,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 749.952,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "12": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 107.9064,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 749.952,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "13": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 112.6272,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 749.952,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "14": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 117.348,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 749.952,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "15": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 122.0632,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 854.982,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "16": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 126.78399999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 854.982,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "17": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 131.5048,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 854.982,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "18": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 136.22,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 854.982,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "19": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 140.9408,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 854.982,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "20": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 145.66160000000002,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 959.9580000000001,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ]
+        },
+        "1": {
+            "20": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 182.9912,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 959.9580000000001,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "21": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 187.712,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 959.9580000000001,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "22": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 192.43280000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 959.9580000000001,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "23": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 197.14800000000002,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 959.9580000000001,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "24": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 201.8688,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 959.9580000000001,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "25": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 206.5896,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1064.988,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "26": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 211.31040000000002,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1064.988,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "27": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 216.0256,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1064.988,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "28": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 220.7464,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1064.988,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "29": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 225.46720000000002,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1064.988,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "30": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 230.18240000000003,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1169.964,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "31": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 234.9032,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1169.964,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "32": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 239.624,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1169.964,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "33": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 244.3392,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1169.964,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "34": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 249.06,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1169.964,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "35": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 253.78079999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1274.994,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "36": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 258.5016,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1274.994,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "37": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 263.21680000000003,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1274.994,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "38": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 267.93760000000003,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1274.994,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "39": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 272.65840000000003,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1274.994,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "40": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 277.3736,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1379.97,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ]
+        },
+        "2": {
+            "40": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 314.7088,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1379.97,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "41": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 319.42960000000005,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1379.97,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "42": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 324.1448,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1379.97,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "43": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 328.86560000000003,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1379.97,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "44": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 333.5864,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1379.97,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "45": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 338.3016,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1485.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "46": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 343.0224,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1485.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "47": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 347.7432,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1485.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "48": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 352.464,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1485.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "49": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 357.1792,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1485.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "50": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 361.90000000000003,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1589.9759999999999,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ]
+        },
+        "3": {
+            "50": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 399.2352,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1589.9759999999999,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "51": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 403.9504,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1589.9759999999999,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "52": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 408.6712,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1589.9759999999999,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "53": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 413.392,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1589.9759999999999,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "54": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 418.1072,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1589.9759999999999,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "55": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 422.82800000000003,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1694.952,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "56": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 427.5488,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1694.952,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "57": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 432.2696,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1694.952,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "58": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 436.9848,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1694.952,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "59": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 441.7056,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1694.952,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "60": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 446.4264,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1799.982,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ]
+        },
+        "4": {
+            "60": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 483.75600000000003,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1799.982,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "61": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 488.47679999999997,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1799.982,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "62": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 493.1976,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1799.982,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "63": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 497.91279999999995,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1799.982,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "64": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 502.6336,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1799.982,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "65": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 507.35440000000006,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1904.9579999999999,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "66": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 512.0696,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1904.9579999999999,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "67": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 516.7904000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1904.9579999999999,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "68": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 521.5111999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1904.9579999999999,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "69": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 526.232,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 1904.9579999999999,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "70": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 530.9472,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2009.988,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ]
+        },
+        "5": {
+            "70": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 568.2824,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2009.988,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "71": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 573.0032,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2009.988,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "72": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 577.7184,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2009.988,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "73": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 582.4392,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2009.988,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "74": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 587.16,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2009.988,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "75": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 591.8752000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2114.964,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "76": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 596.596,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2114.964,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "77": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 601.3168000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2114.964,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "78": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 606.0319999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2114.964,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "79": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 610.7528,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2114.964,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "80": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 615.4736,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2219.994,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ]
+        },
+        "6": {
+            "80": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 652.8088,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2219.994,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "81": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 657.524,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2219.994,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "82": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 662.2447999999999,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2219.994,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "83": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 666.9656,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2219.994,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "84": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 671.6808000000001,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2219.994,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "85": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 676.4016,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2324.9700000000003,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "86": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 681.1224,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2324.9700000000003,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "87": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 685.8376,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2324.9700000000003,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "88": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 690.5584,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2324.9700000000003,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "89": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 695.2792,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2324.9700000000003,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ],
+            "90": [
+                {
+                    "id": 7,
+                    "attribute": "Atk",
+                    "name": "攻擊",
+                    "value": 700.0,
+                    "isRatio": false,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+                },
+                {
+                    "id": 8,
+                    "attribute": "Crit",
+                    "name": "暴擊",
+                    "value": 2430.0,
+                    "isRatio": true,
+                    "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredbaoji_UI.png"
+                }
+            ]
+        }
+    },
+    "ascensions": {}
+}

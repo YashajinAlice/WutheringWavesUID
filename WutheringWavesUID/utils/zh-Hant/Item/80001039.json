@@ -1,0 +1,36 @@
+{
+    "id": 80001039,
+    "name": "雪燴濃湯",
+    "bg": "守岸人喜歡的一種濃湯，不需要什麼昂貴特殊的食材，直接用沿岸現有的海鮮就能做成，秘訣在於醇厚的牛奶和燉煮得夠久的時間。\n鮮少有人知道的是，這是守岸人為了複製記憶中那人帶來的溫度所做。 她按照相同做法和步驟，卻在一次次的嘗試中，摸索出自己的味道。 現煮的濃湯帶有海鮮的鮮甜，佐以烤好的麵包片，一碗下去，熱意向四肢百骸蔓延……或許，這就是那人曾告訴她的簡單卻扎實的幸福感。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_051_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_051_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_051_UI.png"
+    },
+    "showType": [
+        {
+            "id": 23,
+            "name": "菜肴"
+        }
+    ],
+    "mainType": {
+        "id": 1,
+        "name": "補給",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag02.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Daoju_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 404000,
+            "description": "烹飪獲得"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "id": 100277,
+    "name": "太陽與六金幣",
+    "description": "捕捉到20隻盾金龜。",
+    "hidden": false,
+    "level": 1,
+    "group": {
+        "id": 1007,
+        "name": "索拉的大地·黎那汐塔",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconAchv256/T_IconAchv256_017.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconAchv/T_IconAchv_017.png",
+            "backgroundIcon": "/d/GameData/UIResources/UiAchievement/Image/T_AchievementBg1.png"
+        },
+        "category": {
+            "id": 1,
+            "name": "索拉漫行",
+            "type": 1,
+            "spritePath": "/d/GameData/UIResources/Common/Atlas/TabIcon/SP_IconAchievement1.png",
+            "texturePath": "/d/GameData/UIResources/UiAchievement/Image/T_AchievementShijie_UI.png"
+        }
+    },
+    "nextLevel": null,
+    "reward": {
+        "id": 3,
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_zcpq_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_zcpq_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_zcpq_UI.png"
+        },
+        "value": 5
+    }
+}

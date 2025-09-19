@@ -297,7 +297,15 @@ async def compare_update_card_info(uid, waves_data):
             waves_data["weaponData"]["breach"] = get_breach(
                 existing_data["weaponData"]["level"]
             )
-        if (
+        # 保護武器精煉等級：如果OCR識別的精煉等級為1（默認值），則保持現有數據
+        if waves_data["weaponData"]["resonLevel"] == 1:
+            logger.warning(
+                f" [鸣潮][dc卡片识别] 武器精炼等級為默認值1，保持現有數據：{existing_data['weaponData']['resonLevel']}"
+            )
+            waves_data["weaponData"]["resonLevel"] = existing_data["weaponData"][
+                "resonLevel"
+            ]
+        elif (
             waves_data["weaponData"]["resonLevel"]
             < existing_data["weaponData"]["resonLevel"]
         ):
@@ -308,7 +316,11 @@ async def compare_update_card_info(uid, waves_data):
                 "resonLevel"
             ]
 
-    for i in range(0, 6):
+    # 安全地比較技能等級，避免索引超出範圍
+    waves_skill_count = len(waves_data["skillList"])
+    existing_skill_count = len(existing_data["skillList"])
+
+    for i in range(min(waves_skill_count, existing_skill_count)):
         if waves_data["skillList"][i]["level"] < existing_data["skillList"][i]["level"]:
             logger.warning(
                 f" [鸣潮][dc卡片识别] 存在技能等级低于本地数据，纠正：{waves_data['skillList'][i]['level']}->{existing_data['skillList'][i]['level']}"

@@ -1,0 +1,97 @@
+{
+    "id": 21010046,
+    "name": "驭冕铸雷之权",
+    "type": {
+        "id": 1,
+        "name": "長刃",
+        "icon": "/d/GameData/UIResources/Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png"
+    },
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#D4AF37FF"
+    },
+    "description": "奧古斯塔的專屬武器，蘊含著雷電之力的長刃。",
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconWeapon/T_IconWeapon21010046_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconWeapon160/T_IconWeapon160_21010046_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconWeapon80/T_IconWeapon80_21010046_UI.png"
+    },
+    "effect": "攻擊提升{0}，導電傷害加成提升{1}。",
+    "effectName": "雷電之權",
+    "params": {
+        "0": [
+            "12%",
+            "15%",
+            "18%",
+            "21%",
+            "24%"
+        ],
+        "1": [
+            "8%",
+            "10%",
+            "12%",
+            "14%",
+            "16%"
+        ]
+    },
+    "baseAttack": [
+        48,
+        60,
+        72,
+        84,
+        96
+    ],
+    "baseHp": [
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "baseDefense": [
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "ascensionMaterials": {
+        "1": {
+            "2": 20000,
+            "41100011": 2,
+            "41400111": 6,
+            "42601100": 4
+        },
+        "2": {
+            "2": 40000,
+            "41100012": 2,
+            "41400112": 6,
+            "42601100": 4
+        },
+        "3": {
+            "2": 60000,
+            "41100013": 2,
+            "41400113": 6,
+            "42601100": 4
+        },
+        "4": {
+            "2": 80000,
+            "41100014": 2,
+            "41400114": 6,
+            "42601100": 4
+        },
+        "5": {
+            "2": 100000,
+            "41100015": 2,
+            "41400115": 6,
+            "42601100": 4
+        },
+        "6": {
+            "2": 120000,
+            "41100016": 2,
+            "41400116": 6,
+            "42601100": 4
+        }
+    }
+}

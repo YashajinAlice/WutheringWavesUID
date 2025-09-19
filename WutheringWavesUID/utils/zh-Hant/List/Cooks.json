@@ -1,0 +1,4805 @@
+{
+    "80000000": {
+        "id": 80000000,
+        "name": "今州烤串",
+        "description": "提高隊伍中所有共鳴者100點攻擊力，持續時間15分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42400030,
+                "name": "獸肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 42310070,
+                "name": "香檸草",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_25A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_25A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_25A_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_001_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_001_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_001_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1104,
+                "name": "凌陽",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_14_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_14_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_lingyang_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000001": {
+        "id": 80000001,
+        "name": "鍋盔",
+        "description": "提高隊伍中所有共鳴者200點防禦力，持續時間15分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050001,
+                "name": "食用油",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A06_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A06_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A06_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_002_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_002_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_002_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1105,
+                "name": "折枝",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_27_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_27_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhezhi_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000002": {
+        "id": 80000002,
+        "name": "涼拌香蘇",
+        "description": "提高隊伍中所有共鳴者10%暴擊率，持續時間15分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42310050,
+                "name": "香蘇",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_01B_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_01B_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_01B_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050002,
+                "name": "辣椒",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A07_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A07_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A07_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_003_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_003_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_003_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1103,
+                "name": "白芷",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_6_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_6_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_bailian_UI.png"
+                },
+                "rarity": {
+                    "id": 4,
+                    "name": "四星",
+                    "consumeText": "四星及以下道具",
+                    "color": "#E400F0FF",
+                    "stars": "四星"
+                }
+            }
+        ]
+    },
+    "80000003": {
+        "id": 80000003,
+        "name": "紅油手撕雞",
+        "description": "減少隊伍中所有共鳴者15%疾跑、游泳耐力消耗，持續時間15分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050001,
+                "name": "食用油",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A06_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A06_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A06_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42400010,
+                "name": "禽肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_29A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_29A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_29A_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80050002,
+                "name": "辣椒",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A07_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A07_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A07_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_004_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_004_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_004_UI.png"
+        },
+        "resonator": []
+    },
+    "80000004": {
+        "id": 80000004,
+        "name": "龍鬚酥",
+        "description": "恢復80點耐力。",
+        "items": [
+            {
+                "id": 80050001,
+                "name": "食用油",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A06_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A06_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A06_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80050003,
+                "name": "糖",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A08_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A08_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A08_UI.png"
+                },
+                "count": 3
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_005_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_005_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_005_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1602,
+                "name": "丹瑾",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_10_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_10_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_micai_UI.png"
+                },
+                "rarity": {
+                    "id": 4,
+                    "name": "四星",
+                    "consumeText": "四星及以下道具",
+                    "color": "#E400F0FF",
+                    "stars": "四星"
+                }
+            }
+        ]
+    },
+    "80000005": {
+        "id": 80000005,
+        "name": "戍邊糧",
+        "description": "减少隊伍中指定共鳴者25%鉤索冷卻時間，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050001,
+                "name": "食用油",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A06_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A06_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A06_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 80050003,
+                "name": "糖",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A08_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A08_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A08_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_006_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_006_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_006_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1301,
+                "name": "卡卡羅",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_18_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_18_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kakaluo_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000006": {
+        "id": 80000006,
+        "name": "每日清茶",
+        "description": "提高隊伍中所有共鳴者800點生命上限，持續時間15分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050004,
+                "name": "茶葉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A09_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A09_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A09_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42310030,
+                "name": "夜息香",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_09A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_09A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_09A_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42310040,
+                "name": "鴛鴦花",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_10A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_10A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_10A_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_007_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_007_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_007_UI.png"
+        },
+        "resonator": []
+    },
+    "80000008": {
+        "id": 80000008,
+        "name": "清芬茶",
+        "description": "提高隊伍中所有共鳴者25%生命上限，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050004,
+                "name": "茶葉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A09_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A09_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A09_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42310060,
+                "name": "清芬草",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_07A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_07A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_07A_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050003,
+                "name": "糖",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A08_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A08_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A08_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_009_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_009_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_009_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1303,
+                "name": "淵武",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_15_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_15_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yuanwu_UI.png"
+                },
+                "rarity": {
+                    "id": 4,
+                    "name": "四星",
+                    "consumeText": "四星及以下道具",
+                    "color": "#E400F0FF",
+                    "stars": "四星"
+                }
+            }
+        ]
+    },
+    "80000009": {
+        "id": 80000009,
+        "name": "舒雲秘製涼茶",
+        "description": "提高隊伍中所有共鳴者12%攻擊力和10%暴擊率，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050004,
+                "name": "茶葉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A09_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A09_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A09_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42310040,
+                "name": "鴛鴦花",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_10A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_10A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_10A_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42310010,
+                "name": "珍珠草",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_06A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_06A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_06A_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 42300110,
+                "name": "金鈴子",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_32A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconRup160/T_IconRup160_SM_Gat_32A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconRup80/T_IconRup80_SM_Gat_32A_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_010_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_010_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_010_UI.png"
+        },
+        "resonator": []
+    },
+    "80000010": {
+        "id": 80000010,
+        "name": "香汁雞",
+        "description": "减少隊伍中指定共鳴者15%鉤索冷卻時間，持續時間15分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42400010,
+                "name": "禽肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_29A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_29A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_29A_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42310070,
+                "name": "香檸草",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_25A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_25A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_25A_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42310030,
+                "name": "夜息香",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_09A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_09A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_09A_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_011_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_011_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_011_UI.png"
+        },
+        "resonator": []
+    },
+    "80000011": {
+        "id": 80000011,
+        "name": "辛香肉片",
+        "description": "提高隊伍中所有共鳴者25%攻擊力，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42400030,
+                "name": "獸肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050002,
+                "name": "辣椒",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A07_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A07_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A07_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 42310030,
+                "name": "夜息香",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_09A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_09A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_09A_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42310050,
+                "name": "香蘇",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_01B_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_01B_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_01B_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_012_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_012_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_012_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1504,
+                "name": "燈燈",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_30_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_30_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_dengdeng_UI.png"
+                },
+                "rarity": {
+                    "id": 4,
+                    "name": "四星",
+                    "consumeText": "四星及以下道具",
+                    "color": "#E400F0FF",
+                    "stars": "四星"
+                }
+            }
+        ]
+    },
+    "80000012": {
+        "id": 80000012,
+        "name": "小龍包",
+        "description": "提高隊伍中所有共鳴者25%防禦力，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 80050005,
+                "name": "牛奶",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A10_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A10_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A10_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42600010,
+                "name": "鳥蛋",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_niaodan_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_niaodan_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_niaodan_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80050003,
+                "name": "糖",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A08_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A08_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A08_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_013_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_013_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_013_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1102,
+                "name": "散華",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_7_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_7_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_shanhua_UI.png"
+                },
+                "rarity": {
+                    "id": 4,
+                    "name": "四星",
+                    "consumeText": "四星及以下道具",
+                    "color": "#E400F0FF",
+                    "stars": "四星"
+                }
+            }
+        ]
+    },
+    "80000013": {
+        "id": 80000013,
+        "name": "鐵鏟花蕈",
+        "description": "提高隊伍中所有共鳴者16%暴擊率，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42310180,
+                "name": "花蕈",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_15A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_15A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_15A_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050001,
+                "name": "食用油",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A06_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A06_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A06_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050002,
+                "name": "辣椒",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A07_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A07_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A07_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80050008,
+                "name": "鹽",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A13_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A13_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A13_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_014_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_014_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_014_UI.png"
+        },
+        "resonator": []
+    },
+    "80000014": {
+        "id": 80000014,
+        "name": "今州燴",
+        "description": "提高隊伍中所有共鳴者8%攻擊力和6%暴擊率，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42400030,
+                "name": "獸肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42310070,
+                "name": "香檸草",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_25A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_25A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_25A_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42310160,
+                "name": "傘下客",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_13A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_13A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_13A_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42600010,
+                "name": "鳥蛋",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_niaodan_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_niaodan_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_niaodan_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_015_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_015_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_015_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1404,
+                "name": "忌炎",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_11_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_11_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiyan_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000015": {
+        "id": 80000015,
+        "name": "拔絲菱果",
+        "description": "提高隊伍中所有共鳴者18%防禦力和15%生命上限，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42310110,
+                "name": "菱果",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Com_004_1_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Com_004_1_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Com_004_1_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050003,
+                "name": "糖",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A08_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A08_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A08_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42600010,
+                "name": "鳥蛋",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_niaodan_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_niaodan_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_niaodan_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_016_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_016_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_016_UI.png"
+        },
+        "resonator": []
+    },
+    "80000016": {
+        "id": 80000016,
+        "name": "潮餅",
+        "description": "提高隊伍中所有共鳴者30%攻擊力，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42600010,
+                "name": "鳥蛋",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_niaodan_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_niaodan_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_niaodan_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 80050003,
+                "name": "糖",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A08_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A08_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A08_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050001,
+                "name": "食用油",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A06_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A06_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A06_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_017_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_017_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_017_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1402,
+                "name": "秧秧",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_1_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_1_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yangyang_UI.png"
+                },
+                "rarity": {
+                    "id": 4,
+                    "name": "四星",
+                    "consumeText": "四星及以下道具",
+                    "color": "#E400F0FF",
+                    "stars": "四星"
+                }
+            }
+        ]
+    },
+    "80000017": {
+        "id": 80000017,
+        "name": "碎金飯",
+        "description": "減少隊伍中所有共鳴者20%疾跑、游泳耐力消耗，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050006,
+                "name": "米",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A11_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A11_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A11_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050001,
+                "name": "食用油",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A06_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A06_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A06_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 42600010,
+                "name": "鳥蛋",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_niaodan_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_niaodan_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_niaodan_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42310180,
+                "name": "花蕈",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_15A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_15A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_15A_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_018_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_018_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_018_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1302,
+                "name": "吟霖",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_17_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_17_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yinlin_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000019": {
+        "id": 80000019,
+        "name": "清芬魚湯",
+        "description": "恢復40點耐力。",
+        "items": [
+            {
+                "id": 42400120,
+                "name": "魚肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_yurou_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_yurou_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_yurou_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42310060,
+                "name": "清芬草",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_07A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_07A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_07A_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42310050,
+                "name": "香蘇",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_01B_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_01B_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_01B_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_020_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_020_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_020_UI.png"
+        },
+        "resonator": []
+    },
+    "80000020": {
+        "id": 80000020,
+        "name": "清葛粥",
+        "description": "提高隊伍中所有共鳴者22%暴擊率，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050007,
+                "name": "葛根",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A12_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A12_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A12_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 42310030,
+                "name": "夜息香",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_09A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_09A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_09A_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 42310040,
+                "name": "鴛鴦花",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_10A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_10A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_10A_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050006,
+                "name": "米",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A11_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A11_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A11_UI.png"
+                },
+                "count": 3
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_021_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_021_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_021_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1601,
+                "name": "桃祈",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_9_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_9_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_taohua_UI.png"
+                },
+                "rarity": {
+                    "id": 4,
+                    "name": "四星",
+                    "consumeText": "四星及以下道具",
+                    "color": "#E400F0FF",
+                    "stars": "四星"
+                }
+            }
+        ]
+    },
+    "80000021": {
+        "id": 80000021,
+        "name": "星星酥",
+        "description": "提高隊伍中所有共鳴者35%防禦力，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42400030,
+                "name": "獸肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 80050001,
+                "name": "食用油",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A06_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A06_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A06_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 80050002,
+                "name": "辣椒",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A07_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A07_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A07_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80050008,
+                "name": "鹽",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A13_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A13_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A13_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_022_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_022_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_022_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1203,
+                "name": "安可",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_8_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_8_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_anke_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000023": {
+        "id": 80000023,
+        "name": "冬雲菱果粥",
+        "description": "提高隊伍中所有共鳴者30%生命上限，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80020001,
+                "name": "清湯",
+                "rarity": {
+                    "id": 3,
+                    "name": "SSR",
+                    "color": "#DEA544FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A02_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A02_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A02_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42310110,
+                "name": "菱果",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Com_004_1_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Com_004_1_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Com_004_1_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80050008,
+                "name": "鹽",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A13_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A13_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A13_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42310040,
+                "name": "鴛鴦花",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_10A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_10A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_10A_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_024_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_024_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_024_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1405,
+                "name": "鑒心",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_23_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_23_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiexin_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000024": {
+        "id": 80000024,
+        "name": "脆皮燒鴿",
+        "description": "提高隊伍中所有共鳴者50%防禦力，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80020002,
+                "name": "滷汁",
+                "rarity": {
+                    "id": 2,
+                    "name": "SR",
+                    "color": "#C759C1FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A03_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A03_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A03_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42400010,
+                "name": "禽肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_29A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_29A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_29A_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 80050001,
+                "name": "食用油",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A06_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A06_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A06_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42310070,
+                "name": "香檸草",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_25A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_25A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_25A_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_025_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_025_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_025_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1204,
+                "name": "莫特斐",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_13_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_13_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_baer_UI.png"
+                },
+                "rarity": {
+                    "id": 4,
+                    "name": "四星",
+                    "consumeText": "四星及以下道具",
+                    "color": "#E400F0FF",
+                    "stars": "四星"
+                }
+            }
+        ]
+    },
+    "80000025": {
+        "id": 80000025,
+        "name": "今州冒菜",
+        "description": "提高隊伍中所有共鳴者28%暴擊率，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80020000,
+                "name": "火鍋底料",
+                "rarity": {
+                    "id": 4,
+                    "name": "SR",
+                    "color": "#C759C1FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A01_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A01_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A01_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42400030,
+                "name": "獸肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42310050,
+                "name": "香蘇",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_01B_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_01B_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_01B_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 42310180,
+                "name": "花蕈",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_15A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_15A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_15A_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_026_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_026_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_026_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1202,
+                "name": "熾霞",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_2_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_2_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_maxiaofang_UI.png"
+                },
+                "rarity": {
+                    "id": 4,
+                    "name": "四星",
+                    "consumeText": "四星及以下道具",
+                    "color": "#E400F0FF",
+                    "stars": "四星"
+                }
+            }
+        ]
+    },
+    "80000026": {
+        "id": 80000026,
+        "name": "龍抬頭",
+        "description": "提高隊伍中所有共鳴者40%生命上限，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80020003,
+                "name": "糖醋汁",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A15_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A15_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A15_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42400120,
+                "name": "魚肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_yurou_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_yurou_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_yurou_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 80050001,
+                "name": "食用油",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A06_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A06_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A06_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42310050,
+                "name": "香蘇",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_01B_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_01B_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_01B_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_027_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_027_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_027_UI.png"
+        },
+        "resonator": []
+    },
+    "80000029": {
+        "id": 80000029,
+        "name": "森棲鍋",
+        "description": "提高隊伍中所有共鳴者40%攻擊力，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80020000,
+                "name": "火鍋底料",
+                "rarity": {
+                    "id": 4,
+                    "name": "SR",
+                    "color": "#C759C1FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A01_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A01_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A01_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80020001,
+                "name": "清湯",
+                "rarity": {
+                    "id": 3,
+                    "name": "SSR",
+                    "color": "#DEA544FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A02_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A02_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A02_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42400030,
+                "name": "獸肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42300080,
+                "name": "雲芝",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_30A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconRup160/T_IconRup160_SM_Gat_30A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconRup80/T_IconRup80_SM_Gat_30A_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_030_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_030_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_030_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1503,
+                "name": "維里奈",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_3_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_3_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jueyuan_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000032": {
+        "id": 80000032,
+        "name": "喜凌茶",
+        "description": "提高隊伍中所有共鳴者12%防禦力和10%生命上限，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42310110,
+                "name": "菱果",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Com_004_1_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Com_004_1_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Com_004_1_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 42310040,
+                "name": "鴛鴦花",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_10A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_10A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_10A_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 42310070,
+                "name": "香檸草",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_25A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_25A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_25A_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_034_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_034_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_034_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1403,
+                "name": "秋水",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_12_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_12_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_qiushui_UI.png"
+                },
+                "rarity": {
+                    "id": 4,
+                    "name": "四星",
+                    "consumeText": "四星及以下道具",
+                    "color": "#E400F0FF",
+                    "stars": "四星"
+                }
+            }
+        ]
+    },
+    "80000033": {
+        "id": 80000033,
+        "name": "雪蓮酥",
+        "description": "提高隊伍中所有共鳴者32%暴擊傷害，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42310220,
+                "name": "銀雪蓮",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_031_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_031_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_031_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 80050003,
+                "name": "糖",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A08_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A08_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A08_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_038_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_038_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_038_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1304,
+                "name": "今汐",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_24_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_24_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jinxi_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000034": {
+        "id": 80000034,
+        "name": "雀翎辣肉",
+        "description": "提高隊伍中所有共鳴者20%共鳴效率，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42310200,
+                "name": "雀翎果",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_029_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_029_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_029_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42400030,
+                "name": "獸肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 80050001,
+                "name": "食用油",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A06_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A06_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A06_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_039_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_039_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_039_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1205,
+                "name": "長離",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_26_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_26_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_changli_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000007": {
+        "id": 80000007,
+        "name": "鹹奶茶",
+        "description": "在野外擊敗敵人時獲得的貝幣增加25%，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050004,
+                "name": "茶葉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A09_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A09_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A09_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 80050005,
+                "name": "牛奶",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A10_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A10_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A10_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 80050008,
+                "name": "鹽",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A13_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A13_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A13_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 80021006,
+                "name": "特級香油",
+                "rarity": {
+                    "id": 4,
+                    "name": "SR",
+                    "color": "#C759C1FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_YJ_037_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_YJ_037_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_YJ_037_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_008_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_008_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_008_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1603,
+                "name": "椿",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_29_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_29_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_chun_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000018": {
+        "id": 80000018,
+        "name": "香檸燉肉",
+        "description": "聲骸吸收機率提升20%，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42400030,
+                "name": "獸肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+                },
+                "count": 4
+            },
+            {
+                "id": 42310070,
+                "name": "香檸草",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_25A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_25A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_25A_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 80050008,
+                "name": "鹽",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A13_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A13_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A13_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80021006,
+                "name": "特級香油",
+                "rarity": {
+                    "id": 4,
+                    "name": "SR",
+                    "color": "#C759C1FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_YJ_037_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_YJ_037_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_YJ_037_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_019_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_019_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_019_UI.png"
+        },
+        "resonator": []
+    },
+    "80000022": {
+        "id": 80000022,
+        "name": "菱果炒鹽雀",
+        "description": "大世界中怪物素材掉落加成25%，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80020002,
+                "name": "滷汁",
+                "rarity": {
+                    "id": 2,
+                    "name": "SR",
+                    "color": "#C759C1FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A03_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A03_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A03_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42310110,
+                "name": "菱果",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Com_004_1_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Com_004_1_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Com_004_1_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 42400010,
+                "name": "禽肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_29A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_29A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_29A_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 80021006,
+                "name": "特級香油",
+                "rarity": {
+                    "id": 4,
+                    "name": "SR",
+                    "color": "#C759C1FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_YJ_037_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_YJ_037_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_YJ_037_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_023_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_023_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_023_UI.png"
+        },
+        "resonator": []
+    },
+    "80000027": {
+        "id": 80000027,
+        "name": "糖醋里肌",
+        "description": "聲骸吸收機率提升50%，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80020003,
+                "name": "糖醋汁",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A15_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A15_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A15_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42400030,
+                "name": "獸肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+                },
+                "count": 4
+            },
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 4
+            },
+            {
+                "id": 80021007,
+                "name": "金裝特級香油",
+                "rarity": {
+                    "id": 5,
+                    "name": "SSR",
+                    "color": "#DEA544FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_YJ_038_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_YJ_038_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_YJ_038_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_028_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_028_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_028_UI.png"
+        },
+        "resonator": []
+    },
+    "80000028": {
+        "id": 80000028,
+        "name": "油辣豆腐",
+        "description": "在野外擊敗敵人時獲得的貝幣增加50%，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80020000,
+                "name": "火鍋底料",
+                "rarity": {
+                    "id": 4,
+                    "name": "SR",
+                    "color": "#C759C1FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A01_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A01_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A01_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80020004,
+                "name": "豆腐",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A04_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A04_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A04_UI.png"
+                },
+                "count": 4
+            },
+            {
+                "id": 42400010,
+                "name": "禽肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_29A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_29A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_29A_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80021006,
+                "name": "特級香油",
+                "rarity": {
+                    "id": 4,
+                    "name": "SR",
+                    "color": "#C759C1FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_YJ_037_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_YJ_037_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_YJ_037_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_029_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_029_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_029_UI.png"
+        },
+        "resonator": []
+    },
+    "80000030": {
+        "id": 80000030,
+        "name": "釀肉豆腐",
+        "description": "大世界中怪物素材掉落加成50%，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80020001,
+                "name": "清湯",
+                "rarity": {
+                    "id": 3,
+                    "name": "SSR",
+                    "color": "#DEA544FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A02_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A02_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A02_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80020004,
+                "name": "豆腐",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A04_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A04_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A04_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 42400030,
+                "name": "獸肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+                },
+                "count": 4
+            },
+            {
+                "id": 80021006,
+                "name": "特級香油",
+                "rarity": {
+                    "id": 4,
+                    "name": "SR",
+                    "color": "#C759C1FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_YJ_037_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_YJ_037_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_YJ_037_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_031_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_031_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_031_UI.png"
+        },
+        "resonator": []
+    },
+    "80000035": {
+        "id": 80000035,
+        "name": "蛋餅",
+        "description": "提高隊伍中所有共鳴者6%攻擊力和10%共鳴效率，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42600010,
+                "name": "鳥蛋",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_niaodan_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_niaodan_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_niaodan_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80050001,
+                "name": "食用油",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A06_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A06_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A06_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_042_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_042_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_042_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1305,
+                "name": "相里要",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_25_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_25_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xiangliyao_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000036": {
+        "id": 80000036,
+        "name": "團圓餅",
+        "description": "恢復80點耐力。",
+        "items": [
+            {
+                "id": 42600010,
+                "name": "鳥蛋",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_niaodan_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_niaodan_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_niaodan_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42300010,
+                "name": "蓮實",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_021_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_021_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_021_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_Act_ChasingMoon06_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_Act_ChasingMoon06_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_Act_ChasingMoon06_UI.png"
+        },
+        "resonator": []
+    },
+    "80000037": {
+        "id": 80000037,
+        "name": "月釀圓子",
+        "description": "提高隊伍中所有共鳴者1000點生命上限，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42310070,
+                "name": "香檸草",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_25A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_25A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_25A_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80050003,
+                "name": "糖",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A08_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A08_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A08_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_046_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_046_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_046_UI.png"
+        },
+        "resonator": []
+    },
+    "80000038": {
+        "id": 80000038,
+        "name": "鄉月飲",
+        "description": "提高隊伍中所有共鳴者20%共鳴效率，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42310010,
+                "name": "珍珠草",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_06A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_06A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_06A_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42310040,
+                "name": "鴛鴦花",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_10A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_10A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_10A_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_045_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_045_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_045_UI.png"
+        },
+        "resonator": []
+    },
+    "80000039": {
+        "id": 80000039,
+        "name": "海岸濃湯",
+        "description": "提高隊伍中所有共鳴者10%防禦力和20%生命上限，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42400120,
+                "name": "魚肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_yurou_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_yurou_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_yurou_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 42310240,
+                "name": "偽貝母",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_085_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconTask160/T_IconTask160_Task_085_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconTask80/T_IconTask80_Task_085_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050005,
+                "name": "牛奶",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A10_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A10_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A10_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 80050008,
+                "name": "鹽",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A13_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A13_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A13_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_047_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_047_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_047_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1505,
+                "name": "守岸人",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_28_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_28_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_shouanren_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000040": {
+        "id": 80000040,
+        "name": "鴛花餅",
+        "description": "提高隊伍中所有共鳴者8%攻擊力和12%暴擊傷害，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42310040,
+                "name": "鴛鴦花",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_10A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_10A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_10A_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050003,
+                "name": "糖",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A08_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A08_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A08_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80050001,
+                "name": "食用油",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A06_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A06_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A06_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_049_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_049_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_049_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1106,
+                "name": "釉瑚",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_31_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_31_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_youhu_UI.png"
+                },
+                "rarity": {
+                    "id": 4,
+                    "name": "四星",
+                    "consumeText": "四星及以下道具",
+                    "color": "#E400F0FF",
+                    "stars": "四星"
+                }
+            }
+        ]
+    },
+    "80000041": {
+        "id": 80000041,
+        "name": "傳統窯爐披薩",
+        "description": "提高隊伍中所有共鳴者40%普攻傷害加成，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 42400030,
+                "name": "獸肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050001,
+                "name": "食用油",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A06_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A06_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A06_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_054_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_054_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_054_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1506,
+                "name": "菲比",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_45_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_45_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Feibi_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000042": {
+        "id": 80000042,
+        "name": "熱海皇梨披薩",
+        "description": "提高隊伍中所有共鳴者25%治療效果加成，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42601070,
+                "name": "毒萵裙藻",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_041_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_041_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_041_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80050001,
+                "name": "食用油",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A06_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A06_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A06_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_055_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_055_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_055_UI.png"
+        },
+        "resonator": []
+    },
+    "80000043": {
+        "id": 80000043,
+        "name": "三球冰淇淋",
+        "description": "減少隊伍中所有共鳴者15%翱翔耐力消耗，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050005,
+                "name": "牛奶",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A10_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A10_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A10_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 42600010,
+                "name": "鳥蛋",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_niaodan_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_niaodan_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_niaodan_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050003,
+                "name": "糖",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A08_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A08_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A08_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_064_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_064_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_064_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1606,
+                "name": "洛可可",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_33_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_33_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_luokeke_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000044": {
+        "id": 80000044,
+        "name": "雲凝肉醬燴麵",
+        "description": "減少隊伍中所有共鳴者30%疾跑、游泳耐力消耗，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42601090,
+                "name": "雲凝乳香",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_037_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_037_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_037_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 4
+            },
+            {
+                "id": 42400030,
+                "name": "獸肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+                },
+                "count": 3
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_065_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_065_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_065_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1507,
+                "name": "贊妮",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_38_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_38_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zanni_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000045": {
+        "id": 80000045,
+        "name": "拉古那濃縮咖啡",
+        "description": "減少隊伍中所有共鳴者10%翱翔耐力消耗，持續時間15分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42601110,
+                "name": "青枝果",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_038_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_038_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_038_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80050005,
+                "name": "牛奶",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A10_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A10_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A10_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_060_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_060_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_060_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1107,
+                "name": "珂萊塔",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_32_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_32_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kelaita_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000046": {
+        "id": 80000046,
+        "name": "瑪格烈特牛排",
+        "description": "提高隊伍中所有共鳴者40%共鳴解放傷害加成，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42400030,
+                "name": "獸肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+                },
+                "count": 4
+            },
+            {
+                "id": 42601130,
+                "name": "垂青橄欖",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_042_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_042_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_042_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_061_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_061_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_061_UI.png"
+        },
+        "resonator": []
+    },
+    "80000047": {
+        "id": 80000047,
+        "name": "青枝月桂沙拉",
+        "description": "提高隊伍中所有共鳴者30%治療效果加成，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42601110,
+                "name": "青枝果",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_038_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_038_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_038_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42601010,
+                "name": "桂葉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_048_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_048_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_048_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42601130,
+                "name": "垂青橄欖",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_042_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_042_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_042_UI.png"
+                },
+                "count": 3
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_058_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_058_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_058_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1409,
+                "name": "卡提希婭",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_40_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_40_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_katixiya_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000048": {
+        "id": 80000048,
+        "name": "蜜露果酒",
+        "description": "提高隊伍中所有共鳴者15%治療效果加成，持續時間15分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42601100,
+                "name": "日冕菊",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_036_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_036_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_036_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050003,
+                "name": "糖",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A08_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A08_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A08_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_063_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_063_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_063_UI.png"
+        },
+        "resonator": []
+    },
+    "80000049": {
+        "id": 80000049,
+        "name": "每日一樣帕尼尼",
+        "description": "提高隊伍中所有共鳴者25%共鳴效率，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42400030,
+                "name": "獸肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 42601070,
+                "name": "毒萵裙藻",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_041_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_041_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_041_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_062_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_062_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_062_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1607,
+                "name": "坎特蕾拉",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_34_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_34_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kanteleila_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000050": {
+        "id": 80000050,
+        "name": "怪味鐺鐺蟹",
+        "description": "提高隊伍中所有共鳴者22%攻擊和12%暴擊，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42601080,
+                "name": "鐺鐺蟹",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_040_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_040_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_040_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42400120,
+                "name": "魚肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_yurou_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_yurou_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_yurou_UI.png"
+                },
+                "count": 4
+            },
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 5
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_056_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_056_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_056_UI.png"
+        },
+        "resonator": []
+    },
+    "80000051": {
+        "id": 80000051,
+        "name": "棍子麵包",
+        "description": "提高隊伍中所有共鳴者5%治療效果加成和10%生命上限，持續時間15分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050005,
+                "name": "牛奶",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A10_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A10_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A10_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_057_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_057_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_057_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1407,
+                "name": "夏空",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_37_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_37_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xiakong_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000052": {
+        "id": 80000052,
+        "name": "劇團烈度",
+        "description": "提高隊伍中所有共鳴者25%重擊傷害加成，持續時間15分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42310090,
+                "name": "水燈花",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_01A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_01A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_01A_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050003,
+                "name": "糖",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A08_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A08_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A08_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_059_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_059_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_059_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1206,
+                "name": "布蘭特",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_44_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_44_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Bulante_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000053": {
+        "id": 80000053,
+        "name": "大滿貫披薩",
+        "description": "提高隊伍中所有共鳴者50%共鳴技能傷害加成，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050005,
+                "name": "牛奶",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A10_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A10_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A10_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 42601030,
+                "name": "動物油",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_050_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_050_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_050_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42400030,
+                "name": "獸肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_068_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_068_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_068_UI.png"
+        },
+        "resonator": []
+    },
+    "80000054": {
+        "id": 80000054,
+        "name": "怪味「當當」蟹",
+        "description": "提高隊伍中所有共鳴者22%攻擊和24%暴擊傷害，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42601080,
+                "name": "鐺鐺蟹",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_040_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_040_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_040_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42400120,
+                "name": "魚肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_yurou_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_yurou_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_yurou_UI.png"
+                },
+                "count": 4
+            },
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 4
+            },
+            {
+                "id": 80020003,
+                "name": "糖醋汁",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A15_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A15_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A15_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_071_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_071_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_071_UI.png"
+        },
+        "resonator": []
+    },
+    "80000055": {
+        "id": 80000055,
+        "name": "酒燉章魚蛤",
+        "description": "提高隊伍中所有共鳴者30%生命上限，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050006,
+                "name": "米",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A11_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A11_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A11_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42400120,
+                "name": "魚肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_yurou_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_yurou_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_yurou_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42310240,
+                "name": "偽貝母",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_085_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconTask160/T_IconTask160_Task_085_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconTask80/T_IconTask80_Task_085_UI.png"
+                },
+                "count": 3
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_072_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_072_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_072_UI.png"
+        },
+        "resonator": []
+    },
+    "80000056": {
+        "id": 80000056,
+        "name": "黎喬利鹽焗魚",
+        "description": "提高隊伍中所有共鳴者35%防禦，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050008,
+                "name": "鹽",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A13_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A13_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A13_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42400120,
+                "name": "魚肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_yurou_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_yurou_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_yurou_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42601010,
+                "name": "桂葉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_048_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_048_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_048_UI.png"
+                },
+                "count": 3
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_073_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_073_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_073_UI.png"
+        },
+        "resonator": []
+    },
+    "80000057": {
+        "id": 80000057,
+        "name": "櫟木蜜餅",
+        "description": "減少隊伍中所有共鳴者10%翱翔耐力消耗，持續時間15分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42601200,
+                "name": "櫟木果",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_limuguo_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_limuguo_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_limuguo_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 42600010,
+                "name": "鳥蛋",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_niaodan_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_niaodan_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_niaodan_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80050003,
+                "name": "糖",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A08_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A08_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A08_UI.png"
+                },
+                "count": 1
+            },
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 1
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_081_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_081_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_081_UI.png"
+        },
+        "resonator": []
+    },
+    "80000058": {
+        "id": 80000058,
+        "name": "沙丁布卡",
+        "description": "提高隊伍中所有共鳴者40%共鳴解放傷害加成，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42601230,
+                "name": "血葉莢蒾",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_xueyejiami_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_xueyejiami_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_xueyejiami_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 42400030,
+                "name": "獸肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 42310170,
+                "name": "龍銜珠",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_14A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_14A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_14A_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_083_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_083_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_083_UI.png"
+        },
+        "resonator": []
+    },
+    "80000059": {
+        "id": 80000059,
+        "name": "榮耀烤肉套餐",
+        "description": "提高隊伍中所有共鳴者50%治療效果加成，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42400030,
+                "name": "獸肉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_Sep_071_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_Sep_071_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_Sep_071_UI.png"
+                },
+                "count": 6
+            },
+            {
+                "id": 42601220,
+                "name": "扁竹花",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_bianzhuhua_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_bianzhuhua_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_bianzhuhua_UI.png"
+                },
+                "count": 4
+            },
+            {
+                "id": 80050001,
+                "name": "食用油",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A06_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A06_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A06_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_082_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_082_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_082_UI.png"
+        },
+        "resonator": []
+    },
+    "80000060": {
+        "id": 80000060,
+        "name": "特濃奶昔刨冰",
+        "description": "提高隊伍中所有共鳴者25%治療效果加成，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42310070,
+                "name": "香檸草",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_SM_Gat_25A_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_SM_Gat_25A_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_SM_Gat_25A_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050005,
+                "name": "牛奶",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A10_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A10_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A10_UI.png"
+                },
+                "count": 2
+            },
+            {
+                "id": 80050003,
+                "name": "糖",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A08_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A08_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A08_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_084_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_084_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_084_UI.png"
+        },
+        "resonator": []
+    },
+    "80000061": {
+        "id": 80000061,
+        "name": "「烈日」",
+        "description": "提高隊伍中所有共鳴者30%共鳴效率，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 80050003,
+                "name": "糖",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A08_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A08_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A08_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 42601110,
+                "name": "青枝果",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_038_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_038_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_038_UI.png"
+                },
+                "count": 6
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_086_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_086_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_086_UI.png"
+        },
+        "resonator": [
+            {
+                "id": 1207,
+                "name": "露帕",
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_46_UI.png",
+                    "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_46_UI.png",
+                    "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_lupa_UI.png"
+                },
+                "rarity": {
+                    "id": 5,
+                    "name": "五星",
+                    "consumeText": "不限",
+                    "color": "#CFB17F",
+                    "stars": "五星"
+                }
+            }
+        ]
+    },
+    "80000062": {
+        "id": 80000062,
+        "name": "扁竹花花片",
+        "description": "提高隊伍中所有共鳴者25%攻擊，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42601220,
+                "name": "扁竹花",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_bianzhuhua_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_bianzhuhua_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_bianzhuhua_UI.png"
+                },
+                "count": 4
+            },
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_079_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_079_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_079_UI.png"
+        },
+        "resonator": []
+    },
+    "80000063": {
+        "id": 80000063,
+        "name": "鹽海爆爆康",
+        "description": "提高隊伍中所有共鳴者10%治療效果加成和20%生命上限，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42601210,
+                "name": "鹽海珀",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_yanhaipo_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_yanhaipo_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_yanhaipo_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 80050005,
+                "name": "牛奶",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A10_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A10_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A10_UI.png"
+                },
+                "count": 3
+            },
+            {
+                "id": 80050000,
+                "name": "麵粉",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A05_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A05_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A05_UI.png"
+                },
+                "count": 3
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_085_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_085_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_085_UI.png"
+        },
+        "resonator": []
+    },
+    "80000064": {
+        "id": 80000064,
+        "name": "快樂夥伴",
+        "description": "提高隊伍中所有共鳴者30%重擊傷害加成，持續時間30分鐘，在多人遊戲中僅對自己的角色生效。",
+        "items": [
+            {
+                "id": 42601230,
+                "name": "血葉莢蒾",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_xueyejiami_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_xueyejiami_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_xueyejiami_UI.png"
+                },
+                "count": 4
+            },
+            {
+                "id": 80050003,
+                "name": "糖",
+                "rarity": {
+                    "id": 1,
+                    "name": "R",
+                    "color": "#5A73C7FF"
+                },
+                "icon": {
+                    "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_A08_UI.png",
+                    "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_A08_UI.png",
+                    "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_A08_UI.png"
+                },
+                "count": 2
+            }
+        ],
+        "rarity": {
+            "id": 1,
+            "name": "R",
+            "color": "#5A73C7FF"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconCook/T_IconCook_080_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCook160/T_IconCook160_080_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconCook80/T_IconCook80_080_UI.png"
+        },
+        "resonator": []
+    }
+}

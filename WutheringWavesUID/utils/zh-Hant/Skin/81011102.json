@@ -1,0 +1,35 @@
+{
+    "id": 81011102,
+    "resonatorId": 1102,
+    "headId": 82011102,
+    "weaponSkinId": 0,
+    "name": "散華",
+    "rarity": {
+        "id": 4,
+        "name": "四星",
+        "consumeText": "四星及以下道具",
+        "color": "#E400F0FF",
+        "stars": "四星"
+    },
+    "nameDescription": "散華-高級訂製",
+    "typeDescription": "角色服飾",
+    "attributesDescription": "獲得後可以解鎖相應角色的服飾，使角色獲得不同的外觀。",
+    "description": "鶴髮赤目，雪衣玄裳，面魌而執寒刃，持念咒誥，喑嗚叱吒，驚驅疫厲，諸惡皆除。",
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_7_a_UI.png",
+        "iconM": "/d/GameData/UIResources/UiShop/Image/Skin/Role/T_ShopRoleSkinSanhua.png",
+        "iconS ": null,
+        "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_7_a_UI.png",
+        "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_7_a_UI.png",
+        "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_7_a.png",
+        "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_7_a_UI.png",
+        "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_7_a_UI.png",
+        "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinSanhua1.png",
+        "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_shanhua2_UI.png"
+    },
+    "color": {
+        "weapon": "#78cdda",
+        "color1": "#78cdda",
+        "color2": "#a0f6cd"
+    }
+}

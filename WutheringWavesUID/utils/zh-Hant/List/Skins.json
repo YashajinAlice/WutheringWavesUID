@@ -1,0 +1,1292 @@
+{
+    "81001402": {
+        "id": 81001402,
+        "resonatorId": 1402,
+        "headId": 82001402,
+        "name": "秧秧",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_1_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_1_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_1.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_1_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_1_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinYangyang.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yangyang_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001202": {
+        "id": 81001202,
+        "resonatorId": 1202,
+        "headId": 82001202,
+        "name": "熾霞",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_2_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_2_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_2.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_2_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_2_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinZhixia.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_maxiaofang_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001503": {
+        "id": 81001503,
+        "resonatorId": 1503,
+        "headId": 82001503,
+        "name": "維里奈",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_3_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_3_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_3.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_3_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_3_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinWeilinai.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jueyuan_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001501": {
+        "id": 81001501,
+        "resonatorId": 1501,
+        "headId": 82001501,
+        "name": "漂泊者·衍射",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_4_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_4_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_4.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_4_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_4_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinMale.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81011102": {
+        "id": 81011102,
+        "resonatorId": 1102,
+        "headId": 82011102,
+        "name": "散華",
+        "rarity": {
+            "id": 4,
+            "name": "四星",
+            "consumeText": "四星及以下道具",
+            "color": "#E400F0FF",
+            "stars": "四星"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_7_a_UI.png",
+            "iconM": "/d/GameData/UIResources/UiShop/Image/Skin/Role/T_ShopRoleSkinSanhua.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_7_a_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_7_a_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_7_a.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_7_a_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_7_a_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinSanhua1.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_shanhua2_UI.png"
+        },
+        "color": {
+            "weapon": "#78cdda",
+            "color1": "#78cdda",
+            "color2": "#a0f6cd"
+        }
+    },
+    "81001102": {
+        "id": 81001102,
+        "resonatorId": 1102,
+        "headId": 82001102,
+        "name": "散華",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_7_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_7_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_7.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_7_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_7_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinSanhua.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_shanhua_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001601": {
+        "id": 81001601,
+        "resonatorId": 1601,
+        "headId": 82001601,
+        "name": "桃祈",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_9_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_9_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_9.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_9_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_9_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinTaoqi.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_taohua_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001502": {
+        "id": 81001502,
+        "resonatorId": 1502,
+        "headId": 82001502,
+        "name": "漂泊者·衍射",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_5_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_5_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_5.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_5_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_5_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinFemale.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujue_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001103": {
+        "id": 81001103,
+        "resonatorId": 1103,
+        "headId": 82001103,
+        "name": "白芷",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_6_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_6_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_6.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_6_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_6_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinBailian.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_bailian_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001203": {
+        "id": 81001203,
+        "resonatorId": 1203,
+        "headId": 82001203,
+        "name": "安可",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_8_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_8_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_8.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_8_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_8_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinAnke.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_anke_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001602": {
+        "id": 81001602,
+        "resonatorId": 1602,
+        "headId": 82001602,
+        "name": "丹瑾",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_10_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_10_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_10.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_10_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_10_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinDanjin.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_micai_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001403": {
+        "id": 81001403,
+        "resonatorId": 1403,
+        "headId": 82001403,
+        "name": "秋水",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_12_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_12_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_12.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_12_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_12_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinQiushui.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_qiushui_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001404": {
+        "id": 81001404,
+        "resonatorId": 1404,
+        "headId": 82001404,
+        "name": "忌炎",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_11_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_11_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_11.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_11_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_11_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiyan_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001204": {
+        "id": 81001204,
+        "resonatorId": 1204,
+        "headId": 82001204,
+        "name": "莫特斐",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_13_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_13_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_13.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_13_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_13_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinMotefei.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_baer_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001603": {
+        "id": 81001603,
+        "resonatorId": 1603,
+        "headId": 82001603,
+        "name": "椿",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_29_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_29_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_29_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_29_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_29_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinChun.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_chun_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001301": {
+        "id": 81001301,
+        "resonatorId": 1301,
+        "headId": 82001301,
+        "name": "卡卡羅",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_18_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_18_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_18.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_18_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_18_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinKakaluo.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kakaluo_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001302": {
+        "id": 81001302,
+        "resonatorId": 1302,
+        "headId": 82001302,
+        "name": "吟霖",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_17_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_17_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_17.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_17_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_17_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinYinlin.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yinlin_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001104": {
+        "id": 81001104,
+        "resonatorId": 1104,
+        "headId": 82001104,
+        "name": "凌陽",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_14_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_14_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_14.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_14_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_14_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinLingyan.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_lingyang_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001303": {
+        "id": 81001303,
+        "resonatorId": 1303,
+        "headId": 82001303,
+        "name": "淵武",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_15_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_15_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_15.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_15_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_15_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinYuanwu.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yuanwu_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001604": {
+        "id": 81001604,
+        "resonatorId": 1604,
+        "headId": 82001604,
+        "name": "漂泊者·湮滅",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_5_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_5_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_5.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_5_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_5_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinFemale.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujue_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001605": {
+        "id": 81001605,
+        "resonatorId": 1605,
+        "headId": 82001605,
+        "name": "漂泊者·湮滅",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_4_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_4_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_4.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_4_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_4_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinMale.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001405": {
+        "id": 81001405,
+        "resonatorId": 1405,
+        "headId": 82001405,
+        "name": "鑒心",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_23_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_23_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_23_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_23_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_23_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJianxin.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiexin_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81011304": {
+        "id": 81011304,
+        "resonatorId": 1304,
+        "headId": 82011304,
+        "name": "今汐",
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_24_a_UI.png",
+            "iconM": "/d/GameData/UIResources/UiShop/Image/Skin/Role/T_ShopRoleSkinJinxi.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_24_a_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_24_a_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_24_a_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_24_a_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_24_a_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJinxi1.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jinxi2_UI.png"
+        },
+        "color": {
+            "weapon": "#e89da1",
+            "color1": "#9996cd",
+            "color2": "#9188c1"
+        }
+    },
+    "81001304": {
+        "id": 81001304,
+        "resonatorId": 1304,
+        "headId": 82001304,
+        "name": "今汐",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_24_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_24_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_24_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_24_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_24_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJinxi.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jinxi_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001305": {
+        "id": 81001305,
+        "resonatorId": 1305,
+        "headId": 82001305,
+        "name": "相里要",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_25_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_25_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_25_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_25_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_25_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinXiangliyao.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xiangliyao_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001205": {
+        "id": 81001205,
+        "resonatorId": 1205,
+        "headId": 82001205,
+        "name": "長離",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_26_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_26_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_26_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_26_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_26_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinChangli.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_changli_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81011205": {
+        "id": 81011205,
+        "resonatorId": 1205,
+        "headId": 82011205,
+        "name": "長離",
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_26_a_UI.png",
+            "iconM": "/d/GameData/UIResources/UiShop/Image/Skin/Role/T_ShopRoleSkinChangli.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_26_a_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_26_a_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_26_a_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_26_a_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_26_a_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinChangli1.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Changli2_UI.png"
+        },
+        "color": {
+            "weapon": "#e89da1",
+            "color1": "#e4cdd2",
+            "color2": "#d38daa"
+        }
+    },
+    "81001105": {
+        "id": 81001105,
+        "resonatorId": 1105,
+        "headId": 82001105,
+        "name": "折枝",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_27_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_27_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_27_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_27_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_27_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinZhezhi.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhezhi_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001504": {
+        "id": 81001504,
+        "resonatorId": 1504,
+        "headId": 82001504,
+        "name": "燈燈",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_30_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_30_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_30_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_30_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_30_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinDengdeng.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_dengdeng_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001106": {
+        "id": 81001106,
+        "resonatorId": 1106,
+        "headId": 82001106,
+        "name": "釉瑚",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_31_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_31_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_31_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_31_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_31_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinYouhu.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_youhu_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001505": {
+        "id": 81001505,
+        "resonatorId": 1505,
+        "headId": 82001505,
+        "name": "守岸人",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_28_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_28_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_28_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_28_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_28_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinShouanren.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_shouanren_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001606": {
+        "id": 81001606,
+        "resonatorId": 1606,
+        "headId": 82001606,
+        "name": "洛可可",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_33_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_33_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_33_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_33_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_33_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinLuokeke.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_luokeke_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001107": {
+        "id": 81001107,
+        "resonatorId": 1107,
+        "headId": 82001107,
+        "name": "珂萊塔",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_32_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_32_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_32_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_32_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_32_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinKelaita.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kelaita_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81011107": {
+        "id": 81011107,
+        "resonatorId": 1107,
+        "headId": 82011107,
+        "name": "珂萊塔",
+        "rarity": {
+            "id": 5,
+            "name": "五星",
+            "consumeText": "不限",
+            "color": "#CFB17F",
+            "stars": "五星"
+        },
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_32_a_UI.png",
+            "iconM": "/d/GameData/UIResources/UiShop/Image/Skin/Role/T_ShopRoleSkinKelaita.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_32_a_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_32_a_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_32_a_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_32_a_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_32_a_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinKelaita1.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Kelaita2_UI.png"
+        },
+        "color": {
+            "weapon": "#e89da1",
+            "color1": "#42a9ee",
+            "color2": "#51aabb"
+        }
+    },
+    "81001206": {
+        "id": 81001206,
+        "resonatorId": 1206,
+        "headId": 82001206,
+        "name": "布蘭特",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_44_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_44_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_44_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_44_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_44_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinBulante.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Bulante_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001506": {
+        "id": 81001506,
+        "resonatorId": 1506,
+        "headId": 82001506,
+        "name": "菲比",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_45_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_45_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_45_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_45_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_45_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinFeibi.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Feibi_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001406": {
+        "id": 81001406,
+        "resonatorId": 1406,
+        "headId": 82001406,
+        "name": "漂泊者·氣動",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_4_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_4_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_4.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_4_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_4_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinMale.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001607": {
+        "id": 81001607,
+        "resonatorId": 1607,
+        "headId": 82001607,
+        "name": "坎特蕾拉",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_34_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_34_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_34_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_34_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_34_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinKanteleila.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kanteleila_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001407": {
+        "id": 81001407,
+        "resonatorId": 1407,
+        "headId": 82001407,
+        "name": "夏空",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_37_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_37_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_37_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_37_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_37_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinXiakong.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xiakong_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001507": {
+        "id": 81001507,
+        "resonatorId": 1507,
+        "headId": 82001507,
+        "name": "贊妮",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_38_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_38_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_38_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_38_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_38_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinZanni.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zanni_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001408": {
+        "id": 81001408,
+        "resonatorId": 1408,
+        "headId": 82001408,
+        "name": "漂泊者·氣動",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_5_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_5_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_5.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_5_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_5_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinFemale.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujue_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001207": {
+        "id": 81001207,
+        "resonatorId": 1207,
+        "headId": 82001207,
+        "name": "露帕",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_46_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_46_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_46_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_46_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_46_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinLupa.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_lupa_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    },
+    "81001409": {
+        "id": 81001409,
+        "resonatorId": 1409,
+        "headId": 82001409,
+        "name": "卡提希婭",
+        "rarity": {
+            "id": 3,
+            "name": "三星",
+            "consumeText": "三星及以下道具",
+            "color": "#00B4FF",
+            "stars": "三星"
+        },
+        "icon": {
+            "icon": null,
+            "iconM": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinJiyan.png",
+            "iconS ": null,
+            "iconRound": "/d/GameData/UIResources/Common/Image/IconRoleHeadCircle256/T_IconRoleHeadCircle256_40_UI.png",
+            "iconLarge": "/d/GameData/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_40_UI.png",
+            "iconBig": "/d/GameData/UIResources/Common/Image/IconRoleHead150/T_IconRoleHead150_40_UI.png",
+            "iconCard": "/d/GameData/UIResources/Common/Image/IconRoleHead175/T_IconRoleHead175_40_UI.png",
+            "iconHead": "/d/GameData/UIResources/Common/Image/IconRoleHead80/T_IconRoleHead80_40_UI.png",
+            "iconPreview": "/d/GameData/UIResources/Common/Image/Skin/T_RoleSkinKatixiya.png",
+            "banner": "/d/GameData/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_katixiya_UI.png"
+        },
+        "color": {
+            "weapon": null,
+            "color1": null,
+            "color2": null
+        }
+    }
+}

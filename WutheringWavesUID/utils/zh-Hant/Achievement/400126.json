@@ -1,0 +1,33 @@
+{
+    "id": 400126,
+    "name": "深夢影評人",
+    "description": "在「索拉電影節」中集齊1到3號影廳的所有結局。",
+    "hidden": false,
+    "level": 3,
+    "group": {
+        "id": 4001,
+        "name": "成長之路",
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconAchv256/T_IconAchv256_002.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconAchv/T_IconAchv_002.png",
+            "backgroundIcon": "/d/GameData/UIResources/UiAchievement/Image/T_AchievementBg3.png"
+        },
+        "category": {
+            "id": 4,
+            "name": "諸音聲軌",
+            "type": 1,
+            "spritePath": "/d/GameData/UIResources/Common/Atlas/TabIcon/SP_IconAchievement4.png",
+            "texturePath": "/d/GameData/UIResources/UiAchievement/Image/T_AchievementChengzhamg_UI.png"
+        }
+    },
+    "nextLevel": null,
+    "reward": {
+        "id": 3,
+        "icon": {
+            "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_zcpq_UI.png",
+            "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_zcpq_UI.png",
+            "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_zcpq_UI.png"
+        },
+        "value": 20
+    }
+}

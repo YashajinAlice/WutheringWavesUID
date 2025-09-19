@@ -1,0 +1,48 @@
+{
+    "id": 41400084,
+    "name": "群孽異核",
+    "bg": "潛藏於稷廷地下遺跡的巨大轟鳴種，是無數程式邏輯的龐大集合體。異構聲核層疊無序，一如機偶錯綜而龐雜的代碼。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconMout/T_IconMout_L_009_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconMout160/T_IconMout160_L_009_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconMout80/T_IconMout80_L_009_UI.png"
+    },
+    "showType": [
+        {
+            "id": 7,
+            "name": "共鳴者突破材料"
+        }
+    ],
+    "mainType": {
+        "id": 4,
+        "name": "資源",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag04.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jchumokuai_UI.png"
+        }
+    },
+    "handBook": {
+        "id": 41400084,
+        "type": {
+            "id": 4,
+            "description": "ItemHandBookType_4_Descrtption",
+            "icon": "/d/GameData/UIResources/UiArchive/Atlas/SP_ArchiveCailiao.png"
+        },
+        "title": "共鳴者突破材料"
+    },
+    "itemAccess": [
+        {
+            "id": 210000,
+            "description": "聚械機偶挑戰獲得"
+        },
+        {
+            "id": 210001,
+            "description": "聚械機偶-提前開放"
+        }
+    ]
+}

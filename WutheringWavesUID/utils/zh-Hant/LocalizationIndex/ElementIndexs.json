@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "冷凝",
+    "color": "#41AEFBFF",
+    "icons": {
+      "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementIce1_UI.png",
+      "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementIce1_UI.png",
+      "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce1.png",
+      "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce.png",
+      "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementIce1.png",
+      "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce1.png",
+      "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce2.png",
+      "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementIce3.png"
+    }
+  },
+  {
+    "id": 2,
+    "name": "熱熔",
+    "color": "#F0744EFF",
+    "icons": {
+      "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementFire1_UI.png",
+      "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementFire1_UI.png",
+      "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire1.png",
+      "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire.png",
+      "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementFire1.png",
+      "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire1.png",
+      "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire2.png",
+      "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementFire3.png"
+    }
+  },
+  {
+    "id": 3,
+    "name": "導電",
+    "color": "#B46BFFFF",
+    "icons": {
+      "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+      "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementThunder1_UI.png",
+      "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+      "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder.png",
+      "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementThunder1.png",
+      "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder1.png",
+      "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder2.png",
+      "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementThunder3.png"
+    }
+  },
+  {
+    "id": 5,
+    "name": "衍射",
+    "color": "#F8E56CFF",
+    "icons": {
+      "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+      "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementLight1_UI.png",
+      "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+      "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight.png",
+      "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementLight1.png",
+      "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight1.png",
+      "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight2.png",
+      "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementLight3.png"
+    }
+  },
+  {
+    "id": 4,
+    "name": "氣動",
+    "color": "#55FFB5FF",
+    "icons": {
+      "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+      "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementWind1_UI.png",
+      "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+      "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind.png",
+      "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementWind1.png",
+      "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind1.png",
+      "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind2.png",
+      "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementWind3.png"
+    }
+  },
+  {
+    "id": 6,
+    "name": "湮滅",
+    "color": "#E649A6FF",
+    "icons": {
+      "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementDark1_UI.png",
+      "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementDark1_UI.png",
+      "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark1.png",
+      "4": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark.png",
+      "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementDark1.png",
+      "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark1.png",
+      "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark2.png",
+      "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementDark3.png"
+    }
+  }
+]

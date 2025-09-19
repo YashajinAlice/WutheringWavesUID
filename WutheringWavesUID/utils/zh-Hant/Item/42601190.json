@@ -1,0 +1,36 @@
+{
+    "id": 42601190,
+    "name": "愚惑金",
+    "bg": "用途廣泛的淺銅色鐵礦，常被誤認作黃金，但也容易分辨。\n別有用心之人會將這種鐵礦打造為珠寶以混淆視聽，誘人上當受欺。\n誠然這種過時的騙術早已無人問津，但愚惑金的名字卻保留至今。",
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconC/T_IconC_047_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconC160/T_IconC160_047_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconC80/T_IconC80_047_UI.png"
+    },
+    "showType": [
+        {
+            "id": 46,
+            "name": "印造材料"
+        }
+    ],
+    "mainType": {
+        "id": 5,
+        "name": "素材",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag08.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jiguan_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": [
+        {
+            "id": 402001,
+            "description": "野外採集獲得"
+        }
+    ]
+}

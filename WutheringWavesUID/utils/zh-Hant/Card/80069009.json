@@ -1,0 +1,30 @@
+{
+    "id": 80069009,
+    "name": "團團團團轉",
+    "tips": "先約電臺寰宇特約專屬獎勵。",
+    "showInBag": false,
+    "description": {
+        "bg": "見證漂泊者旅途的印章，可展示給其他旅者。\n在漂泊者資料中可更換羈旅印章。",
+        "type": "羈旅印章",
+        "attributes": "有時大步流星，有時磕磕絆絆。調整呼吸，讓我們發揮得更好些。",
+        "obtainedShow": ""
+    },
+    "rarity": {
+        "id": 5,
+        "name": "五星",
+        "consumeText": "不限",
+        "color": "#CFB17F",
+        "stars": "五星"
+    },
+    "items": [
+        504000
+    ],
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconCard/T_IconCard256_41.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconCard160/T_IconCard160_41.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconCard80/T_IconCard80_41.png",
+        "longCardPath": "/d/GameData/UIResources/Common/Image/CardLong/T_CardLong41.png",
+        "cardPath": "/d/GameData/UIResources/Common/Image/Card/T_Card41.png",
+        "functionViewCardPath": "/d/GameData/UIResources/Common/Image/CardPolygon/T_CardPolygon_41.png"
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "id": 41400044,
+    "name": "怒號聲核",
+    "bg": "燎照之騎的聲核，被永不止息的盛怒之火包圍。狂暴的烈焰以無上的喧囂為燃料，誓要焚盡一切。",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconMout/T_IconMout_L_008_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconMout160/T_IconMout160_L_008_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconMout80/T_IconMout80_L_008_UI.png"
+    },
+    "showType": [
+        {
+            "id": 7,
+            "name": "共鳴者突破材料"
+        }
+    ],
+    "mainType": {
+        "id": 4,
+        "name": "資源",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag04.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Jchumokuai_UI.png"
+        }
+    },
+    "handBook": {
+        "id": 41400044,
+        "type": {
+            "id": 4,
+            "description": "ItemHandBookType_4_Descrtption",
+            "icon": "/d/GameData/UIResources/UiArchive/Atlas/SP_ArchiveCailiao.png"
+        },
+        "title": "共鳴者突破材料"
+    },
+    "itemAccess": [
+        {
+            "id": 206000,
+            "description": "燎照之騎挑戰獲得"
+        },
+        {
+            "id": 206001,
+            "description": "燎照之騎-提前開放"
+        }
+    ]
+}

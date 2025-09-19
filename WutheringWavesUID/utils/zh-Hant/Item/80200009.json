@@ -1,0 +1,31 @@
+{
+    "id": 80200009,
+    "name": "未解析的模組 Ⅱ",
+    "bg": "快取、待刪除注釋以及未正式化的測試內容集合體，通過解析可以獲得難辨真假的情報。\n「不是，這內容我都沒見過……不要啊，本王的驚喜！」",
+    "rarity": {
+        "id": 1,
+        "name": "R",
+        "color": "#5A73C7FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/ImgChipQuality/T_ChipQualityDGreen.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/ImgChipQuality/T_ChipQualityDGreen.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/ImgChipQuality/T_ChipQualityDGreen.png"
+    },
+    "showType": [
+        {
+            "id": 10,
+            "name": "消耗品"
+        }
+    ],
+    "mainType": {
+        "id": 7,
+        "name": "特殊",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag07.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Tongyong_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

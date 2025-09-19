@@ -1,0 +1,35 @@
+{
+    "id": 50030115,
+    "name": "未完型的奔狼燎原之焰",
+    "bg": "裂隙中的星火終將燎原……",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_shlb_16_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_shlb_16_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_shlb_16_UI.png"
+    },
+    "showType": [
+        {
+            "id": 41,
+            "name": "隨機聲骸道具"
+        },
+        {
+            "id": 16,
+            "name": "物資箱"
+        }
+    ],
+    "mainType": {
+        "id": 3,
+        "name": "聲骸",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag06.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Guaiwu_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

@@ -1,0 +1,31 @@
+{
+    "id": 70139328,
+    "name": "心火羽掛飾",
+    "bg": "共鳴能力爆發至極致時催生出的最為絢爛的火焰，經過日復一日、朝夕積累的苦修，被精准地凝練為躺在掌心的火羽，有著與其主人雙手相似的熨帖溫度，得之則永遠不會受到離火所傷，是只會贈予重要之人的禮物。",
+    "rarity": {
+        "id": 5,
+        "name": "SSR",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_074_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_074_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconTask/T_IconTask_Task_074_UI.png"
+    },
+    "showType": [
+        {
+            "id": 21,
+            "name": "任務道具"
+        }
+    ],
+    "mainType": {
+        "id": 6,
+        "name": "任務",
+        "icon": {
+            "icon": "/d/GameData/UIResources/UiInventory/Atlas/SP_InventoryIconPag03.png",
+            "iconFirstAchieve": "/d/GameData/UIResources/Common/Image/UiIconTips/T_IconTips_Renwu_UI.png"
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}

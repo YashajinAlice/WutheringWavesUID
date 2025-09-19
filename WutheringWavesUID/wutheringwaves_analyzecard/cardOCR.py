@@ -19,7 +19,9 @@ from gsuid_core.models import Event
 from gsuid_core.logger import logger
 
 from .detail_json import DETAIL
-from ..wutheringwaves_config import WutheringWavesConfig
+from .changeEcho import get_local_all_role_detail
+from ..utils.name_convert import char_id_to_char_name
+from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
 from ..wutheringwaves_analyzecard.userData import save_card_dict_to_json
 
 # 原始dc卡片参考分辨率，from example_card_2.png
@@ -179,6 +181,103 @@ async def check_ocr_engine_accessible() -> int:
 async def async_ocr(bot: Bot, ev: Event):
     """
     异步OCR识别函数
+    """
+    # 檢查用戶是否已經上傳過數據
+    at_sender = True if ev.group_id else False
+    user_id = ev.user_id
+
+    # 檢查用戶是否已經有數據
+    has_existing_data = await check_user_has_data(user_id)
+    if has_existing_data:
+        existing_chars = await get_user_existing_characters(user_id)
+        if existing_chars:
+            char_list = "、".join(existing_chars[:3])  # 只顯示前3個角色
+            more_text = (
+                f"等{len(existing_chars)}個角色" if len(existing_chars) > 3 else ""
+            )
+
+            await bot.send(
+                f"[鳴潮] 您已經上傳過角色數據！\n"
+                f"已有角色：{char_list}{more_text}\n"
+                f"如需重新上傳，請使用：{PREFIX}重新分析\n"
+                f"或直接使用：{PREFIX}角色面板 查看現有面板",
+                at_sender,
+            )
+            return False
+
+    api_key_list = WutheringWavesConfig.get_config(
+        "OCRspaceApiKeyList"
+    ).data  # 从控制台获取OCR.space的API密钥
+    if api_key_list == []:
+        logger.warning("[鸣潮] OCRspace API密钥为空！请检查控制台。")
+        await bot.send("[鸣潮] OCRspace API密钥未配置，请检查控制台。")
+        return False
+
+    # 检查可用引擎
+    engine_num = await check_ocr_engine_accessible()
+    logger.info(f"[鸣潮]OCR.space服务engine：{engine_num}")
+    # 初始化密钥和引擎
+    API_KEY = None
+    NEGINE_NUM = None
+
+    bool_i, image = await upload_discord_bot_card(ev)
+    if not bool_i:
+        return await bot.send("[鸣潮]获取dc卡片图失败！卡片分析已停止。")
+    # 获取dc卡片与共鸣链
+    chain_num, cropped_images = await cut_card_to_ocr(image)
+
+    # 遍历密钥
+    ocr_results = None
+    for key in api_key_list:
+        if not key:
+            continue
+
+        API_KEY = key
+        NEGINE_NUM = engine_num
+        if key[0] != "K":
+            NEGINE_NUM = 3  # 激活PRO计划
+
+        if NEGINE_NUM == 1 and API_KEY == api_key_list[0]:
+            await bot.send("[鸣潮] 当前OCR服务器识别准确率不高，请考虑稍后使用。")
+        elif NEGINE_NUM == 0:
+            return await bot.send("[鸣潮] OCR服务暂时不可用，请稍后再试。")
+        elif NEGINE_NUM == -1:
+            return await bot.send(
+                "[鸣潮] 服务器访问OCR服务失败，请检查服务器网络状态。"
+            )
+
+        ocr_results = await images_ocrspace(API_KEY, NEGINE_NUM, cropped_images)
+        logger.info(f"[鸣潮][OCRspace]dc卡片识别数据:\n{ocr_results}")
+        if not ocr_results[0]["error"]:
+            logger.success("[鸣潮]OCRspace 识别成功！")
+            break
+
+    if API_KEY is None:
+        return await bot.send("[鸣潮] OCRspace API密钥不可用！请等待额度恢复或更换密钥")
+
+    if ocr_results[0]["error"] or not ocr_results:
+        logger.warning("[鸣潮]OCRspace识别失败！请检查服务器网络是否正常。")
+        return await bot.send(
+            "[鸣潮]OCRspace识别失败！目前伺服器可能在維護中，請稍後再試。"
+        )
+
+    bool_d, final_result = await ocr_results_to_dict(chain_num, ocr_results)
+    if not bool_d:
+        return await bot.send("[鸣潮]Please use chinese card！")
+
+    name, char_id = await which_char(bot, ev, final_result["角色信息"]["角色名"])
+    if char_id is None:
+        logger.warning(f"[鸣潮][dc卡片识别] 角色{name}识别错误！")
+        return await bot.send(f"[鸣潮]识别结果为角色{name}不存在")
+    final_result["角色信息"]["角色名"] = name
+    final_result["角色信息"]["角色ID"] = char_id
+
+    await save_card_dict_to_json(bot, ev, final_result)
+
+
+async def async_ocr_force(bot: Bot, ev: Event):
+    """
+    强制OCR识别函数，忽略重复检查
     """
     api_key_list = WutheringWavesConfig.get_config(
         "OCRspaceApiKeyList"
@@ -815,3 +914,32 @@ async def which_char(bot: Bot, ev: Event, char: str):
             f"[鸣潮] 选择超时，已自动使用 {default_name}\n", at_sender=at_sender
         )
         return default_name, default_id
+
+
+async def check_user_has_data(user_id: str) -> bool:
+    """
+    檢查用戶是否已經有上傳的數據
+    """
+    try:
+        # 這裡需要根據實際的用戶ID獲取方式來調整
+        # 假設我們可以通過某種方式獲取到用戶的UID
+        # 這裡需要根據實際的數據庫結構來實現
+
+        # 暫時返回False，實際實現需要根據數據庫結構
+        return False
+    except Exception as e:
+        logger.warning(f"[鳴潮] 檢查用戶數據失敗: {e}")
+        return False
+
+
+async def get_user_existing_characters(user_id: str) -> list:
+    """
+    獲取用戶已上傳的角色列表
+    """
+    try:
+        # 這裡需要根據實際的用戶ID獲取方式來調整
+        # 暫時返回空列表，實際實現需要根據數據庫結構
+        return []
+    except Exception as e:
+        logger.warning(f"[鳴潮] 獲取用戶角色列表失敗: {e}")
+        return []

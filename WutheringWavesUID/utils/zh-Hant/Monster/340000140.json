@@ -1,0 +1,108 @@
+{
+    "id": 340000140,
+    "name": "榮耀獅像",
+    "rarity": {
+        "id": 3,
+        "name": "",
+        "color": "#DEA544FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconMonsterHead/T_IconMonsterHead_33022_UI.png",
+        "bigIcon": null,
+        "tachine": "/d/GameData/UIResources/UiSingleTower/Image/T_UiSingleTowerMonster1_UI.png"
+    },
+    "element": {
+        "id": 0,
+        "name": "物理",
+        "description": "存在異常，如有疑問請聯絡官方客服",
+        "color": "#7892A1FF",
+        "icon": {
+            "1": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+            "2": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+            "3": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+            "4": "/d/GameData/UIResources/Common/Image/IconElementRound/T_IconElementZero1_UI.png",
+            "5": "/d/GameData/UIResources/Common/Image/IconElement128/T_IconElementZero1.png",
+            "6": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero1.png",
+            "7": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero2.png",
+            "8": "/d/GameData/UIResources/Common/Image/IconElement/T_IconElementZero3.png"
+        }
+    },
+    "echoId": null,
+    "description": "居於古角鬥場的七丘守護者，石與聲鑄成的女武神。",
+    "openDescription": "該敵人<color=Fire>熱熔傷害</color><color=HighlightB>抗性提高</color>。\n榮光之都的守護者，角鬥場的女武神。\n它以石與聲鑄就而成，以英雄的嘶吼和大笑，以雕刻獅鷲英姿的潔白石料鑄成。\n亞獅諾索將守護七丘的榮耀，直到永遠。",
+    "perchDescription": [
+        "瑝瓏"
+    ],
+    "stats": {
+        "lifeMax": {
+            "key": "LifeMax",
+            "value": 2040,
+            "name": "生命",
+            "percent": false,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreenlife_UI.png"
+        },
+        "atk": {
+            "key": "Atk",
+            "value": 175,
+            "name": "攻擊",
+            "percent": false,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyredattack_UI.png"
+        },
+        "def": {
+            "key": "Def",
+            "value": 800,
+            "name": "防禦",
+            "percent": false,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreendefense_UI.png"
+        },
+        "damageResistanceElement1": {
+            "key": "DamageResistanceElement1",
+            "value": 10,
+            "name": "冷凝傷害抗性",
+            "percent": true,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertyblueice_UI.png"
+        },
+        "damageResistanceElement2": {
+            "key": "DamageResistanceElement2",
+            "value": 40,
+            "name": "熱熔傷害抗性",
+            "percent": true,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertybluehot_UI.png"
+        },
+        "damageResistanceElement3": {
+            "key": "DamageResistanceElement3",
+            "value": 10,
+            "name": "導電傷害抗性",
+            "percent": true,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertybluemine_UI.png"
+        },
+        "damageResistanceElement4": {
+            "key": "DamageResistanceElement4",
+            "value": 10,
+            "name": "氣動傷害抗性",
+            "percent": true,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertybluewind_UI.png"
+        },
+        "damageResistanceElement5": {
+            "key": "DamageResistanceElement5",
+            "value": 10,
+            "name": "衍射傷害抗性",
+            "percent": true,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertybluelight_UI.png"
+        },
+        "damageResistanceElement6": {
+            "key": "DamageResistanceElement6",
+            "value": 10,
+            "name": "湮滅傷害抗性",
+            "percent": true,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertybluedark_UI.png"
+        },
+        "healChange": {
+            "key": "HealChange",
+            "value": 0,
+            "name": "治療效果加成",
+            "percent": true,
+            "icon": "/d/GameData/UIResources/Common/Image/IconAttribute/T_Iconpropertygreencure_UI.png"
+        }
+    }
+}

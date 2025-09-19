@@ -1,0 +1,31 @@
+{
+    "id": 80130006,
+    "name": "聽潮之人",
+    "bg": "累計1期在「冥歌海墟·無盡湍淵」獲得SSS級評分",
+    "rarity": {
+        "id": 4,
+        "name": "SR",
+        "color": "#C759C1FF"
+    },
+    "icon": {
+        "icon": "/d/GameData/UIResources/Common/Image/IconA/T_IconA_Title_02_UI.png",
+        "iconMiddle": "/d/GameData/UIResources/Common/Image/IconA160/T_IconA160_Title_02_UI.png",
+        "iconSmall": "/d/GameData/UIResources/Common/Image/IconA80/T_IconA80_Title_02_UI.png"
+    },
+    "showType": [
+        {
+            "id": 51,
+            "name": "稱號"
+        }
+    ],
+    "mainType": {
+        "id": 0,
+        "name": "",
+        "icon": {
+            "icon": null,
+            "iconFirstAchieve": null
+        }
+    },
+    "handBook": {},
+    "itemAccess": []
+}
