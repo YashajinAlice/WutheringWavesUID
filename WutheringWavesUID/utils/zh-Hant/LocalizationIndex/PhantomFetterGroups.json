@@ -187,6 +187,17 @@
         "icon": "/d/GameData/UIResources/Common/Image/IconElementAttri/T_IconElementAttriFireUltimateSkill.png"
     },
     {
+        "id": 19,
+        "fetterMap": {
+            "2": 192,
+            "5": 195
+        },
+        "fetterGroupName": "失序彼岸之梦",
+        "fetterGroupDesc": "",
+        "fetterElementColor": "FFFFFF00",
+        "icon": "/d/GameData/UIResources/Common/Image/IconElementAttri/T_IconElementAttriFireUltimateSkill.png"
+    },
+    {
         "id": 20,
         "fetterMap": {
             "2": 200,
