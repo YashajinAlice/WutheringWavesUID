@@ -4,7 +4,6 @@ from typing import List, Union
 
 from gsuid_core.bot import Bot
 from gsuid_core.models import Event
-from gsuid_core.logger import logger
 from gsuid_core.utils.image.convert import convert_img
 from PIL import Image, ImageDraw, ImageFilter, ImageEnhance
 from gsuid_core.utils.image.image_tools import crop_center_img
@@ -17,12 +16,12 @@ from ..utils.util import async_func_lock
 from ..utils.database.models import WavesBind
 from ..utils.error_reply import WAVES_CODE_102
 from ..utils.imagetool import draw_pic_with_ring
-from ..utils.refresh_char_detail import refresh_char
 from ..utils.api.model import RoleDetailData, AccountBaseInfo
 from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
 from ..utils.char_info_utils import get_all_role_detail_info_list
 from ..utils.resource.constant import NAME_ALIAS, SPECIAL_CHAR_NAME
 from ..utils.expression_ctx import WavesCharRank, get_waves_char_rank
+from ..utils.refresh_char_detail import refresh_char, refresh_char_from_pcap
 from ..utils.fonts.waves_fonts import (
     waves_font_25,
     waves_font_26,
@@ -58,29 +57,47 @@ refresh_role_map = {
 }
 
 refresh_interval: int = WutheringWavesConfig.get_config("RefreshInterval").data
+refresh_intervalAll: int = WutheringWavesConfig.get_config("RefreshIntervalAll").data
 
 if refresh_interval > 0:
     timed_cache = TimedCache(timeout=refresh_interval, maxsize=10000)
 else:
     timed_cache = None
 
+if refresh_intervalAll > 0:
+    timed_cache_all = TimedCache(timeout=refresh_intervalAll, maxsize=10000)
+else:
+    timed_cache_all = None
 
-def can_refresh_card(user_id: str, uid: str) -> int:
+
+def can_refresh_card(user_id: str, uid: str, refresh_type: str | List[str]) -> int:
     """检查是否可以刷新角色面板"""
     key = f"{user_id}_{uid}"
-    if timed_cache:
-        now = int(time.time())
-        time_stamp = timed_cache.get(key)
-        if time_stamp and time_stamp > now:
-            return time_stamp - now
+    if refresh_type == "all":
+        if timed_cache_all:
+            now = int(time.time())
+            time_stamp = timed_cache_all.get(key)
+            if time_stamp and time_stamp > now:
+                return time_stamp - now
+    else:
+        if timed_cache:
+            now = int(time.time())
+            time_stamp = timed_cache.get(key)
+            if time_stamp and time_stamp > now:
+                return time_stamp - now
     return 0
 
 
-def set_cache_refresh_card(user_id: str, uid: str):
+def set_cache_refresh_card(user_id: str, uid: str, refresh_type: str | List[str]):
     """设置缓存"""
-    if timed_cache:
-        key = f"{user_id}_{uid}"
-        timed_cache.set(key, int(time.time()) + refresh_interval)
+    if refresh_type == "all":
+        if timed_cache_all:
+            key = f"{user_id}_{uid}"
+            timed_cache_all.set(key, int(time.time()) + refresh_intervalAll)
+    else:
+        if timed_cache:
+            key = f"{user_id}_{uid}"
+            timed_cache.set(key, int(time.time()) + refresh_interval)
 
 
 def get_refresh_interval_notify(time_stamp: int):
@@ -158,55 +175,39 @@ async def draw_refresh_char_detail_img(
     buttons: List[WavesButton],
     refresh_type: Union[str, List[str]] = "all",
 ):
-    time_stamp = can_refresh_card(user_id, uid)
-    if time_stamp > 0:
-        return get_refresh_interval_notify(time_stamp)
+    # 檢查是否有增強PCAP數據，如果有則允許國際服用戶使用
+    from ..wutheringwaves_pcap_enhanced.enhanced_pcap_processor import (
+        get_enhanced_data,
+    )
 
-    # 檢查是否有增強PCAP數據（國際服支援）
-    has_enhanced_data = False
-    try:
-        from ..wutheringwaves_pcap_enhanced.enhanced_pcap_processor import (
-            get_enhanced_data,
+    pcap_data = await get_enhanced_data(uid)
+
+    if pcap_data:
+        # 使用 pcap 數據刷新
+        waves_map = {"refresh_update": {}, "refresh_unchanged": {}}
+        waves_datas = await refresh_char_from_pcap(
+            ev,
+            uid,
+            user_id,
+            pcap_data,
+            waves_map=waves_map,
+            refresh_type=refresh_type,
+        )
+        if isinstance(waves_datas, str):
+            return waves_datas
+
+        from ..wutheringwaves_analyzecard.user_info_utils import (
+            get_user_detail_info,
         )
 
-        enhanced_data = await get_enhanced_data(uid)
-        has_enhanced_data = enhanced_data is not None
-        logger.info(
-            f"[鸣潮] 增強PCAP數據檢查: {uid} - {'有數據' if has_enhanced_data else '無數據'}"
-        )
-    except Exception as e:
-        logger.warning(f"[鸣潮] 檢查增強PCAP數據失敗: {e}")
+        account_info = await get_user_detail_info(uid)
 
-    # 如果是國際服且有增強數據，跳過API檢查
-    is_international = waves_api.is_net(uid)
-    if is_international and has_enhanced_data:
-        logger.info(f"[鸣潮] 國際服用戶使用增強PCAP數據，跳過API檢查: {uid}")
-        # 創建一個完整的帳戶信息對象（用於顯示）
-        from ..utils.api.model import AccountBaseInfo
-
-        account_info = AccountBaseInfo(
-            name=f"國際服用戶_{uid[-4:]}",
-            id=int(uid),
-            creatTime=1,  # 設置為整數以滿足 is_full 邏輯
-            activeDays=1,
-            level=1,
-            worldLevel=1,
-            roleNum=0,
-            bigCount=0,
-            smallCount=0,
-            achievementCount=0,
-            achievementStar=0,
-            boxList=[],
-            treasureBoxList=[],
-            weeklyInstCount=0,
-            weeklyInstCountLimit=3,
-            storeEnergy=240,
-            storeEnergyLimit=240,
-        )
+        # pcap 模式下設置為已登錄狀態
         self_ck = True
-        ck = "enhanced_pcap_data"  # 標記使用增強數據
     else:
-        # 標準API檢查流程
+        time_stamp = can_refresh_card(user_id, uid, refresh_type)
+        if time_stamp > 0:
+            return get_refresh_interval_notify(time_stamp)
         self_ck, ck = await waves_api.get_ck_result(uid, user_id, ev.bot_id)
         if not ck:
             return error_reply(WAVES_CODE_102)
@@ -215,42 +216,43 @@ async def draw_refresh_char_detail_img(
         if not account_info.success:
             return account_info.throw_msg()
         account_info = AccountBaseInfo.model_validate(account_info.data)
-    # 更新group id
-    await WavesBind.insert_waves_uid(
-        user_id, ev.bot_id, uid, ev.group_id, lenth_limit=9
-    )
-
-    waves_map = {"refresh_update": {}, "refresh_unchanged": {}}
-    if ev.command == "面板" or (is_international and has_enhanced_data):
-        # 對於面板命令或國際服增強數據，直接使用本地數據
-        all_waves_datas = await get_all_role_detail_info_list(uid)
-        if not all_waves_datas:
-            return "暂无面板数据"
-        waves_map = {
-            "refresh_update": {},
-            "refresh_unchanged": {
-                i.role.roleId: i.model_dump() for i in all_waves_datas
-            },
-        }
-    else:
-        # 標準刷新流程（需要API）
-        waves_datas = await refresh_char(
-            ev,
-            uid,
-            user_id,
-            ck,
-            waves_map=waves_map,
-            is_self_ck=self_ck,
-            refresh_type=refresh_type,
+        # 更新group id
+        await WavesBind.insert_waves_uid(
+            user_id, ev.bot_id, uid, ev.group_id, lenth_limit=9
         )
-        if isinstance(waves_datas, str):
-            return waves_datas
+
+        waves_map = {"refresh_update": {}, "refresh_unchanged": {}}
+        if ev.command == "面板":
+            all_waves_datas = await get_all_role_detail_info_list(uid)
+            if not all_waves_datas:
+                return "暂无面板数据"
+            waves_map = {
+                "refresh_update": {},
+                "refresh_unchanged": {
+                    i.role.roleId: i.model_dump() for i in all_waves_datas
+                },
+            }
+        else:
+            waves_datas = await refresh_char(
+                ev,
+                uid,
+                user_id,
+                ck,
+                waves_map=waves_map,
+                is_self_ck=self_ck,
+                refresh_type=refresh_type,
+            )
+            if isinstance(waves_datas, str):
+                return waves_datas
 
     role_detail_list = [
         RoleDetailData(**r)
         for key in ["refresh_update", "refresh_unchanged"]
         for r in waves_map[key].values()
     ]
+    from gsuid_core.logger import logger
+
+    logger.info(f"role_detail_list:{role_detail_list}")
 
     # 总角色个数
     role_len = len(role_detail_list)
@@ -345,30 +347,21 @@ async def draw_refresh_char_detail_img(
     img.paste(avatar, (25, 70), avatar)
     img.paste(avatar_ring, (35, 80), avatar_ring)
 
-    # 賬號基本信息，由於可能會沒有，放在一起
-    from ..wutheringwaves_analyzecard.user_info_utils import save_user_info
-
+    # 账号基本信息，由于可能会没有，放在一起
+    # 不再覆蓋用戶名稱，保持現有數據
     if account_info.is_full:
-        await save_user_info(
-            str(account_info.id),
-            account_info.name[:7],
-            account_info.level or 0,
-            account_info.worldLevel or 0,
-        )
         title_bar = Image.open(TEXT_PATH / "title_bar.png")
         title_bar_draw = ImageDraw.Draw(title_bar)
-        title_bar_draw.text((660, 125), "賬號等級", GREY, waves_font_26, "mm")
+        title_bar_draw.text((660, 125), "账号等级", GREY, waves_font_26, "mm")
         title_bar_draw.text(
             (660, 78), f"Lv.{account_info.level}", "white", waves_font_42, "mm"
         )
 
-        title_bar_draw.text((810, 125), "世界等級", GREY, waves_font_26, "mm")
+        title_bar_draw.text((810, 125), "世界等级", GREY, waves_font_26, "mm")
         title_bar_draw.text(
             (810, 78), f"Lv.{account_info.worldLevel}", "white", waves_font_42, "mm"
         )
         img.paste(title_bar, (-20, 70), title_bar)
-    else:
-        await save_user_info(str(account_info.id), account_info.name[:7])
 
     # bar
     refresh_bar = Image.open(TEXT_PATH / "refresh_bar.png")
@@ -385,7 +378,7 @@ async def draw_refresh_char_detail_img(
     )
     draw_text_with_shadow(
         refresh_bar_draw,
-        "登錄狀態:",
+        "登录状态:",
         1700,
         20,
         waves_font_40,
@@ -401,7 +394,7 @@ async def draw_refresh_char_detail_img(
     img.paste(refresh_bar, (0, 300), refresh_bar)
     img = add_footer(img, 600, 20)
     img = await convert_img(img)
-    set_cache_refresh_card(user_id, uid)
+    set_cache_refresh_card(user_id, uid, refresh_type)
     return img
 
 
@@ -445,189 +438,4 @@ async def draw_pic(char_rank: WavesCharRank, isUpdate=False):
         _x = 100 - int(43 * (name_len / 2))
         img.alpha_composite(refresh_yes, (_x, 270))
 
-    return img
-
-
-async def draw_analysis_record_img(
-    bot: Bot,
-    ev: Event,
-    user_id: str,
-    uid: str,
-    buttons: List[WavesButton],
-    refresh_type: Union[str, List[str]] = "all",
-):
-    """國際服版本的分析記錄面板"""
-    # 檢查是否為國際服
-    if not waves_api.is_net(uid):
-        return "此功能僅適用於國際服用戶"
-
-    # 獲取本地角色數據
-    from ..wutheringwaves_analyzecard.changeEcho import (
-        get_local_all_role_detail,
-    )
-
-    succ, role_data = await get_local_all_role_detail(uid)
-    if not succ or not role_data:
-        return "暫無分析數據，請先使用分析功能上傳角色數據"
-
-    # 獲取用戶信息
-    from ..wutheringwaves_analyzecard.user_info_utils import (
-        get_user_detail_info,
-    )
-
-    account_info = await get_user_detail_info(uid)
-
-    # 更新group id（只更新當前用戶的綁定）
-    current_uid = await WavesBind.get_uid_by_game(user_id, ev.bot_id)
-    if current_uid == uid:
-        await WavesBind.insert_waves_uid(
-            user_id, ev.bot_id, uid, ev.group_id, lenth_limit=9
-        )
-
-    # 轉換數據格式
-    role_detail_list = []
-    for role_id, role_detail in role_data.items():
-        role_detail_list.append(RoleDetailData(**role_detail))
-
-    # 總角色個數
-    role_len = len(role_detail_list)
-    # 分析記錄個數（國際服所有角色都算作已分析）
-    role_analyzed = role_len
-    shadow_title = "分析記錄!"
-    shadow_color = GOLD
-
-    role_high = role_len // 6 + (0 if role_len % 6 == 0 else 1)
-    height = 470 + 50 + role_high * 330
-    width = 2000
-    img = Image.new("RGBA", (width, height))
-    img.alpha_composite(await get_refresh_role_img(width, height), (0, 0))
-
-    # 提示文案
-    title = f"共分析{role_analyzed}個角色，可以使用"
-    if role_detail_list:
-        name = role_detail_list[0].role.roleName
-        name = NAME_ALIAS.get(name, name)
-        title2 = f"{PREFIX}{name}面板"
-        title3 = "來查詢該角色的具體面板"
-    else:
-        title2 = f"{PREFIX}角色面板"
-        title3 = "來查詢角色具體面板"
-
-    info_block = Image.new("RGBA", (980, 50), color=(255, 255, 255, 0))
-    info_block_draw = ImageDraw.Draw(info_block)
-    info_block_draw.rounded_rectangle(
-        [0, 0, 980, 50], radius=15, fill=(128, 128, 128, int(0.3 * 255))
-    )
-    info_block_draw.text((50, 24), f"{title}", GREY, waves_font_30, "lm")
-    info_block_draw.text(
-        (50 + len(title) * 28 + 20, 24), f"{title2}", (255, 180, 0), waves_font_30, "lm"
-    )
-    info_block_draw.text(
-        (50 + len(title) * 28 + 20 + len(title2) * 28 + 10, 24),
-        f"{title3}",
-        GREY,
-        waves_font_30,
-        "lm",
-    )
-    img.alpha_composite(info_block, (500, 400))
-
-    waves_char_rank = await get_waves_char_rank(uid, role_detail_list)
-
-    # 所有角色都顯示為已分析
-    map_analyzed = []
-    for _, char_rank in enumerate(waves_char_rank):
-        map_analyzed.append(char_rank)
-
-    map_analyzed.sort(key=lambda x: x.score if x.score else 0, reverse=True)
-
-    rIndex = 0
-    for char_rank in map_analyzed:
-        pic = await draw_pic(char_rank, True)  # 所有角色都顯示為已分析
-        img.alpha_composite(pic, (80 + 300 * (rIndex % 6), 470 + (rIndex // 6) * 330))
-        rIndex += 1
-        if rIndex <= 5:
-            name = SPECIAL_CHAR_NAME.get(str(char_rank.roleId), char_rank.roleName)
-            b = WavesButton(name, f"{name}面板")  # type: ignore
-            buttons.append(b)
-
-    buttons.append(WavesButton("練度統計", "練度統計"))
-
-    # 基礎信息 名字 特征碼
-    base_info_bg = Image.open(TEXT_PATH / "base_info_bg.png")
-    base_info_draw = ImageDraw.Draw(base_info_bg)
-    base_info_draw.text(
-        (275, 120), f"{account_info.name[:7]}", "white", waves_font_30, "lm"
-    )
-    base_info_draw.text(
-        (226, 173), f"特征碼:  {account_info.id}", GOLD, waves_font_25, "lm"
-    )
-    img.paste(base_info_bg, (15, 20), base_info_bg)
-
-    # 頭像 頭像環（如果是查詢其他用戶，使用默認頭像）
-    if current_uid == uid:
-        avatar, avatar_ring = await draw_pic_with_ring(ev)
-    else:
-        # 查詢其他用戶時使用默認頭像，創建一個新的Event對象
-        default_ev = Event(
-            user_id="0",
-            bot_id=ev.bot_id,
-            group_id=ev.group_id,
-            raw_text="",
-            text="",
-            command="",
-            image=None,
-            content=[],
-            at="",
-            user_pm=ev.user_pm,
-            regex_dict={},
-        )
-        avatar, avatar_ring = await draw_pic_with_ring(default_ev)
-
-    img.paste(avatar, (25, 70), avatar)
-    img.paste(avatar_ring, (35, 80), avatar_ring)
-
-    # 賬號基本信息
-    if account_info.is_full:
-        title_bar = Image.open(TEXT_PATH / "title_bar.png")
-        title_bar_draw = ImageDraw.Draw(title_bar)
-        title_bar_draw.text((660, 125), "賬號等級", GREY, waves_font_26, "mm")
-        title_bar_draw.text(
-            (660, 78), f"Lv.{account_info.level}", "white", waves_font_42, "mm"
-        )
-
-        title_bar_draw.text((810, 125), "世界等級", GREY, waves_font_26, "mm")
-        title_bar_draw.text(
-            (810, 78), f"Lv.{account_info.worldLevel}", "white", waves_font_42, "mm"
-        )
-        img.paste(title_bar, (-20, 70), title_bar)
-
-    # bar
-    refresh_bar = Image.open(TEXT_PATH / "refresh_bar.png")
-    refresh_bar_draw = ImageDraw.Draw(refresh_bar)
-    draw_text_with_shadow(
-        refresh_bar_draw,
-        f"{shadow_title}",
-        1010,
-        40,
-        waves_font_60,
-        shadow_color=shadow_color,
-        offset=(2, 2),
-        anchor="mm",
-    )
-    draw_text_with_shadow(
-        refresh_bar_draw,
-        "分析狀態:",
-        1700,
-        20,
-        waves_font_40,
-        shadow_color=GOLD,
-        offset=(2, 2),
-        anchor="mm",
-    )
-    # 國際服顯示為已分析狀態
-    refresh_bar.alpha_composite(refresh_yes.resize((60, 60)), (1800, -8))
-
-    img.paste(refresh_bar, (0, 300), refresh_bar)
-    img = add_footer(img, 600, 20)
-    img = await convert_img(img)
     return img

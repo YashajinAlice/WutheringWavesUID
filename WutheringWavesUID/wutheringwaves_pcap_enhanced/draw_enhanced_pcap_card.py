@@ -76,9 +76,58 @@ async def draw_enhanced_pcap_analysis_img(
             if account_result.success:
                 account_info = AccountBaseInfo.model_validate(account_result.data)
         except:
+            # 嘗試從playerInfo.json文件中讀取玩家信息
+            player_name = "增強分析用戶"
+            player_level = 1
+            world_level = 1
+
+            try:
+                import json
+                from pathlib import Path
+
+                # 嘗試多個可能的路徑
+                possible_paths = [
+                    Path("data/enhanced_players") / uid / "playerInfo.json",
+                    Path("../../../data/enhanced_players") / uid / "playerInfo.json",
+                    Path("../../../../data/enhanced_players") / uid / "playerInfo.json",
+                    Path(
+                        "c:/Users/FuLin/Desktop/code/gsuid_core - test/data/enhanced_players"
+                    )
+                    / uid
+                    / "playerInfo.json",
+                ]
+
+                player_info_file = None
+                for path in possible_paths:
+                    if path.exists():
+                        player_info_file = path
+                        break
+
+                if not player_info_file:
+                    player_info_file = possible_paths[0]  # 使用第一個作為默認
+                if player_info_file.exists():
+                    with open(player_info_file, "r", encoding="utf-8") as f:
+                        player_info = json.load(f)
+
+                    # 從playerInfo.json中提取玩家信息
+                    if "name" in player_info:
+                        player_name = player_info["name"]
+                    if "level" in player_info:
+                        player_level = player_info["level"]
+                    if "world_level" in player_info:
+                        world_level = player_info["world_level"]
+
+                    logger.info(
+                        f"[鸣潮] 從playerInfo.json提取玩家信息: 名字={player_name}, 等級={player_level}, 世界等級={world_level}"
+                    )
+                else:
+                    logger.info(f"[鸣潮] 未找到playerInfo.json文件: {player_info_file}")
+            except Exception as e:
+                logger.warning(f"[鸣潮] 從playerInfo.json讀取玩家信息失敗: {e}")
+
             # 創建默認賬戶信息
             account_info = AccountBaseInfo(
-                id=uid, name="增強分析用戶", level=1, is_full=False
+                id=uid, name=player_name, level=player_level, worldLevel=world_level
             )
 
         # 計算圖片尺寸

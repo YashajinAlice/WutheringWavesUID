@@ -213,18 +213,32 @@ class EnhancedDataMerger:
             changes["has_changes"] = True
 
         # 比較技能等級
-        skill_diff = await self._compare_skills(
-            existing_role.get("skillList", []), enhanced_role.get("skillList", [])
-        )
+        existing_skills = existing_role.get("skillList", [])
+        enhanced_skills = enhanced_role.get("skillList", [])
+
+        # 確保列表不為 None
+        if existing_skills is None:
+            existing_skills = []
+        if enhanced_skills is None:
+            enhanced_skills = []
+
+        skill_diff = await self._compare_skills(existing_skills, enhanced_skills)
         if skill_diff["has_changes"]:
             changes["skill_changed"] = True
             changes["skill_diff"] = skill_diff
             changes["has_changes"] = True
 
         # 比較命座
-        chain_diff = await self._compare_chains(
-            existing_role.get("chainList", []), enhanced_role.get("chainList", [])
-        )
+        existing_chains = existing_role.get("chainList", [])
+        enhanced_chains = enhanced_role.get("chainList", [])
+
+        # 確保列表不為 None
+        if existing_chains is None:
+            existing_chains = []
+        if enhanced_chains is None:
+            enhanced_chains = []
+
+        chain_diff = await self._compare_chains(existing_chains, enhanced_chains)
         if chain_diff["has_changes"]:
             changes["chain_changed"] = True
             changes["chain_diff"] = chain_diff
@@ -252,6 +266,12 @@ class EnhancedDataMerger:
         # 比較具體聲骸
         existing_list = existing_phantoms.get("equipPhantomList", [])
         enhanced_list = enhanced_phantoms.get("equipPhantomList", [])
+
+        # 確保列表不為 None
+        if existing_list is None:
+            existing_list = []
+        if enhanced_list is None:
+            enhanced_list = []
 
         # 創建位置索引
         existing_by_pos = {p.get("position", i): p for i, p in enumerate(existing_list)}
@@ -448,6 +468,9 @@ class EnhancedDataMerger:
                 await f.write(json.dumps(merged_data, ensure_ascii=False, indent=2))
 
             logger.info(f"✅ 合併數據已保存: {rawdata_path}")
+
+            # 不再覆蓋userData.json，保持原始數據
+
         except Exception as e:
             logger.exception(f"保存合併數據失敗: {uid} - {e}")
             raise
@@ -475,6 +498,39 @@ class EnhancedDataMerger:
         }
 
         return report
+
+    async def sync_player_info_to_userdata(self, uid: str):
+        """將playerInfo.json的信息直接複製到userData.json"""
+        try:
+            # 檢查playerInfo.json是否存在
+            player_info_file = Path("data/enhanced_players") / uid / "playerInfo.json"
+            if not player_info_file.exists():
+                logger.info(f"[鸣潮] 未找到playerInfo.json，跳過同步: {uid}")
+                return
+
+            # 讀取playerInfo.json
+            async with aiofiles.open(player_info_file, "r", encoding="utf-8") as f:
+                player_info_content = await f.read()
+                player_info = json.loads(player_info_content)
+
+            # 直接複製數據到userData.json格式（因為結構已經一致）
+            from ..wutheringwaves_analyzecard.user_info_utils import (
+                save_user_info,
+            )
+
+            await save_user_info(
+                uid,
+                player_info.get("name", f"PCAP用戶_{uid[-4:]}"),
+                player_info.get("level", 1),
+                player_info.get("worldLevel", 1),
+            )
+
+            logger.info(
+                f"✅ 玩家信息已覆蓋到userData.json: 名字={player_info.get('name')}, 等級={player_info.get('level')}, 世界等級={player_info.get('worldLevel')}"
+            )
+
+        except Exception as e:
+            logger.exception(f"❌ 覆蓋玩家信息失敗: {uid} - {e}")
 
 
 # 便利函數

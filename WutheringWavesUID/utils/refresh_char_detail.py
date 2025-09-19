@@ -1,23 +1,22 @@
-import asyncio
 import json
-from typing import Dict, List, Optional, Union
+import asyncio
+from typing import Dict, List, Union, Optional
 
 import aiofiles
-
-from gsuid_core.logger import logger
 from gsuid_core.models import Event
+from gsuid_core.logger import logger
 
-from ..utils.api.model import AccountBaseInfo, RoleList
-from ..utils.error_reply import WAVES_CODE_101, WAVES_CODE_102
-from ..utils.expression_ctx import WavesCharRank, get_waves_char_rank
 from ..utils.hint import error_reply
-from ..utils.queues.const import QUEUE_SCORE_RANK
-from ..utils.queues.queues import put_item
-from ..utils.resource.RESOURCE_PATH import PLAYER_PATH
 from ..utils.util import get_version
 from ..utils.waves_api import waves_api
-from ..wutheringwaves_config import WutheringWavesConfig
+from ..utils.queues.queues import put_item
+from ..utils.queues.const import QUEUE_SCORE_RANK
 from .resource.constant import SPECIAL_CHAR_INT_ALL
+from ..utils.resource.RESOURCE_PATH import PLAYER_PATH
+from ..utils.api.model import RoleList, AccountBaseInfo
+from ..wutheringwaves_config import WutheringWavesConfig
+from ..utils.error_reply import WAVES_CODE_101, WAVES_CODE_102
+from ..utils.expression_ctx import WavesCharRank, get_waves_char_rank
 
 
 def is_use_global_semaphore() -> bool:
@@ -157,7 +156,9 @@ async def save_card_info(
     save_data = list(old_data.values())
 
     if not waves_api.is_net(uid):
-        await send_card(uid, user_id, save_data, is_self_ck, token, role_info, waves_data)
+        await send_card(
+            uid, user_id, save_data, is_self_ck, token, role_info, waves_data
+        )
 
     try:
         async with aiofiles.open(path, "w", encoding="utf-8") as file:
@@ -298,3 +299,113 @@ async def refresh_char(
             return error_reply(code=-110, msg="库街区暂未查询到角色数据")
 
     return waves_datas
+
+
+async def refresh_char_from_pcap(
+    ev: Event,
+    uid: str,
+    user_id: str,
+    pcap_data: List[dict],
+    waves_map: Optional[Dict] = None,
+    refresh_type: Union[str, List[str]] = "all",
+) -> Union[str, List]:
+    """從增強PCAP數據刷新角色信息 - 適配您的解析系統"""
+    try:
+        # 從增強PCAP數據中提取角色信息
+        waves_datas = []
+
+        # 檢查PCAP數據結構 - 增強PCAP數據是數組格式
+        if not isinstance(pcap_data, list):
+            logger.warning(f"[鸣潮] 增強PCAP數據格式不正確: {uid}")
+            return "增強PCAP數據格式不正確"
+
+        if not pcap_data:
+            logger.warning(f"[鸣潮] 增強PCAP數據中沒有角色信息: {uid}")
+            return "增強PCAP數據中沒有角色信息"
+
+        logger.info(f"[鸣潮] 開始處理增強PCAP數據: {uid}, 數據條目: {len(pcap_data)}")
+
+        # 處理角色數據 - 適配您的解析系統格式
+        for char_data in pcap_data:
+            if not isinstance(char_data, dict):
+                logger.warning(f"[鸣潮] 跳過無效的角色數據條目: {type(char_data)}")
+                continue
+
+            # 檢查必要的字段 - 您的解析系統已經提供了完整的角色數據結構
+            if "role" not in char_data:
+                logger.warning(f"[鸣潮] 角色數據缺少role字段: {char_data.keys()}")
+                continue
+
+            # 直接使用您的解析系統生成的標準格式數據
+            role_detail_info = char_data.copy()
+
+            # 確保數據完整性檢查
+            role_info = role_detail_info.get("role", {})
+            if not role_info.get("roleId"):
+                logger.warning(f"[鸣潮] 角色數據缺少roleId: {role_info}")
+                continue
+
+            # 處理聲骸數據 - 確保格式正確
+            phantom_data = role_detail_info.get("phantomData", {})
+            if phantom_data.get("cost", 0) == 0:
+                phantom_data["equipPhantomList"] = None
+
+            # 處理武器數據 - 移除可能導致問題的字段
+            weapon_data = role_detail_info.get("weaponData", {})
+            try:
+                if "weapon" in weapon_data and isinstance(weapon_data["weapon"], dict):
+                    weapon_info = weapon_data["weapon"]
+                    if "effectDescription" in weapon_info:
+                        del weapon_info["effectDescription"]
+            except Exception as e:
+                logger.warning(f"[鸣潮] 處理武器數據時出現警告: {e}")
+
+            # 確保技能列表存在
+            if "skillList" not in role_detail_info:
+                role_detail_info["skillList"] = []
+
+            # 確保技能樹列表存在
+            if "skillTreeList" not in role_detail_info:
+                role_detail_info["skillTreeList"] = []
+
+            # 確保共鳴鏈列表存在
+            if "chainList" not in role_detail_info:
+                role_detail_info["chainList"] = []
+
+            waves_datas.append(role_detail_info)
+            logger.info(
+                f"[鸣潮] 成功處理角色: {role_info.get('roleName', '未知')} (ID: {role_info.get('roleId')})"
+            )
+
+        if not waves_datas:
+            logger.warning(f"[鸣潮] 增強PCAP數據中沒有有效的角色信息: {uid}")
+            return "增強PCAP數據中沒有有效的角色信息"
+
+        # 保存角色信息
+        await save_card_info(
+            uid,
+            waves_datas,
+            waves_map,
+            user_id,
+            is_self_ck=True,  # PCAP模式視為自用
+            token="enhanced_pcap_data",  # 標記為增強PCAP數據
+        )
+
+        # 同時更新 userData.json 文件
+        try:
+            from ..wutheringwaves_pcap_enhanced.data_merger import (
+                EnhancedDataMerger,
+            )
+
+            merger = EnhancedDataMerger()
+            await merger.sync_player_info_to_userdata(uid)
+            logger.info(f"[鸣潮] userData.json 已同步更新: {uid}")
+        except Exception as e:
+            logger.warning(f"[鸣潮] userData.json 同步失敗: {uid} - {e}")
+
+        logger.info(f"[鸣潮] 增強PCAP數據刷新成功: {uid}, 角色數量: {len(waves_datas)}")
+        return waves_datas
+
+    except Exception as e:
+        logger.exception(f"[鸣潮] 增強PCAP數據刷新失敗: {uid} - {e}")
+        return f"增強PCAP數據刷新失敗: {str(e)}"

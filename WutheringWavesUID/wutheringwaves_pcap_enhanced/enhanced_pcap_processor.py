@@ -93,6 +93,8 @@ class EnhancedPcapProcessor:
         async with aiofiles.open(enhanced_file, "w", encoding="utf-8") as f:
             await f.write(json.dumps(enhanced_data, ensure_ascii=False, indent=2))
 
+        # 不再同步playerInfo.json到userData.json，保持原始數據
+
         # 保存分析摘要
         summary = {
             "uid": uid,
@@ -117,6 +119,39 @@ class EnhancedPcapProcessor:
             await f.write(json.dumps(summary, ensure_ascii=False, indent=2))
 
         logger.info(f"✅ 增強數據已保存: {enhanced_file}")
+
+    async def sync_player_info_to_userdata(self, uid: str):
+        """將playerInfo.json的信息直接複製到userData.json"""
+        try:
+            # 檢查playerInfo.json是否存在
+            player_info_file = self.enhanced_data_path / uid / "playerInfo.json"
+            if not player_info_file.exists():
+                logger.info(f"[鸣潮] 未找到playerInfo.json，跳過同步: {uid}")
+                return
+
+            # 讀取playerInfo.json
+            async with aiofiles.open(player_info_file, "r", encoding="utf-8") as f:
+                player_info_content = await f.read()
+                player_info = json.loads(player_info_content)
+
+            # 直接複製數據到userData.json格式（因為結構已經一致）
+            from ..wutheringwaves_analyzecard.user_info_utils import (
+                save_user_info,
+            )
+
+            await save_user_info(
+                uid,
+                player_info.get("name", f"PCAP用戶_{uid[-4:]}"),
+                player_info.get("level", 1),
+                player_info.get("worldLevel", 1),
+            )
+
+            logger.info(
+                f"✅ 玩家信息已覆蓋到userData.json: 名字={player_info.get('name')}, 等級={player_info.get('level')}, 世界等級={player_info.get('worldLevel')}"
+            )
+
+        except Exception as e:
+            logger.exception(f"❌ 覆蓋玩家信息失敗: {uid} - {e}")
 
     async def generate_comprehensive_stats(
         self, enhanced_data: List[Dict[str, Any]]

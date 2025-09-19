@@ -134,23 +134,39 @@ async def _draw_standard_panel(bot: Bot, ev: Event, user_id: str, uid: str):
 
         buttons = []
 
-        # 檢查是否有增強PCAP數據，如果有就先確保數據已更新
-        is_international = waves_api.is_net(uid)
-        if is_international:
-            # 國際服用戶，確保使用本地數據而不是API
-            logger.info(f"[鸣潮] 國際服用戶使用本地增強PCAP數據繪製面板: {uid}")
+        # 檢查是否有增強PCAP數據，如果有就使用PCAP數據
+        try:
+            from ..wutheringwaves_pcap_enhanced.enhanced_pcap_processor import (
+                get_enhanced_data,
+            )
+
+            enhanced_data = await get_enhanced_data(uid)
+            if enhanced_data:
+                logger.info(f"[鸣潮] 發現PCAP數據，使用本地數據繪製面板: {uid}")
+        except Exception as e:
+            logger.warning(f"[鸣潮] 檢查PCAP數據失敗: {e}")
 
         msg = await draw_refresh_char_detail_img(bot, ev, user_id, uid, buttons)
         if isinstance(msg, str) or isinstance(msg, bytes):
             return await bot.send_option(msg, buttons)
     except Exception as e:
         logger.exception(f"[鸣潮] 標準面板繪製失敗: {uid}")
-        # 如果是國際服且繪製失敗，可能是因為API令牌問題，提供更友好的錯誤信息
-        if waves_api.is_net(uid):
-            return await bot.send(
-                "❌ 面板繪製失敗，請確保已使用「解析」指令上傳PCAP數據"
+        # 檢查是否有PCAP數據，提供相應的錯誤信息
+        try:
+            from ..wutheringwaves_pcap_enhanced.enhanced_pcap_processor import (
+                get_enhanced_data,
             )
-        else:
+
+            enhanced_data = await get_enhanced_data(uid)
+            if enhanced_data:
+                return await bot.send("❌ 面板繪製失敗，請檢查PCAP數據是否完整")
+            elif waves_api.is_net(uid):
+                return await bot.send(
+                    "❌ 面板繪製失敗，請確保已使用「解析」指令上傳PCAP數據"
+                )
+            else:
+                return await bot.send(f"❌ 面板繪製失敗: {str(e)}")
+        except:
             return await bot.send(f"❌ 面板繪製失敗: {str(e)}")
 
 
