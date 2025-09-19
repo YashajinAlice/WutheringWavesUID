@@ -318,6 +318,59 @@ class StandalonePcapAnalyzer:
             logger.error(f"❌ 提取 UID 失敗: {e}")
         return ""
 
+    def extract_player_info_from_data(
+        self, pcap_data: Dict[str, Any]
+    ) -> Dict[str, Any]:
+        """從數據中提取玩家基本信息"""
+        try:
+            if "data" in pcap_data and "BasicInfoNotify" in pcap_data["data"]:
+                basic_info = pcap_data["data"]["BasicInfoNotify"]
+
+                # 提取基本信息
+                uid = basic_info.get("id", "")
+                player_info = {
+                    "id": str(uid) if uid else "",
+                    "name": "",
+                    "level": 1,
+                    "worldLevel": 1,
+                    "creatTime": int(basic_info.get("creatTime", 0)),
+                }
+
+                # 從 attributes 中提取詳細信息
+                attributes = basic_info.get("attributes", [])
+                for attr in attributes:
+                    key = attr.get("key", -1)
+                    int_value = attr.get("int32_value", 0)
+                    string_value = attr.get("string_value", "")
+
+                    # 根據您提供的映射表提取數據
+                    if key == 0:  # 玩家等級
+                        player_info["level"] = int_value
+                    elif key == 7:  # 玩家名字
+                        player_info["name"] = string_value
+                    elif key == 10:  # 聯合等級 (Union Level)
+                        # Union Level 通常等於 World Level
+                        player_info["worldLevel"] = int_value
+                    elif key == 11:  # 世界等級 (World Level)
+                        player_info["worldLevel"] = int_value
+
+                logger.info(
+                    f"✅ 提取玩家信息: UID={player_info['id']}, 名字={player_info['name']}, 等級={player_info['level']}, 世界等級={player_info['worldLevel']}"
+                )
+                return player_info
+
+        except Exception as e:
+            logger.error(f"❌ 提取玩家信息失敗: {e}")
+
+        # 返回默認值
+        return {
+            "id": "",
+            "name": "未知玩家",
+            "level": 1,
+            "worldLevel": 1,
+            "creatTime": 0,
+        }
+
     def get_breach_level(self, level: int) -> int:
         """根據等級計算突破等級"""
         if level <= 20:

@@ -57,7 +57,11 @@ class EnhancedPcapProcessor:
                 if not enhanced_data:
                     return {"error": "❌ 數據轉換失敗"}
 
-                # 4. 保存增強數據（獨立路徑）
+                # 4. 提取並保存玩家基本信息
+                player_info = analyzer.extract_player_info_from_data(pcap_data)
+                await self.save_player_info(uid, player_info)
+
+                # 5. 保存增強數據（獨立路徑）
                 await self.save_enhanced_data(uid, enhanced_data)
 
                 # 5. 生成統計信息
@@ -119,6 +123,23 @@ class EnhancedPcapProcessor:
             await f.write(json.dumps(summary, ensure_ascii=False, indent=2))
 
         logger.info(f"✅ 增強數據已保存: {enhanced_file}")
+
+    async def save_player_info(self, uid: str, player_info: Dict[str, Any]):
+        """保存玩家基本信息到 playerInfo.json"""
+        try:
+            # 確保目錄存在
+            player_dir = self.enhanced_data_path / uid
+            player_dir.mkdir(parents=True, exist_ok=True)
+
+            # 保存 playerInfo.json
+            player_info_file = player_dir / "playerInfo.json"
+            async with aiofiles.open(player_info_file, "w", encoding="utf-8") as f:
+                await f.write(json.dumps(player_info, ensure_ascii=False, indent=2))
+
+            logger.info(f"✅ 玩家信息已保存: {player_info_file}")
+
+        except Exception as e:
+            logger.exception(f"❌ 保存玩家信息失敗: {uid} - {e}")
 
     async def sync_player_info_to_userdata(self, uid: str):
         """將playerInfo.json的信息直接複製到userData.json"""
