@@ -1,67 +1,46 @@
-import re
 import copy
+import re
 from pathlib import Path
 from typing import Dict, Optional
 
 import httpx
 from PIL import Image, ImageDraw, ImageEnhance
 
-from gsuid_core.models import Event
 from gsuid_core.logger import logger
-from gsuid_core.config import core_config
+from gsuid_core.models import Event
+from ..utils.image import AVATAR_GETTERS
 from gsuid_core.utils.image.convert import convert_img
-from gsuid_core.utils.image.image_tools import get_qq_avatar, crop_center_img
+from gsuid_core.utils.image.image_tools import crop_center_img, get_qq_avatar
 
 from ..utils import hint
-from ..utils.calc import WuWaCalc
-from ..utils.waves_api import waves_api
-from ..wutheringwaves_config import PREFIX
-from ..utils.error_reply import WAVES_CODE_102
-from .role_info_change import change_role_detail
-from ..utils.ascension.char import get_char_model
-from ..utils.api.model_other import EnemyDetailData
-from ..utils.ascension.template import get_template_data
-from ..utils.damage.abstract import DamageDetailRegister
-from ..utils.char_info_utils import get_all_roleid_detail_info
-from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
-from ..utils.api.wwapi import ONE_RANK_URL, OneRankRequest, OneRankResponse
-from ..wutheringwaves_analyzecard.user_info_utils import get_user_detail_info
-from ..wutheringwaves_config.wutheringwaves_config import (
-    ShowConfig,
-    WutheringWavesConfig,
-)
-from ..utils.resource.download_file import (
-    get_chain_img,
-    get_skill_img,
-    get_phantom_img,
-)
 from ..utils.api.model import (
-    WeaponData,
+    AccountBaseInfo,
     OnlineRoleList,
     RoleDetailData,
-    AccountBaseInfo,
+    WeaponData,
 )
+from ..utils.api.model_other import EnemyDetailData
+from ..utils.api.wwapi import ONE_RANK_URL, OneRankRequest, OneRankResponse
+from ..utils.ascension.char import get_char_model
+from ..utils.ascension.template import get_template_data
 from ..utils.ascension.weapon import (
     WavesWeaponResult,
     get_breach,
-    get_weapon_model,
     get_weapon_detail,
+    get_weapon_model,
 )
-from ..utils.resource.constant import (
-    SPECIAL_CHAR,
-    ATTRIBUTE_ID_MAP,
-    DEAFAULT_WEAPON_ID,
-    WEAPON_TYPE_ID_MAP,
-    get_short_name,
-)
+from ..utils.calc import WuWaCalc
 from ..utils.calculate import (
-    get_calc_map,
-    get_max_score,
-    get_valid_color,
     calc_phantom_entry,
     calc_phantom_score,
+    get_calc_map,
+    get_max_score,
     get_total_score_bg,
+    get_valid_color,
 )
+from ..utils.char_info_utils import get_all_roleid_detail_info
+from ..utils.damage.abstract import DamageDetailRegister
+from ..utils.error_reply import WAVES_CODE_102
 from ..utils.fonts.waves_fonts import (
     waves_font_16,
     waves_font_18,
@@ -80,26 +59,46 @@ from ..utils.image import (
     GOLD,
     GREY,
     SPECIAL_GOLD,
-    WAVES_MOONLIT,
-    AVATAR_GETTERS,
     WAVES_FREEZING,
+    WAVES_MOONLIT,
     WAVES_SHUXING_MAP,
     WEAPON_RESONLEVEL_COLOR,
     add_footer,
     change_color,
-    get_waves_bg,
+    draw_text_with_shadow,
     get_attribute,
+    get_attribute_effect,
+    get_attribute_prop,
+    get_custom_gaussian_blur,
+    get_event_avatar,
     get_role_pile,
     get_small_logo,
-    get_weapon_type,
-    get_event_avatar,
     get_square_avatar,
     get_square_weapon,
-    get_attribute_prop,
-    get_attribute_effect,
-    draw_text_with_shadow,
-    get_custom_gaussian_blur,
+    get_waves_bg,
+    get_weapon_type,
 )
+from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
+from ..utils.resource.constant import (
+    ATTRIBUTE_ID_MAP,
+    DEAFAULT_WEAPON_ID,
+    SPECIAL_CHAR,
+    WEAPON_TYPE_ID_MAP,
+    get_short_name,
+)
+from ..utils.resource.download_file import (
+    get_chain_img,
+    get_phantom_img,
+    get_skill_img,
+)
+from ..utils.waves_api import waves_api
+from ..wutheringwaves_config import PREFIX
+from ..wutheringwaves_config.wutheringwaves_config import (
+    ShowConfig,
+    WutheringWavesConfig,
+)
+from .role_info_change import change_role_detail
+from ..wutheringwaves_analyzecard.user_info_utils import get_user_detail_info
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 
@@ -445,11 +444,7 @@ async def get_role_need(
                 f"[鸣潮] 特征码[{waves_id}] \n无法获取【{char_name}】角色信息！\n",
             )
     else:
-        avatar = (
-            await draw_pic_with_ring(ev, is_force_avatar, force_resource_id)
-            if not waves_id
-            else await draw_char_with_ring(char_id)
-        )
+        avatar = await draw_pic_with_ring(ev, is_force_avatar, force_resource_id) if not waves_id else await draw_char_with_ring(char_id)
         all_role_detail: Optional[Dict[str, RoleDetailData]] = (
             await get_all_roleid_detail_info(uid)
         )
@@ -487,17 +482,9 @@ async def get_role_need(
     return avatar, role_detail
 
 
-async def draw_fixed_img(img, avatar, account_info, role_detail, user_id=None):
+async def draw_fixed_img(img, avatar, account_info, role_detail):
     # 头像部分
-    # 檢查是否為特殊用戶
-    special_users = core_config.get_config("specialusers")
-    is_special_user = user_id and str(user_id) in special_users
-
-    # 根據用戶類型選擇頭像框
-    if is_special_user:
-        avatar_ring = Image.open(TEXT_PATH / "Adobe Express - file.png")
-    else:
-        avatar_ring = Image.open(TEXT_PATH / "avatar_ring.png")
+    avatar_ring = Image.open(TEXT_PATH / "avatar_ring.png")
 
     img.paste(avatar, (45, 20), avatar)
     avatar_ring = avatar_ring.resize((180, 180))
@@ -807,7 +794,7 @@ async def draw_char_detail_img(
         1200, 1250 + echo_list + ph_sum_value + jineng_len + dd_len, "bg3"
     )
     # 固定位置
-    await draw_fixed_img(img, avatar, account_info, role_detail, ev.user_id)
+    await draw_fixed_img(img, avatar, account_info, role_detail)
 
     # 声骸
     img.paste(phantom_temp, (0, 1320 + jineng_len), phantom_temp)
@@ -1094,7 +1081,7 @@ async def draw_char_score_img(
             f"[鸣潮] 角色名【{char}】无法找到, 可能暂未适配, 请先检查输入是否正确！\n"
         )
     char_name = alias_to_char_name(char)
-
+    
     _, ck = await waves_api.get_ck_result(uid, user_id, ev.bot_id)
     if not ck and not waves_api.is_net(uid):
         return hint.error_reply(WAVES_CODE_102)
@@ -1103,7 +1090,7 @@ async def draw_char_score_img(
     if waves_id:
         uid = waves_id
 
-    account_info = await get_user_detail_info(uid)
+    account_info =  await get_user_detail_info(uid)
 
     # 获取数据
     avatar, role_detail = await get_role_need(ev, char_id, ck, uid, char_name, waves_id)
@@ -1113,7 +1100,7 @@ async def draw_char_score_img(
     # 创建背景
     img = await get_card_bg(1200, 3380, "bg3")
     # 固定位置
-    await draw_fixed_img(img, avatar, account_info, role_detail, ev.user_id)
+    await draw_fixed_img(img, avatar, account_info, role_detail)
 
     # 声骸属性
     char_id = role_detail.role.roleId

@@ -1,37 +1,27 @@
-import time
 import asyncio
+import time
 from pathlib import Path
-from typing import List, Union, Optional
+from typing import List, Optional, Union
 
-from pydantic import BaseModel
 from PIL import Image, ImageDraw
+from pydantic import BaseModel
 
 from gsuid_core.bot import Bot
-from gsuid_core.models import Event
 from gsuid_core.logger import logger
-from gsuid_core.config import core_config
+from gsuid_core.models import Event
 from gsuid_core.utils.image.convert import convert_img
 from gsuid_core.utils.image.image_tools import crop_center_img
 
-from ..utils.calc import WuWaCalc
-from ..utils.util import hide_uid
+from ..utils.api.model import RoleDetailData, WeaponData
 from ..utils.cache import TimedCache
-from ..utils.waves_card_cache import get_card
-from ..utils.damage.abstract import DamageRankRegister
-from ..utils.api.model import WeaponData, RoleDetailData
-from ..utils.database.models import WavesBind, WavesUser
-from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
-from ..utils.resource.constant import SPECIAL_CHAR, SPECIAL_CHAR_NAME
-from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
+from ..utils.calc import WuWaCalc
 from ..utils.calculate import (
-    get_calc_map,
     calc_phantom_score,
+    get_calc_map,
     get_total_score_bg,
 )
-from ..wutheringwaves_analyzecard.user_info_utils import (
-    get_region_for_rank,
-    get_user_detail_info,
-)
+from ..utils.damage.abstract import DamageRankRegister
+from ..utils.database.models import WavesBind, WavesUser
 from ..utils.fonts.waves_fonts import (
     waves_font_14,
     waves_font_16,
@@ -44,27 +34,32 @@ from ..utils.fonts.waves_fonts import (
     waves_font_44,
 )
 from ..utils.image import (
-    RED,
-    GREY,
     CHAIN_COLOR,
+    GREY,
+    RED,
     SPECIAL_GOLD,
-    AVATAR_GETTERS,
     WEAPON_RESONLEVEL_COLOR,
     add_footer,
-    get_waves_bg,
     get_attribute,
+    get_attribute_effect,
+    AVATAR_GETTERS,
     get_role_pile_old,
     get_square_avatar,
     get_square_weapon,
-    get_attribute_effect,
+    get_waves_bg,
 )
+from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
+from ..utils.resource.constant import SPECIAL_CHAR, SPECIAL_CHAR_NAME
+from ..utils.util import hide_uid
+from ..utils.waves_card_cache import get_card
+from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
+from ..wutheringwaves_analyzecard.user_info_utils import get_region_for_rank, get_user_detail_info
 
 rank_length = 20  # 排行长度
 TEXT_PATH = Path(__file__).parent / "texture2d"
 TITLE_I = Image.open(TEXT_PATH / "title.png")
 TITLE_II = Image.open(TEXT_PATH / "title2.png")
 avatar_mask = Image.open(TEXT_PATH / "avatar_mask.png")
-avatar_ring = Image.open(TEXT_PATH / "avatar_ring.png")
 weapon_icon_bg_3 = Image.open(TEXT_PATH / "weapon_icon_bg_3.png")
 weapon_icon_bg_4 = Image.open(TEXT_PATH / "weapon_icon_bg_4.png")
 weapon_icon_bg_5 = Image.open(TEXT_PATH / "weapon_icon_bg_5.png")
@@ -91,6 +86,7 @@ class RankInfo(BaseModel):
     expected_damage: str  # 期望伤害
     expected_damage_int: int  # 期望伤害
     sonata_name: str  # 合鸣效果
+
 
 
 async def get_one_rank_info(user_id, uid, role_detail, rankDetail):
@@ -178,7 +174,7 @@ async def find_role_detail(
     role_details = await get_card(uid)
     if role_details is None:
         return None
-
+        
     # 将char_id转换为字符串列表进行匹配
     if isinstance(char_id, (int, str)):
         char_id_list = [str(char_id)]
@@ -223,17 +219,12 @@ async def get_rank_info_for_user(
 
         rankInfo = None
         try:
-            rankInfo = await get_one_rank_info(
-                user.user_id, uid, role_detail, rankDetail
-            )
+            rankInfo = await get_one_rank_info(user.user_id, uid, role_detail, rankDetail)
         except Exception as e:
             logger.warning(f"获取用户{user.user_id} id{uid} 的排行数据,错误: {e}")
             from ..utils.util import send_master_info
-
-            await send_master_info(
-                f"获取用户{user.user_id} id{uid} 的排行数据,错误: {e}"
-            )
-
+            await send_master_info(f"获取用户{user.user_id} id{uid} 的排行数据,错误: {e}")
+            
         if not rankInfo:
             continue
         rankInfoList.append(rankInfo)
@@ -392,9 +383,7 @@ async def draw_bot_rank_img(
     card_img = get_waves_bg(1300, h, "bg3")
     card_img_draw = ImageDraw.Draw(card_img)
 
-    # 獲取特殊用戶列表
-    special_users = core_config.get_config("specialusers")
-
+    bar = Image.open(TEXT_PATH / "bar1.png")
     total_score = 0
     total_damage = 0
 
@@ -407,18 +396,10 @@ async def draw_bot_rank_img(
         rank, role_avatar = temp
         rank: RankInfo
         rank_role_detail: RoleDetailData = rank.roleDetail
-
-        # 檢查是否為特殊用戶，選擇對應的 bar
-        is_special_user = str(rank.qid) in special_users
-        if is_special_user:
-            bar = Image.open(TEXT_PATH / "bar3.png")
-        else:
-            bar = Image.open(TEXT_PATH / "bar1.png")
-
         bar_bg = bar.copy()
         bar_star_draw = ImageDraw.Draw(bar_bg)
         # role_avatar = await get_avatar(ev, rank.qid, role_detail.role.roleId)
-        bar_bg.alpha_composite(role_avatar, (100, 0))
+        bar_bg.paste(role_avatar, (100, 0), role_avatar)
 
         role_attribute = await get_attribute(
             rank_role_detail.role.attributeName or "导电", is_simple=True
@@ -440,9 +421,7 @@ async def draw_bot_rank_img(
         region_draw.rounded_rectangle(
             [0, 0, 200, 30], radius=6, fill=rank.server_color + (int(0.9 * 255),)
         )
-        region_draw.text(
-            (100, 15), f"Server: {rank.server}", "white", waves_font_18, "mm"
-        )
+        region_draw.text((100, 15), f"Server: {rank.server}", "white", waves_font_18, "mm")
         bar_bg.alpha_composite(region_block, (350, 65))
 
         # 等级
@@ -557,7 +536,7 @@ async def draw_bot_rank_img(
             draw_rank_id(rank_id, size=(75, 50), draw=(37, 24), dest=(25, 30))
         else:
             draw_rank_id(rank_id or 0, size=(50, 50), draw=(24, 24), dest=(40, 30))
-
+        
         # 名字
         bar_star_draw.text((210, 75), f"{rank.kuro_name}", "white", waves_font_20, "lm")
 
@@ -599,7 +578,7 @@ async def draw_bot_rank_img(
 
     title_name = f"{char_name}{rank_type}bot排行"
     title_draw.text((540, 265), f"{title_name}", "black", waves_font_30, "lm")
-
+    
     # 时间
     time_str = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     title_draw.text((470, 205), f"{time_str}", GREY, waves_font_20, "lm")
@@ -618,7 +597,7 @@ async def draw_bot_rank_img(
     # 人物bg
     pile = await get_role_pile_old(char_id)
     img_temp.alpha_composite(pile, (600, -120))
-
+    
     img_temp2 = Image.new("RGBA", char_mask2.size)
     img_temp2.paste(img_temp, (0, 0), char_mask2.copy())
 
@@ -637,7 +616,7 @@ async def get_avatar(
 ) -> Image.Image:
     try:
         get_bot_avatar = AVATAR_GETTERS.get(ev.bot_id)
-
+        
         if WutheringWavesConfig.get_config("QQPicCache").data:
             pic = pic_cache.get(qid)
             if not pic:
@@ -653,7 +632,7 @@ async def get_avatar(
         avatar_mask_temp = avatar_mask.copy()
         mask_pic_temp = avatar_mask_temp.resize((120, 120))
         img.paste(pic_temp, (0, -5), mask_pic_temp)
-
+    
     except Exception:
         # 打印异常，进行降级处理
         logger.warning("头像获取失败，使用默认头像")
@@ -672,7 +651,6 @@ async def get_avatar(
         img.paste(pic_temp, (0, 0), mask_pic_temp)
 
     return img
-
 
 def get_weapon_icon_bg(star: int = 3) -> Image.Image:
     if star < 3:

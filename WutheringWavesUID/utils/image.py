@@ -2,29 +2,30 @@ import os
 import random
 from io import BytesIO
 from pathlib import Path
-from typing import Tuple, Union, Literal, Optional
+from typing import Literal, Optional, Tuple, Union
 
-from gsuid_core.models import Event
-from gsuid_core.logger import logger
-from gsuid_core.utils.image.utils import sget
-from gsuid_core.utils.image.image_tools import crop_center_img
 from PIL import (
     Image,
-    ImageOps,
     ImageDraw,
-    ImageFont,
-    ImageFilter,
     ImageEnhance,
+    ImageFilter,
+    ImageFont,
+    ImageOps,
 )
 
 from ..utils.database.models import WavesUserAvatar
+from gsuid_core.logger import logger
+from gsuid_core.models import Event
+from gsuid_core.utils.image.image_tools import crop_center_img
+from gsuid_core.utils.image.utils import sget
+
 from ..utils.resource.RESOURCE_PATH import (
     AVATAR_PATH,
-    WEAPON_PATH,
-    SHARE_BG_PATH,
-    ROLE_PILE_PATH,
     CUSTOM_CARD_PATH,
     CUSTOM_MR_CARD_PATH,
+    ROLE_PILE_PATH,
+    SHARE_BG_PATH,
+    WEAPON_PATH,
 )
 
 ICON = Path(__file__).parent.parent.parent / "ICON.png"
@@ -112,33 +113,8 @@ async def get_random_share_bg():
 
 
 async def get_random_share_bg_path():
-    try:
-        files = os.listdir(f"{SHARE_BG_PATH}")
-        if not files:
-            # 如果目錄為空，創建一個簡單的背景
-            return create_simple_bg()
-        path = random.choice(files)
-        return SHARE_BG_PATH / path
-    except (OSError, FileNotFoundError):
-        # 如果目錄不存在，創建一個簡單的背景
-        return create_simple_bg()
-
-
-def create_simple_bg():
-    """創建一個簡單的背景圖片"""
-    from PIL import Image, ImageDraw
-
-    # 創建一個簡單的漸變背景
-    bg = Image.new("RGBA", (1200, 800), (30, 30, 50, 255))
-    draw = ImageDraw.Draw(bg)
-
-    # 添加簡單的裝飾
-    for i in range(0, 1200, 100):
-        for j in range(0, 800, 100):
-            alpha = max(0, 50 - (i + j) // 20)
-            draw.rectangle([i, j, i + 50, j + 50], fill=(100, 100, 150, alpha))
-
-    return bg
+    path = random.choice(os.listdir(f"{SHARE_BG_PATH}"))
+    return SHARE_BG_PATH / path
 
 
 async def get_random_waves_role_pile(char_id: Optional[str] = None):
@@ -221,44 +197,17 @@ async def get_square_weapon(resource_id: Union[int, str]) -> Image.Image:
 
 
 async def get_attribute(name: str = "", is_simple: bool = False) -> Image.Image:
-    # 如果name為空，使用默認屬性
-    if not name:
-        name = "气动"  # 使用氣動作為默認屬性
-    
-    try:
-        if is_simple:
-            file_name = f"attribute/attr_simple_{name}.png"
-        else:
-            file_name = f"attribute/attr_{name}.png"
-        return Image.open(TEXT_PATH / file_name).convert("RGBA")
-    except FileNotFoundError:
-        # 如果找不到對應的屬性圖片，嘗試使用氣動屬性作為默認
-        try:
-            if is_simple:
-                fallback_name = "attribute/attr_simple_气动.png"
-            else:
-                fallback_name = "attribute/attr_气动.png"
-            return Image.open(TEXT_PATH / fallback_name).convert("RGBA")
-        except FileNotFoundError:
-            # 如果連默認圖片都沒有，創建一個空白圖片
-            return Image.new("RGBA", (50, 50), (128, 128, 128, 255))
+    if is_simple:
+        name = f"attribute/attr_simple_{name}.png"
+    else:
+        name = f"attribute/attr_{name}.png"
+    return Image.open(TEXT_PATH / name).convert("RGBA")
 
 
 async def get_attribute_prop(name: str = "") -> Image.Image:
-    try:
-        return Image.open(TEXT_PATH / f"attribute_prop/attr_prop_{name}.png").convert(
-            "RGBA"
-        )
-    except FileNotFoundError:
-        # 如果找不到對應的屬性圖片，嘗試使用默認圖片或創建一個空白圖片
-        try:
-            # 嘗試使用攻擊圖片作為默認圖片
-            return Image.open(TEXT_PATH / f"attribute_prop/attr_prop_攻击.png").convert(
-                "RGBA"
-            )
-        except FileNotFoundError:
-            # 如果連默認圖片都沒有，創建一個空白圖片
-            return Image.new("RGBA", (40, 40), (128, 128, 128, 255))
+    return Image.open(TEXT_PATH / f"attribute_prop/attr_prop_{name}.png").convert(
+        "RGBA"
+    )
 
 
 async def get_attribute_effect(name: str = "") -> Image.Image:
@@ -298,7 +247,6 @@ async def get_qq_avatar(
     char_pic = Image.open(BytesIO((await sget(avatar_url)).content)).convert("RGBA")
     return char_pic
 
-
 async def get_discord_avatar(
     qid: Optional[Union[int, str]] = None,
     avatar_url: Optional[str] = None,
@@ -311,11 +259,7 @@ async def get_discord_avatar(
     elif avatar_url is None:
         avatar_url = "https://cdn.discordapp.com/embed/avatars/0.png"
 
-    avatar_url = (
-        avatar_url + f".png?size={size}"
-        if not avatar_url.endswith(".png")
-        else avatar_url
-    )
+    avatar_url = avatar_url + f".png?size={size}" if not avatar_url.endswith(".png") else avatar_url
     char_pic = Image.open(BytesIO((await sget(avatar_url)).content)).convert("RGBA")
     return char_pic
 
@@ -335,14 +279,12 @@ async def get_qqgroup_avatar(
     char_pic = Image.open(BytesIO((await sget(avatar_url)).content)).convert("RGBA")
     return char_pic
 
-
 # 获取对应bot_id的头像获取函数
 AVATAR_GETTERS = {
     "onebot": get_qq_avatar,
     "discord": get_discord_avatar,
-    "qqgroup": get_qqgroup_avatar,
+    "qqgroup": get_qqgroup_avatar
 }
-
 
 async def get_event_avatar(
     ev: Event,
@@ -356,7 +298,7 @@ async def get_event_avatar(
         from ..utils.at_help import is_valid_at
 
         is_valid_at_param = is_valid_at(ev)
-
+    
     get_bot_avatar = AVATAR_GETTERS.get(ev.bot_id)
 
     # 尝试获取@用户的头像
@@ -366,9 +308,7 @@ async def get_event_avatar(
         except Exception:
             img = None
 
-    if (
-        img is None and "avatar" in ev.sender and ev.sender["avatar"]
-    ):  # qqgroup不返回avatar...
+    if img is None and "avatar" in ev.sender and ev.sender["avatar"]: # qqgroup不返回avatar...
         avatar_url: str = ev.sender["avatar"]
         if avatar_url.startswith(("http", "https")):
             try:

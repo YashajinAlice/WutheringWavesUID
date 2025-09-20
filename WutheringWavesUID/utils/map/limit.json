@@ -881,15 +881,8 @@
             "calcFile": "calc.json",
             "charId": 1410,
             "name": "尤诺",
-            "weaponId": 21040016,
+            "weaponId": 21040046,
             "sonataLibId": 22
-        },
-        {
-            "calcFile": "calc.json",
-            "charId": 5555,
-            "name": "你叫誰尖頭",
-            "weaponId": 21020056,
-            "sonataLibId": 18
         }
     ]
 }

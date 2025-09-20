@@ -1,6 +1,6 @@
-import re
-import copy
 import asyncio
+import copy
+import re
 from pathlib import Path
 from typing import Optional
 
@@ -8,33 +8,20 @@ import httpx
 from PIL import Image, ImageDraw
 
 from gsuid_core.bot import Bot
-from gsuid_core.models import Event
 from gsuid_core.logger import logger
+from gsuid_core.models import Event
 from gsuid_core.utils.image.convert import convert_img
 from gsuid_core.utils.image.image_tools import crop_center_img
-from gsuid_core.utils.database.slash_rank_models import (
-    SlashHalf as LocalSlashHalf,
-)
-from gsuid_core.utils.database.slash_rank_models import (
-    SlashRank as LocalSlashRank,
-)
-from gsuid_core.utils.database.slash_rank_models import (
-    SlashCharDetail as LocalSlashCharDetail,
-)
 
-from ..utils.cache import TimedCache
-from ..utils.util import get_version
-from ..utils.database.models import WavesBind
-from ..utils.ascension.char import get_char_model
-from ..utils.resource.RESOURCE_PATH import SLASH_PATH
-from ..wutheringwaves_config import WutheringWavesConfig
-from ..wutheringwaves_abyss.draw_slash_card import COLOR_QUALITY
 from ..utils.api.wwapi import (
     GET_SLASH_RANK_URL,
     SlashRank,
-    SlashRankRes,
     SlashRankItem,
+    SlashRankRes,
 )
+from ..utils.ascension.char import get_char_model
+from ..utils.cache import TimedCache
+from ..utils.database.models import WavesBind
 from ..utils.fonts.waves_fonts import (
     waves_font_12,
     waves_font_18,
@@ -44,21 +31,25 @@ from ..utils.fonts.waves_fonts import (
     waves_font_58,
 )
 from ..utils.image import (
-    RED,
     AMBER,
-    WAVES_VOID,
-    WAVES_MOLTEN,
-    WAVES_SIERRA,
-    WAVES_MOONLIT,
+    RED,
     WAVES_FREEZING,
     WAVES_LINGERING,
-    get_ICON,
+    WAVES_MOLTEN,
+    WAVES_MOONLIT,
+    WAVES_SIERRA,
+    WAVES_VOID,
     add_footer,
-    get_waves_bg,
+    get_ICON,
     get_qq_avatar,
     get_square_avatar,
+    get_waves_bg,
     pic_download_from_url,
 )
+from ..utils.resource.RESOURCE_PATH import SLASH_PATH
+from ..utils.util import get_version
+from ..wutheringwaves_abyss.draw_slash_card import COLOR_QUALITY
+from ..wutheringwaves_config import WutheringWavesConfig
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 avatar_mask = Image.open(TEXT_PATH / "avatar_mask.png")
@@ -91,49 +82,11 @@ def get_score_color(score: int):
         return (255, 255, 255)
 
 
-async def get_default_buff_icon(buff_name: str, buff_quality: int):
-    """獲取默認 BUFF 圖標"""
-    try:
-        # 嘗試從本地資源獲取 BUFF 圖標
-        buff_icon_path = TEXT_PATH / f"buff_{buff_quality}.png"
-        if buff_icon_path.exists():
-            return Image.open(buff_icon_path)
-
-        # 如果沒有對應的圖標，創建一個默認的
-        default_icon = Image.new("RGBA", (50, 50), (0, 0, 0, 0))
-        draw = ImageDraw.Draw(default_icon)
-
-        # 根據品質設置顏色
-        quality_colors = {
-            1: (128, 128, 128),  # 灰色
-            2: (0, 255, 0),  # 綠色
-            3: (0, 0, 255),  # 藍色
-            4: (128, 0, 128),  # 紫色
-            5: (255, 215, 0),  # 金色
-        }
-
-        color = quality_colors.get(buff_quality, (128, 128, 128))
-        draw.ellipse([5, 5, 45, 45], fill=color + (200,))
-        draw.text((25, 25), f"{buff_quality}", "white", waves_font_20, "mm")
-
-        return default_icon
-    except Exception as e:
-        logger.warning(f"創建默認BUFF圖標失敗: {e}")
-        # 返回一個純色圖標
-        return Image.new("RGBA", (50, 50), (128, 128, 128, 200))
-
-
 async def get_rank(item: SlashRankItem) -> Optional[SlashRankRes]:
-    """獲取排行數據 - 優先使用本地數據，回退到API"""
-    # 首先嘗試從本地數據庫獲取
-    local_ranks = await get_local_rank(item.page, item.page_num, "國際服")
-    if local_ranks:
-        return convert_local_to_api_response(local_ranks, item.page, item.page_num)
-
-    # 如果本地沒有數據，嘗試API
     WavesToken = WutheringWavesConfig.get_config("WavesToken").data
+
     if not WavesToken:
-        return None
+        return
 
     async with httpx.AsyncClient() as client:
         try:
@@ -152,76 +105,6 @@ async def get_rank(item: SlashRankItem) -> Optional[SlashRankRes]:
                 logger.warning(f"获取排行失败: {res.status_code} - {res.text}")
         except Exception as e:
             logger.exception(f"获取排行失败: {e}")
-
-    return None
-
-
-async def get_local_rank(page: int, page_num: int, server: str = "國際服"):
-    """從本地數據庫獲取排行數據"""
-    try:
-        ranks = await LocalSlashRank.get_approved_ranks(page, page_num, server)
-        return ranks
-    except Exception as e:
-        logger.exception(f"獲取本地排行數據失敗: {e}")
-        return None
-
-
-def convert_local_to_api_response(local_ranks, page: int, page_num: int):
-    """將本地數據轉換為API響應格式"""
-    try:
-        # 轉換本地數據為API格式
-        api_ranks = []
-        for local_rank in local_ranks:
-            # 轉換 half_list
-            half_list = []
-            for half in local_rank.half_list:
-                char_details = []
-                for char_detail in half.char_details:
-                    char_details.append(
-                        {
-                            "char_id": char_detail.char_id,
-                            "level": char_detail.level,
-                            "chain": char_detail.chain,
-                        }
-                    )
-
-                half_list.append(
-                    {
-                        "buff_icon": half.buff_icon,
-                        "buff_name": half.buff_name,
-                        "buff_quality": half.buff_quality,
-                        "char_detail": char_details,
-                        "score": half.score,
-                    }
-                )
-
-            api_rank = {
-                "half_list": half_list,
-                "score": local_rank.total_score,
-                "rank": local_rank.rank,
-                "user_id": local_rank.user_id,
-                "waves_id": local_rank.waves_id,
-                "kuro_name": local_rank.kuro_name,
-                "alias_name": local_rank.alias_name or "",
-            }
-            api_ranks.append(api_rank)
-
-        # 構建響應
-        response_data = {
-            "page": page,
-            "page_num": page_num,
-            "start_date": "2024-01-01",  # 本地數據沒有開始日期
-            "rank_list": api_ranks,
-        }
-
-        from ..utils.api.wwapi import SlashRankData
-
-        return SlashRankRes(
-            code=200, message="success", data=SlashRankData(**response_data)
-        )
-    except Exception as e:
-        logger.exception(f"轉換本地數據失敗: {e}")
-        return None
 
 
 async def draw_all_slash_rank_card(bot: Bot, ev: Event):
@@ -420,28 +303,9 @@ async def draw_all_slash_rank_card(bot: Bot, ev: Event):
                 [0, 45, 50, 50],
                 fill=buff_color,
             )
-            # 處理 BUFF 圖標
-            try:
-                if slash_half.buff_icon and slash_half.buff_icon.startswith("http"):
-                    # 從 URL 下載
-                    buff_pic = await pic_download_from_url(
-                        SLASH_PATH, slash_half.buff_icon
-                    )
-                else:
-                    # 使用默認圖標或本地圖標
-                    buff_pic = await get_default_buff_icon(
-                        slash_half.buff_name, slash_half.buff_quality
-                    )
-                buff_pic = buff_pic.resize((50, 50))
-                buff_bg.paste(buff_pic, (0, 0), buff_pic)
-            except Exception as e:
-                logger.warning(f"獲取BUFF圖標失敗: {e}")
-                # 使用默認圖標
-                buff_pic = await get_default_buff_icon(
-                    slash_half.buff_name, slash_half.buff_quality
-                )
-                buff_pic = buff_pic.resize((50, 50))
-                buff_bg.paste(buff_pic, (0, 0), buff_pic)
+            buff_pic = await pic_download_from_url(SLASH_PATH, slash_half.buff_icon)
+            buff_pic = buff_pic.resize((50, 50))
+            buff_bg.paste(buff_pic, (0, 0), buff_pic)
 
             role_bg.alpha_composite(buff_bg, (720 + half_index * 250, 15))
 

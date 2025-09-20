@@ -2,26 +2,20 @@ import time
 from pathlib import Path
 from typing import List, Union
 
+from PIL import Image, ImageDraw, ImageEnhance, ImageFilter
+
 from gsuid_core.bot import Bot
 from gsuid_core.models import Event
 from gsuid_core.utils.image.convert import convert_img
-from PIL import Image, ImageDraw, ImageFilter, ImageEnhance
 from gsuid_core.utils.image.image_tools import crop_center_img
 
-from ..utils.cache import TimedCache
-from ..utils.hint import error_reply
+from ..utils.api.model import AccountBaseInfo, RoleDetailData
 from ..utils.button import WavesButton
-from ..utils.waves_api import waves_api
-from ..utils.util import async_func_lock
+from ..utils.cache import TimedCache
+from ..utils.char_info_utils import get_all_role_detail_info_list
 from ..utils.database.models import WavesBind
 from ..utils.error_reply import WAVES_CODE_102
-from ..utils.imagetool import draw_pic_with_ring
-from ..utils.api.model import RoleDetailData, AccountBaseInfo
-from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
-from ..utils.char_info_utils import get_all_role_detail_info_list
-from ..utils.resource.constant import NAME_ALIAS, SPECIAL_CHAR_NAME
 from ..utils.expression_ctx import WavesCharRank, get_waves_char_rank
-from ..utils.refresh_char_detail import refresh_char, refresh_char_from_pcap
 from ..utils.fonts.waves_fonts import (
     waves_font_25,
     waves_font_26,
@@ -30,17 +24,24 @@ from ..utils.fonts.waves_fonts import (
     waves_font_42,
     waves_font_60,
 )
+from ..utils.hint import error_reply
 from ..utils.image import (
-    RED,
+    CHAIN_COLOR,
     GOLD,
     GREY,
-    CHAIN_COLOR,
+    RED,
     add_footer,
-    get_star_bg,
-    get_square_avatar,
     draw_text_with_shadow,
     get_random_share_bg_path,
+    get_square_avatar,
+    get_star_bg,
 )
+from ..utils.imagetool import draw_pic_with_ring
+from ..utils.refresh_char_detail import refresh_char, refresh_char_from_pcap
+from ..utils.resource.constant import NAME_ALIAS, SPECIAL_CHAR_NAME
+from ..utils.util import async_func_lock
+from ..utils.waves_api import waves_api
+from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 
@@ -175,13 +176,10 @@ async def draw_refresh_char_detail_img(
     buttons: List[WavesButton],
     refresh_type: Union[str, List[str]] = "all",
 ):
-    # 檢查是否有增強PCAP數據，如果有則允許國際服用戶使用
-    from ..wutheringwaves_pcap_enhanced.enhanced_pcap_processor import (
-        get_enhanced_data,
-    )
-
-    pcap_data = await get_enhanced_data(uid)
-
+    # 檢查是否有 pcap 數據，如果有則允許國際服用戶使用
+    from ..wutheringwaves_pcap import load_pcap_data
+    pcap_data = await load_pcap_data(uid)
+    
     if pcap_data:
         # 使用 pcap 數據刷新
         waves_map = {"refresh_update": {}, "refresh_unchanged": {}}
@@ -196,12 +194,9 @@ async def draw_refresh_char_detail_img(
         if isinstance(waves_datas, str):
             return waves_datas
 
-        from ..wutheringwaves_analyzecard.user_info_utils import (
-            get_user_detail_info,
-        )
-
-        account_info = await get_user_detail_info(uid)
-
+        from ..wutheringwaves_analyzecard.user_info_utils import get_user_detail_info
+        account_info= await get_user_detail_info(uid)
+        
         # pcap 模式下設置為已登錄狀態
         self_ck = True
     else:
@@ -251,7 +246,6 @@ async def draw_refresh_char_detail_img(
         for r in waves_map[key].values()
     ]
     from gsuid_core.logger import logger
-
     logger.info(f"role_detail_list:{role_detail_list}")
 
     # 总角色个数
@@ -348,8 +342,11 @@ async def draw_refresh_char_detail_img(
     img.paste(avatar_ring, (35, 80), avatar_ring)
 
     # 账号基本信息，由于可能会没有，放在一起
-    # 不再覆蓋用戶名稱，保持現有數據
+    from ..wutheringwaves_analyzecard.user_info_utils import save_user_info
     if account_info.is_full:
+        await save_user_info(
+            str(account_info.id), account_info.name[:7], account_info.level, account_info.worldLevel
+        )
         title_bar = Image.open(TEXT_PATH / "title_bar.png")
         title_bar_draw = ImageDraw.Draw(title_bar)
         title_bar_draw.text((660, 125), "账号等级", GREY, waves_font_26, "mm")
@@ -362,6 +359,8 @@ async def draw_refresh_char_detail_img(
             (810, 78), f"Lv.{account_info.worldLevel}", "white", waves_font_42, "mm"
         )
         img.paste(title_bar, (-20, 70), title_bar)
+    else:
+        await save_user_info(str(account_info.id), account_info.name[:7])
 
     # bar
     refresh_bar = Image.open(TEXT_PATH / "refresh_bar.png")

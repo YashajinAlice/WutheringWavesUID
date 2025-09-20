@@ -2,12 +2,12 @@ from typing import Dict
 
 from gsuid_core.utils.plugins_config.models import (
     GSC,
-    GsIntConfig,
-    GsStrConfig,
     GsBoolConfig,
     GsDictConfig,
+    GsIntConfig,
     GsListConfig,
     GsListStrConfig,
+    GsStrConfig,
 )
 
 CONFIG_DEFAULT: Dict[str, GSC] = {
@@ -110,14 +110,14 @@ CONFIG_DEFAULT: Dict[str, GSC] = {
         "公告推送时间检测（单位min）", "公告推送时间检测（单位min）", 10, 60
     ),
     "RefreshInterval": GsIntConfig(
-        "刷新面板间隔，重启生效（单位秒）",
-        "刷新面板间隔，重启生效（单位秒）",
+        "刷新单角色面板间隔，重启生效（单位秒）",
+        "刷新单角色面板间隔，重启生效（单位秒）",
         0,
         600,
     ),
     "RefreshIntervalAll": GsIntConfig(
-        "刷新全部面板间隔，重启生效（单位秒）",
-        "刷新全部面板间隔，重启生效（单位秒）",
+        "刷新面板间隔，重启生效（单位秒）",
+        "刷新面板间隔，重启生效（单位秒）",
         0,
         600,
     ),

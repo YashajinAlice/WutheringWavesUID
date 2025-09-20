@@ -1,18 +1,18 @@
 from typing import Any, Dict, List
 
-from gsuid_core.sv import SV
-from gsuid_core.bot import Bot
-from gsuid_core.gss import gss
-from gsuid_core.models import Event
 from gsuid_core.aps import scheduler
-from gsuid_core.logger import logger
+from gsuid_core.bot import Bot
 from gsuid_core.config import core_config
+from gsuid_core.gss import gss
+from gsuid_core.logger import logger
+from gsuid_core.models import Event
+from gsuid_core.sv import SV
 
 from ..utils.button import WavesButton
-from .deal import add_cookie, get_cookie, delete_cookie
-from ..wutheringwaves_user.login_succ import login_success_msg
-from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
 from ..utils.database.models import WavesBind, WavesUser, WavesUserAvatar
+from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
+from ..wutheringwaves_user.login_succ import login_success_msg
+from .deal import add_cookie, delete_cookie, get_cookie
 
 waves_bind_uid = SV("鸣潮绑定特征码", priority=10)
 waves_add_ck = SV("鸣潮添加token", priority=5)
@@ -151,15 +151,15 @@ async def send_waves_bind_uid_msg(bot: Bot, ev: Event):
     if "绑定" in ev.command:
         if not uid:
             return await bot.send(
-                f"该命令需要带上正确的uid!\n{PREFIX}绑定uid\n https://cdn.discordapp.com/attachments/1369181260878184532/1408446738666229860/te1.png?ex=68a9c5be&is=68a8743e&hm=308de1a8d439864b599e2b2e029cae657e7304f8d9d569f5534fdaa73afc0d1d&\n",
-                at_sender,
+                f"该命令需要带上正确的uid!\n{PREFIX}绑定uid\n", at_sender
             )
         uid_list = await WavesBind.get_uid_list_by_game(qid, ev.bot_id)
-        max_bind_num: int = WutheringWavesConfig.get_config("MaxBindNum").data
-
-        # 檢查是否已達到綁定上限
-        if uid_list and len(uid_list) >= max_bind_num:
-            return await bot.send("[鸣潮] 绑定特征码达到上限\n", at_sender)
+        cookie_uid_list = await WavesUser.select_user_cookie_uids(qid)
+        if uid_list and cookie_uid_list:
+            difference_uid_list = set(uid_list).difference(set(cookie_uid_list))
+            max_bind_num: int = WutheringWavesConfig.get_config("MaxBindNum").data
+            if len(difference_uid_list) >= max_bind_num:
+                return await bot.send("[鸣潮] 绑定特征码达到上限\n", at_sender)
 
         code = await WavesBind.insert_waves_uid(
             qid, ev.bot_id, uid, ev.group_id, lenth_limit=9
@@ -170,10 +170,10 @@ async def send_waves_bind_uid_msg(bot: Bot, ev: Event):
             bot,
             code,
             {
-                0: f"[鸣潮] 特征码[{uid}]绑定成功！\n\n当前仅支持查询部分信息，完整功能请\n国际服用户请使用【<@1213546963983667220>分析】上传角色面板\n使用【<@1213546963983667220>查看】查看已绑定的特征码\n更新角色面板后可以使用【<@1213546963983667220>暗主排行】查询暗主排行\n 若绑定错误请使用 <@1213546963983667220>删除UID",
-                -1: f"[鸣潮] 特征码[{uid}]的位数不正确，之间无需空格！\n",
-                -2: f"[鸣潮] 特征码[{uid}]已经绑定过了！若绑定错误请使用删除UID。\n",
-                -3: "[鸣潮] 你输入了错误的格式，之间无需空格！\n",
+                0: f"[鸣潮] 特征码[{uid}]绑定成功！\n\n• =国服=用户请使用【{PREFIX}登录】，使用【{PREFIX}刷新面板】更新角色面板\n• =国际服=用户请使用【{PREFIX}分析】,【{PREFIX}pacp帮助】更新角色面板\n• 使用【{PREFIX}查看】查看已绑定的特征码\n• 使用【{PREFIX}切换】在已绑定的特征码中切换当前特征码\n",
+                -1: f"[鸣潮] 特征码[{uid}]的位数不正确！\n",
+                -2: f"[鸣潮] 特征码[{uid}]已经绑定过了！\n",
+                -3: "[鸣潮] 你输入了错误的格式!\n",
             },
             at_sender=at_sender,
         )
@@ -251,10 +251,10 @@ async def sync_non_onebot_user_avatar(ev: Event):
 
     if avatar_hash != old_avatar_hash:
         await WavesUserAvatar.insert_data(
-            user_id=ev.user_id, bot_id=ev.bot_id, avatar_hash=avatar_hash
+            user_id=ev.user_id, 
+            bot_id=ev.bot_id, 
+            avatar_hash=avatar_hash
         )
-
-
 async def send_diff_msg(bot: Bot, code: Any, data: Dict, at_sender=False):
     for retcode in data:
         if code == retcode:
