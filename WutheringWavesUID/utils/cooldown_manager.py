@@ -130,12 +130,39 @@ class CooldownManager:
             是否為訂閱用戶
         """
         try:
+            import time
+
             from ..wutheringwaves_config import WutheringWavesConfig
 
             subscribers = WutheringWavesConfig.get_config(
                 "AnalyzeCooldownSubscribers"
             ).data
-            return user_id in subscribers
+
+            # 兼容舊格式（列表）
+            if isinstance(subscribers, list):
+                return user_id in subscribers
+
+            # 新格式（字典）
+            if not isinstance(subscribers, dict):
+                return False
+
+            if user_id not in subscribers:
+                return False
+
+            user_info = subscribers[user_id]
+
+            # 永久訂閱
+            if user_info.get("permanent", False):
+                return True
+
+            # 限時訂閱
+            expire_time = user_info.get("expire_time", 0)
+            if expire_time > time.time():
+                return True
+
+            # 已過期
+            return False
+
         except Exception as e:
             logger.error(f"[冷却系统] 检查订阅用户失败: {e}")
             return False
