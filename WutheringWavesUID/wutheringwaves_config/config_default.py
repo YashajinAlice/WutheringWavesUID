@@ -2,12 +2,12 @@ from typing import Dict
 
 from gsuid_core.utils.plugins_config.models import (
     GSC,
+    GsIntConfig,
+    GsStrConfig,
     GsBoolConfig,
     GsDictConfig,
-    GsIntConfig,
     GsListConfig,
     GsListStrConfig,
-    GsStrConfig,
 )
 
 CONFIG_DEFAULT: Dict[str, GSC] = {
@@ -189,9 +189,14 @@ CONFIG_DEFAULT: Dict[str, GSC] = {
         50,
     ),
     "UseGlobalSemaphore": GsBoolConfig(
-        "开启后刷新角色面板并发数为全局共享",
+        "使用全局信号量",
         "开启后刷新角色面板并发数为全局共享",
         False,
+    ),
+    "AnalyzeCooldownSubscribers": GsListStrConfig(
+        "分析冷卻訂閱用戶列表",
+        "訂閱用戶可以無視分析冷卻時間",
+        [],
     ),
     "CaptchaProvider": GsStrConfig(
         "验证码提供方（重启生效）",
