@@ -1,24 +1,23 @@
-import asyncio
-import hashlib
-import shutil
+import os
 import ssl
 import time
-import os
+import shutil
+import asyncio
+import hashlib
 from typing import List, Optional
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import httpx
-
 from gsuid_core.bot import Bot
-from gsuid_core.logger import logger
 from gsuid_core.models import Event
-from gsuid_core.utils.download_resource.download_file import download
+from gsuid_core.logger import logger
 from gsuid_core.utils.image.convert import convert_img
+from gsuid_core.utils.download_resource.download_file import download
 
 from ..utils.image import compress_to_webp
-from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
-from ..utils.resource.constant import SPECIAL_CHAR, SPECIAL_CHAR_ID
 from ..utils.resource.RESOURCE_PATH import CUSTOM_CARD_PATH
+from ..utils.resource.constant import SPECIAL_CHAR, SPECIAL_CHAR_ID
+from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
 
 
 def get_hash_id(name):
@@ -72,7 +71,15 @@ async def get_image(ev: Event) -> Optional[List[str]]:
             res.append(content.data)
 
     if not res and ev.image:
-        res.append(ev.image)
+        # 處理 Discord 圖片數據格式
+        if isinstance(ev.image, dict):
+            # Discord 格式：從字典中提取 URL
+            image_url = ev.image.get("url") or ev.image.get("proxy_url")
+            if image_url and isinstance(image_url, str):
+                res.append(image_url)
+        elif isinstance(ev.image, str) and ev.image.startswith("http"):
+            # 其他平台的字符串 URL 格式
+            res.append(ev.image)
 
     return res
 
@@ -215,9 +222,9 @@ async def delete_all_custom_card(bot: Bot, ev: Event, char: str):
 
 async def compress_all_custom_card(bot: Bot, ev: Event):
     count = 0
-    use_cores = max(os.cpu_count() - 2, 1) # 避免2c服务器卡死
+    use_cores = max(os.cpu_count() - 2, 1)  # 避免2c服务器卡死
     await bot.send(f"[鸣潮] 开始压缩面板图, 使用 {use_cores} 核心")
-    
+
     task_list = []
     for char_id_path in CUSTOM_CARD_PATH.iterdir():
         if not char_id_path.is_dir():
@@ -227,9 +234,11 @@ async def compress_all_custom_card(bot: Bot, ev: Event):
                 continue
             if img_path.suffix.lower() in [".jpg", ".png", ".jpeg"]:
                 task_list.append((img_path, 80, True))
-                
+
     with ThreadPoolExecutor(max_workers=use_cores) as executor:
-        future_to_file = {executor.submit(compress_to_webp, *task): task for task in task_list}
+        future_to_file = {
+            executor.submit(compress_to_webp, *task): task for task in task_list
+        }
 
         for future in as_completed(future_to_file):
             file_info = future_to_file[future]
@@ -237,7 +246,7 @@ async def compress_all_custom_card(bot: Bot, ev: Event):
                 success, _ = future.result()
                 if success:
                     count += 1
-                
+
             except Exception as exc:
                 print(f"Error processing {file_info[0]}: {exc}")
 
