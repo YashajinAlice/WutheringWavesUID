@@ -1,22 +1,25 @@
 import json
-import time
 import tempfile
+import time
 from pathlib import Path
 from typing import Optional
 
 import aiohttp
-from gsuid_core.sv import SV
 from gsuid_core.bot import Bot
-from gsuid_core.models import Event
 from gsuid_core.logger import logger
+from gsuid_core.models import Event
+from gsuid_core.sv import SV
+
+from ..utils.database.models import WavesBind
+from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
+from ..utils.error_reply import WAVES_CODE_097, WAVES_CODE_103
+from ..utils.hint import error_reply
 
 from .pcap_api import pcap_api
-from ..utils.hint import error_reply
 from .pcap_parser import PcapDataParser
-from ..utils.database.models import WavesBind
 from .pcap_file_handler import PcapFileHandler
-from ..utils.error_reply import WAVES_CODE_097, WAVES_CODE_103
-from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
+
+
 
 sv_pcap_parse = SV("pcap解析")
 sv_pcap_file = SV("pcap文件处理")
@@ -48,7 +51,7 @@ def safe_unlink(file_path: Path, max_retries: int = 3):
 async def pcap_file_handler(bot: Bot, ev: Event):
     """pcap 文件處理指令 - 使用優化處理器"""
     at_sender = True if ev.group_id else False
-
+    
     pcap_handler = PcapFileHandler()
     msg = await pcap_handler.handle_pcap_file(bot, ev, ev.file)
 
@@ -58,8 +61,8 @@ async def pcap_file_handler(bot: Bot, ev: Event):
 # 解析指令 - discord 用户使用
 @sv_pcap_parse.on_fullmatch(
     (
-        "解析",
-        "jc",
+        "解析pcap",
+        "pcap解析",
     ),
     block=True,
 )
@@ -83,9 +86,7 @@ async def pcap_parse(bot: Bot, ev: Event):
 
         # 檢查文件格式
         if not file_name.lower().endswith((".pcap", ".pcapng")):
-            return await bot.send(
-                "文件格式错误，请上传 .pcap 或 .pcapng 文件\n", at_sender
-            )
+            return await bot.send("文件格式错误，请上传 .pcap 或 .pcapng 文件\n", at_sender)
 
         # 檢查文件大小
         if file_size > 50 * 1024 * 1024:  # 50MB
@@ -115,9 +116,7 @@ async def pcap_parse(bot: Bot, ev: Event):
 
             # 檢查結果是否包含錯誤信息
             if isinstance(result, dict) and result.get("error"):
-                return await bot.send(
-                    f"解析失败：{result.get('error', '未知错误')}\n", at_sender
-                )
+                return await bot.send(f"解析失败：{result.get('error', '未知错误')}\n", at_sender)
 
             # 解析數據
             # 檢查結果是否包含數據
@@ -151,7 +150,7 @@ async def pcap_parse(bot: Bot, ev: Event):
                 f"🎯 现在可以使用「{PREFIX}刷新面板」更新到您的数据里了！",
                 "",
             ]
-
+    
             await bot.send("\n".join(msg), at_sender)
 
         except Exception as e:
@@ -209,7 +208,7 @@ async def pcap_help(bot: Bot, ev: Event):
     """Wuthery pcap 数据导入帮助"""
     url = "https://wuthery.com/guides"
     if WutheringWavesConfig.get_config("WavesTencentWord").data:
-        url = f"https://docs.qq.com/scenario/link.html?url={url}"
+            url = f"https://docs.qq.com/scenario/link.html?url={url}"
 
     warn = "\n".join(
         [
@@ -254,7 +253,7 @@ async def pcap_help(bot: Bot, ev: Event):
         ]
     )
     msg = [warn, method_pc, method_android, upload_note]
-
+    
     await bot.send(msg)
 
 

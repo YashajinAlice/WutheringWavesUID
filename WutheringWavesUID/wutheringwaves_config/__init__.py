@@ -2,20 +2,19 @@ import re
 
 from gsuid_core.bot import Bot
 from gsuid_core.models import Event
-from gsuid_core.logger import logger
 from gsuid_core.sv import SV, get_plugin_available_prefix
 
 from ..utils.database.models import WavesBind
-from . import subscriber_management  # 導入訂閱用戶管理模組
 from ..utils.name_convert import alias_to_char_name
+from .set_config import set_config_func, set_push_value, set_waves_user_value
 from .wutheringwaves_config import WutheringWavesConfig
-from .set_config import set_push_value, set_config_func, set_waves_user_value
+
+from gsuid_core.logger import logger
 
 sv_self_config = SV("鸣潮配置")
 
 
 PREFIX = get_plugin_available_prefix("WutheringWavesUID")
-
 
 @sv_self_config.on_prefix(("开启", "关闭"))
 async def open_switch_func(bot: Bot, ev: Event):
@@ -30,7 +29,7 @@ async def open_switch_func(bot: Bot, ev: Event):
 
     ck = await waves_api.get_self_waves_ck(uid, ev.user_id, ev.bot_id)
     if not ck:
-        from ..utils.error_reply import ERROR_CODE, WAVES_CODE_102
+        from ..utils.error_reply import WAVES_CODE_102, ERROR_CODE
 
         return await bot.send(f"当前特征码：{uid}\n{ERROR_CODE[WAVES_CODE_102]}")
 
@@ -38,7 +37,6 @@ async def open_switch_func(bot: Bot, ev: Event):
 
     im = await set_config_func(ev, uid)
     await bot.send(im, at_sender)
-
 
 @sv_self_config.on_prefix("设置")
 async def send_config_ev(bot: Bot, ev: Event):
@@ -50,11 +48,9 @@ async def send_config_ev(bot: Bot, ev: Event):
             f"您还未绑定鸣潮特征码, 请使用【{PREFIX}绑定uid】 完成绑定！\n", at_sender
         )
     from ..utils.waves_api import waves_api
-
     ck = await waves_api.get_self_waves_ck(uid, ev.user_id, ev.bot_id)
     if not ck:
-        from ..utils.error_reply import ERROR_CODE, WAVES_CODE_102
-
+        from ..utils.error_reply import WAVES_CODE_102, ERROR_CODE
         return await bot.send(f"当前特征码：{uid}\n{ERROR_CODE[WAVES_CODE_102]}")
 
     if "阈值" in ev.text:

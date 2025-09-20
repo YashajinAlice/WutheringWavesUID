@@ -95,6 +95,11 @@ async def add_analyze_subscriber(bot: Bot, ev: Event):
     # 保存配置
     WutheringWavesConfig.set_config("AnalyzeCooldownSubscribers", subscribers)
 
+    # 調試信息：驗證保存結果
+    saved_data = WutheringWavesConfig.get_config("AnalyzeCooldownSubscribers").data
+    logger.debug(f"[订阅管理] 保存後驗證 - 數據: {saved_data}")
+    logger.debug(f"[订阅管理] 保存後驗證 - 類型: {type(saved_data)}")
+
     logger.info(f"[订阅管理] 添加分析订阅用户: {user_id}, 期限: {duration_text}")
     await bot.send(
         f"[鸣潮] 已添加用户 {user_id} 为分析订阅用户！期限：{duration_text}\n",
