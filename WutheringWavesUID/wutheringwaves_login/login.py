@@ -269,6 +269,26 @@ async def international_login(bot: Bot, ev: Event, login_data: dict):
                     first_player = list(player_info.values())[0]
                     uid = first_player.uid  # 使用 uid 字段而不是 id
                     logger.info(f"使用角色 UID: {uid}")
+                    
+                    # 檢測服務器區域
+                    server_region = "Asia"  # 默認值
+                    try:
+                        # 嘗試獲取角色信息來檢測服務器
+                        role_info = await client.get_player_role(oauth_code, int(uid), "Asia")
+                        server_region = "Asia"
+                        logger.info(f"檢測到服務器區域: {server_region}")
+                    except:
+                        # 如果 Asia 失敗，嘗試其他區域
+                        for region in ["HMT", "SEA", "America", "Europe"]:
+                            try:
+                                role_info = await client.get_player_role(oauth_code, int(uid), region)
+                                server_region = region
+                                logger.info(f"檢測到服務器區域: {server_region}")
+                                break
+                            except:
+                                continue
+                    
+                    logger.info(f"最終使用服務器區域: {server_region}")
 
                     # 為國際服創建簡化的 WavesUser（避免調用國服 API）
                     from ..utils.database.models import WavesBind, WavesUser
@@ -288,12 +308,12 @@ async def international_login(bot: Bot, ev: Event, login_data: dict):
                             },
                             update_data={
                                 "cookie": token_result.access_token,
-                                "platform": "international",
+                                "platform": f"international_{server_region}",
                                 "status": "on",
                             },
                         )
                         waves_user = existing_user
-                        logger.info(f"WavesUser 更新成功: UID {uid}")
+                        logger.info(f"WavesUser 更新成功: UID {uid}, 服務器: {server_region}")
                     else:
                         # 創建新用戶
                         await WavesUser.insert_data(
@@ -301,7 +321,7 @@ async def international_login(bot: Bot, ev: Event, login_data: dict):
                             ev.bot_id,
                             cookie=token_result.access_token,
                             uid=str(uid),
-                            platform="international",
+                            platform=f"international_{server_region}",
                             status="on",
                         )
                         # 獲取創建的用戶

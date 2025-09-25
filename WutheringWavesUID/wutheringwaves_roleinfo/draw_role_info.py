@@ -292,8 +292,14 @@ async def draw_international_role_img(uid: str, user, ev: Event):
         # 生成 OAuth code
         oauth_code = await client.generate_oauth_code(user.cookie)
 
+        # 從 platform 字段中提取服務器區域
+        server_region = "Asia"  # 默認值
+        if user.platform and user.platform.startswith("international_"):
+            server_region = user.platform.replace("international_", "")
+            logger.info(f"[鸣潮][國際服角色卡片]使用服務器區域: {server_region}")
+        
         # 獲取角色信息
-        role_info = await client.get_player_role(oauth_code, int(uid), "Asia")
+        role_info = await client.get_player_role(oauth_code, int(uid), server_region)
 
         # 創建簡化的角色信息
         basic_info = role_info.basic
