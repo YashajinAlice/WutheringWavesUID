@@ -1,19 +1,21 @@
 import json
-
 from pathlib import Path
-from dataclasses import field, dataclass
 from typing import Any, Dict, List
+from dataclasses import field, dataclass
 
 from gsuid_core.logger import logger
 
 from ..utils.util import send_master_info
+from ..utils.ascension.model import EchoModel
+from ..utils.ascension.echo import get_echo_model
 from ..utils.ascension.weapon import get_weapon_detail
 from ..wutheringwaves_analyzecard.user_info_utils import save_user_info
-from ..utils.ascension.echo import get_echo_model
-from ..utils.ascension.model import EchoModel
-
-from .detail_json import m_id2monsterId_strange, main_first_props, main_second_props, sub_props
-
+from .detail_json import (
+    sub_props,
+    main_first_props,
+    main_second_props,
+    m_id2monsterId_strange,
+)
 
 TEXT_PATH = Path(__file__).parent
 
@@ -738,7 +740,12 @@ class PcapDataParser:
 
             # 獲取套裝名稱
             fetter_group_name = echo_detail.get_group_name_by_gid(fetter_group_id)
-            logger.debug(f"角色 {role.role.roleName} 添加声骸: {phantom_name} (套装：{fetter_group_name} ID: {phantom_id})")
+            # 確保 fetter_group_name 不為 None
+            if fetter_group_name is None:
+                fetter_group_name = "未知套装"
+            logger.debug(
+                f"角色 {role.role.roleName} 添加声骸: {phantom_name} (套装：{fetter_group_name} ID: {phantom_id})"
+            )
 
             # 構建聲骸數據結構，符合 EquipPhantom 模型
             phantom_data = {

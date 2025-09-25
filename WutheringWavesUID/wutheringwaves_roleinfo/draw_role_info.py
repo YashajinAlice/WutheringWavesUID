@@ -1,19 +1,23 @@
+import time
 from pathlib import Path
 from typing import Optional
 
 from PIL import Image, ImageDraw
-
 from gsuid_core.models import Event
 from gsuid_core.utils.image.convert import convert_img
 
-from ..utils.api.model import (
-    AccountBaseInfo,
-    CalabashData,
-    Role,
-    RoleDetailData,
-    RoleList,
-)
+from ..utils.waves_api import waves_api
+from ..utils.imagetool import draw_pic_with_ring
 from ..utils.char_info_utils import get_all_roleid_detail_info_int
+from ..utils.resource.constant import NORMAL_LIST, SPECIAL_CHAR_INT
+from ..wutheringwaves_analyzecard.user_info_utils import get_user_detail_info
+from ..utils.api.model import (
+    Role,
+    RoleList,
+    CalabashData,
+    RoleDetailData,
+    AccountBaseInfo,
+)
 from ..utils.fonts.waves_fonts import (
     waves_font_25,
     waves_font_26,
@@ -25,16 +29,12 @@ from ..utils.image import (
     GOLD,
     GREY,
     add_footer,
-    cropped_square_avatar,
+    get_waves_bg,
     get_attribute,
     get_square_avatar,
     get_square_weapon,
-    get_waves_bg,
+    cropped_square_avatar,
 )
-from ..utils.imagetool import draw_pic_with_ring
-from ..utils.resource.constant import NORMAL_LIST, SPECIAL_CHAR_INT
-from ..utils.waves_api import waves_api
-from ..wutheringwaves_analyzecard.user_info_utils import get_user_detail_info
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 
@@ -47,11 +47,15 @@ async def draw_role_img(uid: str, ck: str, ev: Event):
 
     # 共鸣者信息
     if waves_api.is_net(uid):
-        from ..wutheringwaves_analyzecard.changeEcho import get_local_all_role_info
+        from ..wutheringwaves_analyzecard.changeEcho import (
+            get_local_all_role_info,
+        )
+
         succ, role_info = await get_local_all_role_info(uid)
         if not succ:
-            from ..utils.error_reply import WAVES_CODE_099
             from ..utils.hint import error_reply
+            from ..utils.error_reply import WAVES_CODE_099
+
             return error_reply(WAVES_CODE_099)
         role_info = RoleList.model_validate(role_info)
     else:
@@ -63,9 +67,9 @@ async def draw_role_img(uid: str, ck: str, ev: Event):
     role_info.roleList.sort(
         key=lambda i: (i.level, i.starLevel, i.roleId), reverse=True
     )
-    
+
     if waves_api.is_net(uid):
-        account_info= await get_user_detail_info(uid)
+        account_info = await get_user_detail_info(uid)
         # 拒绝掉无用数据，不走is_full
         account_info.creatTime = None
     else:
@@ -273,4 +277,195 @@ async def draw_role_img(uid: str, ck: str, ev: Event):
 
     card_img = add_footer(card_img, 600, 20)
     card_img = await convert_img(card_img)
+    return card_img
+
+
+async def draw_international_role_img(uid: str, user, ev: Event):
+    """國際服角色卡片"""
+    try:
+        import kuro
+        from kuro.types import Region
+
+        # 創建 kuro 客戶端
+        client = kuro.Client(region=Region.OVERSEAS)
+
+        # 生成 OAuth code
+        oauth_code = await client.generate_oauth_code(user.cookie)
+
+        # 獲取角色信息
+        role_info = await client.get_player_role(oauth_code, int(uid), "Asia")
+
+        # 創建簡化的角色信息
+        basic_info = role_info.basic
+        battle_pass_info = role_info.battle_pass
+
+        # 獲取箱子數據
+        chests = basic_info.chests
+        chest_1 = chests.get("1", 0)  # 朴素奇藏箱
+        chest_2 = chests.get("2", 0)  # 基準奇藏箱
+        chest_3 = chests.get("3", 0)  # 精密奇藏箱
+        chest_4 = chests.get("4", 0)  # 輝光奇藏箱
+
+        # 獲取潮汐之遺數據
+        tidal_heritages = basic_info.tidal_heritages
+        tidal_1 = tidal_heritages.get("1", 0)  # 潮汐之遺-綠
+        tidal_2 = tidal_heritages.get("2", 0)  # 潮汐之遺-紫
+        tidal_3 = tidal_heritages.get("3", 0)  # 潮汐之遺-金
+
+        # 生成圖像
+        img = await _draw_international_role_card_img(
+            uid, basic_info, battle_pass_info, chests, tidal_heritages, ev
+        )
+        return await convert_img(img)
+
+    except Exception as e:
+        return f"❌ 國際服角色卡片生成失敗: {str(e)}"
+
+
+async def _draw_international_role_card_img(
+    uid: str, basic_info, battle_pass_info, chests, tidal_heritages, ev: Event
+):
+    """生成國際服角色卡片圖像 - 參考國服的生成邏輯"""
+    # 計算圖像尺寸 - 參考國服的計算方式
+    roleTotalNum = basic_info.character_count
+    xset = 50
+    yset = 470
+
+    # 初始化基础信息栏位 - 參考國服
+    bs = Image.open(TEXT_PATH / "bs.png")
+    yset += bs.size[1]
+
+    w = 1000
+    h = 100 + yset + 200 * int(roleTotalNum / 4 + (1 if roleTotalNum % 4 else 0))
+    card_img = get_waves_bg(w, h)
+
+    # 基本信息數據 - 按照新的布局要求
+    base_info_value_list = [
+        # 上排：活躍天數、三種潮汐之遺、已達成成就、成就星數
+        {
+            "key": "活跃天数",
+            "value": f"{basic_info.active_days}",
+            "info_block": "color_y.png",
+        },
+        {
+            "key": "潮汐之遗-绿",
+            "value": f"{tidal_heritages.get('1', 0)}",
+            "info_block": "",
+        },
+        {
+            "key": "潮汐之遗-紫",
+            "value": f"{tidal_heritages.get('2', 0)}",
+            "info_block": "",
+        },
+        {
+            "key": "潮汐之遗-金",
+            "value": f"{tidal_heritages.get('3', 0)}",
+            "info_block": "",
+        },
+        {
+            "key": "已达成成就",
+            "value": "0",
+            "info_block": "color_p.png",
+        },  # 國際服暫不支援
+        {"key": "成就星数", "value": "0", "info_block": ""},  # 國際服暫不支援
+        # 下排：解鎖角色、UP角色、四種箱子
+        {"key": "解锁角色", "value": f"{basic_info.character_count}", "info_block": ""},
+        {"key": "UP角色", "value": "0", "info_block": "color_g.png"},  # 國際服暫不支援
+        {
+            "key": "朴素奇藏箱",
+            "value": f"{chests.get('1', 0)}",
+            "info_block": "",
+        },
+        {
+            "key": "基准奇藏箱",
+            "value": f"{chests.get('2', 0)}",
+            "info_block": "",
+        },
+        {
+            "key": "精密奇藏箱",
+            "value": f"{chests.get('3', 0)}",
+            "info_block": "",
+        },
+        {
+            "key": "辉光奇藏箱",
+            "value": f"{chests.get('4', 0)}",
+            "info_block": "",
+        },
+    ]
+
+    # 基本信息網格生成 - 參考國服的 calc_info_block 函數
+    def calc_info_block(_x: int, _y: int, key: str, value: str, color_path: str = ""):
+        if not color_path:
+            color_path = "info_block.png"
+        info_block = Image.open(TEXT_PATH / f"{color_path}")
+        info_block_draw = ImageDraw.Draw(info_block)
+        info_block_draw.text((66, 90), key, "white", waves_font_26, "mm")
+        info_block_draw.text((66, 43), value, "white", waves_font_40, "mm")
+        bs.paste(info_block, (_x, _y), info_block)
+
+    # 基本信息網格布局 - 參考國服的布局邏輯
+    x = 66
+    y = 75
+    for i in range(2):
+        for j in range(6):
+            _x = x + 145 * j
+            _y = y + 140 * i
+            _len = i * 6 + j
+            if _len >= len(base_info_value_list):
+                break
+            calc_info_block(
+                _x,
+                _y,
+                base_info_value_list[_len]["key"],
+                base_info_value_list[_len]["value"],
+                base_info_value_list[_len]["info_block"],
+            )
+
+    # 基础信息 名字 特征码 - 參考國服
+    base_info_bg = Image.open(TEXT_PATH / "base_info_bg.png")
+    base_info_draw = ImageDraw.Draw(base_info_bg)
+    base_info_draw.text(
+        (275, 120), f"{basic_info.name[:7]}", "white", waves_font_30, "lm"
+    )
+    base_info_draw.text((226, 173), f"特征码:  {uid}", GOLD, waves_font_25, "lm")
+    card_img.paste(base_info_bg, (35, 170), base_info_bg)
+
+    # 头像 头像环 - 參考國服
+    avatar, avatar_ring = await draw_pic_with_ring(ev)
+    card_img.paste(avatar, (45, 220), avatar)
+    card_img.paste(avatar_ring, (55, 230), avatar_ring)
+
+    # 右侧装饰 - 參考國服
+    char = Image.open(TEXT_PATH / "char.png")
+    card_img.paste(char, (910, 0), char)
+
+    # 账号基本信息 - 參考國服
+    line = Image.open(TEXT_PATH / "line.png")
+    line_draw = ImageDraw.Draw(line)
+    line_draw.text((475, 30), "基本信息", "white", waves_font_30, "mm")
+
+    title_bar = Image.open(TEXT_PATH / "title_bar.png")
+    title_bar_draw = ImageDraw.Draw(title_bar)
+    title_bar_draw.text((660, 125), "角色等级", GREY, waves_font_26, "mm")
+    title_bar_draw.text(
+        (660, 78), f"Lv.{basic_info.level}", "white", waves_font_42, "mm"
+    )
+
+    title_bar_draw.text((810, 125), "世界等级", GREY, waves_font_26, "mm")
+    title_bar_draw.text(
+        (810, 78), f"Lv.{basic_info.world_level}", "white", waves_font_42, "mm"
+    )
+
+    # 貼上基本信息網格和分隔線 - 參考國服的位置
+    card_img.paste(line, (0, yset - bs.size[1] - 70), line)
+    card_img.paste(bs, (-10, yset - bs.size[1] - 70), bs)
+    card_img.paste(title_bar, (0, 220), title_bar)
+
+    # 角色信息分隔線 - 參考國服
+    line2 = Image.open(TEXT_PATH / "line.png")
+    line2_draw = ImageDraw.Draw(line2)
+    line2_draw.text((475, 30), "角色信息", "white", waves_font_30, "mm")
+    card_img.paste(line2, (0, yset - 70), line2)
+
+    card_img = add_footer(card_img, 600, 20)
     return card_img

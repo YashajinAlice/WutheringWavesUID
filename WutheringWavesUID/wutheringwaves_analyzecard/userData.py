@@ -99,7 +99,10 @@ async def save_card_dict_to_json(bot: Bot, ev: Event, result_dict: Dict):
     ECHO = await get_fetterDetail_from_char(char_id)
 
     for i, echo_value in enumerate(result_dict["装备数据"]):
-        # 创建 ECHO 的独立副本
+        # 创建 ECHO 的独立副本，添加邊界檢查
+        if i >= len(ECHO):
+            logger.warning(f" [鸣潮][dc卡片识别] ECHO 列表長度不足，跳過索引 {i}")
+            continue
         echo = copy.deepcopy(ECHO[i])
 
         echo["fetterDetail"]["num"] = echo_num
@@ -152,6 +155,10 @@ async def save_card_dict_to_json(bot: Bot, ev: Event, result_dict: Dict):
     for skill_data, ocr_level in zip_longest(
         result.skillList, result_dict["技能等级"], fillvalue=1
     ):
+        # 添加安全檢查，防止 skill_data 為 None
+        if skill_data is None:
+            logger.warning(f" [鸣潮][dc卡片识别] skill_data 為 None，跳過此技能")
+            continue
         skill = skill_data.skill
         data["skillList"].append(
             {
@@ -236,90 +243,78 @@ async def check_phantom_data(data) -> tuple[bool, dict]:
 
 async def compare_update_card_info(uid, waves_data):
     """避免覆盖更新角色数据(角色等级、武器等级、武器谐振*、技能等级*)到本地"""
-    try:
-        _, all_data = await get_local_all_role_detail(uid)
-        existing_data = all_data.get(waves_data["role"]["roleId"], {})
-        if not existing_data:
-            return waves_data
+    _, all_data = await get_local_all_role_detail(uid)
+    existing_data = all_data.get(waves_data["role"]["roleId"], {})
+    if not existing_data:
+        return waves_data
 
-        # 检查必要字段是否存在
-        if not waves_data.get("role") or not existing_data.get("role"):
-            logger.warning("[鸣潮][dc卡片识别] 角色数据缺失，跳过比较")
-            return waves_data
+    # 确保角色等级是整数类型
+    waves_level = int(waves_data["role"]["level"])
+    existing_level = int(existing_data["role"]["level"])
 
-        # 确保角色等级是整数类型
-        waves_level = int(waves_data["role"]["level"])
-        existing_level = int(existing_data["role"]["level"])
+    if waves_level < existing_level:
+        logger.warning(
+            f" [鸣潮][dc卡片识别] 角色等级低于本地数据，纠正：{waves_level}->{existing_level}"
+        )
+        waves_data["role"]["level"] = existing_data["role"]["level"]
+        waves_data["role"]["breach"] = get_breach(existing_level)
+        waves_data["level"] = existing_data["level"]
 
-        if waves_level < existing_level:
+    waves_weaponId = int(waves_data["weaponData"]["weapon"]["weaponId"])
+    existing_weaponId = int(existing_data["weaponData"]["weapon"]["weaponId"])
+
+    # 确保武器ID匹配后再比较等级
+    if waves_weaponId == existing_weaponId:
+        # 确保武器等级是整数类型
+        waves_weapon_level = int(waves_data["weaponData"]["level"])
+        existing_weapon_level = int(existing_data["weaponData"]["level"])
+
+        if waves_weapon_level < existing_weapon_level:
             logger.warning(
-                f" [鸣潮][dc卡片识别] 角色等级低于本地数据，纠正：{waves_level}->{existing_level}"
+                f" [鸣潮][dc卡片识别] 武器等级低于本地数据，纠正：{waves_weapon_level}->{existing_weapon_level}"
             )
-            waves_data["role"]["level"] = existing_data["role"]["level"]
-            waves_data["role"]["breach"] = get_breach(existing_level)
-            waves_data["level"] = existing_data["level"]
+            waves_data["weaponData"]["level"] = existing_data["weaponData"]["level"]
+            waves_data["weaponData"]["breach"] = get_breach(existing_weapon_level)
 
-        # 检查武器数据是否存在
-        if (
-            not waves_data.get("weaponData")
-            or not waves_data["weaponData"].get("weapon")
-            or not existing_data.get("weaponData")
-            or not existing_data["weaponData"].get("weapon")
-        ):
-            logger.warning("[鸣潮][dc卡片识别] 武器数据缺失，跳过武器比较")
-            return waves_data
+        # 确保武器谐振等级是整数类型
+        waves_reson_level = int(waves_data["weaponData"]["resonLevel"])
+        existing_reson_level = int(existing_data["weaponData"]["resonLevel"])
 
-        waves_weaponId = int(waves_data["weaponData"]["weapon"]["weaponId"])
-        existing_weaponId = int(existing_data["weaponData"]["weapon"]["weaponId"])
+        if waves_reson_level < existing_reson_level:
+            logger.warning(
+                f" [鸣潮][dc卡片识别] 武器谐振低于本地数据，纠正：{waves_reson_level}->{existing_reson_level}"
+            )
+            waves_data["weaponData"]["resonLevel"] = existing_data["weaponData"][
+                "resonLevel"
+            ]
 
-        # 确保武器ID匹配后再比较等级
-        if waves_weaponId == existing_weaponId:
-            # 确保武器等级是整数类型
-            waves_weapon_level = int(waves_data["weaponData"]["level"])
-            existing_weapon_level = int(existing_data["weaponData"]["level"])
+    # 比较技能等级
+    # 確保兩個 skillList 都存在且長度足夠
+    if "skillList" in waves_data and "skillList" in existing_data:
+        waves_skill_list = waves_data["skillList"]
+        existing_skill_list = existing_data["skillList"]
 
-            if waves_weapon_level < existing_weapon_level:
-                logger.warning(
-                    f" [鸣潮][dc卡片识别] 武器等级低于本地数据，纠正：{waves_weapon_level}->{existing_weapon_level}"
-                )
-                waves_data["weaponData"]["level"] = existing_data["weaponData"]["level"]
-                waves_data["weaponData"]["breach"] = get_breach(existing_weapon_level)
-
-            # 确保武器谐振等级是整数类型
-            waves_reson_level = int(waves_data["weaponData"]["resonLevel"])
-            existing_reson_level = int(existing_data["weaponData"]["resonLevel"])
-
-            if waves_reson_level < existing_reson_level:
-                logger.warning(
-                    f" [鸣潮][dc卡片识别] 武器谐振低于本地数据，纠正：{waves_reson_level}->{existing_reson_level}"
-                )
-                waves_data["weaponData"]["resonLevel"] = existing_data["weaponData"][
-                    "resonLevel"
-                ]
-
-        # 比较技能等级
-        waves_skill_list = waves_data.get("skillList", [])
-        existing_skill_list = existing_data.get("skillList", [])
-
-        # 取較短的列表長度進行比較，避免索引越界
+        # 取較小的長度來避免索引超出範圍
         min_skill_count = min(len(waves_skill_list), len(existing_skill_list))
 
         for i in range(min_skill_count):
-            # 确保技能等级是整数类型
-            waves_skill_level = int(waves_skill_list[i]["level"])
-            existing_skill_level = int(existing_skill_list[i]["level"])
+            try:
+                # 确保技能等级是整数类型
+                waves_skill_level = int(waves_skill_list[i]["level"])
+                existing_skill_level = int(existing_skill_list[i]["level"])
 
-            if waves_skill_level < existing_skill_level:
+                if waves_skill_level < existing_skill_level:
+                    logger.warning(
+                        f" [鸣潮][dc卡片识别] 存在技能等级低于本地数据，纠正：{waves_skill_level}->{existing_skill_level}"
+                    )
+                    waves_data["skillList"][i]["level"] = existing_data["skillList"][i][
+                        "level"
+                    ]
+            except (KeyError, IndexError, ValueError) as e:
                 logger.warning(
-                    f" [鸣潮][dc卡片识别] 存在技能等级低于本地数据，纠正：{waves_skill_level}->{existing_skill_level}"
+                    f" [鸣潮][dc卡片识别] 技能等级比较时出现异常 (技能 {i}): {e}"
                 )
-                waves_data["skillList"][i]["level"] = existing_data["skillList"][i][
-                    "level"
-                ]
-
-    except Exception as e:
-        logger.error(f"[鸣潮][dc卡片识别] 比较角色数据时发生错误: {e}")
-        return waves_data
+                continue
 
     return waves_data
 

@@ -1,10 +1,9 @@
 from pathlib import Path
-from typing import Dict, List, Optional, Union
+from typing import Dict, List, Union, Optional
 
 from msgspec import json as msgjson
-from pydantic import BaseModel, Field
-
 from gsuid_core.logger import logger
+from pydantic import Field, BaseModel
 
 MAP_PATH = Path(__file__).parent.parent / "map/detail_json/sonata"
 sonata_id_data = {}
@@ -42,6 +41,8 @@ class WavesSonataResult(BaseModel):
 
     def full_piece_effect(self) -> int:
         """获取套装最大件数"""
+        if not self.set:
+            return 0
         return max(int(key) for key in self.set.keys())
 
 

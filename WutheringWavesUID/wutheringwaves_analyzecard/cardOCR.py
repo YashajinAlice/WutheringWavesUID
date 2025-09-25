@@ -179,9 +179,6 @@ async def check_ocr_engine_accessible() -> int:
 async def async_ocr(bot: Bot, ev: Event):
     """
     异步OCR识别函数
-
-    Returns:
-        bool: 分析是否成功
     """
     at_sender = True if ev.group_id else False
 
@@ -202,8 +199,7 @@ async def async_ocr(bot: Bot, ev: Event):
 
     bool_i, image = await upload_discord_bot_card(ev)
     if not bool_i:
-        await bot.send("[鸣潮]获取dc卡片图失败！卡片分析已停止。\n", at_sender)
-        return False
+        return await bot.send("[鸣潮]获取dc卡片图失败！卡片分析已停止。\n", at_sender)
     # 获取dc卡片与共鸣链
     chain_num, cropped_images = await cut_card_to_ocr(image)
 
@@ -224,13 +220,11 @@ async def async_ocr(bot: Bot, ev: Event):
                 at_sender,
             )
         elif NEGINE_NUM == 0:
-            await bot.send("[鸣潮] OCR服务暂时不可用，请稍后再试。\n", at_sender)
-            return False
+            return await bot.send("[鸣潮] OCR服务暂时不可用，请稍后再试。\n", at_sender)
         elif NEGINE_NUM == -1:
-            await bot.send(
+            return await bot.send(
                 "[鸣潮] 服务器访问OCR服务失败，请检查服务器网络状态。\n", at_sender
             )
-            return False
 
         ocr_results = await images_ocrspace(API_KEY, NEGINE_NUM, cropped_images)
         logger.info(f"[鸣潮][OCRspace]dc卡片识别数据:\n{ocr_results}")
@@ -239,35 +233,32 @@ async def async_ocr(bot: Bot, ev: Event):
             break
 
     if API_KEY is None:
-        await bot.send(
+        return await bot.send(
             "[鸣潮] OCRspace API密钥不可用！请等待额度恢复或更换密钥\n", at_sender
         )
-        return False
 
     if not ocr_results or ocr_results[0]["error"]:
         logger.warning("[鸣潮]OCRspace识别失败！请检查服务器网络是否正常。")
-        await bot.send(
+        return await bot.send(
             "[鸣潮]OCRspace识别失败！请检查服务器网络是否正常。\n", at_sender
         )
-        return False
 
     bool_d, final_result = await ocr_results_to_dict(chain_num, ocr_results)
     if not bool_d:
-        await bot.send("[鸣潮]Please use chinese card！\n", at_sender)
-        return False
+        return await bot.send("[鸣潮]Please use chinese card！\n", at_sender)
 
     name, char_id = await which_char(
         bot, ev, final_result["角色信息"].get("角色名", "")
     )
     if char_id is None:
         logger.warning(f"[鸣潮][dc卡片识别] 角色[{name}]识别错误！")
-        await bot.send(f"[鸣潮]无法识别的角色名{name}，请确保图片清晰\n", at_sender)
-        return False
+        return await bot.send(
+            f"[鸣潮]无法识别的角色名{name}，请确保图片清晰\n", at_sender
+        )
     final_result["角色信息"]["角色名"] = name
     final_result["角色信息"]["角色ID"] = char_id
 
     await save_card_dict_to_json(bot, ev, final_result)
-    return True
 
 
 async def get_image(ev: Event):
@@ -300,15 +291,7 @@ async def get_image(ev: Event):
             res.append(content.data)
 
     if not res and ev.image:
-        # 處理 Discord 圖片數據格式
-        if isinstance(ev.image, dict):
-            # Discord 格式：從字典中提取 URL
-            image_url = ev.image.get("url") or ev.image.get("proxy_url")
-            if image_url and isinstance(image_url, str):
-                res.append(image_url)
-        elif isinstance(ev.image, str) and ev.image.startswith("http"):
-            # 其他平台的字符串 URL 格式
-            res.append(ev.image)
+        res.append(ev.image)
 
     return res
 
@@ -759,9 +742,18 @@ async def ocr_results_to_dict(chain_num, ocr_results):
                 attr = re.sub(r".*效率$", "共鳴效率", attr)
                 attr = re.sub(r"^重.傷害加成*$", "重擊傷害加成", attr)
                 clean_attr = cc.convert(attr)  # 标准繁简转换
+
+                # 验证属性值是否有效
+                clean_value = value.strip() if value else ""
+                if not clean_value or clean_value in [".", "-", ""]:
+                    logger.warning(
+                        f"[鸣潮]OCR識別到無效屬性值: {clean_value}, 跳過此條目"
+                    )
+                    continue
+
                 # 验证属性名是否符合预期（至少两个中文字符，且不含数字）
                 if len(clean_attr) >= 2 and not re.search(r"[0-9]", clean_attr):
-                    valid_entries.append((clean_attr, value))
+                    valid_entries.append((clean_attr, clean_value))
 
         # 分配主副属性
         if valid_entries:

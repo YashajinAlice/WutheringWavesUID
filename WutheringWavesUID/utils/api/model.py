@@ -157,7 +157,7 @@ class PhantomProp(BaseModel):
 
 class FetterDetail(BaseModel):
     groupId: int
-    name: str
+    name: Optional[str] = ""
     iconUrl: Optional[str]
     num: int
     firstDescription: Optional[str]
@@ -191,7 +191,7 @@ class EquipPhantom(BaseModel):
 
 class EquipPhantomData(BaseModel):
     cost: int
-    equipPhantomList: Union[List[Optional[EquipPhantom]], None, List[None]] = None
+    equipPhantomList: Optional[List[EquipPhantom]] = None
 
 
 class Skill(BaseModel):
