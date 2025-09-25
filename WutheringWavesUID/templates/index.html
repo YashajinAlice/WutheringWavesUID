@@ -247,6 +247,26 @@
       opacity: 1;
     }
 
+    .geetest-container {
+      margin: 15px 0;
+      padding: 15px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .geetest-title {
+      color: white;
+      font-size: 14px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    #geetestWidget {
+      display: flex;
+      justify-content: center;
+    }
+
     .modal-content {
       background-color: #fefefe;
       margin: 15% auto;
@@ -422,6 +442,13 @@
       <div class="input-group">
         <input type="password" id="globalPassword" name="password" required placeholder="请输入密码">
       </div>
+
+      <!-- Geetest 驗證區域 -->
+      <div id="geetestContainer" class="geetest-container" style="display: none;">
+        <div class="geetest-title">請完成安全驗證</div>
+        <div id="geetestWidget"></div>
+      </div>
+
       <div id="userIdDisplay" class="user-id-display">当前识别码: {{ userId }}</div>
       <button type="submit" id="globalLoginBtn">os 國際服登入</button>
     </form>
@@ -461,6 +488,10 @@
 
     // 當前選中的服務器
     let currentServer = 'cn';
+
+    // 重試計數器
+    let retryCount = 0;
+    const maxRetries = 2;
 
     // 服務器切換功能
     document.querySelectorAll('.server-tab').forEach(tab => {
@@ -582,14 +613,19 @@
         return;
       }
 
+      // 檢查是否已經有 Geetest 驗證數據
+      const geetestData = window.geetestResult;
+
       // 調用國際服登入 API
       const requestData = {
         email: email,
         password: password,
-        auth: '{{ auth }}'
+        auth: '{{ auth }}',
+        geetest_data: geetestData
       };
 
       console.log('發送登入請求:', requestData);
+      console.log('Geetest 數據:', geetestData);
       console.log('服務器 URL:', '{{ server_url }}');
 
       fetch('{{ server_url }}/waves/international/login', {
@@ -606,9 +642,38 @@
         .then(data => {
           console.log('響應數據:', data);
           if (data.success) {
+            retryCount = 0; // 重置重試計數器
             showSuccessModal();
+          } else if (data.need_verification) {
+            // 需要 Geetest 驗證
+            console.log('需要進行 Geetest 驗證');
+            if (retryCount < maxRetries) {
+              retryCount++;
+              console.log(`第 ${retryCount} 次重試`);
+              showGeetestVerification();
+            } else {
+              console.error('重試次數已達上限');
+              alert('驗證失敗次數過多，請重新載入頁面後再試');
+              retryCount = 0; // 重置計數器
+            }
           } else {
-            alert('登入失敗: ' + (data.msg || '請重試'));
+            console.error('登入失敗:', data.msg);
+            // 檢查是否為 Geetest 驗證失敗
+            if (data.msg && (data.msg.includes('Geetest') || data.msg.includes('驗證') || data.msg.includes('校验码'))) {
+              console.log('檢測到 Geetest 驗證失敗，嘗試重新驗證');
+              if (retryCount < maxRetries) {
+                retryCount++;
+                console.log(`第 ${retryCount} 次重試（Geetest 驗證失敗）`);
+                showGeetestVerification();
+              } else {
+                console.error('重試次數已達上限');
+                alert('驗證失敗次數過多，請重新載入頁面後再試');
+                retryCount = 0; // 重置計數器
+              }
+            } else {
+              alert('登入失敗: ' + (data.msg || '請重試'));
+              retryCount = 0; // 重置計數器
+            }
           }
         })
         .catch(error => {
@@ -616,6 +681,104 @@
           alert('登入失敗，請重試');
         });
     });
+
+    // 顯示 Geetest 驗證
+    function showGeetestVerification() {
+      const geetestContainer = document.getElementById('geetestContainer');
+      geetestContainer.style.display = 'block';
+
+      // 清除之前的驗證結果
+      window.geetestResult = null;
+
+      // 初始化 Geetest
+      // 使用遊戲登入的 CaptchaId，而不是網站登入的
+      initGeetest4({
+        captchaId: "1f4565ff7acc97b1a2fc97b921743aa4", // CaptchaId.GAME
+        product: "bind",
+        language: "zh-Hant",
+      }, function (captcha) {
+        captcha.onReady(function () {
+          captcha.showCaptcha();
+        });
+
+        captcha.onSuccess(function () {
+          // 保存驗證結果
+          const validateData = captcha.getValidate();
+          console.log('Geetest 原始數據:', validateData);
+
+          // 檢查原始數據的字段
+          console.log('lot_number:', validateData.lot_number);
+          console.log('pass_token:', validateData.pass_token);
+          console.log('gen_time:', validateData.gen_time);
+          console.log('captcha_output:', validateData.captcha_output);
+
+          // 驗證必要字段
+          if (!validateData.lot_number || !validateData.pass_token || !validateData.gen_time) {
+            console.error('Geetest 數據不完整:', validateData);
+            alert('驗證數據不完整，請重新驗證');
+            captcha.reset(); // 重置驗證
+            return;
+          }
+
+          // 檢查時間戳是否合理
+          let genTime = validateData.gen_time || "";
+          const currentTime = Math.floor(Date.now() / 1000);
+
+          if (genTime) {
+            try {
+              const genTimeInt = parseInt(genTime);
+              if (genTimeInt > currentTime + 300) { // 如果時間戳超過當前時間5分鐘
+                console.warn(`Geetest 時間戳異常: ${genTime}, 當前時間: ${currentTime}`);
+                genTime = currentTime.toString();
+                console.info(`已修正時間戳為: ${genTime}`);
+              }
+            } catch (e) {
+              console.warn("Geetest 時間戳格式錯誤，使用當前時間");
+              genTime = currentTime.toString();
+            }
+          } else {
+            genTime = currentTime.toString();
+          }
+
+          // 轉換為 MMTResult 格式（匹配 kuro.py 的最新要求）
+          // 使用遊戲登入的 CaptchaId，而不是網站登入的
+          const mmtResult = {
+            captcha_id: "1f4565ff7acc97b1a2fc97b921743aa4", // CaptchaId.GAME
+            lot_number: validateData.lot_number || "",
+            pass_token: validateData.pass_token || "",
+            gen_time: genTime,
+            captcha_output: validateData.captcha_output || ""
+          };
+
+          // 添加調試信息
+          console.log('Geetest 驗證數據檢查:');
+          console.log('- lot_number:', mmtResult.lot_number ? '存在' : '缺失');
+          console.log('- pass_token:', mmtResult.pass_token ? '存在' : '缺失');
+          console.log('- gen_time:', mmtResult.gen_time);
+          console.log('- captcha_output:', mmtResult.captcha_output ? '存在' : '缺失');
+          console.log('- 時間戳差異:', Math.floor(Date.now() / 1000) - parseInt(genTime), '秒');
+
+          window.geetestResult = JSON.stringify(mmtResult);
+          console.log('Geetest 轉換後數據:', window.geetestResult);
+
+          // 隱藏驗證界面
+          geetestContainer.style.display = 'none';
+
+          // 自動重新提交登入
+          globalLoginForm.dispatchEvent(new Event('submit'));
+        });
+
+        captcha.onError(function () {
+          console.error('Geetest 驗證失敗');
+          alert('驗證失敗，請重試');
+        });
+
+        captcha.onClose(function () {
+          console.log('Geetest 驗證被關閉');
+          // 可以選擇是否隱藏驗證界面
+        });
+      });
+    }
 
 
 

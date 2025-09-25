@@ -39,13 +39,39 @@ async def send_daily_info_pic(bot: Bot, ev: Event):
 
     # 檢查是否為國際服用戶
     user = await WavesUser.get_user_by_attr(ev.user_id, ev.bot_id, "uid", uid)
+
+    # 調試信息
+    await bot.logger.info(f"[鸣潮][每日信息]UID: {uid}")
+    await bot.logger.info(f"[鸣潮][每日信息]用戶信息: {user}")
+    if user:
+        await bot.logger.info(f"[鸣潮][每日信息]平台: {user.platform}")
+
     if user and user.platform == "international":
         # 國際服體力查詢
+        await bot.logger.info(f"[鸣潮][每日信息]使用國際服體力查詢")
         return await bot.send(await draw_international_stamina_img(bot, ev, user))
     else:
         # 國服體力查詢
         if waves_api.is_net(uid):
-            return await bot.send(ERROR_CODE[WAVES_CODE_098])
+            await bot.logger.info(
+                f"[鸣潮][每日信息]檢測到國際服UID但平台標記錯誤，使用國際服查詢"
+            )
+            # 如果檢測到是國際服UID但平台標記錯誤，嘗試使用國際服查詢
+            if user:
+                # 更新平台標記
+                await WavesUser.update_data_by_data(
+                    select_data={
+                        "user_id": ev.user_id,
+                        "bot_id": ev.bot_id,
+                        "uid": uid,
+                    },
+                    update_data={"platform": "international"},
+                )
+                return await bot.send(
+                    await draw_international_stamina_img(bot, ev, user)
+                )
+            else:
+                return await bot.send(ERROR_CODE[WAVES_CODE_098])
         return await bot.send(await draw_stamina_img(bot, ev))
 
 
