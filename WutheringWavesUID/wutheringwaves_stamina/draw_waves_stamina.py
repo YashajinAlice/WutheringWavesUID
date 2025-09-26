@@ -241,7 +241,12 @@ async def _draw_stamina_img(ev: Event, valid: Dict) -> Image.Image:
         if daily_info.energyData.refreshTimeStamp
         else curr_time
     )
-    # remain_time = await seconds2hours(refreshTimeStamp - curr_time)
+    # 计算体力恢复时间
+    remain_seconds = refreshTimeStamp - curr_time
+    remain_time = (
+        await seconds2hours(remain_seconds) if remain_seconds > 0 else "体力已满"
+    )
+
     # 设置体力推送时间
     push_bool = await set_push_time(ev.bot_id, daily_info.roleId, refreshTimeStamp)
     if push_bool:
@@ -254,29 +259,36 @@ async def _draw_stamina_img(ev: Event, valid: Dict) -> Image.Image:
     time_img = Image.new("RGBA", (190, 33), (255, 255, 255, 0))
     time_img_draw = ImageDraw.Draw(time_img)
     time_img_draw.rounded_rectangle(
-        [0, 0, 190, 33], radius=15, fill=(186, 55, 42, int(0.7 * 255))
+        [0, 0, 190, 33],
+        radius=15,
+        fill=(130, 104, 54, int(0.7 * 255)),  # 使用用戶建議的矩形背景顏色
     )
-    if refreshTimeStamp != curr_time:
+
+    if remain_seconds > 0:
+        # 使用原本的時間顯示格式（今天/明天）
         date_from_timestamp = datetime.fromtimestamp(refreshTimeStamp)
         now = datetime.now()
         today = now.date()
         tomorrow = today + timedelta(days=1)
 
-        remain_time = datetime.fromtimestamp(refreshTimeStamp).strftime(
+        remain_time_display = datetime.fromtimestamp(refreshTimeStamp).strftime(
             "%m.%d %H:%M:%S"
         )
         if date_from_timestamp.date() == today:
-            remain_time = "今天 " + datetime.fromtimestamp(refreshTimeStamp).strftime(
-                "%H:%M:%S"
-            )
+            remain_time_display = "今天 " + datetime.fromtimestamp(
+                refreshTimeStamp
+            ).strftime("%H:%M:%S")
         elif date_from_timestamp.date() == tomorrow:
-            remain_time = "明天 " + datetime.fromtimestamp(refreshTimeStamp).strftime(
-                "%H:%M:%S"
-            )
+            remain_time_display = "明天 " + datetime.fromtimestamp(
+                refreshTimeStamp
+            ).strftime("%H:%M:%S")
 
-        time_img_draw.text((10, 15), f"{remain_time}", "white", waves_font_24, "lm")
+        time_img_draw.text(
+            (10, 15), f"{remain_time_display}", "white", waves_font_24, "lm"
+        )
     else:
-        time_img_draw.text((10, 15), "漂泊者该上潮了", "white", waves_font_24, "lm")
+        # 体力已满
+        time_img_draw.text((10, 15), "体力已满", "white", waves_font_24, "lm")
 
     info.alpha_composite(time_img, (280, 50))
 
@@ -537,7 +549,9 @@ async def _draw_international_stamina_img(
     time_img = Image.new("RGBA", (190, 33), (255, 255, 255, 0))
     time_img_draw = ImageDraw.Draw(time_img)
     time_img_draw.rounded_rectangle(
-        [0, 0, 190, 33], radius=15, fill=(186, 55, 42, int(0.7 * 255))
+        [0, 0, 190, 33],
+        radius=15,
+        fill=(130, 104, 54, int(0.7 * 255)),  # 使用用戶建議的矩形背景顏色
     )
 
     # 處理體力恢復時間
@@ -547,34 +561,59 @@ async def _draw_international_stamina_img(
     else:
         # 體力未滿，顯示恢復時間
         replenish_time = basic_info.waveplates_replenish_time
+        logger.info(f"[鳴潮][國際服體力] replenish_time: {replenish_time}")
+
         if replenish_time and replenish_time != 0:
             try:
-                # 假設 replenish_time 是時間戳
-                date_from_timestamp = datetime.fromtimestamp(replenish_time)
-                now = datetime.now()
-                today = now.date()
-                tomorrow = today + timedelta(days=1)
+                # 計算剩餘秒數
+                curr_time = int(time.time())
 
-                remain_time = datetime.fromtimestamp(replenish_time).strftime(
-                    "%m.%d %H:%M:%S"
-                )
-                if date_from_timestamp.date() == today:
-                    remain_time = "今天 " + datetime.fromtimestamp(
-                        replenish_time
-                    ).strftime("%H:%M:%S")
-                elif date_from_timestamp.date() == tomorrow:
-                    remain_time = "明天 " + datetime.fromtimestamp(
-                        replenish_time
-                    ).strftime("%H:%M:%S")
+                # 處理 datetime 對象
+                if hasattr(replenish_time, "timestamp"):
+                    # 如果是 datetime 對象，轉換為時間戳
+                    replenish_timestamp = int(replenish_time.timestamp())
+                else:
+                    # 如果已經是時間戳，直接使用
+                    replenish_timestamp = int(replenish_time)
 
-                time_img_draw.text(
-                    (10, 15), f"{remain_time}", "white", waves_font_24, "lm"
-                )
-            except:
+                remain_seconds = replenish_timestamp - curr_time
+                logger.info(f"[鳴潮][國際服體力] remain_seconds: {remain_seconds}")
+
+                if remain_seconds > 0:
+                    # 使用原本的時間顯示格式（今天/明天）
+                    date_from_timestamp = datetime.fromtimestamp(replenish_timestamp)
+                    now = datetime.now()
+                    today = now.date()
+                    tomorrow = today + timedelta(days=1)
+
+                    remain_time = datetime.fromtimestamp(replenish_timestamp).strftime(
+                        "%m.%d %H:%M:%S"
+                    )
+                    if date_from_timestamp.date() == today:
+                        remain_time = "今天 " + datetime.fromtimestamp(
+                            replenish_timestamp
+                        ).strftime("%H:%M:%S")
+                    elif date_from_timestamp.date() == tomorrow:
+                        remain_time = "明天 " + datetime.fromtimestamp(
+                            replenish_timestamp
+                        ).strftime("%H:%M:%S")
+
+                    logger.info(f"[鳴潮][國際服體力] remain_time: {remain_time}")
+                    time_img_draw.text(
+                        (10, 15), f"{remain_time}", "white", waves_font_24, "lm"
+                    )
+                else:
+                    logger.info(f"[鳴潮][國際服體力] 體力已滿")
+                    time_img_draw.text(
+                        (10, 15), "體力已滿", "white", waves_font_24, "lm"
+                    )
+            except Exception as e:
                 # 如果時間解析失敗，顯示體力未滿的提示
+                logger.error(f"[鳴潮][國際服體力] 時間解析失敗: {e}")
                 time_img_draw.text((10, 15), "體力恢復中", "white", waves_font_24, "lm")
         else:
             # 如果沒有恢復時間信息，顯示體力未滿的提示
+            logger.info(f"[鳴潮][國際服體力] 沒有恢復時間信息")
             time_img_draw.text((10, 15), "體力恢復中", "white", waves_font_24, "lm")
 
     info.alpha_composite(time_img, (280, 50))

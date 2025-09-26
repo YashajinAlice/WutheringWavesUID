@@ -1,10 +1,11 @@
-from gsuid_core.logger import logger
+import time
+from datetime import datetime
+
 from gsuid_core.models import Event
+from gsuid_core.logger import logger
 from gsuid_core.subscribe import gs_subscribe
 
 from ..utils.database.models import WavesPush, WavesUser
-from datetime import datetime
-import time
 
 PUSH_MAP = {
     "体力": "resin",
@@ -14,10 +15,12 @@ WAVES_USER_MAP = {"体力背景": "stamina_bg"}
 
 task_name_resin = "订阅体力推送"
 
+
 async def get_push_config():
     from ..wutheringwaves_config import WutheringWavesConfig
 
     return WutheringWavesConfig.get_config("StaminaPush").data
+
 
 async def set_waves_user_value(ev: Event, func: str, uid: str, value: str):
     if func in WAVES_USER_MAP:
@@ -35,6 +38,7 @@ async def set_waves_user_value(ev: Event, func: str, uid: str, value: str):
         return f"设置成功!\n特征码[{uid}]\n当前{func}:{value}\n"
     else:
         return "设置失败!\n请检查参数是否正确!\n"
+
 
 async def set_push_value(ev: Event, func: str, uid: str, value: int):
     if func in PUSH_MAP:
@@ -54,10 +58,14 @@ async def set_push_value(ev: Event, func: str, uid: str, value: int):
             logger.info("[开启体力推送] uid:{}".format(uid))
             option = ev.group_id if ev.group_id else "on"
             await WavesUser.update_data_by_uid(
-                uid=uid, bot_id=ev.bot_id, **{"push_switch": option},
+                uid=uid,
+                bot_id=ev.bot_id,
+                **{"push_switch": option},
             )
             await WavesPush.update_data_by_uid(
-                uid=uid, bot_id=ev.bot_id, **{f"{PUSH_MAP['体力']}_push": option},
+                uid=uid,
+                bot_id=ev.bot_id,
+                **{f"{PUSH_MAP['体力']}_push": option},
             )
             timestamp = time.time()
             time_push = datetime.fromtimestamp(int(timestamp))
@@ -80,9 +88,9 @@ async def set_push_time(bot_id: str, uid: str, value: int):
     else:
         logger.info("该配置项不存在!")
         return False
-    
+
     data = await WavesPush.select_data_by_uid(uid)
-    if not data: 
+    if not data:
         return False
     push_data = data.__dict__
     if push_data[f"{mode}_push"] == "off":
@@ -90,7 +98,7 @@ async def set_push_time(bot_id: str, uid: str, value: int):
     resin_push = push_data[f"{mode}_value"]
 
     # 根据体力阈值计算推送时间
-    value = value - (240 -resin_push) * 6 * 60
+    value = value - (240 - resin_push) * 6 * 60
     time_push = datetime.fromtimestamp(int(value))
 
     logger.info("[设置推送时间]func: {}, value: {}".format(status, time_push))
@@ -108,11 +116,11 @@ async def set_push_time(bot_id: str, uid: str, value: int):
         return False
 
 
-
 async def set_config_func(ev: Event, uid: str = "0"):
     config_name = ev.text
     if "开启" in ev.command:
-        option = ev.group_id if ev.group_id else "on"
+        # 統一推送到指定 Discord 頻道
+        option = "1421047419348451422"  # 統一頻道 ID
     else:
         option = "off"
 
@@ -121,10 +129,23 @@ async def set_config_func(ev: Event, uid: str = "0"):
     other_msg = ""
 
     if config_name.replace("推送", "") in PUSH_MAP:
-        if not await get_push_config():
+        # 檢查是否為國際服用戶，如果是則跳過全局配置檢查
+        from ..utils.database.models import WavesUser
+
+        user = await WavesUser.get_user_by_attr(ev.user_id, ev.bot_id, "uid", uid)
+
+        is_international = False
+        if user and user.platform and user.platform.startswith("international_"):
+            is_international = True
+        elif user and user.uid and user.uid.isdigit() and int(user.uid) >= 200000000:
+            is_international = True
+        elif user and user.cookie and len(user.cookie) > 20:
+            is_international = True
+
+        if not is_international and not await get_push_config():
             return "体力推送功能已禁用!\n"
 
-         # 执行设置
+        # 执行设置
         await WavesUser.update_data_by_uid(
             uid=uid,
             bot_id=ev.bot_id,
@@ -150,11 +171,9 @@ async def set_config_func(ev: Event, uid: str = "0"):
             await gs_subscribe.add_subscribe("single", task_name_resin, ev)
 
         # 返回结果
-        if option == "on":
-            succeed_msg = "开启至私聊消息!"
-        elif option == "off":
+        if option == "off":
             succeed_msg = "关闭!"
         else:
-            succeed_msg = f"开启至群{option}"
+            succeed_msg = "开启至统一推送频道!"
 
         return f"{config_name}已{succeed_msg}\n{other_msg}"

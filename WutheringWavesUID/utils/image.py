@@ -2,30 +2,29 @@ import os
 import random
 from io import BytesIO
 from pathlib import Path
-from typing import Literal, Optional, Tuple, Union
+from typing import Tuple, Union, Literal, Optional
 
+from gsuid_core.models import Event
+from gsuid_core.logger import logger
+from gsuid_core.utils.image.utils import sget
+from gsuid_core.utils.image.image_tools import crop_center_img
 from PIL import (
     Image,
-    ImageDraw,
-    ImageEnhance,
-    ImageFilter,
-    ImageFont,
     ImageOps,
+    ImageDraw,
+    ImageFont,
+    ImageFilter,
+    ImageEnhance,
 )
 
 from ..utils.database.models import WavesUserAvatar
-from gsuid_core.logger import logger
-from gsuid_core.models import Event
-from gsuid_core.utils.image.image_tools import crop_center_img
-from gsuid_core.utils.image.utils import sget
-
 from ..utils.resource.RESOURCE_PATH import (
     AVATAR_PATH,
+    WEAPON_PATH,
+    SHARE_BG_PATH,
+    ROLE_PILE_PATH,
     CUSTOM_CARD_PATH,
     CUSTOM_MR_CARD_PATH,
-    ROLE_PILE_PATH,
-    SHARE_BG_PATH,
-    WEAPON_PATH,
 )
 
 ICON = Path(__file__).parent.parent.parent / "ICON.png"
@@ -35,10 +34,12 @@ BLACK_G = (40, 40, 40)
 YELLOW = (255, 200, 1)
 RED = (255, 0, 0)
 BLUE = (1, 183, 255)
-GOLD = (224, 202, 146)
+GOLD = (230, 172, 55)  # #e6ac37 - 用戶建議的數字顏色
 SPECIAL_GOLD = (234, 183, 4)
 AMBER = (204, 140, 0)
 GREEN = (144, 238, 144)
+# 用戶建議的矩形背景顏色
+RECTANGLE_BG = (130, 104, 54)  # #826836
 
 # 冷凝-凝夜白霜
 WAVES_FREEZING = (53, 152, 219)
@@ -247,6 +248,7 @@ async def get_qq_avatar(
     char_pic = Image.open(BytesIO((await sget(avatar_url)).content)).convert("RGBA")
     return char_pic
 
+
 async def get_discord_avatar(
     qid: Optional[Union[int, str]] = None,
     avatar_url: Optional[str] = None,
@@ -259,7 +261,11 @@ async def get_discord_avatar(
     elif avatar_url is None:
         avatar_url = "https://cdn.discordapp.com/embed/avatars/0.png"
 
-    avatar_url = avatar_url + f".png?size={size}" if not avatar_url.endswith(".png") else avatar_url
+    avatar_url = (
+        avatar_url + f".png?size={size}"
+        if not avatar_url.endswith(".png")
+        else avatar_url
+    )
     char_pic = Image.open(BytesIO((await sget(avatar_url)).content)).convert("RGBA")
     return char_pic
 
@@ -279,12 +285,14 @@ async def get_qqgroup_avatar(
     char_pic = Image.open(BytesIO((await sget(avatar_url)).content)).convert("RGBA")
     return char_pic
 
+
 # 获取对应bot_id的头像获取函数
 AVATAR_GETTERS = {
     "onebot": get_qq_avatar,
     "discord": get_discord_avatar,
-    "qqgroup": get_qqgroup_avatar
+    "qqgroup": get_qqgroup_avatar,
 }
+
 
 async def get_event_avatar(
     ev: Event,
@@ -298,7 +306,7 @@ async def get_event_avatar(
         from ..utils.at_help import is_valid_at
 
         is_valid_at_param = is_valid_at(ev)
-    
+
     get_bot_avatar = AVATAR_GETTERS.get(ev.bot_id)
 
     # 尝试获取@用户的头像
@@ -308,7 +316,9 @@ async def get_event_avatar(
         except Exception:
             img = None
 
-    if img is None and "avatar" in ev.sender and ev.sender["avatar"]: # qqgroup不返回avatar...
+    if (
+        img is None and "avatar" in ev.sender and ev.sender["avatar"]
+    ):  # qqgroup不返回avatar...
         avatar_url: str = ev.sender["avatar"]
         if avatar_url.startswith(("http", "https")):
             try:

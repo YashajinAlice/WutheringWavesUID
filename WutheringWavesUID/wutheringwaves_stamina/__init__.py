@@ -20,6 +20,8 @@ waves_daily_info = SV("waves查询体力")
 
 stamina_push_interval = WutheringWavesConfig.get_config("StaminaPushInterval").data
 
+logger.info(f"[鸣潮] 体力推送间隔设置: {stamina_push_interval} 分钟")
+
 
 @waves_daily_info.on_fullmatch(
     (
@@ -46,9 +48,32 @@ async def send_daily_info_pic(bot: Bot, ev: Event):
     if user:
         await bot.logger.info(f"[鸣潮][每日信息]平台: {user.platform}")
 
-    if user and user.platform == "international":
+    # 檢查是否為國際服用戶（多種方式）
+    is_international = False
+    if user and user.platform and user.platform.startswith("international_"):
+        is_international = True
+        await bot.logger.info(
+            f"[鸣潮][每日信息] 检测到国际服用户（platform: {user.platform}）"
+        )
+    elif user and user.platform and user.platform == "international":
+        is_international = True
+        await bot.logger.info(
+            f"[鸣潮][每日信息] 检测到国际服用户（platform: {user.platform}）"
+        )
+    elif user and user.uid and user.uid.isdigit() and int(user.uid) >= 200000000:
+        is_international = True
+        await bot.logger.info(f"[鸣潮][每日信息] 检测到国际服用户（UID: {user.uid}）")
+    elif user and user.cookie and len(user.cookie) > 20:
+        is_international = True
+        await bot.logger.info(
+            f"[鸣潮][每日信息] 检测到可能的国际服用户（有有效cookie）"
+        )
+
+    if is_international:
         # 國際服體力查詢
-        await bot.logger.info(f"[鸣潮][每日信息]使用國際服體力查詢")
+        await bot.logger.info(
+            f"[鸣潮][每日信息]使用國際服體力查詢，平台: {user.platform}"
+        )
         return await bot.send(await draw_international_stamina_img(bot, ev, user))
     else:
         # 國服體力查詢
@@ -77,10 +102,17 @@ async def send_daily_info_pic(bot: Bot, ev: Event):
 
 @scheduler.scheduled_job("interval", minutes=stamina_push_interval)
 async def waves_daily_info_notice_job():
+    logger.info(f"[鸣潮] 体力推送任务开始执行 (间隔: {stamina_push_interval} 分钟)")
+
     if stamina_push_interval == 0:
+        logger.info("[鸣潮] 体力推送间隔设置为0，跳过推送")
         return
+
     result = await get_notice_list()
     if not result:
+        logger.info("[鸣潮] 没有需要推送的用户")
         return
-    logger.debug(f"鸣潮推送开始：{result}")
+
+    logger.info(f"[鸣潮] 开始推送: {result}")
     await send_board_cast_msg(result, "resin")
+    logger.info("[鸣潮] 体力推送任务完成")

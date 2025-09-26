@@ -177,6 +177,17 @@ async def page_login_local(bot: Bot, ev: Event, url):
                     # 發送帶按鈕的消息
                     return await bot.send_option(success_msg, buttons)
 
+                # 檢查是否需要角色選擇（網頁處理，不需要機器人消息）
+                if result.get("login_type") == "international" and result.get(
+                    "need_character_selection"
+                ):
+                    # 角色選擇由網頁處理，這裡不需要機器人消息
+                    # 直接返回成功，讓網頁顯示角色選擇界面
+                    return await bot.send(
+                        "角色選擇將在網頁中進行，請在網頁中選擇角色",
+                        at_sender=at_sender,
+                    )
+
                 # 檢查是否為國服登入（確保不是國際服登入）
                 if (
                     result.get("login_type") != "international"
@@ -380,12 +391,18 @@ async def international_login(
                 )
                 logger.info(f"WavesUser 創建成功: UID {uid_digits} (原始: {uid})")
 
-            # 更新綁定信息
+            # 檢查是否已有此 UID 的綁定，避免雙重 UID
             try:
-                await WavesBind.insert_waves_uid(
-                    ev.user_id, ev.bot_id, uid_digits, ev.group_id, lenth_limit=9
-                )
-                logger.info(f"WavesBind 更新成功: UID {uid_digits}")
+                existing_bind = await WavesBind.get_uid_by_game(ev.user_id, ev.bot_id)
+                if existing_bind == uid_digits:
+                    # UID 已綁定，跳過重複儲存
+                    logger.info(f"UID {uid_digits} 已綁定，跳過重複儲存 WavesBind")
+                else:
+                    # 新 UID 或不同 UID，更新綁定
+                    await WavesBind.insert_waves_uid(
+                        ev.user_id, ev.bot_id, uid_digits, ev.group_id, lenth_limit=9
+                    )
+                    logger.info(f"WavesBind 更新成功: UID {uid_digits}")
             except Exception as e:
                 logger.warning(f"WavesBind 更新失敗: {e}")
 
@@ -780,24 +797,90 @@ async def waves_international_login(data: InternationalLoginModel):
             oauth_code = await client.generate_oauth_code(token_result.access_token)
             logger.info(f"生成 OAuth code 成功")
 
-            # 獲取玩家信息以確定 UID
-            try:
-                player_info = await client.get_player_info(oauth_code)
-                logger.info(f"獲取玩家信息成功: {len(player_info)} 個角色")
+            # 獲取玩家信息以確定 UID（帶重試機制）
+            player_info = None
+            max_retries = 3
+            retry_count = 0
 
-                if player_info:
-                    # 選擇第一個角色
+            while retry_count < max_retries:
+                try:
+                    player_info = await client.get_player_info(oauth_code)
+                    logger.info(f"獲取玩家信息成功: {len(player_info)} 個角色")
+                    break  # 成功獲取，跳出重試循環
+                except Exception as e:
+                    error_msg = str(e)
+                    logger.warning(
+                        f"獲取玩家信息失敗 (嘗試 {retry_count + 1}/{max_retries}): {error_msg}"
+                    )
+
+                    # 檢查是否為 'retrying' 錯誤
+                    if "'retrying'" in error_msg or "retrying" in error_msg:
+                        retry_count += 1
+                        if retry_count < max_retries:
+                            logger.info(f"檢測到 'retrying' 錯誤，將在 2 秒後重試...")
+                            await asyncio.sleep(2)  # 等待2秒後重試
+                            continue
+                        else:
+                            logger.error(
+                                f"重試 {max_retries} 次後仍然失敗，使用登入 ID 作為 UID"
+                            )
+                            break
+                    else:
+                        # 其他錯誤，直接跳出重試循環
+                        logger.warning(
+                            f"非 'retrying' 錯誤，直接使用登入 ID 作為 UID: {error_msg}"
+                        )
+                        break
+
+            # 如果成功獲取到玩家信息
+            if player_info:
+                # 檢查角色數量
+                if len(player_info) > 1:
+                    # 多個角色，需要用戶選擇
+                    logger.info(f"檢測到 {len(player_info)} 個角色，需要用戶選擇")
+
+                    # 構建角色列表
+                    characters = []
+                    for region, info in player_info.items():
+                        characters.append(
+                            {
+                                "region": region,
+                                "name": info.name,
+                                "uid": str(info.uid),
+                                "level": info.level,
+                                "sex": getattr(info, "sex", 1),
+                                "headPhoto": getattr(info, "headPhoto", 1),
+                            }
+                        )
+
+                    # 將 OAuth code 和 access_token 存儲到緩存中，供後續角色選擇使用
+                    temp.update(
+                        {
+                            "login_type": "international",  # 確保標記為國際服登入
+                            "oauth_code": oauth_code,
+                            "access_token": token_result.access_token,
+                            "login_result_username": login_result.username,
+                            "characters": characters,
+                            "need_character_selection": True,
+                        }
+                    )
+                    cache.set(data.auth, temp)
+
+                    # 返回需要角色選擇的響應，讓前端顯示角色選擇界面
+                    return {
+                        "success": True,
+                        "need_character_selection": True,
+                        "characters": characters,
+                        "msg": f"檢測到 {len(player_info)} 個角色，請選擇要使用的主角色",
+                    }
+                else:
+                    # 只有一個角色，直接使用
                     first_region = next(iter(player_info))
                     first_player = player_info[first_region]
-                    uid = str(first_player.uid)  # 使用 uid 字段
-                    logger.info(f"使用角色 UID: {uid}")
-                else:
-                    # 如果沒有角色信息，使用登入結果中的 ID
-                    uid = str(login_result.id)
-                    logger.info(f"使用登入 ID 作為 UID: {uid}")
-            except Exception as e:
-                logger.warning(f"獲取玩家信息失敗: {e}")
-                # 如果獲取玩家信息失敗，使用登入結果中的 ID
+                    uid = str(first_player.uid)
+                    logger.info(f"只有一個角色，使用 UID: {uid}")
+            else:
+                # 如果沒有角色信息，使用登入結果中的 ID
                 uid = str(login_result.id)
                 logger.info(f"使用登入 ID 作為 UID: {uid}")
 
@@ -903,3 +986,272 @@ async def waves_international_login(data: InternationalLoginModel):
     except Exception as e:
         logger.error(f"國際服登入失敗: {e}")
         return {"success": False, "msg": f"登入失敗: {str(e)}"}
+
+
+@app.post("/waves/international/select-character")
+async def waves_international_select_character(data: dict):
+    """國際服角色選擇 API"""
+    auth = data.get("auth")
+    character = data.get("character")
+
+    logger.info(f"收到角色選擇請求: auth={auth}, character={character}")
+
+    if not auth or not character:
+        return {"success": False, "msg": "缺少必要參數"}
+
+    try:
+        # 從緩存中獲取登入數據
+        temp = cache.get(auth)
+        if not temp:
+            return {"success": False, "msg": "登入會話已過期，請重新登入"}
+
+        if not temp.get("need_character_selection"):
+            return {"success": False, "msg": "當前不需要角色選擇"}
+
+        # 獲取緩存中的數據
+        oauth_code = temp.get("oauth_code")
+        access_token = temp.get("access_token")
+        login_result_username = temp.get("login_result_username")
+        characters = temp.get("characters", [])
+
+        if not oauth_code or not access_token:
+            return {"success": False, "msg": "登入數據不完整，請重新登入"}
+
+        # 驗證選擇的角色是否在列表中
+        selected_character = None
+        for char in characters:
+            if char.get("region") == character.get("region") and char.get(
+                "uid"
+            ) == character.get("uid"):
+                selected_character = char
+                break
+
+        if not selected_character:
+            return {"success": False, "msg": "選擇的角色無效"}
+
+        # 使用選中的角色信息
+        uid = selected_character["uid"]
+        region = selected_character["region"]
+        character_name = selected_character["name"]
+
+        logger.info(f"用戶選擇角色: {character_name} (UID: {uid}, 伺服器: {region})")
+
+        # 從緩存中獲取真實的 user_id 和 bot_id
+        real_user_id = temp.get("user_id", auth)
+        real_bot_id = temp.get("bot_id", "discord")
+        real_group_id = temp.get("group_id")
+
+        # 創建/更新 WavesUser 記錄
+        from ..utils.database.models import WavesBind, WavesUser
+
+        # 檢查是否已存在用戶
+        existing_user = await WavesUser.get_user_by_attr(
+            real_user_id, real_bot_id, "uid", uid
+        )
+
+        if existing_user:
+            # 更新現有用戶
+            await WavesUser.update_data_by_data(
+                select_data={
+                    "user_id": real_user_id,
+                    "bot_id": real_bot_id,
+                    "uid": uid,
+                },
+                update_data={
+                    "cookie": access_token,
+                    "platform": f"international_{region}",
+                    "status": "on",
+                },
+            )
+            waves_user = existing_user
+            logger.info(f"WavesUser 更新成功: UID {uid} (伺服器: {region})")
+        else:
+            # 創建新用戶
+            await WavesUser.insert_data(
+                real_user_id,
+                real_bot_id,
+                cookie=access_token,
+                uid=uid,
+                platform=f"international_{region}",
+                status="on",
+            )
+            # 獲取創建的用戶
+            waves_user = await WavesUser.get_user_by_attr(
+                real_user_id, real_bot_id, "uid", uid
+            )
+            logger.info(f"WavesUser 創建成功: UID {uid} (伺服器: {region})")
+
+        # 檢查是否已有此 UID 的綁定，避免雙重 UID
+        try:
+            existing_bind = await WavesBind.get_uid_by_game(real_user_id, real_bot_id)
+            if existing_bind == uid:
+                # UID 已綁定，跳過重複儲存
+                logger.info(f"UID {uid} 已綁定，跳過重複儲存 WavesBind")
+            else:
+                # 新 UID 或不同 UID，更新綁定
+                await WavesBind.insert_waves_uid(
+                    real_user_id, real_bot_id, uid, real_group_id, lenth_limit=9
+                )
+                logger.info(f"WavesBind 更新成功: UID {uid}")
+        except Exception as e:
+            logger.warning(f"WavesBind 更新失敗: {e}")
+
+        # 清除緩存中的角色選擇數據
+        temp.update(
+            {
+                "login_completed": True,
+                "uid": uid,
+                "username": character_name,
+                "platform": "international",
+                "need_character_selection": False,
+                "characters": None,
+                "oauth_code": None,
+                "access_token": None,
+            }
+        )
+        cache.set(auth, temp)
+
+        return {
+            "success": True,
+            "msg": f"角色選擇成功！已綁定 {character_name} ({region})",
+            "uid": uid,
+            "character_name": character_name,
+        }
+
+    except Exception as e:
+        logger.error(f"角色選擇失敗: {e}")
+        return {"success": False, "msg": f"角色選擇失敗: {str(e)}"}
+
+
+async def handle_character_selection_callback(bot, ev, callback_data):
+    """處理機器人角色選擇回調"""
+    logger.info(f"收到角色選擇回調: {callback_data}")
+
+    try:
+        # 解析回調數據
+        if not callback_data.startswith("select_char_"):
+            return False
+
+        char_index = int(callback_data.replace("select_char_", ""))
+        logger.info(f"用戶選擇角色索引: {char_index}")
+
+        # 從緩存中獲取角色數據
+        temp = cache.get(ev.user_id)
+        if not temp or not temp.get("need_character_selection"):
+            await bot.send("角色選擇會話已過期，請重新登入", at_sender=True)
+            return True
+
+        characters = temp.get("characters", [])
+        if char_index >= len(characters):
+            await bot.send("無效的角色選擇，請重新選擇", at_sender=True)
+            return True
+
+        # 獲取選中的角色
+        selected_character = characters[char_index]
+        logger.info(f"用戶選擇角色: {selected_character}")
+
+        # 處理角色選擇
+        uid = selected_character["uid"]
+        region = selected_character["region"]
+        character_name = selected_character["name"]
+
+        # 從緩存中獲取登入數據
+        oauth_code = temp.get("oauth_code")
+        access_token = temp.get("access_token")
+
+        if not oauth_code or not access_token:
+            await bot.send("登入數據不完整，請重新登入", at_sender=True)
+            return True
+
+        # 創建/更新 WavesUser 記錄
+        from ..utils.database.models import WavesBind, WavesUser
+
+        # 檢查是否已存在用戶
+        existing_user = await WavesUser.get_user_by_attr(
+            ev.user_id, ev.bot_id, "uid", uid
+        )
+
+        if existing_user:
+            # 更新現有用戶
+            await WavesUser.update_data_by_data(
+                select_data={
+                    "user_id": ev.user_id,
+                    "bot_id": ev.bot_id,
+                    "uid": uid,
+                },
+                update_data={
+                    "cookie": access_token,
+                    "platform": f"international_{region}",
+                    "status": "on",
+                },
+            )
+            waves_user = existing_user
+            logger.info(f"WavesUser 更新成功: UID {uid} (伺服器: {region})")
+        else:
+            # 創建新用戶
+            await WavesUser.insert_data(
+                ev.user_id,
+                ev.bot_id,
+                cookie=access_token,
+                uid=uid,
+                platform=f"international_{region}",
+                status="on",
+            )
+            # 獲取創建的用戶
+            waves_user = await WavesUser.get_user_by_attr(
+                ev.user_id, ev.bot_id, "uid", uid
+            )
+            logger.info(f"WavesUser 創建成功: UID {uid} (伺服器: {region})")
+
+        # 更新綁定信息
+        try:
+            await WavesBind.insert_waves_uid(
+                ev.user_id, ev.bot_id, uid, ev.group_id, lenth_limit=9
+            )
+            logger.info(f"WavesBind 更新成功: UID {uid}")
+        except Exception as e:
+            logger.warning(f"WavesBind 更新失敗: {e}")
+
+        # 清除緩存中的角色選擇數據
+        temp.update(
+            {
+                "login_completed": True,
+                "uid": uid,
+                "username": character_name,
+                "platform": "international",
+                "need_character_selection": False,
+                "characters": None,
+                "oauth_code": None,
+                "access_token": None,
+            }
+        )
+        cache.set(ev.user_id, temp)
+
+        # 發送成功消息
+        server_names = {
+            "Asia": "🌏 亞洲服",
+            "Europe": "🌍 歐洲服",
+            "America": "🌎 美洲服",
+            "HMT": "🇭🇰 台港澳服",
+            "SEA": "🌴 東南亞服",
+        }
+        server_display = server_names.get(region, region)
+
+        success_msg = f"[鸣潮] 國際服登入成功！\n角色: {character_name}\n伺服器: {server_display}\n特征碼: {uid}\n平台: 國際服\n狀態: 已啟用\n\n目前支援功能：每日、卡片、体力"
+
+        from ..utils.button import WavesButton
+
+        buttons = [
+            WavesButton("体力", "mr"),
+            WavesButton("每日", "每日"),
+            WavesButton("卡片", "卡片"),
+        ]
+
+        await bot.send_option(success_msg, buttons)
+        logger.info(f"角色選擇成功: {character_name} ({region})")
+        return True
+
+    except Exception as e:
+        logger.error(f"處理角色選擇回調失敗: {e}")
+        await bot.send(f"角色選擇失敗: {str(e)}", at_sender=True)
+        return True

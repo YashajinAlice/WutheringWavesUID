@@ -2,19 +2,19 @@ import re
 
 from gsuid_core.bot import Bot
 from gsuid_core.models import Event
+from gsuid_core.logger import logger
 from gsuid_core.sv import SV, get_plugin_available_prefix
 
 from ..utils.database.models import WavesBind
 from ..utils.name_convert import alias_to_char_name
-from .set_config import set_config_func, set_push_value, set_waves_user_value
 from .wutheringwaves_config import WutheringWavesConfig
-
-from gsuid_core.logger import logger
+from .set_config import set_push_value, set_config_func, set_waves_user_value
 
 sv_self_config = SV("鸣潮配置")
 
 
 PREFIX = get_plugin_available_prefix("WutheringWavesUID")
+
 
 @sv_self_config.on_prefix(("开启", "关闭"))
 async def open_switch_func(bot: Bot, ev: Event):
@@ -25,18 +25,53 @@ async def open_switch_func(bot: Bot, ev: Event):
             f"您还未绑定鸣潮特征码, 请使用【{PREFIX}绑定uid】完成绑定！", at_sender
         )
 
-    from ..utils.waves_api import waves_api
+    # 检查是否为国际服用户
+    from ..utils.database.models import WavesUser
 
-    ck = await waves_api.get_self_waves_ck(uid, ev.user_id, ev.bot_id)
-    if not ck:
-        from ..utils.error_reply import WAVES_CODE_102, ERROR_CODE
+    user = await WavesUser.get_user_by_attr(ev.user_id, ev.bot_id, "uid", uid)
 
-        return await bot.send(f"当前特征码：{uid}\n{ERROR_CODE[WAVES_CODE_102]}")
+    # 添加调试信息
+    logger.info(f"[{ev.user_id}] 用户信息: user={user}")
+    if user:
+        logger.info(f"[{ev.user_id}] 用户平台: {user.platform}")
+        logger.info(f"[{ev.user_id}] 用户UID: {user.uid}")
+        logger.info(
+            f"[{ev.user_id}] 用户Cookie长度: {len(user.cookie) if user.cookie else 0}"
+        )
 
-    logger.info(f"[{ev.user_id}]尝试[{ev.command[2:]}]了[{ev.text}]功能")
+    # 检查是否为国际服用户（UID >= 200000000 或者 platform 以 international_ 开头）
+    is_international = False
+    if user and user.platform and user.platform.startswith("international_"):
+        is_international = True
+        logger.info(f"[{ev.user_id}] 检测到国际服用户（platform: {user.platform}）")
+    elif user and user.uid and user.uid.isdigit() and int(user.uid) >= 200000000:
+        is_international = True
+        logger.info(f"[{ev.user_id}] 检测到国际服用户（UID: {user.uid}）")
+    elif user and user.cookie and len(user.cookie) > 20:
+        # 如果有有效的 cookie，可能是国际服用户
+        is_international = True
+        logger.info(f"[{ev.user_id}] 检测到可能的国际服用户（有有效cookie）")
 
-    im = await set_config_func(ev, uid)
-    await bot.send(im, at_sender)
+    if is_international:
+        # 国际服用户，直接允许设置推送
+        logger.info(f"[{ev.user_id}]国际服用户尝试[{ev.command[2:]}]了[{ev.text}]功能")
+        im = await set_config_func(ev, uid)
+        await bot.send(im, at_sender)
+    else:
+        # 国服用户，检查 token 有效性
+        from ..utils.waves_api import waves_api
+
+        ck = await waves_api.get_self_waves_ck(uid, ev.user_id, ev.bot_id)
+        if not ck:
+            from ..utils.error_reply import ERROR_CODE, WAVES_CODE_102
+
+            return await bot.send(f"当前特征码：{uid}\n{ERROR_CODE[WAVES_CODE_102]}")
+
+        logger.info(f"[{ev.user_id}]国服用户尝试[{ev.command[2:]}]了[{ev.text}]功能")
+
+        im = await set_config_func(ev, uid)
+        await bot.send(im, at_sender)
+
 
 @sv_self_config.on_prefix("设置")
 async def send_config_ev(bot: Bot, ev: Event):
@@ -47,11 +82,42 @@ async def send_config_ev(bot: Bot, ev: Event):
         return await bot.send(
             f"您还未绑定鸣潮特征码, 请使用【{PREFIX}绑定uid】 完成绑定！\n", at_sender
         )
-    from ..utils.waves_api import waves_api
-    ck = await waves_api.get_self_waves_ck(uid, ev.user_id, ev.bot_id)
-    if not ck:
-        from ..utils.error_reply import WAVES_CODE_102, ERROR_CODE
-        return await bot.send(f"当前特征码：{uid}\n{ERROR_CODE[WAVES_CODE_102]}")
+
+    # 检查是否为国际服用户
+    from ..utils.database.models import WavesUser
+
+    user = await WavesUser.get_user_by_attr(ev.user_id, ev.bot_id, "uid", uid)
+
+    # 添加调试信息
+    logger.info(f"[{ev.user_id}] 设置功能 - 用户信息: user={user}")
+    if user:
+        logger.info(f"[{ev.user_id}] 设置功能 - 用户平台: {user.platform}")
+        logger.info(f"[{ev.user_id}] 设置功能 - 用户UID: {user.uid}")
+
+    # 检查是否为国际服用户（UID >= 200000000 或者 platform 以 international_ 开头）
+    is_international = False
+    if user and user.platform and user.platform.startswith("international_"):
+        is_international = True
+        logger.info(
+            f"[{ev.user_id}] 设置功能 - 检测到国际服用户（platform: {user.platform}）"
+        )
+    elif user and user.uid and user.uid.isdigit() and int(user.uid) >= 200000000:
+        is_international = True
+        logger.info(f"[{ev.user_id}] 设置功能 - 检测到国际服用户（UID: {user.uid}）")
+    elif user and user.cookie and len(user.cookie) > 20:
+        # 如果有有效的 cookie，可能是国际服用户
+        is_international = True
+        logger.info(f"[{ev.user_id}] 设置功能 - 检测到可能的国际服用户（有有效cookie）")
+
+    if not is_international:
+        # 国服用户，检查 token 有效性
+        from ..utils.waves_api import waves_api
+
+        ck = await waves_api.get_self_waves_ck(uid, ev.user_id, ev.bot_id)
+        if not ck:
+            from ..utils.error_reply import ERROR_CODE, WAVES_CODE_102
+
+            return await bot.send(f"当前特征码：{uid}\n{ERROR_CODE[WAVES_CODE_102]}")
 
     if "阈值" in ev.text:
         func = "".join(re.findall("[\u4e00-\u9fa5]", ev.text.replace("阈值", "")))
@@ -62,6 +128,7 @@ async def send_config_ev(bot: Bot, ev: Event):
             return await bot.send("请输入正确的阈值数字...\n", at_sender)
         im = await set_push_value(ev, func, uid, int(value))
     elif "体力背景" in ev.text:
+        # 对于体力背景设置，国际服和国服都需要检查 token
         from ..utils.waves_api import waves_api
 
         ck = await waves_api.get_self_waves_ck(uid, ev.user_id, ev.bot_id)
