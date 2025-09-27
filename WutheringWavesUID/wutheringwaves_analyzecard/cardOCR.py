@@ -471,10 +471,10 @@ async def images_ocrspace(api_key, engine_num, cropped_images):
     """
     API_KEY = api_key
     FREE_URL = "https://api.ocr.space/parse/image"
-    PRO_URL = "https://apipro1.ocr.space/parse/image"
+    PRO_URL = "https://apipro2.ocr.space/parse/image"
     if engine_num == 3:
         API_URL = PRO_URL
-        ENGINE_NUM = 1
+        ENGINE_NUM = 2
     else:
         API_URL = FREE_URL
         ENGINE_NUM = engine_num
@@ -632,7 +632,11 @@ async def ocr_results_to_dict(chain_num, ocr_results):
                     name_match = patterns["name"].search(line_clean)
                     if name_match:
                         name = name_match.group()
-                        name = name.replace("吟槑", "吟霖").replace("鑒几", "鉴心")
+                        name = (
+                            name.replace("吟槑", "吟霖")
+                            .replace("鑒几", "鉴心")
+                            .replace("票泊者", "漂泊者")
+                        )
                         if not re.match(r"^[\u4e00-\u9fa5]+$", name):
                             logger.warning(
                                 f" [鸣潮][dc卡片识别] 识别出非中文角色名:{name}，退出识别！"

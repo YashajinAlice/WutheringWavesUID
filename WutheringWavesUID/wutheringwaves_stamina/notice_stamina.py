@@ -20,64 +20,77 @@ async def get_notice_list() -> Dict[str, Dict[str, Dict]]:
 
     msg_dict = {"private_msg_dict": {}, "group_msg_dict": {}}
 
-    # 直接從 WavesPush 表獲取需要推送的用戶
+    # 從 WavesPush 表獲取需要推送的用戶
     push_list = await WavesPush.get_all_push_user_list()
-    logger.info(f"[鸣潮] 推送用户列表: {len(push_list)} 个用户")
+    logger.info(f"[鸣潮] WavesPush 表中找到 {len(push_list)} 个需要推送的用户")
 
-    # 獲取對應的 WavesUser 信息
+    # 直接使用 WavesPush 數據進行推送，不依賴 WavesUser 表
     user_list = []
     for push_data in push_list:
-        # WavesPush 繼承自 Push 基類，應該有 user_id 字段
-        # 如果沒有，我們需要通過 uid 來查找用戶
         try:
-            if hasattr(push_data, "user_id"):
-                user = await WavesUser.get_user_by_attr(
-                    push_data.user_id, push_data.bot_id, "uid", push_data.uid
-                )
-            else:
-                # 如果沒有 user_id，通過 uid 查找用戶
-                user = await WavesUser.get_user_by_attr(
-                    None, push_data.bot_id, "uid", push_data.uid
-                )
-            if user:
-                user_list.append(user)
+            # 創建一個簡化的用戶對象，包含必要的推送信息
+            class SimpleUser:
+                def __init__(self, push_data):
+                    self.uid = push_data.uid
+                    self.bot_id = push_data.bot_id
+                    self.user_id = getattr(push_data, "user_id", push_data.uid)
+                    self.cookie = getattr(push_data, "cookie", "")
+                    self.platform = getattr(push_data, "platform", "discord")
+                    self.status = getattr(push_data, "status", "")
+
+            user = SimpleUser(push_data)
+            user_list.append(user)
+            logger.info(f"[鸣潮] 创建用户 {user.uid} 的推送对象")
         except Exception as e:
-            logger.error(f"[鸣潮] 获取用户信息失败: {e}")
+            logger.error(f"[鸣潮] 创建用户对象失败: {e}")
             continue
+
+    logger.info(f"[鸣潮] 推送用户列表: {len(user_list)} 个用户")
 
     # 檢查是否有國際服用戶
     has_international_users = False
     international_count = 0
     for user in user_list:
+        logger.info(
+            f"[鸣潮] 检查用户 {user.uid} 是否为国际服: uid={user.uid}, platform={user.platform}, cookie长度={len(user.cookie) if user.cookie else 0}"
+        )
+
         if user.uid and user.uid.isdigit() and int(user.uid) >= 200000000:
             has_international_users = True
             international_count += 1
+            logger.info(f"[鸣潮] 用户 {user.uid} 通过UID判断为国际服")
         elif user.platform and user.platform.startswith("international_"):
             has_international_users = True
             international_count += 1
+            logger.info(f"[鸣潮] 用户 {user.uid} 通过platform判断为国际服")
         elif user.cookie and len(user.cookie) > 20:
             has_international_users = True
             international_count += 1
+            logger.info(f"[鸣潮] 用户 {user.uid} 通过cookie长度判断为国际服")
 
     logger.info(f"[鸣潮] 国际服用户数量: {international_count}")
 
-    # 檢查是否允許推送
-    if has_international_users:
-        logger.info("[鸣潮] 检测到国际服用户，允许推送")
-    elif global_push_enabled:
-        logger.info("[鸣潮] 全局体力推送已启用，允许推送")
-    else:
-        logger.info("[鸣潮] 全局体力推送已禁用且无国际服用户，跳过推送")
+    # 簡化推送條件 - 只要有推送用戶就允許推送
+    if not user_list:
+        logger.info("[鸣潮] 没有推送用户，跳过推送")
         return {}
 
-    for user in user_list:
-        if not user.uid or not user.cookie or user.status or not user.bot_id:
-            logger.debug(f"[鸣潮] 跳过用户 {user.uid}: 缺少必要信息")
+    logger.info(f"[鸣潮] 找到 {len(user_list)} 个推送用户，开始推送检查")
+
+    for i, user in enumerate(user_list):
+        push_data = push_list[i]  # 使用對應的 WavesPush 數據
+
+        logger.info(
+            f"[鸣潮] 检查用户 {user.uid}: uid={user.uid}, cookie长度={len(user.cookie) if user.cookie else 0}, status={user.status}, bot_id={user.bot_id}"
+        )
+
+        if not user.uid or not user.bot_id:
+            logger.info(f"[鸣潮] 跳过用户 {user.uid}: 缺少必要信息")
             continue
 
-        push_data = await WavesPush.select_data_by_uid(user.uid)
-        if push_data is None:
-            logger.debug(f"[鸣潮] 跳过用户 {user.uid}: 无推送数据")
+        # 只檢查是否已經推送過，不檢查status（國際服顯示無效是正常的）
+        if push_data.resin_is_push == "on":
+            logger.info(f"[鸣潮] 跳过用户 {user.uid}: 已推送过")
             continue
 
         logger.info(f"[鸣潮] 检查用户 {user.uid} 的体力推送")
@@ -106,7 +119,7 @@ async def all_check(
 async def check_unified_stamina(
     push_data: Dict, msg_dict: Dict[str, Dict[str, Dict]], user: WavesUser
 ):
-    """統一的體力檢查邏輯，不區分國際服/國服"""
+    """統一的體力檢查邏輯，使用國服的時間檢查方式"""
     mode = "resin"
     status = "push_time"
 
@@ -123,51 +136,30 @@ async def check_unified_stamina(
         logger.info(f"[鸣潮][統一推送] 用户 {user.uid} 推送已关闭，跳过")
         return
 
-    # 獲取當前體力信息
-    current_stamina = 0
-    max_stamina = 240
-    threshold = push_data.get(f"{mode}_value", 180)
-
-    try:
-        # 嘗試獲取實際體力數據
-        # 這裡可以根據用戶類型選擇不同的API
-        is_international = False
-        if user.platform and user.platform.startswith("international_"):
-            is_international = True
-        elif user.uid and user.uid.isdigit() and int(user.uid) >= 200000000:
-            is_international = True
-        elif user.cookie and len(user.cookie) > 20:
-            is_international = True
-
-        if is_international:
-            # 國際服體力查詢
-            logger.info(f"[鸣潮][統一推送] 使用國際服API查詢用戶 {user.uid} 的體力")
-            current_stamina = await get_international_stamina(user)
-        else:
-            # 國服體力查詢
-            logger.info(f"[鸣潮][統一推送] 使用國服API查詢用戶 {user.uid} 的體力")
-            current_stamina = await get_domestic_stamina(user)
-
-    except Exception as e:
-        logger.error(f"[鸣潮][統一推送] 获取体力信息失败: {e}")
-        # 如果獲取失敗，使用默認值進行檢查
-        current_stamina = 180  # 假設已滿體力
-
     logger.info(
-        f"[鸣潮][統一推送] 用户 {user.uid} 当前体力: {current_stamina}/{max_stamina}, 阈值: {threshold}"
+        f"[鸣潮][統一推送] 用户 {user.uid} 推送设置: resin_push={push_data.get('resin_push')}, resin_is_push={push_data.get('resin_is_push')}, push_time_value={push_data.get('push_time_value')}"
     )
 
-    # 檢查是否達到推送閾值
-    if current_stamina >= threshold:
-        logger.info(f"[鸣潮][統一推送] 用户 {user.uid} 体力达到阈值，准备推送")
+    # 使用國服的時間檢查邏輯
+    time_now = int(time.time())
+    dt = datetime.strptime(push_data[f"{status}_value"], "%Y-%m-%d %H:%M:%S")
+    timestamp = int(dt.timestamp())
+
+    _check = await check(time_now, timestamp)
+    logger.info(
+        f"[鸣潮][統一推送] 时间检查: 当前时间 {time_now} >= 推送时间 {timestamp} = {_check}"
+    )
+
+    # 准备推送
+    if _check:
+        logger.info(f"[鸣潮][統一推送] 用户 {user.uid} 时间达到，准备推送")
 
         # 構建推送消息
         notice = "🌜您的结晶波片达到设定阈值啦"
         msg_list = [
             MessageSegment.text(f"✅[鸣潮] 推送提醒:\n"),
             MessageSegment.text(f"{notice}(UID:{user.uid})！\n"),
-            MessageSegment.text(f"🕒当前体力：{current_stamina}/{max_stamina}！\n"),
-            MessageSegment.text(f"🕒设定阈值：{threshold}！\n\n"),
+            MessageSegment.text(f"🕒当前体力阈值：{push_data[f'{mode}_value']}！\n\n"),
             MessageSegment.text(f"📅请清完体力后使用[{PREFIX}每日]来更新推送时间！\n"),
         ]
 
@@ -175,7 +167,7 @@ async def check_unified_stamina(
         await save_push_data_unified(mode, msg_list, push_data, msg_dict, user, True)
         logger.info(f"[鸣潮][統一推送] 用户 {user.uid} 推送完成")
     else:
-        logger.info(f"[鸣潮][統一推送] 用户 {user.uid} 体力未达到阈值，跳过推送")
+        logger.info(f"[鸣潮][統一推送] 用户 {user.uid} 时间未到，跳过推送")
 
 
 async def get_international_stamina(user: WavesUser) -> int:

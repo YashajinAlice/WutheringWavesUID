@@ -18,8 +18,8 @@ from ..utils.api.request_util import KuroApiResp
 from ..utils.resource.constant import SPECIAL_CHAR
 from ..utils.name_convert import char_name_to_char_id
 from ..utils.api.model import DailyData, AccountBaseInfo
-from ..utils.database.models import WavesBind, WavesUser
 from ..wutheringwaves_config.set_config import set_push_time
+from ..utils.database.models import WavesBind, WavesPush, WavesUser
 from ..utils.error_reply import ERROR_CODE, WAVES_CODE_102, WAVES_CODE_103
 from ..utils.image import (
     RED,
@@ -426,6 +426,14 @@ async def draw_international_stamina_img(bot: Bot, ev: Event, user: WavesUser):
             logger.error(f"[鸣潮][國際服體力查詢]OAuth 生成異常: {e}")
             return f"❌ OAuth 生成異常: {str(e)}"
 
+        # 從 platform 字段中提取服務器區域
+        server_region = "Asia"  # 默認值
+        if user.platform and user.platform.startswith("international_"):
+            server_region = user.platform.replace("international_", "")
+            logger.info(f"[鸣潮][國際服體力查詢]使用服務器區域: {server_region}")
+        else:
+            logger.info(f"[鸣潮][國際服體力查詢]使用默認服務器區域: {server_region}")
+
         # 獲取角色信息（帶重試機制）
         logger.info(f"[鸣潮][國際服體力查詢]獲取角色信息...")
         role_info = None
@@ -435,7 +443,7 @@ async def draw_international_stamina_img(bot: Bot, ev: Event, user: WavesUser):
         while retry_count < max_retries:
             try:
                 role_info = await client.get_player_role(
-                    oauth_code, int(user.uid), "Asia"
+                    oauth_code, int(user.uid), server_region
                 )
                 logger.info(f"[鸣潮][國際服體力查詢]角色信息獲取成功")
                 break  # 成功獲取，跳出重試循環
@@ -708,9 +716,28 @@ async def _draw_international_stamina_img(
     active_icon = YES if character_count > 0 else NO
     active_text = "角色已解鎖" if character_count > 0 else "無角色數據"
 
-    # 推送狀態
+    # 推送狀態 - 根據用戶類型顯示不同的推送信息
     push_icon = YES
-    push_text = "體力推送開啟"
+
+    # 獲取用戶的推送設置
+    push_data = await WavesPush.select_data_by_uid(user.uid)
+
+    if push_data and push_data.resin_push != "off":
+        # 檢查是否為Discord用戶（通過platform判斷）
+        if user.platform and user.platform.startswith("international_"):
+            # Discord用戶統一顯示webhook推送
+            push_text = "體力推送已開后至統一推送頻道"
+        else:
+            # 其他用戶顯示具體的推送設置
+            if push_data.resin_push == "on":
+                # 私聊推送
+                push_text = "體力推送已開啟"
+            else:
+                # 群聊推送，顯示群組ID
+                push_text = f"體力推送已開啟至群{push_data.resin_push}"
+    else:
+        # 沒有推送設置
+        push_text = "體力推送未開啟"
 
     # 簽到狀態
     status_img = Image.new("RGBA", (230, 40), (255, 255, 255, 0))

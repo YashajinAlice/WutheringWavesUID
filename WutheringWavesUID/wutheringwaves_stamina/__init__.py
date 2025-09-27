@@ -157,3 +157,26 @@ async def waves_daily_info_notice_job():
     logger.info(f"[鸣潮] 开始推送: {result}")
     await send_board_cast_msg(result, "resin")
     logger.info("[鸣潮] 体力推送任务完成")
+
+
+# 添加測試推送命令
+test_push = SV("测试体力推送")
+
+
+@test_push.on_fullmatch("测试推送", "test_push")
+async def test_stamina_push(bot: Bot, ev: Event):
+    """測試體力推送功能"""
+    await bot.logger.info(f"[鸣潮] 开始执行测试推送: {ev.user_id}")
+
+    try:
+        result = await get_notice_list()
+        if not result:
+            return await bot.send("[鸣潮] 没有需要推送的用户")
+
+        await bot.send(f"[鸣潮] 测试推送结果: {result}")
+        await send_board_cast_msg(result, "resin")
+        await bot.send("[鸣潮] 测试推送完成")
+
+    except Exception as e:
+        await bot.send(f"[鸣潮] 测试推送失败: {e}")
+        logger.error(f"[鸣潮] 测试推送错误: {e}")
