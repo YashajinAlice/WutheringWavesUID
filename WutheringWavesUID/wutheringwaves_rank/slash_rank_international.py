@@ -94,6 +94,13 @@ async def draw_international_slash_rank_card(bot: Bot, ev: Event, limit: int = 2
         # API返回的数据结构是 {"rank_list": [...], "total_count": ...}
         rank_list = rank_data.get("rank_list", [])
 
+        # 添加調試信息
+        logger.info(f"獲取到排行數據: 總數={len(rank_list)}, 限制={limit}")
+        for i, record in enumerate(rank_list):
+            logger.info(
+                f"  第{i+1}名: UID={record.get('uid')}, 分數={record.get('total_score')}"
+            )
+
         if not rank_list:
             # 添加調試信息
             return f"暂无国际服无尽排行数据 (数据结构: {type(rank_data)}, 键: {list(rank_data.keys()) if isinstance(rank_data, dict) else 'N/A'})"
@@ -149,6 +156,7 @@ async def draw_international_slash_rank_card(bot: Bot, ev: Event, limit: int = 2
     bot_color = copy.deepcopy(BOT_COLOR)
 
     for rank_index, (rank_data, role_avatar) in enumerate(zip(rank_list, results)):
+        logger.info(f"正在繪製第 {rank_index + 1} 個項目: UID={rank_data.get('uid')}")
         role_bg = Image.open(TEXT_PATH / "bar1.png")
         role_bg.paste(role_avatar, (100, 0), role_avatar)
         role_bg_draw = ImageDraw.Draw(role_bg)
