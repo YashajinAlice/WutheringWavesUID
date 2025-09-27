@@ -1,4 +1,5 @@
 import time
+import asyncio
 from pathlib import Path
 from typing import Optional
 
@@ -298,8 +299,42 @@ async def draw_international_role_img(uid: str, user, ev: Event):
             server_region = user.platform.replace("international_", "")
             print(f"[鸣潮][國際服角色卡片]使用服務器區域: {server_region}")
 
-        # 獲取角色信息
-        role_info = await client.get_player_role(oauth_code, int(uid), server_region)
+        # 獲取角色信息（帶重試機制）
+        role_info = None
+        max_retries = 3
+        retry_count = 0
+
+        while retry_count < max_retries:
+            try:
+                role_info = await client.get_player_role(
+                    oauth_code, int(uid), server_region
+                )
+                print(f"[鸣潮][國際服角色卡片]角色信息獲取成功")
+                break  # 成功獲取，跳出重試循環
+            except Exception as e:
+                error_msg = str(e)
+                print(
+                    f"[鸣潮][國際服角色卡片]角色信息獲取失敗 (嘗試 {retry_count + 1}/{max_retries}): {error_msg}"
+                )
+
+                # 檢查是否為 'retrying' 錯誤
+                if "'retrying'" in error_msg or "retrying" in error_msg:
+                    retry_count += 1
+                    if retry_count < max_retries:
+                        print(
+                            f"[鸣潮][國際服角色卡片]檢測到 'retrying' 錯誤，將在 2 秒後重試..."
+                        )
+                        await asyncio.sleep(2)  # 等待2秒後重試
+                        continue
+                    else:
+                        print(f"[鸣潮][國際服角色卡片]重試 {max_retries} 次後仍然失敗")
+                        raise e
+                else:
+                    # 其他錯誤，直接拋出
+                    raise e
+
+        if role_info is None:
+            raise Exception("角色信息獲取失敗，已達最大重試次數")
 
         # 創建簡化的角色信息
         basic_info = role_info.basic

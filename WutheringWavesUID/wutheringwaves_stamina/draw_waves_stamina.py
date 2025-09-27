@@ -426,17 +426,70 @@ async def draw_international_stamina_img(bot: Bot, ev: Event, user: WavesUser):
             logger.error(f"[鸣潮][國際服體力查詢]OAuth 生成異常: {e}")
             return f"❌ OAuth 生成異常: {str(e)}"
 
-        # 獲取角色信息
+        # 獲取角色信息（帶重試機制）
         logger.info(f"[鸣潮][國際服體力查詢]獲取角色信息...")
-        try:
-            role_info = await client.get_player_role(oauth_code, int(user.uid), "Asia")
-            logger.info(f"[鸣潮][國際服體力查詢]角色信息獲取成功")
-        except kuro.errors.KuroError as e:
-            logger.error(f"[鸣潮][國際服體力查詢]角色信息獲取失敗: {e}")
-            return f"❌ 角色信息獲取失敗: {str(e)}"
-        except Exception as e:
-            logger.error(f"[鸣潮][國際服體力查詢]角色信息獲取異常: {e}")
-            return f"❌ 角色信息獲取異常: {str(e)}"
+        role_info = None
+        max_retries = 3
+        retry_count = 0
+
+        while retry_count < max_retries:
+            try:
+                role_info = await client.get_player_role(
+                    oauth_code, int(user.uid), "Asia"
+                )
+                logger.info(f"[鸣潮][國際服體力查詢]角色信息獲取成功")
+                break  # 成功獲取，跳出重試循環
+            except kuro.errors.KuroError as e:
+                error_msg = str(e)
+                logger.warning(
+                    f"[鸣潮][國際服體力查詢]角色信息獲取失敗 (嘗試 {retry_count + 1}/{max_retries}): {error_msg}"
+                )
+
+                # 檢查是否為 'retrying' 錯誤
+                if "'retrying'" in error_msg or "retrying" in error_msg:
+                    retry_count += 1
+                    if retry_count < max_retries:
+                        logger.info(
+                            f"[鸣潮][國際服體力查詢]檢測到 'retrying' 錯誤，將在 2 秒後重試..."
+                        )
+                        await asyncio.sleep(2)  # 等待2秒後重試
+                        continue
+                    else:
+                        logger.error(
+                            f"[鸣潮][國際服體力查詢]重試 {max_retries} 次後仍然失敗"
+                        )
+                        return f"❌ 角色信息獲取失敗: {str(e)}"
+                else:
+                    # 其他錯誤，直接返回
+                    logger.error(f"[鸣潮][國際服體力查詢]角色信息獲取失敗: {e}")
+                    return f"❌ 角色信息獲取失敗: {str(e)}"
+            except Exception as e:
+                error_msg = str(e)
+                logger.warning(
+                    f"[鸣潮][國際服體力查詢]角色信息獲取異常 (嘗試 {retry_count + 1}/{max_retries}): {error_msg}"
+                )
+
+                # 檢查是否為 'retrying' 錯誤
+                if "'retrying'" in error_msg or "retrying" in error_msg:
+                    retry_count += 1
+                    if retry_count < max_retries:
+                        logger.info(
+                            f"[鸣潮][國際服體力查詢]檢測到 'retrying' 錯誤，將在 2 秒後重試..."
+                        )
+                        await asyncio.sleep(2)  # 等待2秒後重試
+                        continue
+                    else:
+                        logger.error(
+                            f"[鸣潮][國際服體力查詢]重試 {max_retries} 次後仍然失敗"
+                        )
+                        return f"❌ 角色信息獲取異常: {str(e)}"
+                else:
+                    # 其他錯誤，直接返回
+                    logger.error(f"[鸣潮][國際服體力查詢]角色信息獲取異常: {e}")
+                    return f"❌ 角色信息獲取異常: {str(e)}"
+
+        if role_info is None:
+            return "❌ 角色信息獲取失敗，已達最大重試次數"
 
         # 提取體力信息
         basic_info = role_info.basic
@@ -478,8 +531,35 @@ async def _draw_international_stamina_img(
     # 用戶頭像
     avatar = await draw_pic_with_ring(ev)
 
-    # 隨機角色立繪
-    pile = await get_random_waves_role_pile(None)
+    # 用戶設置的角色立繪背景
+    pile_id = None
+    if user and user.stamina_bg_value:
+        char_id = char_name_to_char_id(user.stamina_bg_value)
+        if char_id in SPECIAL_CHAR:
+            # 特殊角色需要檢查是否擁有
+            for char_id in SPECIAL_CHAR[char_id]:
+                try:
+                    role_detail_info = await waves_api.get_role_detail_info(
+                        char_id, user.uid, user.cookie
+                    )
+                    if not role_detail_info.success:
+                        continue
+                    role_detail_info = role_detail_info.data
+                    if (
+                        not isinstance(role_detail_info, Dict)
+                        or "role" not in role_detail_info
+                        or role_detail_info["role"] is None
+                        or "level" not in role_detail_info
+                        or role_detail_info["level"] is None
+                    ):
+                        continue
+                    pile_id = char_id
+                    break
+                except:
+                    continue
+        else:
+            pile_id = char_id
+    pile = await get_random_waves_role_pile(pile_id)
 
     # 基本信息背景
     base_info_draw = ImageDraw.Draw(base_info_bg)

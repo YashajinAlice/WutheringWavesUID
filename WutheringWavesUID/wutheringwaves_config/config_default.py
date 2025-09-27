@@ -2,12 +2,12 @@ from typing import Dict
 
 from gsuid_core.utils.plugins_config.models import (
     GSC,
+    GsIntConfig,
+    GsStrConfig,
     GsBoolConfig,
     GsDictConfig,
-    GsIntConfig,
     GsListConfig,
     GsListStrConfig,
-    GsStrConfig,
 )
 
 CONFIG_DEFAULT: Dict[str, GSC] = {
@@ -203,5 +203,15 @@ CONFIG_DEFAULT: Dict[str, GSC] = {
         "验证码提供方appkey",
         "验证码提供方appkey",
         "",
+    ),
+    "DiscordWebhookUrl": GsStrConfig(
+        "Discord Webhook URL",
+        "Discord Webhook URL，用于体力推送通知。格式：https://discord.com/api/webhooks/...",
+        "",
+    ),
+    "DiscordWebhookEnabled": GsBoolConfig(
+        "启用 Discord Webhook 推送",
+        "启用 Discord Webhook 推送。开启后体力推送将通过 Discord Webhook 发送到指定频道",
+        False,
     ),
 }

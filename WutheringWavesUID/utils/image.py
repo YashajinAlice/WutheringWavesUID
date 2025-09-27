@@ -252,22 +252,48 @@ async def get_qq_avatar(
 async def get_discord_avatar(
     qid: Optional[Union[int, str]] = None,
     avatar_url: Optional[str] = None,
+    avatar_hash: Optional[str] = None,
     size: int = 640,
 ) -> Image.Image:
-    if qid:
-        data = await WavesUserAvatar.select_data(str(qid), "discord")
-        avatar_hash = data.avatar_hash if data else ""
-        avatar_url = f"https://cdn.discordapp.com/avatars/{qid}/{avatar_hash}"
-    elif avatar_url is None:
-        avatar_url = "https://cdn.discordapp.com/embed/avatars/0.png"
+    try:
+        if qid:
+            # 如果直接提供了頭像哈希，使用它
+            if avatar_hash:
+                avatar_url = f"https://cdn.discordapp.com/avatars/{qid}/{avatar_hash}"
+            else:
+                # 否則從數據庫查詢
+                data = await WavesUserAvatar.select_data(str(qid), "discord")
+                avatar_hash = data.avatar_hash if data else ""
+                if avatar_hash:
+                    avatar_url = (
+                        f"https://cdn.discordapp.com/avatars/{qid}/{avatar_hash}"
+                    )
+                else:
+                    # 如果沒有頭像哈希，使用默認頭像
+                    avatar_url = "https://cdn.discordapp.com/embed/avatars/0.png"
+        elif avatar_url is None:
+            avatar_url = "https://cdn.discordapp.com/embed/avatars/0.png"
 
-    avatar_url = (
-        avatar_url + f".png?size={size}"
-        if not avatar_url.endswith(".png")
-        else avatar_url
-    )
-    char_pic = Image.open(BytesIO((await sget(avatar_url)).content)).convert("RGBA")
-    return char_pic
+        avatar_url = (
+            avatar_url + f".png?size={size}"
+            if not avatar_url.endswith(".png")
+            else avatar_url
+        )
+
+        # 嘗試下載頭像
+        response = await sget(avatar_url)
+        if response.status_code == 200:
+            char_pic = Image.open(BytesIO(response.content)).convert("RGBA")
+            return char_pic
+        else:
+            # 如果下載失敗，使用默認頭像
+            raise Exception(f"Discord頭像下載失敗，狀態碼: {response.status_code}")
+
+    except Exception as e:
+        # 如果任何步驟失敗，使用默認角色頭像
+        from .image import get_square_avatar
+
+        return await get_square_avatar("1505")
 
 
 async def get_qqgroup_avatar(

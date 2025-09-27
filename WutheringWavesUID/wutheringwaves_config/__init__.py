@@ -130,14 +130,29 @@ async def send_config_ev(bot: Bot, ev: Event):
     elif "体力背景" in ev.text:
         # 对于体力背景设置，国际服和国服都需要检查 token
         from ..utils.waves_api import waves_api
+        from ..utils.database.models import WavesUser
 
-        ck = await waves_api.get_self_waves_ck(uid, ev.user_id, ev.bot_id)
-        if not ck:
+        # 先檢查用戶是否存在且有 cookie
+        waves_user = await WavesUser.select_waves_user(uid, ev.user_id, ev.bot_id)
+        if not waves_user or not waves_user.cookie:
             from ..utils.error_reply import ERROR_CODE, WAVES_CODE_102
 
             return await bot.send(
                 f"当前特征码：{uid}\n{ERROR_CODE[WAVES_CODE_102]}", at_sender
             )
+
+        # 對於國際服，直接使用 cookie，不檢查狀態
+        if waves_user.platform and waves_user.platform.startswith("international"):
+            ck = waves_user.cookie
+        else:
+            # 國服需要檢查 token 有效性
+            ck = await waves_api.get_self_waves_ck(uid, ev.user_id, ev.bot_id)
+            if not ck:
+                from ..utils.error_reply import ERROR_CODE, WAVES_CODE_102
+
+                return await bot.send(
+                    f"当前特征码：{uid}\n{ERROR_CODE[WAVES_CODE_102]}", at_sender
+                )
         func = "体力背景"
         value = "".join(re.findall("[\u4e00-\u9fa5]", ev.text.replace(func, "")))
         if not value:
