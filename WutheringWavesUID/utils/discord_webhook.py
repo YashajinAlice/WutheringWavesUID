@@ -93,6 +93,7 @@ class DiscordWebhook:
         max_stamina: int,
         threshold: int,
         server_region: str = "未知",
+        mention_user: bool = True,
     ) -> bool:
         """
         發送體力推送通知
@@ -103,6 +104,7 @@ class DiscordWebhook:
             max_stamina: 最大體力
             threshold: 體力閾值
             server_region: 伺服器區域
+            mention_user: 是否艾特用戶
 
         Returns:
             bool: 發送是否成功
@@ -110,8 +112,8 @@ class DiscordWebhook:
         try:
             # 構建 Discord embed
             embed = {
-                "title": "🌜 鳴潮體力推送提醒",
-                "description": f"<@{user_id}> 你的結晶波片達到設定閾值啦！",
+                "title": "✅[鸣潮] 推送提醒:",
+                "description": f"🌜您的结晶波片达到设定阈值啦！\n🕒当前体力阈值：{threshold}！\n\n📅请清完体力后使用[ww每日]来更新推送时间！\n <@{user_id}> ",
                 "color": 0x00FF00,  # 綠色
                 "fields": [
                     {
@@ -133,8 +135,8 @@ class DiscordWebhook:
 
             return await self.send_message(
                 embeds=[embed],
-                username="鳴潮體力助手",
-                avatar_url="https://cdn.discordapp.com/emojis/1234567890123456789.png",  # 可以設置一個默認頭像
+                username="提醒你清體力的卡提！",
+                avatar_url="https://cdn.discordapp.com/attachments/1377922987122102313/1421755470951219260/130772924_p0_master1200.jpg?ex=68da3077&is=68d8def7&hm=4af6c5888027d601782915e81a502ef96733494eaae4882d676cb13835da0903&",  # 可以設置一個默認頭像
             )
 
         except Exception as e:
@@ -171,6 +173,7 @@ async def send_stamina_webhook(
     max_stamina: int,
     threshold: int,
     server_region: str = "未知",
+    mention_user: bool = True,
 ) -> bool:
     """
     發送體力 webhook 推送
@@ -181,6 +184,7 @@ async def send_stamina_webhook(
         max_stamina: 最大體力
         threshold: 體力閾值
         server_region: 伺服器區域
+        mention_user: 是否艾特用戶
 
     Returns:
         bool: 發送是否成功
@@ -196,6 +200,7 @@ async def send_stamina_webhook(
         max_stamina=max_stamina,
         threshold=threshold,
         server_region=server_region,
+        mention_user=mention_user,
     )
 
 

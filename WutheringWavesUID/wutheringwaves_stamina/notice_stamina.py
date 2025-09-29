@@ -24,21 +24,66 @@ async def get_notice_list() -> Dict[str, Dict[str, Dict]]:
     push_list = await WavesPush.get_all_push_user_list()
     logger.info(f"[鸣潮] WavesPush 表中找到 {len(push_list)} 个需要推送的用户")
 
-    # 直接使用 WavesPush 數據進行推送，不依賴 WavesUser 表
+    # 從 WavesUser 表獲取完整的用戶信息
     user_list = []
     for push_data in push_list:
         try:
-            # 創建一個簡化的用戶對象，包含必要的推送信息
-            class SimpleUser:
-                def __init__(self, push_data):
-                    self.uid = push_data.uid
-                    self.bot_id = push_data.bot_id
-                    self.user_id = getattr(push_data, "user_id", push_data.uid)
-                    self.cookie = getattr(push_data, "cookie", "")
-                    self.platform = getattr(push_data, "platform", "discord")
-                    self.status = getattr(push_data, "status", "")
+            # 根據 UID 和 bot_id 從 WavesUser 表獲取完整的用戶信息
+            from ..utils.database.models import WavesUser
 
-            user = SimpleUser(push_data)
+            # 查找對應的 WavesUser 記錄
+            waves_user = None
+            try:
+                # 嘗試通過 UID 和 bot_id 查找用戶
+                waves_user = await WavesUser.get_user_by_attr(
+                    "", push_data.bot_id, "uid", push_data.uid
+                )
+                if not waves_user:
+                    # 如果沒找到，嘗試其他方式
+                    user_list_data = await WavesUser.select_data_list(
+                        uid=push_data.uid, bot_id=push_data.bot_id
+                    )
+                    if user_list_data:
+                        waves_user = user_list_data[0]
+            except Exception as e:
+                logger.warning(f"[鸣潮] 查找 WavesUser 失敗: {e}")
+
+            if waves_user:
+                # 使用 WavesUser 的完整信息
+                user = waves_user
+                logger.info(
+                    f"[鸣潮] 找到 WavesUser 記錄: UID={user.uid}, UserID={user.user_id}, BotID={user.bot_id}"
+                )
+            else:
+                # 回退到簡化對象，但使用正確的 Discord ID 查找邏輯
+                class SimpleUser:
+                    def __init__(self, push_data):
+                        self.uid = push_data.uid
+                        self.bot_id = push_data.bot_id
+                        # 嘗試從 WavesBind 表獲取正確的 Discord ID
+                        self.user_id = self._get_discord_id(push_data)
+                        self.cookie = getattr(push_data, "cookie", "")
+                        self.platform = getattr(push_data, "platform", "discord")
+                        self.status = getattr(push_data, "status", "")
+
+                    def _get_discord_id(self, push_data):
+                        # 從 WavesBind 表獲取正確的 Discord ID
+                        try:
+                            # 這裡不能使用 await，因為這不是異步函數
+                            # 直接返回 UID 作為 user_id
+                            logger.info(
+                                f"[鸣潮] 使用 UID 作為 Discord ID: {push_data.uid}"
+                            )
+                            return push_data.uid
+                        except Exception as e:
+                            logger.error(f"[鸣潮] 獲取 Discord ID 失敗: {e}")
+                            return push_data.uid
+
+                user = SimpleUser(push_data)
+                logger.info(
+                    f"[鸣潮] 創建簡化用戶對象: UID={user.uid}, UserID={user.user_id}"
+                )
+
             user_list.append(user)
             logger.info(f"[鸣潮] 创建用户 {user.uid} 的推送对象")
         except Exception as e:
@@ -444,13 +489,14 @@ async def save_push_data_unified(
                         except:
                             pass
 
-            # 發送 Discord webhook 推送
+            # 發送 Discord webhook 推送（啟用艾特功能）
             webhook_success = await send_stamina_webhook(
                 user_id=qid,
                 current_stamina=current_stamina,
                 max_stamina=max_stamina,
                 threshold=threshold,
                 server_region=server_region,
+                mention_user=True,  # 啟用艾特功能
             )
 
             if webhook_success:
