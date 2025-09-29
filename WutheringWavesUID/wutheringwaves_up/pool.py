@@ -151,12 +151,12 @@ async def get_pool_data_by_type(query_type: str, star: int):
 
     # title
     share_bg = await get_random_share_bg()
-    share_bg = share_bg.resize((1080, 607))
+    share_bg = share_bg.resize((1080, 607), Image.Resampling.LANCZOS)
     share_bg_crop = share_bg.crop((0, 50, 1050, 550))
 
     # icon
     icon = get_ICON()
-    icon = icon.resize((128, 128))
+    icon = icon.resize((128, 128), Image.Resampling.LANCZOS)
     share_bg_crop.paste(icon, (60, 240), icon)
 
     # title
@@ -216,13 +216,13 @@ async def draw_pool_char(
             pic = await get_square_weapon(resource_id)
 
         pic_temp = Image.new("RGBA", pic.size)
-        pic_temp.paste(pic.resize((160, 160)), (10, 10))
-        pic_temp = pic_temp.resize((160, 160))
+        pic_temp.paste(pic.resize((160, 160), Image.Resampling.LANCZOS), (10, 10))
+        pic_temp = pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
 
         avatar_mask_temp = avatar_mask.copy()
         mask_pic_temp = Image.new("RGBA", avatar_mask_temp.size)
         mask_pic_temp.paste(avatar_mask_temp, (-20, -45), avatar_mask_temp)
-        mask_pic_temp = mask_pic_temp.resize((160, 160))
+        mask_pic_temp = mask_pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
         role_avatar = Image.new("RGBA", (180, 180))
         role_avatar.paste(pic_temp, (0, 0), mask_pic_temp)
         bar_bg.paste(role_avatar, (100, 0), role_avatar)

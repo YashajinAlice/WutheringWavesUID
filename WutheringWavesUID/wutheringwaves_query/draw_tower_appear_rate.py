@@ -76,7 +76,7 @@ async def draw_tower_use_rate(ev: Event):
 
     # icon
     icon = get_ICON()
-    icon = icon.resize((128, 128))
+    icon = icon.resize((128, 128), Image.Resampling.LANCZOS)
     title_bg.paste(icon, (60, 240), icon)
 
     # title
@@ -123,7 +123,7 @@ async def draw_tower_use_rate(ev: Event):
                 continue
 
             temp_pic = await get_temp_pic(char_id, char_model, rate)
-            temp_pic = temp_pic.resize((200, 157))
+            temp_pic = temp_pic.resize((200, 157), Image.Resampling.LANCZOS)
             card_img.alpha_composite(
                 temp_pic,
                 (
@@ -145,7 +145,7 @@ async def draw_tower_use_rate(ev: Event):
 
 async def get_temp_pic(char_id: str, char_model: CharacterModel, rate: float):
     avatar = await get_square_avatar(char_id)
-    avatar = avatar.resize((180, 180))
+    avatar = avatar.resize((180, 180), Image.Resampling.LANCZOS)
     if char_model.starLevel == 5:
         star_fg = Image.open(TEXT_PATH / "star5_fg.png")
         star_bg = Image.open(TEXT_PATH / "star5_bg.png")

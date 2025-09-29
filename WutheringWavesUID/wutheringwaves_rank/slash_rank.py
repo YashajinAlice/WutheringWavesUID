@@ -153,7 +153,7 @@ async def draw_all_slash_rank_card(bot: Bot, ev: Event):
 
     # icon
     icon = get_ICON()
-    icon = icon.resize((128, 128))
+    icon = icon.resize((128, 128), Image.Resampling.LANCZOS)
     title_bg.paste(icon, (60, 240), icon)
 
     # title
@@ -164,7 +164,7 @@ async def draw_all_slash_rank_card(bot: Bot, ev: Event):
     # 遮罩
     char_mask = Image.open(TEXT_PATH / "char_mask.png").convert("RGBA")
     # 根据width扩图
-    char_mask = char_mask.resize((width, char_mask.height * width // char_mask.width))
+    char_mask = char_mask.resize((width, char_mask.height * width // char_mask.width), Image.Resampling.LANCZOS)
     char_mask = char_mask.crop((0, char_mask.height - 500, width, char_mask.height))
     char_mask_temp = Image.new("RGBA", char_mask.size, (0, 0, 0, 0))
     char_mask_temp.paste(title_bg, (0, 0), char_mask)
@@ -269,7 +269,7 @@ async def draw_all_slash_rank_card(bot: Bot, ev: Event):
                 if char_model is None:
                     continue
                 char_avatar = await get_square_avatar(char_id)
-                char_avatar = char_avatar.resize((45, 45))
+                char_avatar = char_avatar.resize((45, 45), Image.Resampling.LANCZOS)
 
                 if char_chain != -1:
                     info_block = Image.new("RGBA", (20, 20), color=(255, 255, 255, 0))
@@ -304,7 +304,7 @@ async def draw_all_slash_rank_card(bot: Bot, ev: Event):
                 fill=buff_color,
             )
             buff_pic = await pic_download_from_url(SLASH_PATH, slash_half.buff_icon)
-            buff_pic = buff_pic.resize((50, 50))
+            buff_pic = buff_pic.resize((50, 50), Image.Resampling.LANCZOS)
             buff_bg.paste(buff_pic, (0, 0), buff_pic)
 
             role_bg.alpha_composite(buff_bg, (720 + half_index * 250, 15))
@@ -342,19 +342,19 @@ async def get_avatar(
 
         img = Image.new("RGBA", (180, 180))
         avatar_mask_temp = avatar_mask.copy()
-        mask_pic_temp = avatar_mask_temp.resize((120, 120))
+        mask_pic_temp = avatar_mask_temp.resize((120, 120), Image.Resampling.LANCZOS)
         img.paste(pic_temp, (0, -5), mask_pic_temp)
     else:
         pic = await get_square_avatar(default_avatar_char_id)
 
         pic_temp = Image.new("RGBA", pic.size)
-        pic_temp.paste(pic.resize((160, 160)), (10, 10))
-        pic_temp = pic_temp.resize((160, 160))
+        pic_temp.paste(pic.resize((160, 160), Image.Resampling.LANCZOS), (10, 10))
+        pic_temp = pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
 
         avatar_mask_temp = avatar_mask.copy()
         mask_pic_temp = Image.new("RGBA", avatar_mask_temp.size)
         mask_pic_temp.paste(avatar_mask_temp, (-20, -45), avatar_mask_temp)
-        mask_pic_temp = mask_pic_temp.resize((160, 160))
+        mask_pic_temp = mask_pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
 
         img = Image.new("RGBA", (180, 180))
         img.paste(pic_temp, (0, 0), mask_pic_temp)

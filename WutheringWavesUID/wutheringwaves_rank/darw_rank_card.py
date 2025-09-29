@@ -404,7 +404,7 @@ async def draw_rank_img(
         role_attribute = await get_attribute(
             rank_role_detail.role.attributeName or "导电", is_simple=True
         )
-        role_attribute = role_attribute.resize((40, 40)).convert("RGBA")
+        role_attribute = role_attribute.resize((40, 40), Image.Resampling.LANCZOS).convert("RGBA")
         bar_bg.alpha_composite(role_attribute, (300, 20))
 
         # 命座
@@ -449,7 +449,7 @@ async def draw_rank_img(
         # 合鸣效果
         if rank.sonata_name:
             effect_image = await get_attribute_effect(rank.sonata_name)
-            effect_image = effect_image.resize((50, 50))
+            effect_image = effect_image.resize((50, 50), Image.Resampling.LANCZOS)
             bar_bg.alpha_composite(effect_image, (533, 15))
             sonata_name = rank.sonata_name
         else:
@@ -495,7 +495,7 @@ async def draw_rank_img(
 
         weapon_bg_temp.alpha_composite(weapon_icon_bg, dest=(45, 0))
 
-        bar_bg.alpha_composite(weapon_bg_temp.resize((260, 130)), dest=(580, 25))
+        bar_bg.alpha_composite(weapon_bg_temp.resize((260, 130), Image.Resampling.LANCZOS), dest=(580, 25))
 
         # 伤害
         if damage_title == "无":
@@ -627,7 +627,7 @@ async def get_avatar(
         pic_temp = crop_center_img(pic, 120, 120)
         img = Image.new("RGBA", (180, 180))
         avatar_mask_temp = avatar_mask.copy()
-        mask_pic_temp = avatar_mask_temp.resize((120, 120))
+        mask_pic_temp = avatar_mask_temp.resize((120, 120), Image.Resampling.LANCZOS)
         img.paste(pic_temp, (0, -5), mask_pic_temp)
     
     except Exception:
@@ -636,13 +636,13 @@ async def get_avatar(
         pic = await get_square_avatar(char_id)
 
         pic_temp = Image.new("RGBA", pic.size)
-        pic_temp.paste(pic.resize((160, 160)), (10, 10))
-        pic_temp = pic_temp.resize((160, 160))
+        pic_temp.paste(pic.resize((160, 160), Image.Resampling.LANCZOS), (10, 10))
+        pic_temp = pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
 
         avatar_mask_temp = avatar_mask.copy()
         mask_pic_temp = Image.new("RGBA", avatar_mask_temp.size)
         mask_pic_temp.paste(avatar_mask_temp, (-20, -45), avatar_mask_temp)
-        mask_pic_temp = mask_pic_temp.resize((160, 160))
+        mask_pic_temp = mask_pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
 
         img = Image.new("RGBA", (180, 180))
         img.paste(pic_temp, (0, 0), mask_pic_temp)

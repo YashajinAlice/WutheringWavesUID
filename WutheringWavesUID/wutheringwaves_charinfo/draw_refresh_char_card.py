@@ -47,9 +47,9 @@ TEXT_PATH = Path(__file__).parent / "texture2d"
 
 refresh_char_bg = Image.open(TEXT_PATH / "refresh_char_bg.png")
 refresh_yes = Image.open(TEXT_PATH / "refresh_yes.png")
-refresh_yes = refresh_yes.resize((40, 40))
+refresh_yes = refresh_yes.resize((40, 40), Image.Resampling.LANCZOS)
 refresh_no = Image.open(TEXT_PATH / "refresh_no.png")
-refresh_no = refresh_no.resize((40, 40))
+refresh_no = refresh_no.resize((40, 40), Image.Resampling.LANCZOS)
 
 
 refresh_role_map = {
@@ -120,7 +120,7 @@ async def get_refresh_role_img(width: int, height: int):
     if height > img.height:
         img = crop_center_img(img, width, height)
     else:
-        img = img.resize((width, int(width / img.width * img.height)))
+        img = img.resize((width, int(width / img.width * img.height), Image.Resampling.LANCZOS))
 
     # 创建毛玻璃效果
     blur_img = img.filter(ImageFilter.GaussianBlur(radius=2))
@@ -386,9 +386,9 @@ async def draw_refresh_char_detail_img(
         anchor="mm",
     )
     if self_ck:
-        refresh_bar.alpha_composite(refresh_yes.resize((60, 60)), (1800, -8))
+        refresh_bar.alpha_composite(refresh_yes.resize((60, 60), Image.Resampling.LANCZOS), (1800, -8))
     else:
-        refresh_bar.alpha_composite(refresh_no.resize((60, 60)), (1800, -8))
+        refresh_bar.alpha_composite(refresh_no.resize((60, 60), Image.Resampling.LANCZOS), (1800, -8))
 
     img.paste(refresh_bar, (0, 300), refresh_bar)
     img = add_footer(img, 600, 20)
@@ -399,12 +399,12 @@ async def draw_refresh_char_detail_img(
 
 async def draw_pic(char_rank: WavesCharRank, isUpdate=False):
     pic = await get_square_avatar(char_rank.roleId)
-    resize_pic = pic.resize((200, 200))
+    resize_pic = pic.resize((200, 200), Image.Resampling.LANCZOS)
     img = refresh_char_bg.copy()
     img_draw = ImageDraw.Draw(img)
     img.alpha_composite(resize_pic, (50, 50))
     star_bg = await get_star_bg(char_rank.starLevel)
-    star_bg = star_bg.resize((220, 220))
+    star_bg = star_bg.resize((220, 220), Image.Resampling.LANCZOS)
     img.alpha_composite(star_bg, (40, 30))
 
     # 遮罩

@@ -329,7 +329,7 @@ async def draw_material_card(cultivate_cost_list: List[CultivateCost], title: st
         material_star_img = copy.deepcopy(material_star_img_map[cultivate_cost.quality])
         material_item_img = await get_material_img(cultivate_cost.id)
         material_item_img = material_item_img.resize(
-            (material_item_width, material_item_width)
+            (material_item_width, material_item_width, Image.Resampling.LANCZOS)
         )
 
         temp_img_draw = ImageDraw.Draw(temp_img)
@@ -381,7 +381,7 @@ async def calc_role_need_card(
 
     # 角色头像
     square_avatar = await get_square_avatar(role_cost_detail.roleId)
-    square_avatar = square_avatar.resize((180, 180))
+    square_avatar = square_avatar.resize((180, 180), Image.Resampling.LANCZOS)
     star_img = copy.deepcopy(star_img_map[online_role.starLevel])
     top_bg_img.alpha_composite(square_avatar, (70, 40))
     top_bg_img.alpha_composite(star_img, (70, 40))
@@ -403,7 +403,7 @@ async def calc_role_need_card(
         online_weapon = online_weapon_map[f"{role_cost_detail.weaponId}"]
         weapon_id = content["weaponId"]
         square_weapon = await get_square_weapon(weapon_id)
-        square_weapon = square_weapon.resize((180, 180))
+        square_weapon = square_weapon.resize((180, 180), Image.Resampling.LANCZOS)
         star_img = copy.deepcopy(star_img_map[online_weapon.weaponStarLevel])
         top_bg_img.alpha_composite(square_weapon, (530, 40))
         top_bg_img.alpha_composite(star_img, (530, 40))

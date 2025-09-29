@@ -145,11 +145,11 @@ async def draw_weapon_list(weapon_type: str):
                 
                 # 获取武器图标
                 weapon_icon = await get_square_weapon(weapon["id"])
-                weapon_icon = weapon_icon.resize((icon_size, icon_size))
+                weapon_icon = weapon_icon.resize((icon_size, icon_size), Image.Resampling.LANCZOS)
                     
                 # 获取并调整武器背景框
                 star_img = copy.deepcopy(star_img_map[weapon["star_level"]])
-                star_img = star_img.resize((icon_size, icon_size))
+                star_img = star_img.resize((icon_size, icon_size), Image.Resampling.LANCZOS)
                 img.alpha_composite(weapon_icon, (x_pos, row_y))
                 img.alpha_composite(star_img, (x_pos, row_y))
                     
@@ -236,7 +236,7 @@ async def draw_sonata_list():
             
             # 获取套装图标
             fetter_icon1 = await get_attribute_effect(sonata1["name"])
-            fetter_icon1 = fetter_icon1.resize((50, 50))
+            fetter_icon1 = fetter_icon1.resize((50, 50), Image.Resampling.LANCZOS)
             img.paste(fetter_icon1, (40, current_y), fetter_icon1)
             
             # 绘制套装名称
@@ -269,7 +269,7 @@ async def draw_sonata_list():
                 
                 # 获取套装图标
                 fetter_icon2 = await get_attribute_effect(sonata2["name"])
-                fetter_icon2 = fetter_icon2.resize((50, 50))
+                fetter_icon2 = fetter_icon2.resize((50, 50), Image.Resampling.LANCZOS)
                 img.paste(fetter_icon2, (460, current_y), fetter_icon2)
                 
                 # 绘制套装名称

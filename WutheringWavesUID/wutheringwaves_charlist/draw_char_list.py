@@ -131,7 +131,7 @@ async def draw_char_list_img(
     avatar = await draw_pic_with_ring(ev, is_peek)
     avatar_ring = Image.open(TEXT_PATH / "avatar_ring.png")
     card_img.paste(avatar, (25, 70), avatar)
-    avatar_ring = avatar_ring.resize((180, 180))
+    avatar_ring = avatar_ring.resize((180, 180), Image.Resampling.LANCZOS)
     card_img.paste(avatar_ring, (35, 80), avatar_ring)
 
     # 账号基本信息，由于可能会没有，放在一起
@@ -176,7 +176,7 @@ async def draw_char_list_img(
         role_attribute = await get_attribute(
             role_detail.role.attributeName, is_simple=True  # type: ignore
         )
-        role_attribute = role_attribute.resize((40, 40)).convert("RGBA")
+        role_attribute = role_attribute.resize((40, 40), Image.Resampling.LANCZOS).convert("RGBA")
         bar_star.alpha_composite(role_attribute, (170, 20))
         bar_star_draw.text((180, 83), f"Lv.{_rank.level}", GREY, waves_font_22, "mm")
 
@@ -215,7 +215,7 @@ async def draw_char_list_img(
             skill_img = await get_skill_img(
                 role_detail.role.roleId, _skill.skill.name, _skill.skill.iconUrl
             )
-            skill_img = skill_img.resize((70, 70))
+            skill_img = skill_img.resize((70, 70), Image.Resampling.LANCZOS)
             # skill_img = ImageEnhance.Brightness(skill_img).enhance(0.3)
             temp.alpha_composite(skill_img, (25, 25))
 
@@ -237,7 +237,7 @@ async def draw_char_list_img(
             temp_draw.text((62, 120), f"{_skill.level}", color, waves_font_38, "mm")
 
             _x = 100 + i * 65
-            skill_img_temp.alpha_composite(temp.resize((70, 82)), dest=(_x, 0))
+            skill_img_temp.alpha_composite(temp.resize((70, 82), Image.Resampling.LANCZOS), dest=(_x, 0))
         bar_star.alpha_composite(skill_img_temp, dest=(300, 10))
 
         # 武器
@@ -279,7 +279,7 @@ async def draw_char_list_img(
 
         weapon_bg_temp.alpha_composite(weapon_icon_bg, dest=(45, 0))
 
-        bar_star.alpha_composite(weapon_bg_temp.resize((260, 130)), dest=(710, 25))
+        bar_star.alpha_composite(weapon_bg_temp.resize((260, 130), Image.Resampling.LANCZOS), dest=(710, 25))
 
         card_img.paste(
             bar_star, (0, avatar_h + info_bg_h + index * bar_star_h), bar_star
@@ -340,7 +340,7 @@ async def draw_pic_with_ring(ev: Event, is_peek: bool = False):
 
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
     img = Image.new("RGBA", (180, 180))
-    mask = mask_pic.resize((160, 160))
+    mask = mask_pic.resize((160, 160), Image.Resampling.LANCZOS)
     resize_pic = crop_center_img(pic, 160, 160)
     img.paste(resize_pic, (20, 20), mask)
 
@@ -350,15 +350,15 @@ async def draw_pic_with_ring(ev: Event, is_peek: bool = False):
 async def draw_pic(roleId):
     pic = await get_square_avatar(roleId)
     pic_temp = Image.new("RGBA", pic.size)
-    pic_temp.paste(pic.resize((160, 160)), (10, 10))
+    pic_temp.paste(pic.resize((160, 160), Image.Resampling.LANCZOS), (10, 10))
 
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
     mask_pic_temp = Image.new("RGBA", mask_pic.size)
     mask_pic_temp.paste(mask_pic, (-20, -45), mask_pic)
 
     img = Image.new("RGBA", (180, 180))
-    mask_pic_temp = mask_pic_temp.resize((160, 160))
-    resize_pic = pic_temp.resize((160, 160))
+    mask_pic_temp = mask_pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
+    resize_pic = pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
     img.paste(resize_pic, (0, 0), mask_pic_temp)
 
     return img

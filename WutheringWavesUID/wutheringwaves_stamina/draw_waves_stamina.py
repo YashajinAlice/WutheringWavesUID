@@ -42,9 +42,9 @@ from ..utils.fonts.waves_fonts import (
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 YES = Image.open(TEXT_PATH / "yes.png")
-YES = YES.resize((40, 40))
+YES = YES.resize((40, 40), Image.Resampling.LANCZOS)
 NO = Image.open(TEXT_PATH / "no.png")
-NO = NO.resize((40, 40))
+NO = NO.resize((40, 40), Image.Resampling.LANCZOS)
 bar_down = Image.open(TEXT_PATH / "bar_down.png")
 
 based_w = 1150
@@ -389,7 +389,7 @@ async def draw_pic_with_ring(ev: Event):
 
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
     img = Image.new("RGBA", (200, 200))
-    mask = mask_pic.resize((160, 160))
+    mask = mask_pic.resize((160, 160), Image.Resampling.LANCZOS)
     resize_pic = crop_center_img(pic, 160, 160)
     img.paste(resize_pic, (20, 20), mask)
 

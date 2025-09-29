@@ -251,9 +251,9 @@ async def ph_card_draw(
                     _phantom.phantomProp.phantomId, _phantom.phantomProp.iconUrl
                 )
                 fetter_icon = await get_attribute_effect(_phantom.fetterDetail.name)
-                fetter_icon = fetter_icon.resize((50, 50))
+                fetter_icon = fetter_icon.resize((50, 50), Image.Resampling.LANCZOS)
                 phantom_icon.alpha_composite(fetter_icon, dest=(205, 0))
-                phantom_icon = phantom_icon.resize((100, 100))
+                phantom_icon = phantom_icon.resize((100, 100), Image.Resampling.LANCZOS)
                 sh_temp.alpha_composite(phantom_icon, dest=(20, 20))
                 phantomName = (
                     _phantom.phantomProp.name.replace("·", " ")
@@ -289,13 +289,13 @@ async def ph_card_draw(
 
                 for index in range(0, _phantom.cost):
                     promote_icon = Image.open(TEXT_PATH / "promote_icon.png")
-                    promote_icon = promote_icon.resize((30, 30))
+                    promote_icon = promote_icon.resize((30, 30), Image.Resampling.LANCZOS)
                     sh_temp.alpha_composite(promote_icon, dest=(128 + 30 * index, 90))
 
                 for index, _prop in enumerate(props):
                     oset = 55
                     prop_img = await get_attribute_prop(_prop.attributeName)
-                    prop_img = prop_img.resize((40, 40))
+                    prop_img = prop_img.resize((40, 40), Image.Resampling.LANCZOS)
                     sh_temp.alpha_composite(prop_img, (15, 167 + index * oset))
                     sh_temp_draw = ImageDraw.Draw(sh_temp)
                     name_color = "white"
@@ -366,7 +366,7 @@ async def ph_card_draw(
                     value = calc.phantom_card.get(name, default_value)
                     prop_img = await get_attribute_prop(name)
                     name_color, _ = get_valid_color(name, value, calc.calc_temp)
-                prop_img = prop_img.resize((40, 40))
+                prop_img = prop_img.resize((40, 40), Image.Resampling.LANCZOS)
                 ph_bg = ph_0.copy() if ni % 2 == 0 else ph_1.copy()
                 ph_bg.alpha_composite(prop_img, (20, 32))
                 ph_bg_draw = ImageDraw.Draw(ph_bg)
@@ -487,7 +487,7 @@ async def draw_fixed_img(img, avatar, account_info, role_detail):
     avatar_ring = Image.open(TEXT_PATH / "avatar_ring.png")
 
     img.paste(avatar, (45, 20), avatar)
-    avatar_ring = avatar_ring.resize((180, 180))
+    avatar_ring = avatar_ring.resize((180, 180), Image.Resampling.LANCZOS)
     img.paste(avatar_ring, (55, 30), avatar_ring)
 
     base_info_bg = Image.open(TEXT_PATH / "base_info_bg.png")
@@ -523,10 +523,10 @@ async def draw_fixed_img(img, avatar, account_info, role_detail):
     char_fg = Image.open(TEXT_PATH / "char_fg.png")
 
     role_attribute = await get_attribute(role_detail.role.attributeName)
-    role_attribute = role_attribute.resize((50, 50)).convert("RGBA")
+    role_attribute = role_attribute.resize((50, 50), Image.Resampling.LANCZOS).convert("RGBA")
     char_fg.paste(role_attribute, (434, 112), role_attribute)
     weapon_type = await get_weapon_type(role_detail.role.weaponTypeName)
-    weapon_type = weapon_type.resize((40, 40)).convert("RGBA")
+    weapon_type = weapon_type.resize((40, 40), Image.Resampling.LANCZOS).convert("RGBA")
     char_fg.paste(weapon_type, (439, 182), weapon_type)
 
     char_fg_image = ImageDraw.Draw(char_fg)
@@ -588,7 +588,7 @@ def resize_and_center_image(
         new_width = int(img_width * scale_factor)
         new_height = target_height
 
-    image = image.resize((new_width, new_height))
+    image = image.resize((new_width, new_height), Image.Resampling.LANCZOS)
 
     result_image = Image.new("RGBA", output_size, background_color)
 
@@ -856,7 +856,7 @@ async def draw_char_detail_img(
         weaponData.resonLevel,
     )
     stats_main = await get_attribute_prop(weapon_detail.stats[0]["name"])
-    stats_main = stats_main.resize((40, 40))
+    stats_main = stats_main.resize((40, 40), Image.Resampling.LANCZOS)
     weapon_bg_temp.alpha_composite(stats_main, (65, 187))
     weapon_bg_temp_draw.text(
         (130, 207), f"{weapon_detail.stats[0]['name']}", "white", waves_font_30, "lm"
@@ -865,7 +865,7 @@ async def draw_char_detail_img(
         (500, 207), f"{weapon_detail.stats[0]['value']}", "white", waves_font_30, "rm"
     )
     stats_sub = await get_attribute_prop(weapon_detail.stats[1]["name"])
-    stats_sub = stats_sub.resize((40, 40))
+    stats_sub = stats_sub.resize((40, 40), Image.Resampling.LANCZOS)
     weapon_bg_temp.alpha_composite(stats_sub, (65, 237))
     weapon_bg_temp_draw.text(
         (130, 257), f"{weapon_detail.stats[1]['name']}", "white", waves_font_30, "lm"
@@ -885,7 +885,7 @@ async def draw_char_detail_img(
         mz_bg_temp = Image.new("RGBA", mz_bg.size)
         mz_bg_temp_draw = ImageDraw.Draw(mz_bg_temp)
         chain = await get_chain_img(role_detail.role.roleId, _mz.order, _mz.iconUrl)  # type: ignore
-        chain = chain.resize((100, 100))
+        chain = chain.resize((100, 100), Image.Resampling.LANCZOS)
         mz_bg.paste(chain, (95, 75), chain)
         mz_bg_temp.alpha_composite(mz_bg, dest=(0, 0))
         if _mz.unlocked:
@@ -1019,7 +1019,7 @@ async def draw_char_detail_img(
             prop_img = await get_attribute_prop(name)
             name_color, _ = get_valid_color(name, value, calc.calc_temp)
 
-        prop_img = prop_img.resize((40, 40))
+        prop_img = prop_img.resize((40, 40), Image.Resampling.LANCZOS)
         sh_bg.alpha_composite(prop_img, (60, 40 + index * 55))
         sh_bg_draw.text(
             (120, 58 + index * 55), f"{name[:6]}", name_color, waves_font_24, "lm"
@@ -1044,7 +1044,7 @@ async def draw_char_detail_img(
         skill_img = await get_skill_img(
             role_detail.role.roleId, _skill.skill.name, _skill.skill.iconUrl
         )
-        skill_img = skill_img.resize((70, 70))
+        skill_img = skill_img.resize((70, 70), Image.Resampling.LANCZOS)
         skill_bg.paste(skill_img, (57, 65), skill_img)
 
         skill_bg_draw = ImageDraw.Draw(skill_bg)
@@ -1146,9 +1146,9 @@ async def draw_char_score_img(
                     _phantom.phantomProp.phantomId, _phantom.phantomProp.iconUrl
                 )
                 fetter_icon = await get_attribute_effect(_phantom.fetterDetail.name)
-                fetter_icon = fetter_icon.resize((50, 50))
+                fetter_icon = fetter_icon.resize((50, 50), Image.Resampling.LANCZOS)
                 phantom_icon.alpha_composite(fetter_icon, dest=(205, 0))
-                phantom_icon = phantom_icon.resize((100, 100))
+                phantom_icon = phantom_icon.resize((100, 100), Image.Resampling.LANCZOS)
                 sh_temp.alpha_composite(phantom_icon, dest=(20, 20))
                 phantomName = (
                     _phantom.phantomProp.name.replace("·", " ")
@@ -1184,13 +1184,13 @@ async def draw_char_score_img(
 
                 for index in range(0, _phantom.cost):
                     promote_icon = Image.open(TEXT_PATH / "promote_icon.png")
-                    promote_icon = promote_icon.resize((30, 30))
+                    promote_icon = promote_icon.resize((30, 30), Image.Resampling.LANCZOS)
                     sh_temp.alpha_composite(promote_icon, dest=(128 + 30 * index, 90))
 
                 for index, _prop in enumerate(props):
                     oset = 55
                     prop_img = await get_attribute_prop(_prop.attributeName)
-                    prop_img = prop_img.resize((40, 40))
+                    prop_img = prop_img.resize((40, 40), Image.Resampling.LANCZOS)
                     # sh_temp.alpha_composite(prop_img, (15, 167 + index * oset))
                     sh_temp_draw = ImageDraw.Draw(sh_temp)
                     name_color = "white"
@@ -1279,7 +1279,7 @@ async def draw_char_score_img(
                     value = calc.phantom_card.get(name, default_value)
                     prop_img = await get_attribute_prop(name)
                     name_color, _ = get_valid_color(name, value, calc.calc_temp)
-                prop_img = prop_img.resize((40, 40))
+                prop_img = prop_img.resize((40, 40), Image.Resampling.LANCZOS)
                 ph_bg = ph_0.copy() if ni % 2 == 0 else ph_1.copy()
                 ph_bg.alpha_composite(prop_img, (20, 32))
                 ph_bg_draw = ImageDraw.Draw(ph_bg)
@@ -1290,7 +1290,7 @@ async def draw_char_score_img(
                 ph_bg_draw.text((350, 50), f"{value}", name_color, waves_font_24, "rm")
 
                 right_image_temp.alpha_composite(
-                    ph_bg.resize((500, 125)), (0, (ni + mi * 4) * 70)
+                    ph_bg.resize((500, 125), Image.Resampling.LANCZOS), (0, (ni + mi * 4) * 70)
                 )
 
         ph_tips = ph_1.copy()
@@ -1427,7 +1427,7 @@ async def draw_pic_with_ring(ev: Event, is_force_avatar=False, force_resource_id
 
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
     img = Image.new("RGBA", (180, 180))
-    mask = mask_pic.resize((160, 160))
+    mask = mask_pic.resize((160, 160), Image.Resampling.LANCZOS)
     resize_pic = crop_center_img(pic, 160, 160)
     img.paste(resize_pic, (20, 20), mask)
 
@@ -1439,7 +1439,7 @@ async def draw_char_with_ring(char_id):
 
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
     img = Image.new("RGBA", (180, 180))
-    mask = mask_pic.resize((160, 160))
+    mask = mask_pic.resize((160, 160), Image.Resampling.LANCZOS)
     resize_pic = crop_center_img(pic, 160, 160)
     img.paste(resize_pic, (20, 20), mask)
 

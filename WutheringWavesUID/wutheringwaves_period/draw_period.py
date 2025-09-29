@@ -261,7 +261,7 @@ async def draw_pic_with_ring(ev: Event):
 
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
     img = Image.new("RGBA", (200, 200))
-    mask = mask_pic.resize((160, 160))
+    mask = mask_pic.resize((160, 160), Image.Resampling.LANCZOS)
     resize_pic = crop_center_img(pic, 160, 160)
     img.paste(resize_pic, (20, 20), mask)
 

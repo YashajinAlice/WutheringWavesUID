@@ -183,7 +183,7 @@ async def draw_abyss_img(ev: Event, uid: str, user_id: str) -> Union[bytes, str]
 
     # frame
     frame = Image.open(TEXT_PATH / "frame.png")
-    frame = frame.resize((frame.size[0], frameHigh))
+    frame = frame.resize((frame.size[0], frameHigh), Image.Resampling.LANCZOS)
 
     yset = 100  # 起始
     for _abyss in abyss_data.difficultyList:
@@ -220,7 +220,7 @@ async def draw_abyss_img(ev: Event, uid: str, user_id: str) -> Union[bytes, str]
                 abyss_bg = Image.open(
                     TEXT_PATH / f"abyss_bg_{floor.floor}.jpg"
                 ).convert("RGBA")
-                abyss_bg = abyss_bg.resize((abyss_bg.size[0] + 100, abyss_bg.size[1]))
+                abyss_bg = abyss_bg.resize((abyss_bg.size[0] + 100, abyss_bg.size[1]), Image.Resampling.LANCZOS)
                 abyss_bg_temp = Image.new("RGBA", abyss_bg.size)
                 name_bg = Image.open(TEXT_PATH / "name_bg.png")
                 name_bg_draw = ImageDraw.Draw(name_bg)

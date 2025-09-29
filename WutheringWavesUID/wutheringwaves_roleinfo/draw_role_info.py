@@ -182,7 +182,9 @@ async def draw_role_img(uid: str, ck: str, ev: Event):
             return
         char_bg = Image.open(TEXT_PATH / "char_bg.png")
         char_attribute = await get_attribute(roleInfo.attributeName)
-        char_attribute = char_attribute.resize((40, 40)).convert("RGBA")
+        char_attribute = char_attribute.resize(
+            (40, 40), Image.Resampling.LANCZOS
+        ).convert("RGBA")
         role_avatar = await get_square_avatar(roleInfo.roleId)
         role_avatar = await cropped_square_avatar(role_avatar, 130)
         char_bg.paste(role_avatar, (10, 25), role_avatar)
@@ -208,7 +210,9 @@ async def draw_role_img(uid: str, ck: str, ev: Event):
             weapon_bg = Image.open(TEXT_PATH / "weapon_bg.png")
             weaponId = temp.weaponData.weapon.weaponId
             weapon_icon = await get_square_weapon(weaponId)
-            weapon_icon = weapon_icon.resize((75, 75)).convert("RGBA")
+            weapon_icon = weapon_icon.resize(
+                (75, 75), Image.Resampling.LANCZOS
+            ).convert("RGBA")
             weapon_bg.paste(weapon_icon, (123, 73), weapon_icon)
             char_bg.paste(weapon_bg, (0, 5), weapon_bg)
 

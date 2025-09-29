@@ -457,7 +457,7 @@ def draw_text_with_shadow(
 
 
 def compress_to_webp(
-    image_path: Path, quality: int = 80, delete_original: bool = False
+    image_path: Path, quality: int = 95, delete_original: bool = False
 ) -> tuple[bool, Path]:
     try:
         from PIL import Image
@@ -518,7 +518,7 @@ async def draw_avatar_with_star(
 
     # 144*144
     star_bg = Image.open(TEXT_PATH / f"star_{star_level}.png")
-    avatar = avatar.resize((item_width, item_width))
+    avatar = avatar.resize((item_width, item_width), Image.Resampling.LANCZOS)
 
     img.alpha_composite(avatar, (0, 0))
     img.alpha_composite(star_bg, (0, 0))

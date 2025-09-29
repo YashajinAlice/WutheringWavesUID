@@ -164,7 +164,7 @@ async def get_draw_list(ev: Event, uid: str, user_id: str) -> Union[str, bytes]:
     _sh_bg = Image.open(TEXT_PATH / "sh_bg.png")
 
     promote_icon = Image.open(TEXT_PATH / "promote_icon.png")
-    promote_icon = promote_icon.resize((30, 30))
+    promote_icon = promote_icon.resize((30, 30), Image.Resampling.LANCZOS)
     for index, _echo in enumerate(waves_echo_rank[:20]):
         sh_bg = _sh_bg.copy()
         head_high = 50
@@ -185,9 +185,9 @@ async def get_draw_list(ev: Event, uid: str, user_id: str) -> Union[str, bytes]:
             phantom.phantomProp.phantomId, phantom.phantomProp.iconUrl
         )
         fetter_icon = await get_attribute_effect(phantom.fetterDetail.name)
-        fetter_icon = fetter_icon.resize((50, 50))
+        fetter_icon = fetter_icon.resize((50, 50), Image.Resampling.LANCZOS)
         phantom_icon.alpha_composite(fetter_icon, dest=(205, 0))
-        phantom_icon = phantom_icon.resize((100, 100))
+        phantom_icon = phantom_icon.resize((100, 100), Image.Resampling.LANCZOS)
         sh_temp.alpha_composite(phantom_icon, dest=(20, 20 + head_high))
         phantomName = (
             phantom.phantomProp.name.replace("·", " ")
@@ -228,7 +228,7 @@ async def get_draw_list(ev: Event, uid: str, user_id: str) -> Union[str, bytes]:
             _prop, name_color, num_color = temp
             oset = 55
             prop_img = await get_attribute_prop(_prop.attributeName)
-            prop_img = prop_img.resize((40, 40))
+            prop_img = prop_img.resize((40, 40), Image.Resampling.LANCZOS)
             sh_temp.alpha_composite(prop_img, (15, 167 + i * oset + head_high))
             sh_temp_draw = ImageDraw.Draw(sh_temp)
 
@@ -260,15 +260,15 @@ async def get_draw_list(ev: Event, uid: str, user_id: str) -> Union[str, bytes]:
 async def draw_pic(roleId):
     pic = await get_square_avatar(roleId)
     pic_temp = Image.new("RGBA", pic.size)
-    pic_temp.paste(pic.resize((160, 160)), (10, 10))
+    pic_temp.paste(pic.resize((160, 160), Image.Resampling.LANCZOS), (10, 10))
 
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
     mask_pic_temp = Image.new("RGBA", mask_pic.size)
     mask_pic_temp.paste(mask_pic, (-20, -45), mask_pic)
 
     img = Image.new("RGBA", (180, 180))
-    mask_pic_temp = mask_pic_temp.resize((160, 160))
-    resize_pic = pic_temp.resize((160, 160))
+    mask_pic_temp = mask_pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
+    resize_pic = pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
     img.paste(resize_pic, (0, 0), mask_pic_temp)
 
     return img
