@@ -328,7 +328,18 @@ async def international_login(
                         raise Exception(f"登入失敗: {str(e)}")
 
             # 登入成功，繼續處理
-            logger.info(f"國際服登入成功: {login_result.username}")
+            # 清理用戶名稱中的特殊字符，避免數據處理問題
+            import re
+            import time
+
+            clean_username = re.sub(r"[^\w\s\u4e00-\u9fa5]", "", login_result.username)
+            if not clean_username.strip():
+                clean_username = "User" + str(
+                    int(time.time())
+                )  # 如果清理後為空，使用時間戳
+            logger.info(
+                f"國際服登入成功: {login_result.username} -> 清理後: {clean_username}"
+            )
 
             # 獲取遊戲 token
             token_result = await client.get_game_token(login_result.code)
@@ -787,7 +798,18 @@ async def waves_international_login(data: InternationalLoginModel):
                         raise Exception(f"登入失敗: {str(e)}")
 
             # 登入成功，繼續處理
-            logger.info(f"國際服登入成功: {login_result.username}")
+            # 清理用戶名稱中的特殊字符，避免數據處理問題
+            import re
+            import time
+
+            clean_username = re.sub(r"[^\w\s\u4e00-\u9fa5]", "", login_result.username)
+            if not clean_username.strip():
+                clean_username = "User" + str(
+                    int(time.time())
+                )  # 如果清理後為空，使用時間戳
+            logger.info(
+                f"國際服登入成功: {login_result.username} -> 清理後: {clean_username}"
+            )
 
             # 獲取遊戲 token
             token_result = await client.get_game_token(login_result.code)
@@ -859,7 +881,7 @@ async def waves_international_login(data: InternationalLoginModel):
                             "login_type": "international",  # 確保標記為國際服登入
                             "oauth_code": oauth_code,
                             "access_token": token_result.access_token,
-                            "login_result_username": login_result.username,
+                            "login_result_username": clean_username,  # 使用清理後的名稱
                             "characters": characters,
                             "need_character_selection": True,
                         }
@@ -1034,7 +1056,16 @@ async def waves_international_select_character(data: dict):
         region = selected_character["region"]
         character_name = selected_character["name"]
 
-        logger.info(f"用戶選擇角色: {character_name} (UID: {uid}, 伺服器: {region})")
+        # 清理角色名稱中的特殊字符
+        import re
+        import time
+
+        clean_character_name = re.sub(r"[^\w\s\u4e00-\u9fa5]", "", character_name)
+        if not clean_character_name.strip():
+            clean_character_name = "Character" + str(int(time.time()))
+        logger.info(
+            f"用戶選擇角色: {character_name} -> 清理後: {clean_character_name} (UID: {uid}, 伺服器: {region})"
+        )
 
         # 從緩存中獲取真實的 user_id 和 bot_id
         real_user_id = temp.get("user_id", auth)
@@ -1101,7 +1132,7 @@ async def waves_international_select_character(data: dict):
             {
                 "login_completed": True,
                 "uid": uid,
-                "username": character_name,
+                "username": clean_character_name,  # 使用清理後的名稱
                 "platform": "international",
                 "need_character_selection": False,
                 "characters": None,
@@ -1113,9 +1144,9 @@ async def waves_international_select_character(data: dict):
 
         return {
             "success": True,
-            "msg": f"角色選擇成功！已綁定 {character_name} ({region})",
+            "msg": f"角色選擇成功！已綁定 {clean_character_name} ({region})",
             "uid": uid,
-            "character_name": character_name,
+            "character_name": clean_character_name,
         }
 
     except Exception as e:
@@ -1237,7 +1268,15 @@ async def handle_character_selection_callback(bot, ev, callback_data):
         }
         server_display = server_names.get(region, region)
 
-        success_msg = f"[鸣潮] 國際服登入成功！\n角色: {character_name}\n伺服器: {server_display}\n特征碼: {uid}\n平台: 國際服\n狀態: 已啟用\n\n目前支援功能：每日、卡片、体力"
+        # 清理角色名稱用於顯示
+        import re
+        import time
+
+        clean_character_name = re.sub(r"[^\w\s\u4e00-\u9fa5]", "", character_name)
+        if not clean_character_name.strip():
+            clean_character_name = "Character" + str(int(time.time()))
+
+        success_msg = f"[鸣潮] 國際服登入成功！\n角色: {clean_character_name}\n伺服器: {server_display}\n特征碼: {uid}\n平台: 國際服\n狀態: 已啟用\n\n目前支援功能：每日、卡片"
 
         from ..utils.button import WavesButton
 
@@ -1248,7 +1287,7 @@ async def handle_character_selection_callback(bot, ev, callback_data):
         ]
 
         await bot.send_option(success_msg, buttons)
-        logger.info(f"角色選擇成功: {character_name} ({region})")
+        logger.info(f"角色選擇成功: {clean_character_name} ({region})")
         return True
 
     except Exception as e:
