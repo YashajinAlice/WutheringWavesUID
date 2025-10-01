@@ -28,6 +28,15 @@ class RankUploadManager:
             },
         }
 
+    def _get_api_version(self) -> str:
+        """獲取API版本號"""
+        try:
+            from .api_version import get_api_version
+
+            return get_api_version()
+        except ImportError:
+            return "1.1.0"  # 默認版本
+
     def get_server_type(self, uid: str) -> str:
         """根據UID判斷服務器類型"""
         # 簡單的UID判斷邏輯，可以根據實際情況調整
@@ -117,7 +126,7 @@ class RankUploadManager:
             # 構建國際服上傳數據格式
             upload_data = {
                 "uid": rank_data["waves_id"],
-                "version": "1.0.0",  # 客戶端版本
+                "version": self._get_api_version(),  # 客戶端版本
                 "characters": [
                     {
                         "character_id": rank_data["char_id"],

@@ -216,6 +216,16 @@ async def find_international_role_detail(
     return None
 
 
+def _get_api_version() -> str:
+    """獲取API版本號"""
+    try:
+        from ..utils.api_version import get_api_version
+
+        return get_api_version()
+    except ImportError:
+        return "1.1.0"  # 默認版本
+
+
 async def draw_international_total_rank_img(
     bot: Bot, ev: Event, char: str, rank_type: str, pages: int
 ):
@@ -238,7 +248,7 @@ async def draw_international_total_rank_img(
 
         async with httpx.AsyncClient() as client:
             # 初始化API版本
-            api_version = "1.0.0"
+            api_version = _get_api_version()
 
             try:
                 # 首先檢查API版本
@@ -248,8 +258,8 @@ async def draw_international_total_rank_img(
                 )
                 if version_response.status_code == 200:
                     version_info = version_response.json()
-                    api_version = version_info.get("version", "1.0.0")
-                    client_version = "1.0.0"
+                    api_version = version_info.get("version", _get_api_version())
+                    client_version = _get_api_version()
 
                     if api_version != client_version:
                         return f"[鳴潮] 版本不匹配：客戶端版本 {client_version}，服務端版本 {api_version}。請聯絡API端進行協助更新。"
@@ -258,7 +268,7 @@ async def draw_international_total_rank_img(
 
                 # 調用國際服API獲取指定角色的排行數據
                 response = await client.get(
-                    f"https://wwuidapi.fulin-net.top/api/international/character/ranking/{char_id}?limit=20&page={pages}&client_version=1.0.0",
+                    f"https://wwuidapi.fulin-net.top/api/international/character/ranking/{char_id}?limit=20&page={pages}&client_version={_get_api_version()}",
                     timeout=httpx.Timeout(10),
                 )
                 if response.status_code == 200:
@@ -385,7 +395,7 @@ async def get_discord_avatar_for_rank(
 
 
 async def create_international_rank_image(
-    api_data: dict, char: str, rank_type: str, pages: int, api_version: str = "1.0.0"
+    api_data: dict, char: str, rank_type: str, pages: int, api_version: str = None
 ):
     """創建國際服總排行圖片 - 基於國服總排行結構"""
     try:

@@ -26,6 +26,15 @@ class InternationalRankUploader:
         self.batch_size = 5
         self.upload_queue = []
 
+    def _get_api_version(self) -> str:
+        """獲取API版本號"""
+        try:
+            from .api_version import get_api_version
+
+            return get_api_version()
+        except ImportError:
+            return "1.1.0"  # 默認版本
+
     async def upload_analysis_result(
         self, bot: Bot, ev: Event, result_dict: Dict, waves_data: list
     ) -> bool:
@@ -56,7 +65,14 @@ class InternationalRankUploader:
             # 調試信息：檢查提取的數據
             logger.info(f"[國際服排行] 提取的數據: {list(rank_data.keys())}")
 
-            # 3. 計算期望傷害和期望傷害名稱
+            # 3. 檢查武器精煉度是否符合上傳條件
+            if not await self._check_weapon_resonance_level(rank_data, waves_data):
+                logger.info(
+                    f"[國際服排行] 武器精煉度不符合上傳條件，跳過上傳: {rank_data.get('char_name', '未知角色')}"
+                )
+                return False
+
+            # 4. 計算期望傷害和期望傷害名稱
             expected_damage, expected_damage_name = (
                 await self._calculate_expected_damage_with_name(rank_data, waves_data)
             )
@@ -170,10 +186,12 @@ class InternationalRankUploader:
                 "chain": int(char_info.get("共鸣链", 0)),
                 "weapon_id": weapon_name_to_weapon_id(weapon_info.get("武器名", "")),
                 "weapon_level": int(weapon_info.get("等级", 0)),
-                "weapon_resonance_level": 1,  # 默認值
+                "weapon_resonance_level": self._extract_weapon_resonance_level(
+                    weapon_info, waves_data, char_info
+                ),
                 "sonata_name": sonata_name,
                 "server_region": "international",
-                "version": "1.0.0",  # 可以從配置獲取
+                "version": self._get_api_version(),  # 可以從配置獲取
             }
 
             return rank_data
@@ -181,6 +199,98 @@ class InternationalRankUploader:
         except Exception as e:
             logger.error(f"[國際服排行] 提取數據失敗: {e}")
             return None
+
+    def _extract_weapon_resonance_level(
+        self, weapon_info: dict, waves_data: list, char_info: dict = None
+    ) -> int:
+        """從武器信息和本地數據中提取武器精煉度 - 只使用舊數據"""
+        try:
+            # 只從本地數據中獲取武器精煉度（忽略新分析的精煉度）
+            char_id = (
+                char_info.get("角色ID", 0)
+                if char_info
+                else weapon_info.get("角色ID", 0)
+            )
+            logger.info(
+                f"[國際服排行] 尋找角色ID: {char_id}, 本地數據數量: {len(waves_data) if waves_data else 0}"
+            )
+
+            if char_id and waves_data:
+                for i, char_data in enumerate(waves_data):
+                    # 從role字段中獲取角色ID
+                    role_data = char_data.get("role", {})
+                    char_data_id = role_data.get("roleId") if role_data else None
+                    logger.info(
+                        f"[國際服排行] 本地數據[{i}] 角色ID (roleId): {char_data_id}"
+                    )
+
+                    logger.info(
+                        f"[國際服排行] 比較角色ID: {char_data_id} == {char_id} ? {char_data_id == char_id}"
+                    )
+                    # 確保類型一致進行比較
+                    if str(char_data_id) == str(char_id):
+                        weapon_data = char_data.get("weaponData", {})
+                        local_resonance_level = weapon_data.get("resonLevel", 1)
+                        logger.info(
+                            f"[國際服排行] 從本地數據獲取武器精煉度: {local_resonance_level}"
+                        )
+                        return local_resonance_level
+                    else:
+                        logger.info(f"[國際服排行] 角色ID不匹配，繼續查找下一個")
+
+            # 如果找不到本地數據，默認返回1
+            logger.info("[國際服排行] 未找到本地數據，使用默認武器精煉度: 1")
+            return 1
+
+        except Exception as e:
+            logger.warning(f"[國際服排行] 提取武器精煉度失敗: {e}")
+            return 1
+
+    async def _check_weapon_resonance_level(
+        self, rank_data: dict, waves_data: list
+    ) -> bool:
+        """檢查武器精煉度是否符合上傳條件"""
+        try:
+            current_resonance_level = rank_data.get("weapon_resonance_level", 1)
+            char_id = rank_data.get("char_id")
+
+            logger.info(f"[國際服排行] 當前武器精煉度: {current_resonance_level}")
+
+            # 如果當前精煉度大於1，直接上傳
+            if current_resonance_level > 1:
+                logger.info(
+                    f"[國際服排行] 武器精煉度大於1，符合上傳條件: {current_resonance_level}"
+                )
+                return True
+
+            # 如果當前精煉度等於1，檢查本地數據中的舊精煉度
+            if current_resonance_level == 1 and waves_data:
+                for char_data in waves_data:
+                    if char_data.get("charId") == char_id:
+                        weapon_data = char_data.get("weaponData", {})
+                        old_resonance_level = weapon_data.get("resonLevel", 1)
+
+                        # 如果舊數據的精煉度大於1，則上傳
+                        if old_resonance_level > 1:
+                            logger.info(
+                                f"[國際服排行] 舊數據武器精煉度大於1，符合上傳條件: {old_resonance_level}"
+                            )
+                            # 更新rank_data中的精煉度為舊數據的值
+                            rank_data["weapon_resonance_level"] = old_resonance_level
+                            return True
+                        else:
+                            logger.info(
+                                f"[國際服排行] 舊數據武器精煉度等於1，跳過上傳: {old_resonance_level}"
+                            )
+                            return False
+
+            # 默認情況：精煉度等於1，跳過上傳
+            logger.info("[國際服排行] 武器精煉度等於1，跳過上傳")
+            return False
+
+        except Exception as e:
+            logger.error(f"[國際服排行] 檢查武器精煉度失敗: {e}")
+            return False
 
     def _extract_sonata_name(self, equipment_data: list) -> str:
         """從裝備數據中提取聲骸套裝名稱"""
