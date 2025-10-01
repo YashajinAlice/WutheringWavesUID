@@ -1,23 +1,27 @@
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple, Union
+from typing import Dict, List, Tuple, Union, Optional
 
-from PIL import Image, ImageDraw
 from pydantic import BaseModel
-
+from PIL import Image, ImageDraw
 from gsuid_core.models import Event
 from gsuid_core.utils.image.convert import convert_img
 
 from ..utils import hint
-from ..utils.api.model import (
-    AccountBaseInfo,
-    EquipPhantom,
-    Props,
-    RoleDetailData,
-)
 from ..utils.calc import WuWaCalc
-from ..utils.calculate import calc_phantom_score, get_calc_map, get_valid_color
+from ..utils.waves_api import waves_api
+from ..wutheringwaves_config import PREFIX
+from ..utils.imagetool import draw_pic_with_ring
+from ..utils.resource.download_file import get_phantom_img
 from ..utils.char_info_utils import get_all_role_detail_info
-from ..utils.error_reply import ERROR_CODE, WAVES_CODE_102, WAVES_CODE_099
+from ..utils.error_reply import ERROR_CODE, WAVES_CODE_099, WAVES_CODE_102
+from ..wutheringwaves_analyzecard.user_info_utils import get_user_detail_info
+from ..utils.calculate import get_calc_map, get_valid_color, calc_phantom_score
+from ..utils.api.model import (
+    Props,
+    EquipPhantom,
+    RoleDetailData,
+    AccountBaseInfo,
+)
 from ..utils.fonts.waves_fonts import (
     waves_font_24,
     waves_font_25,
@@ -31,17 +35,12 @@ from ..utils.image import (
     GREY,
     SPECIAL_GOLD,
     add_footer,
-    get_attribute_effect,
-    get_attribute_prop,
+    get_waves_bg,
     get_small_logo,
     get_square_avatar,
-    get_waves_bg,
+    get_attribute_prop,
+    get_attribute_effect,
 )
-from ..utils.imagetool import draw_pic_with_ring
-from ..utils.resource.download_file import get_phantom_img
-from ..utils.waves_api import waves_api
-from ..wutheringwaves_config import PREFIX
-from ..wutheringwaves_analyzecard.user_info_utils import get_user_detail_info
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 
@@ -58,7 +57,7 @@ class WavesEchoRank(BaseModel):
 
 
 async def get_draw_list(ev: Event, uid: str, user_id: str) -> Union[str, bytes]:
-    account_info= await get_user_detail_info(uid)
+    account_info = await get_user_detail_info(uid)
 
     all_role_detail: Optional[Dict[str, RoleDetailData]] = (
         await get_all_role_detail_info(uid)
@@ -127,7 +126,7 @@ async def get_draw_list(ev: Event, uid: str, user_id: str) -> Union[str, bytes]:
     waves_echo_rank.sort(key=lambda i: (i.score, i.roleId), reverse=True)
 
     # img = get_waves_bg(1200, 2650, 'bg3')
-    img = get_waves_bg(1600, 3230, "bg3")
+    img = get_waves_bg(1600, 3230, "bg3", user_id)
 
     # 头像部分
     avatar, avatar_ring = await draw_pic_with_ring(ev)

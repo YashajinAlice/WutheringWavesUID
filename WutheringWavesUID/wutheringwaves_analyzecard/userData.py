@@ -203,6 +203,17 @@ async def save_card_dict_to_json(bot: Bot, ev: Event, result_dict: Dict):
 
     waves_data.append(update_data)
     await save_card_info(uid, waves_data)
+
+    # 新增：上傳到國際服排行
+    try:
+        from ..utils.international_rank_uploader import international_uploader
+
+        await international_uploader.upload_analysis_result(
+            bot, ev, result_dict, waves_data
+        )
+    except Exception as e:
+        logger.error(f"[鳴潮] 國際服排行上傳失敗: {e}")
+
     await bot.send(
         f"[鸣潮]dc卡片数据提取成功！识别套装使用默认配置(影响伤害计算不影响声骸评分)\n可使用：\n【{PREFIX}{char_name_print}面板】查看您的角色面板\n【{PREFIX}改{char_name_print}套装合鸣效果】(可使用 [...合鸣一3合鸣二2] 改为3+2合鸣) 修改声骸套装\n【{PREFIX}改{char_name_print}声骸】修改当前套装的首位声骸\n",
         at_sender,

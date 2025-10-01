@@ -154,11 +154,29 @@ async def send_waves_bind_uid_msg(bot: Bot, ev: Event):
                 f"该命令需要带上正确的uid!\n{PREFIX}绑定uid\n", at_sender
             )
         uid_list = await WavesBind.get_uid_list_by_game(qid, ev.bot_id)
-        max_bind_num: int = WutheringWavesConfig.get_config("MaxBindNum").data
+
+        # 使用付費機制檢查綁定限制
+        try:
+            from ..wutheringwaves_payment.payment_manager import (
+                payment_manager,
+            )
+
+            max_bind_num = payment_manager.get_max_bind_num(qid)
+        except ImportError:
+            # 如果付費模組未安裝，使用舊的配置
+            max_bind_num: int = WutheringWavesConfig.get_config("MaxBindNum").data
 
         # 檢查是否已達到綁定上限
         if uid_list and len(uid_list) >= max_bind_num:
-            return await bot.send("[鸣潮] 绑定特征码达到上限\n", at_sender)
+            if max_bind_num == 999:  # Premium用戶理論上無限制
+                return await bot.send("[鸣潮] 系統錯誤，請聯繫管理員\n", at_sender)
+            else:
+                return await bot.send(
+                    f"[鸣潮] 绑定特征码达到上限（{max_bind_num}個）\n"
+                    "💎 升級Premium會員可無限制綁定UID！\n"
+                    f"💰 價格：{payment_manager.get_premium_price() if 'payment_manager' in locals() else 100} 台幣/月",
+                    at_sender,
+                )
 
         code = await WavesBind.insert_waves_uid(
             qid, ev.bot_id, uid, ev.group_id, lenth_limit=9

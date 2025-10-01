@@ -1,27 +1,31 @@
-import asyncio
 import copy
 import time
+import asyncio
 from pathlib import Path
-from typing import Optional, Union
+from typing import Union, Optional
 
 import httpx
-from PIL import Image, ImageDraw
-from utils.image.convert import convert_img
-
 from gsuid_core.bot import Bot
-from gsuid_core.logger import logger
+from PIL import Image, ImageDraw
 from gsuid_core.models import Event
+from gsuid_core.logger import logger
+from gsuid_core.utils.image.convert import convert_img
 
-from ..utils.api.wwapi import (
-    GET_RANK_URL,
-    RankDetail,
-    RankInfoResponse,
-    RankItem,
-)
+from ..utils.cache import TimedCache
+from ..utils.util import get_version
+from ..utils.waves_api import waves_api
+from ..utils.database.models import WavesBind
 from ..utils.ascension.char import get_char_model
 from ..utils.ascension.weapon import get_weapon_model
-from ..utils.cache import TimedCache
-from ..utils.database.models import WavesBind
+from ..wutheringwaves_config import WutheringWavesConfig
+from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
+from ..utils.resource.constant import ATTRIBUTE_ID_MAP, SPECIAL_CHAR_NAME
+from ..utils.api.wwapi import (
+    GET_RANK_URL,
+    RankItem,
+    RankDetail,
+    RankInfoResponse,
+)
 from ..utils.fonts.waves_fonts import (
     waves_font_14,
     waves_font_16,
@@ -35,33 +39,28 @@ from ..utils.fonts.waves_fonts import (
     waves_font_44,
 )
 from ..utils.image import (
-    AMBER,
-    CHAIN_COLOR,
-    GREY,
     RED,
+    GREY,
+    AMBER,
+    WAVES_VOID,
+    CHAIN_COLOR,
     SPECIAL_GOLD,
+    WAVES_MOLTEN,
+    WAVES_SIERRA,
+    WAVES_MOONLIT,
     WAVES_FREEZING,
     WAVES_LINGERING,
-    WAVES_MOLTEN,
-    WAVES_MOONLIT,
-    WAVES_SIERRA,
-    WAVES_VOID,
     WEAPON_RESONLEVEL_COLOR,
     add_footer,
-    crop_center_img,
+    get_waves_bg,
     get_attribute,
-    get_attribute_effect,
     get_qq_avatar,
+    crop_center_img,
     get_role_pile_old,
     get_square_avatar,
     get_square_weapon,
-    get_waves_bg,
+    get_attribute_effect,
 )
-from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
-from ..utils.resource.constant import ATTRIBUTE_ID_MAP, SPECIAL_CHAR_NAME
-from ..utils.util import get_version
-from ..utils.waves_api import waves_api
-from ..wutheringwaves_config import WutheringWavesConfig
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 TITLE_I = Image.open(TEXT_PATH / "title.png")
@@ -227,7 +226,9 @@ async def draw_all_rank_card(
         bar_bg.paste(role_avatar, (100, 0), role_avatar)
 
         role_attribute = await get_attribute(attribute_name, is_simple=True)
-        role_attribute = role_attribute.resize((40, 40), Image.Resampling.LANCZOS).convert("RGBA")
+        role_attribute = role_attribute.resize(
+            (40, 40), Image.Resampling.LANCZOS
+        ).convert("RGBA")
         bar_bg.alpha_composite(role_attribute, (300, 20))
 
         # 命座
@@ -315,7 +316,9 @@ async def draw_all_rank_card(
 
         weapon_bg_temp.alpha_composite(weapon_icon_bg, dest=(45, 0))
 
-        bar_bg.alpha_composite(weapon_bg_temp.resize((260, 130), Image.Resampling.LANCZOS), dest=(850, 25))
+        bar_bg.alpha_composite(
+            weapon_bg_temp.resize((260, 130), Image.Resampling.LANCZOS), dest=(850, 25)
+        )
 
         # 伤害
         bar_star_draw.text(

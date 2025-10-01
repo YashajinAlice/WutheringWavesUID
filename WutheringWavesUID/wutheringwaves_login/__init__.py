@@ -2,9 +2,9 @@ import re
 
 from gsuid_core.bot import Bot
 from gsuid_core.models import Event
-from gsuid_core.sv import SV
+from gsuid_core.sv import SV, get_plugin_available_prefix
 
-from ..wutheringwaves_config import PREFIX
+PREFIX = get_plugin_available_prefix("WutheringWavesUID")
 from .login import code_login, page_login
 
 sv_kuro_login = SV("库洛登录")

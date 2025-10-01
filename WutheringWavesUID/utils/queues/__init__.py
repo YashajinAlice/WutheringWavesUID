@@ -1,16 +1,15 @@
 from typing import Any
 
 import httpx
-
 from gsuid_core.logger import logger
 
+from .queues import register_handler, start_dispatcher
+from .const import QUEUE_SCORE_RANK, QUEUE_ABYSS_RECORD, QUEUE_SLASH_RECORD
 from ..api.wwapi import (
+    UPLOAD_URL,
     UPLOAD_ABYSS_RECORD_URL,
     UPLOAD_SLASH_RECORD_URL,
-    UPLOAD_URL,
 )
-from .const import QUEUE_ABYSS_RECORD, QUEUE_SCORE_RANK, QUEUE_SLASH_RECORD
-from .queues import register_handler, start_dispatcher
 
 
 async def send_score_rank(item: Any):
@@ -18,6 +17,7 @@ async def send_score_rank(item: Any):
         return
     if not isinstance(item, dict):
         return
+    # 延遲導入以避免循環依賴
     from ...wutheringwaves_config import WutheringWavesConfig
 
     WavesToken = WutheringWavesConfig.get_config("WavesToken").data
@@ -47,6 +47,7 @@ async def send_abyss_record(item: Any):
         return
     if not isinstance(item, dict):
         return
+    # 延遲導入以避免循環依賴
     from ...wutheringwaves_config import WutheringWavesConfig
 
     WavesToken = WutheringWavesConfig.get_config("WavesToken").data
@@ -76,6 +77,7 @@ async def send_slash_record(item: Any):
         return
     if not isinstance(item, dict):
         return
+    # 延遲導入以避免循環依賴
     from ...wutheringwaves_config import WutheringWavesConfig
 
     WavesToken = WutheringWavesConfig.get_config("WavesToken").data

@@ -2,20 +2,26 @@ import time
 from pathlib import Path
 from typing import List, Union
 
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter
-
 from gsuid_core.bot import Bot
 from gsuid_core.models import Event
+from gsuid_core.sv import get_plugin_available_prefix
 from gsuid_core.utils.image.convert import convert_img
+from PIL import Image, ImageDraw, ImageFilter, ImageEnhance
 from gsuid_core.utils.image.image_tools import crop_center_img
 
-from ..utils.api.model import AccountBaseInfo, RoleDetailData
-from ..utils.button import WavesButton
 from ..utils.cache import TimedCache
-from ..utils.char_info_utils import get_all_role_detail_info_list
+from ..utils.hint import error_reply
+from ..utils.button import WavesButton
+from ..utils.waves_api import waves_api
+from ..utils.util import async_func_lock
 from ..utils.database.models import WavesBind
 from ..utils.error_reply import WAVES_CODE_102
+from ..utils.imagetool import draw_pic_with_ring
+from ..utils.api.model import RoleDetailData, AccountBaseInfo
+from ..utils.char_info_utils import get_all_role_detail_info_list
+from ..utils.resource.constant import NAME_ALIAS, SPECIAL_CHAR_NAME
 from ..utils.expression_ctx import WavesCharRank, get_waves_char_rank
+from ..utils.refresh_char_detail import refresh_char, refresh_char_from_pcap
 from ..utils.fonts.waves_fonts import (
     waves_font_25,
     waves_font_26,
@@ -24,24 +30,27 @@ from ..utils.fonts.waves_fonts import (
     waves_font_42,
     waves_font_60,
 )
-from ..utils.hint import error_reply
 from ..utils.image import (
-    CHAIN_COLOR,
+    RED,
     GOLD,
     GREY,
-    RED,
+    CHAIN_COLOR,
     add_footer,
+    get_star_bg,
+    get_square_avatar,
     draw_text_with_shadow,
     get_random_share_bg_path,
-    get_square_avatar,
-    get_star_bg,
 )
-from ..utils.imagetool import draw_pic_with_ring
-from ..utils.refresh_char_detail import refresh_char, refresh_char_from_pcap
-from ..utils.resource.constant import NAME_ALIAS, SPECIAL_CHAR_NAME
-from ..utils.util import async_func_lock
-from ..utils.waves_api import waves_api
-from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
+
+PREFIX = get_plugin_available_prefix("WutheringWavesUID")
+
+
+# 延遲導入以避免循環依賴
+def get_config():
+    from ..wutheringwaves_config import WutheringWavesConfig
+
+    return WutheringWavesConfig
+
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 
@@ -57,8 +66,8 @@ refresh_role_map = {
     "share_14.webp": (1000, 180, 2560, 1320),
 }
 
-refresh_interval: int = WutheringWavesConfig.get_config("RefreshInterval").data
-refresh_intervalAll: int = WutheringWavesConfig.get_config("RefreshIntervalAll").data
+refresh_interval: int = get_config().get_config("RefreshInterval").data
+refresh_intervalAll: int = get_config().get_config("RefreshIntervalAll").data
 
 if refresh_interval > 0:
     timed_cache = TimedCache(timeout=refresh_interval, maxsize=10000)
@@ -103,6 +112,7 @@ def set_cache_refresh_card(user_id: str, uid: str, refresh_type: str | List[str]
 
 def get_refresh_interval_notify(time_stamp: int):
     try:
+        WutheringWavesConfig = get_config()
         value: str = WutheringWavesConfig.get_config("RefreshIntervalNotify").data
         return value.format(time_stamp)
     except Exception:
@@ -120,7 +130,9 @@ async def get_refresh_role_img(width: int, height: int):
     if height > img.height:
         img = crop_center_img(img, width, height)
     else:
-        img = img.resize((width, int(width / img.width * img.height), Image.Resampling.LANCZOS))
+        img = img.resize(
+            (width, int(width / img.width * img.height), Image.Resampling.LANCZOS)
+        )
 
     # 创建毛玻璃效果
     blur_img = img.filter(ImageFilter.GaussianBlur(radius=2))
@@ -178,8 +190,9 @@ async def draw_refresh_char_detail_img(
 ):
     # 檢查是否有 pcap 數據，如果有則允許國際服用戶使用
     from ..wutheringwaves_pcap import load_pcap_data
+
     pcap_data = await load_pcap_data(uid)
-    
+
     if pcap_data:
         # 使用 pcap 數據刷新
         waves_map = {"refresh_update": {}, "refresh_unchanged": {}}
@@ -194,9 +207,12 @@ async def draw_refresh_char_detail_img(
         if isinstance(waves_datas, str):
             return waves_datas
 
-        from ..wutheringwaves_analyzecard.user_info_utils import get_user_detail_info
-        account_info= await get_user_detail_info(uid)
-        
+        from ..wutheringwaves_analyzecard.user_info_utils import (
+            get_user_detail_info,
+        )
+
+        account_info = await get_user_detail_info(uid)
+
         # pcap 模式下設置為已登錄狀態
         self_ck = True
     else:
@@ -246,6 +262,7 @@ async def draw_refresh_char_detail_img(
         for r in waves_map[key].values()
     ]
     from gsuid_core.logger import logger
+
     logger.info(f"role_detail_list:{role_detail_list}")
 
     # 总角色个数
@@ -343,9 +360,13 @@ async def draw_refresh_char_detail_img(
 
     # 账号基本信息，由于可能会没有，放在一起
     from ..wutheringwaves_analyzecard.user_info_utils import save_user_info
+
     if account_info.is_full:
         await save_user_info(
-            str(account_info.id), account_info.name[:7], account_info.level, account_info.worldLevel
+            str(account_info.id),
+            account_info.name[:7],
+            account_info.level,
+            account_info.worldLevel,
         )
         title_bar = Image.open(TEXT_PATH / "title_bar.png")
         title_bar_draw = ImageDraw.Draw(title_bar)
@@ -386,9 +407,13 @@ async def draw_refresh_char_detail_img(
         anchor="mm",
     )
     if self_ck:
-        refresh_bar.alpha_composite(refresh_yes.resize((60, 60), Image.Resampling.LANCZOS), (1800, -8))
+        refresh_bar.alpha_composite(
+            refresh_yes.resize((60, 60), Image.Resampling.LANCZOS), (1800, -8)
+        )
     else:
-        refresh_bar.alpha_composite(refresh_no.resize((60, 60), Image.Resampling.LANCZOS), (1800, -8))
+        refresh_bar.alpha_composite(
+            refresh_no.resize((60, 60), Image.Resampling.LANCZOS), (1800, -8)
+        )
 
     img.paste(refresh_bar, (0, 300), refresh_bar)
     img = add_footer(img, 600, 20)

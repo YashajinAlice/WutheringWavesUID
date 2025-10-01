@@ -1,31 +1,40 @@
-import asyncio
 import json
-from typing import Dict, List, Optional, Union
+import asyncio
+from typing import Dict, List, Union, Optional
 
 import aiofiles
-
-from gsuid_core.logger import logger
 from gsuid_core.models import Event
+from gsuid_core.logger import logger
 
-from ..utils.api.model import AccountBaseInfo, RoleList
-from ..utils.error_reply import WAVES_CODE_101, WAVES_CODE_102
-from ..utils.expression_ctx import WavesCharRank, get_waves_char_rank
 from ..utils.hint import error_reply
-from ..utils.queues.const import QUEUE_SCORE_RANK
+from ..utils.waves_api import waves_api
 from ..utils.queues.queues import put_item
+from ..utils.queues.const import QUEUE_SCORE_RANK
 from ..utils.resource.RESOURCE_PATH import PLAYER_PATH
 from ..utils.util import get_version, send_master_info
-from ..utils.waves_api import waves_api
-from ..wutheringwaves_config import WutheringWavesConfig
+from ..utils.api.model import RoleList, AccountBaseInfo
+from ..utils.error_reply import WAVES_CODE_101, WAVES_CODE_102
+from ..utils.expression_ctx import WavesCharRank, get_waves_char_rank
+
+
+# 延遲導入以避免循環依賴
+def get_config():
+    from ..wutheringwaves_config import WutheringWavesConfig
+
+    return WutheringWavesConfig
+
+
 from .resource.constant import SPECIAL_CHAR_INT_ALL
 
 
 def is_use_global_semaphore() -> bool:
-    return WutheringWavesConfig.get_config("UseGlobalSemaphore").data or False
+    config = get_config()
+    return config.get_config("UseGlobalSemaphore").data or False
 
 
 def get_refresh_card_concurrency() -> int:
-    return WutheringWavesConfig.get_config("RefreshCardConcurrency").data or 2
+    config = get_config()
+    return config.get_config("RefreshCardConcurrency").data or 2
 
 
 class SemaphoreManager:
@@ -66,6 +75,7 @@ async def send_card(
 ):
     waves_char_rank: Optional[List[WavesCharRank]] = None
 
+    WutheringWavesConfig = get_config()
     WavesToken = WutheringWavesConfig.get_config("WavesToken").data
 
     if WavesToken:
@@ -157,7 +167,9 @@ async def save_card_info(
     save_data = list(old_data.values())
 
     if not waves_api.is_net(uid):
-        await send_card(uid, user_id, save_data, is_self_ck, token, role_info, waves_data)
+        await send_card(
+            uid, user_id, save_data, is_self_ck, token, role_info, waves_data
+        )
 
     try:
         async with aiofiles.open(path, "w", encoding="utf-8") as file:
@@ -322,7 +334,7 @@ async def refresh_char_from_pcap(
         # 初始化 waves_map
         if waves_map is None:
             waves_map = {"refresh_update": {}, "refresh_unchanged": {}}
-        
+
         waves_data = []
 
         # for role_detail in role_detail_list:
@@ -352,10 +364,9 @@ async def refresh_char_from_pcap(
                             logger.warning(
                                 f"[鸣潮] 刷新用户{user_id} id{uid} 角色{role_name} 的词条数据, 遇到[{prop['attributeName']}]"
                             )
-                            return 
+                            return
 
             waves_data.append(r)
-
 
         # 确定需要处理的角色
         if refresh_type == "all":
@@ -364,7 +375,8 @@ async def refresh_char_from_pcap(
             # 将 refresh_type 转换为字符串列表以确保类型一致
             refresh_type_str = [str(x) for x in refresh_type]
             roles_to_process = [
-                r for r in role_detail_list 
+                r
+                for r in role_detail_list
                 if str(r["role"]["roleId"]) in refresh_type_str
             ]
         else:
@@ -375,7 +387,7 @@ async def refresh_char_from_pcap(
         if roles_to_process:
             tasks = [limited_check_role_detail_info(r) for r in roles_to_process]
             results = await asyncio.gather(*tasks, return_exceptions=True)
-            
+
             # 检查并记录任何异常
             for i, result in enumerate(results):
                 if isinstance(result, Exception):

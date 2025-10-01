@@ -17,6 +17,25 @@ waves_role_info = SV("waves查询信息")
 async def send_role_info(bot: Bot, ev: Event):
     logger.info("[鸣潮]开始执行[查询信息]")
     user_id = ruser_id(ev)
+
+    # 檢查查詢冷卻
+    try:
+        from ..utils.enhanced_cooldown_manager import query_cooldown_manager
+
+        can_use, remaining_time = query_cooldown_manager.can_use(user_id)
+        if not can_use:
+            remaining_seconds = int(remaining_time) if remaining_time else 0
+            return await bot.send(
+                f"⏰ 查詢功能冷卻中，請等待 {remaining_seconds} 秒後再試\n"
+                f"💎 升級Premium會員可無冷卻限制！",
+                at_sender=True if ev.group_id else False,
+            )
+    except ImportError:
+        # 如果冷卻管理器未安裝，跳過冷卻檢查
+        pass
+    except Exception as e:
+        logger.error(f"[鸣潮] 冷卻檢查失敗: {e}")
+
     uid = await WavesBind.get_uid_by_game(user_id, ev.bot_id)
     logger.info(f"[鸣潮][查询信息] user_id: {user_id} UID: {uid}")
     if not uid:
@@ -53,6 +72,28 @@ async def send_role_info(bot: Bot, ev: Event):
         # 國際服用戶使用 kuro.py API
         logger.info(f"[鸣潮][卡片] 使用国际服API查询")
         im = await draw_international_role_img(uid, user, ev)
+
+        # 檢查查詢結果是否成功
+        if im and not str(im).startswith("❌"):
+            # 查詢成功，標記冷卻
+            try:
+                from ..utils.enhanced_cooldown_manager import (
+                    query_cooldown_manager,
+                )
+
+                query_cooldown_manager.mark_success(user_id)
+            except ImportError:
+                pass
+        else:
+            # 查詢失敗，不計入冷卻
+            try:
+                from ..utils.enhanced_cooldown_manager import (
+                    query_cooldown_manager,
+                )
+
+                query_cooldown_manager.mark_failure(user_id)
+            except ImportError:
+                pass
     else:
         # 國服用戶使用原有邏輯
         logger.info(f"[鸣潮][卡片] 使用国服API查询")
@@ -61,5 +102,27 @@ async def send_role_info(bot: Bot, ev: Event):
             await bot.send(error_reply(WAVES_CODE_102))
             return
         im = await draw_role_img(uid, ck, ev)
+
+        # 檢查查詢結果是否成功
+        if im and not str(im).startswith("❌"):
+            # 查詢成功，標記冷卻
+            try:
+                from ..utils.enhanced_cooldown_manager import (
+                    query_cooldown_manager,
+                )
+
+                query_cooldown_manager.mark_success(user_id)
+            except ImportError:
+                pass
+        else:
+            # 查詢失敗，不計入冷卻
+            try:
+                from ..utils.enhanced_cooldown_manager import (
+                    query_cooldown_manager,
+                )
+
+                query_cooldown_manager.mark_failure(user_id)
+            except ImportError:
+                pass
 
     await bot.send(im)  # type: ignore

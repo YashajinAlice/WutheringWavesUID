@@ -12,7 +12,7 @@ from .set_config import set_push_value, set_config_func, set_waves_user_value
 
 sv_self_config = SV("鸣潮配置")
 
-
+# 延遲導入以避免循環依賴
 PREFIX = get_plugin_available_prefix("WutheringWavesUID")
 
 

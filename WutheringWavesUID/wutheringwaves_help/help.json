@@ -636,5 +636,82 @@
         "need_admin": true
       }
     ]
+  },
+  "Premium用戶專用": {
+    "desc": "Premium用戶專享功能，需要Premium會員資格",
+    "data": [
+      {
+        "name": "我的会员",
+        "desc": "查看会员状态",
+        "eg": "我的会员",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "Premium设置",
+        "desc": "Premium功能设置",
+        "eg": "Premium设置",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "Premium綁定狀態",
+        "desc": "查看Premium綁定狀態",
+        "eg": "Premium綁定狀態",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "Premium綁定列表",
+        "desc": "查看Premium綁定列表",
+        "eg": "Premium綁定列表",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "Premium綁定限制",
+        "desc": "查看Premium綁定限制",
+        "eg": "Premium綁定限制",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "设置背景图片",
+        "desc": "设置自定义面板背景",
+        "eg": "设置背景图片",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "设置背景URL",
+        "desc": "设置背景图片URL",
+        "eg": "设置背景URL",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "查看背景信息",
+        "desc": "查看当前背景设置",
+        "eg": "查看背景信息",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "重置背景",
+        "desc": "重置为默认背景",
+        "eg": "重置背景",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      }
+    ]
   }
 }

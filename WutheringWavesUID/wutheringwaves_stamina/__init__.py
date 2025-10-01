@@ -36,6 +36,24 @@ logger.info(f"[鸣潮] 体力推送间隔设置: {stamina_push_interval} 分钟"
 async def send_daily_info_pic(bot: Bot, ev: Event):
     await bot.logger.info(f"[鸣潮]开始执行[每日信息]: {ev.user_id}")
 
+    # 檢查查詢冷卻
+    try:
+        from ..utils.enhanced_cooldown_manager import query_cooldown_manager
+
+        can_use, remaining_time = query_cooldown_manager.can_use(ev.user_id)
+        if not can_use:
+            remaining_seconds = int(remaining_time) if remaining_time else 0
+            return await bot.send(
+                f"⏰ 查詢功能冷卻中，請等待 {remaining_seconds} 秒後再試\n"
+                f"💎 升級Premium會員可無冷卻限制！",
+                at_sender=True if ev.group_id else False,
+            )
+    except ImportError:
+        # 如果冷卻管理器未安裝，跳過冷卻檢查
+        pass
+    except Exception as e:
+        await bot.logger.error(f"[鸣潮] 冷卻檢查失敗: {e}")
+
     # 首先嘗試獲取用戶選擇的特定伺服器 UID
     selected_uid = None
     selected_user = None
@@ -113,9 +131,31 @@ async def send_daily_info_pic(bot: Bot, ev: Event):
         await bot.logger.info(
             f"[鸣潮][每日信息]使用國際服體力查詢，平台: {selected_user.platform}"
         )
-        return await bot.send(
-            await draw_international_stamina_img(bot, ev, selected_user)
-        )
+        result = await draw_international_stamina_img(bot, ev, selected_user)
+
+        # 檢查查詢結果是否成功
+        if result and not str(result).startswith("❌"):
+            # 查詢成功，標記冷卻
+            try:
+                from ..utils.enhanced_cooldown_manager import (
+                    query_cooldown_manager,
+                )
+
+                query_cooldown_manager.mark_success(ev.user_id)
+            except ImportError:
+                pass
+        else:
+            # 查詢失敗，不計入冷卻
+            try:
+                from ..utils.enhanced_cooldown_manager import (
+                    query_cooldown_manager,
+                )
+
+                query_cooldown_manager.mark_failure(ev.user_id)
+            except ImportError:
+                pass
+
+        return await bot.send(result)
     else:
         # 國服體力查詢
         if waves_api.is_net(selected_uid):
@@ -133,12 +173,58 @@ async def send_daily_info_pic(bot: Bot, ev: Event):
                     },
                     update_data={"platform": "international"},
                 )
-                return await bot.send(
-                    await draw_international_stamina_img(bot, ev, selected_user)
-                )
+                result = await draw_international_stamina_img(bot, ev, selected_user)
+
+                # 檢查查詢結果是否成功
+                if result and not str(result).startswith("❌"):
+                    # 查詢成功，標記冷卻
+                    try:
+                        from ..utils.enhanced_cooldown_manager import (
+                            query_cooldown_manager,
+                        )
+
+                        query_cooldown_manager.mark_success(ev.user_id)
+                    except ImportError:
+                        pass
+                else:
+                    # 查詢失敗，不計入冷卻
+                    try:
+                        from ..utils.enhanced_cooldown_manager import (
+                            query_cooldown_manager,
+                        )
+
+                        query_cooldown_manager.mark_failure(ev.user_id)
+                    except ImportError:
+                        pass
+
+                return await bot.send(result)
             else:
                 return await bot.send(ERROR_CODE[WAVES_CODE_098])
-        return await bot.send(await draw_stamina_img(bot, ev))
+        result = await draw_stamina_img(bot, ev)
+
+        # 檢查查詢結果是否成功
+        if result and not str(result).startswith("❌"):
+            # 查詢成功，標記冷卻
+            try:
+                from ..utils.enhanced_cooldown_manager import (
+                    query_cooldown_manager,
+                )
+
+                query_cooldown_manager.mark_success(ev.user_id)
+            except ImportError:
+                pass
+        else:
+            # 查詢失敗，不計入冷卻
+            try:
+                from ..utils.enhanced_cooldown_manager import (
+                    query_cooldown_manager,
+                )
+
+                query_cooldown_manager.mark_failure(ev.user_id)
+            except ImportError:
+                pass
+
+        return await bot.send(result)
 
 
 @scheduler.scheduled_job("interval", minutes=stamina_push_interval)

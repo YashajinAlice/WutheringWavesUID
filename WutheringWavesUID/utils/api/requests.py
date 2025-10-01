@@ -1,70 +1,77 @@
-import asyncio
-import inspect
 import json
 import random
-from typing import Any, Dict, List, Literal, Mapping, Optional, Union
+import asyncio
+import inspect
+from typing import Any, Dict, List, Union, Literal, Mapping, Optional
 
 import aiohttp
+from gsuid_core.logger import logger
 from aiohttp import ClientTimeout, ContentTypeError
 
-from gsuid_core.logger import logger
-
 from ...utils.database.models import WavesUser
-from ...wutheringwaves_config import WutheringWavesConfig
-from ..error_reply import WAVES_CODE_999
-from ..util import timed_async_cache
-from .api import (
-    ANN_CONTENT_URL,
-    ANN_LIST_URL,
-    BASE_DATA_URL,
-    BATCH_ROLE_COST,
-    CALABASH_DATA_URL,
-    CALCULATOR_REFRESH_DATA_URL,
-    CHALLENGE_DATA_URL,
-    EXPLORE_DATA_URL,
-    GACHA_LOG_URL,
-    GACHA_NET_LOG_URL,
-    GAME_ID,
-    LOGIN_LOG_URL,
-    LOGIN_URL,
-    MONTH_LIST_URL,
-    MORE_ACTIVITY_URL,
-    MR_REFRESH_URL,
-    NET_SERVER_ID_MAP,
-    ONLINE_LIST_PHANTOM,
-    ONLINE_LIST_ROLE,
-    ONLINE_LIST_WEAPON,
-    PERIOD_LIST_URL,
-    QUERY_OWNED_ROLE,
-    REFRESH_URL,
-    REQUEST_TOKEN,
-    ROLE_CULTIVATE_STATUS,
-    ROLE_DATA_URL,
-    ROLE_DETAIL_URL,
-    ROLE_LIST_URL,
-    SERVER_ID,
-    SERVER_ID_NET,
-    SLASH_DETAIL_URL,
-    SLASH_INDEX_URL,
-    TOWER_DETAIL_URL,
-    TOWER_INDEX_URL,
-    VERSION_LIST_URL,
-    WEEK_LIST_URL,
-    WIKI_DETAIL_URL,
-    WIKI_ENTRY_DETAIL_URL,
-    WIKI_HOME_URL,
-    WIKI_TREE_URL,
-    get_local_proxy_url,
-    get_need_proxy_func,
-)
+
+
+# 延遲導入以避免循環依賴
+def get_config():
+    from ...wutheringwaves_config import WutheringWavesConfig
+
+    return WutheringWavesConfig
+
+
 from .captcha import get_solver
+from ..util import timed_async_cache
 from .captcha.base import CaptchaResult
+from ..error_reply import WAVES_CODE_999
 from .captcha.errors import CaptchaError
 from .request_util import (
     KURO_VERSION,
     KuroApiResp,
     get_base_header,
     get_community_header,
+)
+from .api import (
+    GAME_ID,
+    LOGIN_URL,
+    SERVER_ID,
+    REFRESH_URL,
+    ANN_LIST_URL,
+    BASE_DATA_URL,
+    GACHA_LOG_URL,
+    LOGIN_LOG_URL,
+    REQUEST_TOKEN,
+    ROLE_DATA_URL,
+    ROLE_LIST_URL,
+    SERVER_ID_NET,
+    WEEK_LIST_URL,
+    WIKI_HOME_URL,
+    WIKI_TREE_URL,
+    MONTH_LIST_URL,
+    MR_REFRESH_URL,
+    ANN_CONTENT_URL,
+    BATCH_ROLE_COST,
+    PERIOD_LIST_URL,
+    ROLE_DETAIL_URL,
+    SLASH_INDEX_URL,
+    TOWER_INDEX_URL,
+    WIKI_DETAIL_URL,
+    EXPLORE_DATA_URL,
+    ONLINE_LIST_ROLE,
+    QUERY_OWNED_ROLE,
+    SLASH_DETAIL_URL,
+    TOWER_DETAIL_URL,
+    VERSION_LIST_URL,
+    CALABASH_DATA_URL,
+    GACHA_NET_LOG_URL,
+    MORE_ACTIVITY_URL,
+    NET_SERVER_ID_MAP,
+    CHALLENGE_DATA_URL,
+    ONLINE_LIST_WEAPON,
+    ONLINE_LIST_PHANTOM,
+    ROLE_CULTIVATE_STATUS,
+    WIKI_ENTRY_DETAIL_URL,
+    CALCULATOR_REFRESH_DATA_URL,
+    get_local_proxy_url,
+    get_need_proxy_func,
 )
 
 
@@ -189,7 +196,8 @@ class WavesApi:
         return waves_user.cookie
 
     async def get_waves_random_cookie(self, uid: str, user_id: str) -> Optional[str]:
-        if WutheringWavesConfig.get_config("WavesOnlySelfCk").data:
+        config = get_config()
+        if config.get_config("WavesOnlySelfCk").data:
             return None
 
         # 公共ck 随机一个

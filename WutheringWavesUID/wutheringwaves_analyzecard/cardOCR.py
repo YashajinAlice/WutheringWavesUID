@@ -182,69 +182,184 @@ async def async_ocr(bot: Bot, ev: Event):
     """
     at_sender = True if ev.group_id else False
 
-    api_key_list = WutheringWavesConfig.get_config(
-        "OCRspaceApiKeyList"
-    ).data  # 从控制台获取OCR.space的API密钥
-    if api_key_list == []:
-        logger.warning("[鸣潮] OCRspace API密钥为空！请检查控制台。")
-        await bot.send("[鸣潮] OCRspace API密钥未配置，请检查控制台。\n", at_sender)
-        return False
+    # 檢查OCR冷卻時間
+    try:
+        from ..utils.enhanced_cooldown_manager import ocr_cooldown_manager
 
-    # 检查可用引擎
-    engine_num = await check_ocr_engine_accessible()
-    logger.info(f"[鸣潮]OCR.space服务engine：{engine_num}")
-    # 初始化密钥和引擎
-    API_KEY = None
-    NEGINE_NUM = None
+        user_id = str(ev.user_id)
+        can_use, remaining_time = ocr_cooldown_manager.can_use(user_id)
+
+        if not can_use:
+            remaining_seconds = int(remaining_time) if remaining_time else 0
+            await bot.send(
+                f"⏰ OCR功能冷卻中，請等待 {remaining_seconds} 秒後再試\n", at_sender
+            )
+            return False
+
+    except ImportError:
+        # 如果冷卻管理器未安裝，跳過冷卻檢查
+        pass
+    except Exception as e:
+        logger.error(f"[鳴潮] OCR冷卻檢查失敗: {e}")
+
+    # 使用OCR管理器根據用戶等級獲取配置
+    try:
+        from ..wutheringwaves_payment.ocr_manager import ocr_manager
+
+        user_id = str(ev.user_id)
+        API_KEY, NEGINE_NUM = ocr_manager.get_user_ocr_config(user_id)
+        engine_info = ocr_manager.get_engine_info(user_id)
+
+        logger.info(f"[鸣潮] 用户 {user_id} 使用 {engine_info}")
+
+    except ImportError:
+        # 如果OCR管理器未安裝，使用原有邏輯
+        logger.warning("[鸣潮] OCR管理器未安裝，使用原有邏輯")
+        api_key_list = WutheringWavesConfig.get_config("OCRspaceApiKeyList").data
+        if api_key_list == []:
+            logger.warning("[鸣潮] OCRspace API密钥为空！请检查控制台。")
+            await bot.send("[鸣潮] OCRspace API密钥未配置，请检查控制台。\n", at_sender)
+            return False
+
+        # 使用第一個可用的key
+        API_KEY = None
+        for key in api_key_list:
+            if key:
+                API_KEY = key
+                break
+
+        if not API_KEY:
+            await bot.send("[鸣潮] OCRspace API密钥不可用！\n", at_sender)
+            return False
+
+        # 檢查引擎
+        engine_num = await check_ocr_engine_accessible()
+        NEGINE_NUM = engine_num
+        if API_KEY[0] != "K":
+            NEGINE_NUM = 3  # 激活PRO计划
+
+        engine_info = "標準識別"
+    except Exception as e:
+        logger.error(f"[鸣潮] OCR配置獲取失敗: {e}")
+        await bot.send("[鸣潮] OCR配置獲取失敗，請稍後再試。\n", at_sender)
+        return False
 
     bool_i, image = await upload_discord_bot_card(ev)
     if not bool_i:
+        # 標記OCR失敗，不計入冷卻
+        try:
+            from ..utils.enhanced_cooldown_manager import ocr_cooldown_manager
+
+            user_id = str(ev.user_id)
+            ocr_cooldown_manager.mark_failure(user_id)
+        except ImportError:
+            pass
+        except Exception as e:
+            logger.error(f"[鳴潮] OCR失敗標記失敗: {e}")
+
         return await bot.send("[鸣潮]获取dc卡片图失败！卡片分析已停止。\n", at_sender)
     # 获取dc卡片与共鸣链
     chain_num, cropped_images = await cut_card_to_ocr(image)
 
-    # 遍历密钥
-    ocr_results = None
-    for key in api_key_list:
-        if not key:
-            continue
+    # 檢查引擎狀態
+    if NEGINE_NUM == 0:
+        # 標記OCR失敗，不計入冷卻
+        try:
+            from ..utils.enhanced_cooldown_manager import ocr_cooldown_manager
 
-        API_KEY = key
-        NEGINE_NUM = engine_num
-        if key[0] != "K":
-            NEGINE_NUM = 3  # 激活PRO计划
+            user_id = str(ev.user_id)
+            ocr_cooldown_manager.mark_failure(user_id)
+        except ImportError:
+            pass
+        except Exception as e:
+            logger.error(f"[鳴潮] OCR失敗標記失敗: {e}")
 
-        if NEGINE_NUM == 1 and API_KEY == api_key_list[0]:
-            await bot.send(
-                "[鸣潮] 当前OCR服务器识别准确率不高，可能会导致识别失败，请考虑稍后使用。\n",
-                at_sender,
-            )
-        elif NEGINE_NUM == 0:
-            return await bot.send("[鸣潮] OCR服务暂时不可用，请稍后再试。\n", at_sender)
-        elif NEGINE_NUM == -1:
-            return await bot.send(
-                "[鸣潮] 服务器访问OCR服务失败，请检查服务器网络状态。\n", at_sender
-            )
+        return await bot.send("[鸣潮] OCR服务暂时不可用，请稍后再试。\n", at_sender)
+    elif NEGINE_NUM == -1:
+        # 標記OCR失敗，不計入冷卻
+        try:
+            from ..utils.enhanced_cooldown_manager import ocr_cooldown_manager
 
-        ocr_results = await images_ocrspace(API_KEY, NEGINE_NUM, cropped_images)
-        logger.info(f"[鸣潮][OCRspace]dc卡片识别数据:\n{ocr_results}")
-        if not ocr_results[0]["error"]:
-            logger.success("[鸣潮]OCRspace 识别成功！")
-            break
+            user_id = str(ev.user_id)
+            ocr_cooldown_manager.mark_failure(user_id)
+        except ImportError:
+            pass
+        except Exception as e:
+            logger.error(f"[鳴潮] OCR失敗標記失敗: {e}")
 
-    if API_KEY is None:
         return await bot.send(
-            "[鸣潮] OCRspace API密钥不可用！请等待额度恢复或更换密钥\n", at_sender
+            "[鸣潮] 服务器访问OCR服务失败，请检查服务器网络状态。\n", at_sender
         )
 
+    # 如果是免費線路，提示識別準確率
+    if NEGINE_NUM == 1 and "免費" in engine_info:
+        await bot.send(
+            "[鸣潮] 当前使用免費線路，识别准确率可能較低，Premium用戶可使用高精度識別。\n",
+            at_sender,
+        )
+
+    # 執行OCR識別
+    ocr_results = await images_ocrspace(API_KEY, NEGINE_NUM, cropped_images)
+    logger.info(f"[鸣潮][OCRspace]dc卡片识别数据:\n{ocr_results}")
+
+    # 檢查是否為403錯誤，如果是則嘗試備用配置
     if not ocr_results or ocr_results[0]["error"]:
-        logger.warning("[鸣潮]OCRspace识别失败！请检查服务器网络是否正常。")
-        return await bot.send(
-            "[鸣潮]OCRspace识别失败！请检查服务器网络是否正常。\n", at_sender
-        )
+        error_msg = ocr_results[0]["error"] if ocr_results else "No results"
+        if "403 Forbidden" in str(error_msg):
+            logger.warning("[鸣潮] 檢測到403錯誤，嘗試使用備用配置...")
+            try:
+                from ..wutheringwaves_payment.ocr_manager import ocr_manager
+
+                # 嘗試使用備用配置
+                fallback_key, fallback_engine = ocr_manager.get_fallback_ocr_config()
+                if fallback_key != API_KEY:  # 確保使用不同的key
+                    logger.info(f"[鸣潮] 使用備用key重試: {fallback_key[:10]}...")
+                    ocr_results = await images_ocrspace(
+                        fallback_key, fallback_engine, cropped_images
+                    )
+                    logger.info(f"[鸣潮][OCRspace]備用配置識別數據:\n{ocr_results}")
+
+                    # 如果備用配置也失敗，則報告錯誤
+                    if not ocr_results or ocr_results[0]["error"]:
+                        logger.warning("[鸣潮] 備用配置也失敗，所有OCR配置都不可用")
+                    else:
+                        logger.info("[鸣潮] 備用配置成功！")
+            except Exception as e:
+                logger.error(f"[鸣潮] 備用配置失敗: {e}")
+
+        # 如果仍然失敗，報告錯誤
+        if not ocr_results or ocr_results[0]["error"]:
+            logger.warning("[鸣潮]OCRspace识别失败！请检查服务器网络是否正常。")
+            # 標記OCR失敗，不計入冷卻
+            try:
+                from ..utils.enhanced_cooldown_manager import (
+                    ocr_cooldown_manager,
+                )
+
+                user_id = str(ev.user_id)
+                ocr_cooldown_manager.mark_failure(user_id)
+            except ImportError:
+                pass
+            except Exception as e:
+                logger.error(f"[鳴潮] OCR失敗標記失敗: {e}")
+
+            return await bot.send(
+                "[鸣潮]OCRspace识别失败！请检查服务器网络是否正常。\n", at_sender
+            )
 
     bool_d, final_result = await ocr_results_to_dict(chain_num, ocr_results)
     if not bool_d:
+        # 標記OCR失敗，不計入冷卻
+        try:
+            from ..utils.enhanced_cooldown_manager import ocr_cooldown_manager
+
+            user_id = str(ev.user_id)
+            ocr_cooldown_manager.mark_failure(user_id)
+        except ImportError:
+            pass
+        except Exception as e:
+            logger.error(f"[鳴潮] OCR失敗標記失敗: {e}")
+
         return await bot.send("[鸣潮]Please use chinese card！\n", at_sender)
 
     name, char_id = await which_char(
@@ -252,6 +367,17 @@ async def async_ocr(bot: Bot, ev: Event):
     )
     if char_id is None:
         logger.warning(f"[鸣潮][dc卡片识别] 角色[{name}]识别错误！")
+        # 標記OCR失敗，不計入冷卻
+        try:
+            from ..utils.enhanced_cooldown_manager import ocr_cooldown_manager
+
+            user_id = str(ev.user_id)
+            ocr_cooldown_manager.mark_failure(user_id)
+        except ImportError:
+            pass
+        except Exception as e:
+            logger.error(f"[鳴潮] OCR失敗標記失敗: {e}")
+
         return await bot.send(
             f"[鸣潮]无法识别的角色名{name}，请确保图片清晰\n", at_sender
         )
@@ -259,6 +385,17 @@ async def async_ocr(bot: Bot, ev: Event):
     final_result["角色信息"]["角色ID"] = char_id
 
     await save_card_dict_to_json(bot, ev, final_result)
+
+    # 標記OCR冷卻
+    try:
+        from ..utils.enhanced_cooldown_manager import ocr_cooldown_manager
+
+        user_id = str(ev.user_id)
+        ocr_cooldown_manager.mark_success(user_id)
+    except ImportError:
+        pass
+    except Exception as e:
+        logger.error(f"[鳴潮] OCR冷卻標記失敗: {e}")
 
 
 async def get_image(ev: Event):
@@ -472,13 +609,18 @@ async def images_ocrspace(api_key, engine_num, cropped_images):
     API_KEY = api_key
     FREE_URL = "https://api.ocr.space/parse/image"
     PRO_URL = "https://apipro2.ocr.space/parse/image"
-    if engine_num == 3:
+
+    # 根據API key判斷使用哪個URL，而不是根據engine_num
+    if api_key and not api_key.startswith("K"):
+        # 非免費key使用PRO URL
         API_URL = PRO_URL
         ENGINE_NUM = 2
     else:
+        # 免費key使用FREE URL
         API_URL = FREE_URL
-        ENGINE_NUM = engine_num
-    logger.info(f"[鸣潮]使用 {API_URL} 识别图片")
+        ENGINE_NUM = engine_num if engine_num != 3 else 2  # 確保免費線路使用引擎2
+
+    logger.info(f"[鸣潮]使用 {API_URL} 识别图片，引擎: {ENGINE_NUM}")
 
     session = await get_global_session()  # 复用全局会话
     tasks = []

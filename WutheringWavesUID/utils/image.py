@@ -219,20 +219,81 @@ async def get_weapon_type(name: str = "") -> Image.Image:
     return Image.open(TEXT_PATH / f"weapon_type/weapon_type_{name}.png").convert("RGBA")
 
 
-def get_waves_bg(w: int, h: int, bg: str = "bg") -> Image.Image:
+def get_waves_bg(
+    w: int, h: int, bg: str = "bg", user_id: Optional[str] = None
+) -> Image.Image:
+    """
+    獲取背景圖片，支持Premium用戶自定義背景
+
+    Args:
+        w: 寬度
+        h: 高度
+        bg: 背景類型
+        user_id: 用戶ID（用於Premium自定義背景）
+
+    Returns:
+        背景圖片
+    """
+    # 嘗試使用Premium用戶自定義背景
+    if user_id:
+        try:
+            from ..wutheringwaves_payment.background_manager import (
+                background_manager,
+            )
+
+            # 獲取用戶背景路徑
+            bg_path = background_manager.get_background_path(user_id)
+            if bg_path and bg_path.exists():
+                img = Image.open(bg_path).convert("RGBA")
+                return crop_center_img(img, w, h)
+        except Exception as e:
+            # 如果獲取自定義背景失敗，繼續使用默認背景
+            pass
+
+    # 使用默認背景
     img = Image.open(TEXT_PATH / f"{bg}.jpg").convert("RGBA")
     return crop_center_img(img, w, h)
 
 
-def get_crop_waves_bg(w: int, h: int, bg: str = "bg") -> Image.Image:
+def get_crop_waves_bg(
+    w: int, h: int, bg: str = "bg", user_id: Optional[str] = None
+) -> Image.Image:
+    """
+    獲取裁剪背景圖片，支持Premium用戶自定義背景
+
+    Args:
+        w: 寬度
+        h: 高度
+        bg: 背景類型
+        user_id: 用戶ID（用於Premium自定義背景）
+
+    Returns:
+        裁剪後的背景圖片
+    """
+    # 嘗試使用Premium用戶自定義背景
+    if user_id:
+        try:
+            from ..wutheringwaves_payment.background_manager import (
+                background_manager,
+            )
+
+            # 獲取用戶背景路徑
+            bg_path = background_manager.get_background_path(user_id)
+            if bg_path and bg_path.exists():
+                img = Image.open(bg_path).convert("RGBA")
+                width, height = img.size
+                crop_box = (0, height // 2, width, height)
+                cropped_image = img.crop(crop_box)
+                return crop_center_img(cropped_image, w, h)
+        except Exception as e:
+            # 如果獲取自定義背景失敗，繼續使用默認背景
+            pass
+
+    # 使用默認背景
     img = Image.open(TEXT_PATH / f"{bg}.jpg").convert("RGBA")
-
     width, height = img.size
-
     crop_box = (0, height // 2, width, height)
-
     cropped_image = img.crop(crop_box)
-
     return crop_center_img(cropped_image, w, h)
 
 
