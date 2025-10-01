@@ -9,7 +9,7 @@ from gsuid_core.logger import logger
 
 # 國際服API配置
 INTERNATIONAL_API_CONFIG = {
-    "base_url": "http://localhost:3456",
+    "base_url": "https://wwuidapi.fulin-net.top",
     "endpoints": {
         "slash_rank": "/api/international/slash/rank",
         "slash_record": "/api/international/slash/record",

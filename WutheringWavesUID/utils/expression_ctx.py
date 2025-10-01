@@ -2,12 +2,12 @@ from typing import Dict, Optional
 
 from pydantic import BaseModel
 
-from ..utils.api.model import RoleDetailData
 from .calc import WuWaCalc
-from .calculate import calc_phantom_score, get_calc_map, get_total_score_bg
-from .char_info_utils import get_all_role_detail_info
+from ..utils.api.model import RoleDetailData
 from .damage.abstract import DamageRankRegister
 from .damage.utils import comma_separated_number
+from .char_info_utils import get_all_role_detail_info
+from .calculate import get_calc_map, calc_phantom_score, get_total_score_bg
 
 
 class WavesCharRank(BaseModel):
@@ -22,6 +22,7 @@ class WavesCharRank(BaseModel):
     expected_damage: Optional[float]  # 期望伤害
 
     weaponId: int  # 武器id
+    weaponName: str  # 武器名称
     weaponLevel: int  # 武器等级
     weaponResonLevel: int  # 武器共鸣等级
     sonataName: str  # 合鸣效果
@@ -33,6 +34,7 @@ class WavesCharRank(BaseModel):
             "level": self.level,
             "chain": self.chain,
             "weapon_id": self.weaponId,
+            "weapon_name": self.weaponName,  # 武器名稱
             "weapon_level": self.weaponLevel,
             "weapon_reson_level": self.weaponResonLevel,
             "sonata_name": self.sonataName,
@@ -119,6 +121,7 @@ async def get_waves_char_rank(uid, all_role_detail, need_expected_damage=False):
                 ),
                 "expected_damage": expected_damage,
                 "weaponId": role_detail.weaponData.weapon.weaponId,
+                "weaponName": role_detail.weaponData.weapon.weaponName,
                 "weaponLevel": role_detail.weaponData.level,
                 "weaponResonLevel": role_detail.weaponData.resonLevel,
                 "sonataName": sonataName,
