@@ -5,9 +5,9 @@ from gsuid_core.bot import Bot
 from gsuid_core.models import Event
 
 from .darw_rank_card import draw_rank_img
+from .draw_bot_rank_card import draw_bot_rank_img
 from .draw_all_rank_card import draw_all_rank_card
 from ..wutheringwaves_config import WutheringWavesConfig
-from .draw_bot_rank_card import draw_all_rank_card as draw_bot_rank_img
 from .slash_rank_international import draw_international_slash_rank_card
 from .draw_international_total_rank import draw_international_total_rank_img
 
