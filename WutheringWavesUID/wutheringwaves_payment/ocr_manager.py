@@ -31,24 +31,18 @@ class OCRManager:
     def get_user_ocr_config(self, user_id: str) -> Tuple[str, int]:
         """
         根據用戶等級獲取OCR配置
+        現在所有用戶都使用PRO線路，但免費用戶有冷卻限制
 
         Returns:
             Tuple[str, int]: (API_KEY, ENGINE_NUM)
         """
         try:
-            # 檢查是否為Premium用戶
-            is_premium = payment_manager.is_premium_user(user_id)
-
-            if is_premium:
-                # Premium用戶使用PRO線路
-                return self._get_pro_ocr_config()
-            else:
-                # 一般用戶使用免費線路
-                return self._get_free_ocr_config()
+            # 所有用戶都使用PRO線路
+            return self._get_pro_ocr_config()
 
         except Exception as e:
             logger.error(f"[鳴潮] OCR配置獲取失敗: {e}")
-            # 發生錯誤時使用免費線路
+            # 發生錯誤時使用免費線路作為備用
             return self._get_free_ocr_config()
 
     def get_fallback_ocr_config(self) -> Tuple[str, int]:
@@ -165,13 +159,13 @@ class OCRManager:
             is_premium = payment_manager.is_premium_user(user_id)
 
             if is_premium:
-                return "PRO線路 (高精度識別)"
+                return "PRO線路 (高精度識別，無冷卻限制)"
             else:
-                return "免費線路 (標準識別)"
+                return "PRO線路 (高精度識別，330秒冷卻)"
 
         except Exception as e:
             logger.error(f"[鳴潮] 獲取引擎信息失敗: {e}")
-            return "免費線路 (標準識別)"
+            return "PRO線路 (高精度識別，330秒冷卻)"
 
 
 # 創建全局OCR管理器實例

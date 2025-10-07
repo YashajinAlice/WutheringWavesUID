@@ -52,10 +52,10 @@ class EnhancedCooldownManager:
 
         # 默認冷卻時間
         default_cooldowns = {
-            "analyze": 300,  # 5分鐘
+            "analyze": 330,  # 5.5分鐘
             "query": 180,  # 3分鐘
             "parse": 180,  # 3分鐘
-            "ocr": 300,  # 5分鐘
+            "ocr": 330,  # 5.5分鐘
         }
         return default_cooldowns.get(self.cooldown_type, 300)
 

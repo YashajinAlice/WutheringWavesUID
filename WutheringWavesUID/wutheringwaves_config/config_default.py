@@ -239,7 +239,7 @@ CONFIG_DEFAULT: Dict[str, GSC] = {
     "DefaultCooldownAnalyze": GsIntConfig(
         "一般用戶分析冷卻時間（秒）",
         "一般用戶分析功能冷卻時間",
-        300,
+        330,
         3600,
     ),
     "DefaultCooldownQuery": GsIntConfig(

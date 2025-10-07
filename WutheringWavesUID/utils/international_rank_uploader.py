@@ -249,48 +249,36 @@ class InternationalRankUploader:
     async def _check_weapon_resonance_level(
         self, rank_data: dict, waves_data: list
     ) -> bool:
-        """檢查武器精煉度是否符合上傳條件"""
+        """使用舊數據的武器精煉度並直接上傳"""
         try:
-            current_resonance_level = rank_data.get("weapon_resonance_level", 1)
             char_id = rank_data.get("char_id")
+            logger.info(f"[國際服排行] 使用舊數據的武器精煉度，角色ID: {char_id}")
 
-            logger.info(f"[國際服排行] 當前武器精煉度: {current_resonance_level}")
-
-            # 如果當前精煉度大於1，直接上傳
-            if current_resonance_level > 1:
-                logger.info(
-                    f"[國際服排行] 武器精煉度大於1，符合上傳條件: {current_resonance_level}"
-                )
-                return True
-
-            # 如果當前精煉度等於1，檢查本地數據中的舊精煉度
-            if current_resonance_level == 1 and waves_data:
+            # 從舊數據中獲取武器精煉度
+            if waves_data:
                 for char_data in waves_data:
                     if char_data.get("charId") == char_id:
                         weapon_data = char_data.get("weaponData", {})
                         old_resonance_level = weapon_data.get("resonLevel", 1)
 
-                        # 如果舊數據的精煉度大於1，則上傳
-                        if old_resonance_level > 1:
-                            logger.info(
-                                f"[國際服排行] 舊數據武器精煉度大於1，符合上傳條件: {old_resonance_level}"
-                            )
-                            # 更新rank_data中的精煉度為舊數據的值
-                            rank_data["weapon_resonance_level"] = old_resonance_level
-                            return True
-                        else:
-                            logger.info(
-                                f"[國際服排行] 舊數據武器精煉度等於1，跳過上傳: {old_resonance_level}"
-                            )
-                            return False
+                        logger.info(
+                            f"[國際服排行] 使用舊數據武器精煉度: {old_resonance_level}"
+                        )
 
-            # 默認情況：精煉度等於1，跳過上傳
-            logger.info("[國際服排行] 武器精煉度等於1，跳過上傳")
-            return False
+                        # 直接使用舊數據的精煉度，更新rank_data
+                        rank_data["weapon_resonance_level"] = old_resonance_level
+                        return True
+
+            # 如果沒有找到舊數據，使用默認值1
+            logger.info("[國際服排行] 沒有找到舊數據，使用默認精煉度1")
+            rank_data["weapon_resonance_level"] = 1
+            return True
 
         except Exception as e:
-            logger.error(f"[國際服排行] 檢查武器精煉度失敗: {e}")
-            return False
+            logger.error(f"[國際服排行] 獲取舊數據武器精煉度失敗: {e}")
+            # 出錯時使用默認值
+            rank_data["weapon_resonance_level"] = 1
+            return True
 
     def _extract_sonata_name(self, equipment_data: list) -> str:
         """從裝備數據中提取聲骸套裝名稱"""
