@@ -1,42 +1,41 @@
-import asyncio
 import copy
+import asyncio
 from pathlib import Path
 from typing import Dict, Union
 
 import httpx
 from PIL import Image, ImageDraw
-
-from gsuid_core.logger import logger
 from gsuid_core.models import Event
+from gsuid_core.logger import logger
 from gsuid_core.utils.image.convert import convert_img
 
+from ..utils.util import timed_async_cache
+from ..utils.database.models import WavesBind
 from ..utils.api.wwapi import GET_HOLD_RATE_URL
 from ..utils.ascension.char import get_char_model
-from ..utils.database.models import WavesBind
+from ..utils.char_info_utils import get_all_role_detail_info_list
 from ..utils.fonts.waves_fonts import (
     waves_font_20,
     waves_font_24,
     waves_font_36,
     waves_font_58,
 )
-from ..utils.image import (
-    CHAIN_COLOR_LIST,
-    GOLD,
-    SPECIAL_GOLD,
-    add_footer,
-    get_attribute,
-    get_ICON,
-    get_square_avatar,
-    get_waves_bg,
-)
 from ..utils.resource.constant import (
-    ATTRIBUTE_ID_MAP,
     NORMAL_LIST,
     NORMAL_LIST_IDS,
+    ATTRIBUTE_ID_MAP,
     SPECIAL_CHAR_NAME,
 )
-from ..utils.util import timed_async_cache
-from ..utils.waves_card_cache import get_card
+from ..utils.image import (
+    GOLD,
+    SPECIAL_GOLD,
+    CHAIN_COLOR_LIST,
+    get_ICON,
+    add_footer,
+    get_waves_bg,
+    get_attribute,
+    get_square_avatar,
+)
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 bar1 = Image.open(TEXT_PATH / "bar1.png")
@@ -112,7 +111,7 @@ async def new_draw_char_hold_rate(ev: Event, data, group_id: str = "") -> bytes:
 
     # icon
     icon = get_ICON()
-    icon = icon.resize((180, 180), Image.Resampling.LANCZOS)
+    icon = icon.resize((180, 180))
     title_mask.paste(icon, (60, 380), icon)
 
     # title
@@ -129,7 +128,7 @@ async def new_draw_char_hold_rate(ev: Event, data, group_id: str = "") -> bytes:
     title = (
         f"样本数量: {data.get('total_player_count', 0)} 人"
         if group_id
-        else "国服近期活跃角色持有率"
+        else "近期活跃角色持有率"
     )
     title_mask_draw.text(
         (300, 500),
@@ -162,7 +161,7 @@ async def new_draw_char_hold_rate(ev: Event, data, group_id: str = "") -> bytes:
         attribute_text = char_model.attributeId
         attribute_name = ATTRIBUTE_ID_MAP[attribute_text]
         role_attribute = await get_attribute(attribute_name, is_simple=True)
-        role_attribute = role_attribute.resize((40, 40), Image.Resampling.LANCZOS).convert("RGBA")
+        role_attribute = role_attribute.resize((40, 40)).convert("RGBA")
         bar_bg.alpha_composite(role_attribute, (150, 20))
 
         # 绘制共鸣链持有率
@@ -234,15 +233,15 @@ async def new_draw_char_hold_rate(ev: Event, data, group_id: str = "") -> bytes:
 async def draw_pic(roleId):
     pic = await get_square_avatar(roleId)
     pic_temp = Image.new("RGBA", pic.size)
-    pic_temp.paste(pic.resize((160, 160), Image.Resampling.LANCZOS), (10, 10))
+    pic_temp.paste(pic.resize((160, 160)), (10, 10))
 
     avatar_mask_temp = copy.deepcopy(avatar_mask)
     mask_pic_temp = Image.new("RGBA", avatar_mask_temp.size)
     mask_pic_temp.paste(avatar_mask_temp, (-20, -45), avatar_mask_temp)
 
     img = Image.new("RGBA", (180, 180))
-    mask_pic_temp = mask_pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
-    resize_pic = pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
+    mask_pic_temp = mask_pic_temp.resize((160, 160))
+    resize_pic = pic_temp.resize((160, 160))
     img.paste(resize_pic, (0, 0), mask_pic_temp)
 
     return img
@@ -266,14 +265,11 @@ async def get_char_hold_rate_data() -> Dict:
     return {}
 
 
-async def get_group_or_bot_char_hold_rate_data(group_id: str) -> Dict:
-    """获取群组或者bot所有的角色持有率数据"""
+async def get_group_char_hold_rate_data(group_id: str) -> Dict:
+    """获取群组角色持有率数据"""
     res = {}
 
-    if group_id == "bot":
-        users = await WavesBind.get_all_data()
-    else:
-        users = await WavesBind.get_group_all_uid(group_id)
+    users = await WavesBind.get_group_all_uid(group_id)
     if not users:
         return res
 
@@ -287,7 +283,7 @@ async def get_group_or_bot_char_hold_rate_data(group_id: str) -> Dict:
         if uid in uid_fiter:
             return None
 
-        role_details = await get_card(uid)
+        role_details = await get_all_role_detail_info_list(uid)
         if role_details is None:
             return None
 
@@ -377,7 +373,7 @@ async def get_group_or_bot_char_hold_rate_data(group_id: str) -> Dict:
 async def get_char_hold_rate_img(ev: Event, group_id: str = "") -> Union[bytes, str]:
     """获取角色持有率图像"""
     if group_id:
-        data = await get_group_or_bot_char_hold_rate_data(group_id)
+        data = await get_group_char_hold_rate_data(group_id)
         if not data:
             return "群组持有率数据获取失败，请稍后再试"
     else:

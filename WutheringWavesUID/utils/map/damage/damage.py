@@ -1,44 +1,45 @@
 from typing import List, Union
 
-from ...api.model import RoleDetailData, WeaponData
-from ...damage.abstract import WavesEchoRegister, WavesWeaponRegister
+from ...api.model import WeaponData, RoleDetailData
 from ...damage.damage import DamageAttribute, check_char_id
+from ...damage.abstract import WavesEchoRegister, WavesWeaponRegister
 from ...damage.utils import (
-    CHAR_ATTR_CELESTIAL,
-    CHAR_ATTR_FREEZING,
-    CHAR_ATTR_MOLTEN,
-    CHAR_ATTR_SIERRA,
-    CHAR_ATTR_SINKING,
+    SONATA_VOID,
+    SONATA_FROSTY,
+    SONATA_MOLTEN,
+    SONATA_SIERRA,
+    SONATA_WELKIN,
     CHAR_ATTR_VOID,
     SONATA_ANCIENT,
+    SONATA_ETERNAL,
+    SONATA_HARMONY,
+    SONATA_MOONLIT,
+    SONATA_SINKING,
+    SONATA_EMPYREAN,
+    SONATA_FIREWALL,
+    SONATA_FREEZING,
+    SONATA_MIDNIGHT,
+    CHAR_ATTR_MOLTEN,
+    CHAR_ATTR_SIERRA,
     SONATA_CELESTIAL,
     SONATA_CLAWPRINT,
-    SONATA_CROWN_OF_VALOR,
-    SONATA_EMPYREAN,
-    SONATA_ETERNAL,
-    SONATA_FREEZING,
-    SONATA_FROSTY,
-    SONATA_HARMONY,
     SONATA_LINGERING,
-    SONATA_MIDNIGHT,
-    SONATA_MOLTEN,
-    SONATA_MOONLIT,
+    CHAR_ATTR_SINKING,
     SONATA_PILGRIMAGE,
+    CHAR_ATTR_FREEZING,
+    CHAR_ATTR_CELESTIAL,
     SONATA_REJUVENATING,
-    SONATA_SIERRA,
-    SONATA_SINKING,
     SONATA_TIDEBREAKING,
-    SONATA_VOID,
-    SONATA_WELKIN,
+    SONATA_CROWN_OF_VALOR,
     Spectro_Frazzle_Role_Ids,
-    cast_attack,
     cast_hit,
-    cast_liberation,
     cast_skill,
     hit_damage,
-    liberation_damage,
-    phantom_damage,
+    cast_attack,
     skill_damage,
+    phantom_damage,
+    cast_liberation,
+    liberation_damage,
 )
 
 
@@ -309,3 +310,20 @@ def phase_damage(
                 title = f"{phase_name}-{ph_detail.ph_name}"
                 msg = "队伍中角色声骸技能伤害加成提升4%*4"
                 attr.add_dmg_bonus(0.04 * 4, title, msg)
+
+        # 焚羽猎魔之影
+        elif check_if_ph_3(ph_detail.ph_name, ph_detail.ph_num, SONATA_FIREWALL):
+            # 角色造成声骸技能伤害时，重击伤害的暴击提升20%，持续6秒；造成重击伤害时，声骸技能伤害的暴击提升20%，持续6秒。同时拥有两种效果时，自身热熔伤害提升16%。
+            if attr.char_damage == hit_damage:
+                title = f"{phase_name}-{ph_detail.ph_name}"
+                msg = "角色施放声骸技能时，自身重击伤害加成提升20%"
+                attr.add_dmg_bonus(0.2, title, msg)
+            if attr.char_damage == phantom_damage:
+                title = f"{phase_name}-{ph_detail.ph_name}"
+                msg = "造成重击伤害时，声骸技能伤害的暴击提升20%"
+                attr.add_dmg_bonus(0.2, title, msg)
+
+            if attr.role and attr.role.role.roleId == 1208:
+                title = f"{phase_name}-{ph_detail.ph_name}"
+                msg = "自身热熔伤害提升16%"
+                attr.add_dmg_bonus(0.16, title, msg)

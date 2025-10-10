@@ -1,27 +1,31 @@
-import asyncio
 import time
+import asyncio
 from pathlib import Path
-from typing import List, Optional, Union
-
-from PIL import Image, ImageDraw
-from pydantic import BaseModel
+from typing import List, Union, Optional
 
 from gsuid_core.bot import Bot
-from gsuid_core.logger import logger
+from pydantic import BaseModel
+from PIL import Image, ImageDraw
 from gsuid_core.models import Event
+from gsuid_core.logger import logger
 from gsuid_core.utils.image.convert import convert_img
 from gsuid_core.utils.image.image_tools import crop_center_img
 
-from ..utils.api.model import RoleDetailData, WeaponData
-from ..utils.cache import TimedCache
 from ..utils.calc import WuWaCalc
+from ..utils.util import hide_uid
+from ..utils.cache import TimedCache
+from ..utils.damage.abstract import DamageRankRegister
+from ..utils.api.model import WeaponData, RoleDetailData
+from ..utils.database.models import WavesBind, WavesUser
+from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
+from ..utils.char_info_utils import get_all_role_detail_info_list
+from ..utils.resource.constant import SPECIAL_CHAR, SPECIAL_CHAR_NAME
+from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
 from ..utils.calculate import (
-    calc_phantom_score,
     get_calc_map,
+    calc_phantom_score,
     get_total_score_bg,
 )
-from ..utils.damage.abstract import DamageRankRegister
-from ..utils.database.models import WavesBind, WavesUser
 from ..utils.fonts.waves_fonts import (
     waves_font_14,
     waves_font_16,
@@ -34,26 +38,20 @@ from ..utils.fonts.waves_fonts import (
     waves_font_44,
 )
 from ..utils.image import (
-    CHAIN_COLOR,
-    GREY,
     RED,
+    GREY,
+    CHAIN_COLOR,
     SPECIAL_GOLD,
     WEAPON_RESONLEVEL_COLOR,
     add_footer,
+    get_waves_bg,
     get_attribute,
-    get_attribute_effect,
-    AVATAR_GETTERS,
+    get_qq_avatar,
     get_role_pile_old,
     get_square_avatar,
     get_square_weapon,
-    get_waves_bg,
+    get_attribute_effect,
 )
-from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
-from ..utils.resource.constant import SPECIAL_CHAR, SPECIAL_CHAR_NAME
-from ..utils.util import hide_uid
-from ..utils.waves_card_cache import get_card
-from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
-from ..wutheringwaves_analyzecard.user_info_utils import get_region_for_rank
 
 rank_length = 20  # 排行长度
 TEXT_PATH = Path(__file__).parent / "texture2d"
@@ -73,8 +71,6 @@ class RankInfo(BaseModel):
     roleDetail: RoleDetailData  # 角色明细
     qid: str  # qq id
     uid: str  # uid
-    server: str  # 区服
-    server_color: tuple[int, int, int]  # 区服颜色
     level: int  # 角色等级
     chain: int  # 命座
     chainName: str  # 命座
@@ -137,17 +133,12 @@ async def get_one_rank_info(user_id, uid, role_detail, rankDetail):
             if ph.get("isFull"):
                 sonata_name = ph.get("ph_name", "")
                 break
-                
-    # 区服
-    region_text, region_color = get_region_for_rank(uid)
 
     rankInfo = RankInfo(
         **{
             "roleDetail": role_detail,
             "qid": user_id,
             "uid": uid,
-            "server": region_text,
-            "server_color": region_color,
             "level": role_detail.role.level,
             "chain": role_detail.get_chain_num(),
             "chainName": role_detail.get_chain_name(),
@@ -164,7 +155,7 @@ async def get_one_rank_info(user_id, uid, role_detail, rankDetail):
 async def find_role_detail(
     uid: str, char_id: Union[int, str, List[str], List[int]]
 ) -> Optional[RoleDetailData]:
-    role_details = await get_card(uid)
+    role_details = await get_all_role_detail_info_list(uid)
     if role_details is None:
         return None
 
@@ -210,14 +201,7 @@ async def get_rank_info_for_user(
         if not role_detail.phantomData or not role_detail.phantomData.equipPhantomList:
             continue
 
-        rankInfo = None
-        try:
-            rankInfo = await get_one_rank_info(user.user_id, uid, role_detail, rankDetail)
-        except Exception as e:
-            logger.warning(f"获取用户{user.user_id} id{uid} 的排行数据,错误: {e}")
-            from ..utils.util import send_master_info
-            await send_master_info(f"获取用户{user.user_id} id{uid} 的排行数据,错误: {e}")
-
+        rankInfo = await get_one_rank_info(user.user_id, uid, role_detail, rankDetail)
         if not rankInfo:
             continue
         rankInfoList.append(rankInfo)
@@ -404,7 +388,7 @@ async def draw_rank_img(
         role_attribute = await get_attribute(
             rank_role_detail.role.attributeName or "导电", is_simple=True
         )
-        role_attribute = role_attribute.resize((40, 40), Image.Resampling.LANCZOS).convert("RGBA")
+        role_attribute = role_attribute.resize((40, 40)).convert("RGBA")
         bar_bg.alpha_composite(role_attribute, (300, 20))
 
         # 命座
@@ -414,15 +398,6 @@ async def draw_rank_img(
         info_block_draw.rounded_rectangle([0, 0, 46, 20], radius=6, fill=fill)
         info_block_draw.text((5, 10), f"{rank.chainName}", "white", waves_font_18, "lm")
         bar_bg.alpha_composite(info_block, (190, 30))
-
-        # 区服
-        region_block = Image.new("RGBA", (50, 20), color=(255, 255, 255, 0))
-        region_draw = ImageDraw.Draw(region_block)
-        region_draw.rounded_rectangle(
-            [0, 0, 50, 20], radius=6, fill=rank.server_color + (int(0.9 * 255),)
-        )
-        region_draw.text((25, 10), rank.server, "white", waves_font_16, "mm")
-        bar_bg.alpha_composite(region_block, (100, 80))
 
         # 等级
         info_block = Image.new("RGBA", (60, 20), color=(255, 255, 255, 0))
@@ -449,7 +424,7 @@ async def draw_rank_img(
         # 合鸣效果
         if rank.sonata_name:
             effect_image = await get_attribute_effect(rank.sonata_name)
-            effect_image = effect_image.resize((50, 50), Image.Resampling.LANCZOS)
+            effect_image = effect_image.resize((50, 50))
             bar_bg.alpha_composite(effect_image, (533, 15))
             sonata_name = rank.sonata_name
         else:
@@ -495,7 +470,7 @@ async def draw_rank_img(
 
         weapon_bg_temp.alpha_composite(weapon_icon_bg, dest=(45, 0))
 
-        bar_bg.alpha_composite(weapon_bg_temp.resize((260, 130), Image.Resampling.LANCZOS), dest=(580, 25))
+        bar_bg.alpha_composite(weapon_bg_temp.resize((260, 130)), dest=(580, 25))
 
         # 伤害
         if damage_title == "无":
@@ -581,7 +556,7 @@ async def draw_rank_img(
 
     # 备注
     rank_row_title = "入榜条件"
-    rank_row = f"1.本群内使用过命令 {PREFIX}练度"
+    rank_row = f"1.本群内使用命令【{PREFIX}刷新面板】刷新过面板"
     title_draw.text((20, 420), f"{rank_row_title}", SPECIAL_GOLD, waves_font_16, "lm")
     title_draw.text((90, 420), f"{rank_row}", GREY, waves_font_16, "lm")
     if tokenLimitFlag:
@@ -611,38 +586,32 @@ async def get_avatar(
     qid: Optional[Union[int, str]],
     char_id: Union[int, str],
 ) -> Image.Image:
-    try:
-        get_bot_avatar = AVATAR_GETTERS.get(ev.bot_id)
-        
+    if ev.bot_id == "onebot":
         if WutheringWavesConfig.get_config("QQPicCache").data:
             pic = pic_cache.get(qid)
             if not pic:
-                pic = await get_bot_avatar(qid, size=100)
+                pic = await get_qq_avatar(qid, size=100)
                 pic_cache.set(qid, pic)
         else:
-            pic = await get_bot_avatar(qid, size=100)
+            pic = await get_qq_avatar(qid, size=100)
             pic_cache.set(qid, pic)
-
-        # 统一处理 crop 和遮罩（onebot/discord 共用逻辑）
         pic_temp = crop_center_img(pic, 120, 120)
+
         img = Image.new("RGBA", (180, 180))
         avatar_mask_temp = avatar_mask.copy()
-        mask_pic_temp = avatar_mask_temp.resize((120, 120), Image.Resampling.LANCZOS)
+        mask_pic_temp = avatar_mask_temp.resize((120, 120))
         img.paste(pic_temp, (0, -5), mask_pic_temp)
-    
-    except Exception:
-        # 打印异常，进行降级处理
-        logger.warning("头像获取失败，使用默认头像")
+    else:
         pic = await get_square_avatar(char_id)
 
         pic_temp = Image.new("RGBA", pic.size)
-        pic_temp.paste(pic.resize((160, 160), Image.Resampling.LANCZOS), (10, 10))
-        pic_temp = pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
+        pic_temp.paste(pic.resize((160, 160)), (10, 10))
+        pic_temp = pic_temp.resize((160, 160))
 
         avatar_mask_temp = avatar_mask.copy()
         mask_pic_temp = Image.new("RGBA", avatar_mask_temp.size)
         mask_pic_temp.paste(avatar_mask_temp, (-20, -45), avatar_mask_temp)
-        mask_pic_temp = mask_pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
+        mask_pic_temp = mask_pic_temp.resize((160, 160))
 
         img = Image.new("RGBA", (180, 180))
         img.paste(pic_temp, (0, 0), mask_pic_temp)

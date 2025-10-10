@@ -68,7 +68,7 @@ def register_damage():
     DamageDetailRegister.register_class("1206", damage_1206)
     # 露帕
     DamageDetailRegister.register_class("1207", damage_1207)
-    # 嘉貝莉娜
+    # 嘉贝莉娜
     DamageDetailRegister.register_class("1208", damage_1208)
 
     # 卡卡罗
@@ -203,7 +203,7 @@ def register_rank():
     DamageRankRegister.register_class("1206", rank_1206)
     # 露帕
     DamageRankRegister.register_class("1207", rank_1207)
-    # 嘉貝莉娜
+    # 嘉贝莉娜
     DamageRankRegister.register_class("1208", rank_1208)
 
     # 卡卡罗

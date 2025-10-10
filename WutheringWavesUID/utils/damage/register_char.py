@@ -223,88 +223,6 @@ class Char_1206(CharAbstract):
             attr.add_dmg_deepen(0.25, title, msg)
 
 
-class Char_1207(CharAbstract):
-    id = 1207
-    name = "露帕"
-    starLevel = 5
-
-    def _do_buff(
-        self,
-        attr: DamageAttribute,
-        chain: int = 0,
-        resonLevel: int = 1,
-        isGroup: bool = True,
-    ):
-        def get_molten_num(
-            attr: DamageAttribute,
-        ):
-            """
-            获取热熔人数，队伍人数
-            """
-            fix_num = 1
-            for char_id in attr.teammate_char_ids:
-                if int(char_id) // 100 == 12:
-                    fix_num += 1
-            return fix_num, len(attr.teammate_char_ids) + 1
-
-        molten_num, team_num = get_molten_num(attr)
-
-        """获得buff"""
-        title = "露帕-奔狼燎原之焰"
-        msg = "队伍中的角色热熔伤害提升15%"
-        attr.add_dmg_bonus(0.15, title, msg)
-
-        if attr.char_attr == CHAR_ATTR_MOLTEN:
-            title = "露帕-延奏技能"
-            msg = "下一位登场角色热熔伤害加深20%"
-            attr.add_dmg_deepen(0.2, title, msg)
-
-        if attack_damage == attr.char_damage:
-            title = "露帕-延奏技能"
-            msg = "下一位登场角色普攻伤害加深25%"
-            attr.add_dmg_deepen(0.25, title, msg)
-
-        if chain >= 2:
-            title = "露帕-二链"
-            msg = "施放共鸣解放时，队伍中的角色热熔伤害提升(20+20)%"
-            attr.add_dmg_bonus(0.4, title, msg)
-
-        if chain >= 3:
-            title = "露帕-荣光效果-三链"
-            msg = "角色攻击时无视15%热熔抗性"
-            attr.add_enemy_resistance(-0.15, title, msg)
-        else:
-            # 共鸣解放·荣光
-            # 施放共鸣解放荣光欢酣于火时，额外获得荣光效果，35秒内：
-            # 队伍中的角色攻击时无视3%热熔抗性，并且队伍中每有一名除露帕外的热熔属性角色，无视热熔抗性效果增加3%，上限为9%，当队伍中的热熔属性角色达到3名时，无视热熔抗性的效果额外增加6%。
-            title = "露帕-荣光效果"
-            msg = f"角色攻击时无视3*{molten_num}%热熔抗性"
-            attr.add_enemy_resistance(-0.03 * molten_num, title, msg)
-
-            if molten_num >= 3:
-                msg = "角色攻击时无视6%热熔抗性"
-                attr.add_enemy_resistance(-0.06, title, msg)
-
-        title = "露帕-追猎-共鸣解放"
-        if molten_num >= 3 or chain >= 3:
-            msg = "热熔提升(10+10)%"
-            attr.add_dmg_bonus(0.2, title, msg)
-        else:
-            msg = "热熔提升10%"
-            attr.add_dmg_bonus(0.1, title, msg)
-
-        msg = f"攻击力提升(6*{team_num})%"
-        attr.add_atk_percent(0.06 * team_num, title, msg)
-
-        # 焰痕
-        weapon_clz = WavesWeaponRegister.find_class(21010036)
-        if weapon_clz:
-            w = weapon_clz(21010036, 90, 6, resonLevel)
-            method = getattr(w, "cast_hit", None)
-            if callable(method):
-                method(attr, isGroup)
-
-
 class Char_1301(CharAbstract):
     id = 1301
     name = "卡卡罗"
@@ -437,45 +355,6 @@ class Char_1408(Char_1406):
     id = 1408
     name = "漂泊者·气动"
     starLevel = 5
-
-
-class Char_1410(CharAbstract):
-    id = 1410
-    name = "尤诺"
-    starLevel = 5
-
-    def _do_buff(
-        self,
-        attr: DamageAttribute,
-        chain: int = 0,
-        resonLevel: int = 1,
-        isGroup: bool = True,
-    ):
-        """获得buff"""
-        if attr.char_template == temp_atk:
-            title = "尤诺-合鸣效果-轻云出月"
-            msg = "使用延奏技能后，下一个登场的共鸣者攻击提升22.5%"
-            attr.add_atk_percent(0.225, title, msg)
-
-        # 10层苍白死光的祝颂
-        title = "尤诺-苍白死光的祝颂"
-        msg = "满月领域中获得十次护盾后，角色全伤害加深4%*10"
-        attr.add_dmg_deepen(0.04 * 10, title, msg)
-
-        if chain >= 2:
-            title = "尤诺-二链"
-            msg = "苍白死光的祝颂叠加至10层时额外获得40%全伤害加深"
-            attr.add_dmg_deepen(0.4, title, msg)
-
-        # 无常凶鹭
-        title = "尤诺-声骸技能-无常凶鹭"
-        msg = "施放延奏技能，则可使下一个变奏登场的角色伤害提升12%"
-        attr.add_dmg_bonus(0.12, title, msg)
-
-        if hit_damage == attr.char_damage:
-            title = "尤诺-延奏技能"
-            msg = "下一位登场角色重击伤害加深50%"
-            attr.add_dmg_deepen(0.5, title, msg)
 
 
 class Char_1501(CharAbstract):
@@ -790,72 +669,8 @@ class Char_1606(CharAbstract):
                 attr.add_dmg_bonus(0.1 * 4, title, msg)
 
 
-class Char_1208(CharAbstract):
-    id = 1208
-    name = "嘉貝莉娜"
-    starLevel = 5
-
-    def _do_buff(
-        self,
-        attr: DamageAttribute,
-        chain: int = 0,
-        resonLevel: int = 1,
-        isGroup: bool = True,
-    ):
-        """获得buff"""
-        if attr.char_template == temp_atk:
-            # 餘燼狀態
-            title = "嘉貝莉娜-餘燼狀態"
-            msg = "重擊傷害+15%"
-            attr.add_dmg_bonus(0.15, title, msg)
-
-            # 烈焰決心（假設平均3層）
-            title = "嘉貝莉娜-烈焰決心"
-            msg = "熱熔傷害+15%"
-            attr.add_dmg_bonus(0.15, title, msg)
-
-            # 槍械精通（對燃燒敵人）
-            title = "嘉貝莉娜-槍械精通"
-            msg = "暴擊率+10%"
-            attr.add_crit_rate(0.1, title, msg)
-
-
 def register_char():
-    WavesCharRegister.register_class(Char_1102.id, Char_1102)
-    WavesCharRegister.register_class(Char_1103.id, Char_1103)
-    WavesCharRegister.register_class(Char_1104.id, Char_1104)
-    WavesCharRegister.register_class(Char_1105.id, Char_1105)
-    WavesCharRegister.register_class(Char_1106.id, Char_1106)
-    WavesCharRegister.register_class(Char_1107.id, Char_1107)
-    WavesCharRegister.register_class(Char_1202.id, Char_1202)
-    WavesCharRegister.register_class(Char_1203.id, Char_1203)
-    WavesCharRegister.register_class(Char_1204.id, Char_1204)
-    WavesCharRegister.register_class(Char_1205.id, Char_1205)
-    WavesCharRegister.register_class(Char_1206.id, Char_1206)
-    WavesCharRegister.register_class(Char_1207.id, Char_1207)
-    WavesCharRegister.register_class(Char_1208.id, Char_1208)
-    WavesCharRegister.register_class(Char_1301.id, Char_1301)
-    WavesCharRegister.register_class(Char_1302.id, Char_1302)
-    WavesCharRegister.register_class(Char_1303.id, Char_1303)
-    WavesCharRegister.register_class(Char_1304.id, Char_1304)
-    WavesCharRegister.register_class(Char_1305.id, Char_1305)
-    WavesCharRegister.register_class(Char_1402.id, Char_1402)
-    WavesCharRegister.register_class(Char_1403.id, Char_1403)
-    WavesCharRegister.register_class(Char_1404.id, Char_1404)
-    WavesCharRegister.register_class(Char_1405.id, Char_1405)
-    WavesCharRegister.register_class(Char_1406.id, Char_1406)
-    WavesCharRegister.register_class(Char_1407.id, Char_1407)
-    WavesCharRegister.register_class(Char_1408.id, Char_1408)
-    WavesCharRegister.register_class(Char_1410.id, Char_1410)
-    WavesCharRegister.register_class(Char_1501.id, Char_1501)
-    WavesCharRegister.register_class(Char_1502.id, Char_1502)
-    WavesCharRegister.register_class(Char_1503.id, Char_1503)
-    WavesCharRegister.register_class(Char_1504.id, Char_1504)
-    WavesCharRegister.register_class(Char_1505.id, Char_1505)
-    WavesCharRegister.register_class(Char_1506.id, Char_1506)
-    WavesCharRegister.register_class(Char_1601.id, Char_1601)
-    WavesCharRegister.register_class(Char_1602.id, Char_1602)
-    WavesCharRegister.register_class(Char_1603.id, Char_1603)
-    WavesCharRegister.register_class(Char_1604.id, Char_1604)
-    WavesCharRegister.register_class(Char_1605.id, Char_1605)
-    WavesCharRegister.register_class(Char_1606.id, Char_1606)
+    # 自动注册所有以 Char_ 开头的类
+    for name, obj in globals().items():
+        if name.startswith("Char_") and hasattr(obj, "id"):
+            WavesCharRegister.register_class(obj.id, obj)
