@@ -104,6 +104,9 @@ async def add_cookie(ev: Event, ck: str, did: str) -> str:
             # 如果是新綁定，增加計數器
             if not user:
                 new_bind_count += 1
+        elif res == -4:
+            # UID已被其他用戶綁定，跳過此UID
+            continue
 
         role_list.append(
             {

@@ -216,7 +216,7 @@ async def send_international_total_rank_card(bot: Bot, ev: Event):
         await bot.send(im, at_sender=at_sender)
 
 
-@sv_waves_slash_international.on_regex("^无尽排行$", block=True)
+@sv_waves_slash_international.on_regex("^无尽排行|^无尽排名$", block=True)
 async def send_international_slash_rank_card(bot: Bot, ev: Event):
     """国际服无尽bot排行指令"""
     if not ev.group_id:

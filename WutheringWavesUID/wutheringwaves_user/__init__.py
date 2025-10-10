@@ -19,6 +19,7 @@ waves_add_ck = SV("鸣潮添加token", priority=5)
 waves_del_ck = SV("鸣潮删除token", priority=5)
 waves_get_ck = SV("waves获取ck", area="DIRECT")
 waves_del_all_invalid_ck = SV("鸣潮删除无效token", priority=1, pm=1)
+waves_admin_query_uid = SV("鸣潮管理員查詢UID", priority=1, pm=1)
 
 
 def get_ck_and_devcode(text: str, split_str: str = ",") -> tuple[str, str]:
@@ -129,6 +130,69 @@ async def auto_delete_all_invalid_cookie():
     logger.info(f"[鸣潮]推送主人删除无效token结果: {msg}")
 
 
+@waves_admin_query_uid.on_command(("查特征码", "查UID"), block=True)
+async def admin_query_uid_binding(bot: Bot, ev: Event):
+    """管理員查詢UID綁定信息"""
+    at_sender = True if ev.group_id else False
+    uid = ev.text.strip().replace("uid", "").replace("UID", "")
+    
+    if not uid:
+        return await bot.send(
+            f"❌ 請提供要查詢的UID！\n格式：查特征码 123456789\n", at_sender
+        )
+    
+    if len(uid) != 9 or not uid.isdigit():
+        return await bot.send(
+            f"❌ UID格式不正確！請提供9位數字的UID\n", at_sender
+        )
+    
+    try:
+        # 查詢UID綁定信息
+        bind_info = await WavesBind.get_uid_bind_info(uid)
+        
+        if not bind_info:
+            return await bot.send(
+                f"🔍 **UID查詢結果**\n\n"
+                f"UID: `{uid}`\n"
+                f"狀態: ❌ 未綁定\n"
+                f"說明: 此UID尚未被任何用戶綁定", at_sender
+            )
+        
+        # 格式化綁定時間
+        bind_time = bind_info.get("bind_time", 0)
+        if bind_time:
+            import time
+            time_str = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(bind_time))
+        else:
+            time_str = "未知"
+        
+        # 獲取用戶的其他綁定UID
+        all_uids = bind_info.get("all_uids", [])
+        other_uids = [u for u in all_uids if u != uid]
+        
+        # 構建回應訊息
+        message = f"🔍 **UID查詢結果**\n\n"
+        message += f"UID: `{uid}`\n"
+        message += f"狀態: ✅ 已綁定\n"
+        message += f"綁定用戶ID: `{bind_info['user_id']}`\n"
+        message += f"平台: `{bind_info['bot_id']}`\n"
+        message += f"綁定時間: {time_str}\n"
+        
+        if bind_info.get("group_id"):
+            message += f"群組ID: `{bind_info['group_id']}`\n"
+        
+        if other_uids:
+            message += f"該用戶其他綁定UID: `{', '.join(other_uids)}`\n"
+        
+        return await bot.send(message, at_sender)
+        
+    except Exception as e:
+        logger.error(f"[鸣潮] 管理員查詢UID失敗: {e}")
+        return await bot.send(
+            f"❌ 查詢失敗！請檢查UID格式或聯繫技術支援\n錯誤: {str(e)}", at_sender
+        )
+
+
 @waves_bind_uid.on_command(
     (
         "绑定",
@@ -191,6 +255,7 @@ async def send_waves_bind_uid_msg(bot: Bot, ev: Event):
                 -1: f"[鸣潮] 特征码[{uid}]的位数不正确！\n",
                 -2: f"[鸣潮] 特征码[{uid}]已经绑定过了！\n",
                 -3: "[鸣潮] 你输入了错误的格式!\n",
+                -4: f"[鸣潮] 特征码[{uid}]已被其他用户绑定，无法重复绑定！\n",
             },
             at_sender=at_sender,
         )
