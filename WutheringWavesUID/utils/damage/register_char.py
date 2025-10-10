@@ -1,21 +1,21 @@
+from .damage import DamageAttribute
 from ...utils.damage.abstract import (
     CharAbstract,
     WavesCharRegister,
     WavesWeaponRegister,
 )
-from .damage import DamageAttribute
 from .utils import (
-    CHAR_ATTR_CELESTIAL,
-    CHAR_ATTR_FREEZING,
+    CHAR_ATTR_VOID,
     CHAR_ATTR_MOLTEN,
     CHAR_ATTR_SIERRA,
     CHAR_ATTR_SINKING,
-    CHAR_ATTR_VOID,
-    attack_damage,
-    hit_damage,
-    liberation_damage,
-    skill_damage,
+    CHAR_ATTR_FREEZING,
+    CHAR_ATTR_CELESTIAL,
     temp_atk,
+    hit_damage,
+    skill_damage,
+    attack_damage,
+    liberation_damage,
 )
 
 
@@ -263,12 +263,12 @@ class Char_1207(CharAbstract):
             title = "露帕-延奏技能"
             msg = "下一位登场角色普攻伤害加深25%"
             attr.add_dmg_deepen(0.25, title, msg)
-        
+
         if chain >= 2:
             title = "露帕-二链"
             msg = "施放共鸣解放时，队伍中的角色热熔伤害提升(20+20)%"
             attr.add_dmg_bonus(0.4, title, msg)
-        
+
         if chain >= 3:
             title = "露帕-荣光效果-三链"
             msg = "角色攻击时无视15%热熔抗性"
@@ -790,6 +790,36 @@ class Char_1606(CharAbstract):
                 attr.add_dmg_bonus(0.1 * 4, title, msg)
 
 
+class Char_1208(CharAbstract):
+    id = 1208
+    name = "嘉貝莉娜"
+    starLevel = 5
+
+    def _do_buff(
+        self,
+        attr: DamageAttribute,
+        chain: int = 0,
+        resonLevel: int = 1,
+        isGroup: bool = True,
+    ):
+        """获得buff"""
+        if attr.char_template == temp_atk:
+            # 餘燼狀態
+            title = "嘉貝莉娜-餘燼狀態"
+            msg = "重擊傷害+15%"
+            attr.add_dmg_bonus(0.15, title, msg)
+
+            # 烈焰決心（假設平均3層）
+            title = "嘉貝莉娜-烈焰決心"
+            msg = "熱熔傷害+15%"
+            attr.add_dmg_bonus(0.15, title, msg)
+
+            # 槍械精通（對燃燒敵人）
+            title = "嘉貝莉娜-槍械精通"
+            msg = "暴擊率+10%"
+            attr.add_crit_rate(0.1, title, msg)
+
+
 def register_char():
     WavesCharRegister.register_class(Char_1102.id, Char_1102)
     WavesCharRegister.register_class(Char_1103.id, Char_1103)
@@ -803,6 +833,7 @@ def register_char():
     WavesCharRegister.register_class(Char_1205.id, Char_1205)
     WavesCharRegister.register_class(Char_1206.id, Char_1206)
     WavesCharRegister.register_class(Char_1207.id, Char_1207)
+    WavesCharRegister.register_class(Char_1208.id, Char_1208)
     WavesCharRegister.register_class(Char_1301.id, Char_1301)
     WavesCharRegister.register_class(Char_1302.id, Char_1302)
     WavesCharRegister.register_class(Char_1303.id, Char_1303)

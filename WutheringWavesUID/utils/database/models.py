@@ -52,6 +52,66 @@ class WavesBind(Bind, table=True):
         return result.all()
 
     @classmethod
+    @with_session
+    async def check_uid_exists_globally(
+        cls: Type[T_WavesBind], session: AsyncSession, uid: str
+    ) -> Optional[T_WavesBind]:
+        """
+        檢查UID是否已被任何用戶綁定（全局檢查）
+        
+        Args:
+            uid: 要檢查的UID
+            
+        Returns:
+            如果UID已被綁定，返回綁定記錄；否則返回None
+        """
+        # 查詢所有包含此UID的綁定記錄
+        sql = select(cls).where(
+            or_(
+                col(cls.uid) == uid,  # 直接匹配
+                col(cls.uid).like(f"%{uid}%")  # 包含在UID列表中
+            )
+        )
+        result = await session.execute(sql)
+        data = result.scalars().all()
+        
+        # 檢查是否真的包含此UID（因為like可能匹配到其他UID）
+        for bind_record in data:
+            if bind_record.uid:
+                uid_list = bind_record.uid.split("_")
+                if uid in uid_list:
+                    return bind_record
+        
+        return None
+
+    @classmethod
+    @with_session
+    async def get_uid_bind_info(
+        cls: Type[T_WavesBind], session: AsyncSession, uid: str
+    ) -> Optional[Dict[str, Any]]:
+        """
+        獲取UID綁定信息（管理員查詢用）
+        
+        Args:
+            uid: 要查詢的UID
+            
+        Returns:
+            包含綁定信息的字典，如果未綁定則返回None
+        """
+        bind_record = await cls.check_uid_exists_globally(uid)
+        if not bind_record:
+            return None
+        
+        return {
+            "uid": uid,
+            "user_id": bind_record.user_id,
+            "bot_id": bind_record.bot_id,
+            "group_id": bind_record.group_id,
+            "bind_time": getattr(bind_record, 'bind_time', None) or getattr(bind_record, 'created_time', None) or 0,
+            "all_uids": bind_record.uid.split("_") if bind_record.uid else []
+        }
+
+    @classmethod
     async def insert_waves_uid(
         cls: Type[T_WavesBind],
         user_id: str,
@@ -71,6 +131,11 @@ class WavesBind(Bind, table=True):
                 return -3
         if not uid:
             return -1
+
+        # 檢查UID是否已被其他用戶綁定
+        existing_bind = await cls.check_uid_exists_globally(uid)
+        if existing_bind and existing_bind.user_id != user_id:
+            return -4  # UID已被其他用戶綁定
 
         # 第一次绑定
         if not await cls.bind_exists(user_id, bot_id):
