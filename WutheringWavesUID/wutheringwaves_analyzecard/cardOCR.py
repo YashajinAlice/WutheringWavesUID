@@ -758,8 +758,66 @@ async def ocr_results_to_dict(chain_num, ocr_results):
                 # 玩家名称
                 player_match = patterns["player_info"].search(line)
                 if player_match:
-                    final_result["用户信息"]["玩家名称"] = player_match.group(1)
+                    player_name = player_match.group(1).strip()
+                    logger.debug(
+                        f"[鸣潮][dc卡片识别] 玩家名称匹配: '{player_match.group(1)}' -> '{player_name}'"
+                    )
+                    if player_name:  # 確保玩家名稱不為空
+                        final_result["用户信息"]["玩家名称"] = player_name
+                        logger.debug(
+                            f"[鸣潮][dc卡片识别] 設置玩家名称: '{player_name}'"
+                        )
+                    else:
+                        logger.warning(
+                            f"[鸣潮][dc卡片识别] 玩家名稱為空，原始匹配: '{player_match.group(1)}'"
+                        )
+                        # 嘗試從整行中提取可能的玩家名稱
+                        # 檢查是否有日文名字在玩家名稱標識附近
+                        if "玩家名稱" in line or "玩家名" in line:
+                            # 嘗試提取玩家名稱標識後的所有內容
+                            name_part = line.split("玩家名稱")[-1].split("玩家名")[-1]
+                            if "：" in name_part:
+                                name_part = name_part.split("：")[-1]
+                            elif ":" in name_part:
+                                name_part = name_part.split(":")[-1]
+                            # 清理並檢查是否為有效的名字
+                            potential_name = re.sub(
+                                r"[^\u4e00-\u9fa5\u3040-\u309F\u30A0-\u30FF\uAC00-\uD7A3A-Za-z0-9\s]",
+                                "",
+                                name_part,
+                            ).strip()
+                            if potential_name and len(potential_name) > 0:
+                                final_result["用户信息"]["玩家名称"] = potential_name
+                                logger.debug(
+                                    f"[鸣潮][dc卡片识别] 從整行提取玩家名称: '{potential_name}'"
+                                )
                     continue  # 避免玩家名称在前被识别为角色名
+
+                # 如果玩家名稱標識存在但沒有匹配到內容，嘗試從其他位置提取
+                if ("玩家名稱" in line or "玩家名" in line) and not final_result[
+                    "用户信息"
+                ].get("玩家名称"):
+                    logger.warning(
+                        f"[鸣潮][dc卡片识别] 玩家名稱標識存在但無內容，嘗試從其他位置提取: '{line}'"
+                    )
+                    # 檢查是否有其他可能的玩家名稱模式
+                    # 例如：角色名後面可能有玩家名稱
+                    if "嘉貝莉娜" in line:
+                        # 嘗試提取角色名後面的內容作為玩家名稱
+                        parts = line.split("嘉貝莉娜")
+                        if len(parts) > 1:
+                            remaining = parts[1]
+                            # 清理並檢查是否包含可能的玩家名稱
+                            clean_remaining = re.sub(
+                                r"[^\u4e00-\u9fa5\u3040-\u309F\u30A0-\u30FF\uAC00-\uD7A3A-Za-z0-9\s]",
+                                "",
+                                remaining,
+                            ).strip()
+                            if clean_remaining and len(clean_remaining) > 0:
+                                final_result["用户信息"]["玩家名称"] = clean_remaining
+                                logger.debug(
+                                    f"[鸣潮][dc卡片识别] 從角色名後提取玩家名称: '{clean_remaining}'"
+                                )
 
                 # 文本预处理：删除非数字中英文的符号及多余空白
                 line_clean = re.sub(
@@ -779,9 +837,13 @@ async def ocr_results_to_dict(chain_num, ocr_results):
                             .replace("鑒几", "鉴心")
                             .replace("票泊者", "漂泊者")
                         )
-                        if not re.match(r"^[\u4e00-\u9fa5]+$", name):
+                        # 檢查是否為有效的角色名（支持中日韓文字符）
+                        if not re.match(
+                            r"^[\u4e00-\u9fa5\u3040-\u309F\u30A0-\u30FF\uAC00-\uD7A3]+$",
+                            name,
+                        ):
                             logger.warning(
-                                f" [鸣潮][dc卡片识别] 识别出非中文角色名:{name}，退出识别！"
+                                f" [鸣潮][dc卡片识别] 识别出非有效角色名:{name}，退出识别！"
                             )
                             return False, final_result
                         final_result["角色信息"]["角色名"] = cc.convert(name)

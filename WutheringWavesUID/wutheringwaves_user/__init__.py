@@ -20,6 +20,7 @@ waves_del_ck = SV("鸣潮删除token", priority=5)
 waves_get_ck = SV("waves获取ck", area="DIRECT")
 waves_del_all_invalid_ck = SV("鸣潮删除无效token", priority=1, pm=1)
 waves_admin_query_uid = SV("鸣潮管理員查詢UID", priority=1, pm=1)
+waves_change_nickname = SV("鸣潮改暱稱", priority=5)
 
 
 def get_ck_and_devcode(text: str, split_str: str = ",") -> tuple[str, str]:
@@ -135,41 +136,41 @@ async def admin_query_uid_binding(bot: Bot, ev: Event):
     """管理員查詢UID綁定信息"""
     at_sender = True if ev.group_id else False
     uid = ev.text.strip().replace("uid", "").replace("UID", "")
-    
+
     if not uid:
         return await bot.send(
             f"❌ 請提供要查詢的UID！\n格式：查特征码 123456789\n", at_sender
         )
-    
+
     if len(uid) != 9 or not uid.isdigit():
-        return await bot.send(
-            f"❌ UID格式不正確！請提供9位數字的UID\n", at_sender
-        )
-    
+        return await bot.send(f"❌ UID格式不正確！請提供9位數字的UID\n", at_sender)
+
     try:
         # 查詢UID綁定信息
         bind_info = await WavesBind.get_uid_bind_info(uid)
-        
+
         if not bind_info:
             return await bot.send(
                 f"🔍 **UID查詢結果**\n\n"
                 f"UID: `{uid}`\n"
                 f"狀態: ❌ 未綁定\n"
-                f"說明: 此UID尚未被任何用戶綁定", at_sender
+                f"說明: 此UID尚未被任何用戶綁定",
+                at_sender,
             )
-        
+
         # 格式化綁定時間
         bind_time = bind_info.get("bind_time", 0)
         if bind_time:
             import time
+
             time_str = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(bind_time))
         else:
             time_str = "未知"
-        
+
         # 獲取用戶的其他綁定UID
         all_uids = bind_info.get("all_uids", [])
         other_uids = [u for u in all_uids if u != uid]
-        
+
         # 構建回應訊息
         message = f"🔍 **UID查詢結果**\n\n"
         message += f"UID: `{uid}`\n"
@@ -177,15 +178,15 @@ async def admin_query_uid_binding(bot: Bot, ev: Event):
         message += f"綁定用戶ID: `{bind_info['user_id']}`\n"
         message += f"平台: `{bind_info['bot_id']}`\n"
         message += f"綁定時間: {time_str}\n"
-        
+
         if bind_info.get("group_id"):
             message += f"群組ID: `{bind_info['group_id']}`\n"
-        
+
         if other_uids:
             message += f"該用戶其他綁定UID: `{', '.join(other_uids)}`\n"
-        
+
         return await bot.send(message, at_sender)
-        
+
     except Exception as e:
         logger.error(f"[鸣潮] 管理員查詢UID失敗: {e}")
         return await bot.send(
@@ -341,3 +342,95 @@ async def send_diff_msg(bot: Bot, code: Any, data: Dict, at_sender=False):
     for retcode in data:
         if code == retcode:
             return await bot.send(data[retcode], at_sender)
+
+
+@waves_change_nickname.on_command(
+    ("修改昵称", "修改暱稱", "改昵称", "改暱稱", "改名字", "修改名字"), block=True
+)
+async def change_nickname(bot: Bot, ev: Event):
+    """修改玩家暱稱指令"""
+    at_sender = True if ev.group_id else False
+    new_nickname = ev.text.strip()
+
+    if not new_nickname:
+        return await bot.send(
+            f"❌ 請提供新的暱稱！\n"
+            f"格式：改暱稱 新暱稱\n"
+            f"例如：@艾特机器人 改暱稱 我的新暱稱",
+            at_sender,
+        )
+
+    # 檢查暱稱長度
+    if len(new_nickname) > 20:
+        return await bot.send("❌ 暱稱長度不能超過20個字符！", at_sender)
+
+    if len(new_nickname) < 1:
+        return await bot.send("❌ 暱稱不能為空！", at_sender)
+
+    try:
+        # 獲取用戶綁定的UID
+        uid_list = await WavesBind.get_uid_list_by_game(ev.user_id, ev.bot_id)
+
+        if not uid_list:
+            return await bot.send(
+                "❌ 您尚未綁定任何UID！\n" f"請先使用 @艾特机器人 綁定 您的UID",
+                at_sender,
+            )
+
+        # 使用第一個綁定的UID
+        uid = uid_list[0]
+
+        # 導入必要的模組
+        from ..wutheringwaves_analyzecard.user_info_utils import (
+            save_user_info,
+            get_user_detail_info,
+        )
+
+        # 獲取當前用戶信息
+        current_user_info = await get_user_detail_info(uid)
+
+        # 更新暱稱
+        await save_user_info(
+            uid=uid,
+            name=new_nickname,
+            level=(
+                current_user_info.level
+                if current_user_info and current_user_info.level is not None
+                else 0
+            ),
+            worldLevel=(
+                current_user_info.worldLevel
+                if current_user_info and current_user_info.worldLevel is not None
+                else 0
+            ),
+            achievementCount=(
+                current_user_info.achievementCount
+                if current_user_info and current_user_info.achievementCount is not None
+                else 0
+            ),
+            achievementStar=(
+                current_user_info.achievementStar
+                if current_user_info and current_user_info.achievementStar is not None
+                else 0
+            ),
+        )
+
+        # 發送成功消息
+        await bot.send(
+            f"✅ 暱稱修改成功！\n"
+            f"UID: {uid}\n"
+            f"新暱稱: {new_nickname}\n\n"
+            f"💡 提示：暱稱已更新，下次使用相關功能時會顯示新暱稱",
+            at_sender,
+        )
+
+        logger.info(
+            f"[鸣潮] 用戶 {ev.user_id} 成功修改暱稱為: {new_nickname} (UID: {uid})"
+        )
+
+    except Exception as e:
+        logger.error(f"[鸣潮] 修改暱稱失敗: {e}")
+        await bot.send(
+            f"❌ 修改暱稱失敗！\n" f"錯誤: {str(e)}\n" f"請檢查UID是否正確或聯繫管理員",
+            at_sender,
+        )
