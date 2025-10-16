@@ -1,6 +1,6 @@
 from typing import List, Union, Optional
 
-from .damage import DamageAttribute
+from ...utils.damage.damage import DamageAttribute
 
 
 class WavesRegister(object):
@@ -50,7 +50,10 @@ class WeaponAbstract(object):
         weapon_breach: Union[int, None] = None,
         weapon_reson_level: int = 1,
     ):
-        from ..ascension.weapon import WavesWeaponResult, get_weapon_detail
+        from ...utils.ascension.weapon import (
+            WavesWeaponResult,
+            get_weapon_detail,
+        )
 
         weapon_detail: WavesWeaponResult = get_weapon_detail(
             weapon_id, weapon_level, weapon_breach, weapon_reson_level
@@ -83,6 +86,8 @@ class WeaponAbstract(object):
             func_list.append("trigger_shield")
 
         func_list.append("cast_phantom")
+
+        func_list = [x for i, x in enumerate(func_list) if func_list.index(x) == i]
 
         for func_name in func_list:
             method = getattr(self, func_name, None)
