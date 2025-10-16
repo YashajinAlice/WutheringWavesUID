@@ -10,6 +10,7 @@ from .slash_rank import draw_all_slash_rank_card
 from .draw_total_rank_card import draw_total_rank
 from .draw_all_rank_card import draw_all_rank_card
 from ..wutheringwaves_config import WutheringWavesConfig
+from .draw_bot_total_rank_card import draw_bot_total_rank
 from .slash_rank_international import draw_international_slash_rank_card
 from .draw_international_total_rank import draw_international_total_rank_img
 from .draw_bot_rank_card import draw_bot_rank_img, draw_bot_rank_img_by_chain
@@ -17,6 +18,7 @@ from .draw_bot_rank_card import draw_bot_rank_img, draw_bot_rank_img_by_chain
 sv_waves_rank_list = SV("ww角色排行")
 sv_waves_rank_all_list = SV("ww角色总排行", priority=1)
 sv_waves_rank_bot_list = SV("ww角色bot排行", priority=1)
+sv_waves_rank_bot_total = SV("ww練度bot排行", priority=1)
 sv_waves_rank_international = SV("ww國際服排行", priority=0)
 sv_waves_slash_international = SV("ww无尽bot排行", priority=1)
 sv_waves_slash_rank = SV("ww无尽排行", priority=1)
@@ -28,6 +30,24 @@ async def send_total_rank_card(bot: Bot, ev: Event):
 
     pages = 1
     im = await draw_total_rank(bot, ev, pages)
+    await bot.send(im)
+
+
+@sv_waves_rank_bot_total.on_command(
+    (
+        "bot练度排行",
+        "bot练度排名",
+        "练度bot排行",
+        "练度bot排名",
+        "bot练度总排行",
+        "bot练度总排名",
+    ),
+    block=True,
+)
+async def send_bot_total_rank_card(bot: Bot, ev: Event):
+    """Bot 練度總排行"""
+    pages = 1
+    im = await draw_bot_total_rank(bot, ev, pages)
     await bot.send(im)
 
 

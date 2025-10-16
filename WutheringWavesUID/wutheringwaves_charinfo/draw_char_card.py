@@ -1224,7 +1224,11 @@ async def draw_char_score_img(
                     )
 
                     score, final_score = calc_phantom_entry(
-                        index, _prop, _phantom.cost, calc.calc_temp
+                        index,
+                        _prop,
+                        _phantom.cost,
+                        calc.calc_temp,
+                        role_detail.role.attributeName or "导电",
                     )
                     score_color = WAVES_MOONLIT
                     if final_score > 0:
