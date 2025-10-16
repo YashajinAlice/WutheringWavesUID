@@ -1,8 +1,9 @@
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import Any, Dict, List, Tuple, Union, Optional
 
-from pydantic import BaseModel, Field
+from pydantic import Field, BaseModel
 
-from ...utils.util import format_with_defaults
+from ..util import format_with_defaults
+from ..resource.constant import ATTRIBUTE_ID_MAP
 
 
 class Stats(BaseModel):
@@ -71,6 +72,9 @@ class CharacterModel(BaseModel):
 
     def get_max_level_stat(self) -> Stats:
         return self.stats["6"]["90"]
+
+    def get_attribute_name(self) -> str:
+        return ATTRIBUTE_ID_MAP[self.attributeId]
 
 
 class WeaponModel(BaseModel):
@@ -211,16 +215,6 @@ class EchoModel(BaseModel):
         result.append(("声骸等级", temp_level[self.intensityCode]))
         result.append(("「COST」", temp_cost[self.intensityCode]))
         return result
-
-    def get_cost(self) -> int:
-        temp_cost = {0: 1, 1: 3, 2: 4, 3: 4}
-        return temp_cost[self.intensityCode]
-
-    def get_group_name_by_gid(self, gid: str | int) -> str | None:
-        gid = str(gid)
-        if gid not in self.group: 
-            return None
-        return self.group[gid].get("name")
 
     def get_group_name(self) -> List[str]:
         return [i["name"] for i in self.group.values()]

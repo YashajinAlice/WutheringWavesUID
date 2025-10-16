@@ -8,7 +8,7 @@ import aiohttp
 from gsuid_core.logger import logger
 from aiohttp import ClientTimeout, ContentTypeError
 
-from ...utils.database.models import WavesUser
+from ..database.models import WavesUser
 
 
 # 延遲導入以避免循環依賴

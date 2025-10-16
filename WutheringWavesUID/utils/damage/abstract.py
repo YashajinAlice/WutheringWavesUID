@@ -1,6 +1,6 @@
-from typing import List, Optional, Union
+from typing import List, Union, Optional
 
-from ...utils.damage.damage import DamageAttribute
+from .damage import DamageAttribute
 
 
 class WavesRegister(object):
@@ -50,10 +50,7 @@ class WeaponAbstract(object):
         weapon_breach: Union[int, None] = None,
         weapon_reson_level: int = 1,
     ):
-        from ...utils.ascension.weapon import (
-            WavesWeaponResult,
-            get_weapon_detail,
-        )
+        from ..ascension.weapon import WavesWeaponResult, get_weapon_detail
 
         weapon_detail: WavesWeaponResult = get_weapon_detail(
             weapon_id, weapon_level, weapon_breach, weapon_reson_level

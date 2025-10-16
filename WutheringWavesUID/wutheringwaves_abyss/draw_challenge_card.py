@@ -1,14 +1,26 @@
-from datetime import timedelta
 from pathlib import Path
 from typing import Union
+from datetime import timedelta
 
 from PIL import Image, ImageDraw
-
 from gsuid_core.models import Event
 from gsuid_core.utils.image.convert import convert_img
 
-from ..utils.api.model import AccountBaseInfo, ChallengeArea, RoleList
+from ..utils.hint import error_reply
+from ..utils.waves_api import waves_api
 from ..utils.error_reply import WAVES_CODE_102
+from ..utils.name_convert import char_name_to_char_id
+from ..utils.resource.RESOURCE_PATH import CHALLENGE_PATH
+from ..utils.imagetool import draw_pic, draw_pic_with_ring
+from ..utils.api.model import RoleList, ChallengeArea, AccountBaseInfo
+from ..utils.image import (
+    GOLD,
+    GREY,
+    SPECIAL_GOLD,
+    add_footer,
+    get_waves_bg,
+    pic_download_from_url,
+)
 from ..utils.fonts.waves_fonts import (
     waves_font_18,
     waves_font_20,
@@ -18,19 +30,6 @@ from ..utils.fonts.waves_fonts import (
     waves_font_30,
     waves_font_42,
 )
-from ..utils.hint import error_reply
-from ..utils.image import (
-    GOLD,
-    GREY,
-    SPECIAL_GOLD,
-    add_footer,
-    get_waves_bg,
-    pic_download_from_url,
-)
-from ..utils.imagetool import draw_pic, draw_pic_with_ring
-from ..utils.name_convert import char_name_to_char_id
-from ..utils.resource.RESOURCE_PATH import CHALLENGE_PATH
-from ..utils.waves_api import waves_api
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 
@@ -135,6 +134,7 @@ async def draw_challenge_img(ev: Event, uid: str, user_id: str) -> Union[bytes, 
         boss_icon = await pic_download_from_url(
             CHALLENGE_PATH, _challenge[0].bossIconUrl
         )
+        boss_icon = boss_icon.resize((242, 156))
         img_temp.alpha_composite(boss_icon, (20, 20))
         for _temp in reversed(_challenge):
             boss_difficulty = _temp.difficulty

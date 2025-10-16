@@ -5,15 +5,15 @@ from gsuid_core.logger import logger
 
 from ..damage.damage import DamageAttribute
 from ..damage.abstract import WavesEchoRegister
-from ...utils.api.model import Props, RoleDetailData
-from ...utils.api.model_other import EnemyDetailData
+from ..api.model import Props, RoleDetailData
+from ..api.model_other import EnemyDetailData
 from ..ascension.char import WavesCharResult, get_char_detail
-from ...utils.map.damage.damage import check_if_ph_3, check_if_ph_5
+from ..map.damage.damage import check_if_ph_3, check_if_ph_5
 from ..ascension.sonata import WavesSonataResult, get_sonata_detail
 from ..ascension.weapon import WavesWeaponResult, get_weapon_detail
 from ..resource.constant import card_sort_map as card_sort_map_back
 from ..ascension.constant import sum_numbers, sum_percentages, percent_to_float
-from ...utils.damage.utils import (
+from ..damage.utils import (
     SONATA_ANCIENT,
     SONATA_TIDEBREAKING,
     Ancient_Role_Ids,

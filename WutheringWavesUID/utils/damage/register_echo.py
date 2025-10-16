@@ -1,5 +1,5 @@
 from .damage import DamageAttribute
-from ...utils.damage.abstract import EchoAbstract, WavesEchoRegister
+from .abstract import EchoAbstract, WavesEchoRegister
 from .utils import (
     CHAR_ATTR_VOID,
     CHAR_ATTR_MOLTEN,

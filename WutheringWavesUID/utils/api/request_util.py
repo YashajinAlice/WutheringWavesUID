@@ -1,22 +1,17 @@
 import asyncio
 from enum import IntEnum
-from typing import Any, Dict, Generic, Optional, TypeVar, Union
+from typing import Any, Dict, Union, Generic, TypeVar, Optional
 
+from gsuid_core.logger import logger
 from pydantic import (
+    Field,
     BaseModel,
     ConfigDict,
-    Field,
     computed_field,
     model_validator,
 )
 
-from gsuid_core.logger import logger
-
-from ...utils.util import (
-    generate_random_string,
-    get_public_ip,
-    send_master_info,
-)
+from ..util import get_public_ip, send_master_info, generate_random_string
 
 KURO_VERSION = "2.5.5"
 PLATFORM_SOURCE = "ios"
@@ -151,7 +146,7 @@ class KuroApiResp(BaseModel, Generic[T]):
     async def mark_cookie_invalid(self, uid: str, cookie: str):
         if not self.is_token_invalid:
             return
-        from ...utils.database.models import WavesUser
+        from ..database.models import WavesUser
 
         await WavesUser.mark_cookie_invalid(uid, cookie, "无效")
 
