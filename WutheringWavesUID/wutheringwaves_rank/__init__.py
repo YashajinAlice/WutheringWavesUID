@@ -7,6 +7,7 @@ from gsuid_core.logger import logger
 
 from .darw_rank_card import draw_rank_img
 from .slash_rank import draw_all_slash_rank_card
+from .draw_total_rank_card import draw_total_rank
 from .draw_all_rank_card import draw_all_rank_card
 from ..wutheringwaves_config import WutheringWavesConfig
 from .slash_rank_international import draw_international_slash_rank_card
@@ -19,6 +20,15 @@ sv_waves_rank_bot_list = SV("ww角色bot排行", priority=1)
 sv_waves_rank_international = SV("ww國際服排行", priority=0)
 sv_waves_slash_international = SV("ww无尽bot排行", priority=1)
 sv_waves_slash_rank = SV("ww无尽排行", priority=1)
+sv_waves_rank_total_list = SV("ww练度总排行", priority=0)
+
+
+@sv_waves_rank_total_list.on_command(("练度总排行", "练度总排名"), block=True)
+async def send_total_rank_card(bot: Bot, ev: Event):
+
+    pages = 1
+    im = await draw_total_rank(bot, ev, pages)
+    await bot.send(im)
 
 
 @sv_waves_rank_list.on_regex("^[\u4e00-\u9fa5]+(?:排行|排名)$", block=True)
