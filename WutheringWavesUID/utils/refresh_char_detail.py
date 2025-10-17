@@ -188,11 +188,20 @@ async def refresh_char(
     if not role_info.success:
         return role_info.throw_msg()
 
+    # 添加數據驗證和調試信息
+    if role_info.data is None:
+        logger.error(f"{uid} API返回數據為None，可能是API請求失敗或數據格式錯誤")
+        msg = f"鸣潮特征码[{uid}]获取数据失败\n1.是否注册过库街区\n2.库街区能否查询当前鸣潮特征码数据\n3.API返回數據為空"
+        return msg
+
+    logger.debug(f"{uid} API返回數據: {type(role_info.data)} - {role_info.data}")
+
     try:
         role_info = RoleList.model_validate(role_info.data)
     except Exception as e:
         logger.exception(f"{uid} 角色信息解析失败", e)
-        msg = f"鸣潮特征码[{uid}]获取数据失败\n1.是否注册过库街区\n2.库街区能否查询当前鸣潮特征码数据"
+        logger.error(f"{uid} 原始數據: {role_info.data}")
+        msg = f"鸣潮特征码[{uid}]获取数据失败\n1.是否注册过库街区\n2.库街区能否查询当前鸣潮特征码数据\n3.數據格式錯誤: {str(e)}"
         return msg
 
     semaphore = await semaphore_manager.get_semaphore()
