@@ -297,3 +297,86 @@ async def refresh_char(
             return error_reply(code=-110, msg="库街区暂未查询到角色数据")
 
     return waves_datas
+
+
+async def refresh_char_from_pcap(
+    ev: Event,
+    uid: str,
+    user_id: str,
+    pcap_data: Dict,
+    waves_map: Optional[Dict] = None,
+    refresh_type: Union[str, List[str]] = "all",
+) -> Union[str, List]:
+    """從 PCAP 數據刷新角色信息"""
+    from ..wutheringwaves_pcap.pcap_parser import PcapDataParser
+
+    waves_datas = []
+
+    try:
+        # 創建 PCAP 解析器
+        parser = PcapDataParser()
+
+        # 解析 PCAP 數據
+        role_detail_list = await parser.parse_pcap_data(pcap_data)
+
+        if not role_detail_list:
+            return error_reply(WAVES_CODE_101)
+
+        # 根據 refresh_type 過濾角色
+        if refresh_type != "all" and isinstance(refresh_type, list):
+            filtered_roles = []
+            for role_detail in role_detail_list:
+                role_id = role_detail.get("role", {}).get("roleId")
+                if role_id and str(role_id) in refresh_type:
+                    filtered_roles.append(role_detail)
+            role_detail_list = filtered_roles
+
+        if not role_detail_list:
+            if refresh_type == "all":
+                return error_reply(WAVES_CODE_101)
+            else:
+                return error_reply(code=-110, msg="PCAP 數據中暫未查詢到指定角色數據")
+
+        # 處理角色數據
+        for role_detail_info in role_detail_list:
+            if not isinstance(role_detail_info, dict):
+                continue
+
+            # 修正合鳴效果
+            try:
+                if role_detail_info.get("phantomData") and role_detail_info[
+                    "phantomData"
+                ].get("equipPhantomList"):
+                    for i in role_detail_info["phantomData"]["equipPhantomList"]:
+                        if not isinstance(i, dict):
+                            continue
+                        sonata_name = i.get("fetterDetail", {}).get("name", "")
+                        if sonata_name == "雷曜日冕之冠":
+                            i["fetterDetail"]["name"] = "荣斗铸锋之冠"  # type: ignore
+            except Exception as e:
+                logger.exception(f"{uid} 合鸣效果修正失败", e)
+
+            waves_datas.append(role_detail_info)
+
+        # 保存數據
+        await save_card_info(
+            uid,
+            waves_datas,
+            waves_map,
+            user_id,
+            is_self_ck=True,
+            token="",
+            role_info=None,
+        )
+
+        if not waves_datas:
+            if refresh_type == "all":
+                return error_reply(WAVES_CODE_101)
+            else:
+                return error_reply(code=-110, msg="PCAP 數據中暫未查詢到角色數據")
+
+        return waves_datas
+
+    except Exception as e:
+        logger.exception(f"{uid} PCAP 數據解析失敗", e)
+        return error_reply(code=-110, msg="PCAP 數據解析失敗，請檢查數據格式")

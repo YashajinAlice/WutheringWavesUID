@@ -1,1 +1,17 @@
-{}
+{
+  "weii": {
+    "months": 0,
+    "target_user_id": null,
+    "created_time": 1760510400,
+    "expire_time": 1760625900,
+    "used": false,
+    "used_by": "357778032271949824",
+    "used_time": 1760625781.9097743,
+    "unlimited": false,
+    "use_count": 1,
+    "max_uses": 1,
+    "used_users": [
+      "357778032271949824"
+    ]
+  }
+}

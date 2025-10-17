@@ -75,6 +75,24 @@ async def open_switch_func(bot: Bot, ev: Event):
 
 @sv_self_config.on_prefix("设置")
 async def send_config_ev(bot: Bot, ev: Event):
+    # 排除Premium自定義背景指令，避免與Premium功能衝突
+    # 但保留體力背景等正常配置功能
+    if ev.text and any(
+        keyword in ev.text
+        for keyword in [
+            "背景圖片",
+            "背景图片",
+            "背景URL",
+            "背景url",
+            "自定義背景",
+            "自定义背景",
+            "設置背景圖片",
+            "设置背景图片",
+            "設置背景URL",
+            "设置背景URL",
+        ]
+    ):
+        return
     at_sender = True if ev.group_id else False
 
     uid = await WavesBind.get_uid_by_game(ev.user_id, ev.bot_id)
