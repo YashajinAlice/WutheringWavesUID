@@ -1,23 +1,23 @@
 import copy
-from typing import Any, Dict, List, Union, Optional
+from typing import Any, Dict, List, Optional, Union
 
 from gsuid_core.logger import logger
 
-from ..damage.damage import DamageAttribute
-from ..damage.abstract import WavesEchoRegister
-from ..api.model import Props, RoleDetailData
-from ..api.model_other import EnemyDetailData
-from ..ascension.char import WavesCharResult, get_char_detail
-from ..map.damage.damage import check_if_ph_3, check_if_ph_5
-from ..ascension.sonata import WavesSonataResult, get_sonata_detail
-from ..ascension.weapon import WavesWeaponResult, get_weapon_detail
-from ..resource.constant import card_sort_map as card_sort_map_back
-from ..ascension.constant import sum_numbers, sum_percentages, percent_to_float
-from ..damage.utils import (
+from ...utils.api.model import Props, RoleDetailData
+from ...utils.api.model_other import EnemyDetailData
+from ...utils.damage.utils import (
     SONATA_ANCIENT,
     SONATA_TIDEBREAKING,
     Ancient_Role_Ids,
 )
+from ...utils.map.damage.damage import check_if_ph_3, check_if_ph_5
+from ..ascension.char import WavesCharResult, get_char_detail
+from ..ascension.constant import percent_to_float, sum_numbers, sum_percentages
+from ..ascension.sonata import WavesSonataResult, get_sonata_detail
+from ..ascension.weapon import WavesWeaponResult, get_weapon_detail
+from ..damage.abstract import WavesEchoRegister
+from ..damage.damage import DamageAttribute
+from ..resource.constant import card_sort_map as card_sort_map_back
 
 
 class WuWaCalc(object):

@@ -105,7 +105,6 @@ WIKI_CATALOGUE_MAP = {
 
 
 def get_local_proxy_url():
-    # 延遲導入以避免循環依賴
     from ...wutheringwaves_config import WutheringWavesConfig
 
     LocalProxyUrl = WutheringWavesConfig.get_config("LocalProxyUrl").data
@@ -115,7 +114,6 @@ def get_local_proxy_url():
 
 
 def get_need_proxy_func():
-    # 延遲導入以避免循環依賴
     from ...wutheringwaves_config import WutheringWavesConfig
 
     NeedProxyFunc = WutheringWavesConfig.get_config("NeedProxyFunc").data

@@ -14,12 +14,12 @@ async def draw_pic_with_ring(ev: Event):
 
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
     avatar = Image.new("RGBA", (180, 180))
-    mask = mask_pic.resize((160, 160), Image.Resampling.LANCZOS)
+    mask = mask_pic.resize((160, 160))
     resize_pic = crop_center_img(pic, 160, 160)
     avatar.paste(resize_pic, (20, 20), mask)
 
     avatar_ring = Image.open(TEXT_PATH / "avatar_ring.png")
-    avatar_ring = avatar_ring.resize((180, 180), Image.Resampling.LANCZOS)
+    avatar_ring = avatar_ring.resize((180, 180))
     return avatar, avatar_ring
 
 
@@ -27,7 +27,7 @@ async def draw_pic(roleId):
     pic = await get_square_avatar(roleId)
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
     img = Image.new("RGBA", (180, 180))
-    mask = mask_pic.resize((140, 140), Image.Resampling.LANCZOS)
+    mask = mask_pic.resize((140, 140))
     resize_pic = crop_center_img(pic, 140, 140)
     img.paste(resize_pic, (22, 18), mask)
 

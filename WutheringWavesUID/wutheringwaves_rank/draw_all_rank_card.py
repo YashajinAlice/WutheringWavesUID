@@ -1,31 +1,27 @@
+import asyncio
 import copy
 import time
-import asyncio
 from pathlib import Path
-from typing import Union, Optional
+from typing import Optional, Union
 
 import httpx
-from gsuid_core.bot import Bot
 from PIL import Image, ImageDraw
-from gsuid_core.models import Event
-from gsuid_core.logger import logger
-from gsuid_core.utils.image.convert import convert_img
+from utils.image.convert import convert_img
 
-from ..utils.cache import TimedCache
-from ..utils.util import get_version
-from ..utils.waves_api import waves_api
-from ..utils.database.models import WavesBind
-from ..utils.ascension.char import get_char_model
-from ..utils.ascension.weapon import get_weapon_model
-from ..wutheringwaves_config import WutheringWavesConfig
-from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
-from ..utils.resource.constant import ATTRIBUTE_ID_MAP, SPECIAL_CHAR_NAME
+from gsuid_core.bot import Bot
+from gsuid_core.logger import logger
+from gsuid_core.models import Event
+
 from ..utils.api.wwapi import (
     GET_RANK_URL,
-    RankItem,
     RankDetail,
     RankInfoResponse,
+    RankItem,
 )
+from ..utils.ascension.char import get_char_model
+from ..utils.ascension.weapon import get_weapon_model
+from ..utils.cache import TimedCache
+from ..utils.database.models import WavesBind
 from ..utils.fonts.waves_fonts import (
     waves_font_14,
     waves_font_16,
@@ -39,28 +35,33 @@ from ..utils.fonts.waves_fonts import (
     waves_font_44,
 )
 from ..utils.image import (
-    RED,
-    GREY,
     AMBER,
-    WAVES_VOID,
     CHAIN_COLOR,
+    GREY,
+    RED,
     SPECIAL_GOLD,
-    WAVES_MOLTEN,
-    WAVES_SIERRA,
-    WAVES_MOONLIT,
     WAVES_FREEZING,
     WAVES_LINGERING,
+    WAVES_MOLTEN,
+    WAVES_MOONLIT,
+    WAVES_SIERRA,
+    WAVES_VOID,
     WEAPON_RESONLEVEL_COLOR,
     add_footer,
-    get_waves_bg,
-    get_attribute,
-    get_qq_avatar,
     crop_center_img,
+    get_attribute,
+    get_attribute_effect,
+    get_qq_avatar,
     get_role_pile_old,
     get_square_avatar,
     get_square_weapon,
-    get_attribute_effect,
+    get_waves_bg,
 )
+from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
+from ..utils.resource.constant import ATTRIBUTE_ID_MAP, SPECIAL_CHAR_NAME
+from ..utils.util import get_version
+from ..utils.waves_api import waves_api
+from ..wutheringwaves_config import WutheringWavesConfig
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 TITLE_I = Image.open(TEXT_PATH / "title.png")
@@ -72,7 +73,7 @@ weapon_icon_bg_5 = Image.open(TEXT_PATH / "weapon_icon_bg_5.png")
 promote_icon = Image.open(TEXT_PATH / "promote_icon.png")
 char_mask = Image.open(TEXT_PATH / "char_mask.png")
 char_mask2 = Image.open(TEXT_PATH / "char_mask.png")
-char_mask2 = char_mask2.resize((1300, char_mask2.size[1]), Image.Resampling.LANCZOS)
+char_mask2 = char_mask2.resize((1300, char_mask2.size[1]))
 logo_img = Image.open(TEXT_PATH / "logo_small_2.png")
 pic_cache = TimedCache(600, 200)
 
@@ -207,8 +208,8 @@ async def draw_all_rank_card(
     pic = await get_square_avatar(char_id)
 
     pic_temp = Image.new("RGBA", pic.size)
-    pic_temp.paste(pic.resize((160, 160), Image.Resampling.LANCZOS), (10, 10))
-    pic_temp = pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
+    pic_temp.paste(pic.resize((160, 160)), (10, 10))
+    pic_temp = pic_temp.resize((160, 160))
 
     tasks = [
         get_avatar(rank.user_id, rank.char_id) for rank in rankInfoList.data.details
@@ -226,9 +227,7 @@ async def draw_all_rank_card(
         bar_bg.paste(role_avatar, (100, 0), role_avatar)
 
         role_attribute = await get_attribute(attribute_name, is_simple=True)
-        role_attribute = role_attribute.resize(
-            (40, 40), Image.Resampling.LANCZOS
-        ).convert("RGBA")
+        role_attribute = role_attribute.resize((40, 40)).convert("RGBA")
         bar_bg.alpha_composite(role_attribute, (300, 20))
 
         # 命座
@@ -266,7 +265,7 @@ async def draw_all_rank_card(
         # 合鸣效果
         if rank.sonata_name:
             effect_image = await get_attribute_effect(rank.sonata_name)
-            effect_image = effect_image.resize((50, 50), Image.Resampling.LANCZOS)
+            effect_image = effect_image.resize((50, 50))
             bar_bg.alpha_composite(effect_image, (790, 15))
             sonata_name = rank.sonata_name
         else:
@@ -316,9 +315,7 @@ async def draw_all_rank_card(
 
         weapon_bg_temp.alpha_composite(weapon_icon_bg, dest=(45, 0))
 
-        bar_bg.alpha_composite(
-            weapon_bg_temp.resize((260, 130), Image.Resampling.LANCZOS), dest=(850, 25)
-        )
+        bar_bg.alpha_composite(weapon_bg_temp.resize((260, 130)), dest=(850, 25))
 
         # 伤害
         bar_star_draw.text(
@@ -501,19 +498,19 @@ async def get_avatar(
 
         img = Image.new("RGBA", (180, 180))
         avatar_mask_temp = avatar_mask.copy()
-        mask_pic_temp = avatar_mask_temp.resize((120, 120), Image.Resampling.LANCZOS)
+        mask_pic_temp = avatar_mask_temp.resize((120, 120))
         img.paste(pic_temp, (0, -5), mask_pic_temp)
     else:
         pic = await get_square_avatar(char_id)
 
         pic_temp = Image.new("RGBA", pic.size)
-        pic_temp.paste(pic.resize((160, 160), Image.Resampling.LANCZOS), (10, 10))
-        pic_temp = pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
+        pic_temp.paste(pic.resize((160, 160)), (10, 10))
+        pic_temp = pic_temp.resize((160, 160))
 
         avatar_mask_temp = avatar_mask.copy()
         mask_pic_temp = Image.new("RGBA", avatar_mask_temp.size)
         mask_pic_temp.paste(avatar_mask_temp, (-20, -45), avatar_mask_temp)
-        mask_pic_temp = mask_pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
+        mask_pic_temp = mask_pic_temp.resize((160, 160))
 
         img = Image.new("RGBA", (180, 180))
         img.paste(pic_temp, (0, 0), mask_pic_temp)

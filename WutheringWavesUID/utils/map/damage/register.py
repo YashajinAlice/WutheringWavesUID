@@ -1,4 +1,4 @@
-from ....utils.damage.abstract import DamageRankRegister, DamageDetailRegister
+from ....utils.damage.abstract import DamageDetailRegister, DamageRankRegister
 
 
 def register_damage():

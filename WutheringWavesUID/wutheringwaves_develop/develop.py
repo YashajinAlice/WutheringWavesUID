@@ -3,46 +3,47 @@ from pathlib import Path
 from typing import Dict, List
 
 from PIL import Image, ImageDraw
-from gsuid_core.models import Event
-from gsuid_core.utils.image.convert import convert_img
+from utils.image.convert import convert_img
 
-from ..utils.hint import error_reply
-from ..utils.waves_api import waves_api
-from ..utils.database.models import WavesBind
-from ..utils.resource.constant import SPECIAL_CHAR
-from ..utils.refresh_char_detail import refresh_char
-from ..utils.resource.download_file import get_material_img
+from gsuid_core.models import Event
+
+from ..utils.api.model import (
+    BatchRoleCostResponse,
+    CultivateCost,
+    OnlineRole,
+    OnlineRoleList,
+    OnlineWeapon,
+    OnlineWeaponList,
+    OwnedRoleList,
+    RoleCostDetail,
+    RoleCultivateStatusList,
+    RoleDetailData,
+)
 from ..utils.char_info_utils import get_all_role_detail_info_list
-from ..utils.error_reply import WAVES_CODE_098, WAVES_CODE_102, WAVES_CODE_103
+from ..utils.database.models import WavesBind
+from ..utils.error_reply import WAVES_CODE_102, WAVES_CODE_103, WAVES_CODE_098
 from ..utils.fonts.waves_fonts import (
     waves_font_20,
     waves_font_32,
     waves_font_40,
+)
+from ..utils.hint import error_reply
+from ..utils.image import (
+    SPECIAL_GOLD,
+    add_footer,
+    get_square_avatar,
+    get_square_weapon,
+    get_waves_bg,
 )
 from ..utils.name_convert import (
     char_id_to_char_name,
     char_name_to_char_id,
     weapon_name_to_weapon_id,
 )
-from ..utils.image import (
-    SPECIAL_GOLD,
-    add_footer,
-    get_waves_bg,
-    get_square_avatar,
-    get_square_weapon,
-)
-from ..utils.api.model import (
-    OnlineRole,
-    OnlineWeapon,
-    CultivateCost,
-    OwnedRoleList,
-    OnlineRoleList,
-    RoleCostDetail,
-    RoleDetailData,
-    OnlineWeaponList,
-    BatchRoleCostResponse,
-    RoleCultivateStatusList,
-)
+from ..utils.refresh_char_detail import refresh_char
+from ..utils.resource.constant import SPECIAL_CHAR
+from ..utils.resource.download_file import get_material_img
+from ..utils.waves_api import waves_api
 
 skillBreakList = ["2-1", "2-2", "2-3", "2-4", "2-5", "3-1", "3-2", "3-3", "3-4", "3-5"]
 
@@ -328,7 +329,7 @@ async def draw_material_card(cultivate_cost_list: List[CultivateCost], title: st
         material_star_img = copy.deepcopy(material_star_img_map[cultivate_cost.quality])
         material_item_img = await get_material_img(cultivate_cost.id)
         material_item_img = material_item_img.resize(
-            (material_item_width, material_item_width, Image.Resampling.LANCZOS)
+            (material_item_width, material_item_width)
         )
 
         temp_img_draw = ImageDraw.Draw(temp_img)
@@ -380,7 +381,7 @@ async def calc_role_need_card(
 
     # 角色头像
     square_avatar = await get_square_avatar(role_cost_detail.roleId)
-    square_avatar = square_avatar.resize((180, 180), Image.Resampling.LANCZOS)
+    square_avatar = square_avatar.resize((180, 180))
     star_img = copy.deepcopy(star_img_map[online_role.starLevel])
     top_bg_img.alpha_composite(square_avatar, (70, 40))
     top_bg_img.alpha_composite(star_img, (70, 40))
@@ -402,7 +403,7 @@ async def calc_role_need_card(
         online_weapon = online_weapon_map[f"{role_cost_detail.weaponId}"]
         weapon_id = content["weaponId"]
         square_weapon = await get_square_weapon(weapon_id)
-        square_weapon = square_weapon.resize((180, 180), Image.Resampling.LANCZOS)
+        square_weapon = square_weapon.resize((180, 180))
         star_img = copy.deepcopy(star_img_map[online_weapon.weaponStarLevel])
         top_bg_img.alpha_composite(square_weapon, (530, 40))
         top_bg_img.alpha_composite(star_img, (530, 40))

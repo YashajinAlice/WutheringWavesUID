@@ -8,21 +8,13 @@ import aiohttp
 from gsuid_core.logger import logger
 from aiohttp import ClientTimeout, ContentTypeError
 
-from ..database.models import WavesUser
-
-
-# 延遲導入以避免循環依賴
-def get_config():
-    from ...wutheringwaves_config import WutheringWavesConfig
-
-    return WutheringWavesConfig
-
-
 from .captcha import get_solver
 from ..util import timed_async_cache
 from .captcha.base import CaptchaResult
 from ..error_reply import WAVES_CODE_999
 from .captcha.errors import CaptchaError
+from ...utils.database.models import WavesUser
+from ...wutheringwaves_config import WutheringWavesConfig
 from .request_util import (
     KURO_VERSION,
     KuroApiResp,
@@ -179,25 +171,67 @@ class WavesApi:
         if waves_user.status == "无效":
             return ""
 
-        data = await self.login_log(uid, waves_user.cookie)
-        if not data.success:
-            await data.mark_cookie_invalid(uid, waves_user.cookie)
-            return ""
+        from ..waves_api import waves_api
 
-        data = await self.refresh_data(uid, waves_user.cookie)
-        if not data.success:
-            if data.is_bat_token_invalid:
-                if waves_user := await self.refresh_bat_token(waves_user):
-                    return waves_user.cookie
-            else:
+        if not waves_api.is_net(uid):
+            # 國服邏輯保持不變
+            data = await self.login_log(uid, waves_user.cookie)
+            if not data.success:
                 await data.mark_cookie_invalid(uid, waves_user.cookie)
-            return ""
+                return ""
+
+            data = await self.refresh_data(uid, waves_user.cookie)
+            if not data.success:
+                if data.is_bat_token_invalid:
+                    if waves_user := await self.refresh_bat_token(waves_user):
+                        return waves_user.cookie
+                else:
+                    await data.mark_cookie_invalid(uid, waves_user.cookie)
+                return ""
+        else:
+            # 國際服邏輯：使用 kuro.py 進行 token 驗證
+            logger.info(f"[國際服] 開始驗證 UID {uid} 的 token")
+            try:
+                from .kuro_py_api import get_role_info_overseas
+
+                role_info = await get_role_info_overseas(waves_user.cookie, uid)
+                if not role_info:
+                    logger.warning(f"[國際服] UID {uid} 的 token 驗證失敗，返回 None")
+                    # 不要立即標記為無效，可能是網絡問題
+                    logger.warning(
+                        f"[國際服] UID {uid} 可能是網絡問題，暫時不標記為無效"
+                    )
+                    return ""
+                logger.info(f"[國際服] UID {uid} 的 token 驗證成功")
+            except Exception as e:
+                logger.error(f"[國際服] UID {uid} token 驗證失敗: {e}")
+                logger.error(f"[國際服] 錯誤類型: {type(e).__name__}")
+                # 檢查是否為登入過期錯誤
+                error_str = str(e).lower()
+                if any(
+                    keyword in error_str
+                    for keyword in [
+                        "token",
+                        "expired",
+                        "invalid",
+                        "過期",
+                        "無效",
+                        "220",
+                        "10900",
+                    ]
+                ):
+                    logger.warning(f"[國際服] UID {uid} 登入已過期，標記為無效")
+                    await WavesUser.mark_cookie_invalid(uid, waves_user.cookie, "无效")
+                    return ""
+                else:
+                    # 其他錯誤，可能是網絡問題，暫時不標記為無效
+                    logger.warning(f"[國際服] UID {uid} 驗證失敗但可能是網絡問題: {e}")
+                    return ""
 
         return waves_user.cookie
 
     async def get_waves_random_cookie(self, uid: str, user_id: str) -> Optional[str]:
-        config = get_config()
-        if config.get_config("WavesOnlySelfCk").data:
+        if WutheringWavesConfig.get_config("WavesOnlySelfCk").data:
             return None
 
         # 公共ck 随机一个
@@ -207,6 +241,11 @@ class WavesApi:
         times = 1
         for user in user_list:
             if not await WavesUser.cookie_validate(user.uid):
+                continue
+
+            from ..waves_api import waves_api
+
+            if waves_api.is_net(user.uid):
                 continue
 
             data = await self.login_log(user.uid, user.cookie)

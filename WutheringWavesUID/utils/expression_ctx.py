@@ -2,12 +2,12 @@ from typing import Dict, Optional
 
 from pydantic import BaseModel
 
-from .calc import WuWaCalc
 from ..utils.api.model import RoleDetailData
+from .calc import WuWaCalc
+from .calculate import calc_phantom_score, get_calc_map, get_total_score_bg
+from .char_info_utils import get_all_role_detail_info
 from .damage.abstract import DamageRankRegister
 from .damage.utils import comma_separated_number
-from .char_info_utils import get_all_role_detail_info
-from .calculate import get_calc_map, calc_phantom_score, get_total_score_bg
 
 
 class WavesCharRank(BaseModel):
@@ -53,16 +53,6 @@ async def get_waves_char_rank(uid, all_role_detail, need_expected_damage=False):
     waves_char_rank = []
     for role_detail in temp:
         if not isinstance(role_detail, RoleDetailData):
-            # 處理 equipPhantomList 中的 None 值
-            if isinstance(role_detail, dict) and "phantomData" in role_detail:
-                phantom_data = role_detail.get("phantomData", {})
-                if phantom_data and "equipPhantomList" in phantom_data:
-                    equip_phantom_list = phantom_data["equipPhantomList"]
-                    if equip_phantom_list:
-                        # 過濾掉 None 值
-                        phantom_data["equipPhantomList"] = [
-                            item for item in equip_phantom_list if item is not None
-                        ]
             role_detail = RoleDetailData(**role_detail)
 
         phantom_score = 0

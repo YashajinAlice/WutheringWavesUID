@@ -1,33 +1,24 @@
 import json
+
 from pathlib import Path
-from typing import Any, Dict, List
 from dataclasses import field, dataclass
+from typing import Any, Dict, List
 
 from gsuid_core.logger import logger
 
 from ..utils.util import send_master_info
-from ..utils.ascension.model import EchoModel
-from ..utils.ascension.echo import get_echo_model
 from ..utils.ascension.weapon import get_weapon_detail
 from ..wutheringwaves_analyzecard.user_info_utils import save_user_info
-from .detail_json import (
-    sub_props,
-    main_first_props,
-    main_second_props,
-    m_id2monsterId_strange,
-)
+from ..utils.ascension.echo import get_echo_model
+from ..utils.ascension.model import EchoModel
+from ..utils.api.model import AccountBaseInfo as BaseInfo
+
+from .detail_json import m_id2monsterId_strange, main_first_props, main_second_props, sub_props
+
 
 TEXT_PATH = Path(__file__).parent
 
 
-@dataclass
-class BaseInfo:
-    """用户基本信息"""
-
-    name: str
-    id: int  # uid
-    level: int
-    worldLevel: int
 
 
 @dataclass
@@ -241,7 +232,17 @@ class PcapDataParser:
             # 提取用户數據
             if "BasicInfoNotify" in data and "id" in data["BasicInfoNotify"]:
                 self._extract_base_info_data_from_wuthery(data["BasicInfoNotify"])
-                logger.info(f"從 Wuthery API 提取到用户信息：{self.account_info}")
+            else:
+                logger.error("數據中沒有 BasicInfoNotify")
+                return []
+
+            # 提取用户成就數據
+            if "AchievementInfoResponse" in data:
+                self._extract_achievement_info_data_from_wuthery(data["AchievementInfoResponse"])
+            else:
+                logger.warning("數據中沒有 AchievementInfoResponse")
+
+            logger.info(f"從 Wuthery API 提取到用户信息：{self.account_info}")
 
             # 提取角色數據
             if (
@@ -252,6 +253,8 @@ class PcapDataParser:
                     data["PbGetRoleListNotify"]["role_list"]
                 )
                 logger.info(f"從 Wuthery API 提取到 {len(self.role_data)} 個角色")
+            else:
+                logger.error("數據中沒有 PbGetRoleListNotify 或 role_list")
 
             # 提取武器數據
             if "WeaponItemResponse" in data:
@@ -290,10 +293,12 @@ class PcapDataParser:
                 await self.save_pcap_data(waves_data_dict)
                 # 保存用户基本信息
                 await save_user_info(
-                    str(self.account_info.id),
-                    self.account_info.name[:7],
-                    self.account_info.level,
-                    self.account_info.worldLevel,
+                    uid=str(self.account_info.id),
+                    name=self.account_info.name[:7],
+                    level=self.account_info.level if self.account_info.level else 0,
+                    worldLevel=self.account_info.worldLevel if self.account_info.worldLevel else 0,
+                    achievementCount=self.account_info.achievementCount if self.account_info.achievementCount else 0,
+                    achievementStar=self.account_info.achievementStar if self.account_info.achievementStar else 0,
                 )
 
             return role_detail_list
@@ -308,7 +313,7 @@ class PcapDataParser:
             uid = base_info.get("id")
             if not uid:
                 logger.warning("從 Wuthery API 提取用户id失敗")
-                return []
+                return
 
             # 初始化默认值
             level = 0
@@ -332,7 +337,23 @@ class PcapDataParser:
 
         except Exception as e:
             logger.exception("從 Wuthery API 提取角色數據失敗", e)
-            return []
+
+    def _extract_achievement_info_data_from_wuthery(self, achievement_info: Dict[str, Any]):
+        """從 Wuthery API 格式提取用户成就數據"""
+        try:
+            achievement_count = achievement_info.get("finished_achievement_num", 0)
+            achievement_star = achievement_info.get("achievement_finished_star", 0)
+
+            # 更新用户基本信息中的成就數據
+            self.account_info.achievementCount = achievement_count
+            self.account_info.achievementStar = achievement_star
+
+            logger.debug(
+                f"提取用户成就數據: 已达成成就 {achievement_count} 个, 成就星数 {achievement_star}"
+            )
+
+        except Exception as e:
+            logger.exception("從 Wuthery API 提取用户成就數據失敗", e)
 
     def _extract_role_data_from_wuthery(self, role_list: List[Dict[str, Any]]):
         """從 Wuthery API 格式提取角色數據"""
@@ -740,12 +761,7 @@ class PcapDataParser:
 
             # 獲取套裝名稱
             fetter_group_name = echo_detail.get_group_name_by_gid(fetter_group_id)
-            # 確保 fetter_group_name 不為 None
-            if fetter_group_name is None:
-                fetter_group_name = "未知套装"
-            logger.debug(
-                f"角色 {role.role.roleName} 添加声骸: {phantom_name} (套装：{fetter_group_name} ID: {phantom_id})"
-            )
+            logger.debug(f"角色 {role.role.roleName} 添加声骸: {phantom_name} (套装：{fetter_group_name} ID: {phantom_id})")
 
             # 構建聲骸數據結構，符合 EquipPhantom 模型
             phantom_data = {

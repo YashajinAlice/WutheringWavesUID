@@ -120,6 +120,15 @@ async def draw_card_help():
         ]
     )
 
+    yun = "\n".join(
+        [
+            "云游戏获取方式",
+            "1.复制以下链接到浏览器打开",
+            "https://ga.camellya.xyz",
+            "2.登录后,依次点击`刷新记录`,`复制记录`按钮",
+        ]
+    )
+
     text = "\n".join(
         [
             "如何导入抽卡记录",
@@ -129,7 +138,7 @@ async def draw_card_help():
             "抽卡链接具有有效期，请在有效期内尽快导入",
         ]
     )
-    msg = [warn, android, ios, pc, text]
+    msg = [warn, android, ios, pc, yun, text]
     return msg
 
 
@@ -265,7 +274,7 @@ async def draw_card(uid: str, ev: Event):
 
     item_fg = Image.open(TEXT_PATH / "char_bg.png")
     up_icon = Image.open(TEXT_PATH / "up_tag.png")
-    up_icon = up_icon.resize((68, 52), Image.Resampling.LANCZOS)
+    up_icon = up_icon.resize((68, 52))
 
     async def draw_pic(item) -> Image.Image:
         item_bg = Image.new("RGBA", (167, 170))
@@ -275,7 +284,7 @@ async def draw_card(uid: str, ev: Event):
         item_temp = Image.new("RGBA", (167, 170))
         if item["resourceType"] == "武器":
             item_icon = await get_square_weapon(item["resourceId"])
-            item_icon = item_icon.resize((130, 130), Image.Resampling.LANCZOS).convert("RGBA")
+            item_icon = item_icon.resize((130, 130)).convert("RGBA")
             item_temp.paste(item_icon, (22, 0), item_icon)
         else:
             item_icon = await get_square_avatar(item["resourceId"])
@@ -334,7 +343,7 @@ async def draw_card(uid: str, ev: Event):
 
         level_path = TEXT_PATH / f"{level}"
         level_icon = Image.open(random.choice(list(level_path.iterdir())))
-        level_icon = level_icon.resize((140, 140), Image.Resampling.LANCZOS).convert("RGBA")
+        level_icon = level_icon.resize((140, 140)).convert("RGBA")
         tag = HOMO_TAG[level]
 
         title_draw.text((160, 178), avg_s, "white", waves_font_32, "mm")
@@ -430,7 +439,7 @@ async def draw_pic_with_ring(ev: Event):
 
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
     img = Image.new("RGBA", (320, 320))
-    mask = mask_pic.resize((250, 250), Image.Resampling.LANCZOS)
+    mask = mask_pic.resize((250, 250))
     resize_pic = crop_center_img(pic, 250, 250)
     img.paste(resize_pic, (20, 20), mask)
     return img
@@ -442,14 +451,14 @@ async def get_random_card_polygon(ev: Event):
     card_img = Image.open(f"{CARD_POLYGON_PATH}/{path}").convert("RGBA")
 
     avatar = await draw_pic_with_ring(ev)
-    avatar = avatar.resize((500, 500), Image.Resampling.LANCZOS)
+    avatar = avatar.resize((500, 500))
     card_img.paste(avatar, (-10, 150), avatar)
 
     avatar_ring = Image.open(TEXT_PATH / "avatar_ring.png")
-    avatar_ring = avatar_ring.resize((450, 450), Image.Resampling.LANCZOS)
+    avatar_ring = avatar_ring.resize((450, 450))
     card_img.paste(avatar_ring, (-10, 150), avatar_ring)
 
-    return card_img.resize((280, 400), Image.Resampling.LANCZOS)
+    return card_img.resize((280, 400))
 
 
 async def draw_uid_avatar(uid, ev, card_img):
@@ -465,7 +474,7 @@ async def draw_uid_avatar(uid, ev, card_img):
     base_info_draw.text(
         (226, 173), f"特征码:  {account_info.id}", GOLD, waves_font_25, "lm"
     )
-    base_info_bg = base_info_bg.resize((900, 450), Image.Resampling.LANCZOS)
+    base_info_bg = base_info_bg.resize((900, 450))
     card_img.alpha_composite(base_info_bg, (110, 30))
     #
     card_polygon = await get_random_card_polygon(ev)

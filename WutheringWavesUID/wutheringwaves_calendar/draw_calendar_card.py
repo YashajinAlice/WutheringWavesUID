@@ -264,7 +264,7 @@ async def draw_calendar_img(ev: Event, uid: str):
 
         else:
             linkUrl = Image.open(TEXT_PATH / cont.contentUrl)
-        linkUrl = linkUrl.resize((100, 100), Image.Resampling.LANCZOS)  # type: ignore
+        linkUrl = linkUrl.resize((100, 100))  # type: ignore
         event_bg.paste(linkUrl, (40, 40), linkUrl)
         event_bg_draw.text((160, 60), f"{cont.title}", SPECIAL_GOLD, ww_font_30, "lm")
 
@@ -320,7 +320,7 @@ async def draw_calendar_gacha(side_module, gacha_type):
                     return None
                 pic = await get_square_weapon(id)
 
-            pic = pic.resize((180, 180), Image.Resampling.LANCZOS)
+            pic = pic.resize((180, 180))
             return {"name": name, "id": id, "pic": pic}
 
         tasks = [
@@ -348,7 +348,7 @@ async def draw_banner(wiki_home, img):
     # banner_bg = Image.open(BytesIO((await sget(banner_bg)).content)).convert("RGBA")
     banner_bg = await pic_download_from_url(CALENDAR_PATH, banner_bg)
 
-    banner_bg = banner_bg.resize((1200, 675), Image.Resampling.LANCZOS)  # type: ignore
+    banner_bg = banner_bg.resize((1200, 675))  # type: ignore
     banner_mask = Image.open(TEXT_PATH / "banner_mask.png")
     banner_bg = crop_center_img(banner_bg, banner_mask.size[0], banner_mask.size[1])
 

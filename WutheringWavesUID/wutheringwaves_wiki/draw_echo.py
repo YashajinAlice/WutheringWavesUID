@@ -33,7 +33,7 @@ async def parse_echo_base_content(echo_id, echo_model: EchoModel, image, card_im
     # echo 图片
     echo_pic = await get_phantom_img(echo_id, "")
     echo_pic = crop_center_img(echo_pic, 110, 110)
-    echo_pic = echo_pic.resize((250, 250), Image.Resampling.LANCZOS)
+    echo_pic = echo_pic.resize((250, 250))
 
     draw = ImageDraw.Draw(image)
     draw.rectangle([20, 20, 330, 380], fill=(0, 0, 0, int(0.4 * 255)))
@@ -51,7 +51,7 @@ async def parse_echo_base_content(echo_id, echo_model: EchoModel, image, card_im
     group_name = echo_model.get_group_name()
     for index, name in enumerate(group_name):
         effect_image = await get_attribute_effect(name)
-        effect_image = effect_image.resize((30, 30), Image.Resampling.LANCZOS)
+        effect_image = effect_image.resize((30, 30))
         card_img.alpha_composite(effect_image, (echo_name_width + index * 35, 40))
 
 
@@ -137,7 +137,7 @@ async def parse_echo_statistic_content(echo_model: EchoModel, echo_image):
             (480, 207 + index * 50), f"{row[1]}", "white", waves_font_30, "rm"
         )
 
-    echo_bg_temp = echo_bg_temp.resize((350, 175), Image.Resampling.LANCZOS)
+    echo_bg_temp = echo_bg_temp.resize((350, 175))
     echo_image.alpha_composite(echo_bg_temp, (10, 200))
 
 

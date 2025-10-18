@@ -5,10 +5,10 @@ from pathlib import Path
 from typing import Optional
 
 import aiohttp
+from gsuid_core.sv import SV
 from gsuid_core.bot import Bot
 from gsuid_core.models import Event
 from gsuid_core.logger import logger
-from gsuid_core.sv import SV, get_plugin_available_prefix
 
 from .pcap_api import pcap_api
 from ..utils.hint import error_reply
@@ -16,16 +16,7 @@ from .pcap_parser import PcapDataParser
 from ..utils.database.models import WavesBind
 from .pcap_file_handler import PcapFileHandler
 from ..utils.error_reply import WAVES_CODE_097, WAVES_CODE_103
-
-PREFIX = get_plugin_available_prefix("WutheringWavesUID")
-
-
-# 延遲導入以避免循環依賴
-def get_config():
-    from ..wutheringwaves_config import WutheringWavesConfig
-
-    return WutheringWavesConfig
-
+from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
 
 sv_pcap_parse = SV("pcap解析")
 sv_pcap_file = SV("pcap文件处理")
@@ -68,6 +59,7 @@ async def pcap_file_handler(bot: Bot, ev: Event):
 @sv_pcap_parse.on_fullmatch(
     (
         "解析",
+        "pcap解析",
         "jc",
     ),
     block=True,
@@ -217,17 +209,17 @@ async def pcap_parse(bot: Bot, ev: Event):
 async def pcap_help(bot: Bot, ev: Event):
     """Wuthery pcap 数据导入帮助"""
     url = "https://wuthery.com/guides"
-    WutheringWavesConfig = get_config()
     if WutheringWavesConfig.get_config("WavesTencentWord").data:
         url = f"https://docs.qq.com/scenario/link.html?url={url}"
 
     warn = "\n".join(
         [
             "导入前请注意：",
-            "1. 此方法通过抓取游戏网络数据包实现，完全安全，无封号风险",
+            "1. 此方法通过抓取游戏网络数据包实现，可直接导入所有角色面板数据",
             # "3. 用户账号系统（云端保存与同步）即将上线",
-            "2. 请勿上传含有隐私信息的文件",
-            f"3. 具体教程请前往[ {url} ]查看, 内有视频教程",
+            "2. 加速器等网络工具可能导致抓包失败",
+            "3. 请勿上传含有隐私信息的 .pcap 文件",
+            f"4. 具体教程请前往[ {url} ]查看, 内有视频教程",
             "\n",
         ]
     )

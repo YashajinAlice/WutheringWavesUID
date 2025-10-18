@@ -24,15 +24,9 @@ async def add_cookie(ev: Event, ck: str, did: str) -> str:
     kuroWavesUserInfos = kuroWavesUserInfos.data
 
     # 檢查綁定限制
-    try:
-        from ..wutheringwaves_payment.payment_manager import payment_manager
+    from ..wutheringwaves_config import WutheringWavesConfig
 
-        max_bind_num = payment_manager.get_max_bind_num(ev.user_id)
-    except ImportError:
-        # 如果付費模組未安裝，使用舊的配置
-        from ..wutheringwaves_config import WutheringWavesConfig
-
-        max_bind_num: int = WutheringWavesConfig.get_config("MaxBindNum").data
+    max_bind_num: int = WutheringWavesConfig.get_config("MaxBindNum").data
 
     # 獲取當前已綁定的UID列表
     current_uid_list = await WavesBind.get_uid_list_by_game(ev.user_id, ev.bot_id)
@@ -118,20 +112,7 @@ async def add_cookie(ev: Event, ck: str, did: str) -> str:
     if len(role_list) == 0:
         # 檢查是否因為綁定限制導致失敗
         if current_bind_count >= max_bind_num:
-            try:
-                from ..wutheringwaves_payment.payment_manager import (
-                    payment_manager,
-                )
-
-                price = payment_manager.get_premium_price()
-                return (
-                    f"[鸣潮] 登录失败！\n"
-                    f"❌ 绑定特征码达到上限（{max_bind_num}個）\n"
-                    f"💎 升級Premium會員可無限制綁定UID！\n"
-                    f"💰 價格：{price} 台幣/月"
-                )
-            except ImportError:
-                return f"[鸣潮] 登录失败！\n❌ 绑定特征码达到上限（{max_bind_num}個）"
+            return f"[鸣潮] 登录失败！\n❌ 绑定特征码达到上限（{max_bind_num}個）"
         return "登录失败\n"
 
     msg = []
@@ -140,18 +121,8 @@ async def add_cookie(ev: Event, ck: str, did: str) -> str:
 
     # 添加綁定限制提示
     final_bind_count = current_bind_count + new_bind_count
-    if max_bind_num != 999 and final_bind_count >= max_bind_num * 0.8:  # 達到80%時提示
-        try:
-            from ..wutheringwaves_payment.payment_manager import (
-                payment_manager,
-            )
-
-            price = payment_manager.get_premium_price()
-            msg.append(f"\n💡 您已綁定 {final_bind_count}/{max_bind_num} 個UID")
-            if final_bind_count >= max_bind_num:
-                msg.append(f"💎 升級Premium會員可無限制綁定UID！價格：{price} 台幣/月")
-        except ImportError:
-            msg.append(f"\n💡 您已綁定 {final_bind_count}/{max_bind_num} 個UID")
+    if final_bind_count >= max_bind_num * 0.8:  # 達到80%時提示
+        msg.append(f"\n💡 您已綁定 {final_bind_count}/{max_bind_num} 個UID")
 
     return "\n".join(msg)
 

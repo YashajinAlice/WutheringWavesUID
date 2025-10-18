@@ -1,37 +1,25 @@
-import time
 import asyncio
+import time
 from pathlib import Path
-from typing import List, Union, Optional
+from typing import List, Optional, Union
+
+from PIL import Image, ImageDraw
+from pydantic import BaseModel
 
 from gsuid_core.bot import Bot
-from pydantic import BaseModel
-from PIL import Image, ImageDraw
-from gsuid_core.models import Event
 from gsuid_core.logger import logger
+from gsuid_core.models import Event
 from gsuid_core.utils.image.convert import convert_img
 from gsuid_core.utils.image.image_tools import crop_center_img
 
-from ..utils.calc import WuWaCalc
+from ..utils.util import send_master_info
 from ..utils.cache import TimedCache
-from ..utils.util import hide_uid, send_master_info
+from ..utils.calc import WuWaCalc
+from ..utils.calculate import (
+    calc_phantom_score,
+    get_calc_map,
+)
 from ..utils.database.models import WavesBind, WavesUser
-from ..wutheringwaves_config import WutheringWavesConfig
-from ..utils.calculate import get_calc_map, calc_phantom_score
-from ..utils.char_info_utils import get_all_role_detail_info_list
-from ..wutheringwaves_analyzecard.user_info_utils import (
-    get_region_for_rank,
-    get_user_detail_info,
-)
-from ..utils.image import (
-    RED,
-    GREY,
-    SPECIAL_GOLD,
-    AVATAR_GETTERS,
-    get_ICON,
-    add_footer,
-    get_waves_bg,
-    get_square_avatar,
-)
 from ..utils.fonts.waves_fonts import (
     waves_font_12,
     waves_font_16,
@@ -42,50 +30,27 @@ from ..utils.fonts.waves_fonts import (
     waves_font_34,
     waves_font_58,
 )
+from ..utils.image import (
+    GREY,
+    RED,
+    SPECIAL_GOLD,
+    AVATAR_GETTERS,
+    add_footer,
+    get_ICON,
+    get_square_avatar,
+    get_waves_bg,
+)
+from ..utils.util import hide_uid
+from ..wutheringwaves_config import WutheringWavesConfig
+from ..utils.char_info_utils import get_all_role_detail_info_list
+from ..wutheringwaves_analyzecard.user_info_utils import get_region_for_rank, get_user_detail_info
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 avatar_mask = Image.open(TEXT_PATH / "avatar_mask.png")
 char_mask = Image.open(TEXT_PATH / "char_mask.png")
 pic_cache = TimedCache(600, 200)
-rank_cache = TimedCache(86400, 50)  # 24小時緩存排行數據
 
 rank_length = 20  # 排行显示前20名
-
-
-def should_refresh_cache(cache_date: str) -> bool:
-    """檢查是否需要刷新緩存（每日凌晨4點過後）"""
-    if not cache_date:
-        return True
-
-    try:
-        # 獲取當前時間
-        current_time = time.time()
-        current_date = time.strftime("%Y-%m-%d")
-        current_hour = time.localtime(current_time).tm_hour
-
-        # 如果日期不同，需要更新
-        if cache_date != current_date:
-            logger.info(f"[cache] 日期不同，需要更新: {cache_date} -> {current_date}")
-            return True
-
-        # 如果日期相同，檢查是否已過凌晨4點
-        if current_hour >= 4:
-            # 檢查緩存是否是在今天凌晨4點之前創建的
-            cache_time = time.strptime(cache_date, "%Y-%m-%d")
-            cache_timestamp = time.mktime(cache_time)
-            cache_hour = time.localtime(cache_timestamp).tm_hour
-
-            if cache_hour < 4:
-                logger.info(
-                    f"[cache] 已過凌晨4點，需要更新: 當前{current_hour}點，緩存{cache_hour}點"
-                )
-                return True
-
-        logger.info(f"[cache] 使用緩存: {cache_date}, 當前{current_hour}點")
-        return False
-    except Exception as e:
-        logger.warning(f"檢查緩存日期失敗: {e}")
-        return True
 
 
 class BotTotalRankDetail(BaseModel):
@@ -155,25 +120,23 @@ async def calculate_user_total_score(user_id, uid: str) -> Optional[BotTotalRank
                 )
                 phantom_score += _score
 
-        if phantom_score == 0:
-            return
-
         if phantom_score >= 175:  # 只计算分数>=175的角色
             total_score += phantom_score
-            char_score_details.append(
-                {"char_id": role_detail.role.roleId, "phantom_score": phantom_score}
-            )
+            char_score_details.append({
+                'char_id': role_detail.role.roleId,
+                'phantom_score': phantom_score
+            })
 
     if total_score == 0 or not char_score_details:
         return None
 
     # 按角色分数排序，取前10个
-    char_score_details.sort(key=lambda x: x["phantom_score"], reverse=True)
+    char_score_details.sort(key=lambda x: x['phantom_score'], reverse=True)
     top_10_chars = char_score_details[:10]
 
     # 获取区服信息
     region_text, region_color = get_region_for_rank(uid)
-
+    
     # 获取用户信息
     account_info = await get_user_detail_info(uid)
 
@@ -185,35 +148,12 @@ async def calculate_user_total_score(user_id, uid: str) -> Optional[BotTotalRank
         char_score_details=top_10_chars,
         rank=0,  # 排名后面统一计算
         server=region_text,
-        server_color=region_color,
+        server_color=region_color
     )
 
 
-async def get_bot_total_rank_data(
-    ev: Event, bot_bool: bool
-) -> List[BotTotalRankDetail]:
-    """获取本地用户的练度排行数据（带缓存机制）"""
-    # 生成缓存键
-    cache_key = (
-        f"local_total_rank_{'bot' if bot_bool else 'group'}_{ev.group_id or 'private'}"
-    )
-    cache_date_key = f"local_total_rank_date_{'bot' if bot_bool else 'group'}_{ev.group_id or 'private'}"
-
-    # 获取缓存的日期和数据
-    cached_date = rank_cache.get(cache_date_key)
-    cached_data = rank_cache.get(cache_key)
-
-    logger.info(
-        f"[local_total_rank] 缓存检查: key={cache_key}, date={cached_date}, data={'有' if cached_data else '无'}"
-    )
-
-    # 检查是否需要刷新缓存
-    if cached_data and cached_date and not should_refresh_cache(cached_date):
-        logger.info(f"[local_total_rank] 使用缓存数据")
-        return cached_data
-
-    logger.info(f"[local_total_rank] 重新计算排行数据")
-
+async def get_bot_total_rank_data(ev: Event, bot_bool: bool) -> List[BotTotalRankDetail]:
+    """获取本地用户的练度排行数据"""
     if bot_bool:
         users = await WavesBind.get_all_data()
     else:
@@ -233,19 +173,16 @@ async def get_bot_total_rank_data(
 
             rank_data_list = []
             for uid in user.uid.split("_"):
-                if tokenLimitFlag and (user.user_id, uid) not in wavesTokenUsersMap:
+                if (tokenLimitFlag and 
+                    (user.user_id, uid) not in wavesTokenUsersMap):
                     continue
                 try:
                     rank_data = await calculate_user_total_score(user.user_id, uid)
                     if rank_data:
                         rank_data_list.append(rank_data)
                 except Exception as e:
-                    logger.warning(
-                        f"用户 {user.user_id} 的UID {uid} 计算练度总分失败: {e}"
-                    )
-                    await send_master_info(
-                        f"用户 {user.user_id} 的UID {uid} 计算练度总分失败: {e}"
-                    )
+                    logger.warning(f"用户 {user.user_id} 的UID {uid} 计算练度总分失败: {e}")
+                    await send_master_info(f"用户 {user.user_id} 的UID {uid} 计算练度总分失败: {e}")
 
             return rank_data_list
 
@@ -259,23 +196,15 @@ async def get_bot_total_rank_data(
 
     # 按总分排序
     all_rank_data.sort(key=lambda x: x.total_score, reverse=True)
-
+    
     # 设置排名
     for rank, data in enumerate(all_rank_data, 1):
         data.rank = rank
 
-    # 保存到缓存
-    current_date = time.strftime("%Y-%m-%d")
-    rank_cache.set(cache_key, all_rank_data)
-    rank_cache.set(cache_date_key, current_date)
-    logger.info(f"[local_total_rank] 缓存已更新: {current_date}")
-
     return all_rank_data
 
 
-async def draw_local_total_rank(
-    bot: Bot, ev: Event, bot_bool: bool = False
-) -> Union[str, bytes]:
+async def draw_local_total_rank(bot: Bot, ev: Event, bot_bool: bool = False) -> Union[str, bytes]:
     """绘制练度Bot排行"""
     self_uid = await WavesBind.get_uid_by_game(ev.user_id, ev.bot_id)
 
@@ -287,7 +216,7 @@ async def draw_local_total_rank(
     rank_data_list = rank_all_list[:rank_length]
     if not self_uid:
         self_uid = ""
-    else:  # 如果用户不在前20名，添加用户数据
+    else: # 如果用户不在前20名，添加用户数据
         for r in rank_all_list:
             if r.waves_id == self_uid and r.rank > 20:
                 rank_data_list.append(r)
@@ -345,8 +274,7 @@ async def draw_local_total_rank(
 
     # 获取头像
     tasks = [
-        get_avatar(ev, rank.user_id, rank.char_score_details[0]["char_id"])
-        for rank in rank_data_list
+        get_avatar(ev, rank.user_id, rank.char_score_details[0]["char_id"]) for rank in rank_data_list
     ]
     results = await asyncio.gather(*tasks)
 
@@ -392,11 +320,7 @@ async def draw_local_total_rank(
         if detail.waves_id == self_uid:
             uid_color = RED
         bar_draw.text(
-            (350, 40),
-            f"特征码: {hide_uid(detail.waves_id)}",
-            uid_color,
-            waves_font_20,
-            "lm",
+            (350, 40), f"特征码: {hide_uid(detail.waves_id)}", uid_color, waves_font_20, "lm"
         )
 
         # 区服信息
@@ -406,9 +330,7 @@ async def draw_local_total_rank(
             region_draw.rounded_rectangle(
                 [0, 0, 200, 30], radius=6, fill=detail.server_color + (int(0.9 * 255),)
             )
-            region_draw.text(
-                (100, 15), f"Server: {detail.server}", "white", waves_font_18, "mm"
-            )
+            region_draw.text((100, 15), f"Server: {detail.server}", "white", waves_font_18, "mm")
             bar_bg.alpha_composite(region_block, (350, 65))
 
         # 总分数
@@ -435,7 +357,7 @@ async def draw_local_total_rank(
                 char_x = char_start_x + i * char_spacing
 
                 # 获取角色头像
-                char_avatar = await get_square_avatar(char["char_id"])
+                char_avatar = await get_square_avatar(char['char_id'])
                 char_avatar = char_avatar.resize((char_size, char_size))
 
                 # 应用圆形遮罩
@@ -523,7 +445,7 @@ async def get_avatar(
         avatar_mask_temp = avatar_mask.copy()
         mask_pic_temp = avatar_mask_temp.resize((120, 120))
         img.paste(pic_temp, (0, -5), mask_pic_temp)
-
+    
     except Exception:
         # 打印异常，进行降级处理
         logger.warning("头像获取失败，使用默认头像")

@@ -1,21 +1,22 @@
-from .damage import DamageAttribute
-from .abstract import (
+from ...utils.damage.abstract import (
     CharAbstract,
     WavesCharRegister,
     WavesWeaponRegister,
 )
+from .damage import DamageAttribute
 from .utils import (
-    CHAR_ATTR_VOID,
+    CHAR_ATTR_CELESTIAL,
+    CHAR_ATTR_FREEZING,
     CHAR_ATTR_MOLTEN,
     CHAR_ATTR_SIERRA,
     CHAR_ATTR_SINKING,
-    CHAR_ATTR_FREEZING,
-    CHAR_ATTR_CELESTIAL,
-    temp_atk,
-    hit_damage,
-    skill_damage,
+    CHAR_ATTR_VOID,
     attack_damage,
+    hit_damage,
+    phantom_damage,
     liberation_damage,
+    skill_damage,
+    temp_atk,
 )
 
 
@@ -223,6 +224,88 @@ class Char_1206(CharAbstract):
             attr.add_dmg_deepen(0.25, title, msg)
 
 
+class Char_1207(CharAbstract):
+    id = 1207
+    name = "露帕"
+    starLevel = 5
+
+    def _do_buff(
+        self,
+        attr: DamageAttribute,
+        chain: int = 0,
+        resonLevel: int = 1,
+        isGroup: bool = True,
+    ):
+        def get_molten_num(
+            attr: DamageAttribute,
+        ):
+            """
+            获取热熔人数，队伍人数
+            """
+            fix_num = 1
+            for char_id in attr.teammate_char_ids:
+                if int(char_id) // 100 == 12:
+                    fix_num += 1
+            return fix_num, len(attr.teammate_char_ids) + 1
+
+        molten_num, team_num = get_molten_num(attr)
+
+        """获得buff"""
+        title = "露帕-奔狼燎原之焰"
+        msg = "队伍中的角色热熔伤害提升15%"
+        attr.add_dmg_bonus(0.15, title, msg)
+
+        if attr.char_attr == CHAR_ATTR_MOLTEN:
+            title = "露帕-延奏技能"
+            msg = "下一位登场角色热熔伤害加深20%"
+            attr.add_dmg_deepen(0.2, title, msg)
+
+        if attack_damage == attr.char_damage:
+            title = "露帕-延奏技能"
+            msg = "下一位登场角色普攻伤害加深25%"
+            attr.add_dmg_deepen(0.25, title, msg)
+        
+        if chain >= 2:
+            title = "露帕-二链"
+            msg = "施放共鸣解放时，队伍中的角色热熔伤害提升(20+20)%"
+            attr.add_dmg_bonus(0.4, title, msg)
+        
+        if chain >= 3:
+            title = "露帕-荣光效果-三链"
+            msg = "角色攻击时无视15%热熔抗性"
+            attr.add_enemy_resistance(-0.15, title, msg)
+        else:
+            # 共鸣解放·荣光
+            # 施放共鸣解放荣光欢酣于火时，额外获得荣光效果，35秒内：
+            # 队伍中的角色攻击时无视3%热熔抗性，并且队伍中每有一名除露帕外的热熔属性角色，无视热熔抗性效果增加3%，上限为9%，当队伍中的热熔属性角色达到3名时，无视热熔抗性的效果额外增加6%。
+            title = "露帕-荣光效果"
+            msg = f"角色攻击时无视3*{molten_num}%热熔抗性"
+            attr.add_enemy_resistance(-0.03 * molten_num, title, msg)
+
+            if molten_num >= 3:
+                msg = "角色攻击时无视6%热熔抗性"
+                attr.add_enemy_resistance(-0.06, title, msg)
+
+        title = "露帕-追猎-共鸣解放"
+        if molten_num >= 3 or chain >= 3:
+            msg = "热熔提升(10+10)%"
+            attr.add_dmg_bonus(0.2, title, msg)
+        else:
+            msg = "热熔提升10%"
+            attr.add_dmg_bonus(0.1, title, msg)
+
+        msg = f"攻击力提升(6*{team_num})%"
+        attr.add_atk_percent(0.06 * team_num, title, msg)
+
+        # 焰痕
+        weapon_clz = WavesWeaponRegister.find_class(21010036)
+        if weapon_clz:
+            w = weapon_clz(21010036, 90, 6, resonLevel)
+            method = getattr(w, "cast_hit", None)
+            if callable(method):
+                method(attr, isGroup)
+
+
 class Char_1301(CharAbstract):
     id = 1301
     name = "卡卡罗"
@@ -355,6 +438,91 @@ class Char_1408(Char_1406):
     id = 1408
     name = "漂泊者·气动"
     starLevel = 5
+
+
+class Char_1410(CharAbstract):
+    id = 1410
+    name = "尤诺"
+    starLevel = 5
+
+    def _do_buff(
+        self,
+        attr: DamageAttribute,
+        chain: int = 0,
+        resonLevel: int = 1,
+        isGroup: bool = True,
+    ):
+        """获得buff"""
+        if attr.char_template == temp_atk:
+            title = "尤诺-合鸣效果-轻云出月"
+            msg = "使用延奏技能后，下一个登场的共鸣者攻击提升22.5%"
+            attr.add_atk_percent(0.225, title, msg)
+
+        # 10层苍白死光的祝颂
+        title = "尤诺-苍白死光的祝颂"
+        msg = "满月领域中获得十次护盾后，角色全伤害加深4%*10"
+        attr.add_dmg_deepen(0.04 * 10, title, msg)
+
+        if chain >= 2:
+            title = "尤诺-二链"
+            msg = "苍白死光的祝颂叠加至10层时额外获得40%全伤害加深"
+            attr.add_dmg_deepen(0.4, title, msg)
+
+        # 无常凶鹭
+        title = "尤诺-声骸技能-无常凶鹭"
+        msg = "施放延奏技能，则可使下一个变奏登场的角色伤害提升12%"
+        attr.add_dmg_bonus(0.12, title, msg)
+
+        if hit_damage == attr.char_damage:
+            title = "尤诺-延奏技能"
+            msg = "下一位登场角色重击伤害加深50%"
+            attr.add_dmg_deepen(0.5, title, msg)
+
+
+class Char_1411(CharAbstract):
+    id = 1411
+    name = "仇远"
+    starLevel = 5
+
+    def _do_buff(
+        self,
+        attr: DamageAttribute,
+        chain: int = 0,
+        resonLevel: int = 1,
+        isGroup: bool = True,
+    ):
+        """获得buff"""
+        # 共鸣解放爆伤提升
+        title = "仇远-共鸣解放爆伤提升"
+        msg = "仇远暴击至少65%时，登场角色提升30%暴击伤害"
+        attr.add_crit_dmg(0.3, title, msg)
+
+        if phantom_damage == attr.char_damage:    
+            title = "仇远-息界同调之律"
+            msg = "队伍中角色声骸技能伤害加成提升16%"
+            attr.add_dmg_bonus(0.16, title, msg)
+
+            # 竹照
+            title = "仇远-竹照"
+            msg = "附近队伍中登场角色声骸技能伤害加成提升30%"
+            attr.add_dmg_bonus(0.3, title, msg)
+
+            if chain >= 2:
+                title = "仇远-二链"
+                msg = "竹照额外效果：附近队伍中角色声骸技能伤害加深30%"
+                attr.add_dmg_deepen(0.3, title, msg)
+
+            title = "仇远-延奏技能"
+            msg = "下一位登场角色声骸技能伤害加深50%"
+            attr.add_dmg_deepen(0.5, title, msg)
+
+        # 裁竹
+        weapon_clz = WavesWeaponRegister.find_class(21020066)
+        if weapon_clz:
+            w = weapon_clz(21020066, 90, 6, resonLevel)
+            method = getattr(w, "cast_variation", None)
+            if callable(method):
+                method(attr, isGroup)
 
 
 class Char_1501(CharAbstract):

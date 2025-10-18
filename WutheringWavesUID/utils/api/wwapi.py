@@ -1,6 +1,6 @@
 from typing import Dict, List, Literal, Optional
 
-from pydantic import Field, BaseModel
+from pydantic import BaseModel, Field
 
 MAIN_URL = "https://top.camellya.xyz"
 # MAIN_URL = "http://127.0.0.1:9001"

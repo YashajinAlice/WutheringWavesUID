@@ -2,22 +2,16 @@ from pathlib import Path
 from typing import Union
 
 from PIL import Image, ImageDraw
+
 from gsuid_core.models import Event
 from gsuid_core.utils.image.convert import convert_img
 from gsuid_core.utils.image.image_tools import crop_center_img
 
-from ..utils.hint import error_reply
-from ..utils.waves_api import waves_api
+from ..utils.api.model import AccountBaseInfo, RoleDetailData, WeaponData
 from ..utils.ascension.weapon import get_breach
-from ..utils.resource.constant import NORMAL_LIST
-from ..utils.refresh_char_detail import refresh_char
-from ..utils.resource.download_file import get_skill_img
-from ..wutheringwaves_config import WutheringWavesConfig
-from ..utils.error_reply import WAVES_CODE_099, WAVES_CODE_102
 from ..utils.char_info_utils import get_all_roleid_detail_info_int
+from ..utils.error_reply import WAVES_CODE_102, WAVES_CODE_099
 from ..utils.expression_ctx import WavesCharRank, get_waves_char_rank
-from ..utils.api.model import WeaponData, RoleDetailData, AccountBaseInfo
-from ..wutheringwaves_analyzecard.user_info_utils import get_user_detail_info
 from ..utils.fonts.waves_fonts import (
     waves_font_16,
     waves_font_18,
@@ -31,20 +25,27 @@ from ..utils.fonts.waves_fonts import (
     waves_font_40,
     waves_font_42,
 )
+from ..utils.hint import error_reply
 from ..utils.image import (
+    CHAIN_COLOR,
+    CHAIN_COLOR_LIST,
     GOLD,
     GREY,
-    CHAIN_COLOR,
     SPECIAL_GOLD,
-    CHAIN_COLOR_LIST,
     WEAPON_RESONLEVEL_COLOR,
     add_footer,
-    get_waves_bg,
     get_attribute,
     get_event_avatar,
     get_square_avatar,
     get_square_weapon,
+    get_waves_bg,
 )
+from ..utils.refresh_char_detail import refresh_char
+from ..utils.resource.constant import NORMAL_LIST
+from ..utils.resource.download_file import get_skill_img
+from ..utils.waves_api import waves_api
+from ..wutheringwaves_analyzecard.user_info_utils import get_user_detail_info
+from ..wutheringwaves_config import WutheringWavesConfig
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 
@@ -89,7 +90,7 @@ async def draw_char_list_img(
     user_waves_id: str = "",
 ) -> Union[str, bytes]:
     _, ck = await waves_api.get_ck_result(user_waves_id, user_id, ev.bot_id)
-    account_info = await get_user_detail_info(uid)
+    account_info= await get_user_detail_info(uid)
 
     all_role_detail = await get_all_roleid_detail_info(
         ev,
@@ -113,7 +114,7 @@ async def draw_char_list_img(
     info_bg_h = 260
     bar_star_h = 110
     h = avatar_h + info_bg_h + len(waves_char_rank) * bar_star_h + 80
-    card_img = get_waves_bg(1000, h, "bg3", user_id)
+    card_img = get_waves_bg(1000, h, "bg3")
 
     # 基础信息 名字 特征码
     base_info_bg = Image.open(TEXT_PATH / "base_info_bg.png")
@@ -130,7 +131,7 @@ async def draw_char_list_img(
     avatar = await draw_pic_with_ring(ev, is_peek)
     avatar_ring = Image.open(TEXT_PATH / "avatar_ring.png")
     card_img.paste(avatar, (25, 70), avatar)
-    avatar_ring = avatar_ring.resize((180, 180), Image.Resampling.LANCZOS)
+    avatar_ring = avatar_ring.resize((180, 180))
     card_img.paste(avatar_ring, (35, 80), avatar_ring)
 
     # 账号基本信息，由于可能会没有，放在一起
@@ -175,9 +176,7 @@ async def draw_char_list_img(
         role_attribute = await get_attribute(
             role_detail.role.attributeName, is_simple=True  # type: ignore
         )
-        role_attribute = role_attribute.resize(
-            (40, 40), Image.Resampling.LANCZOS
-        ).convert("RGBA")
+        role_attribute = role_attribute.resize((40, 40)).convert("RGBA")
         bar_star.alpha_composite(role_attribute, (170, 20))
         bar_star_draw.text((180, 83), f"Lv.{_rank.level}", GREY, waves_font_22, "mm")
 
@@ -216,7 +215,7 @@ async def draw_char_list_img(
             skill_img = await get_skill_img(
                 role_detail.role.roleId, _skill.skill.name, _skill.skill.iconUrl
             )
-            skill_img = skill_img.resize((70, 70), Image.Resampling.LANCZOS)
+            skill_img = skill_img.resize((70, 70))
             # skill_img = ImageEnhance.Brightness(skill_img).enhance(0.3)
             temp.alpha_composite(skill_img, (25, 25))
 
@@ -238,9 +237,7 @@ async def draw_char_list_img(
             temp_draw.text((62, 120), f"{_skill.level}", color, waves_font_38, "mm")
 
             _x = 100 + i * 65
-            skill_img_temp.alpha_composite(
-                temp.resize((70, 82), Image.Resampling.LANCZOS), dest=(_x, 0)
-            )
+            skill_img_temp.alpha_composite(temp.resize((70, 82)), dest=(_x, 0))
         bar_star.alpha_composite(skill_img_temp, dest=(300, 10))
 
         # 武器
@@ -282,9 +279,7 @@ async def draw_char_list_img(
 
         weapon_bg_temp.alpha_composite(weapon_icon_bg, dest=(45, 0))
 
-        bar_star.alpha_composite(
-            weapon_bg_temp.resize((260, 130), Image.Resampling.LANCZOS), dest=(710, 25)
-        )
+        bar_star.alpha_composite(weapon_bg_temp.resize((260, 130)), dest=(710, 25))
 
         card_img.paste(
             bar_star, (0, avatar_h + info_bg_h + index * bar_star_h), bar_star
@@ -345,7 +340,7 @@ async def draw_pic_with_ring(ev: Event, is_peek: bool = False):
 
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
     img = Image.new("RGBA", (180, 180))
-    mask = mask_pic.resize((160, 160), Image.Resampling.LANCZOS)
+    mask = mask_pic.resize((160, 160))
     resize_pic = crop_center_img(pic, 160, 160)
     img.paste(resize_pic, (20, 20), mask)
 
@@ -355,15 +350,15 @@ async def draw_pic_with_ring(ev: Event, is_peek: bool = False):
 async def draw_pic(roleId):
     pic = await get_square_avatar(roleId)
     pic_temp = Image.new("RGBA", pic.size)
-    pic_temp.paste(pic.resize((160, 160), Image.Resampling.LANCZOS), (10, 10))
+    pic_temp.paste(pic.resize((160, 160)), (10, 10))
 
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
     mask_pic_temp = Image.new("RGBA", mask_pic.size)
     mask_pic_temp.paste(mask_pic, (-20, -45), mask_pic)
 
     img = Image.new("RGBA", (180, 180))
-    mask_pic_temp = mask_pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
-    resize_pic = pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
+    mask_pic_temp = mask_pic_temp.resize((160, 160))
+    resize_pic = pic_temp.resize((160, 160))
     img.paste(resize_pic, (0, 0), mask_pic_temp)
 
     return img

@@ -1,21 +1,21 @@
 from typing import List, Union
 
+from ..damage.abstract import WavesWeaponRegister, WeaponAbstract
 from .damage import DamageAttribute, calc_percent_expression
-from ..damage.abstract import WeaponAbstract, WavesWeaponRegister
 from .utils import (
+    CHAR_ATTR_CELESTIAL,
     CHAR_ATTR_MOLTEN,
     CHAR_ATTR_SIERRA,
-    CHAR_ATTR_CELESTIAL,
     Spectro_Frazzle_Role_Ids,
+    attack_damage,
+    heal_bonus,
+    hit_damage,
+    liberation_damage,
+    phantom_damage,
+    skill_damage,
     temp_atk,
     temp_def,
     temp_life,
-    heal_bonus,
-    hit_damage,
-    skill_damage,
-    attack_damage,
-    phantom_damage,
-    liberation_damage,
 )
 
 
@@ -617,6 +617,14 @@ class Weapon_21020066(WeaponAbstract):
             dmg = f"{self.param(2)}%*2"
             title = self.get_title()
             msg = f"施放声骸技能时，重击伤害加成提升{dmg}"
+            attr.add_dmg_bonus(calc_percent_expression(dmg), title, msg)
+
+    def cast_variation(self, attr: DamageAttribute, isGroup: bool = False):
+        """施放变奏技能"""
+        if attr.char_damage == phantom_damage:
+            dmg = f"{self.param(5)}"
+            title = self.get_title()
+            msg = f"释放变奏技能时，队伍中角色声骸技能伤害提升{dmg}"
             attr.add_dmg_bonus(calc_percent_expression(dmg), title, msg)
 
 

@@ -1,65 +1,46 @@
-import re
 import copy
+import re
 from pathlib import Path
 from typing import Dict, Optional
 
 import httpx
-from gsuid_core.models import Event
-from gsuid_core.logger import logger
 from PIL import Image, ImageDraw, ImageEnhance
+
+from gsuid_core.logger import logger
+from gsuid_core.models import Event
+from ..utils.image import AVATAR_GETTERS
 from gsuid_core.utils.image.convert import convert_img
-from gsuid_core.utils.image.image_tools import get_qq_avatar, crop_center_img
+from gsuid_core.utils.image.image_tools import crop_center_img, get_qq_avatar
 
 from ..utils import hint
-from ..utils.calc import WuWaCalc
-from ..utils.waves_api import waves_api
-from ..wutheringwaves_config import PREFIX
-from ..utils.error_reply import WAVES_CODE_102
-from .role_info_change import change_role_detail
-from ..utils.ascension.char import get_char_model
-from ..utils.api.model_other import EnemyDetailData
-from ..utils.ascension.template import get_template_data
-from ..utils.damage.abstract import DamageDetailRegister
-from ..utils.char_info_utils import get_all_roleid_detail_info
-from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
-from ..utils.api.wwapi import ONE_RANK_URL, OneRankRequest, OneRankResponse
-from ..wutheringwaves_analyzecard.user_info_utils import get_user_detail_info
-from ..wutheringwaves_config.wutheringwaves_config import (
-    ShowConfig,
-    WutheringWavesConfig,
-)
-from ..utils.resource.download_file import (
-    get_chain_img,
-    get_skill_img,
-    get_phantom_img,
-)
 from ..utils.api.model import (
-    WeaponData,
+    AccountBaseInfo,
     OnlineRoleList,
     RoleDetailData,
-    AccountBaseInfo,
+    WeaponData,
 )
+from ..utils.api.model_other import EnemyDetailData
+from ..utils.api.wwapi import ONE_RANK_URL, OneRankRequest, OneRankResponse
+from ..utils.ascension.char import get_char_model
+from ..utils.ascension.template import get_template_data
 from ..utils.ascension.weapon import (
     WavesWeaponResult,
     get_breach,
-    get_weapon_model,
     get_weapon_detail,
+    get_weapon_model,
 )
-from ..utils.resource.constant import (
-    SPECIAL_CHAR,
-    ATTRIBUTE_ID_MAP,
-    DEAFAULT_WEAPON_ID,
-    WEAPON_TYPE_ID_MAP,
-    get_short_name,
-)
+from ..utils.calc import WuWaCalc
 from ..utils.calculate import (
-    get_calc_map,
-    get_max_score,
-    get_valid_color,
     calc_phantom_entry,
     calc_phantom_score,
+    get_calc_map,
+    get_max_score,
     get_total_score_bg,
+    get_valid_color,
 )
+from ..utils.char_info_utils import get_all_roleid_detail_info
+from ..utils.damage.abstract import DamageDetailRegister
+from ..utils.error_reply import WAVES_CODE_102
 from ..utils.fonts.waves_fonts import (
     waves_font_16,
     waves_font_18,
@@ -78,26 +59,46 @@ from ..utils.image import (
     GOLD,
     GREY,
     SPECIAL_GOLD,
-    WAVES_MOONLIT,
-    AVATAR_GETTERS,
     WAVES_FREEZING,
+    WAVES_MOONLIT,
     WAVES_SHUXING_MAP,
     WEAPON_RESONLEVEL_COLOR,
     add_footer,
     change_color,
-    get_waves_bg,
+    draw_text_with_shadow,
     get_attribute,
+    get_attribute_effect,
+    get_attribute_prop,
+    get_custom_gaussian_blur,
+    get_event_avatar,
     get_role_pile,
     get_small_logo,
-    get_weapon_type,
-    get_event_avatar,
     get_square_avatar,
     get_square_weapon,
-    get_attribute_prop,
-    get_attribute_effect,
-    draw_text_with_shadow,
-    get_custom_gaussian_blur,
+    get_waves_bg,
+    get_weapon_type,
 )
+from ..utils.name_convert import alias_to_char_name, char_name_to_char_id
+from ..utils.resource.constant import (
+    ATTRIBUTE_ID_MAP,
+    DEAFAULT_WEAPON_ID,
+    SPECIAL_CHAR,
+    WEAPON_TYPE_ID_MAP,
+    get_short_name,
+)
+from ..utils.resource.download_file import (
+    get_chain_img,
+    get_phantom_img,
+    get_skill_img,
+)
+from ..utils.waves_api import waves_api
+from ..wutheringwaves_config import PREFIX
+from ..wutheringwaves_config.wutheringwaves_config import (
+    ShowConfig,
+    WutheringWavesConfig,
+)
+from .role_info_change import change_role_detail
+from ..wutheringwaves_analyzecard.user_info_utils import get_user_detail_info
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 
@@ -238,7 +239,7 @@ async def ph_card_draw(
             if _phantom and _phantom.phantomProp:
                 props = _phantom.get_props()
                 _score, _bg = calc_phantom_score(
-                    char_name, props, _phantom.cost, calc.calc_temp
+                    role_detail.role.roleId, props, _phantom.cost, calc.calc_temp
                 )
 
                 phantom_score += _score
@@ -250,9 +251,9 @@ async def ph_card_draw(
                     _phantom.phantomProp.phantomId, _phantom.phantomProp.iconUrl
                 )
                 fetter_icon = await get_attribute_effect(_phantom.fetterDetail.name)
-                fetter_icon = fetter_icon.resize((50, 50), Image.Resampling.LANCZOS)
+                fetter_icon = fetter_icon.resize((50, 50))
                 phantom_icon.alpha_composite(fetter_icon, dest=(205, 0))
-                phantom_icon = phantom_icon.resize((100, 100), Image.Resampling.LANCZOS)
+                phantom_icon = phantom_icon.resize((100, 100))
                 sh_temp.alpha_composite(phantom_icon, dest=(20, 20))
                 phantomName = (
                     _phantom.phantomProp.name.replace("·", " ")
@@ -288,15 +289,13 @@ async def ph_card_draw(
 
                 for index in range(0, _phantom.cost):
                     promote_icon = Image.open(TEXT_PATH / "promote_icon.png")
-                    promote_icon = promote_icon.resize(
-                        (30, 30), Image.Resampling.LANCZOS
-                    )
+                    promote_icon = promote_icon.resize((30, 30))
                     sh_temp.alpha_composite(promote_icon, dest=(128 + 30 * index, 90))
 
                 for index, _prop in enumerate(props):
                     oset = 55
                     prop_img = await get_attribute_prop(_prop.attributeName)
-                    prop_img = prop_img.resize((40, 40), Image.Resampling.LANCZOS)
+                    prop_img = prop_img.resize((40, 40))
                     sh_temp.alpha_composite(prop_img, (15, 167 + index * oset))
                     sh_temp_draw = ImageDraw.Draw(sh_temp)
                     name_color = "white"
@@ -367,7 +366,7 @@ async def ph_card_draw(
                     value = calc.phantom_card.get(name, default_value)
                     prop_img = await get_attribute_prop(name)
                     name_color, _ = get_valid_color(name, value, calc.calc_temp)
-                prop_img = prop_img.resize((40, 40), Image.Resampling.LANCZOS)
+                prop_img = prop_img.resize((40, 40))
                 ph_bg = ph_0.copy() if ni % 2 == 0 else ph_1.copy()
                 ph_bg.alpha_composite(prop_img, (20, 32))
                 ph_bg_draw = ImageDraw.Draw(ph_bg)
@@ -445,11 +444,7 @@ async def get_role_need(
                 f"[鸣潮] 特征码[{waves_id}] \n无法获取【{char_name}】角色信息！\n",
             )
     else:
-        avatar = (
-            await draw_pic_with_ring(ev, is_force_avatar, force_resource_id)
-            if not waves_id
-            else await draw_char_with_ring(char_id)
-        )
+        avatar = await draw_pic_with_ring(ev, is_force_avatar, force_resource_id) if not waves_id else await draw_char_with_ring(char_id)
         all_role_detail: Optional[Dict[str, RoleDetailData]] = (
             await get_all_roleid_detail_info(uid)
         )
@@ -472,7 +467,7 @@ async def get_role_need(
             elif is_online_user and not change_list_regex:
                 return (
                     None,
-                    f"[鸣潮] 未找到【{char_name}】角色信息\n国服用户请先使用[{PREFIX}刷新面板]进行刷新!\n国际服用户请先使用[{PREFIX}分析]上传角色信息!\n",
+                    f"[鸣潮] 未找到【{char_name}】角色信息\n  国服用户请先使用[{PREFIX}刷新面板]进行刷新!\n  国际服用户请先使用[{PREFIX}分析]或[{PREFIX}pcap帮助]上传角色信息!\n",
                 )
             else:
                 # 未上线的角色，构造一个数据
@@ -492,7 +487,7 @@ async def draw_fixed_img(img, avatar, account_info, role_detail):
     avatar_ring = Image.open(TEXT_PATH / "avatar_ring.png")
 
     img.paste(avatar, (45, 20), avatar)
-    avatar_ring = avatar_ring.resize((180, 180), Image.Resampling.LANCZOS)
+    avatar_ring = avatar_ring.resize((180, 180))
     img.paste(avatar_ring, (55, 30), avatar_ring)
 
     base_info_bg = Image.open(TEXT_PATH / "base_info_bg.png")
@@ -528,12 +523,10 @@ async def draw_fixed_img(img, avatar, account_info, role_detail):
     char_fg = Image.open(TEXT_PATH / "char_fg.png")
 
     role_attribute = await get_attribute(role_detail.role.attributeName)
-    role_attribute = role_attribute.resize((50, 50), Image.Resampling.LANCZOS).convert(
-        "RGBA"
-    )
+    role_attribute = role_attribute.resize((50, 50)).convert("RGBA")
     char_fg.paste(role_attribute, (434, 112), role_attribute)
     weapon_type = await get_weapon_type(role_detail.role.weaponTypeName)
-    weapon_type = weapon_type.resize((40, 40), Image.Resampling.LANCZOS).convert("RGBA")
+    weapon_type = weapon_type.resize((40, 40)).convert("RGBA")
     char_fg.paste(weapon_type, (439, 182), weapon_type)
 
     char_fg_image = ImageDraw.Draw(char_fg)
@@ -595,7 +588,7 @@ def resize_and_center_image(
         new_width = int(img_width * scale_factor)
         new_height = target_height
 
-    image = image.resize((new_width, new_height), Image.Resampling.LANCZOS)
+    image = image.resize((new_width, new_height))
 
     result_image = Image.new("RGBA", output_size, background_color)
 
@@ -654,6 +647,8 @@ async def draw_char_detail_img(
     ck = ""
     if not is_limit_query:
         _, ck = await waves_api.get_ck_result(uid, user_id, ev.bot_id)
+        if waves_api.is_net(uid):
+            ck = await waves_api.get_waves_random_cookie(uid, user_id)
         if ck:
             online_list = await waves_api.get_online_list_role(ck)
             if online_list.success and online_list.data:
@@ -798,7 +793,7 @@ async def draw_char_detail_img(
 
     # 创建背景
     img = await get_card_bg(
-        1200, 1250 + echo_list + ph_sum_value + jineng_len + dd_len, "bg3", user_id
+        1200, 1250 + echo_list + ph_sum_value + jineng_len + dd_len, "bg3"
     )
     # 固定位置
     await draw_fixed_img(img, avatar, account_info, role_detail)
@@ -863,7 +858,7 @@ async def draw_char_detail_img(
         weaponData.resonLevel,
     )
     stats_main = await get_attribute_prop(weapon_detail.stats[0]["name"])
-    stats_main = stats_main.resize((40, 40), Image.Resampling.LANCZOS)
+    stats_main = stats_main.resize((40, 40))
     weapon_bg_temp.alpha_composite(stats_main, (65, 187))
     weapon_bg_temp_draw.text(
         (130, 207), f"{weapon_detail.stats[0]['name']}", "white", waves_font_30, "lm"
@@ -872,7 +867,7 @@ async def draw_char_detail_img(
         (500, 207), f"{weapon_detail.stats[0]['value']}", "white", waves_font_30, "rm"
     )
     stats_sub = await get_attribute_prop(weapon_detail.stats[1]["name"])
-    stats_sub = stats_sub.resize((40, 40), Image.Resampling.LANCZOS)
+    stats_sub = stats_sub.resize((40, 40))
     weapon_bg_temp.alpha_composite(stats_sub, (65, 237))
     weapon_bg_temp_draw.text(
         (130, 257), f"{weapon_detail.stats[1]['name']}", "white", waves_font_30, "lm"
@@ -892,7 +887,7 @@ async def draw_char_detail_img(
         mz_bg_temp = Image.new("RGBA", mz_bg.size)
         mz_bg_temp_draw = ImageDraw.Draw(mz_bg_temp)
         chain = await get_chain_img(role_detail.role.roleId, _mz.order, _mz.iconUrl)  # type: ignore
-        chain = chain.resize((100, 100), Image.Resampling.LANCZOS)
+        chain = chain.resize((100, 100))
         mz_bg.paste(chain, (95, 75), chain)
         mz_bg_temp.alpha_composite(mz_bg, dest=(0, 0))
         if _mz.unlocked:
@@ -1026,7 +1021,7 @@ async def draw_char_detail_img(
             prop_img = await get_attribute_prop(name)
             name_color, _ = get_valid_color(name, value, calc.calc_temp)
 
-        prop_img = prop_img.resize((40, 40), Image.Resampling.LANCZOS)
+        prop_img = prop_img.resize((40, 40))
         sh_bg.alpha_composite(prop_img, (60, 40 + index * 55))
         sh_bg_draw.text(
             (120, 58 + index * 55), f"{name[:6]}", name_color, waves_font_24, "lm"
@@ -1051,7 +1046,7 @@ async def draw_char_detail_img(
         skill_img = await get_skill_img(
             role_detail.role.roleId, _skill.skill.name, _skill.skill.iconUrl
         )
-        skill_img = skill_img.resize((70, 70), Image.Resampling.LANCZOS)
+        skill_img = skill_img.resize((70, 70))
         skill_bg.paste(skill_img, (57, 65), skill_img)
 
         skill_bg_draw = ImageDraw.Draw(skill_bg)
@@ -1088,7 +1083,7 @@ async def draw_char_score_img(
             f"[鸣潮] 角色名【{char}】无法找到, 可能暂未适配, 请先检查输入是否正确！\n"
         )
     char_name = alias_to_char_name(char)
-
+    
     _, ck = await waves_api.get_ck_result(uid, user_id, ev.bot_id)
     if not ck and not waves_api.is_net(uid):
         return hint.error_reply(WAVES_CODE_102)
@@ -1097,7 +1092,7 @@ async def draw_char_score_img(
     if waves_id:
         uid = waves_id
 
-    account_info = await get_user_detail_info(uid)
+    account_info =  await get_user_detail_info(uid)
 
     # 获取数据
     avatar, role_detail = await get_role_need(ev, char_id, ck, uid, char_name, waves_id)
@@ -1105,7 +1100,7 @@ async def draw_char_score_img(
         return role_detail
 
     # 创建背景
-    img = await get_card_bg(1200, 3380, "bg3", user_id)
+    img = await get_card_bg(1200, 3380, "bg3")
     # 固定位置
     await draw_fixed_img(img, avatar, account_info, role_detail)
 
@@ -1141,7 +1136,7 @@ async def draw_char_score_img(
             if _phantom and _phantom.phantomProp:
                 props = _phantom.get_props()
                 _score, _bg = calc_phantom_score(
-                    char_name, props, _phantom.cost, calc.calc_temp
+                    char_id, props, _phantom.cost, calc.calc_temp
                 )
 
                 phantom_score += _score
@@ -1153,9 +1148,9 @@ async def draw_char_score_img(
                     _phantom.phantomProp.phantomId, _phantom.phantomProp.iconUrl
                 )
                 fetter_icon = await get_attribute_effect(_phantom.fetterDetail.name)
-                fetter_icon = fetter_icon.resize((50, 50), Image.Resampling.LANCZOS)
+                fetter_icon = fetter_icon.resize((50, 50))
                 phantom_icon.alpha_composite(fetter_icon, dest=(205, 0))
-                phantom_icon = phantom_icon.resize((100, 100), Image.Resampling.LANCZOS)
+                phantom_icon = phantom_icon.resize((100, 100))
                 sh_temp.alpha_composite(phantom_icon, dest=(20, 20))
                 phantomName = (
                     _phantom.phantomProp.name.replace("·", " ")
@@ -1191,15 +1186,13 @@ async def draw_char_score_img(
 
                 for index in range(0, _phantom.cost):
                     promote_icon = Image.open(TEXT_PATH / "promote_icon.png")
-                    promote_icon = promote_icon.resize(
-                        (30, 30), Image.Resampling.LANCZOS
-                    )
+                    promote_icon = promote_icon.resize((30, 30))
                     sh_temp.alpha_composite(promote_icon, dest=(128 + 30 * index, 90))
 
                 for index, _prop in enumerate(props):
                     oset = 55
                     prop_img = await get_attribute_prop(_prop.attributeName)
-                    prop_img = prop_img.resize((40, 40), Image.Resampling.LANCZOS)
+                    prop_img = prop_img.resize((40, 40))
                     # sh_temp.alpha_composite(prop_img, (15, 167 + index * oset))
                     sh_temp_draw = ImageDraw.Draw(sh_temp)
                     name_color = "white"
@@ -1228,7 +1221,7 @@ async def draw_char_score_img(
                         _prop,
                         _phantom.cost,
                         calc.calc_temp,
-                        role_detail.role.attributeName or "导电",
+                        role_detail.role.attributeName or "",
                     )
                     score_color = WAVES_MOONLIT
                     if final_score > 0:
@@ -1292,7 +1285,7 @@ async def draw_char_score_img(
                     value = calc.phantom_card.get(name, default_value)
                     prop_img = await get_attribute_prop(name)
                     name_color, _ = get_valid_color(name, value, calc.calc_temp)
-                prop_img = prop_img.resize((40, 40), Image.Resampling.LANCZOS)
+                prop_img = prop_img.resize((40, 40))
                 ph_bg = ph_0.copy() if ni % 2 == 0 else ph_1.copy()
                 ph_bg.alpha_composite(prop_img, (20, 32))
                 ph_bg_draw = ImageDraw.Draw(ph_bg)
@@ -1303,8 +1296,7 @@ async def draw_char_score_img(
                 ph_bg_draw.text((350, 50), f"{value}", name_color, waves_font_24, "rm")
 
                 right_image_temp.alpha_composite(
-                    ph_bg.resize((500, 125), Image.Resampling.LANCZOS),
-                    (0, (ni + mi * 4) * 70),
+                    ph_bg.resize((500, 125)), (0, (ni + mi * 4) * 70)
                 )
 
         ph_tips = ph_1.copy()
@@ -1441,7 +1433,7 @@ async def draw_pic_with_ring(ev: Event, is_force_avatar=False, force_resource_id
 
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
     img = Image.new("RGBA", (180, 180))
-    mask = mask_pic.resize((160, 160), Image.Resampling.LANCZOS)
+    mask = mask_pic.resize((160, 160))
     resize_pic = crop_center_img(pic, 160, 160)
     img.paste(resize_pic, (20, 20), mask)
 
@@ -1453,7 +1445,7 @@ async def draw_char_with_ring(char_id):
 
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
     img = Image.new("RGBA", (180, 180))
-    mask = mask_pic.resize((160, 160), Image.Resampling.LANCZOS)
+    mask = mask_pic.resize((160, 160))
     resize_pic = crop_center_img(pic, 160, 160)
     img.paste(resize_pic, (20, 20), mask)
 
@@ -1541,48 +1533,16 @@ async def get_card_bg(
     w: int,
     h: int,
     bg: str = "bg",
-    user_id: str = None,
 ):
-    """
-    獲取卡片背景，支持Premium用戶自定義背景
-
-    Args:
-        w: 寬度
-        h: 高度
-        bg: 背景類型
-        user_id: 用戶ID（用於Premium自定義背景）
-
-    Returns:
-        背景圖片
-    """
     img: Optional[Image.Image] = None
-
-    # 優先使用Premium用戶自定義背景
-    if user_id:
-        try:
-            from ..wutheringwaves_payment.background_manager import (
-                background_manager,
-            )
-
-            # 獲取用戶背景路徑
-            bg_path = background_manager.get_background_path(user_id)
-            if bg_path and bg_path.exists():
-                img = Image.open(bg_path).convert("RGBA")
-                img = crop_center_img(img, w, h)
-        except Exception as e:
-            # 如果獲取自定義背景失敗，繼續使用其他背景
-            pass
-
-    # 如果沒有自定義背景，使用配置的背景
-    if not img and ShowConfig.get_config("CardBg").data:
+    if ShowConfig.get_config("CardBg").data:
         bg_path = Path(ShowConfig.get_config("CardBgPath").data)
         if bg_path.exists():
             img = Image.open(bg_path).convert("RGBA")
             img = crop_center_img(img, w, h)
 
-    # 最後使用默認背景
     if not img:
-        img = get_waves_bg(w, h, bg, user_id)
+        img = get_waves_bg(w, h, bg)
 
     img = await get_custom_gaussian_blur(img)
     return img

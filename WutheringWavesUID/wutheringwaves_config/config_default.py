@@ -2,12 +2,12 @@ from typing import Dict
 
 from gsuid_core.utils.plugins_config.models import (
     GSC,
-    GsIntConfig,
-    GsStrConfig,
     GsBoolConfig,
     GsDictConfig,
+    GsIntConfig,
     GsListConfig,
     GsListStrConfig,
+    GsStrConfig,
 )
 
 CONFIG_DEFAULT: Dict[str, GSC] = {
@@ -67,8 +67,8 @@ CONFIG_DEFAULT: Dict[str, GSC] = {
         "",
     ),
     "WavesLoginUrlSelf": GsBoolConfig(
-        "强制【鸣潮登录url】为自己的域名",
-        "强制【鸣潮登录url】为自己的域名",
+        "强制【鸣潮登录url】为自己的域名（开关已经架空，必定为本地解析登录）",
+        "强制【鸣潮登录url】为自己的域名（开关已经架空，必定为本地解析登录）",
         False,
     ),
     "WavesTencentWord": GsBoolConfig(
@@ -203,67 +203,5 @@ CONFIG_DEFAULT: Dict[str, GSC] = {
         "验证码提供方appkey",
         "验证码提供方appkey",
         "",
-    ),
-    "DiscordWebhookUrl": GsStrConfig(
-        "Discord Webhook URL",
-        "Discord Webhook URL，用于体力推送通知。格式：https://discord.com/api/webhooks/...",
-        "",
-    ),
-    "DiscordWebhookEnabled": GsBoolConfig(
-        "启用 Discord Webhook 推送",
-        "启用 Discord Webhook 推送。开启后体力推送将通过 Discord Webhook 发送到指定频道",
-        False,
-    ),
-    # 付費機制相關配置
-    "PremiumUsers": GsDictConfig(
-        "Premium用戶列表",
-        "Premium用戶列表，包含用戶ID和到期時間",
-        {},
-    ),
-    "RedeemCodes": GsDictConfig(
-        "兌換碼列表",
-        "兌換碼列表，包含兌換碼和相關信息",
-        {},
-    ),
-    "PaymentSystemEnabled": GsBoolConfig(
-        "付費系統開關",
-        "是否啟用付費系統",
-        False,
-    ),
-    "PremiumPrice": GsIntConfig(
-        "Premium價格（台幣）",
-        "Premium月費價格（台幣）",
-        100,
-        1000,
-    ),
-    "DefaultCooldownAnalyze": GsIntConfig(
-        "一般用戶分析冷卻時間（秒）",
-        "一般用戶分析功能冷卻時間",
-        330,
-        3600,
-    ),
-    "DefaultCooldownQuery": GsIntConfig(
-        "一般用戶查詢冷卻時間（秒）",
-        "一般用戶查詢功能冷卻時間",
-        180,
-        3600,
-    ),
-    "DefaultCooldownParse": GsIntConfig(
-        "一般用戶解析冷卻時間（秒）",
-        "一般用戶解析功能冷卻時間",
-        180,
-        3600,
-    ),
-    "DefaultCooldownOcr": GsIntConfig(
-        "一般用戶OCR冷卻時間（秒）",
-        "一般用戶OCR功能冷卻時間",
-        300,
-        3600,
-    ),
-    "DefaultMaxBindNum": GsIntConfig(
-        "一般用戶最大綁定UID數",
-        "一般用戶最大綁定UID數量",
-        1,
-        10,
     ),
 }

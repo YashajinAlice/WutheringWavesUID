@@ -4,8 +4,6 @@ from typing import Dict
 from pathlib import Path
 from datetime import datetime, timedelta
 
-import kuro
-from kuro.types import Region
 from gsuid_core.bot import Bot
 from PIL import Image, ImageDraw
 from gsuid_core.models import Event
@@ -18,8 +16,8 @@ from ..utils.api.request_util import KuroApiResp
 from ..utils.resource.constant import SPECIAL_CHAR
 from ..utils.name_convert import char_name_to_char_id
 from ..utils.api.model import DailyData, AccountBaseInfo
+from ..utils.database.models import WavesBind, WavesUser
 from ..wutheringwaves_config.set_config import set_push_time
-from ..utils.database.models import WavesBind, WavesPush, WavesUser
 from ..utils.error_reply import ERROR_CODE, WAVES_CODE_102, WAVES_CODE_103
 from ..utils.image import (
     RED,
@@ -42,9 +40,9 @@ from ..utils.fonts.waves_fonts import (
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 YES = Image.open(TEXT_PATH / "yes.png")
-YES = YES.resize((40, 40), Image.Resampling.LANCZOS)
+YES = YES.resize((40, 40))
 NO = Image.open(TEXT_PATH / "no.png")
-NO = NO.resize((40, 40), Image.Resampling.LANCZOS)
+NO = NO.resize((40, 40))
 bar_down = Image.open(TEXT_PATH / "bar_down.png")
 
 based_w = 1150
@@ -62,22 +60,34 @@ async def process_uid(uid, ev):
     if not ck:
         return None
 
-    # 并行请求所有相关 API
-    results = await asyncio.gather(
-        waves_api.get_daily_info(uid, ck),
-        waves_api.get_base_info(uid, ck),
-        return_exceptions=True,
-    )
+    await asyncio.sleep(0.3)  # 避免请求过快
 
-    (daily_info_res, account_info_res) = results
-    if not isinstance(daily_info_res, KuroApiResp) or not daily_info_res.success:
-        return None
+    if not waves_api.is_net(uid):
+        # 并行请求所有相关 API
+        results = await asyncio.gather(
+            waves_api.get_daily_info(uid, ck),
+            waves_api.get_base_info(uid, ck),
+            return_exceptions=True,
+        )
 
-    if not isinstance(account_info_res, KuroApiResp) or not account_info_res.success:
-        return None
+        (daily_info_res, account_info_res) = results
+        if not isinstance(daily_info_res, KuroApiResp) or not daily_info_res.success:
+            return None
 
-    daily_info = DailyData.model_validate(daily_info_res.data)
-    account_info = AccountBaseInfo.model_validate(account_info_res.data)
+        if (
+            not isinstance(account_info_res, KuroApiResp)
+            or not account_info_res.success
+        ):
+            return None
+
+        daily_info = DailyData.model_validate(daily_info_res.data)
+        account_info = AccountBaseInfo.model_validate(account_info_res.data)
+    else:
+        from ..utils.api.kuro_py_api import get_base_info_overseas
+
+        account_info, daily_info = await get_base_info_overseas(ck, uid)
+        if not daily_info or not account_info:
+            return None
 
     return {
         "daily_info": daily_info,
@@ -130,6 +140,9 @@ async def _draw_stamina_img(ev: Event, valid: Dict) -> Image.Image:
     if daily_info.hasSignIn:
         sign_in_icon = YES
         sing_in_text = "签到已完成！"
+    elif waves_api.is_net(daily_info.roleId):
+        sign_in_icon = NO
+        sing_in_text = "不可签到！"
     else:
         sign_in_icon = NO
         sing_in_text = "今日未签到！"
@@ -222,9 +235,13 @@ async def _draw_stamina_img(ev: Event, valid: Dict) -> Image.Image:
 
     # logo_img = get_small_logo(2)
     # title_bar.alpha_composite(logo_img, dest=(760, 60))
-
+    menFei = (
+        "千道门扉的异想"
+        if not waves_api.is_net(daily_info.roleId)
+        else "国际服暂无数据"
+    )
     color = RED if account_info.rougeScore != account_info.rougeScoreLimit else GREEN
-    title_bar_draw.text((810, 125), "千道门扉的异想", GREY, waves_font_26, "mm")
+    title_bar_draw.text((810, 125), menFei, GREY, waves_font_26, "mm")
     title_bar_draw.text(
         (810, 78),
         f"{account_info.rougeScore}/{account_info.rougeScoreLimit}",
@@ -241,12 +258,7 @@ async def _draw_stamina_img(ev: Event, valid: Dict) -> Image.Image:
         if daily_info.energyData.refreshTimeStamp
         else curr_time
     )
-    # 计算体力恢复时间
-    remain_seconds = refreshTimeStamp - curr_time
-    remain_time = (
-        await seconds2hours(remain_seconds) if remain_seconds > 0 else "体力已满"
-    )
-
+    # remain_time = await seconds2hours(refreshTimeStamp - curr_time)
     # 设置体力推送时间
     push_bool = await set_push_time(ev.bot_id, daily_info.roleId, refreshTimeStamp)
     if push_bool:
@@ -259,36 +271,29 @@ async def _draw_stamina_img(ev: Event, valid: Dict) -> Image.Image:
     time_img = Image.new("RGBA", (190, 33), (255, 255, 255, 0))
     time_img_draw = ImageDraw.Draw(time_img)
     time_img_draw.rounded_rectangle(
-        [0, 0, 190, 33],
-        radius=15,
-        fill=(130, 104, 54, int(0.7 * 255)),  # 使用用戶建議的矩形背景顏色
+        [0, 0, 190, 33], radius=15, fill=(186, 55, 42, int(0.7 * 255))
     )
-
-    if remain_seconds > 0:
-        # 使用原本的時間顯示格式（今天/明天）
+    if refreshTimeStamp != curr_time:
         date_from_timestamp = datetime.fromtimestamp(refreshTimeStamp)
         now = datetime.now()
         today = now.date()
         tomorrow = today + timedelta(days=1)
 
-        remain_time_display = datetime.fromtimestamp(refreshTimeStamp).strftime(
+        remain_time = datetime.fromtimestamp(refreshTimeStamp).strftime(
             "%m.%d %H:%M:%S"
         )
         if date_from_timestamp.date() == today:
-            remain_time_display = "今天 " + datetime.fromtimestamp(
-                refreshTimeStamp
-            ).strftime("%H:%M:%S")
+            remain_time = "今天 " + datetime.fromtimestamp(refreshTimeStamp).strftime(
+                "%H:%M:%S"
+            )
         elif date_from_timestamp.date() == tomorrow:
-            remain_time_display = "明天 " + datetime.fromtimestamp(
-                refreshTimeStamp
-            ).strftime("%H:%M:%S")
+            remain_time = "明天 " + datetime.fromtimestamp(refreshTimeStamp).strftime(
+                "%H:%M:%S"
+            )
 
-        time_img_draw.text(
-            (10, 15), f"{remain_time_display}", "white", waves_font_24, "lm"
-        )
+        time_img_draw.text((10, 15), f"{remain_time}", "white", waves_font_24, "lm")
     else:
-        # 体力已满
-        time_img_draw.text((10, 15), "体力已满", "white", waves_font_24, "lm")
+        time_img_draw.text((10, 15), "漂泊者该上潮了", "white", waves_font_24, "lm")
 
     info.alpha_composite(time_img, (280, 50))
 
@@ -389,388 +394,8 @@ async def draw_pic_with_ring(ev: Event):
 
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
     img = Image.new("RGBA", (200, 200))
-    mask = mask_pic.resize((160, 160), Image.Resampling.LANCZOS)
+    mask = mask_pic.resize((160, 160))
     resize_pic = crop_center_img(pic, 160, 160)
     img.paste(resize_pic, (20, 20), mask)
-
-    return img
-
-
-async def draw_international_stamina_img(bot: Bot, ev: Event, user: WavesUser):
-    """國際服體力查詢"""
-    try:
-        logger.info(f"[鸣潮][國際服體力查詢]UID: {user.uid}")
-        logger.info(
-            f"[鸣潮][國際服體力查詢]Token 長度: {len(user.cookie) if user.cookie else 0}"
-        )
-
-        # 檢查 token 是否有效
-        if not user.cookie or len(user.cookie) < 10:
-            return "❌ 登入 token 無效，請重新登入國際服"
-
-        # 創建 kuro 客戶端
-        client = kuro.Client(region=Region.OVERSEAS)
-
-        # 生成 OAuth code
-        logger.info(f"[鸣潮][國際服體力查詢]生成 OAuth code...")
-        try:
-            oauth_code = await client.generate_oauth_code(user.cookie)
-            logger.info(f"[鸣潮][國際服體力查詢]OAuth code 生成成功")
-        except kuro.errors.KuroError as e:
-            logger.error(f"[鸣潮][國際服體力查詢]OAuth 生成失敗: {e}")
-            if "Unknown error occurred" in str(e):
-                return "❌ 登入 token 已過期，請重新登入國際服"
-            else:
-                return f"❌ OAuth 生成失敗: {str(e)}"
-        except Exception as e:
-            logger.error(f"[鸣潮][國際服體力查詢]OAuth 生成異常: {e}")
-            return f"❌ OAuth 生成異常: {str(e)}"
-
-        # 從 platform 字段中提取服務器區域
-        server_region = "Asia"  # 默認值
-        if user.platform and user.platform.startswith("international_"):
-            server_region = user.platform.replace("international_", "")
-            logger.info(f"[鸣潮][國際服體力查詢]使用服務器區域: {server_region}")
-        else:
-            logger.info(f"[鸣潮][國際服體力查詢]使用默認服務器區域: {server_region}")
-
-        # 獲取角色信息（帶重試機制）
-        logger.info(f"[鸣潮][國際服體力查詢]獲取角色信息...")
-        role_info = None
-        max_retries = 3
-        retry_count = 0
-
-        while retry_count < max_retries:
-            try:
-                role_info = await client.get_player_role(
-                    oauth_code, int(user.uid), server_region
-                )
-                logger.info(f"[鸣潮][國際服體力查詢]角色信息獲取成功")
-                break  # 成功獲取，跳出重試循環
-            except kuro.errors.KuroError as e:
-                error_msg = str(e)
-                logger.warning(
-                    f"[鸣潮][國際服體力查詢]角色信息獲取失敗 (嘗試 {retry_count + 1}/{max_retries}): {error_msg}"
-                )
-
-                # 檢查是否為 'retrying' 錯誤
-                if "'retrying'" in error_msg or "retrying" in error_msg:
-                    retry_count += 1
-                    if retry_count < max_retries:
-                        logger.info(
-                            f"[鸣潮][國際服體力查詢]檢測到 'retrying' 錯誤，將在 2 秒後重試..."
-                        )
-                        await asyncio.sleep(2)  # 等待2秒後重試
-                        continue
-                    else:
-                        logger.error(
-                            f"[鸣潮][國際服體力查詢]重試 {max_retries} 次後仍然失敗"
-                        )
-                        return f"❌ 角色信息獲取失敗: {str(e)}"
-                else:
-                    # 其他錯誤，直接返回
-                    logger.error(f"[鸣潮][國際服體力查詢]角色信息獲取失敗: {e}")
-                    return f"❌ 角色信息獲取失敗: {str(e)}"
-            except Exception as e:
-                error_msg = str(e)
-                logger.warning(
-                    f"[鸣潮][國際服體力查詢]角色信息獲取異常 (嘗試 {retry_count + 1}/{max_retries}): {error_msg}"
-                )
-
-                # 檢查是否為 'retrying' 錯誤
-                if "'retrying'" in error_msg or "retrying" in error_msg:
-                    retry_count += 1
-                    if retry_count < max_retries:
-                        logger.info(
-                            f"[鸣潮][國際服體力查詢]檢測到 'retrying' 錯誤，將在 2 秒後重試..."
-                        )
-                        await asyncio.sleep(2)  # 等待2秒後重試
-                        continue
-                    else:
-                        logger.error(
-                            f"[鸣潮][國際服體力查詢]重試 {max_retries} 次後仍然失敗"
-                        )
-                        return f"❌ 角色信息獲取異常: {str(e)}"
-                else:
-                    # 其他錯誤，直接返回
-                    logger.error(f"[鸣潮][國際服體力查詢]角色信息獲取異常: {e}")
-                    return f"❌ 角色信息獲取異常: {str(e)}"
-
-        if role_info is None:
-            return "❌ 角色信息獲取失敗，已達最大重試次數"
-
-        # 提取體力信息
-        basic_info = role_info.basic
-        current_stamina = basic_info.waveplates
-        max_stamina = basic_info.max_waveplates
-        refined_stamina = basic_info.refined_waveplates
-
-        # 生成圖像
-        logger.info(f"[鸣潮][國際服體力查詢]開始生成圖像...")
-        img = await _draw_international_stamina_img(ev, role_info, user)
-        logger.info(f"[鸣潮][國際服體力查詢]圖像生成完成")
-
-        # 轉換為可發送的格式
-        res = await convert_img(img)
-        return res
-
-    except Exception as e:
-        logger.error(f"[鸣潮][國際服體力查詢]失敗: {e}")
-        logger.error(f"[鸣潮][國際服體力查詢]錯誤類型: {type(e).__name__}")
-        logger.error(f"[鸣潮][國際服體力查詢]錯誤詳情: {str(e)}")
-
-        # 返回更詳細的錯誤信息
-        error_msg = f"❌ 國際服體力查詢失敗\n\n錯誤類型: {type(e).__name__}\n錯誤詳情: {str(e)}\n\n請檢查:\n1. 登入是否有效\n2. 網絡連接是否正常\n3. 遊戲服務器是否可用"
-        return error_msg
-
-
-async def _draw_international_stamina_img(
-    ev: Event, role_info, user: WavesUser
-) -> Image.Image:
-    """生成國際服體力查詢圖像"""
-    basic_info = role_info.basic
-
-    # 載入背景圖片
-    img = Image.open(TEXT_PATH / "bg.jpg").convert("RGBA")
-    info = Image.open(TEXT_PATH / "main_bar.png").convert("RGBA")
-    base_info_bg = Image.open(TEXT_PATH / "base_info_bg.png")
-    avatar_ring = Image.open(TEXT_PATH / "avatar_ring.png")
-
-    # 用戶頭像
-    avatar = await draw_pic_with_ring(ev)
-
-    # 用戶設置的角色立繪背景
-    pile_id = None
-    if user and user.stamina_bg_value:
-        char_id = char_name_to_char_id(user.stamina_bg_value)
-        if char_id in SPECIAL_CHAR:
-            # 特殊角色需要檢查是否擁有
-            for char_id in SPECIAL_CHAR[char_id]:
-                try:
-                    role_detail_info = await waves_api.get_role_detail_info(
-                        char_id, user.uid, user.cookie
-                    )
-                    if not role_detail_info.success:
-                        continue
-                    role_detail_info = role_detail_info.data
-                    if (
-                        not isinstance(role_detail_info, Dict)
-                        or "role" not in role_detail_info
-                        or role_detail_info["role"] is None
-                        or "level" not in role_detail_info
-                        or role_detail_info["level"] is None
-                    ):
-                        continue
-                    pile_id = char_id
-                    break
-                except:
-                    continue
-        else:
-            pile_id = char_id
-    pile = await get_random_waves_role_pile(pile_id)
-
-    # 基本信息背景
-    base_info_draw = ImageDraw.Draw(base_info_bg)
-    base_info_draw.text((275, 120), f"{basic_info.name[:7]}", GREY, waves_font_30, "lm")
-    base_info_draw.text((226, 173), f"特征码:  {user.uid}", GOLD, waves_font_25, "lm")
-
-    # 標題欄
-    title_bar = Image.open(TEXT_PATH / "title_bar.png")
-    title_bar_draw = ImageDraw.Draw(title_bar)
-
-    # 戰歌重奏 (weekly_challenge)
-    title_bar_draw.text((480, 125), "戰歌重奏", GREY, waves_font_26, "mm")
-    weekly_challenge = basic_info.weekly_challenge
-    color_weekly = RED if weekly_challenge != 0 else GREEN
-    title_bar_draw.text(
-        (480, 78), f"{weekly_challenge}/3", color_weekly, waves_font_42, "mm"
-    )
-
-    # 先約電台 (battle_pass.level)
-    title_bar_draw.text((630, 125), "先約電台", GREY, waves_font_26, "mm")
-    battle_pass_level = role_info.battle_pass.level
-    title_bar_draw.text(
-        (630, 78), f"Lv.{battle_pass_level}", "white", waves_font_42, "mm"
-    )
-
-    # 千道門扉的異想 (國際服不支援，顯示0)
-    title_bar_draw.text((810, 125), "千道門扉的異想", GREY, waves_font_26, "mm")
-    title_bar_draw.text((810, 78), "0/6000", RED, waves_font_32, "mm")
-
-    # 體力信息
-    active_draw = ImageDraw.Draw(info)
-    current_stamina = basic_info.waveplates
-    max_stamina = basic_info.max_waveplates
-    refined_stamina = basic_info.refined_waveplates
-
-    # 體力條
-    active_draw.text((350, 115), f"/{max_stamina}", GREY, waves_font_30, "lm")
-    active_draw.text((348, 115), f"{current_stamina}", GREY, waves_font_30, "rm")
-    radio = current_stamina / max_stamina if max_stamina > 0 else 0
-    color = RED if radio > 0.8 else YELLOW
-    max_len = 345
-    active_draw.rectangle((173, 142, int(173 + radio * max_len), 150), color)
-
-    # 精煉體力條 (結晶單質，最大值為 480)
-    max_refined_stamina = 480
-    active_draw.text((350, 230), f"/{max_refined_stamina}", GREY, waves_font_30, "lm")
-    active_draw.text((348, 230), f"{refined_stamina}", GREY, waves_font_30, "rm")
-    radio_refined = (
-        refined_stamina / max_refined_stamina if max_refined_stamina > 0 else 0
-    )
-    color_refined = RED if radio_refined > 0.8 else YELLOW
-    active_draw.rectangle(
-        (173, 254, int(173 + radio_refined * max_len), 262), color_refined
-    )
-
-    # 活躍度 (使用國際服的 activity_points)
-    activity_points = basic_info.activity_points
-    max_activity_points = basic_info.max_activity_points
-    active_draw.text((350, 350), f"/{max_activity_points}", GREY, waves_font_30, "lm")
-    active_draw.text((348, 350), f"{activity_points}", GREY, waves_font_30, "rm")
-    radio_active = (
-        activity_points / max_activity_points if max_activity_points > 0 else 0
-    )
-    active_draw.rectangle((173, 374, int(173 + radio_active * max_len), 382), YELLOW)
-
-    # 體力恢復時間
-    time_img = Image.new("RGBA", (190, 33), (255, 255, 255, 0))
-    time_img_draw = ImageDraw.Draw(time_img)
-    time_img_draw.rounded_rectangle(
-        [0, 0, 190, 33],
-        radius=15,
-        fill=(130, 104, 54, int(0.7 * 255)),  # 使用用戶建議的矩形背景顏色
-    )
-
-    # 處理體力恢復時間
-    # 檢查體力是否已滿
-    if current_stamina >= max_stamina:
-        time_img_draw.text((10, 15), "體力已滿", "white", waves_font_24, "lm")
-    else:
-        # 體力未滿，顯示恢復時間
-        replenish_time = basic_info.waveplates_replenish_time
-        logger.info(f"[鳴潮][國際服體力] replenish_time: {replenish_time}")
-
-        if replenish_time and replenish_time != 0:
-            try:
-                # 計算剩餘秒數
-                curr_time = int(time.time())
-
-                # 處理 datetime 對象
-                if hasattr(replenish_time, "timestamp"):
-                    # 如果是 datetime 對象，轉換為時間戳
-                    replenish_timestamp = int(replenish_time.timestamp())
-                else:
-                    # 如果已經是時間戳，直接使用
-                    replenish_timestamp = int(replenish_time)
-
-                remain_seconds = replenish_timestamp - curr_time
-                logger.info(f"[鳴潮][國際服體力] remain_seconds: {remain_seconds}")
-
-                if remain_seconds > 0:
-                    # 使用原本的時間顯示格式（今天/明天）
-                    date_from_timestamp = datetime.fromtimestamp(replenish_timestamp)
-                    now = datetime.now()
-                    today = now.date()
-                    tomorrow = today + timedelta(days=1)
-
-                    remain_time = datetime.fromtimestamp(replenish_timestamp).strftime(
-                        "%m.%d %H:%M:%S"
-                    )
-                    if date_from_timestamp.date() == today:
-                        remain_time = "今天 " + datetime.fromtimestamp(
-                            replenish_timestamp
-                        ).strftime("%H:%M:%S")
-                    elif date_from_timestamp.date() == tomorrow:
-                        remain_time = "明天 " + datetime.fromtimestamp(
-                            replenish_timestamp
-                        ).strftime("%H:%M:%S")
-
-                    logger.info(f"[鳴潮][國際服體力] remain_time: {remain_time}")
-                    time_img_draw.text(
-                        (10, 15), f"{remain_time}", "white", waves_font_24, "lm"
-                    )
-                else:
-                    logger.info(f"[鳴潮][國際服體力] 體力已滿")
-                    time_img_draw.text(
-                        (10, 15), "體力已滿", "white", waves_font_24, "lm"
-                    )
-            except Exception as e:
-                # 如果時間解析失敗，顯示體力未滿的提示
-                logger.error(f"[鳴潮][國際服體力] 時間解析失敗: {e}")
-                time_img_draw.text((10, 15), "體力恢復中", "white", waves_font_24, "lm")
-        else:
-            # 如果沒有恢復時間信息，顯示體力未滿的提示
-            logger.info(f"[鳴潮][國際服體力] 沒有恢復時間信息")
-            time_img_draw.text((10, 15), "體力恢復中", "white", waves_font_24, "lm")
-
-    info.alpha_composite(time_img, (280, 50))
-
-    # 狀態圖標
-    # 簽到狀態 (國際服可能沒有簽到功能，顯示為已完成)
-    sign_in_icon = YES
-    sing_in_text = "國際服模式"
-
-    # 活躍狀態
-    character_count = basic_info.character_count
-    active_icon = YES if character_count > 0 else NO
-    active_text = "角色已解鎖" if character_count > 0 else "無角色數據"
-
-    # 推送狀態 - 根據用戶類型顯示不同的推送信息
-    push_icon = YES
-
-    # 獲取用戶的推送設置
-    push_data = await WavesPush.select_data_by_uid(user.uid)
-
-    if push_data and push_data.resin_push != "off":
-        # 檢查是否為Discord用戶（通過platform判斷）
-        if user.platform and user.platform.startswith("international_"):
-            # Discord用戶統一顯示webhook推送
-            push_text = "體力推送已開后至統一推送頻道"
-        else:
-            # 其他用戶顯示具體的推送設置
-            if push_data.resin_push == "on":
-                # 私聊推送
-                push_text = "體力推送已開啟"
-            else:
-                # 群聊推送，顯示群組ID
-                push_text = f"體力推送已開啟至群{push_data.resin_push}"
-    else:
-        # 沒有推送設置
-        push_text = "體力推送未開啟"
-
-    # 簽到狀態
-    status_img = Image.new("RGBA", (230, 40), (255, 255, 255, 0))
-    status_img_draw = ImageDraw.Draw(status_img)
-    status_img_draw.rounded_rectangle([0, 0, 230, 40], fill=(0, 0, 0, int(0.3 * 255)))
-    status_img.alpha_composite(sign_in_icon, (0, 0))
-    status_img_draw.text((50, 20), f"{sing_in_text}", "white", waves_font_30, "lm")
-    img.alpha_composite(status_img, (70, 80))
-
-    # 活躍狀態
-    status_img2 = Image.new("RGBA", (230, 40), (255, 255, 255, 0))
-    status_img2_draw = ImageDraw.Draw(status_img2)
-    status_img2_draw.rounded_rectangle([0, 0, 230, 40], fill=(0, 0, 0, int(0.3 * 255)))
-    status_img2.alpha_composite(active_icon, (0, 0))
-    status_img2_draw.text((50, 20), f"{active_text}", "white", waves_font_30, "lm")
-    img.alpha_composite(status_img2, (70, 120))
-
-    # 推送狀態
-    status_img3 = Image.new("RGBA", (230, 40), (255, 255, 255, 0))
-    status_img3_draw = ImageDraw.Draw(status_img3)
-    status_img3_draw.rounded_rectangle([0, 0, 230, 40], fill=(0, 0, 0, int(0.3 * 255)))
-    status_img3.alpha_composite(push_icon, (0, 0))
-    status_img3_draw.text((50, 20), f"{push_text}", "white", waves_font_30, "lm")
-    img.alpha_composite(status_img3, (70, 160))
-
-    # 組合所有元素
-    img.paste(pile, (550, -150), pile)
-    img.alpha_composite(bar_down, (0, 0))
-    img.paste(info, (0, 190), info)
-    img.paste(base_info_bg, (40, 570), base_info_bg)
-    img.paste(avatar_ring, (40, 620), avatar_ring)
-    img.paste(avatar, (40, 620), avatar)
-    img.paste(title_bar, (190, 620), title_bar)
-    img = add_footer(img, 600, 25)
 
     return img

@@ -1,19 +1,24 @@
 import asyncio
 from enum import IntEnum
-from typing import Any, Dict, Union, Generic, TypeVar, Optional
+from typing import Any, Dict, Generic, Optional, TypeVar, Union
 
-from gsuid_core.logger import logger
 from pydantic import (
-    Field,
     BaseModel,
     ConfigDict,
+    Field,
     computed_field,
     model_validator,
 )
 
-from ..util import get_public_ip, send_master_info, generate_random_string
+from gsuid_core.logger import logger
 
-KURO_VERSION = "2.5.5"
+from ...utils.util import (
+    generate_random_string,
+    get_public_ip,
+    send_master_info,
+)
+
+KURO_VERSION = "2.6.3"
 PLATFORM_SOURCE = "ios"
 CONTENT_TYPE = "application/x-www-form-urlencoded; charset=utf-8"
 
@@ -22,14 +27,14 @@ async def get_base_header(devCode: Optional[str] = None):
     header = {
         "source": PLATFORM_SOURCE,
         "Content-Type": CONTENT_TYPE,
-        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko)  KuroGameBox/2.5.5",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko)  KuroGameBox/2.6.3",
     }
     if devCode:
         header["devCode"] = devCode
     else:
         ip = await get_public_ip()
         header["devCode"] = (
-            f"{ip}, Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko)  KuroGameBox/2.5.5"
+            f"{ip}, Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko)  KuroGameBox/2.6.3"
         )
     return header
 
@@ -146,7 +151,7 @@ class KuroApiResp(BaseModel, Generic[T]):
     async def mark_cookie_invalid(self, uid: str, cookie: str):
         if not self.is_token_invalid:
             return
-        from ..database.models import WavesUser
+        from ...utils.database.models import WavesUser
 
         await WavesUser.mark_cookie_invalid(uid, cookie, "无效")
 

@@ -44,14 +44,14 @@ async def parse_weapon_base_content(
     # 提取“稀有度”
     rarity_pic = Image.open(TEXT_PATH / f"rarity_{weapon_model.starLevel}.png")
     rarity_pic = rarity_pic.resize(
-        (180, int(180 / rarity_pic.size[0] * rarity_pic.size[1], Image.Resampling.LANCZOS))
+        (180, int(180 / rarity_pic.size[0] * rarity_pic.size[1]))
     )
     # weapon 图片
     weapon_pic = await get_square_weapon(weapon_id)
     weapon_pic = crop_center_img(weapon_pic, 110, 110)
     weapon_pic_bg = get_weapon_icon_bg(get_weapon_star(weapon_name))
     weapon_pic_bg.paste(weapon_pic, (10, 20), weapon_pic)
-    weapon_pic_bg = weapon_pic_bg.resize((250, 250), Image.Resampling.LANCZOS)
+    weapon_pic_bg = weapon_pic_bg.resize((250, 250))
 
     draw = ImageDraw.Draw(image)
     draw.rectangle([20, 20, 330, 380], fill=(0, 0, 0, int(0.4 * 255)))
@@ -59,7 +59,7 @@ async def parse_weapon_base_content(
     image.alpha_composite(weapon_pic_bg, (50, 20))
 
     weapon_type = await get_weapon_type(weapon_type)
-    weapon_type = weapon_type.resize((80, 80), Image.Resampling.LANCZOS).convert("RGBA")
+    weapon_type = weapon_type.resize((80, 80)).convert("RGBA")
     card_img_draw = ImageDraw.Draw(card_img)
     card_img_draw.text((420, 100), f"{weapon_name}", SPECIAL_GOLD, waves_font_40, "lm")
     card_img.alpha_composite(rarity_pic, (400, 20))
@@ -74,7 +74,7 @@ async def parse_weapon_statistic_content(weapon_model: WeaponModel, weapon_image
     weapon_bg_temp_draw = ImageDraw.Draw(weapon_bg_temp)
     for index, row in enumerate(rows):
         stats_main = await get_attribute_prop(row[0])
-        stats_main = stats_main.resize((40, 40), Image.Resampling.LANCZOS)
+        stats_main = stats_main.resize((40, 40))
         weapon_bg_temp.alpha_composite(stats_main, (65, 187 + index * 50))
         weapon_bg_temp_draw.text(
             (130, 207 + index * 50), f"{row[0]}", "white", waves_font_30, "lm"
@@ -83,7 +83,7 @@ async def parse_weapon_statistic_content(weapon_model: WeaponModel, weapon_image
             (500, 207 + index * 50), f"{row[1]}", "white", waves_font_30, "rm"
         )
 
-    weapon_bg_temp = weapon_bg_temp.resize((350, 175), Image.Resampling.LANCZOS)
+    weapon_bg_temp = weapon_bg_temp.resize((350, 175))
     weapon_image.alpha_composite(weapon_bg_temp, (10, 200))
 
 
@@ -101,7 +101,7 @@ async def parse_weapon_material_content(weapon_model: WeaponModel, card_img):
         material = await get_material_img(material_id)
         if not material:
             continue
-        material = material.resize((70, 70), Image.Resampling.LANCZOS)
+        material = material.resize((70, 70))
         material_img.alpha_composite(material, (30 + index * 80, 50))
         index += 1
 

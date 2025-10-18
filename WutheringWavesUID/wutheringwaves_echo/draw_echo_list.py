@@ -1,27 +1,23 @@
 from pathlib import Path
-from typing import Dict, List, Tuple, Union, Optional
+from typing import Dict, List, Optional, Tuple, Union
 
-from pydantic import BaseModel
 from PIL import Image, ImageDraw
+from pydantic import BaseModel
+
 from gsuid_core.models import Event
 from gsuid_core.utils.image.convert import convert_img
 
 from ..utils import hint
-from ..utils.calc import WuWaCalc
-from ..utils.waves_api import waves_api
-from ..wutheringwaves_config import PREFIX
-from ..utils.imagetool import draw_pic_with_ring
-from ..utils.resource.download_file import get_phantom_img
-from ..utils.char_info_utils import get_all_role_detail_info
-from ..utils.error_reply import ERROR_CODE, WAVES_CODE_099, WAVES_CODE_102
-from ..wutheringwaves_analyzecard.user_info_utils import get_user_detail_info
-from ..utils.calculate import get_calc_map, get_valid_color, calc_phantom_score
 from ..utils.api.model import (
-    Props,
-    EquipPhantom,
-    RoleDetailData,
     AccountBaseInfo,
+    EquipPhantom,
+    Props,
+    RoleDetailData,
 )
+from ..utils.calc import WuWaCalc
+from ..utils.calculate import calc_phantom_score, get_calc_map, get_valid_color
+from ..utils.char_info_utils import get_all_role_detail_info
+from ..utils.error_reply import ERROR_CODE, WAVES_CODE_102, WAVES_CODE_099
 from ..utils.fonts.waves_fonts import (
     waves_font_24,
     waves_font_25,
@@ -35,12 +31,17 @@ from ..utils.image import (
     GREY,
     SPECIAL_GOLD,
     add_footer,
-    get_waves_bg,
+    get_attribute_effect,
+    get_attribute_prop,
     get_small_logo,
     get_square_avatar,
-    get_attribute_prop,
-    get_attribute_effect,
+    get_waves_bg,
 )
+from ..utils.imagetool import draw_pic_with_ring
+from ..utils.resource.download_file import get_phantom_img
+from ..utils.waves_api import waves_api
+from ..wutheringwaves_config import PREFIX
+from ..wutheringwaves_analyzecard.user_info_utils import get_user_detail_info
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 
@@ -57,7 +58,7 @@ class WavesEchoRank(BaseModel):
 
 
 async def get_draw_list(ev: Event, uid: str, user_id: str) -> Union[str, bytes]:
-    account_info = await get_user_detail_info(uid)
+    account_info= await get_user_detail_info(uid)
 
     all_role_detail: Optional[Dict[str, RoleDetailData]] = (
         await get_all_role_detail_info(uid)
@@ -126,7 +127,7 @@ async def get_draw_list(ev: Event, uid: str, user_id: str) -> Union[str, bytes]:
     waves_echo_rank.sort(key=lambda i: (i.score, i.roleId), reverse=True)
 
     # img = get_waves_bg(1200, 2650, 'bg3')
-    img = get_waves_bg(1600, 3230, "bg3", user_id)
+    img = get_waves_bg(1600, 3230, "bg3")
 
     # 头像部分
     avatar, avatar_ring = await draw_pic_with_ring(ev)
@@ -163,7 +164,7 @@ async def get_draw_list(ev: Event, uid: str, user_id: str) -> Union[str, bytes]:
     _sh_bg = Image.open(TEXT_PATH / "sh_bg.png")
 
     promote_icon = Image.open(TEXT_PATH / "promote_icon.png")
-    promote_icon = promote_icon.resize((30, 30), Image.Resampling.LANCZOS)
+    promote_icon = promote_icon.resize((30, 30))
     for index, _echo in enumerate(waves_echo_rank[:20]):
         sh_bg = _sh_bg.copy()
         head_high = 50
@@ -184,9 +185,9 @@ async def get_draw_list(ev: Event, uid: str, user_id: str) -> Union[str, bytes]:
             phantom.phantomProp.phantomId, phantom.phantomProp.iconUrl
         )
         fetter_icon = await get_attribute_effect(phantom.fetterDetail.name)
-        fetter_icon = fetter_icon.resize((50, 50), Image.Resampling.LANCZOS)
+        fetter_icon = fetter_icon.resize((50, 50))
         phantom_icon.alpha_composite(fetter_icon, dest=(205, 0))
-        phantom_icon = phantom_icon.resize((100, 100), Image.Resampling.LANCZOS)
+        phantom_icon = phantom_icon.resize((100, 100))
         sh_temp.alpha_composite(phantom_icon, dest=(20, 20 + head_high))
         phantomName = (
             phantom.phantomProp.name.replace("·", " ")
@@ -227,7 +228,7 @@ async def get_draw_list(ev: Event, uid: str, user_id: str) -> Union[str, bytes]:
             _prop, name_color, num_color = temp
             oset = 55
             prop_img = await get_attribute_prop(_prop.attributeName)
-            prop_img = prop_img.resize((40, 40), Image.Resampling.LANCZOS)
+            prop_img = prop_img.resize((40, 40))
             sh_temp.alpha_composite(prop_img, (15, 167 + i * oset + head_high))
             sh_temp_draw = ImageDraw.Draw(sh_temp)
 
@@ -259,15 +260,15 @@ async def get_draw_list(ev: Event, uid: str, user_id: str) -> Union[str, bytes]:
 async def draw_pic(roleId):
     pic = await get_square_avatar(roleId)
     pic_temp = Image.new("RGBA", pic.size)
-    pic_temp.paste(pic.resize((160, 160), Image.Resampling.LANCZOS), (10, 10))
+    pic_temp.paste(pic.resize((160, 160)), (10, 10))
 
     mask_pic = Image.open(TEXT_PATH / "avatar_mask.png")
     mask_pic_temp = Image.new("RGBA", mask_pic.size)
     mask_pic_temp.paste(mask_pic, (-20, -45), mask_pic)
 
     img = Image.new("RGBA", (180, 180))
-    mask_pic_temp = mask_pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
-    resize_pic = pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
+    mask_pic_temp = mask_pic_temp.resize((160, 160))
+    resize_pic = pic_temp.resize((160, 160))
     img.paste(resize_pic, (0, 0), mask_pic_temp)
 
     return img

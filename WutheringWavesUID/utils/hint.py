@@ -1,10 +1,7 @@
 from typing import Optional
 
-from gsuid_core.sv import get_plugin_available_prefix
-
 from .error_reply import ERROR_CODE
-
-PREFIX = get_plugin_available_prefix("WutheringWavesUID")
+from ..wutheringwaves_config import PREFIX
 
 BIND_UID_HINT = f"你还没有添加ck哦, 请使用 {PREFIX}添加CK 完成绑定！"
 

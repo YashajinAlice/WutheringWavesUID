@@ -1,25 +1,24 @@
-import copy
 import asyncio
+import copy
 from pathlib import Path
-from typing import Union, Optional
+from typing import Optional, Union
 
 import httpx
-from gsuid_core.bot import Bot
 from PIL import Image, ImageDraw
-from gsuid_core.models import Event
+
+from gsuid_core.bot import Bot
 from gsuid_core.logger import logger
+from gsuid_core.models import Event
 from gsuid_core.utils.image.convert import convert_img
 from gsuid_core.utils.image.image_tools import crop_center_img
 
-from ..utils.cache import TimedCache
-from ..utils.util import get_version
-from ..utils.database.models import WavesBind
-from ..wutheringwaves_config import WutheringWavesConfig
 from ..utils.api.wwapi import (
     GET_TOTAL_RANK_URL,
     TotalRankRequest,
     TotalRankResponse,
 )
+from ..utils.cache import TimedCache
+from ..utils.database.models import WavesBind
 from ..utils.fonts.waves_fonts import (
     waves_font_12,
     waves_font_16,
@@ -31,22 +30,24 @@ from ..utils.fonts.waves_fonts import (
     waves_font_58,
 )
 from ..utils.image import (
-    RED,
-    GREY,
     AMBER,
-    WAVES_VOID,
+    GREY,
+    RED,
     SPECIAL_GOLD,
-    WAVES_MOLTEN,
-    WAVES_SIERRA,
-    WAVES_MOONLIT,
     WAVES_FREEZING,
     WAVES_LINGERING,
-    get_ICON,
+    WAVES_MOLTEN,
+    WAVES_MOONLIT,
+    WAVES_SIERRA,
+    WAVES_VOID,
     add_footer,
-    get_waves_bg,
+    get_ICON,
     get_qq_avatar,
     get_square_avatar,
+    get_waves_bg,
 )
+from ..utils.util import get_version
+from ..wutheringwaves_config import WutheringWavesConfig
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 avatar_mask = Image.open(TEXT_PATH / "avatar_mask.png")
@@ -111,8 +112,6 @@ async def draw_total_rank(bot: Bot, ev: Event, pages: int) -> Union[str, bytes]:
 
     if not rankInfoList.data:
         return "获取练度总排行失败"
-
-    logger.info(f"获取练度总排行成功: {rankInfoList.data}")
 
     # 设置图像尺寸
     width = 1300

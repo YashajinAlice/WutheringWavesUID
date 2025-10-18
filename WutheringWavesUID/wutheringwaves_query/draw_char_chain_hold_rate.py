@@ -35,7 +35,7 @@ from ..utils.resource.constant import (
     SPECIAL_CHAR_NAME,
 )
 from ..utils.util import timed_async_cache
-from ..utils.waves_card_cache import get_card
+from ..utils.char_info_utils import get_all_role_detail_info_list
 
 TEXT_PATH = Path(__file__).parent / "texture2d"
 bar1 = Image.open(TEXT_PATH / "bar1.png")
@@ -157,7 +157,7 @@ async def draw_char_chain_hold_rate(ev: Event, data, group_id: str = "") -> byte
     
     # icon
     icon = get_ICON()
-    icon = icon.resize((180, 180), Image.Resampling.LANCZOS)
+    icon = icon.resize((180, 180))
     title_mask.paste(icon, (60, 380), icon)
     
     # title
@@ -222,12 +222,12 @@ async def draw_char_chain_hold_rate(ev: Event, data, group_id: str = "") -> byte
         attribute_text = char_model.attributeId
         attribute_name = ATTRIBUTE_ID_MAP[attribute_text]
         role_attribute = await get_attribute(attribute_name, is_simple=True)
-        role_attribute = role_attribute.resize((40, 40), Image.Resampling.LANCZOS).convert("RGBA")
+        role_attribute = role_attribute.resize((40, 40)).convert("RGBA")
         img.alpha_composite(role_attribute, (x + 2, y + 70))
 
         # 角色头像
         avatar = await draw_pic(char_id)
-        avatar = avatar.resize((110, 110), Image.Resampling.LANCZOS)
+        avatar = avatar.resize((110, 110))
         img.paste(avatar, (x + 10, y + 10), avatar)
         
         # 链级
@@ -280,15 +280,15 @@ async def draw_char_chain_hold_rate(ev: Event, data, group_id: str = "") -> byte
 async def draw_pic(roleId):
     pic = await get_square_avatar(roleId)
     pic_temp = Image.new("RGBA", pic.size)
-    pic_temp.paste(pic.resize((160, 160), Image.Resampling.LANCZOS), (10, 10))
+    pic_temp.paste(pic.resize((160, 160)), (10, 10))
 
     avatar_mask_temp = copy.deepcopy(avatar_mask)
     mask_pic_temp = Image.new("RGBA", avatar_mask_temp.size)
     mask_pic_temp.paste(avatar_mask_temp, (-20, -45), avatar_mask_temp)
 
     img = Image.new("RGBA", (180, 180))
-    mask_pic_temp = mask_pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
-    resize_pic = pic_temp.resize((160, 160), Image.Resampling.LANCZOS)
+    mask_pic_temp = mask_pic_temp.resize((160, 160))
+    resize_pic = pic_temp.resize((160, 160))
     img.paste(resize_pic, (0, 0), mask_pic_temp)
 
     return img
@@ -334,7 +334,7 @@ async def get_group_or_bot_char_hold_rate_data(group_id: str) -> Dict:
         if uid in uid_fiter:
             return None
 
-        role_details = await get_card(uid)
+        role_details = await get_all_role_detail_info_list(uid)
         if role_details is None:
             return None
 

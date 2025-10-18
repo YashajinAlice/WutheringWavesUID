@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from typing import Any, Dict, List, Literal, Optional, Union
 
-from ..api.model import RoleDetailData
-from .utils import AbnormalType, parse_skill_multi
+from ...utils.api.model import RoleDetailData
+from ...utils.damage.utils import AbnormalType, parse_skill_multi
 from .constants import onlineLevel2EquivalentLevel, spectro_frazzle_effect_atk
 
 

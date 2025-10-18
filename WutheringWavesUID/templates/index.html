@@ -8,16 +8,6 @@
   <link rel="icon" href="https://web-static.kurobbs.com/resource/prod/icon.ico" type="image/x-icon">
   <script src="https://static.geetest.com/v4/gt4.js"></script>
   <script src="https://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js"></script>
-
-  <!-- 背景音樂 -->
-  <audio id="bgMusic" loop>
-    <source src="https://wutheringwaves.kurogames.com/static4.0/assets/bgm-fcaa0201.mp3" type="audio/mpeg">
-  </audio>
-
-  <!-- 點擊音效 -->
-  <audio id="clickSound">
-    <source src="https://wutheringwaves.kurogames.com/static4.0/assets/click-6f57957c.mp3" type="audio/mpeg">
-  </audio>
   <style>
     body,
     html {
@@ -249,47 +239,6 @@
       cursor: pointer;
     }
 
-    /* 音樂控制按鈕樣式 */
-    .music-controls {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-      display: flex;
-      gap: 10px;
-    }
-
-    .music-btn {
-      background: rgba(255, 255, 255, 0.2);
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-      color: white;
-      font-size: 20px;
-    }
-
-    .music-btn:hover {
-      background: rgba(255, 255, 255, 0.3);
-      border-color: rgba(255, 255, 255, 0.5);
-      transform: scale(1.1);
-    }
-
-    .music-btn.active {
-      background: rgba(255, 255, 255, 0.4);
-      border-color: rgba(255, 255, 255, 0.6);
-    }
-
-    .music-btn i {
-      pointer-events: none;
-    }
-
     .user-id-display {
       text-align: right;
       color: rgba(255, 255, 255, 0.6);
@@ -434,341 +383,6 @@
       box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
     }
 
-    /* 角色選擇樣式 */
-    .character-selection {
-      margin-top: 1rem;
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .server-selection-title {
-      text-align: center;
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      font-weight: 500;
-    }
-
-    .character-list {
-      display: grid;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-
-    .character-item {
-      padding: 1.25rem;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      border: 2px solid transparent;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .character-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .character-item:hover {
-      background: rgba(255, 255, 255, 0.15);
-      border-color: rgba(255, 255, 255, 0.4);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    }
-
-    .character-item:hover::before {
-      opacity: 1;
-    }
-
-    .character-item.selected {
-      border-color: #4a90e2;
-      background: rgba(74, 144, 226, 0.25);
-      box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
-      transform: translateY(-2px);
-    }
-
-    .character-item.selected::after {
-      content: '✓';
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-      width: 24px;
-      height: 24px;
-      background: #4a90e2;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .character-avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: linear-gradient(45deg, #667eea, #764ba2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      color: white;
-      font-weight: bold;
-    }
-
-    .character-details {
-      flex: 1;
-    }
-
-    .character-name {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 0.25rem;
-    }
-
-    .character-server {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 0.25rem;
-    }
-
-    .character-level {
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.6);
-    }
-
-    .character-info {
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      display: none;
-    }
-
-    .character-info.show {
-      display: block;
-    }
-
-    .character-info-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 0.5rem;
-    }
-
-    .character-info-details {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    .info-item {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .info-label {
-      color: rgba(255, 255, 255, 0.6);
-    }
-
-    .info-value {
-      color: #fff;
-      font-weight: 500;
-    }
-
-    #confirmCharacterBtn {
-      width: 100%;
-      padding: 0.75rem;
-      background: linear-gradient(45deg, #4a90e2, #357abd);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    #confirmCharacterBtn:hover {
-      background: linear-gradient(45deg, #357abd, #2c5aa0);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
-    }
-
-    /* 選擇按鈕樣式 */
-    .selection-buttons {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1.5rem;
-      justify-content: center;
-    }
-
-    .cancel-btn,
-    .confirm-btn {
-      padding: 0.75rem 2rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      min-width: 120px;
-    }
-
-    .cancel-btn {
-      background: rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .cancel-btn:hover {
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
-      transform: translateY(-2px);
-    }
-
-    .confirm-btn {
-      background: linear-gradient(45deg, #4a90e2, #357abd);
-      color: white;
-      box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
-    }
-
-    .confirm-btn:hover {
-      background: linear-gradient(45deg, #357abd, #2c5aa0);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
-    }
-
-    .confirm-btn:disabled {
-      background: rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.5);
-      cursor: not-allowed;
-      transform: none;
-      box-shadow: none;
-    }
-
-    /* 加載動畫 */
-    .loading-spinner {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border: 3px solid rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      border-top-color: #fff;
-      animation: spin 1s ease-in-out infinite;
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .loading-text {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #fff;
-      font-size: 0.9rem;
-    }
-
-    /* 成功動畫 */
-    .success-checkmark {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: #4CAF50;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem;
-      animation: successPulse 0.6s ease-in-out;
-    }
-
-    @keyframes successPulse {
-      0% {
-        transform: scale(0);
-      }
-
-      50% {
-        transform: scale(1.1);
-      }
-
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    .success-checkmark::after {
-      content: '✓';
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    /* 角色選擇動畫 */
-    .character-item {
-      animation: slideInUp 0.3s ease-out;
-    }
-
-    @keyframes slideInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* 表單切換動畫 */
-    .login-form {
-      transition: all 0.3s ease;
-    }
-
-    .login-form.fade-out {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-
-    .character-selection {
-      animation: slideInRight 0.3s ease-out;
-    }
-
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
     /* 響應式設計 */
     @media (max-width: 480px) {
 
@@ -782,42 +396,17 @@
         width: 90%;
         padding: 1.5rem;
       }
-
-      .character-item {
-        padding: 0.75rem;
-        gap: 0.75rem;
-      }
-
-      .character-avatar {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-      }
-
-      .character-info-details {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
 
 <body>
-  <!-- 音樂控制按鈕 -->
-  <div class="music-controls">
-    <button class="music-btn" id="musicToggle" title="背景音樂開關">
-      <i>🎵</i>
-    </button>
-    <button class="music-btn" id="volumeToggle" title="音量控制">
-      <i>🔊</i>
-    </button>
-  </div>
-
   <div class="login-container">
     <div class="login-header">
       <div class="banner-text">
         <div class="welcome-text">欢迎登录</div>
         <div class="logo-text">WutheringWavesUID</div>
-        <div class="kurobbs-text">芙街区</div>
+        <div class="kurobbs-text">鸣潮UID</div>
       </div>
       <div class="banner">
         <img src="https://web-static.kurobbs.com/adminConfig/27/role_icon/1727419309663.png" alt="Banner">
@@ -828,7 +417,7 @@
     <div class="server-selector">
       <div class="server-tabs">
         <button class="server-tab active" data-server="cn">🇨🇳 國服</button>
-        <button class="server-tab" data-server="global">os 國際服</button>
+        <button class="server-tab" data-server="global">🌍 國際服</button>
       </div>
     </div>
     <!-- 國服登入表單 -->
@@ -844,12 +433,12 @@
         </div>
       </div>
       <div id="userIdDisplay" class="user-id-display">当前识别码: {{ userId }}</div>
-      <button type="submit" id="cnLoginBtn">登入</button>
+      <button type="submit" id="cnLoginBtn">🇨🇳 國服登入</button>
     </form>
 
     <!-- 國際服登入表單 -->
     <form id="globalLoginForm" class="login-form">
-      <div class="form-title"> 國際服登入</div>
+      <div class="form-title">os 國際服登入</div>
 
       <div class="input-group">
         <input type="email" id="globalEmail" name="email" required placeholder="请输入邮箱地址">
@@ -864,38 +453,17 @@
         <div id="geetestWidget"></div>
       </div>
 
-      <!-- 角色選擇區域 -->
-      <div id="characterSelection" class="character-selection" style="display: none;">
-        <div class="form-title">🎮 選擇角色</div>
-        <div class="server-selection-title">請選擇您的主角色所在伺服器</div>
-        <div class="character-list" id="characterList">
-          <!-- 角色列表將在這裡動態生成 -->
-        </div>
-        <div class="character-info" id="characterInfo">
-          <!-- 選中角色信息將在這裡顯示 -->
-        </div>
-        <div class="selection-buttons">
-          <button type="button" id="cancelSelectionBtn" class="cancel-btn">取消</button>
-          <button type="button" id="confirmCharacterBtn" class="confirm-btn" style="display: none;">確認選擇</button>
-        </div>
-      </div>
-
       <div id="userIdDisplay" class="user-id-display">当前识别码: {{ userId }}</div>
-      <button type="submit" id="globalLoginBtn">登入</button>
+      <button type="submit" id="globalLoginBtn">os 國際服登入</button>
     </form>
   </div>
 
   <div id="successModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <div class="success-checkmark"></div>
-      <h2>🎉 登入成功！</h2>
-      <p>歡迎回來！您的角色已成功綁定</p>
-      <div id="successCharacterInfo" style="display: none;">
-        <p><strong>角色:</strong> <span id="successCharacterName"></span></p>
-        <p><strong>伺服器:</strong> <span id="successServerName"></span></p>
-      </div>
-      <p class="countdown">5秒后自动跳转到社群</p>
+      <h2>🎉 登录成功</h2>
+      <p>欢迎回来！</p>
+      <p class="countdown">5秒后自动跳转到首页</p>
       <button class="redirect-button">立即跳转</button>
     </div>
   </div>
@@ -1037,10 +605,6 @@
       });
     });
 
-    // 角色選擇相關變量
-    let playerInfo = null;
-    let selectedCharacter = null;
-
     // 國際服登入
     globalLoginForm.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -1086,15 +650,7 @@
 
           if (data.success) {
             retryCount = 0; // 重置重試計數器
-
-            // 檢查是否需要角色選擇
-            if (data.need_character_selection) {
-              console.log('需要角色選擇，顯示角色選擇界面');
-              // 顯示角色選擇界面
-              showCharacterSelection(data.characters);
-            } else {
-              showSuccessModal();
-            }
+            showSuccessModal();
           } else if (data.need_verification) {
             // 需要 Geetest 驗證
             console.log('需要進行 Geetest 驗證');
@@ -1131,159 +687,6 @@
           console.error('Error:', error);
           alert('登入失敗，請重試');
         });
-    });
-
-    // 顯示角色選擇界面
-    function showCharacterSelection(characters) {
-      console.log('顯示角色選擇界面:', characters);
-
-      // 隱藏登入輸入框和按鈕，顯示角色選擇
-      document.querySelectorAll('#globalLoginForm .input-group, #globalLoginForm button[type="submit"]').forEach(el => {
-        el.style.display = 'none';
-      });
-      document.getElementById('characterSelection').style.display = 'block';
-
-      const characterList = document.getElementById('characterList');
-      characterList.innerHTML = '';
-
-      // 伺服器名稱映射
-      const serverNames = {
-        'Asia': '🌏 亞洲服',
-        'Europe': '🌍 歐洲服',
-        'America': '🌎 美洲服',
-        'HMT': '🇭🇰 台港澳服',
-        'SEA': '🌴 東南亞服'
-      };
-
-      characters.forEach((character, index) => {
-        const characterItem = document.createElement('div');
-        characterItem.className = 'character-item';
-        characterItem.dataset.index = index;
-
-        const serverDisplay = serverNames[character.region] || `🌐 ${character.region}`;
-
-        characterItem.innerHTML = `
-          <div class="character-avatar">${character.name.charAt(0).toUpperCase()}</div>
-          <div class="character-details">
-            <div class="character-name">${character.name}</div>
-            <div class="character-server">${serverDisplay}</div>
-            <div class="character-level">等級 ${character.level}</div>
-          </div>
-        `;
-
-        characterItem.addEventListener('click', () => selectCharacter(character, characterItem));
-        characterList.appendChild(characterItem);
-      });
-    }
-
-    // 選擇角色
-    function selectCharacter(character, element) {
-      // 移除其他選中狀態
-      document.querySelectorAll('.character-item').forEach(item => {
-        item.classList.remove('selected');
-      });
-
-      // 添加選中狀態
-      element.classList.add('selected');
-      selectedCharacter = character;
-
-      // 顯示角色詳細信息
-      showCharacterInfo(character);
-
-      // 顯示確認按鈕
-      document.getElementById('confirmCharacterBtn').style.display = 'block';
-    }
-
-    // 顯示角色詳細信息
-    function showCharacterInfo(character) {
-      const characterInfo = document.getElementById('characterInfo');
-      const serverNames = {
-        'Asia': '🌏 亞洲服',
-        'Europe': '🌍 歐洲服',
-        'America': '🌎 美洲服',
-        'HMT': '🇭🇰 台港澳服',
-        'SEA': '🌴 東南亞服'
-      };
-
-      const serverDisplay = serverNames[character.region] || character.region;
-
-      characterInfo.innerHTML = `
-        <div class="character-info-title">已選擇角色</div>
-        <div class="character-info-details">
-          <div class="info-item">
-            <span class="info-label">角色名:</span>
-            <span class="info-value">${character.name}</span>
-          </div>
-          <div class="info-item">
-            <span class="info-label">伺服器:</span>
-            <span class="info-value">${serverDisplay}</span>
-          </div>
-          <div class="info-item">
-            <span class="info-label">等級:</span>
-            <span class="info-value">${character.level}</span>
-          </div>
-          <div class="info-item">
-            <span class="info-label">UID:</span>
-            <span class="info-value">${character.uid}</span>
-          </div>
-        </div>
-      `;
-
-      characterInfo.classList.add('show');
-    }
-
-    // 確認角色選擇
-    document.getElementById('confirmCharacterBtn').addEventListener('click', function () {
-      if (selectedCharacter) {
-        console.log('確認選擇角色:', selectedCharacter);
-
-        // 發送角色選擇請求
-        fetch('{{ server_url }}/waves/international/select-character', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            auth: '{{ auth }}',
-            character: selectedCharacter
-          })
-        })
-          .then(response => response.json())
-          .then(data => {
-            if (data.success) {
-              showSuccessModal();
-            } else {
-              alert('角色選擇失敗: ' + (data.msg || '請重試'));
-            }
-          })
-          .catch(error => {
-            console.error('角色選擇錯誤:', error);
-            alert('角色選擇失敗，請重試');
-          });
-      } else {
-        alert('請先選擇一個角色');
-      }
-    });
-
-    // 取消角色選擇
-    document.getElementById('cancelSelectionBtn').addEventListener('click', function () {
-      console.log('取消角色選擇');
-
-      // 隱藏角色選擇界面，顯示登入輸入框和按鈕
-      document.getElementById('characterSelection').style.display = 'none';
-      document.querySelectorAll('#globalLoginForm .input-group, #globalLoginForm button[type="submit"]').forEach(el => {
-        el.style.display = 'block';
-      });
-
-      // 清除選擇狀態
-      selectedCharacter = null;
-      document.getElementById('characterInfo').classList.remove('show');
-      document.getElementById('confirmCharacterBtn').style.display = 'none';
-
-      // 清除所有選中狀態
-      document.querySelectorAll('.character-item').forEach(item => {
-        item.classList.remove('selected');
-      });
     });
 
     // 顯示 Geetest 驗證
@@ -1387,7 +790,7 @@
 
 
     function showSuccessModal() {
-      const homeHref = 'https://discord.gg/wawuuid'
+      const homeHref = 'https://github.com/MoonShadow1976/WutheringWavesUID'
       const modal = document.getElementById('successModal');
       const countdownElement = modal.querySelector('.countdown');
       const redirectButton = modal.querySelector('.redirect-button');
@@ -1395,38 +798,6 @@
       const successCharacterName = document.getElementById('successCharacterName');
       const successServerName = document.getElementById('successServerName');
       let countdown = 5;
-
-      // 檢查是否需要角色選擇
-      const needCharacterSelection = window.lastResponse && window.lastResponse.need_character_selection;
-
-      if (needCharacterSelection) {
-        // 需要角色選擇，顯示特殊消息
-        modal.querySelector('h2').textContent = '🎮 登入成功！';
-        modal.querySelector('p').textContent = '檢測到多個角色，請在機器人中選擇您的主角色';
-        successCharacterInfo.style.display = 'none';
-        countdownElement.textContent = '3秒后自动跳转到首页';
-        countdown = 3;
-      } else {
-        // 正常登入成功
-        modal.querySelector('h2').textContent = '🎉 登入成功！';
-        modal.querySelector('p').textContent = '歡迎回來！您的角色已成功綁定';
-
-        // 如果有選中的角色，顯示角色信息
-        if (selectedCharacter) {
-          const serverNames = {
-            'Asia': '🌏 亞洲服',
-            'Europe': '🌍 歐洲服',
-            'America': '🌎 美洲服',
-            'HMT': '🇭🇰 台港澳服',
-            'SEA': '🌴 東南亞服'
-          };
-
-          const serverDisplay = serverNames[selectedCharacter.region] || selectedCharacter.region;
-          successCharacterName.textContent = selectedCharacter.name;
-          successServerName.textContent = serverDisplay;
-          successCharacterInfo.style.display = 'block';
-        }
-      }
 
       modal.classList.add('show');
       setTimeout(() => {
@@ -1489,86 +860,6 @@
         .map(() => chars.charAt(Math.floor(Math.random() * chars.length)))
         .join('');
     }
-
-    // 音樂控制功能
-    let bgMusic = document.getElementById('bgMusic');
-    let clickSound = document.getElementById('clickSound');
-    let musicToggle = document.getElementById('musicToggle');
-    let volumeToggle = document.getElementById('volumeToggle');
-    let isMusicPlaying = false;
-    let isMuted = false;
-
-    // 初始化音樂設置
-    bgMusic.volume = 0.3; // 設置背景音樂音量
-    clickSound.volume = 0.5; // 設置點擊音效音量
-
-    // 音樂開關功能
-    musicToggle.addEventListener('click', function () {
-      playClickSound();
-
-      if (isMusicPlaying) {
-        bgMusic.pause();
-        musicToggle.innerHTML = '<i>🎵</i>';
-        musicToggle.classList.remove('active');
-        isMusicPlaying = false;
-      } else {
-        bgMusic.play().catch(e => {
-          console.log('背景音樂播放失敗:', e);
-        });
-        musicToggle.innerHTML = '<i>⏸️</i>';
-        musicToggle.classList.add('active');
-        isMusicPlaying = true;
-      }
-    });
-
-    // 音量控制功能
-    volumeToggle.addEventListener('click', function () {
-      playClickSound();
-
-      if (isMuted) {
-        bgMusic.volume = 0.3;
-        clickSound.volume = 0.5;
-        volumeToggle.innerHTML = '<i>🔊</i>';
-        volumeToggle.classList.remove('active');
-        isMuted = false;
-      } else {
-        bgMusic.volume = 0;
-        clickSound.volume = 0;
-        volumeToggle.innerHTML = '<i>🔇</i>';
-        volumeToggle.classList.add('active');
-        isMuted = true;
-      }
-    });
-
-    // 播放點擊音效
-    function playClickSound() {
-      if (!isMuted) {
-        clickSound.currentTime = 0;
-        clickSound.play().catch(e => {
-          console.log('點擊音效播放失敗:', e);
-        });
-      }
-    }
-
-    // 為所有按鈕添加點擊音效
-    document.addEventListener('click', function (e) {
-      if (e.target.tagName === 'BUTTON' || e.target.closest('button')) {
-        playClickSound();
-      }
-    });
-
-    // 頁面載入時自動播放背景音樂（需要用戶交互）
-    document.addEventListener('click', function () {
-      if (!isMusicPlaying && !isMuted) {
-        bgMusic.play().then(() => {
-          musicToggle.innerHTML = '<i>⏸️</i>';
-          musicToggle.classList.add('active');
-          isMusicPlaying = true;
-        }).catch(e => {
-          console.log('背景音樂自動播放失敗:', e);
-        });
-      }
-    }, { once: true });
   </script>
 </body>
 

@@ -1,12 +1,10 @@
-from typing import Any, Dict, List, Type, TypeVar, Optional
+from typing import Any, Dict, List, Optional, Type, TypeVar
 
-from gsuid_core.logger import logger
-from sqlalchemy.sql import or_, and_
-from sqlmodel import Field, col, select
-from sqlalchemy import null, delete, update
+from sqlalchemy import delete, null, update
 from sqlalchemy.ext.asyncio import AsyncSession
-from gsuid_core.utils.database.startup import exec_list
-from gsuid_core.webconsole.mount_app import PageSchema, GsAdminModel, site
+from sqlalchemy.sql import and_, or_
+from sqlmodel import Field, col, select
+
 from gsuid_core.utils.database.base_models import (
     Bind,
     Push,
@@ -14,6 +12,9 @@ from gsuid_core.utils.database.base_models import (
     BaseModel,
     with_session,
 )
+from gsuid_core.utils.database.startup import exec_list
+from gsuid_core.webconsole.mount_app import GsAdminModel, PageSchema, site
+from gsuid_core.logger import logger
 
 exec_list.extend(
     [
@@ -22,7 +23,7 @@ exec_list.extend(
         'ALTER TABLE WavesUser ADD COLUMN bbs_sign_switch TEXT DEFAULT "off"',
         'ALTER TABLE WavesUser ADD COLUMN bat TEXT DEFAULT ""',
         'ALTER TABLE WavesUser ADD COLUMN did TEXT DEFAULT ""',
-        'ALTER TABLE WavesPush ADD COLUMN push_time_value TEXT DEFAULT ""',
+        'ALTER TABLE WavesPush ADD COLUMN push_time_value TEXT DEFAULT ""'
     ]
 )
 
@@ -30,11 +31,9 @@ T_WavesBind = TypeVar("T_WavesBind", bound="WavesBind")
 T_WavesUser = TypeVar("T_WavesUser", bound="WavesUser")
 T_WavesUserAvatar = TypeVar("T_WavesUserAvatar", bound="WavesUserAvatar")
 
-
 class WavesUserAvatar(BaseModel, table=True):
     __table_args__: Dict[str, Any] = {"extend_existing": True}
     avatar_hash: str = Field(default="", title="头像哈希")
-
 
 class WavesBind(Bind, table=True):
     __table_args__: Dict[str, Any] = {"extend_existing": True}
@@ -50,66 +49,6 @@ class WavesBind(Bind, table=True):
             select(cls).where(col(cls.group_id).contains(group_id))
         )
         return result.all()
-
-    @classmethod
-    @with_session
-    async def check_uid_exists_globally(
-        cls: Type[T_WavesBind], session: AsyncSession, uid: str
-    ) -> Optional[T_WavesBind]:
-        """
-        檢查UID是否已被任何用戶綁定（全局檢查）
-        
-        Args:
-            uid: 要檢查的UID
-            
-        Returns:
-            如果UID已被綁定，返回綁定記錄；否則返回None
-        """
-        # 查詢所有包含此UID的綁定記錄
-        sql = select(cls).where(
-            or_(
-                col(cls.uid) == uid,  # 直接匹配
-                col(cls.uid).like(f"%{uid}%")  # 包含在UID列表中
-            )
-        )
-        result = await session.execute(sql)
-        data = result.scalars().all()
-        
-        # 檢查是否真的包含此UID（因為like可能匹配到其他UID）
-        for bind_record in data:
-            if bind_record.uid:
-                uid_list = bind_record.uid.split("_")
-                if uid in uid_list:
-                    return bind_record
-        
-        return None
-
-    @classmethod
-    @with_session
-    async def get_uid_bind_info(
-        cls: Type[T_WavesBind], session: AsyncSession, uid: str
-    ) -> Optional[Dict[str, Any]]:
-        """
-        獲取UID綁定信息（管理員查詢用）
-        
-        Args:
-            uid: 要查詢的UID
-            
-        Returns:
-            包含綁定信息的字典，如果未綁定則返回None
-        """
-        bind_record = await cls.check_uid_exists_globally(uid)
-        if not bind_record:
-            return None
-        
-        return {
-            "uid": uid,
-            "user_id": bind_record.user_id,
-            "bot_id": bind_record.bot_id,
-            "group_id": bind_record.group_id,
-            "bind_time": getattr(bind_record, 'bind_time', None) or getattr(bind_record, 'created_time', None) or 0,
-            "all_uids": bind_record.uid.split("_") if bind_record.uid else []
-        }
 
     @classmethod
     async def insert_waves_uid(
@@ -131,11 +70,6 @@ class WavesBind(Bind, table=True):
                 return -3
         if not uid:
             return -1
-
-        # 檢查UID是否已被其他用戶綁定
-        existing_bind = await cls.check_uid_exists_globally(uid)
-        if existing_bind and existing_bind.user_id != user_id:
-            return -4  # UID已被其他用戶綁定
 
         # 第一次绑定
         if not await cls.bind_exists(user_id, bot_id):
@@ -316,17 +250,7 @@ class WavesUser(User, table=True):
     @classmethod
     async def get_all_push_user_list(cls: Type[T_WavesUser]) -> List[T_WavesUser]:
         data = await cls.get_waves_all_user()
-        logger.info(f"[鸣潮] 获取到所有用户数量: {len(data)}")
-
-        # 調試信息：檢查每個用戶的 push_switch 狀態
-        for user in data:
-            logger.info(
-                f"[鸣潮] 用户 {user.uid} push_switch: {getattr(user, 'push_switch', 'N/A')}"
-            )
-
-        result = [user for user in data if getattr(user, "push_switch", "off") != "off"]
-        logger.info(f"[鸣潮] 推送用户数量: {len(result)}")
-        return result
+        return [user for user in data if user.push_switch != "off"]
 
     @classmethod
     @with_session
@@ -370,18 +294,6 @@ class WavesPush(Push, table=True):
     resin_value: Optional[int] = Field(title="体力阈值", default=180)
     push_time_value: Optional[str] = Field(title="推送时间", default="")
     resin_is_push: Optional[str] = Field(title="体力是否已推送", default="off")
-
-    @classmethod
-    @with_session
-    async def get_all_push_user_list(cls, session: AsyncSession):
-        """獲取所有需要推送的用戶（resin_push != 'off' 且 resin_is_push == 'off'）"""
-        sql = select(cls).where(
-            and_(col(cls.resin_push) != "off", col(cls.resin_is_push) == "off")
-        )
-        result = await session.execute(sql)
-        data = result.scalars().all()
-        logger.info(f"[鸣潮] WavesPush 表中找到 {len(data)} 个需要推送的用户")
-        return list(data)
 
 
 @site.register_admin

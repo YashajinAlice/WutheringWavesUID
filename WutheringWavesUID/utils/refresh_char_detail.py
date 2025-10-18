@@ -1,22 +1,23 @@
-import json
 import asyncio
-from typing import Dict, List, Union, Optional
+import json
+from typing import Dict, List, Optional, Union
 
 import aiofiles
-from gsuid_core.models import Event
-from gsuid_core.logger import logger
 
-from ..utils.hint import error_reply
-from ..utils.util import get_version
-from ..utils.waves_api import waves_api
-from ..utils.queues.queues import put_item
-from ..utils.queues.const import QUEUE_SCORE_RANK
-from .resource.constant import SPECIAL_CHAR_INT_ALL
-from ..utils.resource.RESOURCE_PATH import PLAYER_PATH
-from ..utils.api.model import RoleList, AccountBaseInfo
-from ..wutheringwaves_config import WutheringWavesConfig
+from gsuid_core.logger import logger
+from gsuid_core.models import Event
+
+from ..utils.api.model import AccountBaseInfo, RoleList
 from ..utils.error_reply import WAVES_CODE_101, WAVES_CODE_102
 from ..utils.expression_ctx import WavesCharRank, get_waves_char_rank
+from ..utils.hint import error_reply
+from ..utils.queues.const import QUEUE_SCORE_RANK
+from ..utils.queues.queues import put_item
+from ..utils.resource.RESOURCE_PATH import PLAYER_PATH
+from ..utils.util import get_version, send_master_info
+from ..utils.waves_api import waves_api
+from ..wutheringwaves_config import WutheringWavesConfig
+from .resource.constant import SPECIAL_CHAR_INT_ALL
 
 
 def is_use_global_semaphore() -> bool:
@@ -156,7 +157,8 @@ async def save_card_info(
 
     save_data = list(old_data.values())
 
-    await send_card(uid, user_id, save_data, is_self_ck, token, role_info, waves_data)
+    if not waves_api.is_net(uid):
+        await send_card(uid, user_id, save_data, is_self_ck, token, role_info, waves_data)
 
     try:
         async with aiofiles.open(path, "w", encoding="utf-8") as file:
@@ -188,20 +190,11 @@ async def refresh_char(
     if not role_info.success:
         return role_info.throw_msg()
 
-    # 添加數據驗證和調試信息
-    if role_info.data is None:
-        logger.error(f"{uid} API返回數據為None，可能是API請求失敗或數據格式錯誤")
-        msg = f"鸣潮特征码[{uid}]获取数据失败\n1.是否注册过库街区\n2.库街区能否查询当前鸣潮特征码数据\n3.API返回數據為空"
-        return msg
-
-    logger.debug(f"{uid} API返回數據: {type(role_info.data)} - {role_info.data}")
-
     try:
         role_info = RoleList.model_validate(role_info.data)
     except Exception as e:
         logger.exception(f"{uid} 角色信息解析失败", e)
-        logger.error(f"{uid} 原始數據: {role_info.data}")
-        msg = f"鸣潮特征码[{uid}]获取数据失败\n1.是否注册过库街区\n2.库街区能否查询当前鸣潮特征码数据\n3.數據格式錯誤: {str(e)}"
+        msg = f"鸣潮特征码[{uid}]获取数据失败\n1.是否注册过库街区\n2.库街区能否查询当前鸣潮特征码数据"
         return msg
 
     semaphore = await semaphore_manager.get_semaphore()
@@ -254,7 +247,7 @@ async def refresh_char(
         ):
             continue
         if role_detail_info["phantomData"]["cost"] == 0:
-            role_detail_info["phantomData"]["equipPhantomList"] = []
+            role_detail_info["phantomData"]["equipPhantomList"] = None
         try:
             # 扰我道心 难道谐振几阶还算不明白吗
             del role_detail_info["weaponData"]["weapon"]["effectDescription"]
@@ -278,15 +271,7 @@ async def refresh_char(
                 role_detail_info["phantomData"]
                 and role_detail_info["phantomData"]["equipPhantomList"]
             ):
-                # 過濾掉 None 值
-                equip_phantom_list = [
-                    i
-                    for i in role_detail_info["phantomData"]["equipPhantomList"]
-                    if i is not None
-                ]
-                role_detail_info["phantomData"]["equipPhantomList"] = equip_phantom_list
-
-                for i in equip_phantom_list:
+                for i in role_detail_info["phantomData"]["equipPhantomList"]:
                     if not isinstance(i, dict):
                         continue
                     sonata_name = i.get("fetterDetail", {}).get("name", "")
@@ -324,76 +309,92 @@ async def refresh_char_from_pcap(
     waves_map: Optional[Dict] = None,
     refresh_type: Union[str, List[str]] = "all",
 ) -> Union[str, List]:
-    """從 PCAP 數據刷新角色信息"""
-    from ..wutheringwaves_pcap.pcap_parser import PcapDataParser
-
-    waves_datas = []
-
+    """基於 pcap 數據刷新角色面板"""
     try:
-        # 創建 PCAP 解析器
-        parser = PcapDataParser()
+        from ..wutheringwaves_pcap.pcap_parser import PcapDataParser
 
-        # 解析 PCAP 數據
+        parser = PcapDataParser()
         role_detail_list = await parser.parse_pcap_data(pcap_data)
 
         if not role_detail_list:
-            return error_reply(WAVES_CODE_101)
+            logger.warning(f"PCAP 數據解析結果為空: {user_id}")
+            return []
 
-        # 根據 refresh_type 過濾角色
-        if refresh_type != "all" and isinstance(refresh_type, list):
-            filtered_roles = []
-            for role_detail in role_detail_list:
-                role_id = role_detail.get("role", {}).get("roleId")
-                if role_id and str(role_id) in refresh_type:
-                    filtered_roles.append(role_detail)
-            role_detail_list = filtered_roles
+        # 初始化 waves_map
+        if waves_map is None:
+            waves_map = {"refresh_update": {}, "refresh_unchanged": {}}
+        
+        waves_data = []
 
-        if not role_detail_list:
-            if refresh_type == "all":
-                return error_reply(WAVES_CODE_101)
-            else:
-                return error_reply(code=-110, msg="PCAP 數據中暫未查詢到指定角色數據")
+        # for role_detail in role_detail_list:
+        #     role_id = role_detail["role"]["roleId"]
+        #     # 標記為已更新
+        #     waves_map["refresh_update"][str(role_id)] = role_detail
 
-        # 處理角色數據
-        for role_detail_info in role_detail_list:
-            if not isinstance(role_detail_info, dict):
-                continue
-
-            # 修正合鳴效果
+        async def limited_check_role_detail_info(r):
             try:
-                if role_detail_info.get("phantomData") and role_detail_info[
-                    "phantomData"
-                ].get("equipPhantomList"):
-                    for i in role_detail_info["phantomData"]["equipPhantomList"]:
-                        if not isinstance(i, dict):
-                            continue
-                        sonata_name = i.get("fetterDetail", {}).get("name", "")
-                        if sonata_name == "雷曜日冕之冠":
-                            i["fetterDetail"]["name"] = "荣斗铸锋之冠"  # type: ignore
+                role_name = r["role"]["roleName"]
+                # 验证构建RoleDetailData类
+                from ..utils.api.model import RoleDetailData
+                RoleDetailData.model_validate(r)
             except Exception as e:
-                logger.exception(f"{uid} 合鸣效果修正失败", e)
+                await send_master_info(f"[鸣潮] 刷新用户{user_id} id{uid} 角色{role_name} 的数据时，数据结构异常，错误：{e}")
+                logger.warning(f"[鸣潮] 刷新用户{user_id} id{uid} 角色{role_name} 的数据时，数据结构异常，错误：{e}")
+                return
 
-            waves_datas.append(role_detail_info)
+            # PhantomList = r["phantomData"]["equipPhantomList"]
+            # if PhantomList:
+            #     for Phantom in PhantomList:
+            #         prop_list = []
+            #         if Phantom.get("mainProps"):
+            #             prop_list.extend(Phantom.get("mainProps"))
+            #         if Phantom.get("subProps"):
+            #             prop_list.extend(Phantom.get("subProps"))
+            #         for prop in prop_list:
+            #             if (
+            #                 prop.get("attributeName")
+            #                 and "缺失" in prop["attributeName"]
+            #             ):
+            #                 await send_master_info(
+            #                     f"[鸣潮] 刷新用户{user_id} id{uid} 角色{role_name} 的词条数据, 遇到[{prop['attributeName']}]"
+            #                 )
+            #                 logger.warning(
+            #                     f"[鸣潮] 刷新用户{user_id} id{uid} 角色{role_name} 的词条数据, 遇到[{prop['attributeName']}]"
+            #                 )
+            #                 return 
 
-        # 保存數據
+            waves_data.append(r)
+
+
+        # 确定需要处理的角色
+        if refresh_type == "all":
+            roles_to_process = role_detail_list
+        elif isinstance(refresh_type, list):
+            # 将 refresh_type 转换为字符串列表以确保类型一致
+            refresh_type_str = [str(x) for x in refresh_type]
+            roles_to_process = [
+                r for r in role_detail_list 
+                if str(r["role"]["roleId"]) in refresh_type_str
+            ]
+        else:
+            logger.warning(f"无效的 refresh_type: {refresh_type}")
+            roles_to_process = []
+
+        # 并行处理所有角色
+        if roles_to_process:
+            tasks = [limited_check_role_detail_info(r) for r in roles_to_process]
+            results = await asyncio.gather(*tasks, return_exceptions=True)
+
+        # 儲存數據到數據庫
         await save_card_info(
             uid,
-            waves_datas,
+            waves_data,
             waves_map,
             user_id,
-            is_self_ck=True,
-            token="",
-            role_info=None,
+            is_self_ck=True,  # PCAP 模式視為自登錄
         )
-
-        if not waves_datas:
-            if refresh_type == "all":
-                return error_reply(WAVES_CODE_101)
-            else:
-                return error_reply(code=-110, msg="PCAP 數據中暫未查詢到角色數據")
-
-        return waves_datas
+        return waves_data
 
     except Exception as e:
-        logger.exception(f"{uid} PCAP 數據解析失敗", e)
-        return error_reply(code=-110, msg="PCAP 數據解析失敗，請檢查數據格式")
+        logger.exception(f"PCAP 數據刷新失敗: {user_id}", e)
+        return []

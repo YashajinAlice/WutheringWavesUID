@@ -107,6 +107,7 @@ class AccountBaseInfo(BaseModel):
     achievementStar: Optional[int] = None  # 成就星数
     boxList: Optional[List[Optional[Box]]] = None  # 宝箱
     treasureBoxList: Optional[List[Optional[Box2]]] = None  # 宝箱
+    tidalHeritagesList: Optional[List[Optional[Box2]]] = None  # 潮汐之遗
     weeklyInstCount: Optional[int] = None  # 周本次数
     weeklyInstCountLimit: Optional[int] = None  # 周本限制次数
     storeEnergy: Optional[int] = None  # 结晶单质数量
@@ -157,7 +158,7 @@ class PhantomProp(BaseModel):
 
 class FetterDetail(BaseModel):
     groupId: int
-    name: Optional[str] = ""
+    name: str
     iconUrl: Optional[str]
     num: int
     firstDescription: Optional[str]
@@ -191,7 +192,7 @@ class EquipPhantom(BaseModel):
 
 class EquipPhantomData(BaseModel):
     cost: int
-    equipPhantomList: Optional[List[EquipPhantom]] = None
+    equipPhantomList: Union[List[Optional[EquipPhantom]], None, List[None]] = None
 
 
 class Skill(BaseModel):

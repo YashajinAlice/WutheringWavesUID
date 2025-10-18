@@ -2,21 +2,22 @@
 
 
 from ...api.model import RoleDetailData
-from ...damage.damage import DamageAttribute
-from .damage import echo_damage, phase_damage, weapon_damage
 from ...ascension.char import WavesCharResult, get_char_detail2
+from ...damage.damage import DamageAttribute
 from ...damage.utils import (
-    SkillType,
     SkillTreeMap,
+    SkillType,
+    cast_attack,
     cast_hit,
+    cast_liberation,
+    cast_phantom,
     cast_skill,
     hit_damage,
-    cast_attack,
-    cast_phantom,
     phantom_damage,
-    cast_liberation,
     skill_damage_calc,
 )
+from .buff import shouanren_buff, motefei_buff
+from .damage import echo_damage, phase_damage, weapon_damage
 
 
 def calc_damage_1(
@@ -220,6 +221,36 @@ def calc_damage_2(
     return crit_damage, expected_damage
 
 
+def calc_damage_10(
+    attr: DamageAttribute, role: RoleDetailData, isGroup: bool = True
+) -> tuple[str, str]:
+    attr.set_char_damage(hit_damage)
+    attr.set_char_template("temp_atk")
+
+    # 守岸人buff
+    shouanren_buff(attr, 0, 1, isGroup)
+
+    # 莫特斐buff
+    motefei_buff(attr, 6, 1, isGroup)
+
+    return calc_damage_1(attr, role, isGroup)
+
+
+def calc_damage_11(
+    attr: DamageAttribute, role: RoleDetailData, isGroup: bool = True
+) -> tuple[str, str]:
+    attr.set_char_damage(phantom_damage)
+    attr.set_char_template("temp_atk")
+
+    # 守岸人buff
+    shouanren_buff(attr, 0, 1, isGroup)
+
+    # 莫特斐buff
+    motefei_buff(attr, 6, 1, isGroup)
+
+    return calc_damage_2(attr, role, isGroup)
+
+
 damage_detail = [
     {
         "title": "答剑·忠烈死节",
@@ -228,6 +259,14 @@ damage_detail = [
     {
         "title": "万钧一断",
         "func": lambda attr, role: calc_damage_2(attr, role),
+    },
+    {
+        "title": "0+1守/6+1莫/答剑·忠烈死节",
+        "func": lambda attr, role: calc_damage_10(attr, role, True),
+    },
+    {
+        "title": "0+1守/6+1莫/万钧一断",
+        "func": lambda attr, role: calc_damage_11(attr, role, True),
     },
 ]
 

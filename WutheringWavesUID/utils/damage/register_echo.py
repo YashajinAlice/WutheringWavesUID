@@ -1,17 +1,17 @@
+from ...utils.damage.abstract import EchoAbstract, WavesEchoRegister
 from .damage import DamageAttribute
-from .abstract import EchoAbstract, WavesEchoRegister
 from .utils import (
-    CHAR_ATTR_VOID,
+    CHAR_ATTR_CELESTIAL,
+    CHAR_ATTR_FREEZING,
     CHAR_ATTR_MOLTEN,
     CHAR_ATTR_SIERRA,
     CHAR_ATTR_SINKING,
-    CHAR_ATTR_FREEZING,
-    CHAR_ATTR_CELESTIAL,
-    temp_atk,
-    hit_damage,
-    skill_damage,
+    CHAR_ATTR_VOID,
     attack_damage,
+    hit_damage,
     liberation_damage,
+    skill_damage,
+    temp_atk,
 )
 
 
@@ -520,10 +520,10 @@ class Echo_6000076(EchoAbstract):
     id = 6000076
     name = "毒冠贵族"
 
-    # 在首位装配该声骸技能时，自身冷凝伤害加成提升12.00%。
+    # 首位装备该声骸技能时，自身冷凝伤害加成提升12.00%
     def do_equipment_first(self, role_id: int):
         """首位装备"""
-        return {"冷凝伤害加成": "12%", "重击伤害加成": "12%"}
+        return {"冷凝伤害加成": "12%"}
 
 
 class Echo_6000077(EchoAbstract):
@@ -791,7 +791,7 @@ class Echo_6000112(EchoAbstract):
     id = 6000112
     name = "角鳄"
 
-    # 在首位装配该声骸技能时，自身气动伤害加成提升12.00%，共鸣解放伤害加成提升12.00%。
+    # 首位装配该声骸技能时，自身气动伤害加成提升12.00%，共鸣解放伤害加成提升12.00%
     def do_equipment_first(self, role_id: int):
         """首位装备"""
         return {"气动伤害加成": "12%", "共鸣解放伤害加成": "12%"}

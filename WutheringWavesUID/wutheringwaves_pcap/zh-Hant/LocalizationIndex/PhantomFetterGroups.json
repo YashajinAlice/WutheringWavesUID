@@ -185,50 +185,5 @@
         "fetterGroupDesc": "",
         "fetterElementColor": "FFFFFF00",
         "icon": "/d/GameData/UIResources/Common/Image/IconElementAttri/T_IconElementAttriFireUltimateSkill.png"
-    },
-    {
-        "id": 19,
-        "fetterMap": {
-            "2": 192,
-            "5": 195
-        },
-        "fetterGroupName": "失序彼岸之梦",
-        "fetterGroupDesc": "",
-        "fetterElementColor": "FFFFFF00",
-        "icon": "/d/GameData/UIResources/Common/Image/IconElementAttri/T_IconElementAttriFireUltimateSkill.png"
-    },
-    {
-        "id": 20,
-        "fetterMap": {
-            "2": 200,
-            "3": 201,
-            "5": 202
-        },
-        "fetterGroupName": "榮鬥鑄鋒之冠",
-        "fetterGroupDesc": "",
-        "fetterElementColor": "FFFFFF00",
-        "icon": "/d/GameData/UIResources/Common/Image/IconElementAttri/T_IconElementAttriThunder.png"
-    },
-    {
-        "id": 21,
-        "fetterMap": {
-            "2": 210,
-            "3": 211,
-            "5": 212
-        },
-        "fetterGroupName": "息界同調之律",
-        "fetterGroupDesc": "",
-        "fetterElementColor": "FFFFFF00",
-        "icon": "/d/GameData/UIResources/Common/Image/IconElementAttri/T_IconElementAttriWind.png"
-    },
-    {
-        "id": 22,
-        "fetterMap": {
-            "3": 223
-        },
-        "fetterGroupName": "焚羽猎魔之影",
-        "fetterGroupDesc": "",
-        "fetterElementColor": "FFFFFF00",
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconElementAttri/T_IconElementAttriFireA.T_IconElementAttriFireA"
     }
 ]

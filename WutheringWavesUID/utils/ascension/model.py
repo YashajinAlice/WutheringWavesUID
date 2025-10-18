@@ -1,9 +1,9 @@
-from typing import Any, Dict, List, Tuple, Union, Optional
+from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, BaseModel
+from pydantic import BaseModel, Field
 
-from ...utils.util import format_with_defaults
 from ...utils.resource.constant import ATTRIBUTE_ID_MAP
+from ...utils.util import format_with_defaults
 
 
 class Stats(BaseModel):
@@ -222,7 +222,7 @@ class EchoModel(BaseModel):
 
     def get_group_name_by_gid(self, gid: str | int) -> str | None:
         gid = str(gid)
-        if gid not in self.group:
+        if gid not in self.group: 
             return None
         return self.group[gid].get("name")
 

@@ -294,7 +294,7 @@ async def draw_slash_img(ev: Event, uid: str, user_id: str) -> Union[bytes, str]
                     fill=buff_color,
                 )
                 buff_pic = await pic_download_from_url(SLASH_PATH, slash_half.buffIcon)
-                buff_pic = buff_pic.resize((100, 100), Image.Resampling.LANCZOS)
+                buff_pic = buff_pic.resize((100, 100))
                 buff_bg.paste(buff_pic, (0, 0), buff_pic)
 
                 role_hang_bg.alpha_composite(buff_bg, (870, 20))

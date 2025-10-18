@@ -2,29 +2,30 @@ import os
 import random
 from io import BytesIO
 from pathlib import Path
-from typing import Tuple, Union, Literal, Optional
+from typing import Literal, Optional, Tuple, Union
 
-from gsuid_core.models import Event
-from gsuid_core.logger import logger
-from gsuid_core.utils.image.utils import sget
-from gsuid_core.utils.image.image_tools import crop_center_img
 from PIL import (
     Image,
-    ImageOps,
     ImageDraw,
-    ImageFont,
-    ImageFilter,
     ImageEnhance,
+    ImageFilter,
+    ImageFont,
+    ImageOps,
 )
 
 from ..utils.database.models import WavesUserAvatar
+from gsuid_core.logger import logger
+from gsuid_core.models import Event
+from gsuid_core.utils.image.image_tools import crop_center_img
+from gsuid_core.utils.image.utils import sget
+
 from ..utils.resource.RESOURCE_PATH import (
     AVATAR_PATH,
-    WEAPON_PATH,
-    SHARE_BG_PATH,
-    ROLE_PILE_PATH,
     CUSTOM_CARD_PATH,
     CUSTOM_MR_CARD_PATH,
+    ROLE_PILE_PATH,
+    SHARE_BG_PATH,
+    WEAPON_PATH,
 )
 
 ICON = Path(__file__).parent.parent.parent / "ICON.png"
@@ -34,12 +35,10 @@ BLACK_G = (40, 40, 40)
 YELLOW = (255, 200, 1)
 RED = (255, 0, 0)
 BLUE = (1, 183, 255)
-GOLD = (230, 172, 55)  # #e6ac37 - 用戶建議的數字顏色
+GOLD = (224, 202, 146)
 SPECIAL_GOLD = (234, 183, 4)
 AMBER = (204, 140, 0)
 GREEN = (144, 238, 144)
-# 用戶建議的矩形背景顏色
-RECTANGLE_BG = (130, 104, 54)  # #826836
 
 # 冷凝-凝夜白霜
 WAVES_FREEZING = (53, 152, 219)
@@ -219,81 +218,20 @@ async def get_weapon_type(name: str = "") -> Image.Image:
     return Image.open(TEXT_PATH / f"weapon_type/weapon_type_{name}.png").convert("RGBA")
 
 
-def get_waves_bg(
-    w: int, h: int, bg: str = "bg", user_id: Optional[str] = None
-) -> Image.Image:
-    """
-    獲取背景圖片，支持Premium用戶自定義背景
-
-    Args:
-        w: 寬度
-        h: 高度
-        bg: 背景類型
-        user_id: 用戶ID（用於Premium自定義背景）
-
-    Returns:
-        背景圖片
-    """
-    # 嘗試使用Premium用戶自定義背景
-    if user_id:
-        try:
-            from ..wutheringwaves_payment.background_manager import (
-                background_manager,
-            )
-
-            # 獲取用戶背景路徑
-            bg_path = background_manager.get_background_path(user_id)
-            if bg_path and bg_path.exists():
-                img = Image.open(bg_path).convert("RGBA")
-                return crop_center_img(img, w, h)
-        except Exception as e:
-            # 如果獲取自定義背景失敗，繼續使用默認背景
-            pass
-
-    # 使用默認背景
+def get_waves_bg(w: int, h: int, bg: str = "bg") -> Image.Image:
     img = Image.open(TEXT_PATH / f"{bg}.jpg").convert("RGBA")
     return crop_center_img(img, w, h)
 
 
-def get_crop_waves_bg(
-    w: int, h: int, bg: str = "bg", user_id: Optional[str] = None
-) -> Image.Image:
-    """
-    獲取裁剪背景圖片，支持Premium用戶自定義背景
-
-    Args:
-        w: 寬度
-        h: 高度
-        bg: 背景類型
-        user_id: 用戶ID（用於Premium自定義背景）
-
-    Returns:
-        裁剪後的背景圖片
-    """
-    # 嘗試使用Premium用戶自定義背景
-    if user_id:
-        try:
-            from ..wutheringwaves_payment.background_manager import (
-                background_manager,
-            )
-
-            # 獲取用戶背景路徑
-            bg_path = background_manager.get_background_path(user_id)
-            if bg_path and bg_path.exists():
-                img = Image.open(bg_path).convert("RGBA")
-                width, height = img.size
-                crop_box = (0, height // 2, width, height)
-                cropped_image = img.crop(crop_box)
-                return crop_center_img(cropped_image, w, h)
-        except Exception as e:
-            # 如果獲取自定義背景失敗，繼續使用默認背景
-            pass
-
-    # 使用默認背景
+def get_crop_waves_bg(w: int, h: int, bg: str = "bg") -> Image.Image:
     img = Image.open(TEXT_PATH / f"{bg}.jpg").convert("RGBA")
+
     width, height = img.size
+
     crop_box = (0, height // 2, width, height)
+
     cropped_image = img.crop(crop_box)
+
     return crop_center_img(cropped_image, w, h)
 
 
@@ -309,52 +247,21 @@ async def get_qq_avatar(
     char_pic = Image.open(BytesIO((await sget(avatar_url)).content)).convert("RGBA")
     return char_pic
 
-
 async def get_discord_avatar(
     qid: Optional[Union[int, str]] = None,
     avatar_url: Optional[str] = None,
-    avatar_hash: Optional[str] = None,
     size: int = 640,
 ) -> Image.Image:
-    try:
-        if qid:
-            # 如果直接提供了頭像哈希，使用它
-            if avatar_hash:
-                avatar_url = f"https://cdn.discordapp.com/avatars/{qid}/{avatar_hash}"
-            else:
-                # 否則從數據庫查詢
-                data = await WavesUserAvatar.select_data(str(qid), "discord")
-                avatar_hash = data.avatar_hash if data else ""
-                if avatar_hash:
-                    avatar_url = (
-                        f"https://cdn.discordapp.com/avatars/{qid}/{avatar_hash}"
-                    )
-                else:
-                    # 如果沒有頭像哈希，使用默認頭像
-                    avatar_url = "https://cdn.discordapp.com/embed/avatars/0.png"
-        elif avatar_url is None:
-            avatar_url = "https://cdn.discordapp.com/embed/avatars/0.png"
+    if qid:
+        data = await WavesUserAvatar.select_data(str(qid), "discord")
+        avatar_hash = data.avatar_hash if data else ""
+        avatar_url = f"https://cdn.discordapp.com/avatars/{qid}/{avatar_hash}"
+    elif avatar_url is None:
+        avatar_url = "https://cdn.discordapp.com/embed/avatars/0.png"
 
-        avatar_url = (
-            avatar_url + f".png?size={size}"
-            if not avatar_url.endswith(".png")
-            else avatar_url
-        )
-
-        # 嘗試下載頭像
-        response = await sget(avatar_url)
-        if response.status_code == 200:
-            char_pic = Image.open(BytesIO(response.content)).convert("RGBA")
-            return char_pic
-        else:
-            # 如果下載失敗，使用默認頭像
-            raise Exception(f"Discord頭像下載失敗，狀態碼: {response.status_code}")
-
-    except Exception as e:
-        # 如果任何步驟失敗，使用默認角色頭像
-        from .image import get_square_avatar
-
-        return await get_square_avatar("1505")
+    avatar_url = avatar_url + f".png?size={size}" if not avatar_url.endswith(".png") else avatar_url
+    char_pic = Image.open(BytesIO((await sget(avatar_url)).content)).convert("RGBA")
+    return char_pic
 
 
 async def get_qqgroup_avatar(
@@ -372,14 +279,12 @@ async def get_qqgroup_avatar(
     char_pic = Image.open(BytesIO((await sget(avatar_url)).content)).convert("RGBA")
     return char_pic
 
-
 # 获取对应bot_id的头像获取函数
 AVATAR_GETTERS = {
     "onebot": get_qq_avatar,
     "discord": get_discord_avatar,
-    "qqgroup": get_qqgroup_avatar,
+    "qqgroup": get_qqgroup_avatar
 }
-
 
 async def get_event_avatar(
     ev: Event,
@@ -393,7 +298,7 @@ async def get_event_avatar(
         from ..utils.at_help import is_valid_at
 
         is_valid_at_param = is_valid_at(ev)
-
+    
     get_bot_avatar = AVATAR_GETTERS.get(ev.bot_id)
 
     # 尝试获取@用户的头像
@@ -403,9 +308,7 @@ async def get_event_avatar(
         except Exception:
             img = None
 
-    if (
-        img is None and "avatar" in ev.sender and ev.sender["avatar"]
-    ):  # qqgroup不返回avatar...
+    if img is None and "avatar" in ev.sender and ev.sender["avatar"]: # qqgroup不返回avatar...
         avatar_url: str = ev.sender["avatar"]
         if avatar_url.startswith(("http", "https")):
             try:
@@ -518,7 +421,7 @@ def draw_text_with_shadow(
 
 
 def compress_to_webp(
-    image_path: Path, quality: int = 95, delete_original: bool = False
+    image_path: Path, quality: int = 80, delete_original: bool = False
 ) -> tuple[bool, Path]:
     try:
         from PIL import Image
@@ -579,7 +482,7 @@ async def draw_avatar_with_star(
 
     # 144*144
     star_bg = Image.open(TEXT_PATH / f"star_{star_level}.png")
-    avatar = avatar.resize((item_width, item_width), Image.Resampling.LANCZOS)
+    avatar = avatar.resize((item_width, item_width))
 
     img.alpha_composite(avatar, (0, 0))
     img.alpha_composite(star_bg, (0, 0))

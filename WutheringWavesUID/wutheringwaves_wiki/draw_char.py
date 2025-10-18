@@ -47,17 +47,17 @@ async def draw_char_skill(char_id: str):
 
     _, char_pile = await get_role_pile(char_id)
 
-    char_pic = char_pile.resize((600, int(600 / char_pile.size[0] * char_pile.size[1]), Image.Resampling.LANCZOS))
+    char_pic = char_pile.resize((600, int(600 / char_pile.size[0] * char_pile.size[1])))
 
     char_bg = Image.open(TEXT_PATH / "title_bg.png")
-    char_bg = char_bg.resize((1000, int(1000 / char_bg.size[0] * char_bg.size[1]), Image.Resampling.LANCZOS))
+    char_bg = char_bg.resize((1000, int(1000 / char_bg.size[0] * char_bg.size[1])))
     char_bg_draw = ImageDraw.Draw(char_bg)
     # 名字
     char_bg_draw.text((580, 120), f"{char_model.name}", "black", waves_font_70, "lm")
     # 稀有度
     rarity_pic = Image.open(TEXT_PATH / f"rarity_{char_model.starLevel}.png")
     rarity_pic = rarity_pic.resize(
-        (180, int(180 / rarity_pic.size[0] * rarity_pic.size[1], Image.Resampling.LANCZOS))
+        (180, int(180 / rarity_pic.size[0] * rarity_pic.size[1]))
     )
 
     # 90级别数据
@@ -87,17 +87,17 @@ async def draw_char_chain(char_id: str):
 
     _, char_pile = await get_role_pile(char_id)
 
-    char_pic = char_pile.resize((600, int(600 / char_pile.size[0] * char_pile.size[1]), Image.Resampling.LANCZOS))
+    char_pic = char_pile.resize((600, int(600 / char_pile.size[0] * char_pile.size[1])))
 
     char_bg = Image.open(TEXT_PATH / "title_bg.png")
-    char_bg = char_bg.resize((1000, int(1000 / char_bg.size[0] * char_bg.size[1]), Image.Resampling.LANCZOS))
+    char_bg = char_bg.resize((1000, int(1000 / char_bg.size[0] * char_bg.size[1])))
     char_bg_draw = ImageDraw.Draw(char_bg)
     # 名字
     char_bg_draw.text((580, 120), f"{char_model.name}", "black", waves_font_70, "lm")
     # 稀有度
     rarity_pic = Image.open(TEXT_PATH / f"rarity_{char_model.starLevel}.png")
     rarity_pic = rarity_pic.resize(
-        (180, int(180 / rarity_pic.size[0] * rarity_pic.size[1], Image.Resampling.LANCZOS))
+        (180, int(180 / rarity_pic.size[0] * rarity_pic.size[1]))
     )
 
     # 90级别数据

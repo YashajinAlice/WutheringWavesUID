@@ -1,6 +1,4 @@
-from gsuid_core.sv import get_plugin_available_prefix
-
-PREFIX = get_plugin_available_prefix("WutheringWavesUID")
+from ..wutheringwaves_config import PREFIX
 
 WAVES_CODE_097 = -97
 WAVES_CODE_098 = -98
