@@ -254,7 +254,7 @@ async def refresh_char(
         ):
             continue
         if role_detail_info["phantomData"]["cost"] == 0:
-            role_detail_info["phantomData"]["equipPhantomList"] = None
+            role_detail_info["phantomData"]["equipPhantomList"] = []
         try:
             # 扰我道心 难道谐振几阶还算不明白吗
             del role_detail_info["weaponData"]["weapon"]["effectDescription"]
@@ -278,7 +278,15 @@ async def refresh_char(
                 role_detail_info["phantomData"]
                 and role_detail_info["phantomData"]["equipPhantomList"]
             ):
-                for i in role_detail_info["phantomData"]["equipPhantomList"]:
+                # 過濾掉 None 值
+                equip_phantom_list = [
+                    i
+                    for i in role_detail_info["phantomData"]["equipPhantomList"]
+                    if i is not None
+                ]
+                role_detail_info["phantomData"]["equipPhantomList"] = equip_phantom_list
+
+                for i in equip_phantom_list:
                     if not isinstance(i, dict):
                         continue
                     sonata_name = i.get("fetterDetail", {}).get("name", "")

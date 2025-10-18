@@ -12,8 +12,8 @@ from gsuid_core.utils.image.convert import convert_img
 from gsuid_core.utils.image.image_tools import crop_center_img
 
 from ..utils.calc import WuWaCalc
-from ..utils.util import hide_uid
 from ..utils.cache import TimedCache
+from ..utils.util import hide_uid, send_master_info
 from ..utils.damage.abstract import DamageRankRegister
 from ..utils.api.model import WeaponData, RoleDetailData
 from ..utils.database.models import WavesBind, WavesUser

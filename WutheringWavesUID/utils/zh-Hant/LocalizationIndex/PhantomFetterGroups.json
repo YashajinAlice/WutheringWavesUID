@@ -220,5 +220,15 @@
         "fetterGroupDesc": "",
         "fetterElementColor": "FFFFFF00",
         "icon": "/d/GameData/UIResources/Common/Image/IconElementAttri/T_IconElementAttriWind.png"
+    },
+    {
+        "id": 22,
+        "fetterMap": {
+            "3": 223
+        },
+        "fetterGroupName": "焚羽猎魔之影",
+        "fetterGroupDesc": "",
+        "fetterElementColor": "FFFFFF00",
+        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconElementAttri/T_IconElementAttriFireA.T_IconElementAttriFireA"
     }
 ]

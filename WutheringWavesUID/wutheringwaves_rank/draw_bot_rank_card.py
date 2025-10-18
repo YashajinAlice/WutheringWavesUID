@@ -12,9 +12,9 @@ from gsuid_core.utils.image.convert import convert_img
 from gsuid_core.utils.image.image_tools import crop_center_img
 
 from ..utils.calc import WuWaCalc
-from ..utils.util import hide_uid
 from ..utils.cache import TimedCache
 from ..utils.waves_card_cache import get_card
+from ..utils.util import hide_uid, send_master_info
 from ..utils.damage.abstract import DamageRankRegister
 from ..utils.api.model import WeaponData, RoleDetailData
 from ..utils.database.models import WavesBind, WavesUser
@@ -225,7 +225,6 @@ async def get_rank_info_for_user(
             )
         except Exception as e:
             logger.warning(f"获取用户{user.user_id} id{uid} 的排行数据,错误: {e}")
-            from ..utils.util import send_master_info
 
             await send_master_info(
                 f"获取用户{user.user_id} id{uid} 的排行数据,错误: {e}"
