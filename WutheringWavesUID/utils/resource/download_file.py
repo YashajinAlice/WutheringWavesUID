@@ -1,15 +1,14 @@
 from typing import Union
 
 from PIL import Image
-
 from gsuid_core.utils.download_resource.download_file import download
 
 from .RESOURCE_PATH import (
     FETTER_PATH,
-    MATERIAL_PATH,
     PHANTOM_PATH,
-    ROLE_DETAIL_CHAINS_PATH,
+    MATERIAL_PATH,
     ROLE_DETAIL_SKILL_PATH,
+    ROLE_DETAIL_CHAINS_PATH,
 )
 
 
@@ -23,7 +22,11 @@ async def get_skill_img(
     name = f"skill_{skill_name}.png"
     _path = _dir / name
     if not _path.exists():
-        await download(pic_url, _dir, name, tag="[鸣潮]")
+        if pic_url:
+            await download(pic_url, _dir, name, tag="[鸣潮]")
+        else:
+            # logger.warning(f"[鸣潮] 角色 {char_id} 的技能图片不存在，使用默认图片")
+            _path = ROLE_DETAIL_SKILL_PATH / "1102/skill_1102.png"
 
     return Image.open(_path).convert("RGBA")
 
@@ -37,7 +40,11 @@ async def get_chain_img(
     name = f"chain_{order_id}.png"
     _path = _dir / name
     if not _path.exists():
-        await download(pic_url, _dir, name, tag="[鸣潮]")
+        if pic_url:
+            await download(pic_url, _dir, name, tag="[鸣潮]")
+        else:
+            # logger.warning(f"[鸣潮] 角色 {char_id} 的共鸣链图片不存在，使用默认图片")
+            _path = ROLE_DETAIL_CHAINS_PATH / f"1102/chain_{order_id}.png"
 
     return Image.open(_path).convert("RGBA")
 
