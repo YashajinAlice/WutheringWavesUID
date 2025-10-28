@@ -372,6 +372,22 @@
         "need_admin": false
       },
       {
+        "name": "bot共鳴鍊排行",
+        "desc": "bot共鳴鍊排行",
+        "eg": "长离1链bot排行",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "bot共鳴鍊评分排行",
+        "desc": "bot共鳴鍊评分排行",
+        "eg": "长离1链评分bot排行",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
         "name": "练度群排行",
         "desc": "练度群排行",
         "eg": "练度排行",

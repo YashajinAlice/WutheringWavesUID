@@ -195,6 +195,7 @@ async def get_rank_info_for_user(
     rankDetail,
     tokenLimitFlag,
     wavesTokenUsersMap,
+    chain_filter: Optional[int] = None,
 ):
     rankInfoList = []
     if not user.uid:
@@ -218,6 +219,10 @@ async def get_rank_info_for_user(
         if not role_detail.phantomData or not role_detail.phantomData.equipPhantomList:
             continue
 
+        # 共鳴鍊過濾
+        if chain_filter is not None and role_detail.get_chain_num() != chain_filter:
+            continue
+
         rankInfo = None
         try:
             rankInfo = await get_one_rank_info(user.user_id, uid, role_detail, rankDetail)
@@ -239,6 +244,7 @@ async def get_all_rank_info(
     rankDetail,
     tokenLimitFlag,
     wavesTokenUsersMap,
+    chain_filter: Optional[int] = None,
 ):
     semaphore = asyncio.Semaphore(50)
 
@@ -251,6 +257,7 @@ async def get_all_rank_info(
                 rankDetail,
                 tokenLimitFlag,
                 wavesTokenUsersMap,
+                chain_filter,
             )
 
     tasks = [process_user(user) for user in users]
@@ -282,7 +289,7 @@ async def get_waves_token_condition(ev):
 
 
 async def draw_bot_rank_img(
-    bot: Bot, ev: Event, char: str, rank_type: str
+    bot: Bot, ev: Event, char: str, rank_type: str, chain_filter: Optional[int] = None
 ) -> Union[str, bytes]:
     char_id = char_name_to_char_id(char)
     if not char_id:
@@ -336,10 +343,14 @@ async def draw_bot_rank_img(
         rankDetail,
         tokenLimitFlag,
         wavesTokenUsersMap,
+        chain_filter,
     )
     if len(rankInfoList) == 0:
         msg = []
-        msg.append(f"[鸣潮] bot内暂无【{char}】面板")
+        if chain_filter is not None:
+            msg.append(f"[鸣潮] bot内暂无【{char}{chain_filter}链】面板")
+        else:
+            msg.append(f"[鸣潮] bot内暂无【{char}】面板")
         msg.append(f"请使用【{PREFIX}刷新面板】后再使用此功能！")
         if tokenLimitFlag:
             msg.append(
@@ -576,7 +587,11 @@ async def draw_bot_rank_img(
     if char_id in SPECIAL_CHAR_NAME:
         char_name = SPECIAL_CHAR_NAME[char_id]
 
-    title_name = f"{char_name}{rank_type}bot排行"
+    # 構建標題
+    if chain_filter is not None:
+        title_name = f"{char_name}{chain_filter}链{rank_type}bot排行"
+    else:
+        title_name = f"{char_name}{rank_type}bot排行"
     title_draw.text((540, 265), f"{title_name}", "black", waves_font_30, "lm")
     
     # 时间
