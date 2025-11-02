@@ -164,7 +164,8 @@ async def save_push_data(
         gid = push_data[f"{mode}_push"]
         if gid not in group_data:
             group_data[gid] = []
-        msg_list.append(MessageSegment.at(qid))
+        # 使用 UID 顯示而不是 @user_id
+        msg_list.append(MessageSegment.text(f"@{uid}"))
         group_data[gid].append({"bot_id": bot_id, "messages": msg_list})
 
     if is_need_save:

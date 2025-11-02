@@ -790,7 +790,7 @@
 
 
     function showSuccessModal() {
-      const homeHref = 'https://github.com/MoonShadow1976/WutheringWavesUID'
+      const homeHref = 'https://discord.gg/wawuuid'
       const modal = document.getElementById('successModal');
       const countdownElement = modal.querySelector('.countdown');
       const redirectButton = modal.querySelector('.redirect-button');
@@ -806,7 +806,7 @@
       }, 10);
 
       function updateCountdown() {
-        countdownElement.textContent = `${countdown}秒后自动跳转到首页`;
+        countdownElement.textContent = `${countdown}秒后自动跳转到社群`;
         if (countdown <= 0) {
           clearInterval(timer);
           window.location.href = homeHref;
