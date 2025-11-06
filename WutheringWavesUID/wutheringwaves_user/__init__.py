@@ -143,7 +143,9 @@ async def admin_query_uid_binding(bot: Bot, ev: Event):
         )
 
     if len(uid) != 9 or not uid.isdigit():
-        return await bot.send(f"❌ UID格式不正確！請提供9位數字的UID\n", at_sender)
+        return await bot.send(
+            f"❌ UID格式不正確！請提供9位數字的UID\n例如 綁定710596960\n", at_sender
+        )
 
     try:
         # 查詢UID綁定信息
@@ -239,11 +241,11 @@ async def send_waves_bind_uid_msg(bot: Bot, ev: Event):
             bot,
             code,
             {
-                0: f"[鸣潮] 特征码[{uid}]绑定成功！\n\n当前仅支持查询部分信息，完整功能请\n国服用户使用【{PREFIX}登录】，使用【{PREFIX}刷新面板】更新角色面板\n国际服用户请使用【{PREFIX}分析】上传角色面板\n使用【{PREFIX}查看】查看已绑定的特征码\n更新角色面板后可以使用【{PREFIX}暗主排行】查询暗主排行\n",
-                -1: f"[鸣潮] 特征码[{uid}]的位数不正确！\n",
-                -2: f"[鸣潮] 特征码[{uid}]已经绑定过了！\n",
-                -3: "[鸣潮] 你输入了错误的格式!\n",
-                -4: f"[鸣潮] 特征码[{uid}]已被其他用户绑定，无法重复绑定！\n",
+                0: f"[鸣潮] [{uid}]已綁定成功！\n\n目前國際服用戶可使用功能較少\n国服用户使用【{PREFIX}登录】，使用【{PREFIX}刷新面板】更新角色面板\n國際服用戶請使用【{PREFIX}分析】上傳面板\n使用【{PREFIX}查看】查看目前已綁定的UID\n更新角色面板后可以使用【{PREFIX}暗主排行】查询暗主排行\n玩家暱稱若因為是特殊語言可使用 修改暱稱 來修改名字\n日本のユーザーは次々バージョンでのコマンドサポートを期待している\n",
+                -1: f"[鸣潮] 特徵碼[{uid}]的位數並不正確！\n 綁定710596960\n",
+                -2: f"[鸣潮] 特徵碼[{uid}]您已綁定了！\n",
+                -3: "[鸣潮] 您輸入了錯誤的格式！\n",
+                -4: f"[鸣潮] 此[{uid}]已經被其他用戶佔據，禁止重複綁定！\n",
             },
             at_sender=at_sender,
         )
@@ -256,12 +258,12 @@ async def send_waves_bind_uid_msg(bot: Bot, ev: Event):
                 for uid in uid_list:
                     _buttons.append(WavesButton(f"{uid}", f"切换{uid}"))
                 return await bot.send_option(
-                    f"[鸣潮] 切换特征码[{uid_list[0]}]成功！\n", _buttons
+                    f"[鸣潮] 已切換至[{uid_list[0]}]！\n", _buttons
                 )
             else:
-                return await bot.send("[鸣潮] 尚未绑定任何特征码\n", at_sender)
+                return await bot.send("[鸣潮] 您目前尚未綁定UID\n", at_sender)
         else:
-            return await bot.send(f"[鸣潮] 尚未绑定该特征码[{uid}]\n", at_sender)
+            return await bot.send(f"[鸣潮] 您目前尚未綁定UID[{uid}]\n", at_sender)
     elif "查看" in ev.command:
         uid_list = await WavesBind.get_uid_list_by_game(qid, ev.bot_id)
         if uid_list:
@@ -270,10 +272,10 @@ async def send_waves_bind_uid_msg(bot: Bot, ev: Event):
             for uid in uid_list:
                 buttons.append(WavesButton(f"{uid}", f"切换{uid}"))
             return await bot.send_option(
-                f"[鸣潮] 绑定的特征码列表为：\n{uids}\n", buttons
+                f"[鸣潮] 您目前綁定的UID列表為：\n{uids}\n", buttons
             )
         else:
-            return await bot.send("[鸣潮] 尚未绑定任何特征码\n", at_sender)
+            return await bot.send("[鸣潮] 您目前尚未綁定UID\n", at_sender)
     elif "删除全部" in ev.command:
         retcode = await WavesBind.update_data(
             user_id=qid,
@@ -283,7 +285,7 @@ async def send_waves_bind_uid_msg(bot: Bot, ev: Event):
         if retcode == 0:
             return await bot.send("[鸣潮] 删除全部特征码成功！\n", at_sender)
         else:
-            return await bot.send("[鸣潮] 尚未绑定任何特征码\n", at_sender)
+            return await bot.send("[鸣潮] 您目前尚未綁定UID\n", at_sender)
     else:
         if not uid:
             return await bot.send(

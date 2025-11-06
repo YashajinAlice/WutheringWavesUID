@@ -52,7 +52,10 @@ async def save_card_dict_to_json(bot: Bot, ev: Event, result_dict: Dict):
 
     except Exception as e:
         logger.error(f" [鸣潮][dc卡片识别] 识别结果结构错误：{e}")
-        await bot.send("[鸣潮]识别结果结构错误\n", at_sender)
+        await bot.send(
+            "[鳴潮]辨識結構異常，有可能是您先點開了圖片在複製，請不要點開！\n",
+            at_sender,
+        )
         return
 
     # 存储用户昵称

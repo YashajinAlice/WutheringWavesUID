@@ -1,10 +1,12 @@
-from typing import Any, Dict, List, Optional, Type, TypeVar
+from typing import Any, Dict, List, Type, TypeVar, Optional
 
-from sqlalchemy import delete, null, update
-from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.sql import and_, or_
+from gsuid_core.logger import logger
+from sqlalchemy.sql import or_, and_
 from sqlmodel import Field, col, select
-
+from sqlalchemy import null, delete, update
+from sqlalchemy.ext.asyncio import AsyncSession
+from gsuid_core.utils.database.startup import exec_list
+from gsuid_core.webconsole.mount_app import PageSchema, GsAdminModel, site
 from gsuid_core.utils.database.base_models import (
     Bind,
     Push,
@@ -12,9 +14,6 @@ from gsuid_core.utils.database.base_models import (
     BaseModel,
     with_session,
 )
-from gsuid_core.utils.database.startup import exec_list
-from gsuid_core.webconsole.mount_app import GsAdminModel, PageSchema, site
-from gsuid_core.logger import logger
 
 exec_list.extend(
     [
@@ -23,17 +22,20 @@ exec_list.extend(
         'ALTER TABLE WavesUser ADD COLUMN bbs_sign_switch TEXT DEFAULT "off"',
         'ALTER TABLE WavesUser ADD COLUMN bat TEXT DEFAULT ""',
         'ALTER TABLE WavesUser ADD COLUMN did TEXT DEFAULT ""',
-        'ALTER TABLE WavesPush ADD COLUMN push_time_value TEXT DEFAULT ""'
+        'ALTER TABLE WavesPush ADD COLUMN push_time_value TEXT DEFAULT ""',
     ]
 )
 
 T_WavesBind = TypeVar("T_WavesBind", bound="WavesBind")
 T_WavesUser = TypeVar("T_WavesUser", bound="WavesUser")
 T_WavesUserAvatar = TypeVar("T_WavesUserAvatar", bound="WavesUserAvatar")
+T_WavesSimulator = TypeVar("T_WavesSimulator", bound="WavesSimulator")
+
 
 class WavesUserAvatar(BaseModel, table=True):
     __table_args__: Dict[str, Any] = {"extend_existing": True}
     avatar_hash: str = Field(default="", title="头像哈希")
+
 
 class WavesBind(Bind, table=True):
     __table_args__: Dict[str, Any] = {"extend_existing": True}
@@ -336,3 +338,95 @@ class UserAvatar(GsAdminModel):
 
     # 配置管理模型
     model = WavesUserAvatar
+
+
+class WavesSimulator(BaseModel, table=True):
+    __table_args__: Dict[str, Any] = {"extend_existing": True}
+    user_id: str = Field(title="用户ID", index=True)
+    bot_id: str = Field(title="机器人ID", index=True)
+    gacha_type: str = Field(title="抽卡类型", default="role")  # role or weapon
+    state_data: str = Field(
+        title="状态数据",
+        default='{"five_star_time": 0, "five_star_other": true, "four_star_time": 0, "four_star_other": true}',
+    )
+
+    @classmethod
+    @with_session
+    async def get_user_state(
+        cls: Type[T_WavesSimulator],
+        session: AsyncSession,
+        user_id: str,
+        bot_id: str,
+        gacha_type: str,
+    ) -> Optional[Dict]:
+        """获取用户抽卡状态"""
+        import json
+
+        sql = select(cls).where(
+            and_(
+                col(cls.user_id) == user_id,
+                col(cls.bot_id) == bot_id,
+                col(cls.gacha_type) == gacha_type,
+            )
+        )
+        result = await session.execute(sql)
+        data = result.scalars().first()
+
+        if data:
+            try:
+                return json.loads(data.state_data)
+            except Exception:
+                return None
+        return None
+
+    @classmethod
+    @with_session
+    async def save_user_state(
+        cls: Type[T_WavesSimulator],
+        session: AsyncSession,
+        user_id: str,
+        bot_id: str,
+        gacha_type: str,
+        state: Dict,
+    ):
+        """保存用户抽卡状态"""
+        import json
+
+        state_json = json.dumps(state, ensure_ascii=False)
+
+        sql = select(cls).where(
+            and_(
+                col(cls.user_id) == user_id,
+                col(cls.bot_id) == bot_id,
+                col(cls.gacha_type) == gacha_type,
+            )
+        )
+        result = await session.execute(sql)
+        data = result.scalars().first()
+
+        if data:
+            # 更新
+            data.state_data = state_json
+            session.add(data)
+        else:
+            # 新建
+            new_data = cls(
+                user_id=user_id,
+                bot_id=bot_id,
+                gacha_type=gacha_type,
+                state_data=state_json,
+            )
+            session.add(new_data)
+
+        await session.commit()
+
+
+@site.register_admin
+class WavesSimulatorAdmin(GsAdminModel):
+    pk_name = "id"
+    page_schema = PageSchema(
+        label="鸣潮模拟抽卡状态", icon="fa fa-dice"
+    )  # type: ignore
+
+    # 配置管理模型
+    model = WavesSimulator
