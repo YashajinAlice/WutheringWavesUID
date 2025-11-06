@@ -40,6 +40,13 @@ async def add_cookie(ev: Event, ck: str, did: str) -> str:
         if data.gameId != GAME_ID:
             continue
 
+        # 檢查UID是否在黑名單中
+        from ..utils.util import is_uid_banned
+        
+        if is_uid_banned(data.roleId):
+            # 跳過黑名單中的UID，不進行綁定
+            continue
+
         # 檢查是否已綁定此UID
         user = await WavesUser.get_user_by_attr(
             ev.user_id, ev.bot_id, "uid", data.roleId

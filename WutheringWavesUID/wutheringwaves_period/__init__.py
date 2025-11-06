@@ -23,6 +23,13 @@ async def send_period(bot: Bot, ev: Event):
     uid = await WavesBind.get_uid_by_game(ev.user_id, ev.bot_id)
     if not uid:
         return await bot.send(ERROR_CODE[WAVES_CODE_103])
+    
+    # 檢查UID是否在黑名單中
+    from ..utils.util import check_uid_banned_and_send
+    
+    if await check_uid_banned_and_send(bot, ev, uid):
+        return
+    
     if waves_api.is_net(uid):
         return await bot.send(ERROR_CODE[WAVES_CODE_098])
 

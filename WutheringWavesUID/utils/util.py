@@ -220,3 +220,48 @@ def login_platform() -> str:
     # LoginType = WutheringWavesConfig.get_config("WavesLoginTypeNew").data
     # return LoginType if LoginType else "ios"
     return "ios"
+
+
+def is_uid_banned(uid: str) -> bool:
+    """
+    檢查UID是否在黑名單中
+    
+    Args:
+        uid: 要檢查的UID
+        
+    Returns:
+        True表示UID被禁止，False表示可以使用
+    """
+    from ..wutheringwaves_config import WutheringWavesConfig
+    
+    banned_uids: list = WutheringWavesConfig.get_config("BannedUids").data
+    if not banned_uids:
+        return False
+    
+    # 將列表中的UID轉換為字符串並去除空白
+    banned_uids_clean = [str(u).strip() for u in banned_uids if u]
+    return str(uid).strip() in banned_uids_clean
+
+
+async def check_uid_banned_and_send(bot, ev, uid: str) -> bool:
+    """
+    檢查UID是否在黑名單中，如果是則發送錯誤消息
+    
+    Args:
+        bot: Bot實例
+        ev: Event實例
+        uid: 要檢查的UID
+        
+    Returns:
+        True表示UID被禁止（已發送錯誤消息），False表示可以使用
+    """
+    if not uid:
+        return False
+    
+    if is_uid_banned(uid):
+        at_sender = True if ev.group_id else False
+        await bot.send(
+            f"[鸣潮] 此UID[{uid}]已被禁止使用，無法使用所有功能！\n", at_sender
+        )
+        return True
+    return False

@@ -204,4 +204,13 @@ CONFIG_DEFAULT: Dict[str, GSC] = {
         "验证码提供方appkey",
         "",
     ),
+    "BannedUids": GsListStrConfig(
+        "禁止綁定的UID列表",
+        "禁止綁定的UID列表，這些UID無法綁定且所有功能皆不能使用",
+        [],
+        options=[
+            "可輸入多個UID",
+            "輸入後回車",
+        ],
+    ),
 }

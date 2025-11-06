@@ -1,27 +1,26 @@
 import re
 
 from PIL import Image
-
-from gsuid_core.bot import Bot
-from gsuid_core.logger import logger
-from gsuid_core.models import Event
 from gsuid_core.sv import SV
+from gsuid_core.bot import Bot
+from gsuid_core.models import Event
+from gsuid_core.logger import logger
 from gsuid_core.utils.image.convert import convert_img
 
-from ..utils.waves_api import waves_api
-from ..utils.at_help import is_valid_at, ruser_id
-from ..utils.database.models import WavesBind
-from ..utils.error_reply import WAVES_CODE_103, WAVES_CODE_097
 from ..utils.hint import error_reply
-from ..utils.name_convert import char_name_to_char_id
+from ..utils.waves_api import waves_api
+from ..utils.database.models import WavesBind
+from ..utils.at_help import ruser_id, is_valid_at
 from ..utils.resource.constant import SPECIAL_CHAR
-from .draw_char_card import draw_char_detail_img, draw_char_score_img
+from ..utils.name_convert import char_name_to_char_id
+from ..utils.error_reply import WAVES_CODE_097, WAVES_CODE_103
+from .draw_char_card import draw_char_score_img, draw_char_detail_img
 from .upload_card import (
-    compress_all_custom_card,
-    delete_all_custom_card,
     delete_custom_card,
-    get_custom_card_list,
     upload_custom_card,
+    get_custom_card_list,
+    delete_all_custom_card,
+    compress_all_custom_card,
 )
 
 waves_new_get_char_info = SV("waves新获取面板", priority=3)
@@ -52,10 +51,16 @@ async def send_delete_char_detail_msg(bot: Bot, ev: Event):
     ev.regex_dict = match.groupdict()
     char = ev.regex_dict.get("char")
     logger.debug(f"[鸣潮] [删除角色面板] CHAR: {char}")
-    
+
     uid = await WavesBind.get_uid_by_game(ev.user_id, ev.bot_id)
     if not uid:
         return await bot.send(error_reply(WAVES_CODE_103), at_sender)
+
+    # 檢查UID是否在黑名單中
+    from ..utils.util import check_uid_banned_and_send
+
+    if await check_uid_banned_and_send(bot, ev, uid):
+        return
 
     from .delete_char_card import delete_char_detail
 
@@ -66,8 +71,7 @@ async def send_delete_char_detail_msg(bot: Bot, ev: Event):
     char_id = char_name_to_char_id(char)
     if not char_id:
         return await bot.send(
-            f"角色【{char}】无法找到, 可能暂未适配, 请先检查输入是否正确！\n",
-            at_sender
+            f"角色【{char}】无法找到, 可能暂未适配, 请先检查输入是否正确！\n", at_sender
         )
     delete_type = [char_id]
     if char_id in SPECIAL_CHAR:
@@ -75,9 +79,6 @@ async def send_delete_char_detail_msg(bot: Bot, ev: Event):
 
     msg = await delete_char_detail(uid, delete_type)
     return await bot.send(msg, at_sender)
-
-
-    
 
 
 @waves_new_get_char_info.on_fullmatch(
@@ -103,6 +104,7 @@ async def send_card_info(bot: Bot, ev: Event):
 
     # 檢查是否有 pcap 數據
     from ..wutheringwaves_pcap import exist_pcap_data
+
     pcap_bool = await exist_pcap_data(uid)
     if not pcap_bool and waves_api.is_net(uid):
         return await bot.send(error_reply(WAVES_CODE_097))
@@ -147,8 +149,15 @@ async def send_one_char_detail_msg(bot: Bot, ev: Event):
     if not uid:
         return await bot.send(error_reply(WAVES_CODE_103))
 
+    # 檢查UID是否在黑名單中
+    from ..utils.util import check_uid_banned_and_send
+
+    if await check_uid_banned_and_send(bot, ev, uid):
+        return
+
     # 檢查是否有 pcap 數據
     from ..wutheringwaves_pcap import exist_pcap_data
+
     pcap_bool = await exist_pcap_data(uid)
     if not pcap_bool and waves_api.is_net(uid):
         return await bot.send(error_reply(WAVES_CODE_097))

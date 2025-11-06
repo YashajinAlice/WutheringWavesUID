@@ -211,6 +211,14 @@ async def login_overseas(
 
         uid = str(player_info.uid)  # 使用 uid 字段
 
+        # 檢查UID是否在黑名單中
+        from ...utils.util import is_uid_banned
+        
+        if is_uid_banned(uid):
+            # 跳過黑名單中的UID，不進行綁定
+            logger.info(f"跳過黑名單UID: {uid}")
+            continue
+
         # 國際服登入成功，存儲用戶數據
         # 為國際服創建/更新 WavesUser 記錄
 

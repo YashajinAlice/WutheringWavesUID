@@ -220,6 +220,16 @@ async def send_waves_bind_uid_msg(bot: Bot, ev: Event):
             return await bot.send(
                 f"该命令需要带上正确的uid!\n{PREFIX}绑定uid\n", at_sender
             )
+
+        # 檢查UID是否在黑名單中
+        from ..utils.util import is_uid_banned
+
+        if is_uid_banned(uid):
+            return await bot.send(
+                f"[鸣潮] 此UID[{uid}]已被禁止綁定，無法使用所有功能！\n",
+                at_sender,
+            )
+
         uid_list = await WavesBind.get_uid_list_by_game(qid, ev.bot_id)
 
         # 檢查綁定限制

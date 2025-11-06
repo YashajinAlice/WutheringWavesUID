@@ -25,6 +25,14 @@ async def open_switch_func(bot: Bot, ev: Event):
             f"您还未绑定鸣潮特征码, 请使用【{PREFIX}绑定uid】完成绑定！", at_sender
         )
 
+    # 檢查UID是否在黑名單中
+    from ..utils.util import is_uid_banned
+    
+    if is_uid_banned(uid):
+        return await bot.send(
+            f"[鸣潮] 此UID[{uid}]已被禁止使用，無法使用所有功能！\n", at_sender
+        )
+
     from ..utils.waves_api import waves_api
 
     ck = await waves_api.get_self_waves_ck(uid, ev.user_id, ev.bot_id)
@@ -47,6 +55,15 @@ async def send_config_ev(bot: Bot, ev: Event):
         return await bot.send(
             f"您还未绑定鸣潮特征码, 请使用【{PREFIX}绑定uid】 完成绑定！\n", at_sender
         )
+    
+    # 檢查UID是否在黑名單中
+    from ..utils.util import is_uid_banned
+    
+    if is_uid_banned(uid):
+        return await bot.send(
+            f"[鸣潮] 此UID[{uid}]已被禁止使用，無法使用所有功能！\n", at_sender
+        )
+    
     from ..utils.waves_api import waves_api
     ck = await waves_api.get_self_waves_ck(uid, ev.user_id, ev.bot_id)
     if not ck:
