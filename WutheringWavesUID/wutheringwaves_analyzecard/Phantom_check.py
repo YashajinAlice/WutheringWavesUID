@@ -204,6 +204,11 @@ class PhantomValidator:
         if cost not in self.cost_indices:
             return False, f"cost异常-{cost}"
 
+        # 检查重复词条（防止P图刷排名）
+        duplicate_check = self._check_duplicate_props(phantom)
+        if not duplicate_check[0]:
+            return False, duplicate_check[1]
+
         # 主词条校验
         for main_prop in phantom.get("mainProps", []):
             if main_prop:
@@ -222,6 +227,66 @@ class PhantomValidator:
                 if corrected:
                     sub_prop["attributeValue"] = corrected
         return True, None
+
+    def _check_duplicate_props(self, phantom):
+        """检查声骸中是否有重复词条（防止P图刷排名）
+        规则：
+        1. 同一个声骸内不能有相同名称的词条（无论数值是否相同）
+        2. 例外：攻击/攻击%、生命/生命%、防御/防御% 被视为不同的词条类型，可以同时存在
+        3. 例如：暴击 10.5% 和 暴击 30.5% → 不允许（同一个词条）
+        4. 例如：攻击 150 和 攻击% 6% → 允许（不同的词条类型）
+        """
+        main_props = phantom.get("mainProps", [])
+        sub_props = phantom.get("subProps", [])
+        
+        # 检查主词条重复
+        main_attr_names = []  # 存储标准化后的属性名称
+        for prop in main_props:
+            if prop and prop.get("attributeName"):
+                attr_name = prop.get("attributeName")
+                attr_value = prop.get("attributeValue", "")
+                
+                # 标准化属性名称（攻击/生命/防御需要区分数值和百分比）
+                normalized_name = self._normalize_attr_name(attr_name, attr_value)
+                
+                # 检查是否有重复（相同标准化名称）
+                if normalized_name in main_attr_names:
+                    logger.warning(f"[鸣潮][声骸检查]检测到重复主词条: {attr_name} (标准化: {normalized_name})")
+                    return False, f"检测到重复主词条: {attr_name}，疑似P图修改数据！"
+                main_attr_names.append(normalized_name)
+        
+        # 检查副词条重复
+        sub_attr_names = []  # 存储标准化后的属性名称
+        for prop in sub_props:
+            if prop and prop.get("attributeName"):
+                attr_name = prop.get("attributeName")
+                attr_value = prop.get("attributeValue", "")
+                
+                # 标准化属性名称（攻击/生命/防御需要区分数值和百分比）
+                normalized_name = self._normalize_attr_name(attr_name, attr_value)
+                
+                # 检查是否有重复（相同标准化名称）
+                if normalized_name in sub_attr_names:
+                    logger.warning(f"[鸣潮][声骸检查]检测到重复副词条: {attr_name} (标准化: {normalized_name})")
+                    return False, f"检测到重复副词条: {attr_name}，疑似P图修改数据！"
+                sub_attr_names.append(normalized_name)
+        
+        return True, None
+
+    def _normalize_attr_name(self, name, value):
+        """标准化属性名称（用于检查重复）
+        规则：
+        - 攻击/生命/防御：根据是否有%来区分（攻击 vs 攻击%）
+        - 其他属性：直接使用原名称（暴击、暴击伤害等）
+        """
+        is_percent = "%" in str(value)
+        
+        # 攻击/生命/防御需要区分数值和百分比
+        if name in ["攻击", "生命", "防御"]:
+            return name + "%" if is_percent else name
+        
+        # 其他属性直接返回原名称（暴击、暴击伤害等）
+        return name
 
     def _preprocess_value(self, name, value):
         """统一数值格式"""

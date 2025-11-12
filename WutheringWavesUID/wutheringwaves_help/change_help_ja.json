@@ -1,0 +1,157 @@
+{
+  "キャラクター情報置換": {
+    "desc": "キャラクター情報を置換；例：【xxパネル キャラクターxx置換】",
+    "data": [
+      {
+        "name": "キャラクター共鳴チェーン置換",
+        "desc": "キャラクター共鳴チェーンを置換",
+        "eg": "長離パネルキャラクター2チェーン置換",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "キャラクターレベル置換",
+        "desc": "キャラクターレベルを置換",
+        "eg": "長離パネルキャラクター90レベル置換",
+        "need_ck": true,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "キャラクタースキル置換",
+        "desc": "キャラクタースキルを置換",
+        "eg": "長離パネルキャラクタースキル10 10 10 10 10置換",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      }
+    ]
+  },
+  "武器情報置換": {
+    "desc": "武器情報を置換；例：【xxパネル 武器xx置換】",
+    "data": [
+      {
+        "name": "武器共鳴置換",
+        "desc": "武器共鳴を置換",
+        "eg": "長離パネル武器共鳴2置換",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "武器レベル置換",
+        "desc": "武器レベルを置換",
+        "eg": "長離パネル武器90レベル置換",
+        "need_ck": true,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "武器置換",
+        "desc": "武器を置換",
+        "eg": "長離パネル武器長離専用武器置換",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      }
+    ]
+  },
+  "合鳴効果置換": {
+    "desc": "合鳴効果を置換；例：【xxパネル 合鳴xx置換】【xxパネル合鳴失序3置換 合鳴暗セット2置換】",
+    "data": [
+      {
+        "name": "合鳴セット置換",
+        "desc": "合鳴セットを置換",
+        "eg": "散華パネル合鳴氷セット置換",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      }
+    ]
+  },
+  "メインステータス置換": {
+    "desc": "メインステータスを置換；例：【xxパネル エコーメインステータス置換 c4 クリダメ c3 1攻1属】",
+    "data": [
+      {
+        "name": "エコーメインステータス置換",
+        "desc": "合鳴セットを置換",
+        "eg": "長離パネルエコーメインステータス置換c4クリダメ",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      }
+    ]
+  },
+  "エコー置換": {
+    "desc": "エコーを置換；例：【xxパネル エコー長離置換】or【xxパネル エコーuid長離2から2置換】",
+    "data": [
+      {
+        "name": "全エコー置換",
+        "desc": "全エコーを置換",
+        "eg": "熾霞パネル エコー長離置換",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "全エコー置換2",
+        "desc": "全エコー置換2",
+        "eg": "熾霞パネルエコーuid長離置換",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "エコー置換",
+        "desc": "エコーを置換",
+        "eg": "熾霞パネルエコー長離2から2置換",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      }
+    ]
+  },
+  "敵情報置換(環境)": {
+    "desc": "敵情報(環境)を置換；例：【xxパネル 敵置換 100レベル 20耐性】；",
+    "data": [
+      {
+        "name": "敵レベル置換",
+        "desc": "敵レベルを置換",
+        "eg": "熾霞ダメージ 敵置換 100レベル",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "敵耐性置換",
+        "desc": "敵耐性を置換",
+        "eg": "熾霞パネル 環境置換 20耐性",
+        "need_ck": false,
+        "need_sk": false,
+        "need_admin": false
+      }
+    ]
+  },
+  "上級1": {
+    "desc": "ww長離パネル キャラクター置換 90レベル 満チェーン スキル 10 10 10 10 10",
+    "data": []
+  },
+  "上級2": {
+    "desc": "ww長離パネル 武器置換 90レベル 満精 長離専用武器",
+    "data": []
+  },
+  "上級3": {
+    "desc": "ww長離パネル キャラクター置換 90レベル 満チェーン スキル 10 10 10 10 10 武器置換 90レベル 満精 長離専用武器",
+    "data": []
+  },
+  "上級4": {
+    "desc": "ww長離パネル比較 武器置換 90レベル 満精 長離専用武器 @某人",
+    "data": []
+  },
+  "上級5": {
+    "desc": "wwuid長離パネル比較 武器置換 90レベル 満精 長離専用武器",
+    "data": []
+  }
+}
+

@@ -1,0 +1,688 @@
+{
+    "アカウント連携": {
+        "desc": "クエリを実行する前にアカウントを連携してください",
+        "data": [
+            {
+                "name": "特徴コード連携",
+                "desc": "特徴コードを連携",
+                "eg": "連携123456",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "特徴コード切り替え",
+                "desc": "連携済みアカウントを切り替え",
+                "eg": "切り替え123456",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "特徴コード削除",
+                "desc": "特徴コードを削除",
+                "eg": "削除123456",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "特徴コードリスト確認",
+                "desc": "特徴コードリストを確認",
+                "eg": "確認",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "全特徴コード削除",
+                "desc": "連携済みUIDリストを確認",
+                "eg": "全特徴コード削除",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            }
+        ]
+    },
+    "クー街区サービス": {
+        "desc": "クエリを実行する前にクー街区にログインしてください。国際版は現在サポートされていません（括弧内はオプションパラメータ）",
+        "data": [
+            {
+                "name": "ログイン->完全機能",
+                "desc": "ログインページでログイン",
+                "eg": "ログイン",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "token追加",
+                "desc": "自分のクー街区tokenを追加",
+                "eg": "token追加 tk,did",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "token削除",
+                "desc": "現在のクー街区CKを削除",
+                "eg": "token削除 123456",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "連携済みtoken取得",
+                "desc": "連携済みtokenを取得",
+                "eg": "token取得",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "探索度クエリ",
+                "desc": "探索度をクエリ",
+                "eg": "探索度",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "キャラクター育成",
+                "desc": "キャラクター育成",
+                "eg": "フェビー育成",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "星声統計",
+                "desc": "星声",
+                "eg": "星声(5月/2.3バージョン)",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "栄光の丘",
+                "desc": "栄光の丘",
+                "eg": "栄光の丘",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            }
+        ]
+    },
+    "国際版サービス": {
+        "desc": "スタミナクエリ、分析、pcapキャプチャによる国際版キャラクターパネルデータ更新をサポートするためにログイン",
+        "data": [
+            {
+                "name": "ログイン->基本情報",
+                "desc": "ログインページでログイン",
+                "eg": "ログイン",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "discordカード分析",
+                "desc": "dcカードからキャラクターデータを分析取得",
+                "eg": "分析",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "wutheryキャラクター更新ヘルプ",
+                "desc": "wutheryからキャラクターデータを更新",
+                "eg": "pcapヘルプ",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            }
+        ]
+    },
+    "情報クエリ": {
+        "desc": "クエリを実行する前にアカウントを連携してください（括弧内はオプションパラメータ）",
+        "data": [
+            {
+                "name": "鳴潮パネル更新",
+                "desc": "鳴潮パネル更新",
+                "eg": "パネル更新",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "練度統計",
+                "desc": "練度統計一覧をクエリ",
+                "eg": "練度統計",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "基本情報カード",
+                "desc": "基本情報をクエリ",
+                "eg": "カード",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "エコーリストクエリ",
+                "desc": "エコーリストをクエリ",
+                "eg": "エコーリスト",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "キャラクターパネルクエリ",
+                "desc": "キャラクターパネルをクエリ",
+                "eg": "ツバキパネル",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "キャラクターダメージクエリ",
+                "desc": "キャラクターダメージをクエリ",
+                "eg": "ツバキダメージ3",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "キャラクター重みクエリ",
+                "desc": "キャラクター重みをクエリ",
+                "eg": "ツバキ重み",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "覗き見(:",
+                "desc": "パネルを覗き見",
+                "eg": "uidツバキパネル",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "パネルPK",
+                "desc": "パネルPK",
+                "eg": "(uid)ツバキパネルpk(@群友)",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "カレンダー",
+                "desc": "カレンダー",
+                "eg": "カレンダー",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "パネル置換ヘルプ",
+                "desc": "パネル置換ヘルプ",
+                "eg": "置換ヘルプ",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "交換コード",
+                "desc": "交換コード",
+                "eg": "交換コード",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "ガチャプールカウントダウン",
+                "desc": "ガチャプールカウントダウン",
+                "eg": "未復刻キャラクター/武器(5/4)",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "キャラクター共鳴チェーン所持率",
+                "desc": "キャラクター共鳴チェーン所持率",
+                "eg": "(群/bot)チェーン率(up/all)",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "キャラクター所持率",
+                "desc": "キャラクター所持率",
+                "eg": "(群/bot)所持率(up/all)",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            }
+        ]
+    },
+    "深塔クエリ": {
+        "desc": "深塔データクエリ。国際版は現在サポートされていません（出場率クエリは影響なし）",
+        "data": [
+            {
+                "name": "深塔",
+                "desc": "深塔をクエリ",
+                "eg": "st/深塔",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "全息戦略",
+                "desc": "全息戦略をクエリ",
+                "eg": "qx/全息",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "深塔出場率",
+                "desc": "深塔出場率",
+                "eg": "深塔出場率",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "冥歌海墟",
+                "desc": "冥歌海墟をクエリ",
+                "eg": "mh/冥歌海墟",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "冥歌海墟出場率",
+                "desc": "冥歌海墟出場率",
+                "eg": "冥海出場率",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            }
+        ]
+    },
+    "ランキングクエリ": {
+        "desc": "ランキングクエリ（括弧内はオプションパラメータ）",
+        "data": [
+            {
+                "name": "群ダメージランキング",
+                "desc": "群ダメージランキング",
+                "eg": "長離ランキング",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "群評価ランキング",
+                "desc": "群評価ランキング",
+                "eg": "長離評価ランキング",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "全サーバーダメージランキング",
+                "desc": "全サーバーダメージランキング",
+                "eg": "長離総ランキング1",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "全サーバー評価ランキング",
+                "desc": "全サーバー評価ランキング",
+                "eg": "長離評価総ランキング1",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "練度総ランキング",
+                "desc": "練度総ランキング",
+                "eg": "練度総ランキング",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "botダメージランキング",
+                "desc": "botダメージランキング",
+                "eg": "長離botランキング",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "bot評価ランキング",
+                "desc": "bot評価ランキング",
+                "eg": "長離評価botランキング",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "bot共鳴チェーンランキング",
+                "desc": "bot共鳴チェーンランキング",
+                "eg": "長離1チェーンbotランキング",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "bot共鳴チェーン評価ランキング",
+                "desc": "bot共鳴チェーン評価ランキング",
+                "eg": "長離1チェーン評価botランキング",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "練度群ランキング",
+                "desc": "練度群ランキング",
+                "eg": "練度ランキング",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "練度botランキング",
+                "desc": "練度botランキング",
+                "eg": "練度botランキング",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            }
+        ]
+    },
+    "ガチャ記録": {
+        "desc": "ガチャ記録",
+        "data": [
+            {
+                "name": "ガチャヘルプ",
+                "desc": "ガチャヘルプ",
+                "eg": "ガチャヘルプ",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "ガチャリンクインポート",
+                "desc": "ガチャリンクをインポート",
+                "eg": "ガチャリンクインポート https://...record_id=5e4d436ea1",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "ガチャ記録",
+                "desc": "自分のガチャ記録をクエリ",
+                "eg": "ガチャ記録",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "ガチャ記録エクスポート",
+                "desc": "ガチャ記録をエクスポート",
+                "eg": "ガチャ記録エクスポート",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            }
+        ]
+    },
+    "パネル図ヘルプ": {
+        "desc": "パネル図ヘルプ",
+        "data": [
+            {
+                "name": "キャラクターパネル図アップロード",
+                "desc": "キャラクターパネル図をアップロード",
+                "eg": "ツバキパネル図アップロード",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "パネル図リスト",
+                "desc": "パネル図リスト",
+                "eg": "ツバキパネル図リスト",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "パネル図削除",
+                "desc": "パネル図を削除",
+                "eg": "ツバキパネル図削除123",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "全パネル図削除",
+                "desc": "全パネル図を削除",
+                "eg": "全ツバキパネル図削除",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            }
+        ]
+    },
+    "WIKI": {
+        "desc": "ゲーム情報&攻略を取得",
+        "data": [
+            {
+                "name": "キャラクター攻略",
+                "desc": "キャラクター攻略",
+                "eg": "ツバキ攻略",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "キャラクター共鳴チェーン",
+                "desc": "キャラクター共鳴チェーン",
+                "eg": "アンコ共鳴チェーン",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "キャラクタースキル",
+                "desc": "キャラクタースキル",
+                "eg": "ヴェリナスキル",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "武器紹介",
+                "desc": "武器紹介",
+                "eg": "ツバキ専用武器紹介",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "エコー紹介",
+                "desc": "エコー紹介",
+                "eg": "角紹介",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "武器リスト",
+                "desc": "武器リスト",
+                "eg": "(武器タイプ)武器(リスト)",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "合鳴/セット効果",
+                "desc": "合鳴/セット効果",
+                "eg": "セットリスト",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "ゲームお知らせリスト",
+                "desc": "ゲームお知らせリスト",
+                "eg": "お知らせ",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "ゲームお知らせ詳細",
+                "desc": "ゲームお知らせ詳細",
+                "eg": "お知らせ#1456",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            }
+        ]
+    },
+    "個人サービス": {
+        "desc": "この設定項目は個人使用のみ",
+        "data": [
+            {
+                "name": "キャラクターデータ削除",
+                "desc": "キャラクターデータを削除",
+                "eg": "削除(雪豹)データ",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "スタミナ",
+                "desc": "自分の毎日の状態を取得",
+                "eg": "mr/毎日",
+                "need_ck": true,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "スタミナプッシュ開始",
+                "desc": "スタミナプッシュを開始",
+                "eg": "スタミナプッシュ開始",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "スタミナ閾値設定",
+                "desc": "スタミナ閾値を設定",
+                "eg": "スタミナ閾値設定200",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            },
+            {
+                "name": "スタミナ背景設定",
+                "desc": "スタミナ背景を設定",
+                "eg": "スタミナ背景設定長離",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": false
+            }
+        ]
+    },
+    "群管理者機能": {
+        "pm": 3,
+        "desc": "群管理者機能",
+        "data": [
+            {
+                "name": "鳴潮お知らせ購読",
+                "desc": "鳴潮お知らせを購読",
+                "eg": "お知らせ購読",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": true
+            },
+            {
+                "name": "鳴潮お知らせ購読解除",
+                "desc": "鳴潮お知らせの購読を解除",
+                "eg": "お知らせ購読解除",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": true
+            },
+            {
+                "name": "ランキング条件-無制限",
+                "desc": "群ランキングを無制限に設定",
+                "eg": "群ランキング設定1",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": true
+            },
+            {
+                "name": "ランキング条件-ログイン",
+                "desc": "群ランキングをログインに設定",
+                "eg": "群ランキング設定2",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": true
+            }
+        ]
+    },
+    "botオーナー機能": {
+        "pm": 1,
+        "desc": "botオーナー機能",
+        "data": [
+            {
+                "name": "git更新記録",
+                "desc": "更新記録",
+                "eg": "更新記録",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": true
+            },
+            {
+                "name": "全リソースダウンロード",
+                "desc": "全リソースをダウンロード",
+                "eg": "全リソースダウンロード",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": true
+            },
+            {
+                "name": "無効token削除",
+                "desc": "無効tokenを削除",
+                "eg": "無効token削除",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": true
+            },
+            {
+                "name": "パネル図圧縮",
+                "desc": "パネル図を圧縮",
+                "eg": "パネル図圧縮",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": true
+            },
+            {
+                "name": "オーナーに連絡",
+                "desc": "オーナーに連絡",
+                "eg": "オーナーに連絡",
+                "need_ck": false,
+                "need_sk": false,
+                "need_admin": true
+            }
+        ]
+    }
+}

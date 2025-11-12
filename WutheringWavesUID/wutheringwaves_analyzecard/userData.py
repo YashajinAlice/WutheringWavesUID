@@ -193,11 +193,20 @@ async def save_card_dict_to_json(bot: Bot, ev: Event, result_dict: Dict):
         data["weaponData"]["weapon"]["weaponStarLevel"] = weapon_detail.starLevel
 
     # 检查声骸数据是否异常
-    is_valid, corrected_data = await check_phantom_data(data)
+    is_valid, corrected_data, error_detail = await check_phantom_data(data)
     if not is_valid:
-        await bot.send(
-            "[鸣潮]dc卡片识别数据异常！\n或请使用更高分辨率卡片重新识别！\n", at_sender
-        )
+        error_msg = "[鸣潮]dc卡片识别数据异常！\n"
+        # 检查是否是重复词条问题
+        if "重复" in error_detail or "疑似P图" in error_detail:
+            error_msg += "❌ 检测到重复词条，疑似P图修改数据！\n"
+            error_msg += "⚠️ 每个声骸的副词条应该是不同的，请使用原始卡片重新识别！\n"
+            error_msg += f"错误详情：{error_detail}\n"
+            logger.warning(f"[鸣潮][dc卡片识别] 用户{uid}的{char_name_print}检测到重复词条，疑似P图 - {error_detail}")
+        else:
+            error_msg += "或请使用更高分辨率卡片重新识别！\n"
+            if error_detail:
+                error_msg += f"错误详情：{error_detail}\n"
+        await bot.send(error_msg, at_sender)
         return
 
     # 对比更新
@@ -215,7 +224,11 @@ async def save_card_dict_to_json(bot: Bot, ev: Event, result_dict: Dict):
     return
 
 
-async def check_phantom_data(data) -> tuple[bool, dict]:
+async def check_phantom_data(data) -> tuple[bool, dict, str]:
+    """
+    检查声骸数据
+    返回: (是否有效, 处理后的数据, 错误訊息)
+    """
     try:
         processed_data = copy.deepcopy(data)
         # 检查词条内容，修正词条数据
@@ -227,13 +240,20 @@ async def check_phantom_data(data) -> tuple[bool, dict]:
             # 分离验证与修正
             is_valid, corrected_list = await validator.validate_phatom_list()
             if not is_valid:
-                return False, data
+                # 获取具体错误信息
+                error_msg = ""
+                for phantom in equipPhantomList:
+                    value_b, text = validator._validate_phantom(phantom)
+                    if not value_b:
+                        error_msg = text
+                        break
+                return False, data, error_msg
             processed_data["phantomData"]["equipPhantomList"] = corrected_list
 
-        return True, processed_data
+        return True, processed_data, ""
     except Exception as e:
         logger.warning(f" [鸣潮][dc卡片识别] 角色声骸数据异常：{e}")
-        return False, data
+        return False, data, str(e)
 
 
 async def compare_update_card_info(uid, waves_data):
