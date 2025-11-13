@@ -201,7 +201,9 @@ async def save_card_dict_to_json(bot: Bot, ev: Event, result_dict: Dict):
             error_msg += "❌ 检测到重复词条，疑似P图修改数据！\n"
             error_msg += "⚠️ 每个声骸的副词条应该是不同的，请使用原始卡片重新识别！\n"
             error_msg += f"错误详情：{error_detail}\n"
-            logger.warning(f"[鸣潮][dc卡片识别] 用户{uid}的{char_name_print}检测到重复词条，疑似P图 - {error_detail}")
+            logger.warning(
+                f"[鸣潮][dc卡片识别] 用户{uid}的{char_name_print}检测到重复词条，疑似P图 - {error_detail}"
+            )
         else:
             error_msg += "或请使用更高分辨率卡片重新识别！\n"
             if error_detail:
