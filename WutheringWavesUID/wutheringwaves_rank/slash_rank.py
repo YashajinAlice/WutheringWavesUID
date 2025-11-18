@@ -177,6 +177,14 @@ async def draw_all_slash_rank_card(bot: Bot, ev: Event):
 
     # 获取角色信息
     bot_color_map = {}
+    # 獲取特殊用戶ID列表
+    special_user_ids = set(
+        WutheringWavesConfig.get_config("SpecialUserIds").data
+    )
+    
+    bar = Image.open(TEXT_PATH / "bar1.png")
+    bar_special = Image.open(TEXT_PATH / "bar02.png")
+    
     bot_color = copy.deepcopy(BOT_COLOR)
 
     # for rank_temp_index, rank_temp in enumerate(rank_list):
@@ -184,7 +192,12 @@ async def draw_all_slash_rank_card(bot: Bot, ev: Event):
     for rank_temp_index, temp in enumerate(zip(rank_list, results)):
         rank_temp: SlashRank = temp[0]
         role_avatar: Image.Image = temp[1]
-        role_bg = Image.open(TEXT_PATH / "bar1.png")
+        
+        # 根據用戶ID選擇對應的 bar 圖片
+        if str(rank_temp.user_id) in special_user_ids:
+            role_bg = bar_special.copy()
+        else:
+            role_bg = bar.copy()
         # role_bg = Image.new("RGBA", (width, info_h), (255, 255, 255, 0))
         role_bg.paste(role_avatar, (100, 0), role_avatar)
         role_bg_draw = ImageDraw.Draw(role_bg)

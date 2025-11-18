@@ -383,7 +383,14 @@ async def draw_rank_img(
     card_img = get_waves_bg(1050, h, "bg3")
     card_img_draw = ImageDraw.Draw(card_img)
 
+    # 獲取特殊用戶ID列表
+    from ..wutheringwaves_config.wutheringwaves_config import WutheringWavesConfig
+    special_user_ids = set(
+        WutheringWavesConfig.get_config("SpecialUserIds").data
+    )
+    
     bar = Image.open(TEXT_PATH / "bar.png")
+    bar_special = Image.open(TEXT_PATH / "bar01.png")
     total_score = 0
     total_damage = 0
 
@@ -396,7 +403,12 @@ async def draw_rank_img(
         rank, role_avatar = temp
         rank: RankInfo
         rank_role_detail: RoleDetailData = rank.roleDetail
-        bar_bg = bar.copy()
+        
+        # 根據用戶ID選擇對應的 bar 圖片
+        if str(rank.qid) in special_user_ids:
+            bar_bg = bar_special.copy()
+        else:
+            bar_bg = bar.copy()
         bar_star_draw = ImageDraw.Draw(bar_bg)
         # role_avatar = await get_avatar(ev, rank.qid, role_detail.role.roleId)
         bar_bg.paste(role_avatar, (100, 0), role_avatar)

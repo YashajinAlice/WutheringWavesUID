@@ -3,7 +3,6 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 from msgspec import json as msgjson
-
 from gsuid_core.logger import logger
 
 from ..utils.resource.RESOURCE_PATH import (
@@ -122,9 +121,24 @@ with open(MAP_PATH / "id2name.json", "r", encoding="UTF-8") as f:
 def alias_to_char_name(char_name: str) -> str:
     for i in char_alias_data:
         if (char_name in i) or (char_name in char_alias_data[i]):
-            logger.debug(f"别名转换: {char_name} -> {i}")
             return i
     return char_name
+
+
+def alias_to_char_name_optional(char_name: Optional[str]) -> Optional[str]:
+    if not char_name:
+        return None
+    for i in char_alias_data:
+        if (char_name in i) or (char_name in char_alias_data[i]):
+            return i
+    return None
+
+
+def alias_to_char_name_list(char_name: str) -> List[str]:
+    for i in char_alias_data:
+        if (char_name in i) or (char_name in char_alias_data[i]):
+            return char_alias_data[i]
+    return []
 
 
 def char_id_to_char_name(char_id: str) -> Optional[str]:
@@ -178,12 +192,6 @@ def alias_to_sonata_name(sonata_name: str | None) -> str | None:
             return i
     return None
 
-def phantom_id_to_phantom_name(phantom_id: str) -> Optional[str]:
-    for id, name in id2name.items():
-        if int(phantom_id) == int(id):
-            return name
-    else:
-        return None
 
 def alias_to_echo_name(echo_name: str) -> str:
     for i, j in echo_alias_data.items():
@@ -212,6 +220,10 @@ def easy_id_to_name(id: str, default: str = "") -> str:
     return id2name.get(id, default)
 
 
+def phantom_id_to_phantom_name(phantom_id: str) -> str:
+    """將 phantom ID 轉換為 phantom 名稱"""
+    return easy_id_to_name(str(phantom_id), f"未知聲骸({phantom_id})")
+
+
 def get_all_char_id() -> List[str]:
     return list(char_id_data.keys())
-

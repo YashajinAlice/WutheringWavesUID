@@ -201,7 +201,13 @@ async def draw_all_rank_card(
 
     card_img.alpha_composite(text_bar_img, (0, title_h))
 
+    # 獲取特殊用戶ID列表
+    special_user_ids = set(
+        WutheringWavesConfig.get_config("SpecialUserIds").data
+    )
+    
     bar = Image.open(TEXT_PATH / "bar1.png")
+    bar_special = Image.open(TEXT_PATH / "bar02.png")
     total_score = 0
     total_damage = 0
 
@@ -222,7 +228,12 @@ async def draw_all_rank_card(
     for index, temp in enumerate(zip(rankInfoList.data.details, results)):
         rank: RankDetail = temp[0]
         role_avatar: Image.Image = temp[1]
-        bar_bg = bar.copy()
+        
+        # 根據用戶ID選擇對應的 bar 圖片
+        if str(rank.user_id) in special_user_ids:
+            bar_bg = bar_special.copy()
+        else:
+            bar_bg = bar.copy()
         bar_star_draw = ImageDraw.Draw(bar_bg)
         bar_bg.paste(role_avatar, (100, 0), role_avatar)
 

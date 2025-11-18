@@ -269,8 +269,14 @@ async def draw_local_total_rank(bot: Bot, ev: Event, bot_bool: bool = False) -> 
 
     card_img.alpha_composite(text_bar_img, (0, header_height))
 
+    # 獲取特殊用戶ID列表
+    special_user_ids = set(
+        WutheringWavesConfig.get_config("SpecialUserIds").data
+    )
+    
     # 导入必要的图片资源
     bar = Image.open(TEXT_PATH / "bar1.png")
+    bar_special = Image.open(TEXT_PATH / "bar02.png")
 
     # 获取头像
     tasks = [
@@ -283,8 +289,11 @@ async def draw_local_total_rank(bot: Bot, ev: Event, bot_bool: bool = False) -> 
         detail, role_avatar = temp
         y_pos = header_height + 130 + rank_temp_index * item_spacing
 
-        # 创建条目背景
-        bar_bg = bar.copy()
+        # 根據用戶ID選擇對應的 bar 圖片
+        if str(detail.user_id) in special_user_ids:
+            bar_bg = bar_special.copy()
+        else:
+            bar_bg = bar.copy()
         bar_bg.paste(role_avatar, (100, 0), role_avatar)
         bar_draw = ImageDraw.Draw(bar_bg)
 

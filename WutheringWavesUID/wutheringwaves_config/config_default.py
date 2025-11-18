@@ -213,4 +213,13 @@ CONFIG_DEFAULT: Dict[str, GSC] = {
             "輸入後回車",
         ],
     ),
+    "SpecialUserIds": GsListStrConfig(
+        "特殊用戶ID列表",
+        "特殊用戶ID列表，這些用戶在角色面板中會顯示特殊頭像框（avatar_ring1.png）",
+        [],
+        options=[
+            "可輸入多個用戶ID",
+            "輸入後回車",
+        ],
+    ),
 }
