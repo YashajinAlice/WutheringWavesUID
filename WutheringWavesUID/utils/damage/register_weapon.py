@@ -1,21 +1,21 @@
 from typing import List, Union
 
-from ..damage.abstract import WavesWeaponRegister, WeaponAbstract
 from .damage import DamageAttribute, calc_percent_expression
+from ..damage.abstract import WeaponAbstract, WavesWeaponRegister
 from .utils import (
-    CHAR_ATTR_CELESTIAL,
     CHAR_ATTR_MOLTEN,
     CHAR_ATTR_SIERRA,
+    CHAR_ATTR_CELESTIAL,
     Spectro_Frazzle_Role_Ids,
-    attack_damage,
-    heal_bonus,
-    hit_damage,
-    liberation_damage,
-    phantom_damage,
-    skill_damage,
     temp_atk,
     temp_def,
     temp_life,
+    heal_bonus,
+    hit_damage,
+    skill_damage,
+    attack_damage,
+    phantom_damage,
+    liberation_damage,
 )
 
 
@@ -233,6 +233,36 @@ class Weapon_21010053(WeaponAbstract):
     id = 21010053
     type = 1
     name = "戍关长刃·定军"
+
+
+class Weapon_21010056(WeaponAbstract):
+    id = 21010056
+    type = 1
+    name = "昙切"
+
+    # 攻击提升12%。施放变奏技能或附加【异常效应】时，自身共鸣解放伤害加成提升8%，可叠加3层，持续15秒。
+    # 该效果叠加至满层时，队伍中的角色附加【异常效应】时，该角色全属性伤害加成提升24%，持续15秒，同名效果之间不可叠加。
+
+    def do_action(
+        self,
+        func_list: Union[List[str], str],
+        attr: DamageAttribute,
+        isGroup: bool = False,
+    ):
+        if attr.char_damage != liberation_damage:
+            return
+
+        title = self.get_title()
+        # 施放变奏技能或附加异常效应时，共鸣解放伤害加成提升
+        dmg = f"{self.param(1)}*{self.param(2)}"
+        msg = f"施放变奏技能或附加【异常效应】时，共鸣解放伤害加成提升{dmg}"
+        attr.add_dmg_bonus(calc_percent_expression(dmg), title, msg)
+
+        # 千咲：满层时，附加异常效应时全属性伤害加成
+        if attr.role and attr.role.role.roleId == 1508:
+            dmg2 = f"{self.param(4)}"
+            msg = f"满层时附加【异常效应】，全属性伤害加成提升{dmg2}"
+            attr.add_dmg_bonus(calc_percent_expression(dmg2), title, msg)
 
 
 class Weapon_21010063(WeaponAbstract):
@@ -617,14 +647,6 @@ class Weapon_21020066(WeaponAbstract):
             dmg = f"{self.param(2)}%*2"
             title = self.get_title()
             msg = f"施放声骸技能时，重击伤害加成提升{dmg}"
-            attr.add_dmg_bonus(calc_percent_expression(dmg), title, msg)
-
-    def cast_variation(self, attr: DamageAttribute, isGroup: bool = False):
-        """施放变奏技能"""
-        if attr.char_damage == phantom_damage:
-            dmg = f"{self.param(5)}"
-            title = self.get_title()
-            msg = f"释放变奏技能时，队伍中角色声骸技能伤害提升{dmg}"
             attr.add_dmg_bonus(calc_percent_expression(dmg), title, msg)
 
 

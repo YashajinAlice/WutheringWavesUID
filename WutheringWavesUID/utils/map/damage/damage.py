@@ -1,45 +1,47 @@
 from typing import List, Union
 
-from ...api.model import RoleDetailData, WeaponData
-from ...damage.abstract import WavesEchoRegister, WavesWeaponRegister
+from ...api.model import WeaponData, RoleDetailData
 from ...damage.damage import DamageAttribute, check_char_id
+from ...damage.abstract import WavesEchoRegister, WavesWeaponRegister
 from ...damage.utils import (
-    CHAR_ATTR_CELESTIAL,
-    CHAR_ATTR_FREEZING,
-    CHAR_ATTR_MOLTEN,
-    CHAR_ATTR_SIERRA,
-    CHAR_ATTR_SINKING,
+    SONATA_VOID,
+    SONATA_FROSTY,
+    SONATA_MOLTEN,
+    SONATA_SIERRA,
+    SONATA_WELKIN,
     CHAR_ATTR_VOID,
     SONATA_ANCIENT,
-    SONATA_CELESTIAL,
-    SONATA_CLAWPRINT,
-    SONATA_CROWN_OF_VALOR,
-    SONATA_EMPYREAN,
     SONATA_ETERNAL,
+    SONATA_HARMONY,
+    SONATA_MOONLIT,
+    SONATA_SCISSOR,
+    SONATA_SINKING,
+    SONATA_EMPYREAN,
     SONATA_FIREWALL,
     SONATA_FREEZING,
-    SONATA_FROSTY,
-    SONATA_HARMONY,
-    SONATA_LINGERING,
     SONATA_MIDNIGHT,
-    SONATA_MOLTEN,
-    SONATA_MOONLIT,
+    CHAR_ATTR_MOLTEN,
+    CHAR_ATTR_SIERRA,
+    SONATA_CELESTIAL,
+    SONATA_CLAWPRINT,
+    SONATA_LINGERING,
+    CHAR_ATTR_SINKING,
     SONATA_PILGRIMAGE,
+    CHAR_ATTR_FREEZING,
+    CHAR_ATTR_CELESTIAL,
     SONATA_REJUVENATING,
-    SONATA_SIERRA,
-    SONATA_SINKING,
     SONATA_TIDEBREAKING,
-    SONATA_VOID,
-    SONATA_WELKIN,
+    SONATA_CROWN_OF_VALOR,
+    Havoc_Bane_Role_Ids,
     Spectro_Frazzle_Role_Ids,
-    cast_attack,
     cast_hit,
-    cast_liberation,
     cast_skill,
     hit_damage,
-    liberation_damage,
-    phantom_damage,
+    cast_attack,
     skill_damage,
+    phantom_damage,
+    cast_liberation,
+    liberation_damage,
 )
 
 
@@ -301,7 +303,6 @@ def phase_damage(
         # 息界同调之律
         elif check_if_ph_3(ph_detail.ph_name, ph_detail.ph_num, SONATA_HARMONY):
             # 角色施放声骸技能时，自身重击伤害加成提升30%，持续4秒；队伍中角色声骸技能伤害加成提升4%，该效果可叠加4层，持续30秒。
-            # ？
             if attr.char_damage == hit_damage:
                 title = f"{phase_name}-{ph_detail.ph_name}"
                 msg = "角色施放声骸技能时，自身重击伤害加成提升30%"
@@ -327,3 +328,15 @@ def phase_damage(
                 title = f"{phase_name}-{ph_detail.ph_name}"
                 msg = "自身热熔伤害提升16%"
                 attr.add_dmg_bonus(0.16, title, msg)
+
+        # 命理崩毁之弦
+        elif check_if_ph_3(ph_detail.ph_name, ph_detail.ph_num, SONATA_SCISSOR):
+            if not check_char_id(attr, Havoc_Bane_Role_Ids):
+                return
+            # 角色为敌人添加【虚湮效应】时，自身攻击提升20%，共鸣解放伤害加成提升30%，持续5秒。
+            title = f"{phase_name}-{ph_detail.ph_name}"
+            msg = (
+                "角色为敌人添加【虚湮效应】时，自身攻击提升20%，共鸣解放伤害加成提升30%"
+            )
+            attr.add_atk_percent(0.2, title, msg)
+            attr.add_dmg_bonus(0.3, title, msg)
