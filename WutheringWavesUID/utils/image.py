@@ -532,3 +532,100 @@ async def get_custom_gaussian_blur(img: Image.Image) -> Image.Image:
         # 调整对比度
         img = ImageEnhance.Contrast(img).enhance(contrast)
     return img
+
+
+# 特殊用戶ID列表緩存（避免每次繪製都讀取配置）
+_special_user_ids_cache = None
+_special_user_ids_cache_time = 0
+_cache_ttl = 300  # 緩存5分鐘
+
+
+def _get_special_user_ids() -> set:
+    """獲取特殊用戶ID列表（帶緩存）"""
+    global _special_user_ids_cache, _special_user_ids_cache_time
+    import time
+    
+    current_time = time.time()
+    # 如果緩存存在且未過期，直接返回
+    if (
+        _special_user_ids_cache is not None
+        and current_time - _special_user_ids_cache_time < _cache_ttl
+    ):
+        return _special_user_ids_cache
+    
+    # 重新讀取配置
+    from ..wutheringwaves_config.wutheringwaves_config import WutheringWavesConfig
+    
+    try:
+        _special_user_ids_cache = set(
+            WutheringWavesConfig.get_config("SpecialUserIds").data
+        )
+        _special_user_ids_cache_time = current_time
+    except Exception:
+        # 如果讀取失敗，使用空集合
+        _special_user_ids_cache = set()
+        _special_user_ids_cache_time = current_time
+    
+    return _special_user_ids_cache
+
+
+def get_rank_bar_image(
+    text_path: Path, user_id: str, default_bar: str = "bar1.png"
+) -> Image.Image:
+    """
+    根據用戶ID獲取排行榜bar圖片
+    
+    Args:
+        text_path: 圖片資源路徑（TEXT_PATH）
+        user_id: 用戶ID（字符串）
+        default_bar: 默認bar圖片名稱，可選 "bar.png" 或 "bar1.png"
+    
+    Returns:
+        PIL Image對象
+    
+    Examples:
+        # 使用 bar1.png（默認）
+        bar_img = get_rank_bar_image(TEXT_PATH, rank.qid)
+        
+        # 使用 bar.png
+        bar_img = get_rank_bar_image(TEXT_PATH, rank.qid, "bar.png")
+    """
+    special_user_ids = _get_special_user_ids()
+    user_id_str = str(user_id)
+    
+    # 判斷是否為特殊用戶
+    is_special = user_id_str in special_user_ids
+    
+    # 根據默認bar選擇對應的特殊bar
+    if default_bar == "bar.png":
+        special_bar = "bar01.png"
+    elif default_bar == "bar1.png":
+        special_bar = "bar02.png"
+    else:
+        # 如果是不認識的bar，使用默認值
+        special_bar = "bar02.png" if "1" in default_bar else "bar01.png"
+    
+    # 選擇要使用的bar圖片
+    if is_special:
+        bar_path = text_path / special_bar
+        # 如果特殊bar不存在，回退到默認bar
+        if not bar_path.exists():
+            logger.warning(
+                f"[排行榜] 特殊bar圖片不存在: {special_bar}，使用默認bar: {default_bar}"
+            )
+            bar_path = text_path / default_bar
+    else:
+        bar_path = text_path / default_bar
+    
+    try:
+        return Image.open(bar_path)
+    except Exception as e:
+        logger.error(f"[排行榜] 無法加載bar圖片 {bar_path}: {e}")
+        # 如果連默認bar都無法加載，嘗試加載另一個
+        fallback_bar = "bar1.png" if default_bar == "bar.png" else "bar.png"
+        try:
+            return Image.open(text_path / fallback_bar)
+        except Exception:
+            # 最後的備選方案：創建一個空白圖片
+            logger.error(f"[排行榜] 無法加載任何bar圖片，使用空白圖片")
+            return Image.new("RGBA", (1300, 110), (0, 0, 0, 0))
