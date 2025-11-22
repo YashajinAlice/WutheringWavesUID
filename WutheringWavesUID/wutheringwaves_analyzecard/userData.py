@@ -217,7 +217,7 @@ async def save_card_dict_to_json(bot: Bot, ev: Event, result_dict: Dict):
     waves_data.append(update_data)
     await save_card_info(uid, waves_data)
     await bot.send(
-        f"[鸣潮]dc卡片数据提取成功！识别套装使用默认配置(影响伤害计算不影响声骸评分)\n可使用：\n【{PREFIX}{char_name_print}面板】查看您的角色面板\n【{PREFIX}改{char_name_print}套装<合鸣效果>】 (可使用如 <合鸣一3合鸣二2> 改为3+2套装) 修改声骸套装\n【{PREFIX}改{char_name_print}声骸】修改当前套装的首位声骸\n",
+        f"[鸣潮]dc卡片数据提取成功！识别套装使用默认配置(影响伤害计算不影响声骸评分)\n可使用：\n【{PREFIX}{char_name_print}面板】查看您的角色面板\n【{PREFIX}改{char_name_print}套装<合鸣效果>】 (可使用如 <合鸣一3合鸣二2> 改为3+2套装) 修改声骸套装\n【{PREFIX}改{char_name_print}声骸】修改当前套装的首位声骸\n 若要改武器精煉請至 <#1393453498577981461> 【改{uid}{char_name_print}武器5】武器後數字請替換成您要申請修改的目標數！\n",
         at_sender,
     )
     logger.info(

@@ -1,27 +1,35 @@
 {
   "python.languageServer": "None",
+  "python.analysis.typeCheckingMode": "basic",
+  "cSpell.words": [
+    "enka",
+    "genshin",
+    "genshinuid"
+  ],
   "editor.formatOnSave": true,
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit",
-      "source.fixAll": "explicit"
+      "source.organizeImports": "explicit"
     }
   },
   "python.autoComplete.extraPaths": [
-    "${workspaceFolder}/gsuid_core"
-  ],
-  "flake8.args": [
-    "--max-line-length=120"
+    "${workspaceFolder}/../../../../"
   ],
   "isort.args": [
     "--profile",
     "black"
   ],
-  "basedpyright.analysis.typeCheckingMode": "basic",
-  "basedpyright.analysis.extraPaths": [
-    "${workspaceFolder}/gsuid_core"
+  "python.formatting.provider": "black",
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8CategorySeverity.W": "Warning",
+  "python.linting.flake8CategorySeverity.F": "Warning",
+  "python.linting.flake8CategorySeverity.E": "Warning",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/../../../../"
   ],
-  "python.analysis.typeCheckingMode": "off"
+  "python.analysis.include": [
+    "${workspaceFolder}/../../../../"
+  ]
 }

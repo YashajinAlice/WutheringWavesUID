@@ -482,9 +482,10 @@ async def get_role_need(
     return avatar, role_detail
 
 
-async def draw_fixed_img(img, avatar, account_info, role_detail):
+async def draw_fixed_img(img, avatar, account_info, role_detail, user_id: Optional[str] = None):
     # 头像部分
-    avatar_ring = Image.open(TEXT_PATH / "avatar_ring.png")
+    from ..utils.image import get_avatar_ring_image
+    avatar_ring = get_avatar_ring_image(TEXT_PATH, user_id or "")
 
     img.paste(avatar, (45, 20), avatar)
     avatar_ring = avatar_ring.resize((180, 180))
@@ -796,7 +797,7 @@ async def draw_char_detail_img(
         1200, 1250 + echo_list + ph_sum_value + jineng_len + dd_len, "bg3"
     )
     # 固定位置
-    await draw_fixed_img(img, avatar, account_info, role_detail)
+    await draw_fixed_img(img, avatar, account_info, role_detail, user_id)
 
     # 声骸
     img.paste(phantom_temp, (0, 1320 + jineng_len), phantom_temp)
@@ -1102,7 +1103,7 @@ async def draw_char_score_img(
     # 创建背景
     img = await get_card_bg(1200, 3380, "bg3")
     # 固定位置
-    await draw_fixed_img(img, avatar, account_info, role_detail)
+    await draw_fixed_img(img, avatar, account_info, role_detail, user_id)
 
     # 声骸属性
     char_id = role_detail.role.roleId

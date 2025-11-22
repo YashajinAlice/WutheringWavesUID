@@ -2,30 +2,29 @@ import os
 import random
 from io import BytesIO
 from pathlib import Path
-from typing import Literal, Optional, Tuple, Union
+from typing import Tuple, Union, Literal, Optional
 
+from gsuid_core.models import Event
+from gsuid_core.logger import logger
+from gsuid_core.utils.image.utils import sget
+from gsuid_core.utils.image.image_tools import crop_center_img
 from PIL import (
     Image,
-    ImageDraw,
-    ImageEnhance,
-    ImageFilter,
-    ImageFont,
     ImageOps,
+    ImageDraw,
+    ImageFont,
+    ImageFilter,
+    ImageEnhance,
 )
 
 from ..utils.database.models import WavesUserAvatar
-from gsuid_core.logger import logger
-from gsuid_core.models import Event
-from gsuid_core.utils.image.image_tools import crop_center_img
-from gsuid_core.utils.image.utils import sget
-
 from ..utils.resource.RESOURCE_PATH import (
     AVATAR_PATH,
+    WEAPON_PATH,
+    SHARE_BG_PATH,
+    ROLE_PILE_PATH,
     CUSTOM_CARD_PATH,
     CUSTOM_MR_CARD_PATH,
-    ROLE_PILE_PATH,
-    SHARE_BG_PATH,
-    WEAPON_PATH,
 )
 
 ICON = Path(__file__).parent.parent.parent / "ICON.png"
@@ -247,6 +246,7 @@ async def get_qq_avatar(
     char_pic = Image.open(BytesIO((await sget(avatar_url)).content)).convert("RGBA")
     return char_pic
 
+
 async def get_discord_avatar(
     qid: Optional[Union[int, str]] = None,
     avatar_url: Optional[str] = None,
@@ -259,7 +259,11 @@ async def get_discord_avatar(
     elif avatar_url is None:
         avatar_url = "https://cdn.discordapp.com/embed/avatars/0.png"
 
-    avatar_url = avatar_url + f".png?size={size}" if not avatar_url.endswith(".png") else avatar_url
+    avatar_url = (
+        avatar_url + f".png?size={size}"
+        if not avatar_url.endswith(".png")
+        else avatar_url
+    )
     char_pic = Image.open(BytesIO((await sget(avatar_url)).content)).convert("RGBA")
     return char_pic
 
@@ -279,12 +283,14 @@ async def get_qqgroup_avatar(
     char_pic = Image.open(BytesIO((await sget(avatar_url)).content)).convert("RGBA")
     return char_pic
 
+
 # 获取对应bot_id的头像获取函数
 AVATAR_GETTERS = {
     "onebot": get_qq_avatar,
     "discord": get_discord_avatar,
-    "qqgroup": get_qqgroup_avatar
+    "qqgroup": get_qqgroup_avatar,
 }
+
 
 async def get_event_avatar(
     ev: Event,
@@ -298,7 +304,7 @@ async def get_event_avatar(
         from ..utils.at_help import is_valid_at
 
         is_valid_at_param = is_valid_at(ev)
-    
+
     get_bot_avatar = AVATAR_GETTERS.get(ev.bot_id)
 
     # 尝试获取@用户的头像
@@ -308,7 +314,9 @@ async def get_event_avatar(
         except Exception:
             img = None
 
-    if img is None and "avatar" in ev.sender and ev.sender["avatar"]: # qqgroup不返回avatar...
+    if (
+        img is None and "avatar" in ev.sender and ev.sender["avatar"]
+    ):  # qqgroup不返回avatar...
         avatar_url: str = ev.sender["avatar"]
         if avatar_url.startswith(("http", "https")):
             try:
@@ -544,7 +552,7 @@ def _get_special_user_ids() -> set:
     """獲取特殊用戶ID列表（帶緩存）"""
     global _special_user_ids_cache, _special_user_ids_cache_time
     import time
-    
+
     current_time = time.time()
     # 如果緩存存在且未過期，直接返回
     if (
@@ -552,20 +560,39 @@ def _get_special_user_ids() -> set:
         and current_time - _special_user_ids_cache_time < _cache_ttl
     ):
         return _special_user_ids_cache
-    
+
     # 重新讀取配置
-    from ..wutheringwaves_config.wutheringwaves_config import WutheringWavesConfig
-    
+    from ..wutheringwaves_config.wutheringwaves_config import (
+        WutheringWavesConfig,
+    )
+
     try:
-        _special_user_ids_cache = set(
-            WutheringWavesConfig.get_config("SpecialUserIds").data
-        )
+        config_data = WutheringWavesConfig.get_config("SpecialUserIds").data
+        # 確保 config_data 是列表類型
+        if isinstance(config_data, list):
+            _special_user_ids_cache = set(config_data)
+        elif isinstance(config_data, str):
+            # 如果是字符串，嘗試分割（處理可能的字符串格式）
+            if config_data:
+                _special_user_ids_cache = set(config_data.split(","))
+            else:
+                _special_user_ids_cache = set()
+        else:
+            # 其他類型，嘗試轉換為列表
+            try:
+                _special_user_ids_cache = set(config_data) if config_data else set()
+            except (TypeError, ValueError):
+                logger.warning(
+                    f"[特殊用戶] 配置數據類型錯誤: {type(config_data)}, 使用空集合"
+                )
+                _special_user_ids_cache = set()
         _special_user_ids_cache_time = current_time
-    except Exception:
+    except Exception as e:
         # 如果讀取失敗，使用空集合
+        logger.error(f"[特殊用戶] 讀取配置失敗: {e}")
         _special_user_ids_cache = set()
         _special_user_ids_cache_time = current_time
-    
+
     return _special_user_ids_cache
 
 
@@ -574,28 +601,28 @@ def get_rank_bar_image(
 ) -> Image.Image:
     """
     根據用戶ID獲取排行榜bar圖片
-    
+
     Args:
         text_path: 圖片資源路徑（TEXT_PATH）
         user_id: 用戶ID（字符串）
         default_bar: 默認bar圖片名稱，可選 "bar.png" 或 "bar1.png"
-    
+
     Returns:
         PIL Image對象
-    
+
     Examples:
         # 使用 bar1.png（默認）
         bar_img = get_rank_bar_image(TEXT_PATH, rank.qid)
-        
+
         # 使用 bar.png
         bar_img = get_rank_bar_image(TEXT_PATH, rank.qid, "bar.png")
     """
     special_user_ids = _get_special_user_ids()
     user_id_str = str(user_id)
-    
+
     # 判斷是否為特殊用戶
     is_special = user_id_str in special_user_ids
-    
+
     # 根據默認bar選擇對應的特殊bar
     if default_bar == "bar.png":
         special_bar = "bar01.png"
@@ -604,7 +631,7 @@ def get_rank_bar_image(
     else:
         # 如果是不認識的bar，使用默認值
         special_bar = "bar02.png" if "1" in default_bar else "bar01.png"
-    
+
     # 選擇要使用的bar圖片
     if is_special:
         bar_path = text_path / special_bar
@@ -616,7 +643,7 @@ def get_rank_bar_image(
             bar_path = text_path / default_bar
     else:
         bar_path = text_path / default_bar
-    
+
     try:
         return Image.open(bar_path)
     except Exception as e:
@@ -629,3 +656,58 @@ def get_rank_bar_image(
             # 最後的備選方案：創建一個空白圖片
             logger.error(f"[排行榜] 無法加載任何bar圖片，使用空白圖片")
             return Image.new("RGBA", (1300, 110), (0, 0, 0, 0))
+
+
+def get_avatar_ring_image(
+    text_path: Path, user_id: str, default_ring: str = "avatar_ring.png"
+) -> Image.Image:
+    """
+    根據用戶ID獲取頭像框圖片
+
+    Args:
+        text_path: 圖片資源路徑（TEXT_PATH）
+        user_id: 用戶ID（字符串）
+        default_ring: 默認頭像框圖片名稱，默認為 "avatar_ring.png"
+
+    Returns:
+        PIL Image對象
+
+    Examples:
+        # 獲取頭像框（特殊用戶會使用 avatar_ring2.png）
+        ring_img = get_avatar_ring_image(TEXT_PATH, ev.user_id)
+    """
+    special_user_ids = _get_special_user_ids()
+    user_id_str = str(user_id)
+
+    # 判斷是否為特殊用戶
+    is_special = user_id_str in special_user_ids
+
+    # 特殊用戶使用 avatar_ring2.png
+    if is_special:
+        ring_path = text_path / "avatar_ring2.png"
+        # 如果特殊頭像框不存在，回退到默認頭像框
+        if not ring_path.exists():
+            logger.warning(
+                f"[頭像框] 特殊頭像框不存在: avatar_ring2.png，使用默認頭像框: {default_ring}"
+            )
+            ring_path = text_path / default_ring
+    else:
+        ring_path = text_path / default_ring
+
+    # 加載並返回圖片
+    try:
+        return Image.open(ring_path)
+    except Exception as e:
+        logger.error(f"[頭像框] 無法加載頭像框圖片 {ring_path}: {e}")
+        # 如果默認頭像框也無法加載，嘗試加載另一個
+        fallback_ring = (
+            "avatar_ring2.png"
+            if default_ring == "avatar_ring.png"
+            else "avatar_ring.png"
+        )
+        try:
+            return Image.open(text_path / fallback_ring)
+        except Exception:
+            # 最後的備選方案：創建一個空白圖片
+            logger.error(f"[頭像框] 無法加載任何頭像框圖片，使用空白圖片")
+            return Image.new("RGBA", (180, 180), (0, 0, 0, 0))

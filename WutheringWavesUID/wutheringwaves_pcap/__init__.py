@@ -75,15 +75,70 @@ async def pcap_parse(bot: Bot, ev: Event):
         if msg.type == "attachment":
             attachment_file = msg.data
             break
+        elif msg.type == "file" and msg.data:
+            # 處理 file 類型的消息（格式：filename|url 或 filename|base64）
+            attachment_file = msg.data
+            break
 
     if attachment_file:
+        # 處理附件數據
+        # 如果 attachment_file 是字符串，嘗試解析為字典或處理為 file 格式
+        if isinstance(attachment_file, str):
+            # 嘗試解析為 JSON
+            try:
+                attachment_file = json.loads(attachment_file)
+            except (json.JSONDecodeError, TypeError):
+                pass  # 繼續處理為字符串格式
+            
+            # 如果解析後仍然是字符串，處理為 file 格式
+            if isinstance(attachment_file, str):
+                # 可能是 file 格式（filename|url）
+                if "|" in attachment_file:
+                    parts = attachment_file.split("|", 1)
+                    file_name = parts[0] if parts[0] else ""
+                    file_url = parts[1].replace("link://", "") if len(parts) > 1 else ""
+                    file_size = 0  # file 類型沒有大小信息
+                else:
+                    # 如果只是 URL 字符串
+                    file_name = ""
+                    file_url = attachment_file
+                    file_size = 0
+            elif isinstance(attachment_file, dict):
+                # JSON 解析成功，現在是字典
+                file_name = attachment_file.get("filename", "")
+                file_url = attachment_file.get("url", "")
+                file_size = attachment_file.get("size", 0)
+            else:
+                # 其他類型
+                file_name = ""
+                file_url = str(attachment_file)
+                file_size = 0
+        elif isinstance(attachment_file, dict):
+            # 如果是字典，直接使用
+            file_name = attachment_file.get("filename", "")
+            file_url = attachment_file.get("url", "")
+            file_size = attachment_file.get("size", 0)
+        else:
+            # 其他類型，嘗試轉換為字符串處理
+            file_name = ""
+            file_url = str(attachment_file)
+            file_size = 0
+
         # 如果有附件，處理文件
-        file_name = attachment_file.get("filename", "")
-        file_url = attachment_file.get("url", "")
-        file_size = attachment_file.get("size", 0)
+        if not file_name and not file_url:
+            return await bot.send("無法獲取文件信息\n", at_sender)
+
+        # 如果沒有文件名，嘗試從 URL 中提取
+        if not file_name and file_url:
+            try:
+                from urllib.parse import urlparse, unquote
+                parsed_url = urlparse(file_url)
+                file_name = unquote(parsed_url.path.split("/")[-1]) if parsed_url.path else ""
+            except Exception:
+                file_name = ""
 
         # 檢查文件格式
-        if not file_name.lower().endswith((".pcap", ".pcapng")):
+        if file_name and not file_name.lower().endswith((".pcap", ".pcapng")):
             return await bot.send(
                 "文件格式错误，请上传 .pcap 或 .pcapng 文件\n", at_sender
             )
@@ -94,8 +149,9 @@ async def pcap_parse(bot: Bot, ev: Event):
 
         try:
             # 創建臨時文件
+            suffix = Path(file_name).suffix if file_name else ".pcap"
             with tempfile.NamedTemporaryFile(
-                suffix=Path(file_name).suffix, delete=False
+                suffix=suffix, delete=False
             ) as temp_file:
                 temp_path = Path(temp_file.name)
 
@@ -218,8 +274,9 @@ async def pcap_help(bot: Bot, ev: Event):
             "1. 此方法通过抓取游戏网络数据包实现，可直接导入所有角色面板数据",
             # "3. 用户账号系统（云端保存与同步）即将上线",
             "2. 加速器等网络工具可能导致抓包失败",
-            "3. 请勿上传含有隐私信息的 .pcap 文件",
-            f"4. 具体教程请前往[ {url} ]查看, 内有视频教程",
+            "3. 请关闭其他可能产生大量网络数据包的软件，确保pcap文件体积不超过4MB（文件过大可能导致解析失败）",
+            "4. 请勿上传含有隐私信息的 .pcap 文件",
+            f"5. 具体教程请前往[ {url} ]查看, 内有视频教程，可参考操作",
             "\n",
         ]
     )
@@ -229,17 +286,17 @@ async def pcap_help(bot: Bot, ev: Event):
             "1. 安装 Wireshark 并打开",
             "2. 启动鸣潮游戏，进入登录界面（男女主角界面）",
             "3. 在Wireshark中选择您连接互联网的网络接口",
-            "4. 切换回游戏并登录进入游戏世界",
-            "5. 返回Wireshark停止抓包，并保存为PCAP文件",
-            "6. 前往导入页面，上传刚才保存的PCAP文件",
-            "注意：也可以使用其他能导出PCAP文件的抓包工具",
+            "4. 切换回游戏并登录进入游戏世界（进度条开始加载时即可停止抓包）",
+            "5. 返回Wireshark停止抓包，并保存为 .pcap 文件",
+            "6. 前往导入页面，上传刚才保存的 .pcap 文件",
+            "注意：也可以使用其他能导出 .pcap 文件的抓包工具",
             "\n",
         ]
     )
     method_android = "\n".join(
         [
             "【安卓端方法】使用 PCAPdroid:",
-            "1. 安装 PCAPdroid，在 Traffic dump 选 PCAP 文件",
+            "1. 安装 PCAPdroid，在 Traffic dump 选 .pcap 文件",
             "2. Target apps 中选择 Wuthering Waves",
             "3. 点击“Ready”，然后启动并进入游戏",
             "4. 返回 PCAPdroid 停止抓包，生成文件并上传",
@@ -249,8 +306,8 @@ async def pcap_help(bot: Bot, ev: Event):
     upload_note = "\n".join(
         [
             "【上传方法】:",
-            "• qq用户请直接发送pcap文件到本群或私聊机器人(qq官方bot暂不支持)",
-            f"• discord用户请使用命令[{PREFIX}解析pcap]并上传pcap文件为附件",
+            "• qq用户请直接发送 .pcap 文件到本群或私聊机器人(qq官方bot暂不支持)",
+            f"• discord用户请使用命令[{PREFIX}解析pcap]并上传 .pcap 文件为附件",
             "• 其他平台暂未测试",
             "\n",
         ]

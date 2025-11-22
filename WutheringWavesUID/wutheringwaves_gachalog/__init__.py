@@ -73,14 +73,31 @@ async def get_gacha_log_by_link(bot: Bot, ev: Event):
         await bot.send(im)
 
 
-@sv_gacha_log.on_fullmatch("抽卡记录")
+@sv_gacha_log.on_regex(r"^(\d+)?\s*抽卡记录$", block=True)
 async def send_gacha_log_card_info(bot: Bot, ev: Event):
     await bot.logger.info("[鸣潮]开始执行 抽卡记录")
-    uid = await WavesBind.get_uid_by_game(ev.user_id, ev.bot_id)
-    if not uid:
-        return await bot.send(ERROR_CODE[WAVES_CODE_103])
+    
+    # 从原始文本中提取UID（支持格式：710596960抽卡记录 或 抽卡记录）
+    match = re.search(r"^(\d+)?\s*抽卡记录$", ev.raw_text)
+    target_uid = None
+    if match:
+        # 如果匹配到數字，就是指定了UID
+        if match.group(1):
+            target_uid = match.group(1)
+    
+    # 如果没有指定UID，使用自己的UID
+    if not target_uid:
+        target_uid = await WavesBind.get_uid_by_game(ev.user_id, ev.bot_id)
+        if not target_uid:
+            return await bot.send(ERROR_CODE[WAVES_CODE_103])
+    else:
+        # 检查目标UID是否有抽卡记录
+        from ..utils.resource.RESOURCE_PATH import PLAYER_PATH
+        gacha_log_path = PLAYER_PATH / str(target_uid) / "gacha_logs.json"
+        if not gacha_log_path.exists():
+            return await bot.send(f"[鸣潮] UID{target_uid} 还没有抽卡记录噢!")
 
-    im = await draw_card(uid, ev)
+    im = await draw_card(target_uid, ev)
     await bot.send(im)
 
 
